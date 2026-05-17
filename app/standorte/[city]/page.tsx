@@ -55,7 +55,7 @@ export default async function StandortPage({ params }: PageProps) {
       </div>
       <div className="mt-10">
         <Link
-          href="/#kontakt-anfrage"
+          href="/kontakt#kontakt-anfrage"
           className="inline-flex h-11 items-center justify-center rounded-xl bg-primary px-5 text-sm font-semibold text-primary-foreground shadow-sm transition hover:bg-primary/90"
         >
           Terminwunsch senden

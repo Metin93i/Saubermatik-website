@@ -1,4 +1,5 @@
 import { SERVICES } from "@/lib/config/services";
+import { SITE_OFFICE } from "@/lib/config/site";
 import { STANDORT_CITIES, STANDORT_LABELS } from "@/lib/routes/standorte";
 
 const siteUrl =
@@ -40,9 +41,9 @@ function buildOrganizationJsonLd(): Record<string, unknown> {
     priceRange: "$$",
     address: {
       "@type": "PostalAddress",
-      addressLocality: "Meßstetten",
-      addressRegion: "Baden-Württemberg",
-      postalCode: "72461",
+      addressLocality: SITE_OFFICE.locality,
+      addressRegion: SITE_OFFICE.region,
+      postalCode: SITE_OFFICE.postalCode,
       addressCountry: "DE",
     },
     geo: {

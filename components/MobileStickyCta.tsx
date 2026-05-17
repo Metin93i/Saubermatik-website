@@ -1,13 +1,5 @@
 import Link from "next/link";
-
-/** Baut `tel:+49…` aus deutscher Schreibweise (Leerzeichen, /, Klammern). */
-function buildTelHref(raw: string): string | null {
-  const d = raw.replace(/\D/g, "");
-  if (d.length < 6) return null;
-  if (d.startsWith("49")) return `tel:+${d}`;
-  if (d.startsWith("0")) return `tel:+49${d.slice(1)}`;
-  return `tel:+49${d}`;
-}
+import { buildTelHref } from "@/lib/phone";
 
 export function MobileStickyCta() {
   const raw = process.env.NEXT_PUBLIC_BUSINESS_PHONE?.trim();
@@ -29,7 +21,7 @@ export function MobileStickyCta() {
             </a>
           ) : null}
           <Link
-            href="/#kontakt-anfrage"
+            href="/kontakt#kontakt-anfrage"
             className={`flex h-12 min-h-12 items-center justify-center rounded-xl bg-primary text-sm font-semibold text-primary-foreground shadow-md transition hover:bg-primary/92 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary ${telHref ? "flex-1" : "w-full"}`}
           >
             Angebot

@@ -110,7 +110,7 @@ export default function Home() {
       </section>
 
       <section
-        className="border-t border-foreground/10 bg-slate-50 py-14 sm:py-16"
+        className="min-h-[38rem] border-t border-foreground/10 bg-slate-50 py-14 sm:min-h-[40rem] sm:py-16"
         aria-labelledby="reinigung-4-heading"
       >
         <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">

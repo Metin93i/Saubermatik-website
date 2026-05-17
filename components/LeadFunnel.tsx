@@ -241,7 +241,7 @@ export function LeadFunnel({
     return (
       <section
         className={classNames(
-          "rounded-2xl border border-foreground/10 bg-white p-6 shadow-xl ring-1 ring-black/5 transition-all duration-300 hover:shadow-2xl sm:p-8",
+          "min-h-[26rem] rounded-2xl border border-foreground/10 bg-white p-6 shadow-xl ring-1 ring-black/5 transition-all duration-300 hover:shadow-2xl sm:min-h-[28rem] sm:p-8",
           className,
         )}
         aria-live="polite"
@@ -288,7 +288,7 @@ export function LeadFunnel({
   return (
     <section
       className={classNames(
-        "rounded-2xl border border-foreground/10 bg-white p-6 shadow-xl ring-1 ring-black/5 transition-all duration-300 hover:shadow-2xl sm:p-8",
+        "min-h-[26rem] rounded-2xl border border-foreground/10 bg-white p-6 shadow-xl ring-1 ring-black/5 transition-all duration-300 hover:shadow-2xl sm:min-h-[28rem] sm:p-8",
         className,
       )}
       id="kontakt-anfrage"

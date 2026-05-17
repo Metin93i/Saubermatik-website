@@ -1,5 +1,9 @@
 # Lead-Funnel Spezifikation (`components/LeadFunnel.tsx`)
 
+## Einbindung auf `/kontakt`
+
+Der gleiche `LeadFunnel` wird **zusätzlich** auf der Seite **`/kontakt`** gerendert (neben Adresse und Karte). Die Anker-ID bleibt **`kontakt-anfrage`** — empfohlene Deep-Links von Unterseiten: **`/kontakt#kontakt-anfrage`**. Auf der **Startseite** bleibt der Funnel im Hero; dort ist ein Scroll-Ziel **`#kontakt-anfrage`** sinnvoll.
+
 ## Zweck
 
 Das Multi-Step-Formular maximiert **Conversion im Above-the-Fold**-Bereich: wenig kognitive Last, klare Micro-Commitments (Klicks statt Freitext), Kontaktdaten erst am Ende.

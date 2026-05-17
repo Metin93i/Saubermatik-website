@@ -23,7 +23,7 @@ export function SaubermatikLogo({
 
   const inner = (
     <span
-      className={`inline-flex select-none items-baseline gap-0 font-sans text-[1.02rem] tracking-[-0.03em] sm:text-[1.06rem] ${className}`}
+      className={`inline-flex select-none items-baseline gap-0 font-sans text-[1.02rem] tracking-[-0.05em] sm:text-[1.08rem] ${className}`}
       translate="no"
     >
       <span className={`font-extrabold uppercase leading-none ${first}`}>
