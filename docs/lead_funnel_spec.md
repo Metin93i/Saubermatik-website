@@ -69,14 +69,14 @@ Validierung erfolgt zentral über `parseLeadSubmission()` in `lib/lead/submissio
 
 **Paket:** `resend` (offizieller Node-Client).  
 **HTML-Template & Betreff:** `lib/lead/email.ts` (`buildGfLeadNotificationHtml`, `getLeadEmailSubject`).  
-**Versand:** `app/api/lead/route.ts` initialisiert `new Resend(process.env.RESEND_API_KEY)` und ruft `resend.emails.send({ from, to, subject, html })` auf.
+**Versand:** `app/api/lead/route.ts` initialisiert `new Resend(process.env.RESEND_API_KEY)` und ruft `resend.emails.send` mit festem Absender **`RESEND_FROM_LIVE`** (`Saubermatik Anfragen <anfragen@mail.saubermatik-reinigung.de>`) und Empfänger **`LEAD_EMAIL_RECIPIENT`** auf.
 
 ### Umgebungsvariablen (Live-System)
 
 | Variable | Pflicht (Live) | Rolle |
 |----------|------------------|--------|
 | **`RESEND_API_KEY`** | **ja** | API-Key aus dem Resend-Dashboard (nur Server, nie im Client). |
-| **`RESEND_FROM_EMAIL`** | **ja** | Verifizierte Absender-Adresse (Domain bei Resend eingebunden). |
+| **`RESEND_FROM_EMAIL`** | optional | Legacy: wird ignoriert, sofern der Code den festen Live-Absender nutzt (`Saubermatik Anfragen <anfragen@mail.saubermatik-reinigung.de>`). |
 | **`LEAD_EMAIL_RECIPIENT`** | **ja** | Postfach des Geschäftsführers / der Zentrale für Lead-Benachrichtigungen. |
 
 **Hinweis:** Solange `RESEND_API_KEY` fehlt (typisch lokal), loggt die Route den Lead **strukturiert** per `console.dir` und antwortet mit **`HTTP 200`** und `emailed: false`, damit das Formular nicht „hängen bleibt“.

@@ -1,6 +1,10 @@
 import { SERVICES } from "@/lib/config/services";
 import type { LeadAreaSize, LeadFunnelSubmission, LeadTiming } from "@/lib/lead/submission";
 
+/** Verifizierte Resend-Domain (Subdomain mail. zwingend im Absender). */
+export const RESEND_FROM_LIVE =
+  "Saubermatik Anfragen <anfragen@mail.saubermatik-reinigung.de>" as const;
+
 function escapeHtml(text: string): string {
   return text
     .replaceAll("&", "&amp;")
@@ -25,47 +29,73 @@ function serviceTitle(slug: string): string {
   return SERVICES.find((s) => s.slug === slug)?.title ?? slug;
 }
 
-export function getLeadEmailSubject(lead: LeadFunnelSubmission): string {
-  return `Neuer Lead über Saubermatik.de – ${serviceTitle(lead.serviceType)} – ${lead.name}`;
+function nameOrCompanyLine(lead: LeadFunnelSubmission): string {
+  const company = lead.company.trim();
+  if (company) return `${lead.name} / ${company}`;
+  return lead.name;
 }
 
-/** HTML-E-Mail für den Geschäftsführer (Resend). */
+export function getLeadEmailSubject(lead: LeadFunnelSubmission): string {
+  return `🔴 NEUE ANFRAGE: ${serviceTitle(lead.serviceType)} von ${nameOrCompanyLine(lead)}`;
+}
+
+function metricCell(label: string, value: string): string {
+  return `<td width="50%" style="vertical-align:top;padding:6px;">
+  <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="border-collapse:separate;border-spacing:0;background:#f8fafc;border:1px solid #e2e8f0;border-radius:10px;overflow:hidden;">
+    <tr><td style="padding:10px 14px 4px;font-size:11px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:#64748b;">${escapeHtml(label)}</td></tr>
+    <tr><td style="padding:0 14px 12px;font-size:15px;font-weight:600;line-height:1.35;color:#0f172a;">${escapeHtml(value)}</td></tr>
+  </table>
+</td>`;
+}
+
+/** HTML-E-Mail für info@… – tabellenbasiertes „Grid“ (Mail-Client-tauglich). */
 export function buildGfLeadNotificationHtml(lead: LeadFunnelSubmission): string {
-  const rows: [string, string][] = [
-    ["Leistung", serviceTitle(lead.serviceType)],
-    ["Fläche", AREA_LABELS[lead.areaSize]],
-    ["Start / Timing", TIMING_LABELS[lead.timing]],
-    ["Name", lead.name],
-    ["Firma", lead.company.trim() || "—"],
-    ["E-Mail", lead.email],
-    ["Telefon", lead.phone],
-  ];
-  const bodyRows = rows
-    .map(
-      ([k, v]) =>
-        `<tr><th style="text-align:left;padding:10px 12px;border:1px solid #e2e8f0;background:#f8fafc;width:160px;font-size:14px;color:#0f172a;">${escapeHtml(k)}</th><td style="padding:10px 12px;border:1px solid #e2e8f0;font-size:14px;color:#334155;">${escapeHtml(v)}</td></tr>`,
-    )
-    .join("");
+  const service = serviceTitle(lead.serviceType);
+  const area = AREA_LABELS[lead.areaSize];
+  const timing = TIMING_LABELS[lead.timing];
+
+  const gridTop = `<tr>${metricCell("Leistung", service)}${metricCell("Fläche", area)}</tr>
+<tr>${metricCell("Zeitpunkt", timing)}${metricCell("Name / Firma", nameOrCompanyLine(lead))}</tr>`;
+
+  const contactRow = `<tr>
+  <td colspan="2" style="padding:6px;">
+    <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="border-collapse:separate;border-spacing:0;background:#0c2745;border-radius:10px;overflow:hidden;">
+      <tr>
+        <td width="50%" style="padding:14px 16px;border-right:1px solid rgba(248,250,252,0.15);">
+          <div style="font-size:11px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:#94a3b8;">Telefon</div>
+          <div style="margin-top:6px;font-size:16px;font-weight:600;"><a href="tel:${encodeURIComponent(lead.phone.replace(/\s/g, ""))}" style="color:#5eead4;text-decoration:none;">${escapeHtml(lead.phone)}</a></div>
+        </td>
+        <td width="50%" style="padding:14px 16px;">
+          <div style="font-size:11px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:#94a3b8;">E-Mail</div>
+          <div style="margin-top:6px;font-size:16px;font-weight:600;"><a href="mailto:${escapeHtml(lead.email)}" style="color:#5eead4;text-decoration:none;">${escapeHtml(lead.email)}</a></div>
+        </td>
+      </tr>
+    </table>
+  </td>
+</tr>`;
 
   return `<!DOCTYPE html>
 <html lang="de">
 <head><meta charset="utf-8"/><meta name="viewport" content="width=device-width"/></head>
-<body style="margin:0;background:#f1f5f9;font-family:system-ui,-apple-system,sans-serif;">
-  <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="padding:24px 12px;">
+<body style="margin:0;background:#e2e8f0;font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">
+  <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="padding:28px 14px;">
     <tr>
       <td align="center">
-        <table role="presentation" width="100%" style="max-width:560px;background:#ffffff;border-radius:12px;overflow:hidden;box-shadow:0 10px 40px rgba(15,39,69,0.08);">
+        <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="max-width:600px;background:#ffffff;border-radius:14px;overflow:hidden;box-shadow:0 12px 48px rgba(15,39,69,0.12);">
           <tr>
-            <td style="background:#0c2745;padding:20px 24px;">
-              <p style="margin:0;font-size:13px;font-weight:600;color:#5eead4;letter-spacing:0.02em;">Saubermatik · Lead-Benachrichtigung</p>
-              <h1 style="margin:8px 0 0;font-size:20px;line-height:1.3;color:#f8fafc;">Neuer Lead über Saubermatik.de!</h1>
+            <td style="background:linear-gradient(135deg,#0c2745 0%,#134e6a 100%);padding:22px 26px;">
+              <p style="margin:0;font-size:12px;font-weight:600;color:#5eead4;letter-spacing:0.12em;text-transform:uppercase;">Saubermatik · Lead</p>
+              <h1 style="margin:10px 0 0;font-size:22px;line-height:1.25;color:#f8fafc;font-weight:700;">Neue Website-Anfrage</h1>
+              <p style="margin:8px 0 0;font-size:14px;line-height:1.5;color:#cbd5e1;">Alle Kerninfos auf einen Blick – Antwort direkt an den Kunden.</p>
             </td>
           </tr>
           <tr>
-            <td style="padding:24px;">
-              <p style="margin:0 0 16px;font-size:15px;line-height:1.6;color:#334155;">Es liegt eine neue Anfrage aus dem Lead-Funnel vor. Daten im Überblick:</p>
-              <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="border-collapse:collapse;">${bodyRows}</table>
-              <p style="margin:20px 0 0;font-size:13px;color:#64748b;">Gesendet automatisch · Antworten Sie dem Kunden direkt auf die angegebene E-Mail-Adresse.</p>
+            <td style="padding:20px 18px 24px;">
+              <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="border-collapse:collapse;">
+                ${gridTop}
+                ${contactRow}
+              </table>
+              <p style="margin:18px 0 0;font-size:12px;line-height:1.5;color:#64748b;text-align:center;">Automatisch gesendet von anfragen@mail.saubermatik-reinigung.de</p>
             </td>
           </tr>
         </table>
