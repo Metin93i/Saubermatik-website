@@ -226,7 +226,7 @@ export default function UnterhaltsreinigungPage() {
             </p>
           </div>
           <div className="mx-auto mt-10 max-w-xl">
-            <LeadFunnel initialServiceType="Büro/Gewerbe" />
+            <LeadFunnel initialServiceType="unterhaltsreinigung" />
           </div>
         </div>
       </section>

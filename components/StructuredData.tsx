@@ -1,3 +1,5 @@
+import { SERVICES } from "@/lib/config/services";
+
 const siteUrl =
   process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.saubermatik.de";
 
@@ -7,14 +9,33 @@ const MESSTETTEN_GEO = {
   longitude: 8.96,
 } as const;
 
+const portfolioDescription =
+  "Facility-Management und Reinigung aus einer Quelle: Unterhalts- & Büroreinigung, Fenster- & Glasreinigung, Treppenhausreinigung, Hausmeisterservice & Objektbetreuung, Grünanlagenpflege, Winterdienst, Grund- & Baureinigung sowie Fassadenreinigung in Meßstetten und der Region Zollernalb.";
+
+function buildOfferCatalog(): Record<string, unknown> {
+  return {
+    "@type": "OfferCatalog",
+    name: "Leistungsportfolio Facility & Reinigung",
+    itemListElement: SERVICES.map((s, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      item: {
+        "@type": "Service",
+        name: s.title,
+        url: `${siteUrl}/leistungen/${s.slug}`,
+        serviceType: "https://schema.org/CleaningService",
+      },
+    })),
+  };
+}
+
 function buildOrganizationJsonLd(): Record<string, unknown> {
   const org: Record<string, unknown> = {
     "@type": ["LocalBusiness", "CleaningService"],
     "@id": `${siteUrl}/#organization`,
     name: "Saubermatik Gebäudereinigung",
     url: siteUrl,
-    description:
-      "Professionelle Gebäudereinigung in Meßstetten und der Region Zollernalb: Unterhalt, Glas, Außenanlagen und Bauendreinigung.",
+    description: portfolioDescription,
     priceRange: "$$",
     address: {
       "@type": "PostalAddress",
@@ -53,6 +74,7 @@ function buildOrganizationJsonLd(): Record<string, unknown> {
         closes: "22:00",
       },
     ],
+    hasOfferCatalog: buildOfferCatalog(),
   };
 
   const phone = process.env.NEXT_PUBLIC_BUSINESS_PHONE;

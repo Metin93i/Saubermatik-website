@@ -30,7 +30,7 @@ Gemeinsame Typen und serverseitige Validierung liegen in `lib/lead/submission.ts
 
 | Feld | Typ | Pflicht | Beschreibung |
 |------|-----|---------|--------------|
-| `serviceType` | `LeadServiceType` | ja | `buero-gewerbe` \| `glas-fenster` \| `treppenhaus` \| `bauendreinigung` |
+| `serviceType` | `LeadServiceType` | ja | Slug einer Leistung, z. B. `unterhaltsreinigung`, `fenster-glasreinigung`, `treppenhausreinigung`, `hausmeisterservice`, `gruenanlagenpflege`, `winterdienst`, `grundreinigung`, `fassadenreinigung` |
 | `areaSize` | `LeadAreaSize` | ja | `bis-100` \| `100-500` \| `ueber-500` |
 | `timing` | `LeadTiming` | ja | `sofort` \| `naechster-monat` \| `preisvergleich` |
 | `name` | string | ja | getrimmt, max. 200 Zeichen |

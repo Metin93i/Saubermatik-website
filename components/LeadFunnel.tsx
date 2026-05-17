@@ -2,6 +2,7 @@
 
 import type { FormEvent } from "react";
 import { useCallback, useMemo, useState } from "react";
+import { FUNNEL_SERVICE_OPTIONS, SERVICES } from "@/lib/config/services";
 import type {
   LeadAreaSize,
   LeadFunnelSubmission,
@@ -21,23 +22,13 @@ export type LeadFunnelProps = {
   /** Zusätzliche Tailwind-Klassen für den äußeren Wrapper */
   className?: string;
   /**
-   * Bekannter Leistungstyp (z. B. `buero-gewerbe`) oder Anzeige-Label (z. B. `Büro/Gewerbe`).
-   * Wird erkannt, startet der Funnel bei der Flächenwahl — Schritt 1 entfällt.
+   * Slug (z. B. `unterhaltsreinigung`), Kurzlabel oder voller Leistungstitel –
+   * bei Treffer startet der Funnel bei der Flächenwahl (Schritt 1 entfällt).
    */
   initialServiceType?: string;
 };
 
 type StepIndex = 0 | 1 | 2 | 3;
-
-const SERVICE_OPTIONS: ReadonlyArray<{
-  value: LeadServiceType;
-  label: string;
-}> = [
-  { value: "buero-gewerbe", label: "Büro / Gewerbe" },
-  { value: "glas-fenster", label: "Glas / Fenster" },
-  { value: "treppenhaus", label: "Treppenhaus" },
-  { value: "bauendreinigung", label: "Bauendreinigung" },
-];
 
 const AREA_OPTIONS: ReadonlyArray<{ value: LeadAreaSize; label: string }> = [
   { value: "bis-100", label: "Bis 100 m²" },
@@ -55,7 +46,7 @@ function compactKey(s: string): string {
   return s.toLowerCase().replace(/[\s/–—-]+/g, "");
 }
 
-/** Erkennt API-Wert oder gängige Schreibweisen des Button-Labels. */
+/** Erkennt Slug, Kurzlabel oder vollen Titel aus der zentralen Service-Konfiguration. */
 function resolveInitialServiceType(raw?: string): LeadServiceType | null {
   if (!raw?.trim()) return null;
   const t = raw.trim();
@@ -63,16 +54,25 @@ function resolveInitialServiceType(raw?: string): LeadServiceType | null {
     return t as LeadServiceType;
   }
   const needle = compactKey(t);
-  for (const opt of SERVICE_OPTIONS) {
+  for (const opt of FUNNEL_SERVICE_OPTIONS) {
     if (compactKey(opt.label) === needle || compactKey(opt.value) === needle) {
       return opt.value;
+    }
+  }
+  for (const s of SERVICES) {
+    if (
+      compactKey(s.slug) === needle ||
+      compactKey(s.title) === needle ||
+      compactKey(s.funnelLabel) === needle
+    ) {
+      return s.slug;
     }
   }
   return null;
 }
 
 function serviceLabel(value: LeadServiceType): string {
-  return SERVICE_OPTIONS.find((o) => o.value === value)?.label ?? value;
+  return SERVICES.find((s) => s.slug === value)?.title ?? value;
 }
 
 function classNames(...parts: Array<string | false | undefined>) {
@@ -81,6 +81,9 @@ function classNames(...parts: Array<string | false | undefined>) {
 
 const choiceButtonClass =
   "rounded-xl border border-foreground/15 bg-background px-4 py-3 text-left text-sm font-semibold text-foreground shadow-sm transition hover:border-secondary/60 hover:bg-secondary/5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary";
+
+const serviceTileClass =
+  "flex min-h-[4.5rem] flex-col items-start justify-center gap-0.5 rounded-xl border border-foreground/15 bg-background px-2.5 py-2.5 text-left shadow-sm transition hover:border-secondary/60 hover:bg-secondary/5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary sm:min-h-[5rem] sm:gap-1 sm:px-3 sm:py-3";
 
 const choiceButtonActiveClass =
   "border-secondary bg-secondary/10 ring-2 ring-secondary/30";
@@ -292,13 +295,13 @@ export function LeadFunnel({
 
       <div className="mt-6">
         {step === 0 && (
-          <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
-            {SERVICE_OPTIONS.map((opt) => (
+          <div className="grid grid-cols-2 gap-2 sm:gap-3 md:grid-cols-3 lg:grid-cols-4">
+            {FUNNEL_SERVICE_OPTIONS.map((opt) => (
               <button
                 key={opt.value}
                 type="button"
                 className={classNames(
-                  choiceButtonClass,
+                  serviceTileClass,
                   serviceType === opt.value && choiceButtonActiveClass,
                 )}
                 onClick={() => {
@@ -306,7 +309,12 @@ export function LeadFunnel({
                   setStep(1);
                 }}
               >
-                {opt.label}
+                <span className="text-lg leading-none" aria-hidden>
+                  {opt.emoji}
+                </span>
+                <span className="text-[11px] font-semibold leading-snug text-foreground sm:text-xs">
+                  {opt.label}
+                </span>
               </button>
             ))}
           </div>

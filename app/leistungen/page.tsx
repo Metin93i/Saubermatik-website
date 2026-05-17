@@ -5,7 +5,7 @@ import { LEISTUNG_SLUGS, LEISTUNGEN_BY_SLUG } from "@/lib/routes/leistungen";
 export const metadata: Metadata = {
   title: "Leistungen",
   description:
-    "Professionelle Gebäudereinigung in der Region Zollernalb: Unterhalt, Glas, Außenanlagen und Bauendreinigung.",
+    "Facility & Reinigung in der Zollernalb: Unterhalts- & Büroreinigung, Glas, Treppenhaus, Hausmeister, Grünanlagen, Winterdienst, Grund-/Bau- und Fassadenreinigung.",
 };
 
 export default function LeistungenPage() {
@@ -22,7 +22,7 @@ export default function LeistungenPage() {
         </p>
       </div>
 
-      <ul className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2">
+      <ul className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {LEISTUNG_SLUGS.map((slug) => {
           const item = LEISTUNGEN_BY_SLUG[slug];
           return (

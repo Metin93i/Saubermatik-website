@@ -1,13 +1,11 @@
 /** Gemeinsame Typen & Parser für Lead-Funnel UI und `POST /api/lead` (nur Server/Shared, kein `"use client"`). */
 
-export const LEAD_SERVICE_TYPES = [
-  "buero-gewerbe",
-  "glas-fenster",
-  "treppenhaus",
-  "bauendreinigung",
-] as const;
+import type { ServiceSlug } from "@/lib/config/services";
+import { LEAD_SERVICE_TYPES } from "@/lib/config/services";
 
-export type LeadServiceType = (typeof LEAD_SERVICE_TYPES)[number];
+export type LeadServiceType = ServiceSlug;
+
+export { LEAD_SERVICE_TYPES };
 
 export const LEAD_AREA_SIZES = ["bis-100", "100-500", "ueber-500"] as const;
 
