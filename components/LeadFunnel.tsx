@@ -80,10 +80,10 @@ function classNames(...parts: Array<string | false | undefined>) {
 }
 
 const choiceButtonClass =
-  "rounded-xl border border-foreground/15 bg-background px-4 py-3 text-left text-sm font-semibold text-foreground shadow-sm transition hover:border-secondary/60 hover:bg-secondary/5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary";
+  "rounded-xl border border-foreground/15 bg-background px-4 py-3 text-left text-sm font-semibold text-foreground shadow-md transition-all duration-200 hover:scale-[1.02] hover:border-secondary/50 hover:bg-secondary/5 hover:shadow-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary active:scale-[0.99]";
 
 const serviceTileClass =
-  "flex min-h-[4.5rem] flex-col items-start justify-center gap-0.5 rounded-xl border border-foreground/15 bg-background px-2.5 py-2.5 text-left shadow-sm transition hover:border-secondary/60 hover:bg-secondary/5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary sm:min-h-[5rem] sm:gap-1 sm:px-3 sm:py-3";
+  "flex min-h-[4.5rem] flex-col items-start justify-center gap-0.5 rounded-xl border border-foreground/15 bg-background px-2.5 py-2.5 text-left shadow-md transition-all duration-200 hover:scale-[1.02] hover:border-secondary/50 hover:bg-secondary/5 hover:shadow-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary active:scale-[0.99] sm:min-h-[5rem] sm:gap-1 sm:px-3 sm:py-3";
 
 const choiceButtonActiveClass =
   "border-secondary bg-secondary/10 ring-2 ring-secondary/30";
@@ -232,7 +232,7 @@ export function LeadFunnel({
     return (
       <section
         className={classNames(
-          "rounded-2xl border border-foreground/10 bg-white p-6 shadow-lg sm:p-8",
+          "rounded-2xl border border-foreground/10 bg-white p-6 shadow-xl ring-1 ring-black/5 transition-all duration-300 hover:shadow-2xl sm:p-8",
           className,
         )}
         aria-live="polite"
@@ -254,7 +254,7 @@ export function LeadFunnel({
   return (
     <section
       className={classNames(
-        "rounded-2xl border border-foreground/10 bg-white p-6 shadow-lg sm:p-8",
+        "rounded-2xl border border-foreground/10 bg-white p-6 shadow-xl ring-1 ring-black/5 transition-all duration-300 hover:shadow-2xl sm:p-8",
         className,
       )}
       id="kontakt-anfrage"
@@ -440,7 +440,7 @@ export function LeadFunnel({
               <button
                 type="submit"
                 disabled={isLoading}
-                className="inline-flex h-11 min-w-[10.5rem] items-center justify-center gap-2 rounded-xl bg-primary px-5 text-sm font-semibold text-primary-foreground shadow-sm transition hover:bg-primary/90 disabled:cursor-not-allowed disabled:opacity-60"
+                className="inline-flex h-11 min-w-[10.5rem] items-center justify-center gap-2 rounded-xl bg-primary px-5 text-sm font-semibold text-primary-foreground shadow-lg shadow-primary/20 transition-all duration-200 hover:scale-[1.02] hover:bg-primary/90 hover:shadow-xl disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:scale-100"
               >
                 {isLoading ? (
                   <>

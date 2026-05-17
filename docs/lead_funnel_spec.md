@@ -8,7 +8,7 @@ Das Multi-Step-Formular maximiert **Conversion im Above-the-Fold**-Bereich: weni
 
 | Schritt | Frage | Eingabe |
 |--------:|-------|---------|
-| 1 | Was dürfen wir für Sie reinigen? | Buttons: Büro/Gewerbe, Glas/Fenster, Treppenhaus, Bauendreinigung |
+| 1 | Was dürfen wir für Sie reinigen? | Raster mit **8** Leistungen (Slug-basiert, siehe `lib/config/services.ts`) |
 | 2 | Wie groß ist die Fläche ungefähr? | Buttons: Bis 100 m², 100–500 m², Über 500 m² |
 | 3 | Wann sollen wir starten? | Buttons: Sofort, Nächster Monat, Preisvergleich |
 | 4 | Kontaktdaten | Felder: Name, Firma (optional), E-Mail, Telefon + Submit |
@@ -19,7 +19,7 @@ Gemeinsame Typen und serverseitige Validierung liegen in `lib/lead/submission.ts
 
 - `LeadServiceType`, `LeadAreaSize`, `LeadTiming`  
 - `LeadFunnelSubmission` (kombiniert alle Antworten)  
-- `LeadFunnelProps` (`className?`)
+- `LeadFunnelProps` (`className?`, `initialServiceType?`)
 
 ## API: `POST /api/lead`
 
@@ -51,13 +51,13 @@ Validierung erfolgt zentral über `parseLeadSubmission()` in `lib/lead/submissio
 ```
 
 - `emailed: true` – Resend hat die Benachrichtigungs-Mail akzeptiert.  
-- `emailed: false` – Anfrage ist gültig angenommen, aber z. B. `RESEND_API_KEY` oder Absender/Empfänger-Env fehlt (siehe unten); kein Provider-Fehler.
+- `emailed: false` – Anfrage ist gültig angenommen, aber z. B. ohne `RESEND_API_KEY` (Entwicklung: strukturierter **Console-Log**) oder ohne vollständige Mail-Konfiguration; die UI bleibt funktionsfähig (`HTTP 200`).
 
 ### Fehlerantworten
 
 - **`400`** – Validierungsfehler, Body enthält `{ "ok": false, "message": "<Grund>" }`.  
 - **`400`** – Ungültiges JSON: `{ "ok": false, "message": "Ungültiges JSON." }`.  
-- **`502`** – Resend liefert einen Fehler trotz gesetztem Key: `{ "ok": false, "message": "…" }`.
+- **`502`** – Resend meldet einen Fehler trotz gesetztem Key: `{ "ok": false, "message": "…" }`.
 
 ### UI-Verhalten (`LeadFunnel`)
 
@@ -65,15 +65,23 @@ Validierung erfolgt zentral über `parseLeadSubmission()` in `lib/lead/submissio
 - **`isSuccess`:** Dankesseite mit 60-Minuten-Versprechen (kein weiteres Absenden nötig).  
 - **`isError`:** Server- oder Netzwerkmeldung unter dem Formular (`role="alert"`).
 
-## E-Mail-Integration (Resend)
+## E-Mail-Integration (Resend, Produktion)
 
-**Modul:** `lib/lead/email.ts`
+**Paket:** `resend` (offizieller Node-Client).  
+**HTML-Template & Betreff:** `lib/lead/email.ts` (`buildGfLeadNotificationHtml`, `getLeadEmailSubject`).  
+**Versand:** `app/api/lead/route.ts` initialisiert `new Resend(process.env.RESEND_API_KEY)` und ruft `resend.emails.send({ from, to, subject, html })` auf.
 
-- **`RESEND_API_KEY`** (Secret, nur Server): Bearer-Token für `https://api.resend.com/emails`. Ohne Key: kein Versand, API liefert dennoch `200` mit `emailed: false`.  
-- **`RESEND_FROM_EMAIL`:** verifizierte Absender-Adresse (Resend-Domain).  
-- **`LEAD_NOTIFICATION_EMAIL`:** Zielpostfach für neue Leads.
+### Umgebungsvariablen (Live-System)
 
-HTML wird in `buildLeadEmailHtml()` aus dem Payload gebaut; der Versand ist in `sendLeadViaResend()` gekapselt.
+| Variable | Pflicht (Live) | Rolle |
+|----------|------------------|--------|
+| **`RESEND_API_KEY`** | **ja** | API-Key aus dem Resend-Dashboard (nur Server, nie im Client). |
+| **`RESEND_FROM_EMAIL`** | **ja** | Verifizierte Absender-Adresse (Domain bei Resend eingebunden). |
+| **`LEAD_EMAIL_RECIPIENT`** | **ja** | Postfach des Geschäftsführers / der Zentrale für Lead-Benachrichtigungen. |
+
+**Hinweis:** Solange `RESEND_API_KEY` fehlt (typisch lokal), loggt die Route den Lead **strukturiert** per `console.dir` und antwortet mit **`HTTP 200`** und `emailed: false`, damit das Formular nicht „hängen bleibt“.
+
+**Abwärtskompatibilität:** Ist `LEAD_EMAIL_RECIPIENT` nicht gesetzt, wird optional `LEAD_NOTIFICATION_EMAIL` als Empfänger-Fallback gelesen (Migration alter Deployments).
 
 ## Hinweise
 
