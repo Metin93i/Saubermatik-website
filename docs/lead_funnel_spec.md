@@ -83,6 +83,14 @@ Validierung erfolgt zentral über `parseLeadSubmission()` in `lib/lead/submissio
 
 **Abwärtskompatibilität:** Ist `LEAD_EMAIL_RECIPIENT` nicht gesetzt, wird optional `LEAD_NOTIFICATION_EMAIL` als Empfänger-Fallback gelesen (Migration alter Deployments).
 
+### Troubleshooting: „Postfach bleibt leer“
+
+1. **Browser:** DevTools → Netzwerk → `POST /api/lead` → Antwortbody: `emailed: true` oder `false`. Bei `false` siehe Server-Logs (`hasApiKey` / `hasRecipient` beim Start der Verarbeitung).  
+2. **Lokal:** `.env.local` im **Projektroot**, danach **`npm run dev` neu starten**. Ohne `RESEND_API_KEY` landet der Lead nur in der **Konsole**, nicht im Postfach.  
+3. **Vercel o. Ä.:** Umgebungsvariablen im Dashboard setzen und **Redeploy**.  
+4. **Resend:** [Dashboard](https://resend.com/emails) → Logs; Spam-Ordner prüfen.  
+5. **API-Key:** Nach Leak im Chat Key **rotieren** – alter Key kann deaktiviert sein.
+
 ## Hinweise
 
 - Rate-Limiting, Honeypot oder Turnstile sind für Produktion empfohlen (noch nicht implementiert).  

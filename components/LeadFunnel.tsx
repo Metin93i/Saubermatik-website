@@ -138,6 +138,7 @@ export function LeadFunnel({
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
+  const [leadEmailSent, setLeadEmailSent] = useState(true);
 
   const isError = errorMessage !== null;
   const canGoBack = step > 0 && !isSuccess;
@@ -216,6 +217,14 @@ export function LeadFunnel({
           return;
         }
 
+        const emailedFlag =
+          !data || typeof data !== "object"
+            ? true
+            : "emailed" in data
+              ? (data as { emailed: unknown }).emailed === true
+              : true;
+
+        setLeadEmailSent(emailedFlag);
         setIsSuccess(true);
       } catch {
         setErrorMessage(
@@ -247,6 +256,23 @@ export function LeadFunnel({
           Kleingedrucktes. Wenn es schneller gehen muss, rufen Sie uns direkt
           an.
         </p>
+        {!leadEmailSent ? (
+          <div
+            className="mt-5 rounded-xl border border-amber-200 bg-amber-50 px-4 py-3 text-sm leading-6 text-amber-950"
+            role="status"
+          >
+            <strong className="font-semibold">Hinweis:</strong> Ihre Daten sind
+            angekommen, aber die automatische E-Mail an unser Team wurde auf
+            diesem Server{" "}
+            <strong>nicht</strong> versendet (meist fehlt{" "}
+            <code className="rounded bg-amber-100/80 px-1">RESEND_API_KEY</code>{" "}
+            oder <code className="rounded bg-amber-100/80 px-1">LEAD_EMAIL_RECIPIENT</code>{" "}
+            in den Umgebungsvariablen, oder der Deploy kennt die{" "}
+            <code className="rounded bg-amber-100/80 px-1">.env</code> nicht).
+            Bitte prüfen Sie das Server-Terminal bzw. die Hosting-Konsole – oder
+            melden Sie sich telefonisch.
+          </div>
+        ) : null}
       </section>
     );
   }

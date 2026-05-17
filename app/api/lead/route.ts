@@ -34,6 +34,12 @@ export async function POST(request: Request) {
     process.env.LEAD_EMAIL_RECIPIENT?.trim() ||
     process.env.LEAD_NOTIFICATION_EMAIL?.trim();
 
+  console.log("[lead] Eingang verarbeitet", {
+    hasApiKey: Boolean(apiKey),
+    hasRecipient: Boolean(recipient),
+    from: RESEND_FROM_LIVE.split("<")[1]?.replace(">", "") ?? RESEND_FROM_LIVE,
+  });
+
   if (!apiKey) {
     console.log(
       "[lead] Kein RESEND_API_KEY – Fallback: Lead strukturiert geloggt (HTTP 200 für UI).",
@@ -67,9 +73,9 @@ export async function POST(request: Request) {
   }
 
   const resend = new Resend(apiKey);
-  const { error } = await resend.emails.send({
+  const { data, error } = await resend.emails.send({
     from: RESEND_FROM_LIVE,
-    to: recipient,
+    to: [recipient],
     subject: getLeadEmailSubject(lead),
     html: buildGfLeadNotificationHtml(lead),
   });
@@ -91,6 +97,11 @@ export async function POST(request: Request) {
       { status: 502 },
     );
   }
+
+  console.log("[lead] Resend: E-Mail akzeptiert", {
+    id: data?.id ?? null,
+    to: recipient,
+  });
 
   return Response.json({
     ok: true,
