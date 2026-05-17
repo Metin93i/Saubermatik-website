@@ -8,6 +8,7 @@ import type {
   LeadServiceType,
   LeadTiming,
 } from "@/lib/lead/submission";
+import { LEAD_SERVICE_TYPES } from "@/lib/lead/submission";
 
 export type {
   LeadAreaSize,
@@ -19,6 +20,11 @@ export type {
 export type LeadFunnelProps = {
   /** Zusätzliche Tailwind-Klassen für den äußeren Wrapper */
   className?: string;
+  /**
+   * Bekannter Leistungstyp (z. B. `buero-gewerbe`) oder Anzeige-Label (z. B. `Büro/Gewerbe`).
+   * Wird erkannt, startet der Funnel bei der Flächenwahl — Schritt 1 entfällt.
+   */
+  initialServiceType?: string;
 };
 
 type StepIndex = 0 | 1 | 2 | 3;
@@ -44,6 +50,30 @@ const TIMING_OPTIONS: ReadonlyArray<{ value: LeadTiming; label: string }> = [
   { value: "naechster-monat", label: "Nächster Monat" },
   { value: "preisvergleich", label: "Preisvergleich" },
 ];
+
+function compactKey(s: string): string {
+  return s.toLowerCase().replace(/[\s/–—-]+/g, "");
+}
+
+/** Erkennt API-Wert oder gängige Schreibweisen des Button-Labels. */
+function resolveInitialServiceType(raw?: string): LeadServiceType | null {
+  if (!raw?.trim()) return null;
+  const t = raw.trim();
+  if ((LEAD_SERVICE_TYPES as readonly string[]).includes(t)) {
+    return t as LeadServiceType;
+  }
+  const needle = compactKey(t);
+  for (const opt of SERVICE_OPTIONS) {
+    if (compactKey(opt.label) === needle || compactKey(opt.value) === needle) {
+      return opt.value;
+    }
+  }
+  return null;
+}
+
+function serviceLabel(value: LeadServiceType): string {
+  return SERVICE_OPTIONS.find((o) => o.value === value)?.label ?? value;
+}
 
 function classNames(...parts: Array<string | false | undefined>) {
   return parts.filter(Boolean).join(" ");
@@ -81,9 +111,21 @@ function SubmitSpinner() {
   );
 }
 
-export function LeadFunnel({ className }: LeadFunnelProps) {
-  const [step, setStep] = useState<StepIndex>(0);
-  const [serviceType, setServiceType] = useState<LeadServiceType | null>(null);
+export function LeadFunnel({
+  className,
+  initialServiceType,
+}: LeadFunnelProps) {
+  const initialResolved = useMemo(
+    () => resolveInitialServiceType(initialServiceType),
+    [initialServiceType],
+  );
+
+  const [step, setStep] = useState<StepIndex>(() =>
+    initialResolved ? 1 : 0,
+  );
+  const [serviceType, setServiceType] = useState<LeadServiceType | null>(
+    () => initialResolved,
+  );
   const [areaSize, setAreaSize] = useState<LeadAreaSize | null>(null);
   const [timing, setTiming] = useState<LeadTiming | null>(null);
   const [name, setName] = useState("");
@@ -216,7 +258,7 @@ export function LeadFunnel({ className }: LeadFunnelProps) {
       aria-labelledby="lead-funnel-title"
     >
       <div className="flex items-start justify-between gap-4">
-        <div>
+        <div className="min-w-0 flex-1">
           <p className="text-xs font-semibold uppercase tracking-wide text-muted">
             Kurz-Anfrage
           </p>
@@ -226,8 +268,26 @@ export function LeadFunnel({ className }: LeadFunnelProps) {
           >
             {stepTitle}
           </h2>
+          {serviceType !== null && step >= 1 && step <= 3 ? (
+            <p className="mt-2 text-xs text-muted">
+              Leistung:{" "}
+              <span className="font-medium text-foreground">
+                {serviceLabel(serviceType)}
+              </span>
+              {" · "}
+              <button
+                type="button"
+                className="font-semibold text-secondary underline-offset-2 hover:underline"
+                onClick={() => setStep(0)}
+              >
+                ändern
+              </button>
+            </p>
+          ) : null}
         </div>
-        <p className="text-xs font-medium text-muted">Schritt {step + 1} / 4</p>
+        <p className="shrink-0 text-xs font-medium text-muted">
+          Schritt {step + 1} / 4
+        </p>
       </div>
 
       <div className="mt-6">

@@ -12,7 +12,9 @@ type PageProps = {
 };
 
 export function generateStaticParams() {
-  return LEISTUNG_SLUGS.map((slug) => ({ slug }));
+  return LEISTUNG_SLUGS.filter((slug) => slug !== "unterhaltsreinigung").map(
+    (slug) => ({ slug }),
+  );
 }
 
 export async function generateMetadata({
