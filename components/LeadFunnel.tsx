@@ -261,16 +261,24 @@ export function LeadFunnel({
             className="mt-5 rounded-xl border border-amber-200 bg-amber-50 px-4 py-3 text-sm leading-6 text-amber-950"
             role="status"
           >
-            <strong className="font-semibold">Hinweis:</strong> Ihre Daten sind
-            angekommen, aber die automatische E-Mail an unser Team wurde auf
-            diesem Server{" "}
-            <strong>nicht</strong> versendet (meist fehlt{" "}
-            <code className="rounded bg-amber-100/80 px-1">RESEND_API_KEY</code>{" "}
-            oder <code className="rounded bg-amber-100/80 px-1">LEAD_EMAIL_RECIPIENT</code>{" "}
-            in den Umgebungsvariablen, oder der Deploy kennt die{" "}
-            <code className="rounded bg-amber-100/80 px-1">.env</code> nicht).
-            Bitte prüfen Sie das Server-Terminal bzw. die Hosting-Konsole – oder
-            melden Sie sich telefonisch.
+            <p>
+              <strong className="font-semibold">Ein Moment:</strong> Ihre
+              Angaben sind bei uns angekommen. Die automatische
+              Büro-Benachrichtigung konnte auf diesem System gerade nicht
+              ausgelöst werden – rufen Sie uns bitte kurz an oder schreiben Sie
+              uns direkt per E-Mail, damit wir Ihre Anfrage sicher aufnehmen.
+            </p>
+            <p className="mt-2 text-xs leading-5 text-amber-900/85">
+              Für den Betrieb der Seite: In den Server-Umgebungsvariablen{" "}
+              <code className="rounded bg-amber-100/90 px-1 font-mono text-[11px]">
+                RESEND_API_KEY
+              </code>{" "}
+              und{" "}
+              <code className="rounded bg-amber-100/90 px-1 font-mono text-[11px]">
+                LEAD_EMAIL_RECIPIENT
+              </code>{" "}
+              setzen und den Dienst neu starten bzw. neu deployen.
+            </p>
           </div>
         ) : null}
       </section>
