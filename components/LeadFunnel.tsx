@@ -2,32 +2,23 @@
 
 import type { FormEvent } from "react";
 import { useCallback, useMemo, useState } from "react";
+import type {
+  LeadAreaSize,
+  LeadFunnelSubmission,
+  LeadServiceType,
+  LeadTiming,
+} from "@/lib/lead/submission";
 
-export type LeadServiceType =
-  | "buero-gewerbe"
-  | "glas-fenster"
-  | "treppenhaus"
-  | "bauendreinigung";
-
-export type LeadAreaSize = "bis-100" | "100-500" | "ueber-500";
-
-export type LeadTiming = "sofort" | "naechster-monat" | "preisvergleich";
-
-export type LeadFunnelSubmission = {
-  serviceType: LeadServiceType;
-  areaSize: LeadAreaSize;
-  timing: LeadTiming;
-  name: string;
-  company: string;
-  email: string;
-  phone: string;
-};
+export type {
+  LeadAreaSize,
+  LeadFunnelSubmission,
+  LeadServiceType,
+  LeadTiming,
+} from "@/lib/lead/submission";
 
 export type LeadFunnelProps = {
   /** Zusätzliche Tailwind-Klassen für den äußeren Wrapper */
   className?: string;
-  /** Wird nach erfolgreicher Validierung aufgerufen (z. B. `fetch` an API/CRM). */
-  onSubmit?: (payload: LeadFunnelSubmission) => void | Promise<void>;
 };
 
 type StepIndex = 0 | 1 | 2 | 3;
@@ -64,7 +55,33 @@ const choiceButtonClass =
 const choiceButtonActiveClass =
   "border-secondary bg-secondary/10 ring-2 ring-secondary/30";
 
-export function LeadFunnel({ className, onSubmit }: LeadFunnelProps) {
+function SubmitSpinner() {
+  return (
+    <svg
+      className="h-4 w-4 shrink-0 animate-spin"
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      aria-hidden
+    >
+      <circle
+        className="opacity-25"
+        cx="12"
+        cy="12"
+        r="10"
+        stroke="currentColor"
+        strokeWidth="4"
+      />
+      <path
+        className="opacity-75"
+        fill="currentColor"
+        d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+      />
+    </svg>
+  );
+}
+
+export function LeadFunnel({ className }: LeadFunnelProps) {
   const [step, setStep] = useState<StepIndex>(0);
   const [serviceType, setServiceType] = useState<LeadServiceType | null>(null);
   const [areaSize, setAreaSize] = useState<LeadAreaSize | null>(null);
@@ -73,14 +90,15 @@ export function LeadFunnel({ className, onSubmit }: LeadFunnelProps) {
   const [company, setCompany] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
-  const [submitError, setSubmitError] = useState<string | null>(null);
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isComplete, setIsComplete] = useState(false);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
+  const [isLoading, setIsLoading] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
 
-  const canGoBack = step > 0 && !isComplete;
+  const isError = errorMessage !== null;
+  const canGoBack = step > 0 && !isSuccess;
 
   const stepTitle = useMemo(() => {
-    if (isComplete) return "Vielen Dank!";
+    if (isSuccess) return "Vielen Dank!";
     switch (step) {
       case 0:
         return "Was dürfen wir für Sie reinigen?";
@@ -91,20 +109,20 @@ export function LeadFunnel({ className, onSubmit }: LeadFunnelProps) {
       default:
         return "Ihre Kontaktdaten";
     }
-  }, [isComplete, step]);
+  }, [isSuccess, step]);
 
   const goBack = useCallback(() => {
-    setSubmitError(null);
+    setErrorMessage(null);
     setStep((s) => (s > 0 ? ((s - 1) as StepIndex) : s));
   }, []);
 
   const handleFinalSubmit = useCallback(
     async (e: FormEvent<HTMLFormElement>) => {
       e.preventDefault();
-      setSubmitError(null);
+      setErrorMessage(null);
 
       if (!serviceType || !areaSize || !timing) {
-        setSubmitError("Bitte alle Schritte ausfüllen.");
+        setErrorMessage("Bitte alle Schritte ausfüllen.");
         return;
       }
 
@@ -119,28 +137,53 @@ export function LeadFunnel({ className, onSubmit }: LeadFunnelProps) {
       };
 
       if (!payload.name || !payload.email || !payload.phone) {
-        setSubmitError("Bitte Name, E-Mail und Telefon ausfüllen.");
+        setErrorMessage("Bitte Name, E-Mail und Telefon ausfüllen.");
         return;
       }
 
-      setIsSubmitting(true);
+      setIsLoading(true);
       try {
-        if (onSubmit) {
-          await onSubmit(payload);
+        const response = await fetch("/api/lead", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload),
+        });
+
+        const data: unknown = await response.json().catch(() => null);
+        const message =
+          data &&
+          typeof data === "object" &&
+          "message" in data &&
+          typeof (data as { message: unknown }).message === "string"
+            ? (data as { message: string }).message
+            : null;
+        const ok =
+          data &&
+          typeof data === "object" &&
+          "ok" in data &&
+          (data as { ok: unknown }).ok === true;
+
+        if (!response.ok || !ok) {
+          setErrorMessage(
+            message ??
+              "Die Übertragung ist fehlgeschlagen. Bitte versuchen Sie es erneut oder rufen Sie uns an.",
+          );
+          return;
         }
-        setIsComplete(true);
+
+        setIsSuccess(true);
       } catch {
-        setSubmitError(
-          "Senden ist fehlgeschlagen. Bitte versuchen Sie es erneut oder rufen Sie uns an.",
+        setErrorMessage(
+          "Netzwerkfehler. Bitte prüfen Sie Ihre Verbindung und versuchen Sie es erneut.",
         );
       } finally {
-        setIsSubmitting(false);
+        setIsLoading(false);
       }
     },
-    [areaSize, company, email, name, onSubmit, phone, serviceType, timing],
+    [areaSize, company, email, name, phone, serviceType, timing],
   );
 
-  if (isComplete) {
+  if (isSuccess) {
     return (
       <section
         className={classNames(
@@ -151,11 +194,13 @@ export function LeadFunnel({ className, onSubmit }: LeadFunnelProps) {
       >
         <p className="text-sm font-semibold text-secondary">Anfrage gesendet</p>
         <h2 className="mt-2 text-xl font-bold tracking-tight text-primary sm:text-2xl">
-          Wir melden uns schnellstmöglich bei Ihnen.
+          Vielen Dank! Wir analysieren Ihr Objekt und melden uns innerhalb von
+          60 Minuten bei Ihnen!
         </h2>
         <p className="mt-3 text-sm leading-6 text-muted">
-          Wenn Sie noch etwas ergänzen möchten, rufen Sie uns gerne direkt an
-          oder senden Sie eine kurze Nachricht mit Ihrem Objektstandort.
+          Sie hören von uns mit einem konkreten Vorschlag – ohne Druck, ohne
+          Kleingedrucktes. Wenn es schneller gehen muss, rufen Sie uns direkt
+          an.
         </p>
       </section>
     );
@@ -260,6 +305,7 @@ export function LeadFunnel({ className, onSubmit }: LeadFunnelProps) {
                   autoComplete="name"
                   value={name}
                   onChange={(ev) => setName(ev.target.value)}
+                  disabled={isLoading}
                   required
                 />
               </label>
@@ -271,6 +317,7 @@ export function LeadFunnel({ className, onSubmit }: LeadFunnelProps) {
                   autoComplete="organization"
                   value={company}
                   onChange={(ev) => setCompany(ev.target.value)}
+                  disabled={isLoading}
                 />
               </label>
               <label className="block text-sm font-medium text-foreground">
@@ -283,6 +330,7 @@ export function LeadFunnel({ className, onSubmit }: LeadFunnelProps) {
                   inputMode="email"
                   value={email}
                   onChange={(ev) => setEmail(ev.target.value)}
+                  disabled={isLoading}
                   required
                 />
               </label>
@@ -296,14 +344,15 @@ export function LeadFunnel({ className, onSubmit }: LeadFunnelProps) {
                   inputMode="tel"
                   value={phone}
                   onChange={(ev) => setPhone(ev.target.value)}
+                  disabled={isLoading}
                   required
                 />
               </label>
             </div>
 
-            {submitError ? (
+            {isError ? (
               <p className="text-sm font-medium text-red-700" role="alert">
-                {submitError}
+                {errorMessage}
               </p>
             ) : null}
 
@@ -311,8 +360,9 @@ export function LeadFunnel({ className, onSubmit }: LeadFunnelProps) {
               {canGoBack ? (
                 <button
                   type="button"
-                  className="text-sm font-semibold text-primary underline-offset-4 hover:underline"
+                  className="text-sm font-semibold text-primary underline-offset-4 hover:underline disabled:pointer-events-none disabled:opacity-50"
                   onClick={goBack}
+                  disabled={isLoading}
                 >
                   Zurück
                 </button>
@@ -321,10 +371,17 @@ export function LeadFunnel({ className, onSubmit }: LeadFunnelProps) {
               )}
               <button
                 type="submit"
-                disabled={isSubmitting}
-                className="inline-flex h-11 items-center justify-center rounded-xl bg-primary px-5 text-sm font-semibold text-primary-foreground shadow-sm transition hover:bg-primary/90 disabled:cursor-not-allowed disabled:opacity-60"
+                disabled={isLoading}
+                className="inline-flex h-11 min-w-[10.5rem] items-center justify-center gap-2 rounded-xl bg-primary px-5 text-sm font-semibold text-primary-foreground shadow-sm transition hover:bg-primary/90 disabled:cursor-not-allowed disabled:opacity-60"
               >
-                {isSubmitting ? "Wird gesendet…" : "Anfrage senden"}
+                {isLoading ? (
+                  <>
+                    <SubmitSpinner />
+                    Wird gesendet…
+                  </>
+                ) : (
+                  "Anfrage senden"
+                )}
               </button>
             </div>
           </form>

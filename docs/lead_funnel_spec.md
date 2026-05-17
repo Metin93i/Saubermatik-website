@@ -15,29 +15,67 @@ Das Multi-Step-Formular maximiert **Conversion im Above-the-Fold**-Bereich: weni
 
 ### Typisierung
 
-Exportierte Typen (strikt, für Props & Payload):
+Gemeinsame Typen und serverseitige Validierung liegen in `lib/lead/submission.ts`. Die UI-Komponente importiert und re-exportiert:
 
 - `LeadServiceType`, `LeadAreaSize`, `LeadTiming`  
 - `LeadFunnelSubmission` (kombiniert alle Antworten)  
-- `LeadFunnelProps` (`className?`, `onSubmit?`)
+- `LeadFunnelProps` (`className?`)
 
-## Datenfluss / Backend-Anbindung (geplant)
+## API: `POST /api/lead`
 
-**Aktueller Stand:** Die Komponente ist eine **Client Component** (`"use client"`). Ohne `onSubmit`-Prop wird nach erfolgreicher Validierung nur der **Success-State** angezeigt (kein Server-Call).
+**Datei:** `app/api/lead/route.ts`  
+**Content-Type:** `application/json`
 
-**Empfohlene Produktions-Anbindung (headless, ohne DB im Frontend):**
+### Request-Body (Payload)
 
-1. **Route Handler** `app/api/lead/route.ts` (oder externes CRM/Webhook).  
-2. `onSubmit` in der Parent-Komponente (Server-seitig nicht direkt möglich – daher Wrapper-Pattern):  
-   - Option A: `LeadFunnel` bleibt rein clientseitig; auf der Startseite übergibt ein kleiner Client-Wrapper `onSubmit`, der `fetch("/api/lead", { method: "POST", body: JSON.stringify(payload) })` ausführt.  
-   - Option B: Direkt `fetch` zu CRM (HubSpot, Pipedrive, Make/Zapier-Webhook) – **nur** mit serverseitigem Secret-Proxy empfohlen, damit keine Tokens im Browser landen.
+| Feld | Typ | Pflicht | Beschreibung |
+|------|-----|---------|--------------|
+| `serviceType` | `LeadServiceType` | ja | `buero-gewerbe` \| `glas-fenster` \| `treppenhaus` \| `bauendreinigung` |
+| `areaSize` | `LeadAreaSize` | ja | `bis-100` \| `100-500` \| `ueber-500` |
+| `timing` | `LeadTiming` | ja | `sofort` \| `naechster-monat` \| `preisvergleich` |
+| `name` | string | ja | getrimmt, max. 200 Zeichen |
+| `company` | string | nein | optional, max. 200 Zeichen |
+| `email` | string | ja | getrimmt, einfache Formatprüfung |
+| `phone` | string | ja | getrimmt, 5–40 Zeichen |
 
-3. **Validierung serverseitig** mit Schema (z. B. Zod) + Rate-Limiting + Honeypot/Turnstile gegen Spam.
+Validierung erfolgt zentral über `parseLeadSubmission()` in `lib/lead/submission.ts` (keine leeren Pflichtfelder, Enum-Werte, E-Mail-Struktur).
 
-4. **DSGVO**: Zweckbindung, Speicherdauer, AV-Vertrag mit Subprozessor dokumentieren; Einwilligung nur falls Marketing-Kanal.
+### Erfolgsantwort (`HTTP 200`)
 
-## UX-Details
+```json
+{
+  "ok": true,
+  "message": "Anfrage erfolgreich übermittelt.",
+  "emailed": true
+}
+```
 
-- „Zurück“ ab Schritt 2.  
-- Fokus-Ringe und große Touch-Targets (Mobile First).  
-- Fehlertexte bei Validierungs- oder Netzwerkfehlern.
+- `emailed: true` – Resend hat die Benachrichtigungs-Mail akzeptiert.  
+- `emailed: false` – Anfrage ist gültig angenommen, aber z. B. `RESEND_API_KEY` oder Absender/Empfänger-Env fehlt (siehe unten); kein Provider-Fehler.
+
+### Fehlerantworten
+
+- **`400`** – Validierungsfehler, Body enthält `{ "ok": false, "message": "<Grund>" }`.  
+- **`400`** – Ungültiges JSON: `{ "ok": false, "message": "Ungültiges JSON." }`.  
+- **`502`** – Resend liefert einen Fehler trotz gesetztem Key: `{ "ok": false, "message": "…" }`.
+
+### UI-Verhalten (`LeadFunnel`)
+
+- **`isLoading`:** Submit-Button deaktiviert, Spinner + Text „Wird gesendet…“, Eingaben gesperrt.  
+- **`isSuccess`:** Dankesseite mit 60-Minuten-Versprechen (kein weiteres Absenden nötig).  
+- **`isError`:** Server- oder Netzwerkmeldung unter dem Formular (`role="alert"`).
+
+## E-Mail-Integration (Resend)
+
+**Modul:** `lib/lead/email.ts`
+
+- **`RESEND_API_KEY`** (Secret, nur Server): Bearer-Token für `https://api.resend.com/emails`. Ohne Key: kein Versand, API liefert dennoch `200` mit `emailed: false`.  
+- **`RESEND_FROM_EMAIL`:** verifizierte Absender-Adresse (Resend-Domain).  
+- **`LEAD_NOTIFICATION_EMAIL`:** Zielpostfach für neue Leads.
+
+HTML wird in `buildLeadEmailHtml()` aus dem Payload gebaut; der Versand ist in `sendLeadViaResend()` gekapselt.
+
+## Hinweise
+
+- Rate-Limiting, Honeypot oder Turnstile sind für Produktion empfohlen (noch nicht implementiert).  
+- **DSGVO:** Zweckbindung, Speicherdauer, AV-Vertrag mit Subprozessor dokumentieren; Einwilligung nur falls Marketing-Kanal.

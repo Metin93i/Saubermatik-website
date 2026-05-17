@@ -28,8 +28,15 @@ Wir trennen bewusst zwei Ebenen der Nachfrage:
 - Leistungs-Detail → Hub + Anfrage.  
 - Footer → wiederholte Querverlinkung (Crawl-Pfade, Nutzer-Orientierung).
 
+### Strukturierte Daten (JSON-LD) — **erledigt**
+
+- **Komponente:** `components/StructuredData.tsx`  
+- **Einbindung:** Root-`app/layout.tsx` rendert das Skript im `<head>` (global auf allen Seiten).  
+- **Inhalt:** `@graph` mit kombiniertem Schema `LocalBusiness` + `CleaningService` (Hauptsitz Meßstetten inkl. Geo, `areaServed`, Öffnungszeiten Mo–So 08:00–22:00, `priceRange: "$$"`).  
+- **Telefon:** optional über `NEXT_PUBLIC_BUSINESS_PHONE`, nur ausgegeben wenn gesetzt (keine Platzhalter-Rufnummer).
+
 ## Nächste Ausbaustufen (optional)
 
-- JSON-LD (`LocalBusiness`, `Service`) pro Hub/Spoke.  
+- JSON-LD ergänzend pro Hub/Spoke (`Service`, `FAQPage`).  
 - `sitemap.xml` / `robots.txt` generieren.  
 - Content-Erweiterung pro Stadt (Referenzprojekte, FAQs) ohne Routing-Bruch.
