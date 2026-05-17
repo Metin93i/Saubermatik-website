@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { MobileStickyCta } from "@/components/MobileStickyCta";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
 import { StructuredData } from "@/components/StructuredData";
@@ -8,11 +9,13 @@ import "./globals.css";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
+  display: "swap",
 });
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+  display: "swap",
 });
 
 const siteUrl =
@@ -52,8 +55,9 @@ export default function RootLayout({
       </head>
       <body className="min-h-full flex flex-col bg-background text-foreground">
         <SiteHeader />
-        <main className="flex flex-1 flex-col">{children}</main>
+        <main className="flex flex-1 flex-col max-md:pb-[5.75rem]">{children}</main>
         <SiteFooter />
+        <MobileStickyCta />
       </body>
     </html>
   );

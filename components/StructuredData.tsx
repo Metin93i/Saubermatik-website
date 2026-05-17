@@ -1,4 +1,5 @@
 import { SERVICES } from "@/lib/config/services";
+import { STANDORT_CITIES, STANDORT_LABELS } from "@/lib/routes/standorte";
 
 const siteUrl =
   process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.saubermatik.de";
@@ -49,15 +50,10 @@ function buildOrganizationJsonLd(): Record<string, unknown> {
       latitude: MESSTETTEN_GEO.latitude,
       longitude: MESSTETTEN_GEO.longitude,
     },
-    areaServed: [
-      { "@type": "City", name: "Meßstetten" },
-      { "@type": "City", name: "Albstadt" },
-      { "@type": "City", name: "Balingen" },
-      { "@type": "City", name: "Tuttlingen" },
-      { "@type": "City", name: "Rottweil" },
-      { "@type": "City", name: "Stuttgart" },
-      { "@type": "Place", name: "Bodensee" },
-    ],
+    areaServed: STANDORT_CITIES.map((city) => ({
+      "@type": "City",
+      name: STANDORT_LABELS[city],
+    })),
     openingHoursSpecification: [
       {
         "@type": "OpeningHoursSpecification",

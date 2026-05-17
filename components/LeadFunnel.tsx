@@ -327,7 +327,7 @@ export function LeadFunnel({
         </p>
       </div>
 
-      <div className="mt-6">
+      <div className="mt-6 min-h-[20rem] sm:min-h-[19rem]">
         {step === 0 && (
           <div className="grid grid-cols-2 gap-2 sm:gap-3 md:grid-cols-3 lg:grid-cols-4">
             {FUNNEL_SERVICE_OPTIONS.map((opt) => (

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { SaubermatikLogo } from "@/components/SaubermatikLogo";
 import { SERVICES } from "@/lib/config/services";
 
 const navLinkClass =
@@ -8,12 +9,7 @@ export function SiteHeader() {
   return (
     <header className="border-b border-foreground/10 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80">
       <div className="mx-auto flex w-full max-w-6xl items-center justify-between gap-4 px-4 py-4 sm:px-6 lg:px-8">
-        <Link
-          href="/"
-          className="text-base font-semibold tracking-tight text-primary"
-        >
-          Saubermatik
-        </Link>
+        <SaubermatikLogo href="/" />
         <nav className="flex flex-wrap items-center justify-end gap-x-4 gap-y-2 sm:gap-x-5">
           <details className="group relative">
             <summary

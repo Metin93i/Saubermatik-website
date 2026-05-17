@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { LeadFunnel } from "@/components/LeadFunnel";
+import { REMOTE_IMAGE_BLUR_DATA_URL } from "@/lib/image-blur";
 import { STANDORT_CITIES, STANDORT_LABELS } from "@/lib/routes/standorte";
 
 export const metadata: Metadata = {
@@ -99,10 +100,60 @@ export default function Home() {
                 className="object-cover"
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 priority
+                placeholder="blur"
+                blurDataURL={REMOTE_IMAGE_BLUR_DATA_URL}
               />
             </div>
             <LeadFunnel className="w-full max-w-xl shadow-xl ring-1 ring-black/5 transition-shadow duration-300 hover:shadow-2xl lg:ml-auto" />
           </div>
+        </div>
+      </section>
+
+      <section
+        className="border-t border-foreground/10 bg-slate-50 py-14 sm:py-16"
+        aria-labelledby="reinigung-4-heading"
+      >
+        <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl">
+            <p className="text-sm font-semibold text-secondary">Reinigung 4.0</p>
+            <h2
+              id="reinigung-4-heading"
+              className="mt-2 text-2xl font-bold tracking-tight text-primary sm:text-3xl"
+            >
+              Software-Vorteil statt Zufall: Protokolle, die jede Tour
+              dokumentieren.
+            </h2>
+            <p className="mt-4 min-h-[4.5rem] text-base leading-7 text-muted sm:text-lg">
+              Statt Excel und WhatsApp-Chaos steuern wir Ihr Objekt über die
+              Saubermatik-Plattform: digitale Protokolle, klare Checklisten und
+              eine Disposition, die Ausfälle abfängt – damit Reinigung bei Ihnen
+              nicht vom Zufall abhängt.
+            </p>
+          </div>
+          <ul className="mt-10 grid gap-6 sm:grid-cols-2">
+            <li className="flex min-h-[14rem] flex-col rounded-2xl border border-foreground/10 bg-white p-6 shadow-md ring-1 ring-black/5 sm:min-h-[15rem] sm:p-8">
+              <h3 className="text-lg font-bold text-primary sm:text-xl">
+                Digitale Protokolle
+              </h3>
+              <p className="mt-3 flex-1 text-sm leading-6 text-muted sm:text-base sm:leading-7">
+                Jeder Einsatz hinterlässt eine Spur: Was wurde wann erledigt –
+                nachvollziehbar für Geschäftsführung, Hausverwaltung und
+                Qualitätssicherung. Weniger Streit, weniger Rückfragen, mehr
+                Kontrolle im Alltag.
+              </p>
+            </li>
+            <li className="flex min-h-[14rem] flex-col rounded-2xl border border-foreground/10 bg-white p-6 shadow-md ring-1 ring-black/5 sm:min-h-[15rem] sm:p-8">
+              <h3 className="text-lg font-bold text-primary sm:text-xl">
+                Ausfallsicherheit über die Plattform
+              </h3>
+              <p className="mt-3 flex-1 text-sm leading-6 text-muted sm:text-base sm:leading-7">
+                Wenn jemand ausfällt, springt die Saubermatik-Plattform ein:
+                Ersatzlogistik und Touren werden neu geplant, bevor Lücken
+                spürbar werden. So bleibt Ihr Objekt im Rhythmus – ohne dass Sie
+                jedes Mal selbst koordinieren müssen.
+              </p>
+            </li>
+          </ul>
         </div>
       </section>
 
@@ -132,6 +183,8 @@ export default function Home() {
               fill
               className="object-cover"
               sizes="(max-width: 1024px) 100vw, 45vw"
+              placeholder="blur"
+              blurDataURL={REMOTE_IMAGE_BLUR_DATA_URL}
             />
           </div>
         </div>
@@ -147,6 +200,8 @@ export default function Home() {
                 fill
                 className="object-cover transition-transform duration-500 group-hover:scale-105"
                 sizes="(max-width: 1024px) 50vw, 33vw"
+                placeholder="blur"
+                blurDataURL={REMOTE_IMAGE_BLUR_DATA_URL}
               />
             </div>
             <div className="group relative aspect-[4/3] overflow-hidden rounded-2xl shadow-lg ring-1 ring-black/5 transition-all duration-300 hover:shadow-xl">
@@ -156,6 +211,8 @@ export default function Home() {
                 fill
                 className="object-cover transition-transform duration-500 group-hover:scale-105"
                 sizes="(max-width: 1024px) 50vw, 33vw"
+                placeholder="blur"
+                blurDataURL={REMOTE_IMAGE_BLUR_DATA_URL}
               />
             </div>
             <div className="group relative aspect-[4/3] overflow-hidden rounded-2xl shadow-lg ring-1 ring-black/5 transition-all duration-300 hover:shadow-xl sm:col-span-2 lg:col-span-1">
@@ -165,6 +222,8 @@ export default function Home() {
                 fill
                 className="object-cover transition-transform duration-500 group-hover:scale-105"
                 sizes="(max-width: 1024px) 100vw, 33vw"
+                placeholder="blur"
+                blurDataURL={REMOTE_IMAGE_BLUR_DATA_URL}
               />
             </div>
           </div>
@@ -184,7 +243,7 @@ export default function Home() {
             {testimonials.map((t) => (
               <li
                 key={t.name}
-                className="flex flex-col rounded-2xl border border-foreground/10 bg-gradient-to-b from-white to-slate-50/80 p-6 shadow-lg transition-all duration-200 hover:-translate-y-0.5 hover:shadow-xl"
+                className="flex min-h-[17rem] flex-col rounded-2xl border border-foreground/10 bg-gradient-to-b from-white to-slate-50/80 p-6 shadow-lg transition-all duration-200 hover:-translate-y-0.5 hover:shadow-xl sm:min-h-[18rem]"
               >
                 <p className="text-sm leading-6 text-foreground/90">&ldquo;{t.quote}&rdquo;</p>
                 <div className="mt-5 border-t border-foreground/10 pt-4">
@@ -204,17 +263,18 @@ export default function Home() {
               Kurz vor Ort – für Sie in der Nachbarschaft
             </h2>
             <p className="mt-3 text-base leading-7 text-muted">
-              Von Meßstetten aus sind wir schnell in Tuttlingen, Balingen,
-              Albstadt und Rottweil im Einsatz. Ein Klick führt zur lokalen
-              Einordnung; Ihre Anfrage landet trotzdem zentral bei uns.
+              Von Meßstetten aus sind wir u. a. in Tübingen, Reutlingen,
+              Villingen-Schwenningen und am Bodensee (Überlingen) im Einsatz –
+              und in der gesamten Zollernalb. Ein Klick führt zur lokalen
+              Einordnung; Ihre Anfrage landet zentral bei uns.
             </p>
           </div>
-          <ul className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <ul className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
             {STANDORT_CITIES.map((city) => (
               <li key={city}>
                 <Link
                   href={`/standorte/${city}`}
-                  className="group flex h-full flex-col rounded-2xl border border-foreground/10 bg-white p-5 shadow-md transition-all duration-200 hover:scale-[1.02] hover:border-secondary/40 hover:shadow-xl"
+                  className="group flex min-h-[9.5rem] flex-col rounded-2xl border border-foreground/10 bg-white p-5 shadow-md transition-all duration-200 hover:scale-[1.02] hover:border-secondary/40 hover:shadow-xl"
                 >
                   <span className="text-base font-semibold text-primary group-hover:text-secondary">
                     {STANDORT_LABELS[city]}
