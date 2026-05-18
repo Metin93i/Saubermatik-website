@@ -92,6 +92,12 @@ export function SiteFooter() {
             >
               Kontakt
             </PrefetchLink>
+            <PrefetchLink
+              href="/wissen"
+              className="hover:text-[color:var(--link-on-primary)] hover:underline"
+            >
+              Wissen &amp; Lexikon
+            </PrefetchLink>
           </div>
         </div>
       </div>

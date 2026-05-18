@@ -62,6 +62,23 @@ Statische **Beweis-Seite** für Zertifizierungspfad, Arbeitssicherheit, Hygiene 
 - **TL;DR-Block** auf **`/leistungen/[slug]`**: `components/LeistungSgeTldr.tsx` + Daten **`lib/seo/leistung-sge-tldr.ts`** — semantisch `<section aria-label="Zusammenfassung">` mit Bullets **Problem → Saubermatik-Lösung → Zeitrahmen** (maschinen- und menschenlesbar).
 - **Kombination** mit bestehendem **FAQPage** JSON-LD (`LeistungFaqJsonLd`) erhöht die Dichte **extrahierbarer Fakten** für PAA/SGE-Kandidaten — ohne Fließtext-Spam.
 
+### 8. Navboost / Engagement (Dwell-Time)
+
+- **`components/EngagementCalculator.tsx`**: 3-Schritt-Rechner (Objekttyp → m² → Richtpreis) auf **`/`** und **`/leistungen/unterhaltsreinigung`** — Scroll in den **Lead-Funnel** (`#kontakt-anfrage`).
+
+### 9. AEO — Answer Engine Optimization
+
+- **`/llms.txt`** via **`app/llms.txt/route.ts`** + Generator **`lib/seo/llms-content.ts`**: maschinenlesbare USPs, Leistungen und Standorte für LLM-Crawler (ChatGPT, Perplexity).
+
+### 10. Topical Map — Lexikon (`/wissen`)
+
+- Hub **`/wissen`** + Spokes **`/wissen/[term]`** aus **`lib/config/lexikon.ts`** (HACCP, pH-Werte, DIN 13063). Footer-Link „Wissen & Lexikon“.
+
+### 11. Position-0 Bait & TF-IDF
+
+- **`components/SnippetBaitTable.tsx`**: semantische HTML-Tabellen („Reinigungsintervalle nach Gebäudeart“) auf Leistungsseiten.
+- **`lib/seo/leistung-entity-facts.ts`**: ISO 9001, DIN, umweltfreundliche Tenside für Unterhalt/Glas.
+
 ## Technische SEO-Bausteine (kurz)
 
 - **Title-Template** im Root-Layout (`%s | Saubermatik Gebäudereinigung`).
@@ -71,6 +88,9 @@ Statische **Beweis-Seite** für Zertifizierungspfad, Arbeitssicherheit, Hygiene 
 - **`BreadcrumbList` JSON-LD** auf **`/leistungen/[slug]`** und **`/standorte/[city]`** (dort inkl. Hub-Krümel **`/standorte`**): `components/BreadcrumbJsonLd.tsx`.
 - **`LocalBusiness` / `CleaningService`:** global **`aggregateRating`** (`AggregateRating` mit `ratingValue`, `reviewCount`, `bestRating`/`worstRating`, siehe **`lib/seo/global-jsonld.ts`**) — nur verwenden, wenn die Zahlen **sachlich belegbar** sind (Recht/EEAT).
 - **Zero-Latency Navigation (kontrolliert):** `components/PrefetchLink.tsx` — Hover-`router.prefetch` für Kern-Routen in **`SiteHeaderNav`** / **`SiteFooter`** (`prefetch={false}` auf `Link`, kein aggressives Dropdown-Prefetch).
+- **Dynamic Freshness:** **`components/FreshnessBadge.tsx`** + **`lib/utils/date.ts`** auf Startseite/Standorten; JSON-LD **`dateModified`** (1. des Monats) in **`global-jsonld.ts`**.
+- **Hyper-Local Schema:** pro Stadt ein **`LocalBusiness`/`CleaningService`** mit **`GeoCircle`** in **`lib/seo/standort-geo.ts`** (im `@graph`).
+- **`GeoImage`:** **`components/GeoImage.tsx`** — `ImageObject` + `contentLocation` für Local Image Search / Lens-Vorbereitung.
 - **Interne Links:** Header, Footer, Startseite-Standort-Grid, Leistungs-CTAs, **`SeoCrossLinks`** (Leistung ↔ Standort) → **`/kontakt#kontakt-anfrage`** (Kunde) bzw. **`/kontakt?type=karriere`** (Bewerber).
 
 ## Content-Prinzipien

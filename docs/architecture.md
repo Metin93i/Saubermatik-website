@@ -12,6 +12,10 @@ Technisches Referenzdokument (DDD). Dateibaum: `docs/project_structure.md`. Änd
 | E-Mail (Transaktional) | **Resend** (`resend`-Paket, Node-Runtime in Route Handlers) |
 | Deployment-Ziel | Vercel-kompatibel (keine DB im UI-Pfad) |
 | Security Headers | `next.config.ts` → `headers()` (u. a. `X-Frame-Options`, `X-Content-Type-Options`, `Referrer-Policy`, `Permissions-Policy`) |
+| AEO | `app/llms.txt/route.ts` → `/llms.txt` (Plaintext aus `lib/seo/llms-content.ts`) |
+| Engagement | `components/EngagementCalculator.tsx` (`"use client"`) — Navboost/Dwell-Time |
+| Freshness | `lib/utils/date.ts`, `FreshnessBadge`, `dateModified` im globalen JSON-LD |
+| Lexikon | `app/wissen/*`, `lib/config/lexikon.ts` |
 
 ## Datenfluss: Lead-Erfassung (Kunde)
 
@@ -77,7 +81,8 @@ flowchart LR
 |----------------|--------|
 | `LeadFunnel` | Multi-Step-State, `fetch` |
 | `CareerForm` | Formular-State, `fetch` |
-| `SiteHeaderNav` | Mobile-Menü, Scroll-Lock, Tastatur (Escape), **Hover-Prefetch** (`PrefetchLink`) |
+| `SiteHeaderNav` | Mobile-Menü, Scroll-Lock, Tastatur (Escape), **Hover-Prefetch** (`PrefetchLink`), **aria-label** auf Menü-Button |
+| `EngagementCalculator` | 3-Schritt-Kostenrechner, Scroll zum Lead-Funnel |
 | `KontaktFormSwitch` | **`useSearchParams`** für `/kontakt`-Weiche |
 | `PrefetchLink` | `next/link` + `useRouter().prefetch` auf `pointerenter` für Kern-Routen (Header/Footer) |
 

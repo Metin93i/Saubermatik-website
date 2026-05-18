@@ -1,6 +1,11 @@
 import { SERVICES } from "@/lib/config/services";
 import { SITE_OFFICE } from "@/lib/config/site";
 import { getSiteOrigin } from "@/lib/seo/site-origin";
+import {
+  buildCityCleaningServiceNode,
+  buildStuttgartCleaningServiceNode,
+} from "@/lib/seo/standort-geo";
+import { getSchemaDateModified } from "@/lib/utils/date";
 import { STANDORT_CITIES, STANDORT_LABELS } from "@/lib/routes/standorte";
 
 const MESSTETTEN_GEO = {
@@ -83,6 +88,7 @@ export function buildOrganizationJsonLd(): Record<string, unknown> {
     "@id": `${siteUrl}/#organization`,
     name: "Saubermatik Gebäudereinigung",
     url: siteUrl,
+    dateModified: getSchemaDateModified(),
     description: portfolioDescription,
     priceRange: "$$",
     address: {
@@ -140,10 +146,21 @@ export function buildOrganizationJsonLd(): Record<string, unknown> {
   return org;
 }
 
+export function buildGlobalJsonLdGraph(): Record<string, unknown>[] {
+  const siteUrl = getSiteOrigin();
+  return [
+    buildOrganizationJsonLd(),
+    ...STANDORT_CITIES.map((city) =>
+      buildCityCleaningServiceNode(city, siteUrl),
+    ),
+    buildStuttgartCleaningServiceNode(siteUrl),
+  ];
+}
+
 export function buildGlobalJsonLdString(): string {
   const payload = {
     "@context": "https://schema.org",
-    "@graph": [buildOrganizationJsonLd()],
+    "@graph": buildGlobalJsonLdGraph(),
   };
   return JSON.stringify(payload).replaceAll("<", "\\u003c");
 }

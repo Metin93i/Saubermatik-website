@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { EngagementCalculator } from "@/components/EngagementCalculator";
 import { LeadFunnel } from "@/components/LeadFunnel";
+import { SnippetBaitTable } from "@/components/SnippetBaitTable";
 
 export const metadata: Metadata = {
   title: {
@@ -210,6 +212,18 @@ export default function UnterhaltsreinigungPage() {
               wie von einem anonymen Nebenjob-Pool.
             </p>
           </div>
+        </div>
+      </section>
+
+      <section className="border-t border-slate-200 bg-white py-16">
+        <div className="mx-auto w-full max-w-3xl px-4 sm:px-6 lg:px-8">
+          <SnippetBaitTable slug="unterhaltsreinigung" />
+        </div>
+      </section>
+
+      <section className="border-t border-slate-200 bg-slate-50 py-16">
+        <div className="mx-auto w-full max-w-xl px-4 sm:px-6 lg:px-8">
+          <EngagementCalculator funnelHref="#kontakt-anfrage" />
         </div>
       </section>
 

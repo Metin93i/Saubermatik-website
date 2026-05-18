@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
+import { FreshnessBadge } from "@/components/FreshnessBadge";
 import { SeoCrossLinks } from "@/components/SeoCrossLinks";
 import { getLocalEntityAugmentation } from "@/lib/seo/local-entities";
 import {
@@ -60,6 +61,7 @@ export default async function StandortPage({ params }: PageProps) {
         <h1 className="mt-3 text-3xl font-bold tracking-tight text-primary sm:text-4xl">
           {content.headline}
         </h1>
+        <FreshnessBadge />
         <div className="mt-6 space-y-4 text-base leading-7 text-muted">
           {content.paragraphs.map((p) => (
             <p key={p}>{p}</p>

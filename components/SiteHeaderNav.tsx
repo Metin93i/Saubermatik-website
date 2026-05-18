@@ -137,6 +137,7 @@ export function SiteHeaderNav() {
           className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-foreground/15 bg-background text-sm font-semibold text-primary shadow-sm transition hover:border-secondary/40 hover:bg-secondary/5 md:hidden"
           aria-expanded={mobileOpen}
           aria-controls={panelId}
+          aria-label="Hauptmenü öffnen"
           onClick={() => setMobileOpen(true)}
         >
           <span className="sr-only">Menü öffnen</span>

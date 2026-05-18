@@ -5,6 +5,8 @@ import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
 import { LeistungFaqJsonLd } from "@/components/LeistungFaqJsonLd";
 import { LeistungSgeTldr } from "@/components/LeistungSgeTldr";
 import { SeoCrossLinks } from "@/components/SeoCrossLinks";
+import { SnippetBaitTable } from "@/components/SnippetBaitTable";
+import { getLeistungEntityFacts } from "@/lib/seo/leistung-entity-facts";
 import {
   LEISTUNG_SLUGS,
   LEISTUNGEN_BY_SLUG,
@@ -44,6 +46,7 @@ export default async function LeistungDetailPage({ params }: PageProps) {
     notFound();
   }
   const content = LEISTUNGEN_BY_SLUG[slug];
+  const entityFacts = getLeistungEntityFacts(slug);
 
   return (
     <>
@@ -71,7 +74,11 @@ export default async function LeistungDetailPage({ params }: PageProps) {
           {content.body.map((paragraph) => (
             <p key={paragraph}>{paragraph}</p>
           ))}
+          {entityFacts.map((paragraph) => (
+            <p key={paragraph}>{paragraph}</p>
+          ))}
         </div>
+        <SnippetBaitTable slug={slug} />
         <div className="mt-10 flex flex-col gap-3 sm:flex-row">
           <Link
             href="/kontakt#kontakt-anfrage"

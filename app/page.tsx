@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { EngagementCalculator } from "@/components/EngagementCalculator";
+import { FreshnessBadge } from "@/components/FreshnessBadge";
 import { LeadFunnel } from "@/components/LeadFunnel";
 import { REMOTE_IMAGE_BLUR_DATA_URL } from "@/lib/image-blur";
 import { STANDORT_CITIES, STANDORT_LABELS } from "@/lib/routes/standorte";
@@ -66,6 +68,7 @@ export default function Home() {
               Zufall abhängen: wenn jemand ausfällt, reagiert das System – Sie
               merken vor allem eins: dass es weiterläuft.
             </p>
+            <FreshnessBadge />
             <ul className="mt-6 flex flex-col gap-2.5 text-sm font-medium text-foreground sm:text-base">
               {trustItems.map((item) => (
                 <li key={item} className="flex items-start gap-2">
@@ -106,6 +109,15 @@ export default function Home() {
             </div>
             <LeadFunnel className="w-full max-w-xl shadow-xl ring-1 ring-black/5 transition-shadow duration-300 hover:shadow-2xl lg:ml-auto" />
           </div>
+        </div>
+      </section>
+
+      <section
+        className="border-t border-foreground/10 bg-white py-14 sm:py-16"
+        aria-labelledby="engagement-calculator-heading"
+      >
+        <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">
+          <EngagementCalculator className="mx-auto max-w-3xl" />
         </div>
       </section>
 

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { FreshnessBadge } from "@/components/FreshnessBadge";
 import { SeoCrossLinks } from "@/components/SeoCrossLinks";
 
 export const metadata: Metadata = {
@@ -52,6 +53,7 @@ export default function StandortStuttgartPage() {
       <h1 className="mt-3 text-3xl font-bold tracking-tight text-primary sm:text-4xl">
         Fensterreinigung Stuttgart &amp; Gebäudereinigung mit Zollernalb-Logistik
       </h1>
+      <FreshnessBadge className="mt-4" />
       <p className="mt-4 text-lg leading-8 text-muted">
         Hyper-lokale Präsenz: Degerloch, Vaihingen, Bad Cannstatt, Industriezonen
         und die Achsen <strong className="text-foreground">B14 / B27</strong>{" "}
