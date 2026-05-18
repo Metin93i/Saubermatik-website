@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { EngagementCalculator } from "@/components/EngagementCalculator";
 import { FreshnessBadge } from "@/components/FreshnessBadge";
+import { GeoImage } from "@/components/GeoImage";
 import { LeadFunnel } from "@/components/LeadFunnel";
 import { REMOTE_IMAGE_BLUR_DATA_URL } from "@/lib/image-blur";
 import { STANDORT_CITIES, STANDORT_LABELS } from "@/lib/routes/standorte";
@@ -96,7 +97,7 @@ export default function Home() {
           </div>
           <div className="flex flex-col gap-6 lg:items-end">
             <div className="relative aspect-[4/3] w-full max-w-xl overflow-hidden rounded-2xl shadow-xl ring-1 ring-black/5 transition-all duration-300 hover:shadow-2xl lg:ml-auto">
-              <Image
+              <GeoImage
                 src={imgOffice}
                 alt="Moderner Bürobereich – sauber und repräsentativ"
                 fill
@@ -105,6 +106,9 @@ export default function Home() {
                 priority
                 placeholder="blur"
                 blurDataURL={REMOTE_IMAGE_BLUR_DATA_URL}
+                contentLocation="Zollernalbkreis, Baden-Württemberg"
+                author="Saubermatik"
+                imageId="geo-hero-office-zollernalb"
               />
             </div>
             <LeadFunnel className="w-full max-w-xl shadow-xl ring-1 ring-black/5 transition-shadow duration-300 hover:shadow-2xl lg:ml-auto" />
@@ -189,7 +193,7 @@ export default function Home() {
             </p>
           </div>
           <div className="relative order-1 aspect-[5/4] overflow-hidden rounded-2xl shadow-xl ring-1 ring-black/5 transition-all duration-300 hover:scale-[1.01] hover:shadow-2xl lg:order-2">
-            <Image
+            <GeoImage
               src={imgHandshake}
               alt="B2B-Gespräch und Handschlag – partnerschaftliche Zusammenarbeit"
               fill
@@ -197,6 +201,9 @@ export default function Home() {
               sizes="(max-width: 1024px) 100vw, 45vw"
               placeholder="blur"
               blurDataURL={REMOTE_IMAGE_BLUR_DATA_URL}
+              contentLocation="Zollernalbkreis, Baden-Württemberg"
+              author="Saubermatik"
+              imageId="geo-warum-wir-handshake"
             />
           </div>
         </div>

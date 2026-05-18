@@ -6,11 +6,14 @@ type Props = ImageProps & {
   contentLocation: string;
   /** Optional: eindeutige Bild-ID im Schema-Graph */
   imageId?: string;
+  /** Optional: Urheber / Rechteinhaber (z. B. „Saubermatik“). */
+  author?: string;
 };
 
 export function GeoImage({
   contentLocation,
   imageId,
+  author,
   alt,
   src,
   ...imageProps
@@ -19,7 +22,7 @@ export function GeoImage({
   const srcString = typeof src === "string" ? src : origin;
   const id = imageId ?? `geo-image-${contentLocation.replace(/\s+/g, "-").toLowerCase()}`;
 
-  const payload = {
+  const payload: Record<string, unknown> = {
     "@context": "https://schema.org",
     "@type": "ImageObject",
     "@id": `${origin}/#${id}`,
@@ -36,6 +39,10 @@ export function GeoImage({
       },
     },
   };
+
+  if (author) {
+    payload.author = { "@type": "Organization", name: author };
+  }
 
   const json = JSON.stringify(payload).replaceAll("<", "\\u003c");
 

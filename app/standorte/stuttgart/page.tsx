@@ -1,7 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { FreshnessBadge } from "@/components/FreshnessBadge";
+import { GeoImage } from "@/components/GeoImage";
 import { SeoCrossLinks } from "@/components/SeoCrossLinks";
+import { REMOTE_IMAGE_BLUR_DATA_URL } from "@/lib/image-blur";
+
+const imgStuttgartHero =
+  "https://images.unsplash.com/photo-1486325212027-8081e485255e?auto=format&fit=crop&w=1400&q=85";
 
 export const metadata: Metadata = {
   title: "Fensterreinigung & Gebäudereinigung Stuttgart",
@@ -59,6 +64,22 @@ export default function StandortStuttgartPage() {
         und die Achsen <strong className="text-foreground">B14 / B27</strong>{" "}
         fließen in unsere Einsatzplanung ein – für Glas, Büro und Objekt.
       </p>
+
+      <div className="relative mt-8 aspect-[16/9] w-full overflow-hidden rounded-2xl shadow-lg ring-1 ring-foreground/10">
+        <GeoImage
+          src={imgStuttgartHero}
+          alt="Glasfassade und Gewerbegebäude in Stuttgart – professionelle Fensterreinigung"
+          fill
+          className="object-cover"
+          sizes="(max-width: 768px) 100vw, 48rem"
+          priority
+          placeholder="blur"
+          blurDataURL={REMOTE_IMAGE_BLUR_DATA_URL}
+          contentLocation="Stuttgart, Baden-Württemberg"
+          author="Saubermatik"
+          imageId="geo-stuttgart-hero"
+        />
+      </div>
 
       <div className="mt-10 space-y-12">
         {chunks.map((section) => (
