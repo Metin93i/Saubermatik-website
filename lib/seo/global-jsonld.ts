@@ -1,9 +1,7 @@
 import { SERVICES } from "@/lib/config/services";
 import { SITE_OFFICE } from "@/lib/config/site";
+import { getSiteOrigin } from "@/lib/seo/site-origin";
 import { STANDORT_CITIES, STANDORT_LABELS } from "@/lib/routes/standorte";
-
-const siteUrl =
-  process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.saubermatik.de";
 
 const MESSTETTEN_GEO = {
   latitude: 48.1833,
@@ -53,6 +51,7 @@ function buildGeoHubAreaServed(): Record<string, unknown>[] {
 }
 
 function buildOfferCatalog(): Record<string, unknown> {
+  const siteUrl = getSiteOrigin();
   return {
     "@type": "OfferCatalog",
     name: "Leistungsportfolio Facility & Reinigung",
@@ -78,6 +77,7 @@ function buildOfferCatalog(): Record<string, unknown> {
 }
 
 export function buildOrganizationJsonLd(): Record<string, unknown> {
+  const siteUrl = getSiteOrigin();
   const org: Record<string, unknown> = {
     "@type": ["LocalBusiness", "CleaningService"],
     "@id": `${siteUrl}/#organization`,

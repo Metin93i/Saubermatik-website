@@ -1,5 +1,5 @@
-import Link from "next/link";
 import { SaubermatikLogo } from "@/components/SaubermatikLogo";
+import { PrefetchLink } from "@/components/PrefetchLink";
 import { LEISTUNG_SLUGS, LEISTUNGEN_BY_SLUG } from "@/lib/routes/leistungen";
 import { STANDORT_CITIES, STANDORT_LABELS } from "@/lib/routes/standorte";
 
@@ -27,12 +27,12 @@ export function SiteFooter() {
           <ul className="mt-3 space-y-2 text-sm text-primary-foreground/85">
             {LEISTUNG_SLUGS.map((slug) => (
               <li key={slug}>
-                <Link
+                <PrefetchLink
                   href={`/leistungen/${slug}`}
                   className="text-primary-foreground/90 transition hover:text-[color:var(--link-on-primary)] hover:underline"
                 >
                   {LEISTUNGEN_BY_SLUG[slug].title}
-                </Link>
+                </PrefetchLink>
               </li>
             ))}
           </ul>
@@ -42,12 +42,12 @@ export function SiteFooter() {
           <ul className="mt-3 space-y-2 text-sm text-primary-foreground/85">
             {UNTERNEHMEN_LINKS.map((item) => (
               <li key={item.href}>
-                <Link
+                <PrefetchLink
                   href={item.href}
                   className="text-primary-foreground/90 transition hover:text-[color:var(--link-on-primary)] hover:underline"
                 >
                   {item.label}
-                </Link>
+                </PrefetchLink>
               </li>
             ))}
           </ul>
@@ -57,21 +57,21 @@ export function SiteFooter() {
           <ul className="mt-4 grid grid-cols-2 gap-x-4 gap-y-2 sm:grid-cols-3 lg:grid-cols-2">
             {STANDORT_CITIES.map((city) => (
               <li key={city} className="min-h-[1.25rem]">
-                <Link
+                <PrefetchLink
                   href={`/standorte/${city}`}
                   className="text-sm text-primary-foreground/90 transition hover:text-[color:var(--link-on-primary)] hover:underline"
                 >
                   {STANDORT_LABELS[city]}
-                </Link>
+                </PrefetchLink>
               </li>
             ))}
             <li className="min-h-[1.25rem] sm:col-span-2 lg:col-span-2">
-              <Link
+              <PrefetchLink
                 href="/standorte/stuttgart"
                 className="text-sm font-semibold text-primary-foreground transition hover:text-[color:var(--link-on-primary)] hover:underline"
               >
                 Stuttgart (Metropolregion, Spezial-Hub)
-              </Link>
+              </PrefetchLink>
             </li>
           </ul>
         </div>
@@ -80,18 +80,18 @@ export function SiteFooter() {
         <div className="mx-auto flex max-w-6xl flex-col gap-2 px-4 py-6 text-xs text-primary-foreground/75 sm:flex-row sm:items-center sm:justify-between sm:px-6 lg:px-8">
           <p>© {new Date().getFullYear()} Saubermatik Gebäudereinigung</p>
           <div className="flex flex-wrap gap-x-4 gap-y-1">
-            <Link
+            <PrefetchLink
               href="/leistungen"
               className="hover:text-[color:var(--link-on-primary)] hover:underline"
             >
               Leistungsübersicht
-            </Link>
-            <Link
+            </PrefetchLink>
+            <PrefetchLink
               href="/kontakt"
               className="hover:text-[color:var(--link-on-primary)] hover:underline"
             >
               Kontakt
-            </Link>
+            </PrefetchLink>
           </div>
         </div>
       </div>

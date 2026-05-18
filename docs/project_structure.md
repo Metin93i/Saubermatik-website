@@ -58,12 +58,15 @@ app/
 
 ```
 components/
+├── BreadcrumbJsonLd.tsx          BreadcrumbList JSON-LD (tiefes Routing)
 ├── CareerForm.tsx                Bewerber-Formular (`"use client"`) → `/api/career`
 ├── KontaktFormFallback.tsx      Suspense-Fallback (serverkompatibel)
 ├── KontaktFormSwitch.tsx       `useSearchParams` Weiche Lead/Karriere (`"use client"`)
 ├── LeadFunnel.tsx              Multi-Step Kunden-Funnel (`"use client"`)
 ├── LeistungFaqJsonLd.tsx       FAQPage JSON-LD pro Leistungsspoke (Server)
+├── LeistungSgeTldr.tsx         SGE-TL;DR-Zusammenfassung pro Leistungsspoke (Server)
 ├── MobileStickyCta.tsx         Mobile Schnellaktionen (Anruf / Angebot)
+├── PrefetchLink.tsx            Hover-Prefetch um `next/link` (`"use client"`)
 ├── SaubermatikLogo.tsx           CSS-Wordmark SAUBERMATIK
 ├── SiteFooter.tsx                Footer inkl. Städte-Grid & Unternehmens-Links
 ├── SiteHeader.tsx                Shell (sticky) + Logo
@@ -88,7 +91,10 @@ lib/
 ├── phone.ts                      `buildTelHref` (NEXT_PUBLIC_BUSINESS_PHONE)
 ├── seo/
 │   ├── global-jsonld.ts          `@graph` LocalBusiness + CleaningService + OfferCatalog
-│   └── leistung-faq.ts           FAQ-Texte pro Leistungsspoke (FAQPage)
+│   ├── leistung-faq.ts           FAQ-Texte pro Leistungsspoke (FAQPage)
+│   ├── leistung-sge-tldr.ts      SGE-TL;DR (Problem / Lösung / Zeitrahmen)
+│   ├── local-entities.ts         Programmatic Local Entities + Spin
+│   └── site-origin.ts            `getSiteOrigin()` für absolute JSON-LD-URLs
 └── routes/
     ├── leistungen.ts             LEISTUNG_SLUGS, Inhalte (aus SERVICES abgeleitet)
     └── standorte.ts              16 Städte, Labels, Fließtexte
@@ -100,6 +106,8 @@ lib/
 docs/
 ├── architecture.md             Technisches Gehirn: Stack, Datenflüsse, Routing, Formular-Weiche
 ├── competitor_analysis.md      Wettbewerbs-/Gap-Analyse (SEO & Funnel)
+├── pSEO_matrix.md               Programmatic-SEO-Matrix (lokale Entitäten)
+├── portfolio_seo_whitepaper.md Portfolio-Case-Study (CTO-Tonalität)
 ├── lead_funnel_spec.md           API & UI Lead-Funnel + Kontakt-Dual-Funnel
 ├── performance_audit.md          Speed-Maßnahmen (LCP, CLS, Fonts, Client-Bundle)
 ├── project_structure.md          Diese Datei (Baumstruktur)

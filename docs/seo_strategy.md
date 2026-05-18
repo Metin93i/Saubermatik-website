@@ -37,6 +37,8 @@ Meßstetten, Albstadt, Balingen, Hechingen, Sigmaringen, Mössingen, Tübingen, 
 
 Jeweils: *Gebäudereinigung in [Stadt]*, Kombination mit *Büro*, *Praxis*, *Liegenschaft*, *Zollernalb* / *Region*.
 
+**Programmatic Local Entities (Kernstädte):** Für **Balingen, Tuttlingen, Albstadt, Rottweil, Hechingen** injiziert `lib/seo/local-entities.ts` zusätzliche Absätze mit **Industrie-/Verkehrs-Clustern** (Platzhalter, später verifiziert) plus **deterministischem Spin** zur Duplicate-Vermeidung — siehe `docs/pSEO_matrix.md`.
+
 ### 5. Hyper-Local Entity Injection — **Stuttgart-Hub** (`/standorte/stuttgart`)
 
 Zusätzlich zur generischen Matrix **`/standorte/[city]`** existiert eine **editoriale Spezialseite** für den Ballungsraum Stuttgart (Zielintention u. a. *Fensterreinigung Stuttgart*, *Glasreinigung Stuttgart*, *Gebäudereinigung mit Logistik in die Region*):
@@ -49,12 +51,19 @@ Zusätzlich zur generischen Matrix **`/standorte/[city]`** existiert eine **edit
 
 Statische **Beweis-Seite** für Zertifizierungspfad, Arbeitssicherheit, Hygiene und **Saubermatik-Software** (Echtzeit-Monitoring, Eskalationen). Verknüpft QM, Stuttgart-Hub und Kontakt — erhöht domainweite **Trustworthiness** ohne Keyword-Stuffing.
 
+### 7. SGE-Targeting (AI Overviews / generative SERPs)
+
+- **TL;DR-Block** auf **`/leistungen/[slug]`**: `components/LeistungSgeTldr.tsx` + Daten **`lib/seo/leistung-sge-tldr.ts`** — semantisch `<section aria-label="Zusammenfassung">` mit Bullets **Problem → Saubermatik-Lösung → Zeitrahmen** (maschinen- und menschenlesbar).
+- **Kombination** mit bestehendem **FAQPage** JSON-LD (`LeistungFaqJsonLd`) erhöht die Dichte **extrahierbarer Fakten** für PAA/SGE-Kandidaten — ohne Fließtext-Spam.
+
 ## Technische SEO-Bausteine (kurz)
 
 - **Title-Template** im Root-Layout (`%s | Saubermatik Gebäudereinigung`).
 - **`alternates.canonical`** auf neuen Kernseiten gesetzt.
 - **JSON-LD global** (`components/StructuredData.tsx` → **`lib/seo/global-jsonld.ts`**): `LocalBusiness` + `CleaningService`, **`areaServed`** = 16 Städte (`City`) **plus** Metropol-Cluster **Stuttgart, Reutlingen, Tübingen** als **`GeoCircle`** (Midpoint + Radius in Metern); **`OfferCatalog`** mit ausführlichen **`Service`**-Objekten (inkl. `description`, `category`, `areaServed`). Details: `docs/seo_architecture.md`.
 - **FAQPage JSON-LD pro Leistung:** `components/LeistungFaqJsonLd.tsx` + Q/A-Katalog **`lib/seo/leistung-faq.ts`** auf **`/leistungen/[slug]`** (PAA-orientiert).
+- **`BreadcrumbList` JSON-LD** auf **`/leistungen/[slug]`** und **`/standorte/[city]`**: `components/BreadcrumbJsonLd.tsx` (absolute URLs via **`lib/seo/site-origin.ts`**).
+- **Zero-Latency Navigation (kontrolliert):** `components/PrefetchLink.tsx` — Hover-`router.prefetch` für Kern-Routen in **`SiteHeaderNav`** / **`SiteFooter`** (`prefetch={false}` auf `Link`, kein aggressives Dropdown-Prefetch).
 - **Interne Links:** Header, Footer, Startseite-Standort-Grid, Leistungs-CTAs → **`/kontakt#kontakt-anfrage`** (Kunde) bzw. **`/kontakt?type=karriere`** (Bewerber).
 
 ## Content-Prinzipien
@@ -63,3 +72,4 @@ Statische **Beweis-Seite** für Zertifizierungspfad, Arbeitssicherheit, Hygiene 
 2. **SaaS-USP** klar benennen, aber **rechtlich sauber** (keine unrealistischen Garantien ohne Kontext).
 3. **Stadtseiten** kurz, mit Wiederholung des Ortsnamens in Headline + Fließtext (kontrolliert).
 4. **Entity-Density** gezielt: nur dort, wo **Nutzerfrage + Geo** zusammenpassen (Hub-Seiten wie Stuttgart), nicht flächendeckend duplizieren.
+5. **Programmatic matrix:** siehe `docs/pSEO_matrix.md`; strategischer Deep-Dive: `docs/portfolio_seo_whitepaper.md`.

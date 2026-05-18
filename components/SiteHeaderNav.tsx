@@ -1,7 +1,7 @@
 "use client";
 
-import Link from "next/link";
 import { useCallback, useEffect, useId, useState } from "react";
+import { PrefetchLink } from "@/components/PrefetchLink";
 import { SERVICES } from "@/lib/config/services";
 import { buildTelHref } from "@/lib/phone";
 
@@ -83,7 +83,7 @@ export function SiteHeaderNav() {
             <ul className="max-h-[min(70vh,24rem)] overflow-y-auto py-1">
               {SERVICES.map((s) => (
                 <li key={s.slug}>
-                  <Link
+                  <PrefetchLink
                     href={`/leistungen/${s.slug}`}
                     className="flex items-start gap-2 px-4 py-2.5 text-sm text-foreground transition hover:bg-secondary/10"
                   >
@@ -91,25 +91,25 @@ export function SiteHeaderNav() {
                       {s.emoji}
                     </span>
                     <span className="min-w-0 leading-snug">{s.title}</span>
-                  </Link>
+                  </PrefetchLink>
                 </li>
               ))}
             </ul>
             <div className="border-t border-foreground/10 px-2 py-2">
-              <Link
+              <PrefetchLink
                 href="/leistungen"
                 className="block rounded-lg px-3 py-2 text-center text-sm font-semibold text-secondary hover:bg-secondary/10"
               >
                 Zur Leistungsübersicht →
-              </Link>
+              </PrefetchLink>
             </div>
           </div>
         </details>
 
         {MAIN_PAGES.map((item) => (
-          <Link key={item.href} href={item.href} className={DESKTOP_NAV_ITEM}>
+          <PrefetchLink key={item.href} href={item.href} className={DESKTOP_NAV_ITEM}>
             {item.label}
-          </Link>
+          </PrefetchLink>
         ))}
         </nav>
 
@@ -124,12 +124,12 @@ export function SiteHeaderNav() {
             <span>Jetzt anrufen</span>
           </a>
         ) : (
-          <Link
+          <PrefetchLink
             href="/kontakt"
             className={cn(callButtonClass, "hidden md:inline-flex")}
           >
             Kontakt aufnehmen
-          </Link>
+          </PrefetchLink>
         )}
 
         <button
@@ -185,25 +185,25 @@ export function SiteHeaderNav() {
                   Jetzt anrufen
                 </a>
               ) : (
-                <Link
+                <PrefetchLink
                   href="/kontakt"
                   className="inline-flex h-12 w-full items-center justify-center rounded-xl bg-secondary text-base font-bold text-secondary-foreground shadow-lg"
                   onClick={closeMobile}
                 >
                   Kontakt aufnehmen
-                </Link>
+                </PrefetchLink>
               )}
 
               <div className="flex flex-col gap-1 border-t border-foreground/10 pt-3">
                 {MAIN_PAGES.map((item) => (
-                  <Link
+                  <PrefetchLink
                     key={item.href}
                     href={item.href}
                     className={NAV_LINK_CLASS}
                     onClick={closeMobile}
                   >
                     {item.label}
-                  </Link>
+                  </PrefetchLink>
                 ))}
               </div>
 
@@ -223,23 +223,23 @@ export function SiteHeaderNav() {
                   <ul className="mt-1 max-h-60 space-y-0.5 overflow-y-auto border-l-2 border-secondary/30 pl-3">
                     {SERVICES.map((s) => (
                       <li key={s.slug}>
-                        <Link
+                        <PrefetchLink
                           href={`/leistungen/${s.slug}`}
                           className="block py-1.5 text-sm text-muted transition hover:text-primary"
                           onClick={closeMobile}
                         >
                           {s.title}
-                        </Link>
+                        </PrefetchLink>
                       </li>
                     ))}
                     <li>
-                      <Link
+                      <PrefetchLink
                         href="/leistungen"
                         className="block py-2 text-sm font-semibold text-secondary"
                         onClick={closeMobile}
                       >
                         Alle Leistungen →
-                      </Link>
+                      </PrefetchLink>
                     </li>
                   </ul>
                 ) : null}

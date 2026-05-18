@@ -1,6 +1,6 @@
 # SEO-Architektur: Hub-and-Spoke & „Zwiebelschalen“-Strategie
 
-Stand: synchron mit `docs/architecture.md` (Master), `app/`, `lib/routes/*`, `components/StructuredData.tsx`, **`lib/seo/global-jsonld.ts`**, **`lib/seo/leistung-faq.ts`** und den Detaildokumenten `docs/seo_strategy.md`, `docs/site_architecture.md`, `docs/performance_audit.md`, **`docs/competitor_analysis.md`**.
+Stand: synchron mit `docs/architecture.md` (Master), `app/`, `lib/routes/*`, `components/StructuredData.tsx`, **`lib/seo/global-jsonld.ts`**, **`lib/seo/leistung-faq.ts`**, **`lib/seo/local-entities.ts`**, **`lib/seo/leistung-sge-tldr.ts`** und den Detaildokumenten `docs/seo_strategy.md`, `docs/site_architecture.md`, `docs/performance_audit.md`, **`docs/competitor_analysis.md`**, **`docs/pSEO_matrix.md`**, **`docs/portfolio_seo_whitepaper.md`**.
 
 ## Zielbild
 
@@ -34,8 +34,8 @@ Wir trennen bewusst zwei Ebenen der Nachfrage:
 
 ### Interne Verlinkung
 
-- **Header** (`SiteHeaderNav`): Leistungen-Dropdown + Corporate-Links + Anruf-CTA.  
-- **Footer** (`SiteFooter`): Leistungen, Unternehmen, **Städte-Grid** (16 Links) **+ Link „Stuttgart (Metropolregion, Spezial-Hub)“** → **`/standorte/stuttgart`**.  
+- **Header** (`SiteHeaderNav`): Leistungen-Dropdown + Corporate-Links + Anruf-CTA; interne `Link`s nutzen **`PrefetchLink`** (Hover-`router.prefetch`, `prefetch={false}`).  
+- **Footer** (`SiteFooter`): Leistungen, Unternehmen, **Städte-Grid** (16 Links) **+ Link „Stuttgart (Metropolregion, Spezial-Hub)“** → **`/standorte/stuttgart`** — ebenfalls **`PrefetchLink`** für Kern-Routen.
 - **Startseite** → Leistungen-Hub, Standort-Kacheln, Anker `#kontakt-anfrage` (lokaler Funnel).  
 - **Unterseiten** → **`/kontakt#kontakt-anfrage`** (Kunden-Leads) bzw. **`/kontakt?type=karriere`** / **`#bewerbung`** (Bewerbungen).  
 - **Leistungs-Detail** → Hub + Kontakt.
@@ -52,9 +52,10 @@ Wir trennen bewusst zwei Ebenen der Nachfrage:
 ### Strukturierte Daten (JSON-LD) — **pro Leistungsspoke**
 
 - **`FAQPage`:** `components/LeistungFaqJsonLd.tsx` auf **`/leistungen/[slug]`**; Fragen/Antworten in **`lib/seo/leistung-faq.ts`** (Intent: PAA / People Also Ask).
+- **`BreadcrumbList`:** `components/BreadcrumbJsonLd.tsx` auf **`/leistungen/[slug]`** und **`/standorte/[city]`** (absolute `item`-URLs via `lib/seo/site-origin.ts`).
 
 ## Nächste Ausbaustufen (optional)
 
-- JSON-LD ergänzend für **Stuttgart-Hub** oder weitere Metropol-Spezialseiten (`WebPage` + `BreadcrumbList`).  
+- JSON-LD ergänzend für **Stuttgart-Hub** (`WebPage` + `BreadcrumbList`) und weitere Spezial-Hubs.  
 - `sitemap.xml` / `robots.txt` generieren.  
 - Content-Erweiterung pro Stadt (Referenzprojekte, FAQs) ohne Routing-Bruch.

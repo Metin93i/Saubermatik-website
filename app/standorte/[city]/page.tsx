@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
+import { getLocalEntityAugmentation } from "@/lib/seo/local-entities";
 import {
   STANDORT_CITIES,
   STANDORTE_BY_CITY,
@@ -41,26 +43,53 @@ export default async function StandortPage({ params }: PageProps) {
   }
   const label = STANDORT_LABELS[city];
   const content = STANDORTE_BY_CITY[city];
+  const entityAug = getLocalEntityAugmentation(city, label);
 
   return (
-    <article className="mx-auto w-full max-w-3xl flex-1 px-4 py-12 sm:px-6 lg:px-8">
-      <p className="text-sm font-semibold text-secondary">Standort {label}</p>
-      <h1 className="mt-3 text-3xl font-bold tracking-tight text-primary sm:text-4xl">
-        {content.headline}
-      </h1>
-      <div className="mt-6 space-y-4 text-base leading-7 text-muted">
-        {content.paragraphs.map((p) => (
-          <p key={p}>{p}</p>
-        ))}
-      </div>
-      <div className="mt-10">
-        <Link
-          href="/kontakt#kontakt-anfrage"
-          className="inline-flex h-11 items-center justify-center rounded-xl bg-primary px-5 text-sm font-semibold text-primary-foreground shadow-sm transition hover:bg-primary/90"
-        >
-          Terminwunsch senden
-        </Link>
-      </div>
-    </article>
+    <>
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Startseite", path: "/" },
+          { name: label, path: `/standorte/${city}` },
+        ]}
+      />
+      <article className="mx-auto w-full max-w-3xl flex-1 px-4 py-12 sm:px-6 lg:px-8">
+        <p className="text-sm font-semibold text-secondary">Standort {label}</p>
+        <h1 className="mt-3 text-3xl font-bold tracking-tight text-primary sm:text-4xl">
+          {content.headline}
+        </h1>
+        <div className="mt-6 space-y-4 text-base leading-7 text-muted">
+          {content.paragraphs.map((p) => (
+            <p key={p}>{p}</p>
+          ))}
+        </div>
+        {entityAug ? (
+          <section
+            className="mt-10 border-t border-foreground/10 pt-8"
+            aria-labelledby={`local-entities-${city}`}
+          >
+            <h2
+              id={`local-entities-${city}`}
+              className="text-xl font-bold tracking-tight text-primary"
+            >
+              {entityAug.heading}
+            </h2>
+            <div className="mt-4 space-y-4 text-base leading-7 text-muted">
+              {entityAug.paragraphs.map((p) => (
+                <p key={p}>{p}</p>
+              ))}
+            </div>
+          </section>
+        ) : null}
+        <div className="mt-10">
+          <Link
+            href="/kontakt#kontakt-anfrage"
+            className="inline-flex h-11 items-center justify-center rounded-xl bg-primary px-5 text-sm font-semibold text-primary-foreground shadow-sm transition hover:bg-primary/90"
+          >
+            Terminwunsch senden
+          </Link>
+        </div>
+      </article>
+    </>
   );
 }

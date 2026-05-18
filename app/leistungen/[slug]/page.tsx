@@ -1,12 +1,14 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
+import { LeistungFaqJsonLd } from "@/components/LeistungFaqJsonLd";
+import { LeistungSgeTldr } from "@/components/LeistungSgeTldr";
 import {
   LEISTUNG_SLUGS,
   LEISTUNGEN_BY_SLUG,
   isLeistungSlug,
 } from "@/lib/routes/leistungen";
-import { LeistungFaqJsonLd } from "@/components/LeistungFaqJsonLd";
 
 type PageProps = {
   params: Promise<{ slug: string }>;
@@ -44,6 +46,13 @@ export default async function LeistungDetailPage({ params }: PageProps) {
 
   return (
     <>
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Startseite", path: "/" },
+          { name: "Leistungen", path: "/leistungen" },
+          { name: content.title, path: `/leistungen/${slug}` },
+        ]}
+      />
       <article className="mx-auto w-full max-w-3xl flex-1 px-4 py-12 sm:px-6 lg:px-8">
         <p className="text-sm font-semibold text-secondary">
           <Link href="/leistungen" className="hover:underline">
@@ -56,6 +65,7 @@ export default async function LeistungDetailPage({ params }: PageProps) {
           {content.title} in der Region Zollernalb
         </h1>
         <p className="mt-4 text-lg leading-8 text-muted">{content.summary}</p>
+        <LeistungSgeTldr slug={slug} />
         <div className="mt-8 space-y-4 text-base leading-7 text-foreground/90">
           {content.body.map((paragraph) => (
             <p key={paragraph}>{paragraph}</p>

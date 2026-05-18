@@ -47,8 +47,8 @@ flowchart LR
 
 ## Routing & Rendering
 
-- **SSG:** `app/leistungen/[slug]/page.tsx` — `generateStaticParams` aus **`LEISTUNG_SLUGS`** (ohne Duplikat `unterhaltsreinigung`, eigene Route). Rendert zusätzlich **`LeistungFaqJsonLd`** für **`FAQPage`** JSON-LD (Q/A aus **`lib/seo/leistung-faq.ts`**).
-- **SSG:** `app/standorte/[city]/page.tsx` — `generateStaticParams` aus **`STANDORT_CITIES`** (16 Städte).
+- **SSG:** `app/leistungen/[slug]/page.tsx` — `generateStaticParams` aus **`LEISTUNG_SLUGS`** (ohne Duplikat `unterhaltsreinigung`, eigene Route). Rendert **`LeistungFaqJsonLd`**, **`LeistungSgeTldr`** (SGE-Kurzblock) und **`BreadcrumbJsonLd`**.
+- **SSG:** `app/standorte/[city]/page.tsx` — `generateStaticParams` aus **`STANDORT_CITIES`** (16 Städte). Optional **lokale Entity-Injektion** aus **`lib/seo/local-entities.ts`** (Kernstädte) + **`BreadcrumbJsonLd`**.
 - **SSG:** `app/standorte/stuttgart/page.tsx` — **Hyper-Local Hub** (kein Eintrag in `STANDORT_CITIES`; feste Route, keine dynamische `[city]`-Kollision).
 - **SSG:** `app/expertise/page.tsx` — EEAT-/Standards-Hub (statisch).
 - **Hybrid / dynamisch:** **`app/kontakt/page.tsx`** nutzt **`await searchParams`** für serverseitige Text-/Link-Weiche (Karriere vs. Kunde) und rendert das Formular rechts in **`Suspense`** mit Client-**`useSearchParams`** (`components/KontaktFormSwitch.tsx`), damit Client-Navigation und Doku-Vorgabe (Suspense + `useSearchParams`) erfüllt sind.
@@ -67,7 +67,7 @@ flowchart LR
 - Leistungen inkl. Funnel-Kacheln: **`lib/config/services.ts`** → **`LEAD_SERVICE_TYPES`**, **`FUNNEL_SERVICE_OPTIONS`**, **`LEISTUNGEN_BY_SLUG`** (`lib/routes/leistungen.ts`).
 - Firmenadresse / Karte: **`lib/config/site.ts`**.
 - Telefon-Links: **`lib/phone.ts`** (`buildTelHref`).
-- JSON-LD **`OfferCatalog`**: aus **`SERVICES`** generiert (`lib/seo/global-jsonld.ts`, eingebunden über **`components/StructuredData.tsx`**) — neue Slugs erscheinen automatisch im Schema.
+- JSON-LD **`OfferCatalog`**: aus **`SERVICES`** generiert (`lib/seo/global-jsonld.ts`, eingebunden über **`components/StructuredData.tsx`**) — neue Slugs erscheinen automatisch im Schema. Absolute URLs nutzen **`getSiteOrigin()`** (`lib/seo/site-origin.ts`).
 
 ## Client-Bundle (bewusst minimal)
 
@@ -75,7 +75,8 @@ flowchart LR
 |----------------|--------|
 | `LeadFunnel` | Multi-Step-State, `fetch` |
 | `CareerForm` | Formular-State, `fetch` |
-| `SiteHeaderNav` | Mobile-Menü, Scroll-Lock, Tastatur (Escape) |
+| `SiteHeaderNav` | Mobile-Menü, Scroll-Lock, Tastatur (Escape), **Hover-Prefetch** (`PrefetchLink`) |
 | `KontaktFormSwitch` | **`useSearchParams`** für `/kontakt`-Weiche |
+| `PrefetchLink` | `next/link` + `useRouter().prefetch` auf `pointerenter` für Kern-Routen (Header/Footer) |
 
 Alle übrigen Seiten unter `app/` sind Server Components.
