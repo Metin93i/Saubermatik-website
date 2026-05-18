@@ -18,11 +18,12 @@ const geistMono = Geist_Mono({
   display: "swap",
 });
 
-const siteUrl =
-  process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.saubermatik.de";
+const metadataBaseUrl = (
+  process.env.NEXT_PUBLIC_SITE_URL || "https://www.saubermatik-reinigung.de"
+).replace(/\/+$/, "");
 
 export const metadata: Metadata = {
-  metadataBase: new URL(siteUrl),
+  metadataBase: new URL(metadataBaseUrl),
   title: {
     default: "Saubermatik Gebäudereinigung | Meßstetten & Zollernalb",
     template: "%s | Saubermatik Gebäudereinigung",
