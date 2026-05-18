@@ -68,7 +68,7 @@ export default function UnterhaltsreinigungPage() {
           <div className="mt-10 flex flex-wrap gap-4">
             <a
               href="#kontakt-anfrage"
-              className="inline-flex h-12 items-center justify-center rounded-xl bg-primary px-6 text-sm font-semibold text-foreground-foreground shadow-md transition hover:bg-primary/90"
+              className="inline-flex h-12 items-center justify-center rounded-xl bg-primary px-6 text-sm font-semibold text-primary-foreground shadow-md transition hover:bg-primary/90"
             >
               Jetzt Objekt-Analyse anfordern
             </a>

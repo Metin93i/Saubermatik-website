@@ -49,9 +49,17 @@ export default function RootLayout({
   return (
     <html
       lang="de"
-      className={`${geistSans.variable} ${geistMono.variable} h-full scroll-smooth antialiased`}
+      className={`${geistSans.variable} ${geistMono.variable} light h-full scroll-smooth antialiased`}
+      style={{ colorScheme: "light" }}
+      suppressHydrationWarning
     >
       <head>
+        {/* Hard-lock brand tokens – prevents post-hydration teal overrides */}
+        <style
+          dangerouslySetInnerHTML={{
+            __html: `:root,:host,html,.dark,html.dark,html[data-theme="dark"]{--primary:#f97316!important;--secondary:#f97316!important;--accent:#f97316!important;--color-primary:#f97316!important;--color-secondary:#f97316!important;--color-accent:#f97316!important;--primary-foreground:#09090b!important;--secondary-foreground:#09090b!important;color-scheme:light!important}`,
+          }}
+        />
         <StructuredData />
       </head>
       <body className="min-h-full flex flex-col bg-background text-foreground">

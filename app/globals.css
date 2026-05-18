@@ -1,40 +1,122 @@
 @import "tailwindcss";
 
-:root {
+/* ─── Brand palette (compile-time + runtime) ─────────────────────────────── */
+@theme {
+  --color-background: #ffffff;
+  --color-foreground: #09090b;
+  --color-muted: #52525b;
+
+  --color-primary: #f97316;
+  --color-primary-foreground: #09090b;
+
+  --color-secondary: #f97316;
+  --color-secondary-foreground: #09090b;
+
+  --color-accent: #f97316;
+  --color-accent-foreground: #09090b;
+
+  --color-surface-inverse: #09090b;
+  --color-surface-inverse-foreground: #fafafa;
+
+  --color-brand-orange: #f97316;
+  --color-brand-orange-hover: #ea580c;
+  --color-brand-black: #09090b;
+
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+/* Lock tokens on every root selector Tailwind / browsers may use */
+:root,
+:host,
+html {
+  color-scheme: light;
+
   --background: #ffffff;
   --foreground: #09090b;
   --muted: #52525b;
-  /* Brand orange – CTAs, Akzente, Icons */
+
   --primary: #f97316;
   --primary-hover: #ea580c;
-  /* WCAG AA: ~7.5:1 Schwarz auf Orange-500 */
   --primary-foreground: #09090b;
+
   --secondary: #f97316;
   --secondary-hover: #ea580c;
   --secondary-foreground: #09090b;
-  /* Footer & inverse surfaces */
+
+  --accent: #f97316;
+  --accent-foreground: #09090b;
+
+  --color-primary: #f97316;
+  --color-primary-foreground: #09090b;
+  --color-secondary: #f97316;
+  --color-secondary-foreground: #09090b;
+  --color-accent: #f97316;
+  --color-accent-foreground: #09090b;
+
   --surface-inverse: #09090b;
   --surface-inverse-foreground: #fafafa;
   --link-on-inverse: #fb923c;
   --logo-focus-ring: #f97316;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --color-muted: var(--muted);
-  --color-primary: var(--primary);
-  --color-primary-foreground: var(--primary-foreground);
-  --color-secondary: var(--secondary);
-  --color-secondary-foreground: var(--secondary-foreground);
-  --color-surface-inverse: var(--surface-inverse);
-  --color-surface-inverse-foreground: var(--surface-inverse-foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* Force light brand even if OS / .dark / data-theme flips */
+.dark,
+html.dark,
+html[data-theme="dark"],
+[data-theme="dark"] {
+  color-scheme: light;
+
+  --primary: #f97316;
+  --primary-hover: #ea580c;
+  --primary-foreground: #09090b;
+  --secondary: #f97316;
+  --secondary-hover: #ea580c;
+  --secondary-foreground: #09090b;
+  --accent: #f97316;
+  --accent-foreground: #09090b;
+
+  --color-primary: #f97316;
+  --color-primary-foreground: #09090b;
+  --color-secondary: #f97316;
+  --color-secondary-foreground: #09090b;
+  --color-accent: #f97316;
+  --color-accent-foreground: #09090b;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root,
+  :host,
+  html {
+    color-scheme: light;
+
+    --primary: #f97316;
+    --primary-hover: #ea580c;
+    --primary-foreground: #09090b;
+    --secondary: #f97316;
+    --secondary-hover: #ea580c;
+    --secondary-foreground: #09090b;
+    --accent: #f97316;
+    --accent-foreground: #09090b;
+
+    --color-primary: #f97316;
+    --color-primary-foreground: #09090b;
+    --color-secondary: #f97316;
+    --color-secondary-foreground: #09090b;
+    --color-accent: #f97316;
+    --color-accent-foreground: #09090b;
+  }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+}
+
+/* Orange CTA hover → orange-600 (baked hex, not opacity-mix) */
+.hover\:bg-primary\/90:hover,
+.hover\:bg-primary\/92:hover,
+.hover\:bg-secondary\/90:hover {
+  background-color: #ea580c !important;
 }

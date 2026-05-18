@@ -16,7 +16,7 @@ export function SiteFooter() {
     <footer className="mt-auto border-t border-foreground/10 bg-surface-inverse text-surface-inverse-foreground">
       <div className="mx-auto grid w-full max-w-6xl gap-10 px-4 py-12 sm:grid-cols-2 sm:px-6 lg:grid-cols-4 lg:px-8">
         <div className="sm:col-span-2 lg:col-span-1">
-          <SaubermatikLogo href="/" variant="onDark" />
+          <SaubermatikLogo variant="onDark" />
           <p className="mt-3 text-sm leading-6 text-surface-inverse-foreground/85">
             Professionelle Gebäudereinigung aus Meßstetten – für die Region
             Zollernalb, Tübingen und angrenzende Wirtschaftsräume.
