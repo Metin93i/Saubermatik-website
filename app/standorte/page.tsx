@@ -21,7 +21,7 @@ export default function StandorteHubPage() {
       />
       <article className="mx-auto w-full max-w-3xl flex-1 px-4 py-12 sm:px-6 lg:px-8">
         <p className="text-sm font-semibold text-secondary">Region</p>
-        <h1 className="mt-3 text-3xl font-bold tracking-tight text-primary sm:text-4xl">
+        <h1 className="mt-3 text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
           Standorte &amp; Einsatzgebiete
         </h1>
         <p className="mt-4 text-lg leading-8 text-muted">
@@ -32,7 +32,7 @@ export default function StandorteHubPage() {
           <li className="sm:col-span-2">
             <Link
               href="/standorte/stuttgart"
-              className="block rounded-lg border border-secondary/40 bg-secondary/10 px-4 py-3 text-sm font-semibold text-primary transition hover:border-secondary hover:bg-secondary/15"
+              className="block rounded-lg border border-secondary/40 bg-secondary/10 px-4 py-3 text-sm font-semibold text-foreground transition hover:border-secondary hover:bg-secondary/15"
             >
               Stuttgart (Metropolregion, Spezial-Hub)
             </Link>
@@ -41,7 +41,7 @@ export default function StandorteHubPage() {
             <li key={city}>
               <Link
                 href={`/standorte/${city}`}
-                className="block rounded-lg border border-foreground/10 px-4 py-3 text-sm font-medium text-primary transition hover:border-secondary/50 hover:bg-secondary/5"
+                className="block rounded-lg border border-foreground/10 px-4 py-3 text-sm font-medium text-foreground transition hover:border-secondary/50 hover:bg-secondary/5"
               >
                 {STANDORT_LABELS[city]}
               </Link>

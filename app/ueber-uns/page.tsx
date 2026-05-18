@@ -21,7 +21,7 @@ export default function UeberUnsPage() {
   return (
     <article className="mx-auto w-full max-w-3xl flex-1 px-4 py-12 sm:px-6 lg:px-8">
       <p className="text-sm font-semibold text-secondary">Über uns</p>
-      <h1 className="mt-3 text-3xl font-bold tracking-tight text-primary sm:text-4xl">
+      <h1 className="mt-3 text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
         Regional verwurzelt. Digital vorbereitet.
       </h1>
 
@@ -65,7 +65,7 @@ export default function UeberUnsPage() {
       </div>
 
       <div className="mt-12 min-h-[10rem] rounded-2xl border border-secondary/25 bg-secondary/5 p-6 sm:p-8">
-        <h2 className="text-lg font-bold text-primary">Was uns antreibt</h2>
+        <h2 className="text-lg font-bold text-foreground">Was uns antreibt</h2>
         <ul className="mt-4 list-inside list-disc space-y-2 text-sm leading-7 text-muted sm:text-base">
           <li>Langfristige Objektbetreuung statt Einmal-Show</li>
           <li>Transparente Abläufe für Eigentümer, Mieter und Verwaltung</li>
@@ -82,14 +82,14 @@ export default function UeberUnsPage() {
         </Link>
         <Link
           href="/qualitaetsmanagement"
-          className="inline-flex h-11 items-center justify-center rounded-xl border border-foreground/15 px-5 text-sm font-semibold text-primary transition hover:border-secondary/50 hover:bg-secondary/5"
+          className="inline-flex h-11 items-center justify-center rounded-xl border border-foreground/15 px-5 text-sm font-semibold text-foreground transition hover:border-secondary/50 hover:bg-secondary/5"
         >
           Qualitätsmanagement
         </Link>
         {telHref ? (
           <a
             href={telHref}
-            className="inline-flex h-11 items-center justify-center rounded-xl border border-foreground/15 px-5 text-sm font-semibold text-primary transition hover:border-secondary/50 hover:bg-secondary/5"
+            className="inline-flex h-11 items-center justify-center rounded-xl border border-foreground/15 px-5 text-sm font-semibold text-foreground transition hover:border-secondary/50 hover:bg-secondary/5"
           >
             Anrufen
           </a>

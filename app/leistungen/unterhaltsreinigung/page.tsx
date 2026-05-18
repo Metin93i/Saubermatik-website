@@ -52,7 +52,7 @@ export default function UnterhaltsreinigungPage() {
             <span className="text-muted"> / </span>
             <span className="text-muted">Unterhaltsreinigung</span>
           </nav>
-          <h1 className="mt-6 max-w-4xl text-3xl font-bold tracking-tight text-primary sm:text-4xl lg:text-[2.5rem] lg:leading-[1.15]">
+          <h1 className="mt-6 max-w-4xl text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-[2.5rem] lg:leading-[1.15]">
             Professionelle Unterhaltsreinigung für Gewerbe &amp; Praxen in der
             Region Zollernalb.
           </h1>
@@ -68,13 +68,13 @@ export default function UnterhaltsreinigungPage() {
           <div className="mt-10 flex flex-wrap gap-4">
             <a
               href="#kontakt-anfrage"
-              className="inline-flex h-12 items-center justify-center rounded-xl bg-primary px-6 text-sm font-semibold text-primary-foreground shadow-md transition hover:bg-primary/90"
+              className="inline-flex h-12 items-center justify-center rounded-xl bg-primary px-6 text-sm font-semibold text-foreground-foreground shadow-md transition hover:bg-primary/90"
             >
               Jetzt Objekt-Analyse anfordern
             </a>
             <Link
               href="/leistungen"
-              className="inline-flex h-12 items-center justify-center rounded-xl border border-slate-200 bg-white px-6 text-sm font-semibold text-primary transition hover:border-secondary/40 hover:bg-slate-50"
+              className="inline-flex h-12 items-center justify-center rounded-xl border border-slate-200 bg-white px-6 text-sm font-semibold text-foreground transition hover:border-secondary/40 hover:bg-slate-50"
             >
               Alle Leistungen
             </Link>
@@ -88,26 +88,26 @@ export default function UnterhaltsreinigungPage() {
             <h2 className="text-sm font-bold uppercase tracking-wider text-secondary">
               Problem
             </h2>
-            <p className="mt-3 text-2xl font-bold tracking-tight text-primary">
+            <p className="mt-3 text-2xl font-bold tracking-tight text-foreground">
               Wenn Reinigung zur Zufallsvariable wird, leidet Ihr Betrieb.
             </p>
             <ul className="mt-6 space-y-4 text-base leading-7 text-slate-600">
               <li>
-                <span className="font-semibold text-primary">
+                <span className="font-semibold text-foreground">
                   Wechselnde Gesichter:
                 </span>{" "}
                 Jedes Mal neue Ansprechpartner, jedes Mal andere Standards. Das
                 kostet Managementzeit, die Sie woanders brauchen.
               </li>
               <li>
-                <span className="font-semibold text-primary">
+                <span className="font-semibold text-foreground">
                   Unzuverlässige Zeitfenster:
                 </span>{" "}
                 Wenn Teams zu spät kommen oder ausfallen, steht Ihre Rezeption
                 oder Produktion – nicht unsere Ausrede.
               </li>
               <li>
-                <span className="font-semibold text-primary">
+                <span className="font-semibold text-foreground">
                   Kommunikationslücken:
                 </span>{" "}
                 Ohne klare Eskalationswege bleiben Mängel liegen, bis sie
@@ -120,7 +120,7 @@ export default function UnterhaltsreinigungPage() {
             <h2 className="text-sm font-bold uppercase tracking-wider text-secondary">
               Lösung
             </h2>
-            <p className="mt-3 text-2xl font-bold tracking-tight text-primary">
+            <p className="mt-3 text-2xl font-bold tracking-tight text-foreground">
               Der SaaS-Vorteil für Ihr Objekt: digitale Objektsteuerung.
             </p>
             <p className="mt-4 text-base leading-7 text-slate-700">
@@ -140,7 +140,7 @@ export default function UnterhaltsreinigungPage() {
 
       <section className="border-y border-slate-200 bg-slate-50/50 py-16">
         <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-center text-2xl font-bold tracking-tight text-primary sm:text-3xl">
+          <h2 className="text-center text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
             Was wir konkret für Sie erledigen
           </h2>
           <p className="mx-auto mt-3 max-w-2xl text-center text-base text-slate-600">
@@ -172,7 +172,7 @@ export default function UnterhaltsreinigungPage() {
                     />
                   </svg>
                 </span>
-                <h3 className="mt-4 text-lg font-semibold text-primary">
+                <h3 className="mt-4 text-lg font-semibold text-foreground">
                   {item.title}
                 </h3>
                 <p className="mt-2 text-sm leading-6 text-slate-600">
@@ -185,12 +185,12 @@ export default function UnterhaltsreinigungPage() {
       </section>
 
       <section className="mx-auto w-full max-w-6xl px-4 py-16 sm:px-6 lg:px-8">
-        <h2 className="text-2xl font-bold tracking-tight text-primary sm:text-3xl">
+        <h2 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
           Vertrauen, den Sie intern verteidigen können
         </h2>
         <div className="mt-10 grid gap-8 sm:grid-cols-3">
           <div className="rounded-2xl border border-slate-200 p-6">
-            <h3 className="text-lg font-semibold text-primary">
+            <h3 className="text-lg font-semibold text-foreground">
               Feste Ansprechpartner
             </h3>
             <p className="mt-2 text-sm leading-6 text-slate-600">
@@ -199,7 +199,7 @@ export default function UnterhaltsreinigungPage() {
             </p>
           </div>
           <div className="rounded-2xl border border-slate-200 p-6">
-            <h3 className="text-lg font-semibold text-primary">
+            <h3 className="text-lg font-semibold text-foreground">
               Geschultes Personal
             </h3>
             <p className="mt-2 text-sm leading-6 text-slate-600">
@@ -209,7 +209,7 @@ export default function UnterhaltsreinigungPage() {
             </p>
           </div>
           <div className="rounded-2xl border border-slate-200 p-6">
-            <h3 className="text-lg font-semibold text-primary">
+            <h3 className="text-lg font-semibold text-foreground">
               Diskretion &amp; Sensibilität
             </h3>
             <p className="mt-2 text-sm leading-6 text-slate-600">
@@ -236,7 +236,7 @@ export default function UnterhaltsreinigungPage() {
       <section className="border-t border-slate-200 bg-gradient-to-b from-slate-50 to-white py-16 sm:py-20">
         <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
-            <h2 className="text-2xl font-bold tracking-tight text-primary sm:text-3xl">
+            <h2 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
               Objekt-Analyse anfordern
             </h2>
             <p className="mt-3 text-base leading-7 text-slate-600">

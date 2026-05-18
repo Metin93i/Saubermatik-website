@@ -59,15 +59,15 @@ export function buildGfLeadNotificationHtml(lead: LeadFunnelSubmission): string 
 
   const contactRow = `<tr>
   <td colspan="2" style="padding:6px;">
-    <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="border-collapse:separate;border-spacing:0;background:#0c2745;border-radius:10px;overflow:hidden;">
+    <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="border-collapse:separate;border-spacing:0;background:#09090b;border-radius:10px;overflow:hidden;">
       <tr>
         <td width="50%" style="padding:14px 16px;border-right:1px solid rgba(248,250,252,0.15);">
           <div style="font-size:11px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:#94a3b8;">Telefon</div>
-          <div style="margin-top:6px;font-size:16px;font-weight:600;"><a href="tel:${encodeURIComponent(lead.phone.replace(/\s/g, ""))}" style="color:#5eead4;text-decoration:none;">${escapeHtml(lead.phone)}</a></div>
+          <div style="margin-top:6px;font-size:16px;font-weight:600;"><a href="tel:${encodeURIComponent(lead.phone.replace(/\s/g, ""))}" style="color:#fb923c;text-decoration:none;">${escapeHtml(lead.phone)}</a></div>
         </td>
         <td width="50%" style="padding:14px 16px;">
           <div style="font-size:11px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:#94a3b8;">E-Mail</div>
-          <div style="margin-top:6px;font-size:16px;font-weight:600;"><a href="mailto:${escapeHtml(lead.email)}" style="color:#5eead4;text-decoration:none;">${escapeHtml(lead.email)}</a></div>
+          <div style="margin-top:6px;font-size:16px;font-weight:600;"><a href="mailto:${escapeHtml(lead.email)}" style="color:#fb923c;text-decoration:none;">${escapeHtml(lead.email)}</a></div>
         </td>
       </tr>
     </table>
@@ -95,8 +95,8 @@ export function buildGfLeadNotificationHtml(lead: LeadFunnelSubmission): string 
       <td align="center">
         <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="max-width:600px;background:#ffffff;border-radius:14px;overflow:hidden;box-shadow:0 12px 48px rgba(15,39,69,0.12);">
           <tr>
-            <td style="background:linear-gradient(135deg,#0c2745 0%,#134e6a 100%);padding:22px 26px;">
-              <p style="margin:0;font-size:12px;font-weight:600;color:#5eead4;letter-spacing:0.12em;text-transform:uppercase;">Saubermatik · Lead</p>
+            <td style="background:linear-gradient(135deg,#f97316 0%,#09090b 100%);padding:22px 26px;">
+              <p style="margin:0;font-size:12px;font-weight:600;color:#fed7aa;letter-spacing:0.12em;text-transform:uppercase;">Saubermatik · Lead</p>
               <h1 style="margin:10px 0 0;font-size:22px;line-height:1.25;color:#f8fafc;font-weight:700;">Neue Website-Anfrage</h1>
               <p style="margin:8px 0 0;font-size:14px;line-height:1.5;color:#cbd5e1;">Alle Kerninfos auf einen Blick – Antwort direkt an den Kunden.</p>
             </td>

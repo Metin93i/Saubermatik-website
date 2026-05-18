@@ -36,7 +36,7 @@ export default function KarrierePage() {
   return (
     <article className="mx-auto w-full max-w-3xl flex-1 px-4 py-12 sm:px-6 lg:px-8">
       <p className="text-sm font-semibold text-secondary">Karriere</p>
-      <h1 className="mt-3 text-3xl font-bold tracking-tight text-primary sm:text-4xl">
+      <h1 className="mt-3 text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
         Werden Sie Teil eines Teams, das digital denkt und handwerklich liefert.
       </h1>
       <p className="mt-5 text-lg leading-8 text-muted">
@@ -64,7 +64,7 @@ export default function KarrierePage() {
             key={b.title}
             className="flex min-h-[11rem] flex-col rounded-2xl border border-foreground/10 bg-white p-5 shadow-md ring-1 ring-black/5 sm:min-h-[12rem] sm:p-6"
           >
-            <h2 className="text-base font-bold text-primary sm:text-lg">{b.title}</h2>
+            <h2 className="text-base font-bold text-foreground sm:text-lg">{b.title}</h2>
             <p className="mt-3 flex-1 text-sm leading-6 text-muted sm:text-[15px] sm:leading-7">
               {b.text}
             </p>
@@ -73,7 +73,7 @@ export default function KarrierePage() {
       </ul>
 
       <div className="mt-14 rounded-2xl border border-foreground/10 bg-slate-50/90 p-6 sm:p-8">
-        <h2 className="text-lg font-bold text-primary">Initiativbewerbung</h2>
+        <h2 className="text-lg font-bold text-foreground">Initiativbewerbung</h2>
         <p className="mt-2 text-sm leading-6 text-muted">
           Senden Sie uns kurz Ihre Motivation und Verfügbarkeit – wir melden uns
           zeitnah mit den nächsten Schritten.

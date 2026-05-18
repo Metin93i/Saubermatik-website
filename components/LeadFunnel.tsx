@@ -251,7 +251,7 @@ export function LeadFunnel({
         aria-live="polite"
       >
         <p className="text-sm font-semibold text-secondary">Anfrage gesendet</p>
-        <h2 className="mt-2 text-xl font-bold tracking-tight text-primary sm:text-2xl">
+        <h2 className="mt-2 text-xl font-bold tracking-tight text-foreground sm:text-2xl">
           Vielen Dank! Wir analysieren Ihr Objekt und melden uns innerhalb von
           60 Minuten bei Ihnen!
         </h2>
@@ -305,7 +305,7 @@ export function LeadFunnel({
           </p>
           <h2
             id="lead-funnel-title"
-            className="mt-2 text-lg font-bold tracking-tight text-primary sm:text-xl"
+            className="mt-2 text-lg font-bold tracking-tight text-foreground sm:text-xl"
           >
             {stepTitle}
           </h2>
@@ -481,7 +481,7 @@ export function LeadFunnel({
               {canGoBack ? (
                 <button
                   type="button"
-                  className="text-sm font-semibold text-primary underline-offset-4 hover:underline disabled:pointer-events-none disabled:opacity-50"
+                  className="text-sm font-semibold text-secondary underline-offset-4 hover:underline disabled:pointer-events-none disabled:opacity-50"
                   onClick={goBack}
                   disabled={isLoading}
                 >
@@ -514,7 +514,7 @@ export function LeadFunnel({
         <div className="mt-6">
           <button
             type="button"
-            className="text-sm font-semibold text-primary underline-offset-4 hover:underline"
+            className="text-sm font-semibold text-secondary underline-offset-4 hover:underline"
             onClick={goBack}
           >
             Zurück

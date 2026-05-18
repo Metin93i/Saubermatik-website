@@ -16,14 +16,14 @@ export function LeistungSgeTldr({ slug }: Props) {
       </h2>
       <ul className="mt-3 list-disc space-y-3 pl-5 text-base leading-7 text-foreground/90 marker:text-secondary">
         <li>
-          <strong className="text-primary">Problem:</strong> {t.problem}
+          <strong className="text-foreground">Problem:</strong> {t.problem}
         </li>
         <li>
-          <strong className="text-primary">Saubermatik-Lösung:</strong>{" "}
+          <strong className="text-foreground">Saubermatik-Lösung:</strong>{" "}
           {t.saubermatikLoesung}
         </li>
         <li>
-          <strong className="text-primary">Zeitrahmen:</strong> {t.zeitrahmen}
+          <strong className="text-foreground">Zeitrahmen:</strong> {t.zeitrahmen}
         </li>
       </ul>
     </section>

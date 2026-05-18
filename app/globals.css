@@ -2,20 +2,21 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #0f172a;
-  /* WCAG AA: ~6.8:1 auf weiß für Fließtext */
-  --muted: #475569;
-  --primary: #0c2745;
-  --primary-foreground: #f8fafc;
-  /* WCAG AA: ~4.7:1 auf weiß für normale Schrift */
-  --secondary: #0f766e;
-  --secondary-foreground: #ecfdf5;
-  /* Wordmark „MATIK“ auf hellem Grund */
-  --logo-accent: #0f766e;
-  /* Auf Primary-Blau (Footer): hoher Kontrast */
-  --logo-on-dark-accent: #93c5fd;
-  --logo-focus-ring: #0f766e;
-  --link-on-primary: #93c5fd;
+  --foreground: #09090b;
+  --muted: #52525b;
+  /* Brand orange – CTAs, Akzente, Icons */
+  --primary: #f97316;
+  --primary-hover: #ea580c;
+  /* WCAG AA: ~7.5:1 Schwarz auf Orange-500 */
+  --primary-foreground: #09090b;
+  --secondary: #f97316;
+  --secondary-hover: #ea580c;
+  --secondary-foreground: #09090b;
+  /* Footer & inverse surfaces */
+  --surface-inverse: #09090b;
+  --surface-inverse-foreground: #fafafa;
+  --link-on-inverse: #fb923c;
+  --logo-focus-ring: #f97316;
 }
 
 @theme inline {
@@ -26,6 +27,8 @@
   --color-primary-foreground: var(--primary-foreground);
   --color-secondary: var(--secondary);
   --color-secondary-foreground: var(--secondary-foreground);
+  --color-surface-inverse: var(--surface-inverse);
+  --color-surface-inverse-foreground: var(--surface-inverse-foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }

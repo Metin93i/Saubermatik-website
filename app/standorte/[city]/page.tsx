@@ -58,7 +58,7 @@ export default async function StandortPage({ params }: PageProps) {
       />
       <article className="mx-auto w-full max-w-3xl flex-1 px-4 py-12 sm:px-6 lg:px-8">
         <p className="text-sm font-semibold text-secondary">Standort {label}</p>
-        <h1 className="mt-3 text-3xl font-bold tracking-tight text-primary sm:text-4xl">
+        <h1 className="mt-3 text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
           {content.headline}
         </h1>
         <FreshnessBadge />
@@ -74,7 +74,7 @@ export default async function StandortPage({ params }: PageProps) {
           >
             <h2
               id={`local-entities-${city}`}
-              className="text-xl font-bold tracking-tight text-primary"
+              className="text-xl font-bold tracking-tight text-foreground"
             >
               {entityAug.heading}
             </h2>

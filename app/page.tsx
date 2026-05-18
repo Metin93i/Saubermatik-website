@@ -58,7 +58,7 @@ export default function Home() {
             <p className="text-sm font-semibold tracking-wide text-secondary">
               Meßstetten · Zollernalb · Schwarzwald-Baar-Heuberg
             </p>
-            <h1 className="mt-3 text-3xl font-bold tracking-tight text-primary sm:text-4xl lg:text-[2.5rem] lg:leading-tight">
+            <h1 className="mt-3 text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-[2.5rem] lg:leading-tight">
               Reinigung, die hält, was sie verspricht – mit Kopf, nicht nur mit
               dem Wischmob.
             </h1>
@@ -89,7 +89,7 @@ export default function Home() {
               </Link>
               <Link
                 href="#kontakt-anfrage"
-                className="inline-flex h-11 items-center justify-center rounded-xl border border-foreground/15 bg-white/90 px-5 text-sm font-semibold text-primary shadow-md backdrop-blur transition-all duration-200 hover:scale-[1.02] hover:border-secondary/50 hover:bg-white hover:shadow-lg"
+                className="inline-flex h-11 items-center justify-center rounded-xl border border-foreground/15 bg-white/90 px-5 text-sm font-semibold text-foreground shadow-md backdrop-blur transition-all duration-200 hover:scale-[1.02] hover:border-secondary/50 hover:bg-white hover:shadow-lg"
               >
                 Direkt anfragen
               </Link>
@@ -134,7 +134,7 @@ export default function Home() {
             <p className="text-sm font-semibold text-secondary">Reinigung 4.0</p>
             <h2
               id="reinigung-4-heading"
-              className="mt-2 text-2xl font-bold tracking-tight text-primary sm:text-3xl"
+              className="mt-2 text-2xl font-bold tracking-tight text-foreground sm:text-3xl"
             >
               Software-Vorteil statt Zufall: Protokolle, die jede Tour
               dokumentieren.
@@ -148,7 +148,7 @@ export default function Home() {
           </div>
           <ul className="mt-10 grid gap-6 sm:grid-cols-2">
             <li className="flex min-h-[14rem] flex-col rounded-2xl border border-foreground/10 bg-white p-6 shadow-md ring-1 ring-black/5 sm:min-h-[15rem] sm:p-8">
-              <h3 className="text-lg font-bold text-primary sm:text-xl">
+              <h3 className="text-lg font-bold text-foreground sm:text-xl">
                 Digitale Protokolle
               </h3>
               <p className="mt-3 flex-1 text-sm leading-6 text-muted sm:text-base sm:leading-7">
@@ -159,7 +159,7 @@ export default function Home() {
               </p>
             </li>
             <li className="flex min-h-[14rem] flex-col rounded-2xl border border-foreground/10 bg-white p-6 shadow-md ring-1 ring-black/5 sm:min-h-[15rem] sm:p-8">
-              <h3 className="text-lg font-bold text-primary sm:text-xl">
+              <h3 className="text-lg font-bold text-foreground sm:text-xl">
                 Ausfallsicherheit über die Plattform
               </h3>
               <p className="mt-3 flex-1 text-sm leading-6 text-muted sm:text-base sm:leading-7">
@@ -176,7 +176,7 @@ export default function Home() {
       <section className="border-t border-foreground/10 bg-white py-16 sm:py-20">
         <div className="mx-auto grid w-full max-w-6xl gap-12 px-4 sm:px-6 lg:grid-cols-2 lg:items-center lg:gap-16 lg:px-8">
           <div className="order-2 lg:order-1">
-            <h2 className="text-2xl font-bold tracking-tight text-primary sm:text-3xl">
+            <h2 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
               Warum wir? Weil wir nicht nur putzen.
             </h2>
             <p className="mt-4 text-base leading-7 text-muted sm:text-lg">
@@ -251,7 +251,7 @@ export default function Home() {
 
       <section className="bg-white py-16 sm:py-20">
         <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-center text-2xl font-bold tracking-tight text-primary sm:text-3xl">
+          <h2 className="text-center text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
             Stimmen aus der Region
           </h2>
           <p className="mx-auto mt-3 max-w-2xl text-center text-sm text-muted">
@@ -266,7 +266,7 @@ export default function Home() {
               >
                 <p className="text-sm leading-6 text-foreground/90">&ldquo;{t.quote}&rdquo;</p>
                 <div className="mt-5 border-t border-foreground/10 pt-4">
-                  <p className="text-sm font-semibold text-primary">{t.name}</p>
+                  <p className="text-sm font-semibold text-foreground">{t.name}</p>
                   <p className="mt-1 text-xs text-muted">{t.role}</p>
                 </div>
               </li>
@@ -278,7 +278,7 @@ export default function Home() {
       <section className="border-t border-foreground/10 bg-gradient-to-b from-slate-50/90 to-background py-16 sm:py-20">
         <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl">
-            <h2 className="text-2xl font-bold tracking-tight text-primary sm:text-3xl">
+            <h2 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
               Kurz vor Ort – für Sie in der Nachbarschaft
             </h2>
             <p className="mt-3 text-base leading-7 text-muted">
@@ -295,7 +295,7 @@ export default function Home() {
                   href={`/standorte/${city}`}
                   className="group flex min-h-[9.5rem] flex-col rounded-2xl border border-foreground/10 bg-white p-5 shadow-md transition-all duration-200 hover:scale-[1.02] hover:border-secondary/40 hover:shadow-xl"
                 >
-                  <span className="text-base font-semibold text-primary group-hover:text-secondary">
+                  <span className="text-base font-semibold text-foreground group-hover:text-secondary">
                     {STANDORT_LABELS[city]}
                   </span>
                   <span className="mt-2 text-sm text-muted">

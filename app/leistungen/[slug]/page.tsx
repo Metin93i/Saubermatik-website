@@ -66,7 +66,7 @@ export default async function LeistungDetailPage({ params }: PageProps) {
           <span className="text-muted"> / </span>
           <span>{content.title}</span>
         </p>
-        <h1 className="mt-3 text-3xl font-bold tracking-tight text-primary sm:text-4xl">
+        <h1 className="mt-3 text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
           {content.title} in der Region Zollernalb
         </h1>
         <p className="mt-4 text-lg leading-8 text-muted">{content.summary}</p>
@@ -90,7 +90,7 @@ export default async function LeistungDetailPage({ params }: PageProps) {
           </Link>
           <Link
             href="/leistungen"
-            className="inline-flex h-11 items-center justify-center rounded-xl border border-foreground/15 px-5 text-sm font-semibold text-primary transition hover:border-secondary/60 hover:bg-secondary/5"
+            className="inline-flex h-11 items-center justify-center rounded-xl border border-foreground/15 px-5 text-sm font-semibold text-foreground transition hover:border-secondary/60 hover:bg-secondary/5"
           >
             Alle Leistungen
           </Link>

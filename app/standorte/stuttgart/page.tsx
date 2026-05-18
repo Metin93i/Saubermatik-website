@@ -55,7 +55,7 @@ export default function StandortStuttgartPage() {
         <span className="text-muted"> / </span>
         <span>Stuttgart</span>
       </p>
-      <h1 className="mt-3 text-3xl font-bold tracking-tight text-primary sm:text-4xl">
+      <h1 className="mt-3 text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
         Fensterreinigung Stuttgart &amp; Gebäudereinigung mit Zollernalb-Logistik
       </h1>
       <FreshnessBadge className="mt-4" />
@@ -88,7 +88,7 @@ export default function StandortStuttgartPage() {
             id={section.id}
             className="scroll-mt-24 border-b border-foreground/10 pb-10 last:border-0"
           >
-            <h2 className="text-xl font-bold tracking-tight text-primary sm:text-2xl">
+            <h2 className="text-xl font-bold tracking-tight text-foreground sm:text-2xl">
               {section.title}
             </h2>
             <p className="mt-4 text-base leading-7 text-muted">{section.body}</p>
@@ -105,13 +105,13 @@ export default function StandortStuttgartPage() {
         </Link>
         <Link
           href="/kontakt#kontakt-anfrage"
-          className="inline-flex h-11 items-center justify-center rounded-xl border border-foreground/15 px-5 text-sm font-semibold text-primary transition hover:border-secondary/60 hover:bg-secondary/5"
+          className="inline-flex h-11 items-center justify-center rounded-xl border border-foreground/15 px-5 text-sm font-semibold text-foreground transition hover:border-secondary/60 hover:bg-secondary/5"
         >
           Objekt in Stuttgart anfragen
         </Link>
         <Link
           href="/expertise"
-          className="inline-flex h-11 items-center justify-center rounded-xl border border-foreground/15 px-5 text-sm font-semibold text-primary transition hover:border-secondary/60 hover:bg-secondary/5"
+          className="inline-flex h-11 items-center justify-center rounded-xl border border-foreground/15 px-5 text-sm font-semibold text-foreground transition hover:border-secondary/60 hover:bg-secondary/5"
         >
           Expertise &amp; Standards
         </Link>

@@ -24,8 +24,8 @@ export function buildCareerHrNotificationHtml(app: CareerApplication): string {
       <td align="center">
         <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="max-width:600px;background:#ffffff;border-radius:14px;overflow:hidden;box-shadow:0 12px 48px rgba(15,39,69,0.12);">
           <tr>
-            <td style="background:linear-gradient(135deg,#0f766e 0%,#0c2745 100%);padding:22px 26px;">
-              <p style="margin:0;font-size:12px;font-weight:600;color:#a7f3d0;letter-spacing:0.12em;text-transform:uppercase;">Saubermatik · HR</p>
+            <td style="background:linear-gradient(135deg,#f97316 0%,#09090b 100%);padding:22px 26px;">
+              <p style="margin:0;font-size:12px;font-weight:600;color:#fed7aa;letter-spacing:0.12em;text-transform:uppercase;">Saubermatik · HR</p>
               <h1 style="margin:10px 0 0;font-size:22px;line-height:1.25;color:#f8fafc;font-weight:700;">Neue Bewerbung (Website)</h1>
               <p style="margin:8px 0 0;font-size:14px;line-height:1.5;color:#cbd5e1;">Eingang über Karriere-Kanal – bitte im ATS / Postfach weiterverarbeiten.</p>
             </td>
@@ -44,11 +44,11 @@ export function buildCareerHrNotificationHtml(app: CareerApplication): string {
                     <table role="presentation" width="100%"><tr>
                       <td width="50%" style="padding-right:8px;vertical-align:top;">
                         <div style="font-size:11px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:#64748b;">Telefon</div>
-                        <div style="margin-top:4px;font-size:15px;font-weight:600;"><a href="tel:${encodeURIComponent(app.phone.replace(/\s/g, ""))}" style="color:#0f766e;text-decoration:none;">${escapeHtml(app.phone)}</a></div>
+                        <div style="margin-top:4px;font-size:15px;font-weight:600;"><a href="tel:${encodeURIComponent(app.phone.replace(/\s/g, ""))}" style="color:#ea580c;text-decoration:none;">${escapeHtml(app.phone)}</a></div>
                       </td>
                       <td width="50%" style="padding-left:8px;vertical-align:top;">
                         <div style="font-size:11px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:#64748b;">E-Mail</div>
-                        <div style="margin-top:4px;font-size:15px;font-weight:600;"><a href="mailto:${escapeHtml(app.email)}" style="color:#0f766e;text-decoration:none;">${escapeHtml(app.email)}</a></div>
+                        <div style="margin-top:4px;font-size:15px;font-weight:600;"><a href="mailto:${escapeHtml(app.email)}" style="color:#ea580c;text-decoration:none;">${escapeHtml(app.email)}</a></div>
                       </td>
                     </tr></table>
                   </td>

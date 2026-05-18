@@ -75,7 +75,7 @@ export function EngagementCalculator({
       <p className="text-sm font-semibold text-secondary">Kosten-Richtwert</p>
       <h2
         id="engagement-calculator-heading"
-        className="mt-2 text-xl font-bold tracking-tight text-primary sm:text-2xl"
+        className="mt-2 text-xl font-bold tracking-tight text-foreground sm:text-2xl"
       >
         In 3 Schritten zur groben Monats-Schätzung
       </h2>
@@ -146,7 +146,7 @@ export function EngagementCalculator({
             className="text-sm font-medium text-foreground"
           >
             Geschätzte Fläche:{" "}
-            <strong className="text-primary">{sqm} m²</strong>
+            <strong className="text-foreground">{sqm} m²</strong>
           </label>
           <input
             id="calc-sqm"
@@ -169,7 +169,7 @@ export function EngagementCalculator({
           <div className="mt-6 flex flex-wrap gap-3">
             <button
               type="button"
-              className="inline-flex h-11 items-center justify-center rounded-xl border border-foreground/15 px-5 text-sm font-semibold text-primary hover:bg-secondary/5"
+              className="inline-flex h-11 items-center justify-center rounded-xl border border-foreground/15 px-5 text-sm font-semibold text-foreground hover:bg-secondary/5"
               onClick={() => setStep(0)}
               aria-label="Zurück zur Objektauswahl"
             >
@@ -194,7 +194,7 @@ export function EngagementCalculator({
             <strong className="text-foreground">{selected.label}</strong> bei{" "}
             {sqm} m² (monatlich, netto-orientiert):
           </p>
-          <p className="mt-3 text-3xl font-bold text-primary">
+          <p className="mt-3 text-3xl font-bold text-foreground">
             {formatEuro(estimate.min)} – {formatEuro(estimate.max)}
           </p>
           <p className="mt-2 text-xs text-muted">
@@ -212,7 +212,7 @@ export function EngagementCalculator({
             </button>
             <Link
               href="/kontakt#kontakt-anfrage"
-              className="inline-flex h-12 items-center justify-center rounded-xl border border-foreground/15 px-5 text-sm font-semibold text-primary hover:bg-secondary/5"
+              className="inline-flex h-12 items-center justify-center rounded-xl border border-foreground/15 px-5 text-sm font-semibold text-foreground hover:bg-secondary/5"
             >
               Kontaktseite
             </Link>

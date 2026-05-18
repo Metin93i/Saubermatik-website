@@ -21,7 +21,7 @@ export default function WissenHubPage() {
       />
       <article className="mx-auto w-full max-w-3xl flex-1 px-4 py-12 sm:px-6 lg:px-8">
         <p className="text-sm font-semibold text-secondary">Lexikon</p>
-        <h1 className="mt-3 text-3xl font-bold tracking-tight text-primary sm:text-4xl">
+        <h1 className="mt-3 text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
           Wissen für Facility, Verwaltung &amp; Geschäftsführung
         </h1>
         <p className="mt-4 text-lg leading-8 text-muted">
@@ -38,7 +38,7 @@ export default function WissenHubPage() {
                   href={`/wissen/${slug}`}
                   className="block rounded-xl border border-foreground/10 p-5 transition hover:border-secondary/40 hover:bg-secondary/5"
                 >
-                  <h2 className="text-lg font-bold text-primary">
+                  <h2 className="text-lg font-bold text-foreground">
                     {entry.title}
                   </h2>
                   <p className="mt-2 text-sm leading-6 text-muted">

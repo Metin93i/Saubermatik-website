@@ -36,7 +36,7 @@ export default async function KontaktPage({ searchParams }: KontaktPageProps) {
         <p className="text-sm font-semibold text-secondary">
           {isCareer ? "Karriere · Kontakt" : "Kontakt"}
         </p>
-        <h1 className="mt-3 text-3xl font-bold tracking-tight text-primary sm:text-4xl">
+        <h1 className="mt-3 text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
           {isCareer
             ? "Bewerbung & erste Fragen zum Job."
             : "Sprechen wir über Ihr Objekt."}

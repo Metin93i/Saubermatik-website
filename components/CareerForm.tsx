@@ -122,7 +122,7 @@ export function CareerForm({ className }: CareerFormProps) {
         aria-live="polite"
       >
         <p className="text-sm font-semibold text-secondary">Bewerbung gesendet</p>
-        <h2 className="mt-2 text-xl font-bold tracking-tight text-primary sm:text-2xl">
+        <h2 className="mt-2 text-xl font-bold tracking-tight text-foreground sm:text-2xl">
           Vielen Dank! Unser Team prüft Ihre Angaben und meldet sich bei Ihnen.
         </h2>
         <p className="mt-3 text-sm leading-6 text-muted">
@@ -158,7 +158,7 @@ export function CareerForm({ className }: CareerFormProps) {
       </p>
       <h2
         id="career-form-title"
-        className="mt-2 text-lg font-bold tracking-tight text-primary sm:text-xl"
+        className="mt-2 text-lg font-bold tracking-tight text-foreground sm:text-xl"
       >
         Schnellbewerbung
       </h2>

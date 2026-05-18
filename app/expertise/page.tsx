@@ -31,7 +31,7 @@ export default function ExpertisePage() {
   return (
     <article className="mx-auto w-full max-w-3xl flex-1 px-4 py-12 sm:px-6 lg:px-8">
       <p className="text-sm font-semibold text-secondary">Expertise</p>
-      <h1 className="mt-3 text-3xl font-bold tracking-tight text-primary sm:text-4xl">
+      <h1 className="mt-3 text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
         Beweis-Zentrum: Standards, Sicherheit &amp; digitale Objektsteuerung
       </h1>
       <p className="mt-5 text-lg leading-8 text-muted">
@@ -47,14 +47,14 @@ export default function ExpertisePage() {
             key={p.title}
             className="border-l-4 border-secondary/50 pl-5"
           >
-            <h2 className="text-xl font-bold text-primary">{p.title}</h2>
+            <h2 className="text-xl font-bold text-foreground">{p.title}</h2>
             <p className="mt-3 text-base leading-7 text-muted">{p.body}</p>
           </li>
         ))}
       </ul>
 
       <div className="mt-14 rounded-2xl border border-foreground/10 bg-slate-50/90 p-6 sm:p-8">
-        <h2 className="text-lg font-bold text-primary">Vertiefung</h2>
+        <h2 className="text-lg font-bold text-foreground">Vertiefung</h2>
         <p className="mt-2 text-sm leading-6 text-muted">
           Technische und organisatorische Details zum Qualitätsmanagement finden
           Sie im QM-Hub; für konkrete Objekte nutzen Sie die Kurz-Anfrage.
@@ -68,13 +68,13 @@ export default function ExpertisePage() {
           </Link>
           <Link
             href="/standorte/stuttgart"
-            className="inline-flex h-11 items-center justify-center rounded-xl border border-foreground/15 px-5 text-sm font-semibold text-primary transition hover:border-secondary/60 hover:bg-secondary/5"
+            className="inline-flex h-11 items-center justify-center rounded-xl border border-foreground/15 px-5 text-sm font-semibold text-foreground transition hover:border-secondary/60 hover:bg-secondary/5"
           >
             Stuttgart-Cluster
           </Link>
           <Link
             href="/kontakt#kontakt-anfrage"
-            className="inline-flex h-11 items-center justify-center rounded-xl border border-foreground/15 px-5 text-sm font-semibold text-primary transition hover:border-secondary/60 hover:bg-secondary/5"
+            className="inline-flex h-11 items-center justify-center rounded-xl border border-foreground/15 px-5 text-sm font-semibold text-foreground transition hover:border-secondary/60 hover:bg-secondary/5"
           >
             Anfrage
           </Link>

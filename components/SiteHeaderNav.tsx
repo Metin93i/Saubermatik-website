@@ -6,10 +6,10 @@ import { SERVICES } from "@/lib/config/services";
 import { buildTelHref } from "@/lib/phone";
 
 const NAV_LINK_CLASS =
-  "rounded-lg px-2 py-1.5 text-sm font-medium text-foreground/85 transition-colors hover:bg-secondary/10 hover:text-primary";
+  "rounded-lg px-2 py-1.5 text-sm font-medium text-foreground/85 transition-colors hover:bg-secondary/10 hover:text-secondary";
 
 const DESKTOP_NAV_ITEM =
-  "whitespace-nowrap rounded-lg px-2 py-1.5 text-sm font-medium text-foreground/85 transition-colors hover:bg-secondary/10 hover:text-primary";
+  "whitespace-nowrap rounded-lg px-2 py-1.5 text-sm font-medium text-foreground/85 transition-colors hover:bg-secondary/10 hover:text-secondary";
 
 const MAIN_PAGES = [
   { href: "/qualitaetsmanagement", label: "Qualitätsmanagement" },
@@ -134,7 +134,7 @@ export function SiteHeaderNav() {
 
         <button
           type="button"
-          className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-foreground/15 bg-background text-sm font-semibold text-primary shadow-sm transition hover:border-secondary/40 hover:bg-secondary/5 md:hidden"
+          className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-foreground/15 bg-background text-sm font-semibold text-foreground shadow-sm transition hover:border-secondary/40 hover:bg-secondary/5 md:hidden"
           aria-expanded={mobileOpen}
           aria-controls={panelId}
           aria-label="Hauptmenü öffnen"
@@ -142,9 +142,9 @@ export function SiteHeaderNav() {
         >
           <span className="sr-only">Menü öffnen</span>
           <span aria-hidden className="flex flex-col gap-1">
-            <span className="h-0.5 w-5 rounded-full bg-primary" />
-            <span className="h-0.5 w-5 rounded-full bg-primary" />
-            <span className="h-0.5 w-5 rounded-full bg-primary" />
+            <span className="h-0.5 w-5 rounded-full bg-foreground" />
+            <span className="h-0.5 w-5 rounded-full bg-foreground" />
+            <span className="h-0.5 w-5 rounded-full bg-foreground" />
           </span>
         </button>
       </div>
@@ -163,10 +163,10 @@ export function SiteHeaderNav() {
             className="absolute right-0 top-0 flex h-full w-full max-w-sm flex-col border-l border-foreground/10 bg-background shadow-2xl"
           >
             <div className="flex items-center justify-between border-b border-foreground/10 px-4 py-3">
-              <p className="text-sm font-bold text-primary">Menü</p>
+              <p className="text-sm font-bold text-foreground">Menü</p>
               <button
                 type="button"
-                className="flex h-10 w-10 items-center justify-center rounded-lg text-lg text-muted transition hover:bg-secondary/10 hover:text-primary"
+                className="flex h-10 w-10 items-center justify-center rounded-lg text-lg text-muted transition hover:bg-secondary/10 hover:text-secondary"
                 onClick={closeMobile}
                 aria-label="Menü schließen"
               >
@@ -211,7 +211,7 @@ export function SiteHeaderNav() {
               <div className="border-t border-foreground/10 pt-3">
                 <button
                   type="button"
-                  className="flex w-full items-center justify-between rounded-lg px-2 py-2 text-left text-sm font-semibold text-primary"
+                  className="flex w-full items-center justify-between rounded-lg px-2 py-2 text-left text-sm font-semibold text-foreground"
                   aria-expanded={leistungenOpen}
                   onClick={() => setLeistungenOpen((o) => !o)}
                 >
@@ -226,7 +226,7 @@ export function SiteHeaderNav() {
                       <li key={s.slug}>
                         <PrefetchLink
                           href={`/leistungen/${s.slug}`}
-                          className="block py-1.5 text-sm text-muted transition hover:text-primary"
+                          className="block py-1.5 text-sm text-muted transition hover:text-secondary"
                           onClick={closeMobile}
                         >
                           {s.title}

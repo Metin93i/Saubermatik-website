@@ -58,18 +58,18 @@ export function SnippetBaitTable({ slug }: Props) {
         {caption}
       </h2>
       <table className="w-full min-w-[32rem] border-collapse text-left text-sm">
-        <caption className="bg-secondary/10 px-4 py-3 text-left text-sm font-bold text-primary">
+        <caption className="bg-secondary/10 px-4 py-3 text-left text-sm font-bold text-foreground">
           {caption}
         </caption>
         <thead>
           <tr className="border-b border-foreground/10 bg-foreground/[0.03]">
-            <th scope="col" className="px-4 py-3 font-semibold text-primary">
+            <th scope="col" className="px-4 py-3 font-semibold text-foreground">
               Gebäudeart
             </th>
-            <th scope="col" className="px-4 py-3 font-semibold text-primary">
+            <th scope="col" className="px-4 py-3 font-semibold text-foreground">
               Typisches Intervall
             </th>
-            <th scope="col" className="px-4 py-3 font-semibold text-primary">
+            <th scope="col" className="px-4 py-3 font-semibold text-foreground">
               Schwerpunkt
             </th>
           </tr>

@@ -35,7 +35,7 @@ export function SeoCrossLinks({ type }: Props) {
   if (type === "location") {
     return (
       <aside className={asideClass} aria-label="Beliebte Einsatzorte">
-        <h2 className="text-base font-bold text-primary">Beliebte Einsatzorte</h2>
+        <h2 className="text-base font-bold text-foreground">Beliebte Einsatzorte</h2>
         <p className="mt-1 text-sm text-muted">
           Gebäudereinigung dort, wo Ihre Objekte stehen — inklusive Spezial-Hub
           Stuttgart.
@@ -45,7 +45,7 @@ export function SeoCrossLinks({ type }: Props) {
             <li key={item.href}>
               <Link
                 href={item.href}
-                className="text-sm font-semibold text-secondary underline-offset-4 transition hover:text-primary hover:underline"
+                className="text-sm font-semibold text-secondary underline-offset-4 transition hover:text-secondary hover:underline"
               >
                 {item.label}
               </Link>
@@ -54,7 +54,7 @@ export function SeoCrossLinks({ type }: Props) {
           <li>
             <Link
               href="/standorte"
-              className="text-sm font-medium text-muted underline-offset-4 transition hover:text-primary hover:underline"
+              className="text-sm font-medium text-muted underline-offset-4 transition hover:text-secondary hover:underline"
             >
               Alle Standorte
             </Link>
@@ -69,7 +69,7 @@ export function SeoCrossLinks({ type }: Props) {
       className={asideClass}
       aria-label="Passende Leistungen"
     >
-      <h2 className="text-base font-bold text-primary">
+      <h2 className="text-base font-bold text-foreground">
         Das könnte Sie auch interessieren
       </h2>
       <p className="mt-1 text-sm text-muted">
@@ -80,7 +80,7 @@ export function SeoCrossLinks({ type }: Props) {
           <li key={slug}>
             <Link
               href={`/leistungen/${slug}`}
-              className="text-sm font-semibold text-secondary underline-offset-4 transition hover:text-primary hover:underline"
+              className="text-sm font-semibold text-secondary underline-offset-4 transition hover:text-secondary hover:underline"
             >
               {LEISTUNGEN_BY_SLUG[slug].title}
             </Link>
@@ -89,7 +89,7 @@ export function SeoCrossLinks({ type }: Props) {
         <li>
           <Link
             href="/leistungen"
-            className="text-sm font-medium text-muted underline-offset-4 transition hover:text-primary hover:underline"
+            className="text-sm font-medium text-muted underline-offset-4 transition hover:text-secondary hover:underline"
           >
             Zur Leistungsübersicht
           </Link>

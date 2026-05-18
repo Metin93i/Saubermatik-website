@@ -1,47 +1,45 @@
+import Image from "next/image";
 import Link from "next/link";
 
 export type SaubermatikLogoProps = {
   href?: string;
   className?: string;
-  /** `onDark`: Footer / dunkle Flächen — hoher Kontrast zu WCAG. */
+  /** `onDark`: Footer – Logo auf hellem Container (schwarze Schrift im PNG). */
   variant?: "onLight" | "onDark";
 };
 
-/**
- * CSS-Wordmark ohne Bild — skalierbar, scharf, konsistent mit dem Theme.
- */
+const focusRing =
+  "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[color:var(--logo-focus-ring)]";
+
 export function SaubermatikLogo({
   href = "/",
   className = "",
   variant = "onLight",
 }: SaubermatikLogoProps) {
   const isDark = variant === "onDark";
-  const first = isDark ? "text-primary-foreground" : "text-primary";
-  const second = isDark
-    ? "text-[color:var(--logo-on-dark-accent)]"
-    : "text-[color:var(--logo-accent)]";
 
-  const inner = (
-    <span
-      className={`inline-flex select-none items-baseline gap-0 font-sans text-[1.02rem] tracking-[-0.05em] sm:text-[1.08rem] ${className}`}
-      translate="no"
-    >
-      <span className={`font-extrabold uppercase leading-none ${first}`}>
-        SAUBER
-      </span>
-      <span className={`font-extrabold uppercase leading-none ${second}`}>
-        MATIK
-      </span>
+  const image = (
+    <Image
+      src="/logo.png"
+      alt="Saubermatik – Reinigungsservice"
+      width={280}
+      height={72}
+      className={`h-9 w-auto object-contain sm:h-10 md:h-12 ${className}`}
+      priority
+    />
+  );
+
+  const inner = isDark ? (
+    <span className="inline-flex rounded-lg bg-white px-3 py-2 shadow-sm ring-1 ring-white/20">
+      {image}
     </span>
+  ) : (
+    image
   );
 
   if (href) {
     return (
-      <Link
-        href={href}
-        className="inline-flex focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[color:var(--logo-focus-ring)]"
-        aria-label="Saubermatik – Startseite"
-      >
+      <Link href={href} className={`inline-flex shrink-0 ${focusRing}`} aria-label="Saubermatik – Startseite">
         {inner}
       </Link>
     );
