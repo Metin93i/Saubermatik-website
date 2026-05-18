@@ -5,6 +5,7 @@ import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
 import { LeistungFaqJsonLd } from "@/components/LeistungFaqJsonLd";
 import { LeistungSgeTldr } from "@/components/LeistungSgeTldr";
 import { SeoCrossLinks } from "@/components/SeoCrossLinks";
+import { LeistungHeroImage } from "@/components/LeistungHeroImage";
 import { SnippetBaitTable } from "@/components/SnippetBaitTable";
 import { getLeistungEntityFacts } from "@/lib/seo/leistung-entity-facts";
 import {
@@ -69,6 +70,7 @@ export default async function LeistungDetailPage({ params }: PageProps) {
           {content.title} in der Region Zollernalb
         </h1>
         <p className="mt-4 text-lg leading-8 text-muted">{content.summary}</p>
+        <LeistungHeroImage slug={slug} priority />
         <LeistungSgeTldr slug={slug} />
         <div className="mt-8 space-y-4 text-base leading-7 text-foreground/90">
           {content.body.map((paragraph) => (

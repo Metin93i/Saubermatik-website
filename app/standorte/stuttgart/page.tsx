@@ -6,7 +6,7 @@ import { SeoCrossLinks } from "@/components/SeoCrossLinks";
 import { REMOTE_IMAGE_BLUR_DATA_URL } from "@/lib/image-blur";
 
 const imgStuttgartHero =
-  "https://images.unsplash.com/photo-1486325212027-8081e485255e?auto=format&fit=crop&w=1400&q=85";
+  "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&q=80&w=1200";
 
 export const metadata: Metadata = {
   title: "Fensterreinigung & Gebäudereinigung Stuttgart",

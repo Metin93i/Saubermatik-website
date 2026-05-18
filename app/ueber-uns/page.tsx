@@ -1,6 +1,11 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
+import { REMOTE_IMAGE_BLUR_DATA_URL } from "@/lib/image-blur";
 import { buildTelHref } from "@/lib/phone";
+
+const imgUeberUns =
+  "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&q=80&w=1200";
 
 export const metadata: Metadata = {
   title: "Über uns",
@@ -19,6 +24,20 @@ export default function UeberUnsPage() {
       <h1 className="mt-3 text-3xl font-bold tracking-tight text-primary sm:text-4xl">
         Regional verwurzelt. Digital vorbereitet.
       </h1>
+
+      <div className="relative mt-8 aspect-[16/9] w-full overflow-hidden rounded-2xl shadow-lg ring-1 ring-foreground/10">
+        <Image
+          src={imgUeberUns}
+          alt="Professionelles Teammeeting – Saubermatik als B2B-Partner"
+          fill
+          className="object-cover"
+          sizes="(max-width: 768px) 100vw, 48rem"
+          priority
+          placeholder="blur"
+          blurDataURL={REMOTE_IMAGE_BLUR_DATA_URL}
+        />
+      </div>
+
       <div className="mt-8 space-y-6 text-base leading-7 text-muted">
         <p>
           Saubermatik entstand aus der Überzeugung, dass Gebäudereinigung im

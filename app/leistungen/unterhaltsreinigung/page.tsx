@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { EngagementCalculator } from "@/components/EngagementCalculator";
+import { LeistungHeroImage } from "@/components/LeistungHeroImage";
 import { LeadFunnel } from "@/components/LeadFunnel";
 import { SnippetBaitTable } from "@/components/SnippetBaitTable";
 
@@ -59,6 +60,11 @@ export default function UnterhaltsreinigungPage() {
             Wir sorgen für makellose Hygiene, die Ihre Mitarbeiter motiviert und
             Kunden beeindruckt. Ohne Ausfälle, ohne Kompromisse.
           </p>
+          <LeistungHeroImage
+            slug="unterhaltsreinigung"
+            priority
+            className="mt-10 max-w-4xl"
+          />
           <div className="mt-10 flex flex-wrap gap-4">
             <a
               href="#kontakt-anfrage"
