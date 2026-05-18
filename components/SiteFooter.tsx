@@ -5,6 +5,7 @@ import { STANDORT_CITIES, STANDORT_LABELS } from "@/lib/routes/standorte";
 
 const UNTERNEHMEN_LINKS = [
   { href: "/qualitaetsmanagement", label: "Qualitätsmanagement" },
+  { href: "/expertise", label: "Expertise" },
   { href: "/ueber-uns", label: "Über uns" },
   { href: "/karriere", label: "Karriere" },
   { href: "/kontakt", label: "Kontakt" },
@@ -64,6 +65,14 @@ export function SiteFooter() {
                 </Link>
               </li>
             ))}
+            <li className="min-h-[1.25rem] sm:col-span-2 lg:col-span-2">
+              <Link
+                href="/standorte/stuttgart"
+                className="text-sm font-semibold text-primary-foreground transition hover:text-[color:var(--link-on-primary)] hover:underline"
+              >
+                Stuttgart (Metropolregion, Spezial-Hub)
+              </Link>
+            </li>
           </ul>
         </div>
       </div>

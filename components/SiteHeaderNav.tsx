@@ -13,6 +13,7 @@ const DESKTOP_NAV_ITEM =
 
 const MAIN_PAGES = [
   { href: "/qualitaetsmanagement", label: "Qualitätsmanagement" },
+  { href: "/expertise", label: "Expertise" },
   { href: "/ueber-uns", label: "Über uns" },
   { href: "/karriere", label: "Karriere" },
   { href: "/kontakt", label: "Kontakt" },

@@ -9,6 +9,7 @@ Stand: synchron mit `components/SiteHeader.tsx`, `components/SiteHeaderNav.tsx` 
 | **Logo (SAUBERMATIK)** | Link | `/` |
 | **Leistungen** | Dropdown (`<details>`) | Einzel-`/leistungen/[slug]` + Link „Zur Leistungsübersicht“ → `/leistungen` |
 | **Qualitätsmanagement** | Link | `/qualitaetsmanagement` |
+| **Expertise** | Link | `/expertise` |
 | **Über uns** | Link | `/ueber-uns` |
 | **Karriere** | Link | `/karriere` |
 | **Kontakt** | Link | `/kontakt` |
@@ -24,8 +25,8 @@ Stand: synchron mit `components/SiteHeader.tsx`, `components/SiteHeaderNav.tsx` 
 ## Footer
 
 - Spalte **Leistungen** (alle Slugs).
-- Spalte **Unternehmen** (QM, Über uns, Karriere, Kontakt).
-- **Standorte & Region**: Grid aller **16** Städte (`/standorte/[city]`).
+- Spalte **Unternehmen** (QM, Expertise, Über uns, Karriere, Kontakt).
+- **Standorte & Region**: Grid aller **16** Städte (`/standorte/[city]`) **plus** Link **„Stuttgart (Metropolregion, Spezial-Hub)“** → **`/standorte/stuttgart`**.
 - Unterzeile: Copyright, Leistungsübersicht, Kontakt.
 
 ## Seitenhierarchie (B2B)
@@ -36,6 +37,8 @@ Stand: synchron mit `components/SiteHeader.tsx`, `components/SiteHeaderNav.tsx` 
 ├── /leistungen/[slug]             (Spokes)
 ├── /leistungen/unterhaltsreinigung (SEO-Sonderseite)
 ├── /standorte/[city]              (16 lokale Spokes)
+├── /standorte/stuttgart           (Hyper-Local Hub, SSG)
+├── /expertise                     (EEAT / Standards / Software-Monitoring)
 ├── /qualitaetsmanagement          (QM / Garantie / DIN / SaaS-USP)
 ├── /ueber-uns                     (Story, Region, Innovation)
 ├── /karriere                      (Recruiting, Benefits)
