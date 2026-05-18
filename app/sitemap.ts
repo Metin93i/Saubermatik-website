@@ -14,6 +14,30 @@ const CORE_PAGES: readonly { path: string; priority: number }[] = [
 const LEISTUNG_PRIORITY = 0.9;
 const STANDORT_PRIORITY = 0.8;
 
+/** Zusätzliche Index-/Spezial-Routen (kein `app/standorte/page.tsx` → kein `/standorte`-Eintrag). */
+function extraRoutes(base: string, now: Date): MetadataRoute.Sitemap {
+  return [
+    {
+      url: `${base}/leistungen`,
+      lastModified: now,
+      changeFrequency: "monthly" as const,
+      priority: 0.8,
+    },
+    {
+      url: `${base}/expertise`,
+      lastModified: now,
+      changeFrequency: "monthly" as const,
+      priority: 0.9,
+    },
+    {
+      url: `${base}/standorte/stuttgart`,
+      lastModified: now,
+      changeFrequency: "monthly" as const,
+      priority: 0.9,
+    },
+  ];
+}
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = getSiteOrigin();
   const now = new Date();
@@ -24,6 +48,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     changeFrequency: path === "/" ? "weekly" : "monthly",
     priority,
   }));
+
+  const extras = extraRoutes(base, now);
 
   const leistungen: MetadataRoute.Sitemap = SERVICES.map((s) => ({
     url: `${base}/leistungen/${s.slug}`,
@@ -39,5 +65,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: STANDORT_PRIORITY,
   }));
 
-  return [...core, ...leistungen, ...standorte];
+  return [...core, ...extras, ...leistungen, ...standorte];
 }
