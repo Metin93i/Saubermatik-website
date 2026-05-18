@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
 import { LeistungFaqJsonLd } from "@/components/LeistungFaqJsonLd";
 import { LeistungSgeTldr } from "@/components/LeistungSgeTldr";
+import { SeoCrossLinks } from "@/components/SeoCrossLinks";
 import {
   LEISTUNG_SLUGS,
   LEISTUNGEN_BY_SLUG,
@@ -85,6 +86,7 @@ export default async function LeistungDetailPage({ params }: PageProps) {
             Alle Leistungen
           </Link>
         </div>
+        <SeoCrossLinks type="location" />
       </article>
       <LeistungFaqJsonLd slug={slug} />
     </>

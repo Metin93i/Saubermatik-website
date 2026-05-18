@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { SeoCrossLinks } from "@/components/SeoCrossLinks";
 
 export const metadata: Metadata = {
   title: "Fensterreinigung & Gebäudereinigung Stuttgart",
@@ -92,6 +93,7 @@ export default function StandortStuttgartPage() {
           Expertise &amp; Standards
         </Link>
       </div>
+      <SeoCrossLinks type="service" />
     </article>
   );
 }

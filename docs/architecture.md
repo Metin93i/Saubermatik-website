@@ -11,6 +11,7 @@ Technisches Referenzdokument (DDD). Dateibaum: `docs/project_structure.md`. Änd
 | Styling | **Tailwind CSS v4** (`@import "tailwindcss"`, `@theme` in `app/globals.css`) |
 | E-Mail (Transaktional) | **Resend** (`resend`-Paket, Node-Runtime in Route Handlers) |
 | Deployment-Ziel | Vercel-kompatibel (keine DB im UI-Pfad) |
+| Security Headers | `next.config.ts` → `headers()` (u. a. `X-Frame-Options`, `X-Content-Type-Options`, `Referrer-Policy`, `Permissions-Policy`) |
 
 ## Datenfluss: Lead-Erfassung (Kunde)
 
@@ -47,9 +48,10 @@ flowchart LR
 
 ## Routing & Rendering
 
-- **SSG:** `app/leistungen/[slug]/page.tsx` — `generateStaticParams` aus **`LEISTUNG_SLUGS`** (ohne Duplikat `unterhaltsreinigung`, eigene Route). Rendert **`LeistungFaqJsonLd`**, **`LeistungSgeTldr`** (SGE-Kurzblock) und **`BreadcrumbJsonLd`**.
-- **SSG:** `app/standorte/[city]/page.tsx` — `generateStaticParams` aus **`STANDORT_CITIES`** (16 Städte). Optional **lokale Entity-Injektion** aus **`lib/seo/local-entities.ts`** (Kernstädte) + **`BreadcrumbJsonLd`**.
-- **SSG:** `app/standorte/stuttgart/page.tsx` — **Hyper-Local Hub** (kein Eintrag in `STANDORT_CITIES`; feste Route, keine dynamische `[city]`-Kollision).
+- **SSG:** `app/leistungen/[slug]/page.tsx` — `generateStaticParams` aus **`LEISTUNG_SLUGS`** (ohne Duplikat `unterhaltsreinigung`, eigene Route). Rendert **`LeistungFaqJsonLd`**, **`LeistungSgeTldr`** (SGE-Kurzblock), **`BreadcrumbJsonLd`**, **`SeoCrossLinks`** (`type="location"`).
+- **SSG:** `app/standorte/[city]/page.tsx` — `generateStaticParams` aus **`STANDORT_CITIES`** (16 Städte). Optional **lokale Entity-Injektion** aus **`lib/seo/local-entities.ts`** (Kernstädte) + **`BreadcrumbJsonLd`** (mit Hub **`/standorte`**) + **`SeoCrossLinks`** (`type="service"`).
+- **SSG:** `app/standorte/page.tsx` — **Standort-Hub** (`/standorte`): Liste aller City-Spokes + Stuttgart-Spezial.
+- **SSG:** `app/standorte/stuttgart/page.tsx` — **Hyper-Local Hub** (kein Eintrag in `STANDORT_CITIES`; feste Route, keine dynamische `[city]`-Kollision). **`SeoCrossLinks`** (`type="service"`).
 - **SSG:** `app/expertise/page.tsx` — EEAT-/Standards-Hub (statisch).
 - **Hybrid / dynamisch:** **`app/kontakt/page.tsx`** nutzt **`await searchParams`** für serverseitige Text-/Link-Weiche (Karriere vs. Kunde) und rendert das Formular rechts in **`Suspense`** mit Client-**`useSearchParams`** (`components/KontaktFormSwitch.tsx`), damit Client-Navigation und Doku-Vorgabe (Suspense + `useSearchParams`) erfüllt sind.
 
@@ -79,4 +81,4 @@ flowchart LR
 | `KontaktFormSwitch` | **`useSearchParams`** für `/kontakt`-Weiche |
 | `PrefetchLink` | `next/link` + `useRouter().prefetch` auf `pointerenter` für Kern-Routen (Header/Footer) |
 
-Alle übrigen Seiten unter `app/` sind Server Components.
+Alle übrigen Seiten unter `app/` sind Server Components (inkl. eingebundene **`SeoCrossLinks`**, **`BreadcrumbJsonLd`**, **`LeistungSgeTldr`**).

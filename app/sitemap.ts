@@ -14,9 +14,15 @@ const CORE_PAGES: readonly { path: string; priority: number }[] = [
 const LEISTUNG_PRIORITY = 0.9;
 const STANDORT_PRIORITY = 0.8;
 
-/** Zusätzliche Index-/Spezial-Routen (kein `app/standorte/page.tsx` → kein `/standorte`-Eintrag). */
+/** Zusätzliche Index-/Spezial-Routen inkl. Standort-Hub `/standorte`. */
 function extraRoutes(base: string, now: Date): MetadataRoute.Sitemap {
   return [
+    {
+      url: `${base}/standorte`,
+      lastModified: now,
+      changeFrequency: "monthly" as const,
+      priority: 0.8,
+    },
     {
       url: `${base}/leistungen`,
       lastModified: now,

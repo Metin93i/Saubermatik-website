@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
+import { SeoCrossLinks } from "@/components/SeoCrossLinks";
 import { getLocalEntityAugmentation } from "@/lib/seo/local-entities";
 import {
   STANDORT_CITIES,
@@ -50,6 +51,7 @@ export default async function StandortPage({ params }: PageProps) {
       <BreadcrumbJsonLd
         items={[
           { name: "Startseite", path: "/" },
+          { name: "Standorte", path: "/standorte" },
           { name: label, path: `/standorte/${city}` },
         ]}
       />
@@ -89,6 +91,7 @@ export default async function StandortPage({ params }: PageProps) {
             Terminwunsch senden
           </Link>
         </div>
+        <SeoCrossLinks type="service" />
       </article>
     </>
   );

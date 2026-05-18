@@ -15,6 +15,8 @@ Intent: transaktional / vergleichend.
 
 Beispiel-Cluster: *Unterhaltsreinigung Zollernalb*, *Glasreinigung Gewerbe*, *Treppenhausreinigung*, *Winterdienst Objekt*, *Grundreinigung Übergabe*, *Fassadenreinigung*, *Hausmeisterservice*, *Grünanlagenpflege*, **Entrümpelung Haushaltsauflösung**, **Spezialanfrage / Sonstiges** (Slug `sonstiges`).
 
+**Hub & Spoke (intern):** Leistungsdetailseiten rendern **`SeoCrossLinks`** (`type="location"`) mit priorisierten Standort-Deep-Links (u. a. Stuttgart, Balingen, Tuttlingen) plus Link auf den **Standort-Hub** `/standorte`.
+
 ### 2. Qualitätsmanagement (`/qualitaetsmanagement`)
 
 Intent: Vertrauen / Compliance / Ausschreibung.
@@ -36,6 +38,10 @@ Explizite Orts-Landingpages für:
 Meßstetten, Albstadt, Balingen, Hechingen, Sigmaringen, Mössingen, Tübingen, Schömberg, Tuttlingen, Rottweil, Villingen-Schwenningen, Spaichingen, Burladingen, Rottenburg, Reutlingen, Überlingen.
 
 Jeweils: *Gebäudereinigung in [Stadt]*, Kombination mit *Büro*, *Praxis*, *Liegenschaft*, *Zollernalb* / *Region*.
+
+**Standort-Hub:** **`/standorte`** listet alle City-Spokes plus **Stuttgart-Spezial** — Sitemap-Eintrag inklusive.
+
+**Hub & Spoke (intern):** Standortseiten und **Stuttgart-Hub** rendern **`SeoCrossLinks`** (`type="service"`) mit Top-Leistungs-Deep-Links (Unterhalt, Glas, Entrümpelung) plus Leistungsübersicht.
 
 **Programmatic Local Entities (Kernstädte):** Für **Balingen, Tuttlingen, Albstadt, Rottweil, Hechingen** injiziert `lib/seo/local-entities.ts` zusätzliche Absätze mit **Industrie-/Verkehrs-Clustern** (Platzhalter, später verifiziert) plus **deterministischem Spin** zur Duplicate-Vermeidung — siehe `docs/pSEO_matrix.md`.
 
@@ -62,9 +68,10 @@ Statische **Beweis-Seite** für Zertifizierungspfad, Arbeitssicherheit, Hygiene 
 - **`alternates.canonical`** auf neuen Kernseiten gesetzt.
 - **JSON-LD global** (`components/StructuredData.tsx` → **`lib/seo/global-jsonld.ts`**): `LocalBusiness` + `CleaningService`, **`areaServed`** = 16 Städte (`City`) **plus** Metropol-Cluster **Stuttgart, Reutlingen, Tübingen** als **`GeoCircle`** (Midpoint + Radius in Metern); **`OfferCatalog`** mit ausführlichen **`Service`**-Objekten (inkl. `description`, `category`, `areaServed`). Details: `docs/seo_architecture.md`.
 - **FAQPage JSON-LD pro Leistung:** `components/LeistungFaqJsonLd.tsx` + Q/A-Katalog **`lib/seo/leistung-faq.ts`** auf **`/leistungen/[slug]`** (PAA-orientiert).
-- **`BreadcrumbList` JSON-LD** auf **`/leistungen/[slug]`** und **`/standorte/[city]`**: `components/BreadcrumbJsonLd.tsx` (absolute URLs via **`lib/seo/site-origin.ts`**).
+- **`BreadcrumbList` JSON-LD** auf **`/leistungen/[slug]`** und **`/standorte/[city]`** (dort inkl. Hub-Krümel **`/standorte`**): `components/BreadcrumbJsonLd.tsx`.
+- **`LocalBusiness` / `CleaningService`:** global **`aggregateRating`** (`AggregateRating` mit `ratingValue`, `reviewCount`, `bestRating`/`worstRating`, siehe **`lib/seo/global-jsonld.ts`**) — nur verwenden, wenn die Zahlen **sachlich belegbar** sind (Recht/EEAT).
 - **Zero-Latency Navigation (kontrolliert):** `components/PrefetchLink.tsx` — Hover-`router.prefetch` für Kern-Routen in **`SiteHeaderNav`** / **`SiteFooter`** (`prefetch={false}` auf `Link`, kein aggressives Dropdown-Prefetch).
-- **Interne Links:** Header, Footer, Startseite-Standort-Grid, Leistungs-CTAs → **`/kontakt#kontakt-anfrage`** (Kunde) bzw. **`/kontakt?type=karriere`** (Bewerber).
+- **Interne Links:** Header, Footer, Startseite-Standort-Grid, Leistungs-CTAs, **`SeoCrossLinks`** (Leistung ↔ Standort) → **`/kontakt#kontakt-anfrage`** (Kunde) bzw. **`/kontakt?type=karriere`** (Bewerber).
 
 ## Content-Prinzipien
 

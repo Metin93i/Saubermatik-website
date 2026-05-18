@@ -43,6 +43,7 @@ app/
 ├── qualitaetsmanagement/
 │   └── page.tsx                  QM / Saubermatik-Garantie
 ├── standorte/
+│   ├── page.tsx                  Standort-Hub (Liste aller Städte + Stuttgart)
 │   ├── stuttgart/
 │   │   └── page.tsx              Hyper-Local Stuttgart-Hub (SSG)
 │   └── [city]/
@@ -67,6 +68,7 @@ components/
 ├── LeistungSgeTldr.tsx         SGE-TL;DR-Zusammenfassung pro Leistungsspoke (Server)
 ├── MobileStickyCta.tsx         Mobile Schnellaktionen (Anruf / Angebot)
 ├── PrefetchLink.tsx            Hover-Prefetch um `next/link` (`"use client"`)
+├── SeoCrossLinks.tsx           Hub-&-Spoke-Querverweise Leistung ↔ Standort (Server)
 ├── SaubermatikLogo.tsx           CSS-Wordmark SAUBERMATIK
 ├── SiteFooter.tsx                Footer inkl. Städte-Grid & Unternehmens-Links
 ├── SiteHeader.tsx                Shell (sticky) + Logo

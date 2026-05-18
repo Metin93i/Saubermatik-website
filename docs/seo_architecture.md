@@ -22,7 +22,8 @@ Wir trennen bewusst zwei Ebenen der Nachfrage:
 - **Spokes Leistungen** (`/leistungen/[slug]`): Tiefe Inhalte pro Leistungscluster, statisch vorgerendert (`generateStaticParams`).  
 - **Sonder-Landing** (`/leistungen/unterhaltsreinigung`): zusätzlicher SEO-Einstieg.  
 - **Spokes Standorte** (`/standorte/[city]`): **16** lokale Landingpages, statisch vorgerendert.  
-- **Hyper-Local Hub:** **`/standorte/stuttgart`** (fest, nicht Teil von `[city]`).  
+- **Standort-Hub:** **`/standorte`** (`app/standorte/page.tsx`) — Index aller Spokes + Stuttgart.  
+- **Hyper-Local Hub:** **`/standorte/stuttgart`** (fest, nicht Teil von `[city]`).
 - **Corporate Hubs:** `/qualitaetsmanagement`, `/ueber-uns`, `/karriere`, `/kontakt`, **`/expertise`**.
 
 ### Technische Umsetzung (Next.js App Router)
@@ -38,13 +39,15 @@ Wir trennen bewusst zwei Ebenen der Nachfrage:
 - **Footer** (`SiteFooter`): Leistungen, Unternehmen, **Städte-Grid** (16 Links) **+ Link „Stuttgart (Metropolregion, Spezial-Hub)“** → **`/standorte/stuttgart`** — ebenfalls **`PrefetchLink`** für Kern-Routen.
 - **Startseite** → Leistungen-Hub, Standort-Kacheln, Anker `#kontakt-anfrage` (lokaler Funnel).  
 - **Unterseiten** → **`/kontakt#kontakt-anfrage`** (Kunden-Leads) bzw. **`/kontakt?type=karriere`** / **`#bewerbung`** (Bewerbungen).  
-- **Leistungs-Detail** → Hub + Kontakt.
+- **Leistungs-Detail** → Hub + Kontakt + **`SeoCrossLinks`** (Standort-Spokes / Hub).
+- **Standort-Spokes & Stuttgart-Hub** → Leistungs-Deep-Links via **`SeoCrossLinks`**.
 
 ### Strukturierte Daten (JSON-LD) — **global**
 
 - **Komponente:** `components/StructuredData.tsx` (ruft **`buildGlobalJsonLdString()`** aus **`lib/seo/global-jsonld.ts`**).  
 - **Einbindung:** Root-`app/layout.tsx` rendert das Skript im `<head>` (global auf allen Seiten).  
 - **Inhalt:** `@graph` mit kombiniertem Schema `LocalBusiness` + `CleaningService` (Hauptsitz laut `lib/config/site.ts` inkl. Geo, Öffnungszeiten Mo–So 08:00–22:00, `priceRange: "$$"`).  
+- **`aggregateRating`:** `AggregateRating` mit `ratingValue`, `reviewCount`, `bestRating`/`worstRating` und erläuterndem `description` (QM-/Plattformbezug) — nur beibehalten, wenn **sachlich belegbar** (EEAT / Richtlinien der Suchmaschinen).
 - **`areaServed`:** **16 Städte** als `City` aus `lib/routes/standorte.ts` **plus** drei Metropol-Cluster (**Stuttgart, Reutlingen, Tübingen**) als **`GeoCircle`** mit `geoMidpoint` (WGS84) und **`geoRadius`** in Metern (Point-Radius). Zusätzlich bleibt Baden-Württemberg als `State` und Meßstetten als `City` referenziert.  
 - **`hasOfferCatalog`:** aus **`lib/config/services.ts`** — **10** ausführliche **`Service`**-Einträge (u. a. `@id`, `description`, `provider`, `category`, `areaServed`) inkl. **Entrümpelung** (`entruempelung`) und **Sonstiges** (`sonstiges`).
 - **Telefon:** optional über `NEXT_PUBLIC_BUSINESS_PHONE`, nur ausgegeben wenn gesetzt (keine Platzhalter-Rufnummer).
@@ -63,7 +66,7 @@ Wir trennen bewusst zwei Ebenen der Nachfrage:
 
 ### Sitemap (`app/sitemap.ts`)
 
-- **Quelle:** `SERVICES` (`lib/config/services.ts`) für **`/leistungen/{slug}`**, `STANDORT_CITIES` für **`/standorte/{city}`**, plus fest codierte **Core-URLs**.
+- **Quelle:** `SERVICES` für **`/leistungen/{slug}`**, `STANDORT_CITIES` für **`/standorte/{city}`**, feste Core-URLs, **`/standorte`**-Hub, **`/leistungen`**, **`/expertise`**, **`/standorte/stuttgart`**.
 - **Prioritäten (crawl hints):** Core **1.0 → 0.8** (`/` … `/kontakt`), Leistungsspokes **0.9**, Standortspokes **0.8**.
 - **`changeFrequency`:** Startseite `weekly`, übrige Einträge überwiegend `monthly`.
 - **Absolute URLs:** Basis wie bei JSON-LD über **`getSiteOrigin()`** (einheitlich mit **`metadataBase`** in `app/layout.tsx`).
