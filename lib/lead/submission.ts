@@ -27,6 +27,8 @@ export type LeadFunnelSubmission = {
   company: string;
   email: string;
   phone: string;
+  /** Optional: Zusätzliche Objekthinweise (max. 2000 Zeichen). */
+  objectNotes?: string;
 };
 
 function isNonEmptyString(v: unknown): v is string {
@@ -99,6 +101,22 @@ export function parseLeadSubmission(body: unknown): ParseLeadResult {
   const company =
     typeof o.company === "string" ? o.company.trim().slice(0, 200) : "";
 
+  let objectNotes: string | undefined;
+  if (o.objectNotes !== undefined && o.objectNotes !== null) {
+    if (typeof o.objectNotes !== "string") {
+      return { ok: false, error: "Ungültiges Zusatzfeld.", status: 400 };
+    }
+    const trimmed = o.objectNotes.trim();
+    if (trimmed.length > 2000) {
+      return {
+        ok: false,
+        error: "Zusätzliche Hinweise: maximal 2000 Zeichen.",
+        status: 400,
+      };
+    }
+    objectNotes = trimmed.length > 0 ? trimmed : undefined;
+  }
+
   return {
     ok: true,
     data: {
@@ -109,6 +127,7 @@ export function parseLeadSubmission(body: unknown): ParseLeadResult {
       company,
       email,
       phone,
+      ...(objectNotes !== undefined ? { objectNotes } : {}),
     },
   };
 }

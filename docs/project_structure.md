@@ -1,6 +1,6 @@
 # Projektstruktur (App Router)
 
-Stand: synchron mit dem Repository (`feat(core)`-Expansion). Pfade relativ zum Projektroot.
+Stand: synchron mit dem Repository (Dual-Funnel, Entrümpelung, Karriere-API). Pfade relativ zum Projektroot.
 
 ## Wurzel
 
@@ -24,12 +24,14 @@ Stand: synchron mit dem Repository (`feat(core)`-Expansion). Pfade relativ zum P
 ```
 app/
 ├── api/
+│   ├── career/
+│   │   └── route.ts              POST Bewerbungen → Resend (HR-Mail)
 │   └── lead/
-│       └── route.ts              POST Lead-API (Resend)
+│       └── route.ts              POST Kunden-Leads → Resend
 ├── karriere/
 │   └── page.tsx                  Recruiting-Hub
 ├── kontakt/
-│   └── page.tsx                  Adresse, Karte, LeadFunnel
+│   └── page.tsx                  Adresse, Karte, Weiche Lead vs. Karriere (Suspense)
 ├── leistungen/
 │   ├── page.tsx                  Hub „Leistungen“
 │   ├── unterhaltsreinigung/
@@ -52,29 +54,35 @@ app/
 
 ```
 components/
-├── LeadFunnel.tsx                Multi-Step-Formular (`"use client"`)
-├── MobileStickyCta.tsx           Mobile Schnellaktionen (Anruf / Angebot)
+├── CareerForm.tsx                Bewerber-Formular (`"use client"`) → `/api/career`
+├── KontaktFormFallback.tsx      Suspense-Fallback (serverkompatibel)
+├── KontaktFormSwitch.tsx       `useSearchParams` Weiche Lead/Karriere (`"use client"`)
+├── LeadFunnel.tsx              Multi-Step Kunden-Funnel (`"use client"`)
+├── MobileStickyCta.tsx         Mobile Schnellaktionen (Anruf / Angebot)
 ├── SaubermatikLogo.tsx           CSS-Wordmark SAUBERMATIK
 ├── SiteFooter.tsx                Footer inkl. Städte-Grid & Unternehmens-Links
 ├── SiteHeader.tsx                Shell (sticky) + Logo
 ├── SiteHeaderNav.tsx             Hauptnavigation + Mobile-Flyout (`"use client"`)
-└── StructuredData.tsx            Globales JSON-LD (LocalBusiness)
+└── StructuredData.tsx            Globales JSON-LD (LocalBusiness, OfferCatalog)
 ```
 
 ## `lib/` — Konfiguration & Logik
 
 ```
 lib/
+├── career/
+│   ├── email.ts                  HTML-Mail Bewerbung (HR-Layout)
+│   └── submission.ts             parseCareerSubmission
 ├── config/
-│   ├── services.ts               Leistungsportfolio (Slugs, Emojis, Funnel)
+│   ├── services.ts               Leistungsportfolio (10 Slugs inkl. Entrümpelung & Sonstiges)
 │   └── site.ts                   Firmenadresse, OSM-Embed (Single Source)
 ├── image-blur.ts                 blurDataURL für `next/image` (Remote)
 ├── lead/
-│   ├── email.ts                  HTML-Mail Resend
-│   └── submission.ts             Validierung / Typen Leads
+│   ├── email.ts                  HTML-Mail Lead inkl. optionaler Objekthinweise
+│   └── submission.ts           Validierung / Typen Leads (+ objectNotes)
 ├── phone.ts                      `buildTelHref` (NEXT_PUBLIC_BUSINESS_PHONE)
 └── routes/
-    ├── leistungen.ts             LEISTUNG_SLUGS, Inhalte
+    ├── leistungen.ts             LEISTUNG_SLUGS, Inhalte (aus SERVICES abgeleitet)
     └── standorte.ts              16 Städte, Labels, Fließtexte
 ```
 
@@ -82,7 +90,8 @@ lib/
 
 ```
 docs/
-├── lead_funnel_spec.md           API & UI des Lead-Funnels
+├── architecture.md             Technisches Gehirn: Stack, Datenflüsse, Routing, Formular-Weiche
+├── lead_funnel_spec.md           API & UI Lead-Funnel + Kontakt-Dual-Funnel
 ├── performance_audit.md          Speed-Maßnahmen (LCP, CLS, Fonts, Client-Bundle)
 ├── project_structure.md          Diese Datei (Baumstruktur)
 ├── seo_architecture.md           Hub-and-Spoke, Routing, JSON-LD
@@ -93,5 +102,5 @@ docs/
 ## Konventionen
 
 - **Routen-Inhalte** liegen bevorzugt als **Server Components** unter `app/`.
-- **`"use client"`** nur dort, wo nötig: `LeadFunnel`, `SiteHeaderNav` (Mobile-Menü / Interaktion).
-- **Standorte & Leistungen** werden aus `lib/routes/*` gespeist — eine Quelle für Links, SSG und SEO-Texte.
+- **`"use client"`** nur dort, wo nötig: `LeadFunnel`, `CareerForm`, `KontaktFormSwitch`, `SiteHeaderNav`.
+- **Standorte & Leistungen** werden aus `lib/routes/*` bzw. **`lib/config/services.ts`** gespeist — eine Quelle für Links, SSG und SEO-Texte.

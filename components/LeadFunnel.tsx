@@ -135,6 +135,7 @@ export function LeadFunnel({
   const [company, setCompany] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
+  const [objectNotes, setObjectNotes] = useState("");
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
@@ -180,6 +181,9 @@ export function LeadFunnel({
         company: company.trim(),
         email: email.trim(),
         phone: phone.trim(),
+        ...(objectNotes.trim()
+          ? { objectNotes: objectNotes.trim() }
+          : {}),
       };
 
       if (!payload.name || !payload.email || !payload.phone) {
@@ -234,7 +238,7 @@ export function LeadFunnel({
         setIsLoading(false);
       }
     },
-    [areaSize, company, email, name, phone, serviceType, timing],
+    [areaSize, company, email, name, objectNotes, phone, serviceType, timing],
   );
 
   if (isSuccess) {
@@ -451,6 +455,20 @@ export function LeadFunnel({
                 />
               </label>
             </div>
+
+            <label className="block text-sm font-medium text-foreground">
+              Zusätzliche Objekthinweise (optional)
+              <textarea
+                className="mt-1 min-h-[5.5rem] w-full resize-y rounded-lg border border-foreground/15 bg-background px-3 py-2 text-sm outline-none ring-secondary/40 transition focus:ring-2"
+                name="objectNotes"
+                rows={3}
+                maxLength={2000}
+                placeholder="z. B. Zugang, Parkplatz, Haustiere, sensible Bereiche …"
+                value={objectNotes}
+                onChange={(ev) => setObjectNotes(ev.target.value)}
+                disabled={isLoading}
+              />
+            </label>
 
             {isError ? (
               <p className="text-sm font-medium text-red-700" role="alert">

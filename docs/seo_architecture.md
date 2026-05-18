@@ -1,6 +1,6 @@
 # SEO-Architektur: Hub-and-Spoke & „Zwiebelschalen“-Strategie
 
-Stand: **synchron** mit `app/`, `lib/routes/*`, `components/StructuredData.tsx` und den Detaildokumenten `docs/seo_strategy.md`, `docs/site_architecture.md`, `docs/performance_audit.md`.
+Stand: synchron mit `docs/architecture.md` (Master), `app/`, `lib/routes/*`, `components/StructuredData.tsx` und den Detaildokumenten `docs/seo_strategy.md`, `docs/site_architecture.md`, `docs/performance_audit.md`.
 
 ## Zielbild
 
@@ -43,6 +43,7 @@ Wir trennen bewusst zwei Ebenen der Nachfrage:
 - **Komponente:** `components/StructuredData.tsx`  
 - **Einbindung:** Root-`app/layout.tsx` rendert das Skript im `<head>` (global auf allen Seiten).  
 - **Inhalt:** `@graph` mit kombiniertem Schema `LocalBusiness` + `CleaningService` (Hauptsitz laut `lib/config/site.ts` inkl. Geo, **`areaServed` = alle 16 Städte** aus `lib/routes/standorte.ts`, Öffnungszeiten Mo–So 08:00–22:00, `priceRange: "$$"`).  
+- **`hasOfferCatalog`:** wird aus **`lib/config/services.ts`** generiert — aktuell **10** `Service`-Einträge inkl. **Entrümpelung** (`entruempelung`) und **Sonstiges** (`sonstiges`).
 - **Telefon:** optional über `NEXT_PUBLIC_BUSINESS_PHONE`, nur ausgegeben wenn gesetzt (keine Platzhalter-Rufnummer).
 
 ## Nächste Ausbaustufen (optional)

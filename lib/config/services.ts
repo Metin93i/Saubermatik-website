@@ -99,6 +99,30 @@ export const SERVICES = [
       "Saubere Fassaden schützen Substanz und Image – besonders bei Einzelhandel und Head Offices.",
     ],
   },
+  {
+    slug: "entruempelung",
+    title: "Entrümpelung & Haushaltsauflösung",
+    funnelLabel: "Entrümpelung",
+    emoji: "📦",
+    summary:
+      "Besenreine Übergaben nach Haushaltsauflösung, Nachlass oder Gewerberäumung – terminiert, versichert und dokumentiert.",
+    body: [
+      "Wir koordinieren Sortierung, fachgerechte Entsorgung und Endreinigung – damit Sie oder Ihre Mandanten einen stressfreien Abschluss erleben.",
+      "Kombinierbar mit Grundreinigung und Objektbetreuung aus einer Hand.",
+    ],
+  },
+  {
+    slug: "sonstiges",
+    title: "Sonstiges / Spezialanfrage",
+    funnelLabel: "Sonstiges",
+    emoji: "✨",
+    summary:
+      "Individuelle Reinigungs- oder Serviceprojekte außerhalb der Standardkategorien – wir strukturieren Ihr Anliegen.",
+    body: [
+      "Events, Sonderflächen oder Ausschreibungen: wir übersetzen Ihr Briefing in ein klares Leistungsbild mit transparentem Angebot.",
+      "Nutzen Sie diesen Einstieg, wenn Sie unsicher sind, welche Leistung passt – wir ordnen ein.",
+    ],
+  },
 ] as const;
 
 export type ServiceSlug = (typeof SERVICES)[number]["slug"];

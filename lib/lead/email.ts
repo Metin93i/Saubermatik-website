@@ -74,6 +74,18 @@ export function buildGfLeadNotificationHtml(lead: LeadFunnelSubmission): string 
   </td>
 </tr>`;
 
+  const notes = lead.objectNotes?.trim();
+  const objectNotesRow = notes
+    ? `<tr>
+  <td colspan="2" style="padding:6px;">
+    <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="border-collapse:separate;border-spacing:0;background:#f8fafc;border:1px solid #e2e8f0;border-radius:10px;overflow:hidden;">
+      <tr><td style="padding:10px 14px 4px;font-size:11px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:#64748b;">Zusätzliche Objekthinweise</td></tr>
+      <tr><td style="padding:0 14px 14px;font-size:14px;line-height:1.5;color:#0f172a;white-space:pre-wrap;">${escapeHtml(notes)}</td></tr>
+    </table>
+  </td>
+</tr>`
+    : "";
+
   return `<!DOCTYPE html>
 <html lang="de">
 <head><meta charset="utf-8"/><meta name="viewport" content="width=device-width"/></head>
@@ -94,6 +106,7 @@ export function buildGfLeadNotificationHtml(lead: LeadFunnelSubmission): string 
               <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="border-collapse:collapse;">
                 ${gridTop}
                 ${contactRow}
+                ${objectNotesRow}
               </table>
               <p style="margin:18px 0 0;font-size:12px;line-height:1.5;color:#64748b;text-align:center;">Automatisch gesendet von anfragen@mail.saubermatik-reinigung.de</p>
             </td>

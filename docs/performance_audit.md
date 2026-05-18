@@ -24,12 +24,15 @@ Stand: dokumentiert die im Code umgesetzten Maßnahmen. Messung erfolgt extern (
 
 - **Server Components** als Default; **`"use client"`** nur für:
   - `LeadFunnel` (Formular-State, Fetch),
+  - `CareerForm` (Bewerbungen),
+  - `KontaktFormSwitch` (`useSearchParams` auf `/kontakt`),
   - `SiteHeaderNav` (Mobile-Menü, Scroll-Lock, Escape).
 - Restliche Seiten (`app/*`) und **Header-Shell** (`SiteHeader`) bleiben serverseitig.
 
 ## Drittanbieter & Karte
 
 - **Kontakt-Seite:** OpenStreetMap-**iframe** `loading="lazy"` (kein zusätzliches Analytics-Skript).
+- **`/kontakt`:** `await searchParams` + **`Suspense`** um Client-`useSearchParams` (Formular-Weiche) — Route wird dynamisch gerendert, ohne unnötige Client-Bundle auf anderen Seiten.
 - **JSON-LD** bleibt synchrones `<script type="application/ld+json">` im `<head>` (SEO-kritisch, bewusst **kein** `next/script lazyOnload`).
 
 ## Header / Sticky UI

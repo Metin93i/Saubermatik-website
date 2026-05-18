@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { LeadFunnel } from "@/components/LeadFunnel";
+import { Suspense } from "react";
+import { KontaktFormFallback } from "@/components/KontaktFormFallback";
+import { KontaktFormSwitch } from "@/components/KontaktFormSwitch";
 import {
   SITE_ADDRESS_LINES,
   SITE_MAP_EMBED_SRC,
@@ -11,25 +13,56 @@ import { buildTelHref } from "@/lib/phone";
 export const metadata: Metadata = {
   title: "Kontakt",
   description:
-    "Saubermatik Meßstetten: Adresse, Anfahrt und digitale Kurz-Anfrage für Gebäudereinigung in der Zollernalb und Region Tübingen.",
+    "Saubermatik Meßstetten: Adresse, Anfahrt, Kundenanfrage (Lead) und Bewerbungen – digital und persönlich für die Zollernalb und Region Tübingen.",
   alternates: { canonical: "/kontakt" },
 };
 
-export default function KontaktPage() {
+type KontaktPageProps = {
+  searchParams?: Promise<{ type?: string | string[] | undefined }>;
+};
+
+export default async function KontaktPage({ searchParams }: KontaktPageProps) {
+  const sp = (await searchParams) ?? {};
+  const rawType = sp.type;
+  const typeVal = Array.isArray(rawType) ? rawType[0] : rawType;
+  const isCareer = typeVal === "karriere";
+
   const raw = process.env.NEXT_PUBLIC_BUSINESS_PHONE?.trim();
   const telHref = raw ? buildTelHref(raw) : null;
 
   return (
     <div className="mx-auto flex w-full max-w-6xl flex-1 flex-col gap-12 px-4 py-12 sm:px-6 lg:flex-row lg:gap-16 lg:px-8 lg:py-16">
       <div className="min-h-[22rem] flex-1 lg:max-w-md">
-        <p className="text-sm font-semibold text-secondary">Kontakt</p>
+        <p className="text-sm font-semibold text-secondary">
+          {isCareer ? "Karriere · Kontakt" : "Kontakt"}
+        </p>
         <h1 className="mt-3 text-3xl font-bold tracking-tight text-primary sm:text-4xl">
-          Sprechen wir über Ihr Objekt.
+          {isCareer
+            ? "Bewerbung & erste Fragen zum Job."
+            : "Sprechen wir über Ihr Objekt."}
         </h1>
         <p className="mt-4 text-base leading-7 text-muted">
-          Ob konkrete Anfrage oder Erstgespräch: Sie erreichen uns telefonisch,
-          über das Formular oder nach Terminvereinbarung vor Ort in der
-          Region.
+          {isCareer
+            ? "Nutzen Sie das Formular rechts für eine Schnellbewerbung – oder erreichen Sie uns klassisch telefonisch. Unsere Adresse gilt für Bewerbungen und Kunden gleichermaßen."
+            : "Ob konkrete Anfrage oder Erstgespräch: Sie erreichen uns telefonisch, über das Formular oder nach Terminvereinbarung vor Ort in der Region."}
+        </p>
+
+        <p className="mt-4 flex flex-wrap gap-x-3 gap-y-1 text-sm">
+          {isCareer ? (
+            <Link
+              href="/kontakt"
+              className="font-semibold text-secondary hover:underline"
+            >
+              Zur Kundenanfrage (Leistungen)
+            </Link>
+          ) : (
+            <Link
+              href="/kontakt?type=karriere"
+              className="font-semibold text-secondary hover:underline"
+            >
+              Zur Bewerbung (Karriere)
+            </Link>
+          )}
         </p>
 
         <address className="mt-8 not-italic">
@@ -59,7 +92,10 @@ export default function KontaktPage() {
         ) : null}
 
         <p className="mt-6 text-sm text-muted">
-          <Link href="/leistungen" className="font-semibold text-secondary hover:underline">
+          <Link
+            href="/leistungen"
+            className="font-semibold text-secondary hover:underline"
+          >
             Leistungsübersicht
           </Link>
           {" · "}
@@ -93,7 +129,9 @@ export default function KontaktPage() {
       </div>
 
       <div className="min-h-[28rem] flex-1 lg:max-w-xl">
-        <LeadFunnel className="shadow-xl ring-1 ring-black/5" />
+        <Suspense fallback={<KontaktFormFallback isCareer={isCareer} />}>
+          <KontaktFormSwitch />
+        </Suspense>
       </div>
     </div>
   );

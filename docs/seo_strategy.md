@@ -13,7 +13,7 @@ Stand: abgestimmt auf die implementierten Routen und Inhalte (`app/` + `lib/rout
 
 Intent: transaktional / vergleichend.
 
-Beispiel-Cluster: *Unterhaltsreinigung Zollernalb*, *Glasreinigung Gewerbe*, *Treppenhausreinigung*, *Winterdienst Objekt*, *Grundreinigung Übergabe*, *Fassadenreinigung*, *Hausmeisterservice*, *Grünanlagenpflege*.
+Beispiel-Cluster: *Unterhaltsreinigung Zollernalb*, *Glasreinigung Gewerbe*, *Treppenhausreinigung*, *Winterdienst Objekt*, *Grundreinigung Übergabe*, *Fassadenreinigung*, *Hausmeisterservice*, *Grünanlagenpflege*, **Entrümpelung Haushaltsauflösung**, **Spezialanfrage / Sonstiges** (Slug `sonstiges`).
 
 ### 2. Qualitätsmanagement (`/qualitaetsmanagement`)
 
@@ -27,7 +27,7 @@ Kernbegriffe: **Saubermatik-Garantie**, **digitale Protokolle**, **Echtzeit-Chec
 |-------|----------------------|
 | `/ueber-uns` | Regional verwurzelt, Meßstetten, Zuverlässigkeit, Ansprechpartner, Innovation |
 | `/karriere` | Reinigungskraft Jobs Zollernalb, faire Bezahlung, Tablets im Objekt, moderne Arbeitsmittel |
-| `/kontakt` | Gebäudereinigung anfragen, Adresse Meßstetten, Rückruf, Objektbesichtigung |
+| `/kontakt` | Gebäudereinigung anfragen, Adresse Meßstetten, Rückruf; **`?type=karriere`** für Bewerbungen |
 
 ### 4. Local SEO (`/standorte/[city]` — 16 Städte)
 
@@ -42,7 +42,7 @@ Jeweils: *Gebäudereinigung in [Stadt]*, Kombination mit *Büro*, *Praxis*, *Lie
 - **Title-Template** im Root-Layout (`%s | Saubermatik Gebäudereinigung`).
 - **`alternates.canonical`** auf neuen Kernseiten gesetzt.
 - **JSON-LD** (`StructuredData.tsx`): `LocalBusiness` + `CleaningService`, **`areaServed`** = alle 16 Städte aus `lib/routes/standorte.ts` (siehe `docs/seo_architecture.md`).
-- **Interne Links:** Header, Footer, Startseite-Standort-Grid, Leistungs-CTAs → `/kontakt#kontakt-anfrage`.
+- **Interne Links:** Header, Footer, Startseite-Standort-Grid, Leistungs-CTAs → **`/kontakt#kontakt-anfrage`** (Kunde) bzw. **`/kontakt?type=karriere`** (Bewerber).
 
 ## Content-Prinzipien
 

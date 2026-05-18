@@ -61,7 +61,7 @@ export default function KarrierePage() {
           zeitnah mit den nächsten Schritten.
         </p>
         <Link
-          href="/kontakt#kontakt-anfrage"
+          href="/kontakt?type=karriere#bewerbung"
           className="mt-5 inline-flex h-11 items-center justify-center rounded-xl bg-secondary px-5 text-sm font-bold text-secondary-foreground shadow-md transition hover:bg-secondary/90"
         >
           Jetzt Kontakt aufnehmen

@@ -39,15 +39,27 @@ Stand: synchron mit `components/SiteHeader.tsx`, `components/SiteHeaderNav.tsx` 
 ├── /qualitaetsmanagement          (QM / Garantie / DIN / SaaS-USP)
 ├── /ueber-uns                     (Story, Region, Innovation)
 ├── /karriere                      (Recruiting, Benefits)
-├── /kontakt                       (Adresse, Karte, LeadFunnel)
-└── /api/lead                      (Lead-Submission, nicht im Menü)
+├── /kontakt                       (Adresse, Karte, Dual-Funnel — siehe unten)
+├── /api/lead                      (Kunden-Leads, nicht im Menü)
+└── /api/career                    (Bewerbungen, nicht im Menü)
 ```
+
+## Kontakt: Dual-Funnel (`/kontakt`)
+
+| URL | Rechte Spalte |
+|-----|----------------|
+| `/kontakt` | **`LeadFunnel`** (Kunden-Leads, Anker **`#kontakt-anfrage`**) |
+| `/kontakt?type=karriere` | **`CareerForm`** (Bewerbung, Anker **`#bewerbung`**) |
+
+- **Server:** `app/kontakt/page.tsx` wertet **`searchParams`** aus (Überschriften, Toggle-Link Karriere ↔ Kunde).
+- **Client:** `components/KontaktFormSwitch.tsx` nutzt **`useSearchParams`** innerhalb von **`<Suspense>`** (Next.js-Vorgabe), gerendert mit **`KontaktFormFallback`** passend zu `isCareer` aus dem Server-Snapshot.
 
 ## Deep-Link-Konvention
 
 - Lead-Formular-Anker: **`#kontakt-anfrage`** (ID auf `LeadFunnel`).
-- Von Unterseiten: **`/kontakt#kontakt-anfrage`** für zentrale Conversion.
-- Startseite kann weiterhin lokal `#kontakt-anfrage` nutzen (Funnel im Hero-Bereich).
+- Von Unterseiten: **`/kontakt#kontakt-anfrage`** für zentrale Conversion (Kunde).
+- Bewerbung: **`/kontakt?type=karriere#bewerbung`** (z. B. von `/karriere`).
+- Startseite kann weiterhin lokal **`#kontakt-anfrage`** nutzen (Funnel im Hero-Bereich).
 
 ## Sticky Mobile CTA (zusätzlich)
 
