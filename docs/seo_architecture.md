@@ -25,7 +25,7 @@ Wir trennen bewusst zwei Ebenen der Nachfrage:
 
 ### Technische Umsetzung (Next.js App Router)
 
-- Seiten sind **serverseitig generiert** und enthalten **keine Datenbankanbindung im UI-Layer**.  
+- Seiten sind **serverseitig generiert**, sofern keine **Request-Parameter** die Route dynamisch machen (`/kontakt` mit `searchParams`). Es gibt **keine Datenbank** im UI-Layer.  
 - Slugs/Städte sind als Konstanten in `lib/routes/*` zentral gepflegt – das reduziert Tippfehler und hält Metadaten konsistent.  
 - `generateMetadata` liefert pro Route Title/Description; das Root-Layout setzt ein **Title-Template** (`%s | Saubermatik Gebäudereinigung`).  
 - Kernseiten setzen **`alternates.canonical`**.
@@ -35,7 +35,7 @@ Wir trennen bewusst zwei Ebenen der Nachfrage:
 - **Header** (`SiteHeaderNav`): Leistungen-Dropdown + Corporate-Links + Anruf-CTA.  
 - **Footer** (`SiteFooter`): Leistungen, Unternehmen, **Städte-Grid** (16 Links).  
 - **Startseite** → Leistungen-Hub, Standort-Kacheln, Anker `#kontakt-anfrage` (lokaler Funnel).  
-- **Unterseiten** → **`/kontakt#kontakt-anfrage`** als zentraler Conversion-Pfad.  
+- **Unterseiten** → **`/kontakt#kontakt-anfrage`** (Kunden-Leads) bzw. **`/kontakt?type=karriere`** / **`#bewerbung`** (Bewerbungen).  
 - **Leistungs-Detail** → Hub + Kontakt.
 
 ### Strukturierte Daten (JSON-LD) — **global**

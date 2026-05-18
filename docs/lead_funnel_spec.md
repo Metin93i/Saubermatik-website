@@ -25,7 +25,7 @@ Das Multi-Step-Formular maximiert **Conversion im Above-the-Fold**-Bereich: weni
 Gemeinsame Typen und serverseitige Validierung liegen in `lib/lead/submission.ts`. Die UI-Komponente importiert und re-exportiert:
 
 - `LeadServiceType`, `LeadAreaSize`, `LeadTiming`  
-- `LeadFunnelSubmission` (kombiniert alle Antworten)  
+- `LeadFunnelSubmission` (inkl. optionalem Feld **`objectNotes`**)  
 - `LeadFunnelProps` (`className?`, `initialServiceType?`)
 
 ## API: `POST /api/lead`

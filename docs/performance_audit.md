@@ -17,7 +17,7 @@ Stand: dokumentiert die im Code umgesetzten Maßnahmen. Messung erfolgt extern (
 ## Layout-Stabilität (CLS)
 
 - **„Reinigung 4.0“:** Sektions-Wrapper mit **Mindesthöhe** (`min-h-[38rem]` / `sm:min-h-[40rem]`), Karten mit `min-h` auf Kachel-Ebene.
-- **LeadFunnel:** äußere `section` mit **`min-h-[26rem]` / `sm:min-h-[28rem]`**; innerer Schrittbereich mit zusätzlicher `min-h` für wechselnde Steps.
+- **LeadFunnel / CareerForm:** äußere `section` mit **`min-h-[26rem]` / `sm:min-h-[28rem]`**; im Lead zusätzlich reservierte Höhe für wechselnde Schritte — **Dual-Funnel** auf `/kontakt` bleibt beim Wechsel stabil.
 - **Testimonials / Standort-Karten:** reservierte Mindesthöhen auf der Startseite.
 
 ## JavaScript-Bundle / Architektur

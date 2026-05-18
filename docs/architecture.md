@@ -1,6 +1,6 @@
 # Architektur: Saubermatik Webplattform
 
-Technisches Referenzdokument (DDD). Änderungen am Systemfluss **immer** hier und in den fachlichen Docs (`docs/site_architecture.md`, `docs/lead_funnel_spec.md`) nachziehen.
+Technisches Referenzdokument (DDD). Dateibaum: `docs/project_structure.md`. Änderungen am Systemfluss **immer** hier und in den fachlichen Docs (`docs/site_architecture.md`, `docs/lead_funnel_spec.md`) nachziehen.
 
 ## Tech-Stack
 
@@ -73,7 +73,7 @@ flowchart LR
 |----------------|--------|
 | `LeadFunnel` | Multi-Step-State, `fetch` |
 | `CareerForm` | Formular-State, `fetch` |
-| `SiteHeaderNav` | Mobile-Menü, `useSearchParams` nicht nötig, aber Interaktion |
+| `SiteHeaderNav` | Mobile-Menü, Scroll-Lock, Tastatur (Escape) |
 | `KontaktFormSwitch` | **`useSearchParams`** für `/kontakt`-Weiche |
 
 Alle übrigen Seiten unter `app/` sind Server Components.

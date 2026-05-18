@@ -1,6 +1,6 @@
 # Projektstruktur (App Router)
 
-Stand: synchron mit dem Repository (Dual-Funnel, Entrümpelung, Karriere-API). Pfade relativ zum Projektroot.
+Stand: **Master-Übersicht** ist `docs/architecture.md` (Datenflüsse, Routing). Diese Datei beschreibt die **Dateistruktur** und verweist bei Logikfragen dorthin.
 
 ## Wurzel
 
