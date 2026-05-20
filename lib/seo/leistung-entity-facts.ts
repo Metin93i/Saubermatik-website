@@ -9,8 +9,8 @@ export const LEISTUNG_ENTITY_FACTS: Partial<
     "Wir setzen auf umweltfreundliche Tenside und materialgerechte Pflegemittel, abgestimmt auf Bodenbeläge und Hygienezonen. Wo erforderlich, ergänzen wir Intervalle nach DIN-orientierten Sauberkeitsanforderungen für Büro, Praxis und Gewerbe.",
   ],
   "fenster-glasreinigung": [
-    "Glas- und Fassadenprogramme verbinden Arbeitssicherheit in der Höhe mit schonenden Reinigungsverfahren – inklusive dokumentierter Einsätze für Facility und Eigentümer.",
-    "Materialgerechte Mittel (pH-neutral bis leicht alkalisch je nach Beschichtung) und ISO-9001-konforme Qualitätssicherung reduzieren Streifen, Kratzer und Reklamationen. Umweltfreundliche Tenside sind Standard, wo Oberflächen es zulassen.",
+    "Reinwasser-Osmose mit entmineralisiertem Wasser, Carbon-Teleskopstangen (bis ca. 20 m) und Hubsteiger-Verzicht an vielen Objekten – streifenfreie Glanzgarantie ohne aggressive Chemie.",
+    "Innenbereich: Einwascher & Abzieher, Rahmen- und Falzreinigung gegen Glas-Korrosion; Außenbereich: Fassaden-Ergonomie und TRBS-2121-konforme Arbeitssicherheit (BG BAU).",
   ],
 };
 

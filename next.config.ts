@@ -10,6 +10,15 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  async redirects() {
+    return [
+      {
+        source: "/leistungen/glasreinigung",
+        destination: "/leistungen/fenster-glasreinigung",
+        permanent: true,
+      },
+    ];
+  },
   async headers() {
     return [
       {

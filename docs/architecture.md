@@ -54,8 +54,9 @@ flowchart LR
 
 ## Routing & Rendering
 
-- **SSG:** `app/leistungen/[slug]/page.tsx` — `generateStaticParams` aus **`LEISTUNG_SLUGS`** (ohne dedizierte Routen: `unterhaltsreinigung`, `hausmeisterservice`, `gruenanlagenpflege`). Rendert **`LeistungFaqJsonLd`**, **`LeistungSgeTldr`** (SGE-Kurzblock), **`BreadcrumbJsonLd`**, **`SeoCrossLinks`** (`type="location"`).
+- **SSG:** `app/leistungen/[slug]/page.tsx` — `generateStaticParams` aus **`LEISTUNG_SLUGS`** (ohne dedizierte Routen: `unterhaltsreinigung`, `fenster-glasreinigung`, `hausmeisterservice`, `gruenanlagenpflege`). Rendert **`LeistungFaqJsonLd`**, **`LeistungSgeTldr`** (SGE-Kurzblock), **`BreadcrumbJsonLd`**, **`SeoCrossLinks`** (`type="location"`).
 - **SSG:** `app/leistungen/hausmeisterservice/page.tsx`, `app/leistungen/gruenanlagenpflege/page.tsx` — **Deep-Content-Landings** (500+ Wörter, eigene Hero-Bilder aus **`lib/config/leistung-images.ts`**).
+- **SSG:** `app/leistungen/fenster-glasreinigung/page.tsx` — **Glasreinigungs-Silo** (800+ Wörter): Reinwasser-Osmose, Handwerk, TRBS 2121; Hero via **`GeoImage`**; **`EngagementCalculator`** mit `initialCategory="glas"`; Redirect **`/leistungen/glasreinigung`** → kanonische Route.
 - **SSG:** `app/zielgruppen/hausverwaltungen/page.tsx` — **B2B-Zielgruppen-Silo** (800+ Wörter) + **`Service`** JSON-LD (`lib/seo/hausverwaltungen-schema.ts`).
 - **SSG:** `app/standorte/[city]/page.tsx` — `generateStaticParams` aus **`STANDORT_CITIES`** (16 Städte). Optional **lokale Entity-Injektion** aus **`lib/seo/local-entities.ts`** (Kernstädte) + **`BreadcrumbJsonLd`** (mit Hub **`/standorte`**) + **`SeoCrossLinks`** (`type="service"`).
 - **SSG:** `app/standorte/page.tsx` — **Standort-Hub** (`/standorte`): Liste aller City-Spokes + Stuttgart-Spezial.

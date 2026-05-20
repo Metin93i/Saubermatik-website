@@ -72,14 +72,19 @@ function ratePerWe(units: number): number {
 type Props = {
   className?: string;
   funnelHref?: string;
+  /** Vorauswahl Objekttyp (z. B. `glas` auf der Glasreinigungs-Landing). */
+  initialCategory?: CalcCategory;
 };
 
 export function EngagementCalculator({
   className,
   funnelHref = "#kontakt-anfrage",
+  initialCategory,
 }: Props) {
-  const [step, setStep] = useState<0 | 1 | 2>(0);
-  const [category, setCategory] = useState<CalcCategory | null>(null);
+  const [step, setStep] = useState<0 | 1 | 2>(initialCategory ? 1 : 0);
+  const [category, setCategory] = useState<CalcCategory | null>(
+    initialCategory ?? null,
+  );
   const [sqm, setSqm] = useState(250);
   const [weUnits, setWeUnits] = useState(24);
 

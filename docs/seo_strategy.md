@@ -84,6 +84,23 @@ Intent: **B2B-Entscheider** (Geschäftsführung Verwaltung, Einkauf, WEG-Beirat)
 
 **Verwandte Deep-Leistungen:** **`/leistungen/hausmeisterservice`**, **`/leistungen/gruenanlagenpflege`** (je 500+ Wörter, SOPs / Jahresprogramm).
 
+### 8c. Deep Content Silo — Glas- & Fensterreinigung (`/leistungen/fenster-glasreinigung`)
+
+Intent: **B2B-Gewerbe/Industrie**, transaktional + Expertise (Ausschreibung, Facility).
+
+| Block | Inhalt / TF-IDF-Entitäten |
+|-------|---------------------------|
+| Hero | Streifenfreie Sicht, Werterhalt; **`GeoImage`** mit `contentLocation` Zollernalbkreis |
+| Deep Dive 1 | **Entmineralisiertes Wasser**, **Osmose-Verfahren**, Schmutzlösevermögen, **Carbon-Teleskopstangen**, **Hubsteiger-Verzicht**, Umweltschutz |
+| Deep Dive 2 | Einwascher & Abzieher, **Rahmen- und Falzreinigung**, **Glas-Korrosion**, **Fassaden-Ergonomie**, Showrooms |
+| Deep Dive 3 | **TRBS 2121**, BG BAU, Arbeitssicherheit in der Höhe |
+| Snippet | **`SnippetBaitTable`** (Variante `glas`): Ladengeschäfte, Büro/Kanzlei, Industriehallen, PV-Module |
+| Conversion | **`EngagementCalculator`** (`initialCategory="glas"`), **`B2BOnboardingProcess`**, **`LeadFunnel`** |
+
+**Alias-Redirect:** `/leistungen/glasreinigung` → `/leistungen/fenster-glasreinigung` (301, `next.config.ts`).
+
+**SGE-Entitäten (organisch im Fließtext):** *entmineralisiertes Wasser, osmose-verfahren, carbon-teleskopstangen, fassaden-ergonomie, trbs 2121, glas-korrosion, rahmen- und falzreinigung, hubsteiger-verzicht, streifenfreie glanzgarantie.*
+
 ### 9. AEO — Answer Engine Optimization
 
 - **`/llms.txt`** via **`app/llms.txt/route.ts`** + Generator **`lib/seo/llms-content.ts`**: maschinenlesbare USPs, Leistungen und Standorte für LLM-Crawler (ChatGPT, Perplexity).

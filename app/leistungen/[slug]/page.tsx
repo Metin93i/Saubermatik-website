@@ -20,6 +20,7 @@ type PageProps = {
 
 const DEDICATED_LEISTUNG_PAGES = new Set([
   "unterhaltsreinigung",
+  "fenster-glasreinigung",
   "hausmeisterservice",
   "gruenanlagenpflege",
 ]);

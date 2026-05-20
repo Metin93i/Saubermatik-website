@@ -38,6 +38,8 @@ app/
 │   ├── page.tsx                  Hub „Leistungen“
 │   ├── unterhaltsreinigung/
 │   │   └── page.tsx              Sonder-Landing (SEO, Deep Content)
+│   ├── fenster-glasreinigung/
+│   │   └── page.tsx              Deep Content Glas/Osmose/TRBS 2121 + GeoImage
 │   ├── hausmeisterservice/
 │   │   └── page.tsx              Deep Content (SOPs, B2B)
 │   ├── gruenanlagenpflege/

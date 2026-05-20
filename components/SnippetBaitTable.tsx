@@ -15,12 +15,29 @@ const TABLES: Record<Variant, { caption: string; rows: Row[] }> = {
     ],
   },
   glas: {
-    caption: "Glasreinigungsintervalle nach Gebäudeart",
+    caption:
+      "Empfohlene Glasreinigungsintervalle für Gewerbe (Orientierung Saubermatik)",
     rows: [
-      { gebaeudeart: "Schaufenster / Retail", intervall: "1–2× monatlich", fokus: "Außen + innen, streifenfrei" },
-      { gebaeudeart: "Bürohochhaus", intervall: "4–6× jährlich", fokus: "Fassade, Höhe, Sicherheit" },
-      { gebaeudeart: "Praxis / Klinik", intervall: "2–4× monatlich", fokus: "Repräsentation, Hygiene" },
-      { gebaeudeart: "WEG / Treppenhaus", intervall: "2–4× jährlich", fokus: "Geländerglas, Eingang" },
+      {
+        gebaeudeart: "Ladengeschäfte / Schaufenster",
+        intervall: "1× bis 2× monatlich",
+        fokus: "Außen- und Innenscheiben, streifenfreie Glanzgarantie",
+      },
+      {
+        gebaeudeart: "Bürogebäude & Kanzleien",
+        intervall: "1× pro Quartal",
+        fokus: "Fassaden-Ergonomie, Rahmen- und Falzreinigung",
+      },
+      {
+        gebaeudeart: "Industrie- & Produktionshallen",
+        intervall: "2× jährlich",
+        fokus: "Oberlicht, Hallenverglasung, TRBS-2121-konform",
+      },
+      {
+        gebaeudeart: "Solaranlagen & PV-Module",
+        intervall: "1× jährlich",
+        fokus: "Ertragssicherung, schonendes Osmose-Verfahren",
+      },
     ],
   },
   default: {
