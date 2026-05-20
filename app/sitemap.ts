@@ -4,9 +4,14 @@ import { LEXIKON_TERMS } from "@/lib/config/lexikon";
 import { getSiteOrigin } from "@/lib/seo/site-origin";
 import { STANDORT_CITIES } from "@/lib/routes/standorte";
 
-const CORE_PAGES: readonly { path: string; priority: number }[] = [
-  { path: "/", priority: 1.0 },
+const CORE_PAGES: readonly {
+  path: string;
+  priority: number;
+  changeFrequency?: "weekly" | "monthly";
+}[] = [
+  { path: "/", priority: 1.0, changeFrequency: "weekly" },
   { path: "/ueber-uns", priority: 0.95 },
+  { path: "/zielgruppen/hausverwaltungen", priority: 0.95, changeFrequency: "weekly" },
   { path: "/qualitaetsmanagement", priority: 0.9 },
   { path: "/karriere", priority: 0.85 },
   { path: "/kontakt", priority: 0.8 },
@@ -49,12 +54,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const base = getSiteOrigin();
   const now = new Date();
 
-  const core: MetadataRoute.Sitemap = CORE_PAGES.map(({ path, priority }) => ({
-    url: `${base}${path}`,
-    lastModified: now,
-    changeFrequency: path === "/" ? "weekly" : "monthly",
-    priority,
-  }));
+  const core: MetadataRoute.Sitemap = CORE_PAGES.map(
+    ({ path, priority, changeFrequency }) => ({
+      url: `${base}${path}`,
+      lastModified: now,
+      changeFrequency: changeFrequency ?? (path === "/" ? "weekly" : "monthly"),
+      priority,
+    }),
+  );
 
   const extras = extraRoutes(base, now);
 

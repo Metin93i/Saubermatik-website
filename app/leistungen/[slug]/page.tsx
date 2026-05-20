@@ -18,8 +18,14 @@ type PageProps = {
   params: Promise<{ slug: string }>;
 };
 
+const DEDICATED_LEISTUNG_PAGES = new Set([
+  "unterhaltsreinigung",
+  "hausmeisterservice",
+  "gruenanlagenpflege",
+]);
+
 export function generateStaticParams() {
-  return LEISTUNG_SLUGS.filter((slug) => slug !== "unterhaltsreinigung").map(
+  return LEISTUNG_SLUGS.filter((slug) => !DEDICATED_LEISTUNG_PAGES.has(slug)).map(
     (slug) => ({ slug }),
   );
 }

@@ -1,7 +1,7 @@
 "use client";
 
 import type { FormEvent } from "react";
-import { useCallback, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import { FUNNEL_SERVICE_OPTIONS, SERVICES } from "@/lib/config/services";
 import type {
   LeadAreaSize,
@@ -137,6 +137,28 @@ export function LeadFunnel({
   const [phone, setPhone] = useState("");
   const [objectNotes, setObjectNotes] = useState("");
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
+
+  useEffect(() => {
+    try {
+      const raw = sessionStorage.getItem("saubermatik-calc-prefill");
+      if (!raw) return;
+      const data = JSON.parse(raw) as {
+        service?: LeadServiceType;
+        objectNotes?: string;
+      };
+      if (data.objectNotes) setObjectNotes(data.objectNotes);
+      if (
+        data.service &&
+        (LEAD_SERVICE_TYPES as readonly string[]).includes(data.service)
+      ) {
+        setServiceType(data.service);
+        setStep(1);
+      }
+      sessionStorage.removeItem("saubermatik-calc-prefill");
+    } catch {
+      /* ignore malformed prefill */
+    }
+  }, []);
   const [isLoading, setIsLoading] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
   const [leadEmailSent, setLeadEmailSent] = useState(true);

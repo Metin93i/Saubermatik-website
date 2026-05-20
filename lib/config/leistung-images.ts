@@ -21,12 +21,12 @@ export const LEISTUNG_IMAGES: Record<
     alt: "Repräsentatives Treppenhaus in einer Gewerbeimmobilie",
   },
   hausmeisterservice: {
-    src: u("photo-1560518883-ce09059eeffa"),
-    alt: "Gebäudebetreuung und Objektwartung im Gewerbebereich",
+    src: u("photo-1581578731548-c64695cc6952"),
+    alt: "Professionelle Gebäude- und Objektbetreuung im Gewerbebereich",
   },
   gruenanlagenpflege: {
-    src: u("photo-1558904541-efa843a96f01"),
-    alt: "Gepflegte Grünanlage vor einem Unternehmensgebäude",
+    src: u("photo-1558905617-15a8aa7e374e"),
+    alt: "Repräsentative Grünanlage an einer Wohnanlage",
   },
   winterdienst: {
     src: u("photo-1418985991508-e47386d96a71"),

@@ -64,7 +64,25 @@ Statische **Beweis-Seite** für Zertifizierungspfad, Arbeitssicherheit, Hygiene 
 
 ### 8. Navboost / Engagement (Dwell-Time)
 
-- **`components/EngagementCalculator.tsx`**: 3-Schritt-Rechner (Objekttyp → m² → Richtpreis) auf **`/`** und **`/leistungen/unterhaltsreinigung`** — Scroll in den **Lead-Funnel** (`#kontakt-anfrage`).
+- **`components/EngagementCalculator.tsx`**: 3-Schritt-Rechner (Objekttyp → m² bzw. **WE** → Richtpreis) auf **`/`**, **`/leistungen/unterhaltsreinigung`**, **`/zielgruppen/hausverwaltungen`** und dedizierten Leistungsseiten — Scroll in den **Lead-Funnel** (`#kontakt-anfrage`) inkl. **sessionStorage-Prefill** für Objekthinweise.
+- **B2B-Kategorie „Hausverwaltung / Wohnanlage (MFH)“:** Slider **4–100 WE**, gestaffelter Monats-Richtwert pro WE; CTA verlinkt auf **`/zielgruppen/hausverwaltungen`**.
+
+### 8b. Deep Content Silo — Hausverwaltungen (`/zielgruppen/hausverwaltungen`)
+
+Intent: **B2B-Entscheider** (Geschäftsführung Verwaltung, Einkauf, WEG-Beirat).
+
+| Block | Keywords / Pain-Points |
+|-------|------------------------|
+| Hero | All-in-One Liegenschaftspflege, digitaler Echtzeit-Nachweis |
+| Deep Dive 1 | **Verkehrssicherungspflicht**, Winterdienst, Glatteis, Gehwegreinigung, **Haftung**, GPS-Fotoprotokolle |
+| Deep Dive 2 | **§ 2 BetrKV**, umlagefähige Betriebskosten, Leistungsprotokolle, Nebenkostenabrechnung |
+| Deep Dive 3 | Mieterzufriedenheit, feste Intervalle, proaktives Mängelmanagement |
+| Trust | **`KeyAccountManager`**, **`B2BOnboardingProcess`**, **`LeadFunnel`** |
+| Schema | **`Service`** JSON-LD „Property Management Maintenance Services“ (`lib/seo/hausverwaltungen-schema.ts`) |
+
+**Sitemap:** `priority: 0.95`, `changeFrequency: weekly` in **`app/sitemap.ts`**.
+
+**Verwandte Deep-Leistungen:** **`/leistungen/hausmeisterservice`**, **`/leistungen/gruenanlagenpflege`** (je 500+ Wörter, SOPs / Jahresprogramm).
 
 ### 9. AEO — Answer Engine Optimization
 

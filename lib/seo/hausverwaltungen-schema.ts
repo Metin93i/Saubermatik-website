@@ -1,0 +1,37 @@
+import { getSiteOrigin } from "@/lib/seo/site-origin";
+
+export function buildHausverwaltungenServiceJsonLd() {
+  const origin = getSiteOrigin();
+  const url = `${origin}/zielgruppen/hausverwaltungen`;
+
+  return {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": `${url}#property-management-service`,
+    name: "Property Management Maintenance Services",
+    serviceType:
+      "Gebäudereinigung, Hausmeisterservice, Grünanlagenpflege und Winterdienst für Hausverwaltungen",
+    description:
+      "All-in-One Objektbetreuung für Hausverwaltungen: Treppenhausreinigung, Hausmeister, Grünpflege und dokumentierter Winterdienst mit GPS-gestützten Echtzeit-Nachweisen über die Saubermatik-Plattform.",
+    url,
+    inLanguage: "de-DE",
+    provider: {
+      "@type": "LocalBusiness",
+      name: "Saubermatik Gebäudereinigung",
+      url: origin,
+    },
+    areaServed: {
+      "@type": "AdministrativeArea",
+      name: "Zollernalb, Schwarzwald-Baar-Heuberg, Stuttgart Metropolregion",
+    },
+    audience: {
+      "@type": "BusinessAudience",
+      audienceType: "Hausverwaltungen, WEG-Verwalter, Liegenschaftsverwalter",
+    },
+    offers: {
+      "@type": "Offer",
+      availability: "https://schema.org/InStock",
+      url: `${origin}/kontakt#kontakt-anfrage`,
+    },
+  };
+}

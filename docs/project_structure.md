@@ -37,9 +37,16 @@ app/
 ├── leistungen/
 │   ├── page.tsx                  Hub „Leistungen“
 │   ├── unterhaltsreinigung/
-│   │   └── page.tsx              Sonder-Landing (SEO)
+│   │   └── page.tsx              Sonder-Landing (SEO, Deep Content)
+│   ├── hausmeisterservice/
+│   │   └── page.tsx              Deep Content (SOPs, B2B)
+│   ├── gruenanlagenpflege/
+│   │   └── page.tsx              Deep Content (Jahresprogramm)
 │   └── [slug]/
 │       └── page.tsx              Dynamische Leistungs-Detailseiten (SSG) + FAQ JSON-LD
+├── zielgruppen/
+│   └── hausverwaltungen/
+│       └── page.tsx              B2B-Silo Hausverwaltungen + Service JSON-LD
 ├── qualitaetsmanagement/
 │   └── page.tsx                  QM / Saubermatik-Garantie
 ├── standorte/
@@ -97,6 +104,7 @@ lib/
 ├── seo/
 │   ├── b2b-onboarding.ts         HowTo-Schritte + `buildB2BOnboardingHowToJsonLd`
 │   ├── key-account.ts            Key-Account-Copy + Person/OrganizationRole JSON-LD
+│   ├── hausverwaltungen-schema.ts Service JSON-LD für Zielgruppen-Silo
 │   ├── global-jsonld.ts          `@graph` LocalBusiness + CleaningService + OfferCatalog
 │   ├── leistung-faq.ts           FAQ-Texte pro Leistungsspoke (FAQPage)
 │   ├── leistung-sge-tldr.ts      SGE-TL;DR (Problem / Lösung / Zeitrahmen)

@@ -54,7 +54,9 @@ flowchart LR
 
 ## Routing & Rendering
 
-- **SSG:** `app/leistungen/[slug]/page.tsx` — `generateStaticParams` aus **`LEISTUNG_SLUGS`** (ohne Duplikat `unterhaltsreinigung`, eigene Route). Rendert **`LeistungFaqJsonLd`**, **`LeistungSgeTldr`** (SGE-Kurzblock), **`BreadcrumbJsonLd`**, **`SeoCrossLinks`** (`type="location"`).
+- **SSG:** `app/leistungen/[slug]/page.tsx` — `generateStaticParams` aus **`LEISTUNG_SLUGS`** (ohne dedizierte Routen: `unterhaltsreinigung`, `hausmeisterservice`, `gruenanlagenpflege`). Rendert **`LeistungFaqJsonLd`**, **`LeistungSgeTldr`** (SGE-Kurzblock), **`BreadcrumbJsonLd`**, **`SeoCrossLinks`** (`type="location"`).
+- **SSG:** `app/leistungen/hausmeisterservice/page.tsx`, `app/leistungen/gruenanlagenpflege/page.tsx` — **Deep-Content-Landings** (500+ Wörter, eigene Hero-Bilder aus **`lib/config/leistung-images.ts`**).
+- **SSG:** `app/zielgruppen/hausverwaltungen/page.tsx` — **B2B-Zielgruppen-Silo** (800+ Wörter) + **`Service`** JSON-LD (`lib/seo/hausverwaltungen-schema.ts`).
 - **SSG:** `app/standorte/[city]/page.tsx` — `generateStaticParams` aus **`STANDORT_CITIES`** (16 Städte). Optional **lokale Entity-Injektion** aus **`lib/seo/local-entities.ts`** (Kernstädte) + **`BreadcrumbJsonLd`** (mit Hub **`/standorte`**) + **`SeoCrossLinks`** (`type="service"`).
 - **SSG:** `app/standorte/page.tsx` — **Standort-Hub** (`/standorte`): Liste aller City-Spokes + Stuttgart-Spezial.
 - **SSG:** `app/standorte/stuttgart/page.tsx` — **Hyper-Local Hub** (kein Eintrag in `STANDORT_CITIES`; feste Route, keine dynamische `[city]`-Kollision). **`SeoCrossLinks`** (`type="service"`).
@@ -81,10 +83,10 @@ flowchart LR
 
 | `"use client"` | Grund |
 |----------------|--------|
-| `LeadFunnel` | Multi-Step-State, `fetch` |
+| `LeadFunnel` | Multi-Step-State, `fetch`, liest optional Kalkulator-Prefill aus `sessionStorage` |
 | `CareerForm` | Formular-State, `fetch` |
 | `SiteHeaderNav` | Mobile-Menü, Scroll-Lock, Tastatur (Escape), **Hover-Prefetch** (`PrefetchLink`), **aria-label** auf Menü-Button |
-| `EngagementCalculator` | 3-Schritt-Kostenrechner, Scroll zum Lead-Funnel |
+| `EngagementCalculator` | 3-Schritt-Kostenrechner (m² oder **WE** für MFH), Scroll + **sessionStorage**-Prefill zum Lead-Funnel |
 | `KontaktFormSwitch` | **`useSearchParams`** für `/kontakt`-Weiche |
 | `PrefetchLink` | `next/link` + `useRouter().prefetch` auf `pointerenter` für Kern-Routen (Header/Footer) |
 
@@ -120,3 +122,14 @@ flowchart TB
 - **Lexikon:** `LEXIKON_TERMS` erweitert → `generateStaticParams` auf **`/wissen/[term]`** rendert alle Spokes statisch; **`app/sitemap.ts`** mappt dieselbe Liste (keine Duplikation).
 - **HowTo:** `B2B_ONBOARDING_STEPS` speist UI-Timeline und `buildB2BOnboardingHowToJsonLd(pagePath)` — `pagePath` pro Einbindung (`/`, `/qualitaetsmanagement`) für korrekte Step-URLs.
 - **Key Account:** Copy + Schema zentral in **`lib/seo/key-account.ts`**; Einbindung auf **`/ueber-uns`** (volle Sektion) und **`/kontakt`** (flankierend, `showCta={false}` neben Lead-Funnel).
+
+## EngagementCalculator — WE-Modus (Hausverwaltung)
+
+| Schritt | Standard (Büro/Glas/Treppe) | B2B MFH (`hausverwaltung`) |
+|---------|-----------------------------|----------------------------|
+| 1 | Objekttyp-Kachel | Objekttyp-Kachel |
+| 2 | Slider **50–2500 m²** | Slider **4–100 WE** (Label: „Anzahl der Wohneinheiten (WE)“) |
+| 3 | `monthly = m² × ratePerSqm` | `monthly = WE × ratePerWe(WE)` mit Staffel **18 / 16 / 14 €** pro WE |
+| CTA | Scroll `#kontakt-anfrage` + Prefill | Scroll + Prefill; Link **`/zielgruppen/hausverwaltungen#kontakt-anfrage`** |
+
+Prefill-Key: **`saubermatik-calc-prefill`** → **`LeadFunnel`** setzt `objectNotes` und optional `serviceType` (`hausmeisterservice`), dann entfernt den Key.
