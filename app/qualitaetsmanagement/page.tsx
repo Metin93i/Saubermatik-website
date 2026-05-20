@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { B2BOnboardingProcess } from "@/components/B2BOnboardingProcess";
 import { buildTelHref } from "@/lib/phone";
 
 export const metadata: Metadata = {
@@ -33,6 +34,7 @@ export default function QualitaetsmanagementPage() {
   const telHref = raw ? buildTelHref(raw) : null;
 
   return (
+    <>
     <article className="mx-auto w-full max-w-3xl flex-1 px-4 py-12 sm:px-6 lg:px-8">
       <p className="text-sm font-semibold text-secondary">Qualitätsmanagement</p>
       <h1 className="mt-3 text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
@@ -77,5 +79,10 @@ export default function QualitaetsmanagementPage() {
         </div>
       </div>
     </article>
+    <B2BOnboardingProcess
+      pagePath="/qualitaetsmanagement"
+      className="border-t border-foreground/10 bg-white py-16 sm:py-20"
+    />
+    </>
   );
 }

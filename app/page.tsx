@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { B2BOnboardingProcess } from "@/components/B2BOnboardingProcess";
 import { EngagementCalculator } from "@/components/EngagementCalculator";
 import { FreshnessBadge } from "@/components/FreshnessBadge";
 import { GeoImage } from "@/components/GeoImage";
@@ -172,6 +173,11 @@ export default function Home() {
           </ul>
         </div>
       </section>
+
+      <B2BOnboardingProcess
+        pagePath="/"
+        className="border-t border-foreground/10 bg-slate-50/80 py-16 sm:py-20"
+      />
 
       <section className="border-t border-foreground/10 bg-white py-16 sm:py-20">
         <div className="mx-auto grid w-full max-w-6xl gap-12 px-4 sm:px-6 lg:grid-cols-2 lg:items-center lg:gap-16 lg:px-8">

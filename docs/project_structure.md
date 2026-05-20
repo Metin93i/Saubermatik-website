@@ -59,6 +59,8 @@ app/
 
 ```
 components/
+├── B2BOnboardingProcess.tsx      4-Phasen-Onboarding + HowTo JSON-LD (Server)
+├── KeyAccountManager.tsx         One Face to the Customer + Person/Role JSON-LD (Server)
 ├── BreadcrumbJsonLd.tsx          BreadcrumbList JSON-LD (tiefes Routing)
 ├── CareerForm.tsx                Bewerber-Formular (`"use client"`) → `/api/career`
 ├── KontaktFormFallback.tsx      Suspense-Fallback (serverkompatibel)
@@ -69,7 +71,7 @@ components/
 ├── MobileStickyCta.tsx         Mobile Schnellaktionen (Anruf / Angebot)
 ├── PrefetchLink.tsx            Hover-Prefetch um `next/link` (`"use client"`)
 ├── SeoCrossLinks.tsx           Hub-&-Spoke-Querverweise Leistung ↔ Standort (Server)
-├── SaubermatikLogo.tsx           CSS-Wordmark SAUBERMATIK
+├── SaubermatikLogo.tsx           Logo `/public/logo.png` (next/image)
 ├── SiteFooter.tsx                Footer inkl. Städte-Grid & Unternehmens-Links
 ├── SiteHeader.tsx                Shell (sticky) + Logo
 ├── SiteHeaderNav.tsx             Hauptnavigation + Mobile-Flyout (`"use client"`)
@@ -84,6 +86,7 @@ lib/
 │   ├── email.ts                  HTML-Mail Bewerbung (HR-Layout)
 │   └── submission.ts             parseCareerSubmission
 ├── config/
+│   ├── lexikon.ts                Wiki 2.0 — 8 Lexikon-Einträge (LEXIKON_TERMS)
 │   ├── services.ts               Leistungsportfolio (10 Slugs inkl. Entrümpelung & Sonstiges)
 │   └── site.ts                   Firmenadresse, OSM-Embed (Single Source)
 ├── image-blur.ts                 blurDataURL für `next/image` (Remote)
@@ -92,6 +95,8 @@ lib/
 │   └── submission.ts           Validierung / Typen Leads (+ objectNotes)
 ├── phone.ts                      `buildTelHref` (NEXT_PUBLIC_BUSINESS_PHONE)
 ├── seo/
+│   ├── b2b-onboarding.ts         HowTo-Schritte + `buildB2BOnboardingHowToJsonLd`
+│   ├── key-account.ts            Key-Account-Copy + Person/OrganizationRole JSON-LD
 │   ├── global-jsonld.ts          `@graph` LocalBusiness + CleaningService + OfferCatalog
 │   ├── leistung-faq.ts           FAQ-Texte pro Leistungsspoke (FAQPage)
 │   ├── leistung-sge-tldr.ts      SGE-TL;DR (Problem / Lösung / Zeitrahmen)

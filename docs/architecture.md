@@ -15,7 +15,9 @@ Technisches Referenzdokument (DDD). Dateibaum: `docs/project_structure.md`. Änd
 | AEO | `app/llms.txt/route.ts` → `/llms.txt` (Plaintext aus `lib/seo/llms-content.ts`) |
 | Engagement | `components/EngagementCalculator.tsx` (`"use client"`) — Navboost/Dwell-Time |
 | Freshness | `lib/utils/date.ts`, `FreshnessBadge`, `dateModified` im globalen JSON-LD |
-| Lexikon | `app/wissen/*`, `lib/config/lexikon.ts` |
+| Lexikon | `app/wissen/*`, `lib/config/lexikon.ts` (Wiki 2.0, 8 Terms) |
+| B2B-Onboarding | `components/B2BOnboardingProcess.tsx`, `lib/seo/b2b-onboarding.ts` (HowTo JSON-LD) |
+| Key Account | `components/KeyAccountManager.tsx`, `lib/seo/key-account.ts` (Person/OrganizationRole JSON-LD) |
 
 ## Datenfluss: Lead-Erfassung (Kunde)
 
@@ -86,4 +88,35 @@ flowchart LR
 | `KontaktFormSwitch` | **`useSearchParams`** für `/kontakt`-Weiche |
 | `PrefetchLink` | `next/link` + `useRouter().prefetch` auf `pointerenter` für Kern-Routen (Header/Footer) |
 
-Alle übrigen Seiten unter `app/` sind Server Components (inkl. eingebundene **`SeoCrossLinks`**, **`BreadcrumbJsonLd`**, **`LeistungSgeTldr`**).
+Alle übrigen Seiten unter `app/` sind Server Components (inkl. eingebundene **`SeoCrossLinks`**, **`BreadcrumbJsonLd`**, **`LeistungSgeTldr`**, **`B2BOnboardingProcess`**, **`KeyAccountManager`**).
+
+## Enterprise B2B-Module (Datenfluss)
+
+```mermaid
+flowchart TB
+  subgraph config [Single Source]
+    L[lib/config/lexikon.ts]
+    O[lib/seo/b2b-onboarding.ts]
+    K[lib/seo/key-account.ts]
+  end
+  subgraph ui [Server Components]
+    W[app/wissen/term/page.tsx]
+    B[B2BOnboardingProcess]
+    KA[KeyAccountManager]
+  end
+  subgraph seo [Discovery]
+    S[app/sitemap.ts]
+    H[HowTo JSON-LD]
+    P[Person JSON-LD]
+  end
+  L --> W
+  L --> S
+  O --> B
+  O --> H
+  K --> KA
+  K --> P
+```
+
+- **Lexikon:** `LEXIKON_TERMS` erweitert → `generateStaticParams` auf **`/wissen/[term]`** rendert alle Spokes statisch; **`app/sitemap.ts`** mappt dieselbe Liste (keine Duplikation).
+- **HowTo:** `B2B_ONBOARDING_STEPS` speist UI-Timeline und `buildB2BOnboardingHowToJsonLd(pagePath)` — `pagePath` pro Einbindung (`/`, `/qualitaetsmanagement`) für korrekte Step-URLs.
+- **Key Account:** Copy + Schema zentral in **`lib/seo/key-account.ts`**; Einbindung auf **`/ueber-uns`** (volle Sektion) und **`/kontakt`** (flankierend, `showCta={false}` neben Lead-Funnel).

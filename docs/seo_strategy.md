@@ -70,9 +70,16 @@ Statische **Beweis-Seite** für Zertifizierungspfad, Arbeitssicherheit, Hygiene 
 
 - **`/llms.txt`** via **`app/llms.txt/route.ts`** + Generator **`lib/seo/llms-content.ts`**: maschinenlesbare USPs, Leistungen und Standorte für LLM-Crawler (ChatGPT, Perplexity).
 
-### 10. Topical Map — Lexikon (`/wissen`)
+### 10. Topical Map — Wiki 2.0 (`/wissen`)
 
-- Hub **`/wissen`** + Spokes **`/wissen/[term]`** aus **`lib/config/lexikon.ts`** (HACCP, pH-Werte, DIN 13063). Footer-Link „Wissen & Lexikon“.
+- Hub **`/wissen`** + Spokes **`/wissen/[term]`** aus **`lib/config/lexikon.ts`** — **8 Fachartikel** (HACCP, pH-Werte, DIN 13063, **CAFM**, **DIN 31051**, **SLA**, **Farbcode-System**, **Unterhalt vs. Grundreinigung**), jeweils **300–400+ Wörter** B2B-Fließtext.
+- **Topical Authority:** Konkurrenz-Wikis algorithmisch überholen durch Tiefe + interne Verlinkung (Footer „Wissen & Lexikon“, CTA-Boxen auf Term-Seiten).
+- **Sitemap:** alle `LEXIKON_TERMS` automatisch in **`app/sitemap.ts`** (kein manueller Pflegeaufwand).
+
+### 10b. HowTo Rich Snippets — B2B-Onboarding
+
+- **`components/B2BOnboardingProcess.tsx`** auf **`/`** und **`/qualitaetsmanagement`** — 4 Phasen (Bedarfsanalyse → Audit → SLA → Kick-Off).
+- **JSON-LD `HowTo`** aus **`lib/seo/b2b-onboarding.ts`** (`buildB2BOnboardingHowToJsonLd`) mit `HowToStep`-URLs (`#onboarding-*`) für Google Rich Results.
 
 ### 11. Position-0 Bait & TF-IDF
 
@@ -92,6 +99,7 @@ Statische **Beweis-Seite** für Zertifizierungspfad, Arbeitssicherheit, Hygiene 
 - **Hyper-Local Schema:** pro Stadt ein **`LocalBusiness`/`CleaningService`** mit **`GeoCircle`** in **`lib/seo/standort-geo.ts`** (im `@graph`).
 - **`GeoImage`:** **`components/GeoImage.tsx`** — `ImageObject` + `contentLocation` für Local Image Search / Lens-Vorbereitung.
 - **Interne Links:** Header, Footer, Startseite-Standort-Grid, Leistungs-CTAs, **`SeoCrossLinks`** (Leistung ↔ Standort) → **`/kontakt#kontakt-anfrage`** (Kunde) bzw. **`/kontakt?type=karriere`** (Bewerber).
+- **Key Account Trust:** **`components/KeyAccountManager.tsx`** auf **`/ueber-uns`** und **`/kontakt`** — **`OrganizationRole`** + **`Person`** JSON-LD via **`lib/seo/key-account.ts`** („One Face to the Customer“).
 
 ## Content-Prinzipien
 

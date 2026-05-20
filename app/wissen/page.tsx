@@ -6,7 +6,7 @@ import { LEXIKON_BY_SLUG, LEXIKON_TERMS } from "@/lib/config/lexikon";
 export const metadata: Metadata = {
   title: "Wissen & Lexikon",
   description:
-    "Fachwissen zu Reinigung, Hygiene und Normen – HACCP, pH-Werte, DIN 13063 und mehr von Saubermatik.",
+    "Fachwissen zu Reinigung, Hygiene und Normen – HACCP, CAFM, DIN 31051, SLA, Farbcode-System und mehr von Saubermatik.",
   alternates: { canonical: "/wissen" },
 };
 

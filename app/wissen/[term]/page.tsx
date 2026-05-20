@@ -52,16 +52,35 @@ export default async function WissenTermPage({ params }: PageProps) {
         <h1 className="mt-3 text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
           {entry.title}
         </h1>
-        <p className="mt-4 text-lg leading-8 text-muted">{entry.summary}</p>
-        <div className="mt-8 space-y-4 text-base leading-7 text-foreground/90">
-          {entry.paragraphs.map((p) => (
-            <p key={p}>{p}</p>
+        <p className="mt-5 border-l-4 border-primary/80 pl-4 text-lg leading-8 text-muted">
+          {entry.summary}
+        </p>
+        <div className="mt-10 space-y-6 border-t border-foreground/10 pt-10">
+          {entry.paragraphs.map((p, i) => (
+            <p
+              key={p}
+              className={
+                i === 0
+                  ? "text-base font-medium leading-8 text-foreground/95 sm:text-lg"
+                  : "text-base leading-[1.75] text-foreground/85"
+              }
+            >
+              {p}
+            </p>
           ))}
         </div>
-        <div className="mt-10">
+        <div className="mt-12 rounded-2xl border border-secondary/30 bg-secondary/5 p-6 sm:p-8">
+          <p className="text-sm font-semibold text-secondary">
+            Praxis &amp; SLA
+          </p>
+          <p className="mt-2 text-base leading-7 text-muted">
+            Sie möchten diesen Begriff auf Ihr Objekt übertragen? Wir
+            strukturieren Bedarf, Audit und Service Level Agreement in einem
+            dokumentierten Onboarding.
+          </p>
           <Link
             href="/kontakt#kontakt-anfrage"
-            className="inline-flex h-11 items-center justify-center rounded-xl bg-primary px-5 text-sm font-semibold text-primary-foreground shadow-sm transition hover:bg-primary/90"
+            className="mt-5 inline-flex h-11 items-center justify-center rounded-xl bg-primary px-5 text-sm font-semibold text-primary-foreground shadow-sm transition hover:bg-primary/90"
           >
             Beratung anfragen
           </Link>
