@@ -53,17 +53,17 @@ const testimonials = [
 export default function Home() {
   return (
     <div className="flex flex-1 flex-col">
-      <section className="relative overflow-hidden bg-zinc-100">
-        <div className="mx-auto grid w-full max-w-6xl items-center gap-10 px-4 py-14 sm:px-6 lg:grid-cols-2 lg:gap-14 lg:px-8 lg:py-20">
+      <section className="relative overflow-hidden bg-zinc-50">
+        <div className="mx-auto grid w-full max-w-6xl items-center gap-8 px-4 py-10 sm:px-6 lg:grid-cols-2 lg:gap-10 lg:px-8 lg:py-12">
           <div>
             <p className="text-xs font-bold uppercase tracking-widest text-primary">
               Meßstetten · Zollernalb · Schwarzwald-Baar-Heuberg
             </p>
-            <h1 className="mt-3 text-3xl font-black tracking-tight text-foreground sm:text-4xl lg:text-[2.5rem] lg:leading-tight">
+            <h1 className="mt-2 text-3xl font-black tracking-tight text-foreground sm:text-4xl lg:text-[2.35rem] lg:leading-tight">
               Reinigung, die hält, was sie verspricht – mit Kopf, nicht nur mit
               dem Wischmob.
             </h1>
-            <p className="mt-5 text-base leading-7 text-muted sm:text-lg">
+            <p className="mt-4 text-base leading-7 text-muted sm:text-lg">
               Bei uns bekommen Sie keinen Textbaustein aus der Großstadt,
               sondern einen festen Ansprechpartner vor Ort. Unsere digitale
               Objektsteuerung sorgt dafür, dass Touren und Qualität nicht vom
@@ -71,7 +71,7 @@ export default function Home() {
               merken vor allem eins: dass es weiterläuft.
             </p>
             <FreshnessBadge />
-            <ul className="mt-6 flex flex-col gap-2.5 text-sm font-medium text-foreground sm:text-base">
+            <ul className="mt-4 flex flex-col gap-2 text-sm font-medium text-foreground sm:text-base">
               {trustItems.map((item) => (
                 <li key={item} className="flex items-start gap-2">
                   <span className="mt-0.5 shrink-0 text-secondary" aria-hidden>
@@ -81,7 +81,7 @@ export default function Home() {
                 </li>
               ))}
             </ul>
-            <div className="mt-8 flex flex-wrap gap-3">
+            <div className="mt-5 flex flex-wrap gap-3">
               <Link
                 href="/leistungen"
                 className="inline-flex h-11 items-center justify-center rounded-sm bg-primary px-5 text-sm font-bold text-primary-foreground transition hover:bg-primary/90"
@@ -96,7 +96,7 @@ export default function Home() {
               </Link>
             </div>
           </div>
-          <div className="flex flex-col gap-6 lg:items-end">
+          <div className="flex flex-col gap-4 lg:items-end">
             <div className="relative aspect-[4/3] w-full max-w-xl overflow-hidden rounded-sm border border-zinc-200 lg:ml-auto">
               <GeoImage
                 src={imgOffice}
@@ -118,7 +118,7 @@ export default function Home() {
       </section>
 
       <section
-        className="border-t border-foreground/10 bg-white py-14 sm:py-16"
+        className="border-t border-foreground/10 bg-white py-10 sm:py-12"
         aria-labelledby="engagement-calculator-heading"
       >
         <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">
@@ -127,7 +127,7 @@ export default function Home() {
       </section>
 
       <section
-        className="min-h-[38rem] border-t border-foreground/10 bg-slate-50 py-14 sm:min-h-[40rem] sm:py-16"
+        className="border-t border-foreground/10 bg-zinc-50 py-10 sm:py-12"
         aria-labelledby="reinigung-4-heading"
       >
         <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">
@@ -142,15 +142,15 @@ export default function Home() {
               Software-Vorteil statt Zufall: Protokolle, die jede Tour
               dokumentieren.
             </h2>
-            <p className="mt-4 min-h-[4.5rem] text-base leading-7 text-muted sm:text-lg">
+            <p className="mt-3 text-base leading-7 text-muted sm:text-lg">
               Statt Excel und WhatsApp-Chaos steuern wir Ihr Objekt über die
               Saubermatik-Plattform: digitale Protokolle, klare Checklisten und
               eine Disposition, die Ausfälle abfängt – damit Reinigung bei Ihnen
               nicht vom Zufall abhängt.
             </p>
           </div>
-          <ul className="mt-10 grid gap-6 sm:grid-cols-2">
-            <li className="flex min-h-[14rem] flex-col rounded-sm border border-zinc-300 bg-white p-6 sm:min-h-[15rem] sm:p-8">
+          <ul className="mt-8 grid gap-5 sm:grid-cols-2">
+            <li className="flex flex-col rounded-sm border border-zinc-200 bg-white p-5 sm:p-6">
               <h3 className="text-lg font-bold text-foreground sm:text-xl">
                 Digitale Protokolle
               </h3>
@@ -161,7 +161,7 @@ export default function Home() {
                 Kontrolle im Alltag.
               </p>
             </li>
-            <li className="flex min-h-[14rem] flex-col rounded-sm border border-zinc-300 bg-white p-6 sm:min-h-[15rem] sm:p-8">
+            <li className="flex flex-col rounded-sm border border-zinc-200 bg-white p-5 sm:p-6">
               <h3 className="text-lg font-bold text-foreground sm:text-xl">
                 Ausfallsicherheit über die Plattform
               </h3>
@@ -178,11 +178,11 @@ export default function Home() {
 
       <B2BOnboardingProcess
         pagePath="/"
-        className="border-t border-foreground/10 bg-slate-50/80 py-16 sm:py-20"
+        className="border-t border-foreground/10 bg-white py-12 sm:py-14"
       />
 
-      <section className="border-t border-foreground/10 bg-white py-16 sm:py-20">
-        <div className="mx-auto grid w-full max-w-6xl gap-12 px-4 sm:px-6 lg:grid-cols-2 lg:items-center lg:gap-16 lg:px-8">
+      <section className="border-t border-foreground/10 bg-zinc-50 py-12 sm:py-14">
+        <div className="mx-auto grid w-full max-w-6xl gap-8 px-4 sm:px-6 lg:grid-cols-2 lg:items-center lg:gap-10 lg:px-8">
           <div className="order-2 lg:order-1">
             <h2 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
               Warum wir? Weil wir nicht nur putzen.
@@ -218,7 +218,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="border-y border-foreground/10 bg-slate-50/80 py-14">
+      <section className="border-y border-foreground/10 bg-zinc-50 py-10">
         <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             <div className="relative aspect-[4/3] overflow-hidden rounded-sm border border-zinc-200">
@@ -258,20 +258,20 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="bg-white py-16 sm:py-20">
+      <section className="bg-zinc-50 py-12 sm:py-14">
         <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">
           <h2 className="text-center text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
             Stimmen aus der Region
           </h2>
-          <p className="mx-auto mt-3 max-w-2xl text-center text-sm text-muted">
+          <p className="mx-auto mt-2 max-w-2xl text-center text-sm text-muted">
             Beispielzitate für den Relaunch (Namen anonymisiert) – so arbeiten
             wir gern mit Geschäftsführung, Praxen und Verwaltung zusammen.
           </p>
-          <ul className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <ul className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {testimonials.map((t) => (
               <li
                 key={t.name}
-                className="flex min-h-[17rem] flex-col rounded-sm border border-zinc-300 bg-white p-6 sm:min-h-[18rem]"
+                className="flex flex-col rounded-sm border border-zinc-200 bg-white p-5"
               >
                 <p className="text-sm leading-6 text-foreground/90">
                   &ldquo;{t.quote}&rdquo;
@@ -288,25 +288,25 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="border-t border-foreground/10 bg-zinc-100 py-16 sm:py-20">
+      <section className="border-t border-foreground/10 bg-white py-12 sm:py-14">
         <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl">
             <h2 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
               Kurz vor Ort – für Sie in der Nachbarschaft
             </h2>
-            <p className="mt-3 text-base leading-7 text-muted">
+            <p className="mt-2 text-base leading-7 text-muted">
               Von Meßstetten aus sind wir u. a. in Tübingen, Reutlingen,
               Villingen-Schwenningen und am Bodensee (Überlingen) im Einsatz –
               und in der gesamten Zollernalb. Ein Klick führt zur lokalen
               Einordnung; Ihre Anfrage landet zentral bei uns.
             </p>
           </div>
-          <ul className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+          <ul className="mt-8 grid grid-cols-1 gap-3 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
             {STANDORT_CITIES.map((city) => (
               <li key={city}>
                 <Link
                   href={`/standorte/${city}`}
-                  className="group flex min-h-[9.5rem] flex-col rounded-sm border border-zinc-300 bg-white p-5 transition hover:border-primary hover:bg-zinc-100"
+                  className="group flex min-h-[8rem] flex-col rounded-sm border border-zinc-200 bg-zinc-50 p-4 transition hover:border-primary hover:bg-white"
                 >
                   <span className="text-base font-semibold text-foreground group-hover:text-secondary">
                     {STANDORT_LABELS[city]}

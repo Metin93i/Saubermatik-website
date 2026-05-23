@@ -43,7 +43,7 @@ export function B2BOnboardingProcess({ pagePath, className = "" }: Props) {
           </p>
         </div>
 
-        <div className="mt-12 overflow-x-auto rounded-sm border border-zinc-200">
+        <div className="mt-8 overflow-x-auto rounded-sm border border-zinc-200">
           <table className="w-full min-w-[40rem] border-collapse text-left text-sm">
             <caption className="sr-only">
               B2B-Onboarding: vier Phasen im Überblick

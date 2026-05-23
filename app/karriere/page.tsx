@@ -74,7 +74,7 @@ export default function KarrierePage() {
         ))}
       </ul>
 
-      <div className="mt-14 rounded-sm border border-zinc-200 bg-slate-50/90 p-6 sm:p-8">
+      <div className="mt-14 rounded-sm border border-zinc-200 bg-slate-50/90 p-5 sm:p-6">
         <h2 className="text-lg font-bold text-foreground">
           Initiativbewerbung
         </h2>

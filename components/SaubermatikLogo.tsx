@@ -18,7 +18,7 @@ export function SaubermatikLogo({ variant = "onLight" }: SaubermatikLogoProps) {
       width={LOGO_WIDTH}
       height={LOGO_HEIGHT}
       priority
-      className="h-12 w-auto max-w-[min(100%,18rem)] object-contain object-left sm:h-14 md:h-16"
+      className="h-10 w-auto max-w-[min(100%,16rem)] object-contain object-left sm:h-11"
       style={{ width: "auto" }}
     />
   );

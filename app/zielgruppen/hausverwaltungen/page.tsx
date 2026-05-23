@@ -25,7 +25,7 @@ export default function HausverwaltungenPage() {
       />
       <div className="flex flex-1 flex-col">
         <section className="border-b border-foreground/10 bg-zinc-100">
-          <div className="mx-auto w-full max-w-6xl px-4 py-14 sm:px-6 sm:py-20 lg:px-8">
+          <div className="mx-auto w-full max-w-6xl px-4 py-10 sm:px-6 sm:py-12 lg:px-8">
             <p className="text-xs font-bold uppercase tracking-widest text-primary">
               Zielgruppe · Hausverwaltung
             </p>
@@ -58,7 +58,7 @@ export default function HausverwaltungenPage() {
           </div>
         </section>
 
-        <section className="mx-auto w-full max-w-6xl px-4 py-16 sm:px-6 lg:px-8">
+        <section className="mx-auto w-full max-w-6xl px-4 py-12 sm:px-6 lg:px-8">
           <article className="max-w-3xl space-y-6 text-base leading-[1.75] text-foreground/90">
             <p>
               Hausverwaltungen stehen zwischen Eigentümer, Mieterbeirat und
@@ -72,7 +72,7 @@ export default function HausverwaltungenPage() {
             </p>
           </article>
 
-          <div className="mt-16 grid gap-12 lg:grid-cols-[1fr_minmax(0,20rem)] lg:gap-16">
+          <div className="mt-16 grid gap-12 lg:grid-cols-[1fr_minmax(0,20rem)] lg:gap-8">
             <div className="space-y-16">
               <section aria-labelledby="hv-haftung">
                 <h2
@@ -263,10 +263,10 @@ export default function HausverwaltungenPage() {
 
         <B2BOnboardingProcess
           pagePath="/zielgruppen/hausverwaltungen"
-          className="border-t border-foreground/10 bg-slate-50/80 py-16 sm:py-20"
+          className="border-t border-foreground/10 bg-slate-50/80 py-12 sm:py-14"
         />
 
-        <section className="border-t border-foreground/10 bg-white py-16">
+        <section className="border-t border-foreground/10 bg-white py-12">
           <div className="mx-auto w-full max-w-xl px-4 sm:px-6 lg:px-8">
             <EngagementCalculator funnelHref="#kontakt-anfrage" />
           </div>
@@ -274,7 +274,7 @@ export default function HausverwaltungenPage() {
 
         <section
           id="kontakt-anfrage"
-          className="border-t border-foreground/10 bg-zinc-100 py-16 sm:py-20"
+          className="border-t border-foreground/10 bg-zinc-100 py-12 sm:py-14"
         >
           <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">
             <div className="mx-auto max-w-2xl text-center">

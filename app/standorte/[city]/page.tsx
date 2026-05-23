@@ -57,7 +57,7 @@ export default async function StandortPage({ params }: PageProps) {
       />
       <div className="flex flex-1 flex-col bg-white">
         <section className="border-b border-slate-200/80 bg-zinc-100">
-          <div className="mx-auto w-full max-w-6xl px-4 py-14 sm:px-6 sm:py-20 lg:px-8">
+          <div className="mx-auto w-full max-w-6xl px-4 py-10 sm:px-6 sm:py-12 lg:px-8">
             <nav className="text-sm font-semibold text-secondary">
               <Link href="/standorte" className="hover:underline">
                 Standorte
@@ -92,7 +92,7 @@ export default async function StandortPage({ params }: PageProps) {
           </div>
         </section>
 
-        <article className="mx-auto w-full max-w-6xl px-4 py-16 sm:px-6 lg:px-8">
+        <article className="mx-auto w-full max-w-6xl px-4 py-12 sm:px-6 lg:px-8">
           {deep.sections.map((section) => (
             <section
               key={section.id}

@@ -60,7 +60,7 @@ export default function QualitaetsmanagementPage() {
           ))}
         </ul>
 
-        <div className="mt-14 rounded-sm border border-zinc-200 bg-slate-50/80 p-6 sm:p-8">
+        <div className="mt-14 rounded-sm border border-zinc-200 bg-slate-50/80 p-5 sm:p-6">
           <h2 className="text-lg font-bold text-foreground">
             Nächster Schritt
           </h2>
@@ -88,7 +88,7 @@ export default function QualitaetsmanagementPage() {
       </article>
       <B2BOnboardingProcess
         pagePath="/qualitaetsmanagement"
-        className="border-t border-foreground/10 bg-white py-16 sm:py-20"
+        className="border-t border-foreground/10 bg-white py-12 sm:py-14"
       />
     </>
   );

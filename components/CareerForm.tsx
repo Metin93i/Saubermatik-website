@@ -116,7 +116,7 @@ export function CareerForm({ className }: CareerFormProps) {
     return (
       <section
         className={classNames(
-          "min-h-[26rem] rounded-sm border border-zinc-200 bg-white p-6 sm:min-h-[28rem] sm:p-8",
+          "min-h-[22rem] rounded-sm border border-zinc-200 bg-white p-6 sm:min-h-[24rem] sm:p-8",
           className,
         )}
         aria-live="polite"
@@ -149,7 +149,7 @@ export function CareerForm({ className }: CareerFormProps) {
   return (
     <section
       className={classNames(
-        "min-h-[26rem] rounded-sm border border-zinc-200 bg-white p-6 sm:min-h-[28rem] sm:p-8",
+        "min-h-[22rem] rounded-sm border border-zinc-200 bg-white p-6 sm:min-h-[24rem] sm:p-8",
         className,
       )}
       id="bewerbung"

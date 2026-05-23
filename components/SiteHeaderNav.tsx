@@ -55,7 +55,7 @@ export function SiteHeaderNav() {
   }, [mobileOpen, closeMobile]);
 
   const callButtonClass =
-    "inline-flex h-10 shrink-0 items-center justify-center gap-1.5 rounded-sm bg-primary px-3.5 text-sm font-bold text-primary-foreground transition hover:bg-primary/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary";
+    "inline-flex h-9 shrink-0 items-center justify-center gap-1.5 rounded-sm bg-primary px-3 text-sm font-bold text-primary-foreground transition hover:bg-primary/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary";
 
   return (
     <>
@@ -141,7 +141,7 @@ export function SiteHeaderNav() {
 
           <button
             type="button"
-            className="inline-flex h-10 w-10 items-center justify-center rounded-sm border border-zinc-200 bg-background text-sm font-bold text-foreground transition hover:bg-zinc-100 md:hidden"
+            className="inline-flex h-9 w-9 items-center justify-center rounded-sm border border-zinc-200 bg-background text-sm font-bold text-foreground transition hover:bg-zinc-100 md:hidden"
             aria-expanded={mobileOpen}
             aria-controls={panelId}
             aria-label="Hauptmenü öffnen"
@@ -191,7 +191,7 @@ export function SiteHeaderNav() {
               {telHref ? (
                 <a
                   href={telHref}
-                  className="inline-flex h-12 w-full items-center justify-center gap-2 rounded-sm bg-primary text-base font-bold text-primary-foreground"
+                  className="inline-flex h-10 w-full items-center justify-center gap-2 rounded-sm bg-primary text-sm font-bold text-primary-foreground"
                   onClick={closeMobile}
                   aria-label="Jetzt telefonisch anrufen"
                 >

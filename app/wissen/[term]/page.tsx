@@ -69,7 +69,7 @@ export default async function WissenTermPage({ params }: PageProps) {
             </p>
           ))}
         </div>
-        <div className="mt-12 rounded-sm border border-zinc-300/30 bg-secondary/5 p-6 sm:p-8">
+        <div className="mt-12 rounded-sm border border-zinc-300/30 bg-secondary/5 p-5 sm:p-6">
           <p className="text-sm font-semibold text-secondary">
             Praxis &amp; SLA
           </p>

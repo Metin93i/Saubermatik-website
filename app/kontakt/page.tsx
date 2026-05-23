@@ -32,7 +32,7 @@ export default async function KontaktPage({ searchParams }: KontaktPageProps) {
   const telHref = raw ? buildTelHref(raw) : null;
 
   return (
-    <div className="mx-auto flex w-full max-w-6xl flex-1 flex-col gap-12 px-4 py-12 sm:px-6 lg:flex-row lg:gap-16 lg:px-8 lg:py-16">
+    <div className="mx-auto flex w-full max-w-6xl flex-1 flex-col gap-8 px-4 py-10 sm:px-6 lg:flex-row lg:gap-8 lg:px-8 lg:py-12">
       <div className="min-h-[22rem] flex-1 lg:max-w-md">
         <p className="text-sm font-semibold text-secondary">
           {isCareer ? "Karriere · Kontakt" : "Kontakt"}
@@ -129,7 +129,7 @@ export default async function KontaktPage({ searchParams }: KontaktPageProps) {
         </p>
       </div>
 
-      <div className="min-h-[28rem] flex-1 space-y-8 lg:max-w-xl">
+      <div className="min-h-[24rem] flex-1 space-y-8 lg:max-w-xl">
         {!isCareer ? <KeyAccountManager showCta={false} /> : null}
         <Suspense fallback={<KontaktFormFallback isCareer={isCareer} />}>
           <KontaktFormSwitch />

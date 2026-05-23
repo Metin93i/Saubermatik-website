@@ -15,7 +15,7 @@ export function KeyAccountManager({ className = "", showCta = true }: Props) {
 
   return (
     <section
-      className={`rounded-sm border border-zinc-200 bg-zinc-100 p-6 sm:p-8 ${className}`}
+      className={`rounded-sm border border-zinc-200 bg-zinc-100 p-5 sm:p-6 ${className}`}
       aria-labelledby="key-account-heading"
     >
       <script

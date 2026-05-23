@@ -67,7 +67,7 @@ export default function UeberUnsPage() {
 
       <KeyAccountManager className="mt-12" />
 
-      <div className="mt-12 min-h-[10rem] rounded-sm border border-zinc-300/25 bg-secondary/5 p-6 sm:p-8">
+      <div className="mt-12 min-h-[10rem] rounded-sm border border-zinc-300/25 bg-secondary/5 p-5 sm:p-6">
         <h2 className="text-lg font-bold text-foreground">Was uns antreibt</h2>
         <ul className="mt-4 list-inside list-disc space-y-2 text-sm leading-7 text-muted sm:text-base">
           <li>Langfristige Objektbetreuung statt Einmal-Show</li>

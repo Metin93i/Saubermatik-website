@@ -43,7 +43,7 @@ export function LeistungDeepPage({ content }: Props) {
       <LeistungFaqJsonLd slug={slug} />
       <div className="flex flex-1 flex-col bg-white">
         <section className="border-b border-slate-200/80 bg-zinc-100">
-          <div className="mx-auto w-full max-w-6xl px-4 py-14 sm:px-6 sm:py-20 lg:px-8">
+          <div className="mx-auto w-full max-w-6xl px-4 py-10 sm:px-6 sm:py-12 lg:px-8">
             <nav className="text-sm font-semibold text-secondary">
               <Link href="/leistungen" className="hover:underline">
                 Leistungen
@@ -88,7 +88,7 @@ export function LeistungDeepPage({ content }: Props) {
           </div>
         </section>
 
-        <section className="mx-auto w-full max-w-6xl px-4 py-16 sm:px-6 lg:px-8">
+        <section className="mx-auto w-full max-w-6xl px-4 py-12 sm:px-6 lg:px-8">
           <LeistungSgeTldr slug={slug} />
           <div className="mt-12 space-y-6 text-base leading-[1.75] text-foreground/90">
             {introParagraphs.map((p) => (
@@ -109,7 +109,7 @@ export function LeistungDeepPage({ content }: Props) {
             </article>
           ))}
 
-          <div className="mt-16 rounded-sm border border-zinc-300/25 bg-secondary/5 p-6 sm:p-8">
+          <div className="mt-16 rounded-sm border border-zinc-300/25 bg-secondary/5 p-5 sm:p-6">
             <h2 className="text-xl font-bold text-foreground">
               {highlight.title}
             </h2>
@@ -121,7 +121,7 @@ export function LeistungDeepPage({ content }: Props) {
           </div>
         </section>
 
-        <section className="border-t border-slate-200 bg-white py-16">
+        <section className="border-t border-slate-200 bg-white py-12">
           <div className="mx-auto w-full max-w-3xl px-4 sm:px-6 lg:px-8">
             <SnippetBaitTable slug={slug} />
           </div>
@@ -129,10 +129,10 @@ export function LeistungDeepPage({ content }: Props) {
 
         <B2BOnboardingProcess
           pagePath={pagePath}
-          className="border-t border-foreground/10 bg-slate-50/80 py-16 sm:py-20"
+          className="border-t border-foreground/10 bg-slate-50/80 py-12 sm:py-14"
         />
 
-        <section className="border-t border-slate-200 bg-white py-16">
+        <section className="border-t border-slate-200 bg-white py-12">
           <div className="mx-auto w-full max-w-xl px-4 sm:px-6 lg:px-8">
             <EngagementCalculator
               funnelHref="#kontakt-anfrage"
@@ -149,7 +149,7 @@ export function LeistungDeepPage({ content }: Props) {
 
         <section
           id="kontakt-anfrage"
-          className="border-t border-slate-200 bg-zinc-100 py-16 sm:py-20"
+          className="border-t border-slate-200 bg-zinc-100 py-12 sm:py-14"
         >
           <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">
             <div className="mx-auto max-w-2xl text-center">

@@ -134,7 +134,7 @@ export function EngagementCalculator({
   return (
     <section
       className={
-        className ?? "rounded-sm border border-zinc-200 bg-white p-6 sm:p-8"
+        className ?? "rounded-sm border border-zinc-200 bg-white p-5 sm:p-6"
       }
       aria-labelledby="engagement-calculator-heading"
     >
