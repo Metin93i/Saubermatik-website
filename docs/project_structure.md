@@ -73,7 +73,7 @@ app/
 │   └── page.tsx                  Marken-Story & Vertrauen
 ├── globals.css                   Design-Tokens / Tailwind v4 @theme
 ├── layout.tsx                    Root-Layout, Fonts, Header/Footer, JSON-LD
-└── page.tsx                      Startseite (Hero, Reinigung 4.0, Trust, …)
+└── page.tsx                      Startseite (Hero + Quick-Search, Reinigung 4.0, Trust, …)
 ```
 
 ## `components/` — UI
@@ -84,6 +84,8 @@ components/
 ├── KeyAccountManager.tsx         One Face to the Customer + Person/Role JSON-LD (Server)
 ├── BreadcrumbJsonLd.tsx          BreadcrumbList JSON-LD (tiefes Routing)
 ├── CareerForm.tsx                Bewerber-Formular (`"use client"`) → `/api/career`
+├── EngagementCalculator.tsx      3-Schritt-Kostenrechner (`"use client"`)
+├── HeroQuickSearch.tsx           B2B Quick-Search Startseite (`"use client"`) → Calculator/Funnel
 ├── KontaktFormFallback.tsx      Suspense-Fallback (serverkompatibel)
 ├── KontaktFormSwitch.tsx       `useSearchParams` Weiche Lead/Karriere (`"use client"`)
 ├── LeadFunnel.tsx              Multi-Step Kunden-Funnel (`"use client"`)
@@ -112,6 +114,8 @@ lib/
 │   ├── lexikon.ts                Wiki 2.0 — 8 Lexikon-Einträge (LEXIKON_TERMS)
 │   ├── services.ts               Leistungsportfolio (10 Slugs inkl. Entrümpelung & Sonstiges)
 │   └── site.ts                   Firmenadresse, OSM-Embed (Single Source)
+├── hero/
+│   └── quick-search.ts           Quick-Search-Städte, Calculator-Mapping, sessionStorage-Navigation
 ├── image-blur.ts                 blurDataURL für `next/image` (Remote)
 ├── lead/
 │   ├── email.ts                  HTML-Mail Lead inkl. optionaler Objekthinweise
@@ -154,5 +158,5 @@ docs/
 ## Konventionen
 
 - **Routen-Inhalte** liegen bevorzugt als **Server Components** unter `app/`.
-- **`"use client"`** nur dort, wo nötig: `LeadFunnel`, `CareerForm`, `KontaktFormSwitch`, `SiteHeaderNav`.
+- **`"use client"`** nur dort, wo nötig: `HeroQuickSearch`, `LeadFunnel`, `CareerForm`, `KontaktFormSwitch`, `SiteHeaderNav`, `EngagementCalculator`.
 - **Standorte & Leistungen** werden aus `lib/routes/*` bzw. **`lib/config/services.ts`** gespeist — eine Quelle für Links, SSG und SEO-Texte.

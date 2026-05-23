@@ -5,6 +5,7 @@ import { B2BOnboardingProcess } from "@/components/B2BOnboardingProcess";
 import { EngagementCalculator } from "@/components/EngagementCalculator";
 import { FreshnessBadge } from "@/components/FreshnessBadge";
 import { GeoImage } from "@/components/GeoImage";
+import { HeroQuickSearch } from "@/components/HeroQuickSearch";
 import { LeadFunnel } from "@/components/LeadFunnel";
 import { REMOTE_IMAGE_BLUR_DATA_URL } from "@/lib/image-blur";
 import { STANDORT_CITIES, STANDORT_LABELS } from "@/lib/routes/standorte";
@@ -54,16 +55,17 @@ export default function Home() {
   return (
     <div className="flex flex-1 flex-col">
       <section className="relative overflow-hidden bg-zinc-50">
-        <div className="mx-auto grid w-full max-w-6xl items-center gap-8 px-4 py-10 sm:px-6 lg:grid-cols-2 lg:gap-10 lg:px-8 lg:py-12">
+        <div className="mx-auto grid w-full max-w-6xl items-start gap-6 px-4 py-8 sm:px-6 lg:grid-cols-2 lg:gap-8 lg:px-8 lg:py-10">
           <div>
             <p className="text-xs font-bold uppercase tracking-widest text-primary">
               Meßstetten · Zollernalb · Schwarzwald-Baar-Heuberg
             </p>
-            <h1 className="mt-2 text-3xl font-black tracking-tight text-foreground sm:text-4xl lg:text-[2.35rem] lg:leading-tight">
+            <h1 className="mt-1.5 text-3xl font-black tracking-tight text-foreground sm:text-4xl lg:text-[2.25rem] lg:leading-tight">
               Reinigung, die hält, was sie verspricht – mit Kopf, nicht nur mit
               dem Wischmob.
             </h1>
-            <p className="mt-4 text-base leading-7 text-muted sm:text-lg">
+            <HeroQuickSearch className="mt-4" />
+            <p className="mt-3 text-sm leading-6 text-muted sm:text-base sm:leading-7">
               Bei uns bekommen Sie keinen Textbaustein aus der Großstadt,
               sondern einen festen Ansprechpartner vor Ort. Unsere digitale
               Objektsteuerung sorgt dafür, dass Touren und Qualität nicht vom
@@ -71,7 +73,7 @@ export default function Home() {
               merken vor allem eins: dass es weiterläuft.
             </p>
             <FreshnessBadge />
-            <ul className="mt-4 flex flex-col gap-2 text-sm font-medium text-foreground sm:text-base">
+            <ul className="mt-3 flex flex-col gap-1.5 text-sm font-medium text-foreground">
               {trustItems.map((item) => (
                 <li key={item} className="flex items-start gap-2">
                   <span className="mt-0.5 shrink-0 text-secondary" aria-hidden>
@@ -81,7 +83,7 @@ export default function Home() {
                 </li>
               ))}
             </ul>
-            <div className="mt-5 flex flex-wrap gap-3">
+            <div className="mt-4 flex flex-wrap gap-2">
               <Link
                 href="/leistungen"
                 className="inline-flex h-11 items-center justify-center rounded-sm bg-primary px-5 text-sm font-bold text-primary-foreground transition hover:bg-primary/90"
@@ -96,7 +98,7 @@ export default function Home() {
               </Link>
             </div>
           </div>
-          <div className="flex flex-col gap-4 lg:items-end">
+          <div className="flex flex-col gap-3 lg:items-end">
             <div className="relative aspect-[4/3] w-full max-w-xl overflow-hidden rounded-sm border border-zinc-200 lg:ml-auto">
               <GeoImage
                 src={imgOffice}
@@ -118,6 +120,7 @@ export default function Home() {
       </section>
 
       <section
+        id="engagement-calculator-section"
         className="border-t border-foreground/10 bg-white py-10 sm:py-12"
         aria-labelledby="engagement-calculator-heading"
       >

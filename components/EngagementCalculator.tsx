@@ -1,7 +1,12 @@
 "use client";
 
 import Link from "next/link";
-import { useCallback, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
+import {
+  CALC_PREFILL_KEY,
+  QUICK_SEARCH_CALC_KEY,
+  type QuickSearchCalcPrefill,
+} from "@/lib/hero/quick-search";
 import type { LeadServiceType } from "@/lib/lead/submission";
 
 type CalcCategory = "buero" | "glas" | "treppe" | "hausverwaltung";
@@ -52,8 +57,6 @@ const MIN_WE = 4;
 const MAX_WE = 100;
 const STEP_WE = 1;
 
-const CALC_PREFILL_KEY = "saubermatik-calc-prefill";
-
 function formatEuro(value: number): string {
   return new Intl.NumberFormat("de-DE", {
     style: "currency",
@@ -87,6 +90,21 @@ export function EngagementCalculator({
   );
   const [sqm, setSqm] = useState(250);
   const [weUnits, setWeUnits] = useState(24);
+
+  useEffect(() => {
+    try {
+      const raw = sessionStorage.getItem(QUICK_SEARCH_CALC_KEY);
+      if (!raw) return;
+      const data = JSON.parse(raw) as QuickSearchCalcPrefill;
+      if (data.category) {
+        setCategory(data.category);
+        setStep(1);
+      }
+      sessionStorage.removeItem(QUICK_SEARCH_CALC_KEY);
+    } catch {
+      /* ignore malformed prefill */
+    }
+  }, []);
 
   const selected = useMemo(
     () => CATEGORIES.find((c) => c.id === category) ?? null,

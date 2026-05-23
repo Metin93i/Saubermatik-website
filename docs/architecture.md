@@ -14,6 +14,7 @@ Technisches Referenzdokument (DDD). Dateibaum: `docs/project_structure.md`. Änd
 | Security Headers | `next.config.ts` → `headers()` (u. a. `X-Frame-Options`, `X-Content-Type-Options`, `Referrer-Policy`, `Permissions-Policy`) |
 | AEO | `app/llms.txt/route.ts` → `/llms.txt` (Plaintext aus `lib/seo/llms-content.ts`) |
 | Engagement | `components/EngagementCalculator.tsx` (`"use client"`) — Navboost/Dwell-Time |
+| Hero Quick-Search | `components/HeroQuickSearch.tsx` (`"use client"`) — B2B-Leiste Startseite → Calculator/Funnel |
 | Freshness | `lib/utils/date.ts`, `FreshnessBadge`, `dateModified` im globalen JSON-LD |
 | Lexikon | `app/wissen/*`, `lib/config/lexikon.ts` (Wiki 2.0, 8 Terms) |
 | B2B-Onboarding | `components/B2BOnboardingProcess.tsx`, `lib/seo/b2b-onboarding.ts` (HowTo JSON-LD) |
@@ -86,6 +87,7 @@ flowchart LR
 
 | `"use client"` | Grund |
 |----------------|--------|
+| `HeroQuickSearch` | Service/Standort-Auswahl, Scroll + **sessionStorage**-Prefill |
 | `LeadFunnel` | Multi-Step-State, `fetch`, liest optional Kalkulator-Prefill aus `sessionStorage` |
 | `CareerForm` | Formular-State, `fetch` |
 | `SiteHeaderNav` | Mobile-Menü, Scroll-Lock, Tastatur (Escape), **Hover-Prefetch** (`PrefetchLink`), **aria-label** auf Menü-Button |
@@ -135,4 +137,39 @@ flowchart TB
 | 3 | `monthly = m² × ratePerSqm` | `monthly = WE × ratePerWe(WE)` mit Staffel **18 / 16 / 14 €** pro WE |
 | CTA | Scroll `#kontakt-anfrage` + Prefill | Scroll + Prefill; Link **`/zielgruppen/hausverwaltungen#kontakt-anfrage`** |
 
-Prefill-Key: **`saubermatik-calc-prefill`** → **`LeadFunnel`** setzt `objectNotes` und optional `serviceType` (`hausmeisterservice`), dann entfernt den Key.
+Prefill-Key: **`saubermatik-calc-prefill`** → **`LeadFunnel`** setzt `objectNotes` und optional `serviceType`, dann entfernt den Key.
+
+## HeroQuickSearch — Conversion-Leiste (Startseite)
+
+```mermaid
+flowchart LR
+  Q[HeroQuickSearch] -->|Service + Standort| R{In Calculator-Mapping?}
+  R -->|ja| C[sessionStorage quick-search-calc]
+  C --> S1[Scroll #engagement-calculator-section]
+  S1 --> EC[EngagementCalculator step 1]
+  R -->|nein| F[sessionStorage calc-prefill]
+  F --> S2[Scroll #kontakt-anfrage]
+  S2 --> LF[LeadFunnel step 1 + objectNotes]
+```
+
+| Feld | Quelle | Verhalten |
+|------|--------|-----------|
+| Leistung | **`SERVICES`** | Dropdown „Ich suche…“ |
+| Standort | **`QUICK_SEARCH_CITIES`** + freie PLZ/Ort | Dropdown + optionales Textfeld |
+| CTA | „Preis berechnen“ | Scroll + Prefill (kein Full-Page-Reload) |
+
+**Calculator-Mapping** (4 Slugs):
+
+| Service-Slug | Calc-Kategorie |
+|--------------|----------------|
+| `unterhaltsreinigung` | `buero` |
+| `fenster-glasreinigung` | `glas` |
+| `treppenhausreinigung` | `treppe` |
+| `hausmeisterservice` | `hausverwaltung` (WE-Modus) |
+
+Übrige Slugs → **Lead-Funnel** mit `serviceType` + `objectNotes` („Quick-Search · Standort: …“).
+
+SessionStorage (Single Source: **`lib/hero/quick-search.ts`**):
+
+- **`saubermatik-quick-search-calc`** — `{ category, service, locationLabel }` → `EngagementCalculator`
+- **`saubermatik-calc-prefill`** — `{ service, objectNotes? }` → `LeadFunnel`

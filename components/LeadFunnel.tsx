@@ -3,6 +3,7 @@
 import type { FormEvent } from "react";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { FUNNEL_SERVICE_OPTIONS, SERVICES } from "@/lib/config/services";
+import { CALC_PREFILL_KEY } from "@/lib/hero/quick-search";
 import type {
   LeadAreaSize,
   LeadFunnelSubmission,
@@ -134,7 +135,7 @@ export function LeadFunnel({ className, initialServiceType }: LeadFunnelProps) {
 
   useEffect(() => {
     try {
-      const raw = sessionStorage.getItem("saubermatik-calc-prefill");
+      const raw = sessionStorage.getItem(CALC_PREFILL_KEY);
       if (!raw) return;
       const data = JSON.parse(raw) as {
         service?: LeadServiceType;
@@ -148,7 +149,7 @@ export function LeadFunnel({ className, initialServiceType }: LeadFunnelProps) {
         setServiceType(data.service);
         setStep(1);
       }
-      sessionStorage.removeItem("saubermatik-calc-prefill");
+      sessionStorage.removeItem(CALC_PREFILL_KEY);
     } catch {
       /* ignore malformed prefill */
     }

@@ -32,7 +32,7 @@ Stand: synchron mit `components/SiteHeader.tsx`, `components/SiteHeaderNav.tsx` 
 ## Seitenhierarchie (B2B)
 
 ```
-/  (Startseite: Hero, Reinigung 4.0, Trust, Galerie, Testimonials, Standort-Kacheln, LeadFunnel)
+/  (Startseite: Hero, HeroQuickSearch, Reinigung 4.0, Trust, Galerie, Testimonials, Standort-Kacheln, LeadFunnel)
 ├── /leistungen                    (Hub)
 ├── /leistungen/[slug]             (Spokes)
 ├── /leistungen/unterhaltsreinigung (SEO-Sonderseite)
