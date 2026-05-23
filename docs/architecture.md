@@ -60,7 +60,7 @@ flowchart LR
 - **Deep-Content-Template:** **`components/LeistungDeepPage.tsx`** + **`lib/seo/leistung-deep-content.ts`** (6 Services); Unterhalt, Glas, Hausmeister, Grün manuell erweitert.
 - **Position-0-Tabellen:** **`components/SnippetBaitTable.tsx`** — Varianten pro Service (unterhalt, glas, treppenhaus, winterdienst, grundreinigung, fassade, entruempelung, sonstiges).
 - **SSG:** `app/zielgruppen/hausverwaltungen/page.tsx` — **B2B-Zielgruppen-Silo** (800+ Wörter) + **`Service`** JSON-LD (`lib/seo/hausverwaltungen-schema.ts`).
-- **SSG:** `app/standorte/[city]/page.tsx` — `generateStaticParams` aus **`STANDORT_CITIES`** (16 Städte). Optional **lokale Entity-Injektion** aus **`lib/seo/local-entities.ts`** (Kernstädte) + **`BreadcrumbJsonLd`** (mit Hub **`/standorte`**) + **`SeoCrossLinks`** (`type="service"`).
+- **SSG:** `app/standorte/[city]/page.tsx` — **16 Städte**, **600+ Wörter** via **`buildStandortDeepContent`**; Kernstädte mit **`LOCAL_ENTITIES_BY_CITY`** (Industry Mapping); **`LocalCityFaq`** + FAQPage JSON-LD; **`BreadcrumbJsonLd`**, **`SeoCrossLinks`**.
 - **SSG:** `app/standorte/page.tsx` — **Standort-Hub** (`/standorte`): Liste aller City-Spokes + Stuttgart-Spezial.
 - **SSG:** `app/standorte/stuttgart/page.tsx` — **Hyper-Local Hub** (kein Eintrag in `STANDORT_CITIES`; feste Route, keine dynamische `[city]`-Kollision). **`SeoCrossLinks`** (`type="service"`).
 - **SSG:** `app/expertise/page.tsx` — EEAT-/Standards-Hub (statisch).

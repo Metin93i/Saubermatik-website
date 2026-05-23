@@ -43,7 +43,9 @@ Jeweils: *Gebäudereinigung in [Stadt]*, Kombination mit *Büro*, *Praxis*, *Lie
 
 **Hub & Spoke (intern):** Standortseiten und **Stuttgart-Hub** rendern **`SeoCrossLinks`** (`type="service"`) mit Top-Leistungs-Deep-Links (Unterhalt, Glas, Entrümpelung) plus Leistungsübersicht.
 
-**Programmatic Local Entities (Kernstädte):** Für **Balingen, Tuttlingen, Albstadt, Rottweil, Hechingen** injiziert `lib/seo/local-entities.ts` zusätzliche Absätze mit **Industrie-/Verkehrs-Clustern** (Platzhalter, später verifiziert) plus **deterministischem Spin** zur Duplicate-Vermeidung — siehe `docs/pSEO_matrix.md`.
+**Programmatic Local Entities (Kernstädte):** Für **Balingen, Tuttlingen, Albstadt, Rottweil, Hechingen** liefert **`lib/seo/local-entities.ts`** verifizierte **Wirtschaftsprofile** (`industrialZones`, `infrastructure`, `industryFocus`) – keine generischen Platzhalter mehr. **`lib/seo/standort-deep-content.ts`** generiert pro Stadt **600+ Wörter** Deep Local Content (Hero, Wirtschaftsfokus, Gewerbegebiete, Leistungen, Digital-QM). Die **11 Nebenstädte** erhalten regionalen Fallback-Text (Schwarzwald-Baar-Heuberg / Zollernalbkreis, Verkehrssicherung, schnelle Reaktion) mit deterministischem Spin — **Doorway-Pages werden durch wirtschaftliche Profilierung vermieden**.
+
+**Local FAQ + Schema:** **`components/LocalCityFaq.tsx`** + **`lib/seo/standort-faq.ts`** — 3 B2B-FAQs pro Stadt (Unterhalt, Notfall, Winterdienst/Verkehrssicherung) inkl. **`FAQPage`** JSON-LD auf **`/standorte/[city]`**.
 
 ### 5. Hyper-Local Entity Injection — **Stuttgart-Hub** (`/standorte/stuttgart`)
 
@@ -117,6 +119,18 @@ Intent: **B2B-Gewerbe/Büro/Praxis**, transaktional + Compliance (Facility, Eink
 **SGE-Entitäten:** *4-farb-system, kreuzkontamination, din en 13549, digitales leistungsverzeichnis, service level agreement, haccp-richtlinien, flächenleistung, ausfallsicherheit, echtzeit-qm.*
 
 **Interne Verlinkung:** `/wissen/farbcode-system-hygiene`, `/qualitaetsmanagement`, Standort-Spokes.
+
+### 8f. Deep Local Content & Industry Mapping (`/standorte/[city]`)
+
+| Element | Implementierung |
+|---------|-----------------|
+| Hero | „Facility Management … Ihr Partner an der [Infrastruktur]“ |
+| Kernstädte (5) | `industryFocus`, `industrialZones`, `infrastructure` in `local-entities.ts` |
+| Nebenstädte (11) | Regionaler B2B-Fallback 600+ Wörter, Spin via `spinVariant` |
+| FAQ | `LocalCityFaq` — 3 Fragen + `FAQPage` JSON-LD |
+| Anti-Doorway | Substanzielle Wirtschaftsprofile statt Copy-Paste mit Stadtname |
+
+Siehe auch **`docs/pSEO_matrix.md`**.
 
 ### 8e. Ultimate Service Sweep — alle Leistungen Deep Content
 

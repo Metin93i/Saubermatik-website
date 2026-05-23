@@ -87,6 +87,7 @@ components/
 ├── KontaktFormFallback.tsx      Suspense-Fallback (serverkompatibel)
 ├── KontaktFormSwitch.tsx       `useSearchParams` Weiche Lead/Karriere (`"use client"`)
 ├── LeadFunnel.tsx              Multi-Step Kunden-Funnel (`"use client"`)
+├── LocalCityFaq.tsx              Standort-FAQ + FAQPage JSON-LD (16 Städte)
 ├── LeistungDeepPage.tsx          Deep-Content-Template (800+ Wörter, alle Module)
 ├── LeistungFaqJsonLd.tsx       FAQPage JSON-LD pro Leistungsspoke (Server)
 ├── LeistungSgeTldr.tsx         SGE-TL;DR-Zusammenfassung pro Leistungsspoke (Server)
@@ -125,7 +126,9 @@ lib/
 │   ├── leistung-deep-content.ts  Deep-Dive-Copy (6 Leistungen, Config)
 │   ├── leistung-entity-facts.ts  TF-IDF-Entity-Absätze pro Leistung
 │   ├── leistung-sge-tldr.ts      SGE-TL;DR (Problem / Lösung / Zeitrahmen)
-│   ├── local-entities.ts         Programmatic Local Entities + Spin
+│   ├── local-entities.ts         Industry Profiles (5 Kernstädte)
+│   ├── standort-deep-content.ts  600+ Wörter Deep Local Content Generator
+│   ├── standort-faq.ts           3 B2B-FAQs pro Standortstadt
 │   └── site-origin.ts            `getSiteOrigin()` für absolute JSON-LD-URLs
 └── routes/
     ├── leistungen.ts             LEISTUNG_SLUGS, Inhalte (aus SERVICES abgeleitet)

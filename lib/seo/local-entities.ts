@@ -1,8 +1,7 @@
 import type { StandortCity } from "@/lib/routes/standorte";
 
 /**
- * Kern-Städte der programmatischen SEO-Matrix (lokale Entitäten + Spin).
- * Platzhalter-Bezeichnungen bewusst markiert – vor Live-Gang geo-/branchenspezifisch verifizieren.
+ * Kern-Städte der programmatischen SEO-Matrix (Wirtschaftsprofile + Spin).
  */
 export const PROGRAMMATIC_ENTITY_CITIES = [
   "balingen",
@@ -15,8 +14,9 @@ export const PROGRAMMATIC_ENTITY_CITIES = [
 export type ProgrammaticEntityCity = (typeof PROGRAMMATIC_ENTITY_CITIES)[number];
 
 export type LocalEntityProfile = {
-  /** Markante Industrie-/Verkehrs-/Branchen-Cluster (Platzhalter) */
-  clusters: readonly string[];
+  industrialZones: readonly string[];
+  infrastructure: readonly string[];
+  industryFocus: string;
 };
 
 export const LOCAL_ENTITIES_BY_CITY: Record<
@@ -24,39 +24,34 @@ export const LOCAL_ENTITIES_BY_CITY: Record<
   LocalEntityProfile
 > = {
   balingen: {
-    clusters: [
-      "Neckartal-Gewerbeflächen (Platzhalter)",
-      "B27-Achse Richtung Hechingen",
-      "Mittelstandspark Zollernalb-Süd (Platzhalter)",
-    ],
+    industrialZones: ["Gehrn", "Auf dem Kies"],
+    infrastructure: ["B27"],
+    industryFocus:
+      "Mittelstand, Verwaltung & Handel – Bürokomplexe, Einzelhandel und Verwaltungsstandorte entlang der B27.",
   },
   tuttlingen: {
-    clusters: [
-      "Medizintechnik-Cluster Donautal (Platzhalter)",
-      "B311 / B14-Anbindung (Platzhalter)",
-      "Industriegebiet Nord (Platzhalter)",
-    ],
+    industrialZones: ["Gänsäcker", "Industriepark"],
+    infrastructure: ["B14", "B311"],
+    industryFocus:
+      "Medizintechnik (Medical Mountains) – höchste Hygienestandards, Reinraum-nähe und dokumentierte Desinfektionsprozesse.",
   },
   albstadt: {
-    clusters: [
-      "Neckartal-Logistikband (Platzhalter)",
-      "B463-Transitkorridor",
-      "Textil- und Verarbeitungszone (Platzhalter)",
-    ],
+    industrialZones: ["Ebingen", "Tailfingen"],
+    infrastructure: ["B463"],
+    industryFocus:
+      "Maschinenbau, Textilindustrie, Produktionshallen – Hallenboden, Sozialräume und repräsentative Verwaltungsflächen.",
   },
   rottweil: {
-    clusters: [
-      "Neckar-Industrieachse (Platzhalter)",
-      "Schwarzwald-Baar-Schnellstraßen-Hub (Platzhalter)",
-      "Gewerbepark Neckarburg (Platzhalter)",
-    ],
+    industrialZones: ["Berner Feld", "IN⊙VATOR"],
+    infrastructure: ["A81", "B27"],
+    industryFocus:
+      "Gewerbeparks, historische Gebäude, Bürokomplexe – Werterhalt sensibler Substanz bei modernen Neubauten.",
   },
   hechingen: {
-    clusters: [
-      "Hohenzollern-Logistikkorridor (Platzhalter)",
-      "B27-Süd tangentiale Gewerbeflächen",
-      "MedTech-Randlage (Platzhalter)",
-    ],
+    industrialZones: ["Lotzenäcker", "Nasswasen"],
+    infrastructure: ["B27"],
+    industryFocus:
+      "Medizintechnik, High-Tech-Standort – Praxisnahe Hygiene, Labor- und Büroflächen mit SLA-Anforderungen.",
   },
 };
 
@@ -66,7 +61,7 @@ export function isProgrammaticEntityCity(
   return (PROGRAMMATIC_ENTITY_CITIES as readonly string[]).includes(city);
 }
 
-/** Deterministischer Spin (0 … mod-1) aus City-Slug — stabil pro Build, unterscheidet Städte. */
+/** Deterministischer Spin (0 … mod-1) aus City-Slug — stabil pro Build. */
 export function spinVariant(city: StandortCity, mod: number): number {
   let h = 2166136261;
   for (let i = 0; i < city.length; i++) {
@@ -76,55 +71,19 @@ export function spinVariant(city: StandortCity, mod: number): number {
   return Math.abs(h) % mod;
 }
 
-function clusterList(profile: LocalEntityProfile, city: ProgrammaticEntityCity): string {
-  const order = spinVariant(city, 2);
-  const parts = order === 0 ? [...profile.clusters] : [...profile.clusters].reverse();
-  return parts.join(" · ");
-}
-
-/** Fließtext-Variante A/B/C — reduziert Duplicate-Risiko zwischen Kernstädten. */
-export function buildEntityPrimaryParagraph(
-  city: ProgrammaticEntityCity,
-  label: string,
-): string {
-  const profile = LOCAL_ENTITIES_BY_CITY[city];
-  const clusters = clusterList(profile, city);
-  const v = spinVariant(city, 3);
-  if (v === 0) {
-    return `Objekte rund um ${clusters}: Für ${label} bündeln wir Touren entlang dieser Schwerpunkte – weniger Leerfahrt, klarere Ansprechpartner und digitale Objektprotokolle statt Excel-Chaos.`;
-  }
-  if (v === 1) {
-    return `In ${label} gewichten wir Einsätze typischer Wirtschaftsadern (${clusters}). Die genannten Cluster sind Platzhalter und werden bei Mandanten-Onboarding mit Ihrer Liegenschaftsadresse geschärft.`;
-  }
-  return `Von zentralen Gewerbeflächen bis zu Randlagen: ${clusters} bilden bei uns keine Marketing-Floskel, sondern Planungsanker für Intervalle, Sicherheit und Ersatzlogistik – immer im Kontext ${label}.`;
-}
-
-export function buildEntitySecondaryParagraph(
-  city: ProgrammaticEntityCity,
-  label: string,
-): string {
-  const profile = LOCAL_ENTITIES_BY_CITY[city];
-  const lead = profile.clusters[spinVariant(city, profile.clusters.length)]!;
-  const v = (spinVariant(city, 5) + 1) % 3;
-  if (v === 0) {
-    return `Kurz gefasst für ${label}: Saubermatik orchestriert Reinigung und Nachweis aus einer Plattform – besonders relevant, wenn Standorte wie „${lead}“ Ihre Lieferanten- oder Besucherfrequenz treiben.`;
-  }
-  if (v === 1) {
-    return `Facility-Perspektive in ${label}: Wir mappen Ihre Gebäude auf wiederholbare Touren; Schwerpunkte entlang „${lead}“ und Nachbarclustern fließen in die Kapazitätsplanung ein.`;
-  }
-  return `Skalierung ohne Copy-Paste: Jede Kernstadt erhält eigene Satzstellung und Cluster-Reihenfolge (${label}) – Suchmaschinen sehen semantische Nähe, nicht Duplikat-Text.`;
-}
-
-export function getLocalEntityAugmentation(
+export function getLocalEntityProfile(
   city: StandortCity,
-  label: string,
-): { heading: string; paragraphs: [string, string] } | null {
+): LocalEntityProfile | null {
   if (!isProgrammaticEntityCity(city)) return null;
-  return {
-    heading: "Regionale Schwerpunkte & Wirtschaftsadern",
-    paragraphs: [
-      buildEntityPrimaryParagraph(city, label),
-      buildEntitySecondaryParagraph(city, label),
-    ],
-  };
+  return LOCAL_ENTITIES_BY_CITY[city];
+}
+
+export function formatZones(zones: readonly string[]): string {
+  if (zones.length === 1) return zones[0]!;
+  if (zones.length === 2) return `${zones[0]} und ${zones[1]}`;
+  return `${zones.slice(0, -1).join(", ")} und ${zones.at(-1)}`;
+}
+
+export function formatInfrastructure(infra: readonly string[]): string {
+  return infra.join(", ");
 }
