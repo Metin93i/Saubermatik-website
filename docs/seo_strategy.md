@@ -116,7 +116,7 @@ Intent: **B2B-Gewerbe/Büro/Praxis**, transaktional + Compliance (Facility, Eink
 
 **SGE-Entitäten:** *4-farb-system, kreuzkontamination, din en 13549, digitales leistungsverzeichnis, service level agreement, haccp-richtlinien, flächenleistung, ausfallsicherheit, echtzeit-qm.*
 
-**Interne Verlinkung:** `/wissen/farbcode-system`, `/qualitaetsmanagement`, Standort-Spokes.
+**Interne Verlinkung:** `/wissen/farbcode-system-hygiene`, `/qualitaetsmanagement`, Standort-Spokes.
 
 ### 9. AEO — Answer Engine Optimization
 
