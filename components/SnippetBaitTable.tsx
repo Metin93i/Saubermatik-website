@@ -36,7 +36,8 @@ const TABLES: Record<Variant, TableConfig> = {
       {
         gebaeudeart: "Wöchentlich",
         intervall: "Detailpflege",
-        fokus: "Griffspuren entfernen (Türen/Glas), Staubwischen (Tische, Bildschirme)",
+        fokus:
+          "Griffspuren entfernen (Türen/Glas), Staubwischen (Tische, Bildschirme)",
       },
       {
         gebaeudeart: "Monatlich",
@@ -312,7 +313,7 @@ export function SnippetBaitTable({ slug }: Props) {
 
   return (
     <section
-      className="mt-10 overflow-x-auto rounded-xl border border-foreground/10"
+      className="mt-10 overflow-x-auto rounded-none border border-foreground/10"
       aria-labelledby={`snippet-table-${slug}`}
     >
       <h2 id={`snippet-table-${slug}`} className="sr-only">

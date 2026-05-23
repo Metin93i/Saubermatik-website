@@ -43,17 +43,14 @@ export default function ExpertisePage() {
 
       <ul className="mt-12 space-y-10">
         {pillars.map((p) => (
-          <li
-            key={p.title}
-            className="border-l-4 border-secondary/50 pl-5"
-          >
+          <li key={p.title} className="border-l-4 border-secondary/50 pl-5">
             <h2 className="text-xl font-bold text-foreground">{p.title}</h2>
             <p className="mt-3 text-base leading-7 text-muted">{p.body}</p>
           </li>
         ))}
       </ul>
 
-      <div className="mt-14 rounded-2xl border border-foreground/10 bg-slate-50/90 p-6 sm:p-8">
+      <div className="mt-14 rounded-none border border-foreground/10 bg-slate-50/90 p-6 sm:p-8">
         <h2 className="text-lg font-bold text-foreground">Vertiefung</h2>
         <p className="mt-2 text-sm leading-6 text-muted">
           Technische und organisatorische Details zum Qualitätsmanagement finden
@@ -62,19 +59,19 @@ export default function ExpertisePage() {
         <div className="mt-5 flex flex-col gap-3 sm:flex-row">
           <Link
             href="/qualitaetsmanagement"
-            className="inline-flex h-11 items-center justify-center rounded-xl bg-primary px-5 text-sm font-semibold text-primary-foreground shadow-sm transition hover:bg-primary/90"
+            className="inline-flex h-11 items-center justify-center rounded-none bg-primary px-5 text-sm font-semibold text-primary-foreground transition hover:bg-primary/90"
           >
             Qualitätsmanagement
           </Link>
           <Link
             href="/standorte/stuttgart"
-            className="inline-flex h-11 items-center justify-center rounded-xl border border-foreground/15 px-5 text-sm font-semibold text-foreground transition hover:border-secondary/60 hover:bg-secondary/5"
+            className="inline-flex h-11 items-center justify-center rounded-none border border-foreground/15 px-5 text-sm font-semibold text-foreground transition hover:border-secondary/60 hover:bg-secondary/5"
           >
             Stuttgart-Cluster
           </Link>
           <Link
             href="/kontakt#kontakt-anfrage"
-            className="inline-flex h-11 items-center justify-center rounded-xl border border-foreground/15 px-5 text-sm font-semibold text-foreground transition hover:border-secondary/60 hover:bg-secondary/5"
+            className="inline-flex h-11 items-center justify-center rounded-none border border-foreground/15 px-5 text-sm font-semibold text-foreground transition hover:border-secondary/60 hover:bg-secondary/5"
           >
             Anfrage
           </Link>

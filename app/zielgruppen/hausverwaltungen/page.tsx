@@ -24,9 +24,9 @@ export default function HausverwaltungenPage() {
         dangerouslySetInnerHTML={{ __html: serviceJson }}
       />
       <div className="flex flex-1 flex-col">
-        <section className="border-b border-foreground/10 bg-gradient-to-b from-secondary/10 via-background to-background">
+        <section className="border-b border-foreground/10 bg-zinc-100">
           <div className="mx-auto w-full max-w-6xl px-4 py-14 sm:px-6 sm:py-20 lg:px-8">
-            <p className="text-sm font-semibold uppercase tracking-wide text-secondary">
+            <p className="text-xs font-bold uppercase tracking-widest text-primary">
               Zielgruppe · Hausverwaltung
             </p>
             <h1 className="mt-4 max-w-4xl text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-[2.5rem] lg:leading-tight">
@@ -34,22 +34,23 @@ export default function HausverwaltungenPage() {
               Hausmeister &amp; Grünpflege mit digitalem Echtzeit-Nachweis.
             </h1>
             <p className="mt-6 max-w-3xl text-lg leading-8 text-muted">
-              Sie verwalten nicht nur Quadratmeter – Sie tragen Verantwortung für
-              Haftung, Nebenkostenabrechnung und Mieterzufriedenheit. Saubermatik
-              bündelt operative Leistungen in einem vertraglich messbaren System:
-              mit dokumentierten Touren, GPS-gestützten Fotoprotokollen und einem
-              Key Account, der Ihre Liegenschaften kennt.
+              Sie verwalten nicht nur Quadratmeter – Sie tragen Verantwortung
+              für Haftung, Nebenkostenabrechnung und Mieterzufriedenheit.
+              Saubermatik bündelt operative Leistungen in einem vertraglich
+              messbaren System: mit dokumentierten Touren, GPS-gestützten
+              Fotoprotokollen und einem Key Account, der Ihre Liegenschaften
+              kennt.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <a
                 href="#kontakt-anfrage"
-                className="inline-flex h-12 items-center justify-center rounded-xl bg-primary px-6 text-sm font-semibold text-primary-foreground shadow-lg shadow-primary/20 transition hover:bg-primary/90"
+                className="inline-flex h-12 items-center justify-center rounded-none bg-primary px-6 text-sm font-semibold text-primary-foreground transition hover:bg-primary/90"
               >
                 Liegenschaft anfragen
               </a>
               <Link
                 href="/leistungen/treppenhausreinigung"
-                className="inline-flex h-12 items-center justify-center rounded-xl border border-foreground/15 bg-white px-6 text-sm font-semibold text-foreground transition hover:border-secondary/50 hover:bg-secondary/5"
+                className="inline-flex h-12 items-center justify-center rounded-none border border-foreground/15 bg-white px-6 text-sm font-semibold text-foreground transition hover:border-secondary/50 hover:bg-secondary/5"
               >
                 Leistungsportfolio
               </Link>
@@ -62,12 +63,12 @@ export default function HausverwaltungenPage() {
             <p>
               Hausverwaltungen stehen zwischen Eigentümer, Mieterbeirat und
               Dienstleister – und zahlen den Preis, wenn Schnittstellen nicht
-              funktionieren. Ein Winterdienst ohne Nachweis, ein Hausmeister ohne
-              Eskalationsweg, eine Treppenhausreinigung ohne Protokoll: Jeder
-              Vorfall landet beim Verwalter, nicht beim Anbieter. Wir strukturieren
-              das Gegenteil: ein integriertes Portfolio aus Reinigung, Objektbetreuung,
-              Grünpflege und Winterdienst – digital gesteuert, revisionssicher
-              dokumentiert.
+              funktionieren. Ein Winterdienst ohne Nachweis, ein Hausmeister
+              ohne Eskalationsweg, eine Treppenhausreinigung ohne Protokoll:
+              Jeder Vorfall landet beim Verwalter, nicht beim Anbieter. Wir
+              strukturieren das Gegenteil: ein integriertes Portfolio aus
+              Reinigung, Objektbetreuung, Grünpflege und Winterdienst – digital
+              gesteuert, revisionssicher dokumentiert.
             </p>
           </article>
 
@@ -88,21 +89,21 @@ export default function HausverwaltungenPage() {
                     Stellplätze bei Glatteis, Schnee oder Laub nicht sicher
                     begehbar sind. Die Verkehrssicherungspflicht ist kein
                     theoretisches Kapitel im Verwalterseminar, sondern
-                    Alltagsrisiko bei jedem Wetterereignis. Entscheidend ist nicht,
-                    ob ein Dienstleister „irgendwann“ vor Ort war, sondern ob Sie
-                    im Streitfall nachweisen können: Wann wurde geräumt? Womit
-                    gestreut? Welche Flächen waren betroffen? Wer hat die Kontrolle
-                    dokumentiert?
+                    Alltagsrisiko bei jedem Wetterereignis. Entscheidend ist
+                    nicht, ob ein Dienstleister „irgendwann“ vor Ort war,
+                    sondern ob Sie im Streitfall nachweisen können: Wann wurde
+                    geräumt? Womit gestreut? Welche Flächen waren betroffen? Wer
+                    hat die Kontrolle dokumentiert?
                   </p>
                   <p>
                     Saubermatik übersetzt die Verkehrssicherungspflicht in
                     belastbare Prozesse: Wetterführung, Einsatzfenster,
-                    Streumittelklassen und Kontrollgänge sind vertraglich fixiert.
-                    Unsere Saubermatik-App erzeugt GPS-gestempelte Fotoprotokolle
-                    pro Einsatz – Zeitstempel, Objektzuordnung, Leistungsart. Das
-                    ist Ihr Schutzschild gegen Haftungsklagen und Regress von
-                    Versicherern: nicht die Behauptung „wir waren da“, sondern
-                    strukturierte Beweiskette.
+                    Streumittelklassen und Kontrollgänge sind vertraglich
+                    fixiert. Unsere Saubermatik-App erzeugt GPS-gestempelte
+                    Fotoprotokolle pro Einsatz – Zeitstempel, Objektzuordnung,
+                    Leistungsart. Das ist Ihr Schutzschild gegen Haftungsklagen
+                    und Regress von Versicherern: nicht die Behauptung „wir
+                    waren da“, sondern strukturierte Beweiskette.
                   </p>
                   <p>
                     Für WEG und gewerbliche Bestände bedeutet das: Der Verwalter
@@ -116,8 +117,8 @@ export default function HausverwaltungenPage() {
                   <p>
                     Strategisch gewinnen Sie Zeit: Statt E-Mails mit
                     Mieterbeschwerden und anwaltlichen Anfragen zu jonglieren,
-                    erhalten Sie monatliche Compliance-Reports – exportierbar für
-                    Eigentümerversammlungen und Versicherungsunterlagen.
+                    erhalten Sie monatliche Compliance-Reports – exportierbar
+                    für Eigentümerversammlungen und Versicherungsunterlagen.
                   </p>
                 </div>
               </section>
@@ -132,31 +133,33 @@ export default function HausverwaltungenPage() {
                 </h2>
                 <div className="mt-6 space-y-5 text-base leading-[1.75] text-foreground/90">
                   <p>
-                    Die Nebenkostenabrechnung ist Ihr jährlicher Stresstest. §&nbsp;2
-                    BetrKV definiert, welche Kosten auf Mieter umlegbar sind –
-                    vorausgesetzt, sie sind angemessen, zuordenbar und belegbar.
-                    Reinigung, Hausmeister, Grünpflege und Winterdienst gehören
-                    typischerweise zu den umlagefähigen Betriebskosten, wenn sie
-                    dem objektbezogenen Verbrauch und der objektbezogenen Nutzung
-                    dienen. In der Praxis scheitert es selten an der Rechtslage,
-                    sondern an der Qualität der Belege.
+                    Die Nebenkostenabrechnung ist Ihr jährlicher Stresstest.
+                    §&nbsp;2 BetrKV definiert, welche Kosten auf Mieter umlegbar
+                    sind – vorausgesetzt, sie sind angemessen, zuordenbar und
+                    belegbar. Reinigung, Hausmeister, Grünpflege und
+                    Winterdienst gehören typischerweise zu den umlagefähigen
+                    Betriebskosten, wenn sie dem objektbezogenen Verbrauch und
+                    der objektbezogenen Nutzung dienen. In der Praxis scheitert
+                    es selten an der Rechtslage, sondern an der Qualität der
+                    Belege.
                   </p>
                   <p>
                     Saubermatik liefert transparente Rechnungen mit
                     leistungsbezogenen Positionen: Objekt-ID, Leistungsart,
                     Intervall, WE-Bezug wo relevant, Ausführungsnachweis. Die
                     digitalen Leistungsprotokolle aus der App sind die Brücke
-                    zwischen Buchhaltung und Betrieb – Eigentümer und Mieter sehen,
-                    wofür sie zahlen. Das reduziert Rückfragen, Widersprüche und
-                    Nachforderungsdiskussionen im Abrechnungszeitraum.
+                    zwischen Buchhaltung und Betrieb – Eigentümer und Mieter
+                    sehen, wofür sie zahlen. Das reduziert Rückfragen,
+                    Widersprüche und Nachforderungsdiskussionen im
+                    Abrechnungszeitraum.
                   </p>
                   <p>
-                    Für Verwalter mit mehreren Liegenschaften standardisieren wir
-                    Kostenstellen und Reporting: gleiche KPI-Logik über alle Objekte,
-                    vergleichbare Monatswerte, keine Medienbrüche zwischen Excel,
-                    PDF und Handwerker-Zettel. Die Nebenkostenabrechnung wird
-                    wieder zum administrativen Prozess – nicht zum forensischen
-                    Projekt.
+                    Für Verwalter mit mehreren Liegenschaften standardisieren
+                    wir Kostenstellen und Reporting: gleiche KPI-Logik über alle
+                    Objekte, vergleichbare Monatswerte, keine Medienbrüche
+                    zwischen Excel, PDF und Handwerker-Zettel. Die
+                    Nebenkostenabrechnung wird wieder zum administrativen
+                    Prozess – nicht zum forensischen Projekt.
                   </p>
                   <p>
                     Kombinieren Sie umlagefähige Positionen mit unserem
@@ -180,12 +183,13 @@ export default function HausverwaltungenPage() {
                 <div className="mt-6 space-y-5 text-base leading-[1.75] text-foreground/90">
                   <p>
                     Mieter reklamieren selten abstrakte „Unzufriedenheit“ – sie
-                    reklamieren defekte Leuchtmittel im Treppenhaus, verschmutzte
-                    Eingänge, überquellende Müllbereiche, nicht gemähte Rasenflächen
-                    und glatte Gehwege nach Schnee. Jede Beschwerde kostet den
-                    Verwalter Zeit: Telefon, E-Mail, Protokoll, Dienstleister
-                    nachfassen, Rückmeldung an Mieter. Die Summe frisst
-                    Verwaltungskapazität, die für wertschöpfende Aufgaben fehlt.
+                    reklamieren defekte Leuchtmittel im Treppenhaus,
+                    verschmutzte Eingänge, überquellende Müllbereiche, nicht
+                    gemähte Rasenflächen und glatte Gehwege nach Schnee. Jede
+                    Beschwerde kostet den Verwalter Zeit: Telefon, E-Mail,
+                    Protokoll, Dienstleister nachfassen, Rückmeldung an Mieter.
+                    Die Summe frisst Verwaltungskapazität, die für
+                    wertschöpfende Aufgaben fehlt.
                   </p>
                   <p>
                     Saubermatik arbeitet mit festen Intervallen und proaktivem
@@ -193,23 +197,24 @@ export default function HausverwaltungenPage() {
                     Abweichungen in der App – defekte Lampen, lose Geländer,
                     Vandalismus, Sturmschäden – bevor der erste Mieter anruft.
                     Der Key Account priorisiert, beauftragt und schließt den
-                    Vorgang dokumentiert ab. Ziel ist nicht „null Beschwerden“ als
-                    Marketingphrase, sondern messbar weniger Eskalationen pro 100
-                    Wohneinheiten.
+                    Vorgang dokumentiert ab. Ziel ist nicht „null Beschwerden“
+                    als Marketingphrase, sondern messbar weniger Eskalationen
+                    pro 100 Wohneinheiten.
                   </p>
                   <p>
                     Repräsentative Treppenhäuser und gepflegte Außenanlagen sind
                     der sichtbare Qualitätsstandard Ihrer Verwaltung. In
                     Vermietungs- und Verkaufsgesprächen der Eigentümer zählt der
-                    erste Eindruck im Eingangsbereich mehr als jede Prospektseite.
-                    Wir synchronisieren Treppenhausreinigung, Grünpflege und
-                    Hausmeister so, dass der Eingangsbereich dauerhaft „verwaltet
-                    wirkt“ – nicht nur am Tag nach der Sonderreinigung.
+                    erste Eindruck im Eingangsbereich mehr als jede
+                    Prospektseite. Wir synchronisieren Treppenhausreinigung,
+                    Grünpflege und Hausmeister so, dass der Eingangsbereich
+                    dauerhaft „verwaltet wirkt“ – nicht nur am Tag nach der
+                    Sonderreinigung.
                   </p>
                   <p>
                     Für Geschäftsführungen von Verwaltungen bedeutet das:
-                    skalierbare Qualität ohne linearen Personalaufbau intern. Sie
-                    kaufen ein System, nicht nur Stunden.
+                    skalierbare Qualität ohne linearen Personalaufbau intern.
+                    Sie kaufen ein System, nicht nur Stunden.
                   </p>
                 </div>
               </section>
@@ -236,7 +241,7 @@ export default function HausverwaltungenPage() {
                   <li key={item.href}>
                     <Link
                       href={item.href}
-                      className="flex h-full flex-col rounded-xl border border-foreground/10 bg-white p-5 shadow-sm transition hover:border-secondary/40 hover:shadow-md"
+                      className="flex h-full flex-col rounded-none border-2 border-zinc-800 bg-white p-5 transition hover:border-primary hover:bg-zinc-100"
                     >
                       <span className="font-semibold text-foreground">
                         {item.title}
@@ -269,7 +274,7 @@ export default function HausverwaltungenPage() {
 
         <section
           id="kontakt-anfrage"
-          className="border-t border-foreground/10 bg-gradient-to-b from-slate-50 to-white py-16 sm:py-20"
+          className="border-t border-foreground/10 bg-zinc-100 py-16 sm:py-20"
         >
           <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">
             <div className="mx-auto max-w-2xl text-center">

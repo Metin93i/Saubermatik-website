@@ -13,8 +13,8 @@ export function KontaktFormSwitch() {
   const isCareer = searchParams.get("type") === "karriere";
 
   if (isCareer) {
-    return <CareerForm className="shadow-xl ring-1 ring-black/5" />;
+    return <CareerForm className="" />;
   }
 
-  return <LeadFunnel className="shadow-xl ring-1 ring-black/5" />;
+  return <LeadFunnel className="" />;
 }

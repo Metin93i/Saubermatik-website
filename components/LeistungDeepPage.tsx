@@ -42,7 +42,7 @@ export function LeistungDeepPage({ content }: Props) {
       />
       <LeistungFaqJsonLd slug={slug} />
       <div className="flex flex-1 flex-col bg-white">
-        <section className="border-b border-slate-200/80 bg-gradient-to-b from-slate-50 via-white to-white">
+        <section className="border-b border-slate-200/80 bg-zinc-100">
           <div className="mx-auto w-full max-w-6xl px-4 py-14 sm:px-6 sm:py-20 lg:px-8">
             <nav className="text-sm font-semibold text-secondary">
               <Link href="/leistungen" className="hover:underline">
@@ -57,25 +57,29 @@ export function LeistungDeepPage({ content }: Props) {
             <p className="mt-6 max-w-3xl text-lg leading-8 text-muted">
               {heroSubtitle}
             </p>
-            <LeistungHeroImage slug={slug} priority className="mt-10 max-w-4xl" />
+            <LeistungHeroImage
+              slug={slug}
+              priority
+              className="mt-10 max-w-4xl"
+            />
             <div className="mt-10 flex flex-wrap gap-4">
               <a
                 href="#kontakt-anfrage"
-                className="inline-flex h-12 items-center justify-center rounded-xl bg-primary px-6 text-sm font-semibold text-primary-foreground shadow-md transition hover:bg-primary/90"
+                className="inline-flex h-12 items-center justify-center rounded-none bg-primary px-6 text-sm font-semibold text-primary-foreground transition hover:bg-primary/90"
               >
                 Analyse anfordern
               </a>
               {secondaryCta ? (
                 <Link
                   href={secondaryCta.href}
-                  className="inline-flex h-12 items-center justify-center rounded-xl border border-foreground/15 px-6 text-sm font-semibold text-foreground transition hover:border-secondary/50 hover:bg-secondary/5"
+                  className="inline-flex h-12 items-center justify-center rounded-none border border-foreground/15 px-6 text-sm font-semibold text-foreground transition hover:border-secondary/50 hover:bg-secondary/5"
                 >
                   {secondaryCta.label}
                 </Link>
               ) : (
                 <Link
                   href="/qualitaetsmanagement"
-                  className="inline-flex h-12 items-center justify-center rounded-xl border border-foreground/15 px-6 text-sm font-semibold text-foreground transition hover:border-secondary/50 hover:bg-secondary/5"
+                  className="inline-flex h-12 items-center justify-center rounded-none border border-foreground/15 px-6 text-sm font-semibold text-foreground transition hover:border-secondary/50 hover:bg-secondary/5"
                 >
                   Qualitätsmanagement
                 </Link>
@@ -105,8 +109,10 @@ export function LeistungDeepPage({ content }: Props) {
             </article>
           ))}
 
-          <div className="mt-16 rounded-2xl border border-secondary/25 bg-secondary/5 p-6 sm:p-8">
-            <h2 className="text-xl font-bold text-foreground">{highlight.title}</h2>
+          <div className="mt-16 rounded-none border border-secondary/25 bg-secondary/5 p-6 sm:p-8">
+            <h2 className="text-xl font-bold text-foreground">
+              {highlight.title}
+            </h2>
             <ul className="mt-4 list-inside list-disc space-y-2 text-sm leading-7 text-muted">
               {highlight.bullets.map((b) => (
                 <li key={b}>{b}</li>
@@ -143,14 +149,16 @@ export function LeistungDeepPage({ content }: Props) {
 
         <section
           id="kontakt-anfrage"
-          className="border-t border-slate-200 bg-gradient-to-b from-slate-50 to-white py-16 sm:py-20"
+          className="border-t border-slate-200 bg-zinc-100 py-16 sm:py-20"
         >
           <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">
             <div className="mx-auto max-w-2xl text-center">
               <h2 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
                 {funnelTitle}
               </h2>
-              <p className="mt-3 text-base leading-7 text-muted">{funnelSubtitle}</p>
+              <p className="mt-3 text-base leading-7 text-muted">
+                {funnelSubtitle}
+              </p>
             </div>
             <div className="mx-auto mt-10 max-w-xl">
               <LeadFunnel initialServiceType={slug} />

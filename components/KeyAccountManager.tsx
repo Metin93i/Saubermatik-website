@@ -1,8 +1,5 @@
 import Link from "next/link";
-import {
-  KEY_ACCOUNT_COPY,
-  buildKeyAccountJsonLd,
-} from "@/lib/seo/key-account";
+import { KEY_ACCOUNT_COPY, buildKeyAccountJsonLd } from "@/lib/seo/key-account";
 import { buildTelHref } from "@/lib/phone";
 
 type Props = {
@@ -18,19 +15,19 @@ export function KeyAccountManager({ className = "", showCta = true }: Props) {
 
   return (
     <section
-      className={`rounded-2xl border border-foreground/10 bg-gradient-to-br from-slate-50 via-white to-secondary/5 p-6 shadow-md ring-1 ring-black/5 sm:p-8 ${className}`}
+      className={`rounded-none border-2 border-zinc-800 bg-zinc-100 p-6 sm:p-8 ${className}`}
       aria-labelledby="key-account-heading"
     >
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: json }}
       />
-      <p className="text-sm font-semibold uppercase tracking-wide text-secondary">
+      <p className="text-xs font-bold uppercase tracking-widest text-primary">
         {KEY_ACCOUNT_COPY.eyebrow}
       </p>
       <h2
         id="key-account-heading"
-        className="mt-2 text-xl font-bold tracking-tight text-foreground sm:text-2xl"
+        className="mt-2 text-xl font-extrabold tracking-tight text-foreground sm:text-2xl"
       >
         {KEY_ACCOUNT_COPY.title}
       </h2>
@@ -56,14 +53,14 @@ export function KeyAccountManager({ className = "", showCta = true }: Props) {
         <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
           <Link
             href="/kontakt#kontakt-anfrage"
-            className="inline-flex h-11 items-center justify-center rounded-xl bg-primary px-5 text-sm font-semibold text-primary-foreground shadow-md transition hover:bg-primary/90"
+            className="inline-flex h-11 items-center justify-center rounded-none border-2 border-zinc-800 bg-primary px-5 text-sm font-bold text-primary-foreground transition hover:bg-primary/90"
           >
             Key Account anfragen
           </Link>
           {telHref ? (
             <a
               href={telHref}
-              className="inline-flex h-11 items-center justify-center rounded-xl border border-foreground/15 px-5 text-sm font-semibold text-foreground transition hover:border-secondary/40 hover:bg-white"
+              className="inline-flex h-11 items-center justify-center rounded-none border-2 border-zinc-800 bg-white px-5 text-sm font-bold text-foreground transition hover:bg-zinc-100"
             >
               Direkte Erreichbarkeit
             </a>

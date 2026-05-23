@@ -32,7 +32,7 @@ export default function StandorteHubPage() {
           <li className="sm:col-span-2">
             <Link
               href="/standorte/stuttgart"
-              className="block rounded-lg border border-secondary/40 bg-secondary/10 px-4 py-3 text-sm font-semibold text-foreground transition hover:border-secondary hover:bg-secondary/15"
+              className="block rounded-none border border-secondary/40 bg-secondary/10 px-4 py-3 text-sm font-semibold text-foreground transition hover:border-secondary hover:bg-secondary/15"
             >
               Stuttgart (Metropolregion, Spezial-Hub)
             </Link>
@@ -41,7 +41,7 @@ export default function StandorteHubPage() {
             <li key={city}>
               <Link
                 href={`/standorte/${city}`}
-                className="block rounded-lg border border-foreground/10 px-4 py-3 text-sm font-medium text-foreground transition hover:border-secondary/50 hover:bg-secondary/5"
+                className="block rounded-none border border-foreground/10 px-4 py-3 text-sm font-medium text-foreground transition hover:border-secondary/50 hover:bg-secondary/5"
               >
                 {STANDORT_LABELS[city]}
               </Link>
@@ -56,7 +56,10 @@ export default function StandorteHubPage() {
             Objekt anfragen
           </Link>
           {" · "}
-          <Link href="/leistungen" className="font-semibold text-secondary hover:underline">
+          <Link
+            href="/leistungen"
+            className="font-semibold text-secondary hover:underline"
+          >
             Leistungen
           </Link>
         </p>

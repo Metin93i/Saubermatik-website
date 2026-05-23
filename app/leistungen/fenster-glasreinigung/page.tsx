@@ -37,7 +37,7 @@ export default function FensterGlasreinigungPage() {
       />
       <LeistungFaqJsonLd slug={SLUG} />
       <div className="flex flex-1 flex-col bg-white">
-        <section className="border-b border-slate-200/80 bg-gradient-to-b from-slate-50 via-white to-white">
+        <section className="border-b border-slate-200/80 bg-zinc-100">
           <div className="mx-auto w-full max-w-6xl px-4 py-14 sm:px-6 sm:py-20 lg:px-8">
             <nav className="text-sm font-semibold text-secondary">
               <Link href="/leistungen" className="hover:underline">
@@ -51,12 +51,12 @@ export default function FensterGlasreinigungPage() {
               und Fassadenreinigung für Gewerbe und Industrie.
             </h1>
             <p className="mt-6 max-w-3xl text-lg leading-8 text-muted">
-              Saubermatik verbindet High-Tech-Reinwasser mit präzisem
-              Handwerk – für repräsentative Fassaden, schadfreie Verglasungen
-              und dokumentierte Compliance in der Zollernalb und angrenzenden
+              Saubermatik verbindet High-Tech-Reinwasser mit präzisem Handwerk –
+              für repräsentative Fassaden, schadfreie Verglasungen und
+              dokumentierte Compliance in der Zollernalb und angrenzenden
               Regionen.
             </p>
-            <div className="relative mt-10 aspect-[16/9] max-w-4xl overflow-hidden rounded-2xl shadow-lg ring-1 ring-foreground/10">
+            <div className="relative mt-10 aspect-[16/9] max-w-4xl overflow-hidden rounded-none ">
               <GeoImage
                 src={hero.src}
                 alt={hero.alt}
@@ -74,13 +74,13 @@ export default function FensterGlasreinigungPage() {
             <div className="mt-10 flex flex-wrap gap-4">
               <a
                 href="#kontakt-anfrage"
-                className="inline-flex h-12 items-center justify-center rounded-xl bg-primary px-6 text-sm font-semibold text-primary-foreground shadow-md transition hover:bg-primary/90"
+                className="inline-flex h-12 items-center justify-center rounded-none bg-primary px-6 text-sm font-semibold text-primary-foreground transition hover:bg-primary/90"
               >
                 Glas-Analyse anfordern
               </a>
               <Link
                 href="/qualitaetsmanagement"
-                className="inline-flex h-12 items-center justify-center rounded-xl border border-foreground/15 px-6 text-sm font-semibold text-foreground transition hover:border-secondary/50 hover:bg-secondary/5"
+                className="inline-flex h-12 items-center justify-center rounded-none border border-foreground/15 px-6 text-sm font-semibold text-foreground transition hover:border-secondary/50 hover:bg-secondary/5"
               >
                 Qualitätsmanagement
               </Link>
@@ -105,7 +105,9 @@ export default function FensterGlasreinigungPage() {
             <p>
               Saubermatik liefert genau diesen Spagat: Das{" "}
               <strong className="text-foreground">Osmose-Verfahren</strong> mit{" "}
-              <strong className="text-foreground">entmineralisiertem Wasser</strong>{" "}
+              <strong className="text-foreground">
+                entmineralisiertem Wasser
+              </strong>{" "}
               für Außenfassaden und Höhenarbeiten – und klassisches
               Präzisions-Handwerk mit Einwascher und Abzieher für Innenräume,
               Showrooms und feingliedrige Glasbauten. Beide Welten teilen sich
@@ -120,9 +122,9 @@ export default function FensterGlasreinigungPage() {
             </h2>
             <div className="space-y-5 text-base leading-[1.75] text-foreground/90">
               <p>
-                Im Kern der modernen Außenreinigung steht Physik, nicht
-                Chemie: Durch Umkehrosmose wird dem Wasser nahezu sämtliche
-                Mineralien entzogen.{" "}
+                Im Kern der modernen Außenreinigung steht Physik, nicht Chemie:
+                Durch Umkehrosmose wird dem Wasser nahezu sämtliche Mineralien
+                entzogen.{" "}
                 <strong className="text-foreground">
                   Entmineralisiertes Wasser
                 </strong>{" "}
@@ -130,12 +132,10 @@ export default function FensterGlasreinigungPage() {
                 aktiv aus der Oberfläche, statt sie wie hartes Leitungswasser
                 auf der Scheibe zu hinterlassen. Trocknet die Fläche – selbst
                 bei direkter Sonneneinstrahlung – bleibt das Ergebnis{" "}
-                <strong className="text-foreground">
-                  streifenfrei
-                </strong>
-                , ganz ohne aggressive Reinigungsmittel. Das ist echter
-                Umweltschutz im Gewerbe: weniger Abwasserbelastung, keine
-                unnötige Tensid-Exposition an beschichteten Fassaden.
+                <strong className="text-foreground">streifenfrei</strong>, ganz
+                ohne aggressive Reinigungsmittel. Das ist echter Umweltschutz im
+                Gewerbe: weniger Abwasserbelastung, keine unnötige
+                Tensid-Exposition an beschichteten Fassaden.
               </p>
               <p>
                 Der B2B-Hebel liegt in der Logistik: Mit leichten{" "}
@@ -174,9 +174,9 @@ export default function FensterGlasreinigungPage() {
                 Nicht jede Verglasung verträgt das Reinwasser-Setup – und nicht
                 jeder Innenraum verlangt Teleskoptechnik. Für Büroetagen,
                 Praxisflure, Showrooms und feingliedrige Glasfassaden setzen wir
-                auf das bewährte Handwerk: Einwascher, Abzieher, mikrofaserbasierte
-                Technik und materialgerechte Mittel. Der Unterschied zu
-                „Fenster schnell wischen“ liegt im Detail:{" "}
+                auf das bewährte Handwerk: Einwascher, Abzieher,
+                mikrofaserbasierte Technik und materialgerechte Mittel. Der
+                Unterschied zu „Fenster schnell wischen“ liegt im Detail:{" "}
                 <strong className="text-foreground">
                   Rahmen- und Falzreinigung
                 </strong>
@@ -190,15 +190,16 @@ export default function FensterGlasreinigungPage() {
                 Korrosion und Glas-Korrosion an den Rändern zu – mit Folgekosten
                 bei Dichtungen, Wärmeschutz und Austausch. Unsere Intervalle
                 (siehe Tabelle unten) kombinieren Außen- und Innenprogramme so,
-                dass <strong className="text-foreground">Fassaden-Ergonomie</strong>{" "}
+                dass{" "}
+                <strong className="text-foreground">Fassaden-Ergonomie</strong>{" "}
                 und Werterhalt zusammenpassen: repräsentativ für Kunden,
                 schonend für das Bauteil.
               </p>
               <p>
                 Besonders Kanzleien, Arztpraxen und Einzelhandel mit
-                Schaufensterfront profitieren: Die Außenwirkung sitzt im
-                Glas, die Innenhygiene im Detail – beides dokumentiert für
-                Ihre Qualitätssicherung und Audits.
+                Schaufensterfront profitieren: Die Außenwirkung sitzt im Glas,
+                die Innenhygiene im Detail – beides dokumentiert für Ihre
+                Qualitätssicherung und Audits.
               </p>
             </div>
           </article>
@@ -248,7 +249,7 @@ export default function FensterGlasreinigungPage() {
             </div>
           </article>
 
-          <div className="mt-16 rounded-2xl border border-secondary/25 bg-secondary/5 p-6 sm:p-8">
+          <div className="mt-16 rounded-none border border-secondary/25 bg-secondary/5 p-6 sm:p-8">
             <h2 className="text-xl font-bold text-foreground">
               Warum Saubermatik für Glas &amp; Fassade?
             </h2>
@@ -305,7 +306,7 @@ export default function FensterGlasreinigungPage() {
 
         <section
           id="kontakt-anfrage"
-          className="border-t border-slate-200 bg-gradient-to-b from-slate-50 to-white py-16 sm:py-20"
+          className="border-t border-slate-200 bg-zinc-100 py-16 sm:py-20"
         >
           <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">
             <div className="mx-auto max-w-2xl text-center">

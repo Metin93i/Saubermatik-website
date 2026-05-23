@@ -56,16 +56,18 @@ export default function StandortStuttgartPage() {
         <span>Stuttgart</span>
       </p>
       <h1 className="mt-3 text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-        Fensterreinigung Stuttgart &amp; Gebäudereinigung mit Zollernalb-Logistik
+        Fensterreinigung Stuttgart &amp; Gebäudereinigung mit
+        Zollernalb-Logistik
       </h1>
       <FreshnessBadge className="mt-4" />
       <p className="mt-4 text-lg leading-8 text-muted">
-        Hyper-lokale Präsenz: Degerloch, Vaihingen, Bad Cannstatt, Industriezonen
-        und die Achsen <strong className="text-foreground">B14 / B27</strong>{" "}
-        fließen in unsere Einsatzplanung ein – für Glas, Büro und Objekt.
+        Hyper-lokale Präsenz: Degerloch, Vaihingen, Bad Cannstatt,
+        Industriezonen und die Achsen{" "}
+        <strong className="text-foreground">B14 / B27</strong> fließen in unsere
+        Einsatzplanung ein – für Glas, Büro und Objekt.
       </p>
 
-      <div className="relative mt-8 aspect-[16/9] w-full overflow-hidden rounded-2xl shadow-lg ring-1 ring-foreground/10">
+      <div className="relative mt-8 aspect-[16/9] w-full overflow-hidden rounded-none ">
         <GeoImage
           src={imgStuttgartHero}
           alt="Glasfassade und Gewerbegebäude in Stuttgart – professionelle Fensterreinigung"
@@ -91,7 +93,9 @@ export default function StandortStuttgartPage() {
             <h2 className="text-xl font-bold tracking-tight text-foreground sm:text-2xl">
               {section.title}
             </h2>
-            <p className="mt-4 text-base leading-7 text-muted">{section.body}</p>
+            <p className="mt-4 text-base leading-7 text-muted">
+              {section.body}
+            </p>
           </section>
         ))}
       </div>
@@ -99,19 +103,19 @@ export default function StandortStuttgartPage() {
       <div className="mt-12 flex flex-col gap-3 sm:flex-row">
         <Link
           href="/leistungen/fenster-glasreinigung"
-          className="inline-flex h-11 items-center justify-center rounded-xl bg-primary px-5 text-sm font-semibold text-primary-foreground shadow-sm transition hover:bg-primary/90"
+          className="inline-flex h-11 items-center justify-center rounded-none bg-primary px-5 text-sm font-semibold text-primary-foreground transition hover:bg-primary/90"
         >
           Fenster- &amp; Glasreinigung
         </Link>
         <Link
           href="/kontakt#kontakt-anfrage"
-          className="inline-flex h-11 items-center justify-center rounded-xl border border-foreground/15 px-5 text-sm font-semibold text-foreground transition hover:border-secondary/60 hover:bg-secondary/5"
+          className="inline-flex h-11 items-center justify-center rounded-none border border-foreground/15 px-5 text-sm font-semibold text-foreground transition hover:border-secondary/60 hover:bg-secondary/5"
         >
           Objekt in Stuttgart anfragen
         </Link>
         <Link
           href="/expertise"
-          className="inline-flex h-11 items-center justify-center rounded-xl border border-foreground/15 px-5 text-sm font-semibold text-foreground transition hover:border-secondary/60 hover:bg-secondary/5"
+          className="inline-flex h-11 items-center justify-center rounded-none border border-foreground/15 px-5 text-sm font-semibold text-foreground transition hover:border-secondary/60 hover:bg-secondary/5"
         >
           Expertise &amp; Standards
         </Link>

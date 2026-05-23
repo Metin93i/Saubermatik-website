@@ -9,7 +9,7 @@ export function LeistungSgeTldr({ slug }: Props) {
   return (
     <section
       aria-label="Zusammenfassung"
-      className="mt-8 rounded-xl border border-foreground/10 bg-secondary/5 px-4 py-5 sm:px-5"
+      className="mt-8 rounded-none border border-foreground/10 bg-secondary/5 px-4 py-5 sm:px-5"
     >
       <h2 className="text-sm font-bold uppercase tracking-wide text-secondary">
         Kurz &amp; faktenbasiert
@@ -23,7 +23,8 @@ export function LeistungSgeTldr({ slug }: Props) {
           {t.saubermatikLoesung}
         </li>
         <li>
-          <strong className="text-foreground">Zeitrahmen:</strong> {t.zeitrahmen}
+          <strong className="text-foreground">Zeitrahmen:</strong>{" "}
+          {t.zeitrahmen}
         </li>
       </ul>
     </section>

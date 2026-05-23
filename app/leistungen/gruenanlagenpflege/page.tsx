@@ -64,7 +64,7 @@ export default function GruenanlagenpflegePage() {
       />
       <LeistungFaqJsonLd slug="gruenanlagenpflege" />
       <div className="flex flex-1 flex-col bg-white">
-        <section className="border-b border-slate-200/80 bg-gradient-to-b from-slate-50 via-white to-white">
+        <section className="border-b border-slate-200/80 bg-zinc-100">
           <div className="mx-auto w-full max-w-6xl px-4 py-14 sm:px-6 sm:py-20 lg:px-8">
             <nav className="text-sm font-semibold text-secondary">
               <Link href="/leistungen" className="hover:underline">
@@ -78,8 +78,8 @@ export default function GruenanlagenpflegePage() {
               &amp; Gewerbe.
             </h1>
             <p className="mt-6 max-w-3xl text-lg leading-8 text-muted">
-              Der erste Eindruck Ihrer Liegenschaft entsteht vor der Haustür – auf
-              dem Rasen, im Innenhof, an Zufahrten und Beeten. Wir pflegen
+              Der erste Eindruck Ihrer Liegenschaft entsteht vor der Haustür –
+              auf dem Rasen, im Innenhof, an Zufahrten und Beeten. Wir pflegen
               jahreszeitlich strukturiert, dokumentiert und abgestimmt mit
               Reinigung und Winterdienst.
             </p>
@@ -91,13 +91,13 @@ export default function GruenanlagenpflegePage() {
             <div className="mt-10 flex flex-wrap gap-4">
               <a
                 href="#kontakt-anfrage"
-                className="inline-flex h-12 items-center justify-center rounded-xl bg-primary px-6 text-sm font-semibold text-primary-foreground shadow-md transition hover:bg-primary/90"
+                className="inline-flex h-12 items-center justify-center rounded-none bg-primary px-6 text-sm font-semibold text-primary-foreground transition hover:bg-primary/90"
               >
                 Grünanlagen-Angebot
               </a>
               <Link
                 href="/zielgruppen/hausverwaltungen"
-                className="inline-flex h-12 items-center justify-center rounded-xl border border-foreground/15 px-6 text-sm font-semibold text-foreground transition hover:border-secondary/50 hover:bg-secondary/5"
+                className="inline-flex h-12 items-center justify-center rounded-none border border-foreground/15 px-6 text-sm font-semibold text-foreground transition hover:border-secondary/50 hover:bg-secondary/5"
               >
                 Für Hausverwaltungen
               </Link>
@@ -112,24 +112,25 @@ export default function GruenanlagenpflegePage() {
               Grünanlagen sind für Hausverwaltungen mehr als „Rasen mähen“. Sie
               sind Werterhalt der Liegenschaft, Mieterzufriedenheit und
               Verkehrssicherheit zugleich: ungemähte Wege, Laub auf Gehsteinen
-              und zugewucherte Eingänge erzeugen Beschwerden und Haftungsrisiken.
-              Saubermatik plant Grünpflege als Jahresprogramm – nicht als
-              Einzelauftrag nach Beschwerde.
+              und zugewucherte Eingänge erzeugen Beschwerden und
+              Haftungsrisiken. Saubermatik plant Grünpflege als Jahresprogramm –
+              nicht als Einzelauftrag nach Beschwerde.
             </p>
             <p>
               Wir betreuen Wohnkomplexe, Gewerbehöfe und gemischte Bestände in
-              der Zollernalb und angrenzenden Regionen. Jedes Objekt erhält einen
-              saisonalen Pflegeplan mit definierten Intervallen, Leistungsumfang
-              und Nachweispflicht. Die Saubermatik-App dokumentiert Einsätze –
-              für Abrechnung, Eigentümerversammlungen und interne Qualitätskontrolle.
+              der Zollernalb und angrenzenden Regionen. Jedes Objekt erhält
+              einen saisonalen Pflegeplan mit definierten Intervallen,
+              Leistungsumfang und Nachweispflicht. Die Saubermatik-App
+              dokumentiert Einsätze – für Abrechnung, Eigentümerversammlungen
+              und interne Qualitätskontrolle.
             </p>
             <p>
               Die Koordination mit Hausmeisterservice und Winterdienst ist
               zentral: Im Herbst darf Laubentsorgung nicht mit dem ersten
               Räumeinsatz kollidieren; im Frühjahr dürfen Heckenschnitte nicht
-              mit Sonderreinigungen kollidieren. Ein Portfolio-Anbieter spart dem
-              Verwalter die Schnittstellen, die in der Praxis die meiste Zeit
-              kosten.
+              mit Sonderreinigungen kollidieren. Ein Portfolio-Anbieter spart
+              dem Verwalter die Schnittstellen, die in der Praxis die meiste
+              Zeit kosten.
             </p>
           </div>
 
@@ -145,7 +146,7 @@ export default function GruenanlagenpflegePage() {
             {seasons.map((block) => (
               <li
                 key={block.title}
-                className="rounded-2xl border border-foreground/10 bg-white p-6 shadow-sm"
+                className="rounded-none border border-foreground/10 bg-white p-6 "
               >
                 <h3 className="text-lg font-bold text-foreground">
                   {block.title}
@@ -164,13 +165,14 @@ export default function GruenanlagenpflegePage() {
               Repräsentative Außenanlagen signalisieren Mietern und Eigentümern:
               „Hier wird verwaltet, nicht nur verwaltet auf dem Papier.“ In
               Vermarktungsphasen und bei Neuvermietungen ist der gepflegte
-              Innenhof oft der entscheidende Faktor – noch vor der Wohnungsgröße.
+              Innenhof oft der entscheidende Faktor – noch vor der
+              Wohnungsgröße.
             </p>
             <p>
               Für Einkauf und Geschäftsführung von Verwaltungen liefern wir
-              transparente Kostenpositionen und digitale Protokolle – umlagefähig
-              nach §&nbsp;2 BetrKV, sofern objektbezogen ausgewiesen. Kombinieren
-              Sie Grünpflege mit unserem{" "}
+              transparente Kostenpositionen und digitale Protokolle –
+              umlagefähig nach §&nbsp;2 BetrKV, sofern objektbezogen
+              ausgewiesen. Kombinieren Sie Grünpflege mit unserem{" "}
               <Link
                 href="/zielgruppen/hausverwaltungen"
                 className="font-semibold text-secondary hover:underline"
@@ -210,7 +212,7 @@ export default function GruenanlagenpflegePage() {
 
         <section
           id="kontakt-anfrage"
-          className="border-t border-slate-200 bg-gradient-to-b from-slate-50 to-white py-16 sm:py-20"
+          className="border-t border-slate-200 bg-zinc-100 py-16 sm:py-20"
         >
           <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">
             <div className="mx-auto max-w-2xl text-center">

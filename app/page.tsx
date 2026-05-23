@@ -53,19 +53,19 @@ const testimonials = [
 export default function Home() {
   return (
     <div className="flex flex-1 flex-col">
-      <section className="relative overflow-hidden bg-gradient-to-b from-secondary/12 via-background to-background">
+      <section className="relative overflow-hidden bg-zinc-100">
         <div className="mx-auto grid w-full max-w-6xl items-center gap-10 px-4 py-14 sm:px-6 lg:grid-cols-2 lg:gap-14 lg:px-8 lg:py-20">
           <div>
-            <p className="text-sm font-semibold tracking-wide text-secondary">
+            <p className="text-xs font-bold uppercase tracking-widest text-primary">
               Meßstetten · Zollernalb · Schwarzwald-Baar-Heuberg
             </p>
-            <h1 className="mt-3 text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-[2.5rem] lg:leading-tight">
+            <h1 className="mt-3 text-3xl font-black tracking-tight text-foreground sm:text-4xl lg:text-[2.5rem] lg:leading-tight">
               Reinigung, die hält, was sie verspricht – mit Kopf, nicht nur mit
               dem Wischmob.
             </h1>
             <p className="mt-5 text-base leading-7 text-muted sm:text-lg">
-              Bei uns bekommen Sie keinen Textbaustein aus der Großstadt, sondern
-              einen festen Ansprechpartner vor Ort. Unsere digitale
+              Bei uns bekommen Sie keinen Textbaustein aus der Großstadt,
+              sondern einen festen Ansprechpartner vor Ort. Unsere digitale
               Objektsteuerung sorgt dafür, dass Touren und Qualität nicht vom
               Zufall abhängen: wenn jemand ausfällt, reagiert das System – Sie
               merken vor allem eins: dass es weiterläuft.
@@ -84,20 +84,20 @@ export default function Home() {
             <div className="mt-8 flex flex-wrap gap-3">
               <Link
                 href="/leistungen"
-                className="inline-flex h-11 items-center justify-center rounded-xl bg-primary px-5 text-sm font-semibold text-primary-foreground shadow-lg shadow-primary/20 transition-all duration-200 hover:scale-[1.02] hover:bg-primary/90 hover:shadow-xl"
+                className="inline-flex h-11 items-center justify-center rounded-none border-2 border-zinc-800 bg-primary px-5 text-sm font-bold text-primary-foreground transition hover:bg-primary/90"
               >
                 Leistungen ansehen
               </Link>
               <Link
                 href="#kontakt-anfrage"
-                className="inline-flex h-11 items-center justify-center rounded-xl border border-foreground/15 bg-white/90 px-5 text-sm font-semibold text-foreground shadow-md backdrop-blur transition-all duration-200 hover:scale-[1.02] hover:border-secondary/50 hover:bg-white hover:shadow-lg"
+                className="inline-flex h-11 items-center justify-center rounded-none border-2 border-zinc-800 bg-white px-5 text-sm font-bold text-foreground transition hover:bg-zinc-100"
               >
                 Direkt anfragen
               </Link>
             </div>
           </div>
           <div className="flex flex-col gap-6 lg:items-end">
-            <div className="relative aspect-[4/3] w-full max-w-xl overflow-hidden rounded-2xl shadow-xl ring-1 ring-black/5 transition-all duration-300 hover:shadow-2xl lg:ml-auto">
+            <div className="relative aspect-[4/3] w-full max-w-xl overflow-hidden rounded-none border-2 border-zinc-800 lg:ml-auto">
               <GeoImage
                 src={imgOffice}
                 alt="Moderner Bürobereich – sauber und repräsentativ"
@@ -112,7 +112,7 @@ export default function Home() {
                 imageId="geo-hero-office-zollernalb"
               />
             </div>
-            <LeadFunnel className="w-full max-w-xl shadow-xl ring-1 ring-black/5 transition-shadow duration-300 hover:shadow-2xl lg:ml-auto" />
+            <LeadFunnel className="w-full max-w-xl border-2 border-zinc-800 lg:ml-auto" />
           </div>
         </div>
       </section>
@@ -132,10 +132,12 @@ export default function Home() {
       >
         <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
-            <p className="text-sm font-semibold text-secondary">Reinigung 4.0</p>
+            <p className="text-xs font-bold uppercase tracking-widest text-primary">
+              Reinigung 4.0
+            </p>
             <h2
               id="reinigung-4-heading"
-              className="mt-2 text-2xl font-bold tracking-tight text-foreground sm:text-3xl"
+              className="mt-2 text-2xl font-extrabold tracking-tight text-foreground sm:text-3xl"
             >
               Software-Vorteil statt Zufall: Protokolle, die jede Tour
               dokumentieren.
@@ -148,7 +150,7 @@ export default function Home() {
             </p>
           </div>
           <ul className="mt-10 grid gap-6 sm:grid-cols-2">
-            <li className="flex min-h-[14rem] flex-col rounded-2xl border border-foreground/10 bg-white p-6 shadow-md ring-1 ring-black/5 sm:min-h-[15rem] sm:p-8">
+            <li className="flex min-h-[14rem] flex-col rounded-none border-2 border-zinc-800 bg-white p-6 sm:min-h-[15rem] sm:p-8">
               <h3 className="text-lg font-bold text-foreground sm:text-xl">
                 Digitale Protokolle
               </h3>
@@ -159,7 +161,7 @@ export default function Home() {
                 Kontrolle im Alltag.
               </p>
             </li>
-            <li className="flex min-h-[14rem] flex-col rounded-2xl border border-foreground/10 bg-white p-6 shadow-md ring-1 ring-black/5 sm:min-h-[15rem] sm:p-8">
+            <li className="flex min-h-[14rem] flex-col rounded-none border-2 border-zinc-800 bg-white p-6 sm:min-h-[15rem] sm:p-8">
               <h3 className="text-lg font-bold text-foreground sm:text-xl">
                 Ausfallsicherheit über die Plattform
               </h3>
@@ -186,19 +188,20 @@ export default function Home() {
               Warum wir? Weil wir nicht nur putzen.
             </h2>
             <p className="mt-4 text-base leading-7 text-muted sm:text-lg">
-              Wir übernehmen Verantwortung für Ihre Liegenschaft: klare Intervalle,
-              nachvollziehbare Qualität und ein Team, das weiß, was in Kanzleien,
-              Praxen und Gewerbeobjekten zählt. Digital gestützt heißt bei uns:
-              weniger Ausfälle, weniger Telefonate – mehr Ruhe im Alltag.
+              Wir übernehmen Verantwortung für Ihre Liegenschaft: klare
+              Intervalle, nachvollziehbare Qualität und ein Team, das weiß, was
+              in Kanzleien, Praxen und Gewerbeobjekten zählt. Digital gestützt
+              heißt bei uns: weniger Ausfälle, weniger Telefonate – mehr Ruhe im
+              Alltag.
             </p>
             <p className="mt-4 text-base leading-7 text-muted">
               Regional verwurzelt in der Zollernalb und im
-              Schwarzwald-Baar-Heuberg-Kreis bleiben Entscheidungswege kurz.
-              Wer bei uns anruft, landet nicht in einer Hotline, sondern bei
+              Schwarzwald-Baar-Heuberg-Kreis bleiben Entscheidungswege kurz. Wer
+              bei uns anruft, landet nicht in einer Hotline, sondern bei
               Menschen, die Ihr Objekt kennen oder es sich aneignen.
             </p>
           </div>
-          <div className="relative order-1 aspect-[5/4] overflow-hidden rounded-2xl shadow-xl ring-1 ring-black/5 transition-all duration-300 hover:scale-[1.01] hover:shadow-2xl lg:order-2">
+          <div className="relative order-1 aspect-[5/4] overflow-hidden rounded-none border-2 border-zinc-800 lg:order-2">
             <GeoImage
               src={imgHandshake}
               alt="B2B-Gespräch und Handschlag – partnerschaftliche Zusammenarbeit"
@@ -218,34 +221,34 @@ export default function Home() {
       <section className="border-y border-foreground/10 bg-slate-50/80 py-14">
         <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            <div className="group relative aspect-[4/3] overflow-hidden rounded-2xl shadow-lg ring-1 ring-black/5 transition-all duration-300 hover:shadow-xl">
+            <div className="relative aspect-[4/3] overflow-hidden rounded-none border-2 border-zinc-800">
               <Image
                 src={imgOffice}
                 alt="Moderne Bürowelt"
                 fill
-                className="object-cover transition-transform duration-500 group-hover:scale-105"
+                className="object-cover"
                 sizes="(max-width: 1024px) 50vw, 33vw"
                 placeholder="blur"
                 blurDataURL={REMOTE_IMAGE_BLUR_DATA_URL}
               />
             </div>
-            <div className="group relative aspect-[4/3] overflow-hidden rounded-2xl shadow-lg ring-1 ring-black/5 transition-all duration-300 hover:shadow-xl">
+            <div className="relative aspect-[4/3] overflow-hidden rounded-none border-2 border-zinc-800">
               <Image
                 src={imgCleaning}
                 alt="Professionelle Reinigung"
                 fill
-                className="object-cover transition-transform duration-500 group-hover:scale-105"
+                className="object-cover"
                 sizes="(max-width: 1024px) 50vw, 33vw"
                 placeholder="blur"
                 blurDataURL={REMOTE_IMAGE_BLUR_DATA_URL}
               />
             </div>
-            <div className="group relative aspect-[4/3] overflow-hidden rounded-2xl shadow-lg ring-1 ring-black/5 transition-all duration-300 hover:shadow-xl sm:col-span-2 lg:col-span-1">
+            <div className="relative aspect-[4/3] overflow-hidden rounded-none border-2 border-zinc-800 sm:col-span-2 lg:col-span-1">
               <Image
                 src={imgFacade}
                 alt="Glasfassade eines Geschäftsgebäudes"
                 fill
-                className="object-cover transition-transform duration-500 group-hover:scale-105"
+                className="object-cover"
                 sizes="(max-width: 1024px) 100vw, 33vw"
                 placeholder="blur"
                 blurDataURL={REMOTE_IMAGE_BLUR_DATA_URL}
@@ -268,11 +271,15 @@ export default function Home() {
             {testimonials.map((t) => (
               <li
                 key={t.name}
-                className="flex min-h-[17rem] flex-col rounded-2xl border border-foreground/10 bg-gradient-to-b from-white to-slate-50/80 p-6 shadow-lg transition-all duration-200 hover:-translate-y-0.5 hover:shadow-xl sm:min-h-[18rem]"
+                className="flex min-h-[17rem] flex-col rounded-none border-2 border-zinc-800 bg-white p-6 sm:min-h-[18rem]"
               >
-                <p className="text-sm leading-6 text-foreground/90">&ldquo;{t.quote}&rdquo;</p>
+                <p className="text-sm leading-6 text-foreground/90">
+                  &ldquo;{t.quote}&rdquo;
+                </p>
                 <div className="mt-5 border-t border-foreground/10 pt-4">
-                  <p className="text-sm font-semibold text-foreground">{t.name}</p>
+                  <p className="text-sm font-semibold text-foreground">
+                    {t.name}
+                  </p>
                   <p className="mt-1 text-xs text-muted">{t.role}</p>
                 </div>
               </li>
@@ -281,7 +288,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="border-t border-foreground/10 bg-gradient-to-b from-slate-50/90 to-background py-16 sm:py-20">
+      <section className="border-t border-foreground/10 bg-zinc-100 py-16 sm:py-20">
         <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl">
             <h2 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
@@ -299,7 +306,7 @@ export default function Home() {
               <li key={city}>
                 <Link
                   href={`/standorte/${city}`}
-                  className="group flex min-h-[9.5rem] flex-col rounded-2xl border border-foreground/10 bg-white p-5 shadow-md transition-all duration-200 hover:scale-[1.02] hover:border-secondary/40 hover:shadow-xl"
+                  className="group flex min-h-[9.5rem] flex-col rounded-none border-2 border-zinc-800 bg-white p-5 transition hover:border-primary hover:bg-zinc-100"
                 >
                   <span className="text-base font-semibold text-foreground group-hover:text-secondary">
                     {STANDORT_LABELS[city]}

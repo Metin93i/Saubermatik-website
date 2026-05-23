@@ -64,7 +64,9 @@ export default function RootLayout({
       </head>
       <body className="min-h-full flex flex-col bg-background text-foreground">
         <SiteHeader />
-        <main className="flex flex-1 flex-col max-md:pb-[5.75rem]">{children}</main>
+        <main className="flex flex-1 flex-col max-md:pb-[5.75rem]">
+          {children}
+        </main>
         <SiteFooter />
         <MobileStickyCta />
       </body>

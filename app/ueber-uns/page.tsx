@@ -26,7 +26,7 @@ export default function UeberUnsPage() {
         Regional verwurzelt. Digital vorbereitet.
       </h1>
 
-      <div className="relative mt-8 aspect-[16/9] w-full overflow-hidden rounded-2xl shadow-lg ring-1 ring-foreground/10">
+      <div className="relative mt-8 aspect-[16/9] w-full overflow-hidden rounded-none ">
         <Image
           src={imgUeberUns}
           alt="Professionelles Teammeeting – Saubermatik als B2B-Partner"
@@ -67,7 +67,7 @@ export default function UeberUnsPage() {
 
       <KeyAccountManager className="mt-12" />
 
-      <div className="mt-12 min-h-[10rem] rounded-2xl border border-secondary/25 bg-secondary/5 p-6 sm:p-8">
+      <div className="mt-12 min-h-[10rem] rounded-none border border-secondary/25 bg-secondary/5 p-6 sm:p-8">
         <h2 className="text-lg font-bold text-foreground">Was uns antreibt</h2>
         <ul className="mt-4 list-inside list-disc space-y-2 text-sm leading-7 text-muted sm:text-base">
           <li>Langfristige Objektbetreuung statt Einmal-Show</li>
@@ -79,20 +79,20 @@ export default function UeberUnsPage() {
       <div className="mt-10 flex flex-col gap-3 sm:flex-row">
         <Link
           href="/kontakt#kontakt-anfrage"
-          className="inline-flex h-11 items-center justify-center rounded-xl bg-primary px-5 text-sm font-semibold text-primary-foreground shadow-sm transition hover:bg-primary/90"
+          className="inline-flex h-11 items-center justify-center rounded-none bg-primary px-5 text-sm font-semibold text-primary-foreground transition hover:bg-primary/90"
         >
           Kennenlernen vereinbaren
         </Link>
         <Link
           href="/qualitaetsmanagement"
-          className="inline-flex h-11 items-center justify-center rounded-xl border border-foreground/15 px-5 text-sm font-semibold text-foreground transition hover:border-secondary/50 hover:bg-secondary/5"
+          className="inline-flex h-11 items-center justify-center rounded-none border border-foreground/15 px-5 text-sm font-semibold text-foreground transition hover:border-secondary/50 hover:bg-secondary/5"
         >
           Qualitätsmanagement
         </Link>
         {telHref ? (
           <a
             href={telHref}
-            className="inline-flex h-11 items-center justify-center rounded-xl border border-foreground/15 px-5 text-sm font-semibold text-foreground transition hover:border-secondary/50 hover:bg-secondary/5"
+            className="inline-flex h-11 items-center justify-center rounded-none border border-foreground/15 px-5 text-sm font-semibold text-foreground transition hover:border-secondary/50 hover:bg-secondary/5"
           >
             Anrufen
           </a>

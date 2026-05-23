@@ -2,11 +2,7 @@
 
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import {
-  useCallback,
-  type ComponentProps,
-  type PointerEvent,
-} from "react";
+import { useCallback, type ComponentProps, type PointerEvent } from "react";
 
 export type PrefetchLinkProps = ComponentProps<typeof Link>;
 

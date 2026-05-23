@@ -59,7 +59,7 @@ export default function HausmeisterservicePage() {
       />
       <LeistungFaqJsonLd slug="hausmeisterservice" />
       <div className="flex flex-1 flex-col bg-white">
-        <section className="border-b border-slate-200/80 bg-gradient-to-b from-slate-50 via-white to-white">
+        <section className="border-b border-slate-200/80 bg-zinc-100">
           <div className="mx-auto w-full max-w-6xl px-4 py-14 sm:px-6 sm:py-20 lg:px-8">
             <nav className="text-sm font-semibold text-secondary">
               <Link href="/leistungen" className="hover:underline">
@@ -73,10 +73,10 @@ export default function HausmeisterservicePage() {
               Improvisation.
             </h1>
             <p className="mt-6 max-w-3xl text-lg leading-8 text-muted">
-              Für Hausverwaltungen, WEG und Gewerbeimmobilien: Wir übernehmen die
-              operative Objektpräsenz zwischen den großen Gewerken – mit
-              dokumentierten Standard Operating Procedures und Echtzeit-Meldungen
-              über die Saubermatik-App.
+              Für Hausverwaltungen, WEG und Gewerbeimmobilien: Wir übernehmen
+              die operative Objektpräsenz zwischen den großen Gewerken – mit
+              dokumentierten Standard Operating Procedures und
+              Echtzeit-Meldungen über die Saubermatik-App.
             </p>
             <LeistungHeroImage
               slug="hausmeisterservice"
@@ -86,13 +86,13 @@ export default function HausmeisterservicePage() {
             <div className="mt-10 flex flex-wrap gap-4">
               <a
                 href="#kontakt-anfrage"
-                className="inline-flex h-12 items-center justify-center rounded-xl bg-primary px-6 text-sm font-semibold text-primary-foreground shadow-md transition hover:bg-primary/90"
+                className="inline-flex h-12 items-center justify-center rounded-none bg-primary px-6 text-sm font-semibold text-primary-foreground transition hover:bg-primary/90"
               >
                 Objekt-Analyse anfordern
               </a>
               <Link
                 href="/zielgruppen/hausverwaltungen"
-                className="inline-flex h-12 items-center justify-center rounded-xl border border-foreground/15 px-6 text-sm font-semibold text-foreground transition hover:border-secondary/50 hover:bg-secondary/5"
+                className="inline-flex h-12 items-center justify-center rounded-none border border-foreground/15 px-6 text-sm font-semibold text-foreground transition hover:border-secondary/50 hover:bg-secondary/5"
               >
                 Für Hausverwaltungen
               </Link>
@@ -104,12 +104,12 @@ export default function HausmeisterservicePage() {
           <LeistungSgeTldr slug="hausmeisterservice" />
           <div className="mt-12 space-y-6 text-base leading-[1.75] text-foreground/90">
             <p>
-              Hausmeisterservice ist die unsichtbare Infrastruktur einer
-              gut geführten Liegenschaft. Wenn er funktioniert, fällt er niemandem
-              auf – wenn er versagt, landet jede Kleinigkeit beim Verwalter. Genau
-              hier setzen wir an: nicht als „Mann für alles“ ohne Regeln, sondern
-              als strukturiertes Betriebssystem mit klaren SOPs, Eskalationsstufen
-              und digitaler Nachweisführung.
+              Hausmeisterservice ist die unsichtbare Infrastruktur einer gut
+              geführten Liegenschaft. Wenn er funktioniert, fällt er niemandem
+              auf – wenn er versagt, landet jede Kleinigkeit beim Verwalter.
+              Genau hier setzen wir an: nicht als „Mann für alles“ ohne Regeln,
+              sondern als strukturiertes Betriebssystem mit klaren SOPs,
+              Eskalationsstufen und digitaler Nachweisführung.
             </p>
             <p>
               Saubermatik entlastet Eigentümer, Verwaltungen und interne
@@ -125,7 +125,8 @@ export default function HausmeisterservicePage() {
               wird gemeldet, bevor der Mieter stolpert. Ein Sturmschaden an der
               Regenrinne wird fotografiert, bevor Wasserschäden entstehen. Eine
               Müllraumverschmutzung wird bereinigt, bevor der Abfuhrtermin
-              eskaliert. Das senkt Beschwerdequote und schützt vor Haftungsdiskussionen.
+              eskaliert. Das senkt Beschwerdequote und schützt vor
+              Haftungsdiskussionen.
             </p>
           </div>
 
@@ -133,15 +134,16 @@ export default function HausmeisterservicePage() {
             Standard Operating Procedures (SOPs) – unser Leistungskatalog
           </h2>
           <p className="mt-4 max-w-3xl text-base leading-7 text-muted">
-            Jede Liegenschaft erhält ein objektspezifisches SOP-Set im Onboarding.
-            Nachfolgend die Kernmodule, die wir für Mehrfamilienhäuser und
-            Gewerbeobjekte typischerweise verbindlich definieren.
+            Jede Liegenschaft erhält ein objektspezifisches SOP-Set im
+            Onboarding. Nachfolgend die Kernmodule, die wir für
+            Mehrfamilienhäuser und Gewerbeobjekte typischerweise verbindlich
+            definieren.
           </p>
           <ul className="mt-10 grid gap-6 sm:grid-cols-2">
             {sops.map((item) => (
               <li
                 key={item.title}
-                className="flex flex-col rounded-2xl border border-foreground/10 bg-white p-6 shadow-sm"
+                className="flex flex-col rounded-none border border-foreground/10 bg-white p-6 "
               >
                 <h3 className="text-lg font-semibold text-foreground">
                   {item.title}
@@ -153,14 +155,14 @@ export default function HausmeisterservicePage() {
             ))}
           </ul>
 
-          <div className="mt-16 rounded-2xl border border-secondary/25 bg-secondary/5 p-6 sm:p-8">
+          <div className="mt-16 rounded-none border border-secondary/25 bg-secondary/5 p-6 sm:p-8">
             <h2 className="text-xl font-bold text-foreground">
               Kombination mit Reinigung &amp; Winterdienst
             </h2>
             <p className="mt-4 text-base leading-7 text-muted">
               Hausmeister, Treppenhausreinigung, Grünpflege und Winterdienst aus
-              einem Portfolio vermeiden Schnittstellenchaos – ein Ansprechpartner,
-              ein SLA, eine App. Besonders für{" "}
+              einem Portfolio vermeiden Schnittstellenchaos – ein
+              Ansprechpartner, ein SLA, eine App. Besonders für{" "}
               <Link
                 href="/zielgruppen/hausverwaltungen"
                 className="font-semibold text-secondary hover:underline"
@@ -200,7 +202,7 @@ export default function HausmeisterservicePage() {
 
         <section
           id="kontakt-anfrage"
-          className="border-t border-slate-200 bg-gradient-to-b from-slate-50 to-white py-16 sm:py-20"
+          className="border-t border-slate-200 bg-zinc-100 py-16 sm:py-20"
         >
           <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">
             <div className="mx-auto max-w-2xl text-center">

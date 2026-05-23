@@ -6,7 +6,7 @@ type KontaktFormFallbackProps = {
 export function KontaktFormFallback({ isCareer }: KontaktFormFallbackProps) {
   return (
     <div
-      className="flex min-h-[28rem] items-center justify-center rounded-2xl border border-dashed border-foreground/15 bg-slate-50/80 px-6 py-12 text-center shadow-inner"
+      className="flex min-h-[28rem] items-center justify-center rounded-none border-2 border-dashed border-zinc-800 bg-zinc-100 px-6 py-12 text-center"
       aria-hidden
     >
       <p className="text-sm font-medium text-muted">

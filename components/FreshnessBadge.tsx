@@ -8,10 +8,7 @@ type Props = {
 export function FreshnessBadge({ className }: Props) {
   return (
     <p
-      className={
-        className ??
-        "mt-4 text-xs font-medium text-muted sm:text-sm"
-      }
+      className={className ?? "mt-4 text-xs font-medium text-muted sm:text-sm"}
     >
       Zertifizierte Qualitätsstandards – Stand:{" "}
       <time dateTime={new Date().toISOString().slice(0, 7)}>

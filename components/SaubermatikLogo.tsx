@@ -30,7 +30,7 @@ export function SaubermatikLogo({ variant = "onLight" }: SaubermatikLogoProps) {
       aria-label="Saubermatik – Startseite"
     >
       {variant === "onDark" ? (
-        <span className="inline-flex rounded-lg bg-white px-3 py-2 shadow-sm ring-1 ring-white/20">
+        <span className="inline-flex rounded-none bg-white px-3 py-2 ring-1 ring-white/20">
           {image}
         </span>
       ) : (

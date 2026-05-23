@@ -20,14 +20,18 @@ export function GeoImage({
 }: Props) {
   const origin = getSiteOrigin();
   const srcString = typeof src === "string" ? src : origin;
-  const id = imageId ?? `geo-image-${contentLocation.replace(/\s+/g, "-").toLowerCase()}`;
+  const id =
+    imageId ??
+    `geo-image-${contentLocation.replace(/\s+/g, "-").toLowerCase()}`;
 
   const payload: Record<string, unknown> = {
     "@context": "https://schema.org",
     "@type": "ImageObject",
     "@id": `${origin}/#${id}`,
     name: typeof alt === "string" ? alt : undefined,
-    contentUrl: srcString.startsWith("http") ? srcString : `${origin}${srcString}`,
+    contentUrl: srcString.startsWith("http")
+      ? srcString
+      : `${origin}${srcString}`,
     contentLocation: {
       "@type": "Place",
       name: contentLocation,

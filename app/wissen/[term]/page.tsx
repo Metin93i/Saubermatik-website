@@ -69,7 +69,7 @@ export default async function WissenTermPage({ params }: PageProps) {
             </p>
           ))}
         </div>
-        <div className="mt-12 rounded-2xl border border-secondary/30 bg-secondary/5 p-6 sm:p-8">
+        <div className="mt-12 rounded-none border border-secondary/30 bg-secondary/5 p-6 sm:p-8">
           <p className="text-sm font-semibold text-secondary">
             Praxis &amp; SLA
           </p>
@@ -80,7 +80,7 @@ export default async function WissenTermPage({ params }: PageProps) {
           </p>
           <Link
             href="/kontakt#kontakt-anfrage"
-            className="mt-5 inline-flex h-11 items-center justify-center rounded-xl bg-primary px-5 text-sm font-semibold text-primary-foreground shadow-sm transition hover:bg-primary/90"
+            className="mt-5 inline-flex h-11 items-center justify-center rounded-none bg-primary px-5 text-sm font-semibold text-primary-foreground transition hover:bg-primary/90"
           >
             Beratung anfragen
           </Link>

@@ -57,7 +57,7 @@ export default function UnterhaltsreinigungPage() {
       />
       <LeistungFaqJsonLd slug={SLUG} />
       <div className="flex flex-1 flex-col bg-white">
-        <section className="border-b border-slate-200/80 bg-gradient-to-b from-slate-50 via-white to-white">
+        <section className="border-b border-slate-200/80 bg-zinc-100">
           <div className="mx-auto w-full max-w-6xl px-4 py-14 sm:px-6 sm:py-20 lg:px-8">
             <nav className="text-sm font-semibold text-secondary">
               <Link href="/leistungen" className="hover:underline">
@@ -84,13 +84,13 @@ export default function UnterhaltsreinigungPage() {
             <div className="mt-10 flex flex-wrap gap-4">
               <a
                 href="#kontakt-anfrage"
-                className="inline-flex h-12 items-center justify-center rounded-xl bg-primary px-6 text-sm font-semibold text-primary-foreground shadow-md transition hover:bg-primary/90"
+                className="inline-flex h-12 items-center justify-center rounded-none bg-primary px-6 text-sm font-semibold text-primary-foreground transition hover:bg-primary/90"
               >
                 Objekt-Analyse anfordern
               </a>
               <Link
                 href="/qualitaetsmanagement"
-                className="inline-flex h-12 items-center justify-center rounded-xl border border-foreground/15 px-6 text-sm font-semibold text-foreground transition hover:border-secondary/50 hover:bg-secondary/5"
+                className="inline-flex h-12 items-center justify-center rounded-none border border-foreground/15 px-6 text-sm font-semibold text-foreground transition hover:border-secondary/50 hover:bg-secondary/5"
               >
                 Qualitätsmanagement
               </Link>
@@ -113,8 +113,8 @@ export default function UnterhaltsreinigungPage() {
               vorbeikommt“.
             </p>
             <p>
-              Saubermatik positioniert Unterhaltsreinigung als
-              Service Level Agreement (SLA) mit messbarer{" "}
+              Saubermatik positioniert Unterhaltsreinigung als Service Level
+              Agreement (SLA) mit messbarer{" "}
               <strong className="text-foreground">Flächenleistung</strong>,
               klarer Zonenlogik und digitaler Nachweisführung. Ihr Vorteil:
               weniger Reklamationen, weniger interne Koordination, volle
@@ -130,19 +130,19 @@ export default function UnterhaltsreinigungPage() {
             <div className="space-y-5 text-base leading-[1.75] text-foreground/90">
               <p>
                 Der häufigste Fehler in der Büroreinigung ist unsichtbar:
-                dieselbe Mikrofaser, die zuerst ein WC und danach eine
-                Teeküche wischt, transportiert Keime quer durchs Gebäude –{" "}
+                dieselbe Mikrofaser, die zuerst ein WC und danach eine Teeküche
+                wischt, transportiert Keime quer durchs Gebäude –{" "}
                 <strong className="text-foreground">Kreuzkontamination</strong>{" "}
                 in Reinform. Für Praxen, Kanzleien und Produktionsbüros ist das
                 kein Detail, sondern ein Hygiene- und Haftungsthema.
               </p>
               <p>
                 Saubermatik setzt deshalb konsequent auf das{" "}
-                <strong className="text-foreground">4-Farb-System</strong>:
-                Jede Zone erhält ausschließlich farbcodierte Textilien und
-                Eimer – physisch getrennt, in der App dokumentiert, in der
-                Einweisung verpflichtend. Rot bleibt in Sanitäranlagen, Gelb
-                an Waschbecken, Blau am Inventar, Grün in Teeküchen und
+                <strong className="text-foreground">4-Farb-System</strong>: Jede
+                Zone erhält ausschließlich farbcodierte Textilien und Eimer –
+                physisch getrennt, in der App dokumentiert, in der Einweisung
+                verpflichtend. Rot bleibt in Sanitäranlagen, Gelb an
+                Waschbecken, Blau am Inventar, Grün in Teeküchen und
                 Pausenbereichen. Keine Ausnahmen, keine „schnell mal mit
                 derselben Faser“-Improvisation.
               </p>
@@ -151,9 +151,9 @@ export default function UnterhaltsreinigungPage() {
               {colorSystem.map((item) => (
                 <li
                   key={item.color}
-                  className="rounded-2xl border border-foreground/10 bg-white p-5 shadow-sm"
+                  className="rounded-none border border-foreground/10 bg-white p-5 "
                 >
-                  <span className="inline-flex rounded-full bg-secondary/15 px-3 py-1 text-xs font-bold text-secondary">
+                  <span className="inline-flex rounded-sm bg-secondary/15 px-3 py-1 text-xs font-bold text-secondary">
                     {item.color}
                   </span>
                   <h3 className="mt-3 font-semibold text-foreground">
@@ -166,8 +166,8 @@ export default function UnterhaltsreinigungPage() {
               ))}
             </ul>
             <p className="text-base leading-[1.75] text-foreground/90">
-              Das System ist bewusst einfach – deshalb durchsetzbar. Neue
-              Kräfte verstehen es in Minuten; Ihr Facility Manager kann es in
+              Das System ist bewusst einfach – deshalb durchsetzbar. Neue Kräfte
+              verstehen es in Minuten; Ihr Facility Manager kann es in
               Begehungen sofort prüfen. Mehr Tiefe finden Sie in unserem{" "}
               <Link
                 href="/wissen/farbcode-system-hygiene"
@@ -240,13 +240,13 @@ export default function UnterhaltsreinigungPage() {
               <p>
                 Parallel optimieren wir die{" "}
                 <strong className="text-foreground">Flächenleistung</strong>:
-                Touren werden so geplant, dass Ihr Tagesgeschäft null
-                gestört wird – abends, früh morgens oder in definierten
-                Fenstern zwischen Schichten. Materialgerechte Bodenpflege,
-                staubarmes Wischen an Bildschirmzonen und leise Geräte in
-                Kanzleietagen sind Standard, keine Sonderwünsche. Das senkt
-                interne Beschwerden und hält die vereinbarte
-                Flächenleistung im SLA ohne Überstunden-Debatten.
+                Touren werden so geplant, dass Ihr Tagesgeschäft null gestört
+                wird – abends, früh morgens oder in definierten Fenstern
+                zwischen Schichten. Materialgerechte Bodenpflege, staubarmes
+                Wischen an Bildschirmzonen und leise Geräte in Kanzleietagen
+                sind Standard, keine Sonderwünsche. Das senkt interne
+                Beschwerden und hält die vereinbarte Flächenleistung im SLA ohne
+                Überstunden-Debatten.
               </p>
               <p>
                 Ob{" "}
@@ -276,7 +276,7 @@ export default function UnterhaltsreinigungPage() {
             </div>
           </article>
 
-          <div className="mt-16 rounded-2xl border border-secondary/25 bg-secondary/5 p-6 sm:p-8">
+          <div className="mt-16 rounded-none border border-secondary/25 bg-secondary/5 p-6 sm:p-8">
             <h2 className="text-xl font-bold text-foreground">
               Ihr Vorteil auf einen Blick
             </h2>
@@ -333,7 +333,7 @@ export default function UnterhaltsreinigungPage() {
 
         <section
           id="kontakt-anfrage"
-          className="border-t border-slate-200 bg-gradient-to-b from-slate-50 to-white py-16 sm:py-20"
+          className="border-t border-slate-200 bg-zinc-100 py-16 sm:py-20"
         >
           <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">
             <div className="mx-auto max-w-2xl text-center">

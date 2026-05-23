@@ -56,7 +56,7 @@ export default async function StandortPage({ params }: PageProps) {
         ]}
       />
       <div className="flex flex-1 flex-col bg-white">
-        <section className="border-b border-slate-200/80 bg-gradient-to-b from-slate-50 via-white to-white">
+        <section className="border-b border-slate-200/80 bg-zinc-100">
           <div className="mx-auto w-full max-w-6xl px-4 py-14 sm:px-6 sm:py-20 lg:px-8">
             <nav className="text-sm font-semibold text-secondary">
               <Link href="/standorte" className="hover:underline">
@@ -65,7 +65,7 @@ export default async function StandortPage({ params }: PageProps) {
               <span className="text-muted"> / </span>
               <span className="text-muted">{label}</span>
             </nav>
-            <p className="mt-4 text-sm font-semibold uppercase tracking-wide text-secondary">
+            <p className="mt-4 text-xs font-bold uppercase tracking-widest text-primary">
               Standort {label}
             </p>
             <h1 className="mt-4 max-w-4xl text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-[2.5rem] lg:leading-tight">
@@ -78,13 +78,13 @@ export default async function StandortPage({ params }: PageProps) {
             <div className="mt-10 flex flex-wrap gap-4">
               <Link
                 href="/kontakt#kontakt-anfrage"
-                className="inline-flex h-12 items-center justify-center rounded-xl bg-primary px-6 text-sm font-semibold text-primary-foreground shadow-md transition hover:bg-primary/90"
+                className="inline-flex h-12 items-center justify-center rounded-none bg-primary px-6 text-sm font-semibold text-primary-foreground transition hover:bg-primary/90"
               >
                 Objekt in {label} anfragen
               </Link>
               <Link
                 href="/leistungen/unterhaltsreinigung"
-                className="inline-flex h-12 items-center justify-center rounded-xl border border-foreground/15 px-6 text-sm font-semibold text-foreground transition hover:border-secondary/50 hover:bg-secondary/5"
+                className="inline-flex h-12 items-center justify-center rounded-none border border-foreground/15 px-6 text-sm font-semibold text-foreground transition hover:border-secondary/50 hover:bg-secondary/5"
               >
                 Leistungen
               </Link>
