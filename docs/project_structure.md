@@ -73,7 +73,7 @@ app/
 │   └── page.tsx                  Marken-Story & Vertrauen
 ├── globals.css                   Design-Tokens / Tailwind v4 @theme
 ├── layout.tsx                    Root-Layout, Fonts, Header/Footer, JSON-LD
-└── page.tsx                      Startseite (Hero + Quick-Search, Reinigung 4.0, Trust, …)
+└── page.tsx                      Startseite (breiter 2XL-Container, HeroQuickSearch, …)
 ```
 
 ## `components/` — UI
@@ -115,7 +115,7 @@ lib/
 │   ├── services.ts               Leistungsportfolio (10 Slugs inkl. Entrümpelung & Sonstiges)
 │   └── site.ts                   Firmenadresse, OSM-Embed (Single Source)
 ├── hero/
-│   └── quick-search.ts           Quick-Search-Städte, Calculator-Mapping, sessionStorage-Navigation
+│   └── quick-search.ts           Quick-Search-Städte + `resolveQuickSearchRoute` (App Router)
 ├── image-blur.ts                 blurDataURL für `next/image` (Remote)
 ├── lead/
 │   ├── email.ts                  HTML-Mail Lead inkl. optionaler Objekthinweise

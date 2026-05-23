@@ -3,10 +3,10 @@ import { SERVICES } from "@/lib/config/services";
 import type { LeadServiceType } from "@/lib/lead/submission";
 import { STANDORT_LABELS, type StandortCity } from "@/lib/routes/standorte";
 
-/** SessionStorage-Key: Kalkulator-Vorauswahl aus Hero-Quick-Search. */
+/** SessionStorage-Key: Kalkulator-Vorauswahl (EngagementCalculator → LeadFunnel). */
 export const QUICK_SEARCH_CALC_KEY = "saubermatik-quick-search-calc";
 
-/** SessionStorage-Key: Lead-Funnel-Prefill (shared mit EngagementCalculator). */
+/** SessionStorage-Key: Lead-Funnel-Prefill (EngagementCalculator CTA). */
 export const CALC_PREFILL_KEY = "saubermatik-calc-prefill";
 
 export type QuickSearchCalcCategory =
@@ -21,11 +21,6 @@ export type QuickSearchCalcPrefill = {
   locationLabel: string;
 };
 
-export type QuickSearchFunnelPrefill = {
-  service: LeadServiceType;
-  objectNotes?: string;
-};
-
 /** Kernstädte für das Standort-Dropdown (Piepenbrock-Style Quick-Search). */
 export const QUICK_SEARCH_CITIES = [
   "messstetten",
@@ -38,79 +33,40 @@ export const QUICK_SEARCH_CITIES = [
   "reutlingen",
 ] as const satisfies readonly StandortCity[];
 
+export type QuickSearchCitySlug =
+  | (typeof QUICK_SEARCH_CITIES)[number]
+  | ""
+  | "__custom__";
+
 export const QUICK_SEARCH_CITY_OPTIONS = QUICK_SEARCH_CITIES.map((city) => ({
   value: city,
   label: STANDORT_LABELS[city],
 }));
 
-const SERVICE_TO_CALC: Partial<Record<ServiceSlug, QuickSearchCalcCategory>> = {
-  unterhaltsreinigung: "buero",
-  "fenster-glasreinigung": "glas",
-  treppenhausreinigung: "treppe",
-  hausmeisterservice: "hausverwaltung",
-};
-
-export function getQuickSearchTarget(
-  service: ServiceSlug,
-): "calculator" | "funnel" {
-  return SERVICE_TO_CALC[service] ? "calculator" : "funnel";
-}
-
-export function resolveLocationLabel(
-  cityValue: string,
-  customLocation: string,
-): string {
-  if (cityValue === "__custom__") {
-    return customLocation.trim();
-  }
-  if ((QUICK_SEARCH_CITIES as readonly string[]).includes(cityValue)) {
-    return STANDORT_LABELS[cityValue as StandortCity];
-  }
-  return customLocation.trim();
-}
-
-export function buildQuickSearchLocationNote(locationLabel: string): string {
-  return locationLabel
-    ? `Quick-Search · Standort: ${locationLabel}`
-    : "Quick-Search Anfrage";
-}
-
-/** Scroll-Ziel + sessionStorage-Prefill für Calculator oder Lead-Funnel. */
-export function navigateFromQuickSearch(
-  serviceSlug: ServiceSlug,
-  locationLabel: string,
-): void {
-  if (typeof sessionStorage === "undefined") return;
-
-  const target = getQuickSearchTarget(serviceSlug);
-  const note = buildQuickSearchLocationNote(locationLabel);
-
-  if (target === "calculator") {
-    const category = SERVICE_TO_CALC[serviceSlug];
-    if (!category) return;
-    const payload: QuickSearchCalcPrefill = {
-      category,
-      service: serviceSlug,
-      locationLabel,
-    };
-    sessionStorage.setItem(QUICK_SEARCH_CALC_KEY, JSON.stringify(payload));
-    document
-      .getElementById("engagement-calculator-section")
-      ?.scrollIntoView({ behavior: "smooth", block: "start" });
-    return;
-  }
-
-  const payload: QuickSearchFunnelPrefill = {
-    service: serviceSlug,
-    objectNotes: note,
-  };
-  sessionStorage.setItem(CALC_PREFILL_KEY, JSON.stringify(payload));
-  document
-    .getElementById("kontakt-anfrage")
-    ?.scrollIntoView({ behavior: "smooth", block: "start" });
-}
-
 export const QUICK_SEARCH_SERVICE_OPTIONS = SERVICES.map((s) => ({
   value: s.slug,
   label: s.funnelLabel,
 }));
+
+/**
+ * Routing für HeroQuickSearch (Next.js App Router).
+ * Priorität: gültige Stadt → `/standorte/[city]`; sonst Leistung → `/leistungen/[slug]`.
+ */
+export function resolveQuickSearchRoute(
+  serviceSlug: ServiceSlug,
+  citySlug: QuickSearchCitySlug,
+): string {
+  if (
+    citySlug &&
+    citySlug !== "__custom__" &&
+    (QUICK_SEARCH_CITIES as readonly string[]).includes(citySlug)
+  ) {
+    return `/standorte/${citySlug}`;
+  }
+
+  if (citySlug === "__custom__") {
+    return "/standorte";
+  }
+
+  return `/leistungen/${serviceSlug}`;
+}

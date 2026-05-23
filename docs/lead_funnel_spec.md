@@ -5,7 +5,7 @@
 - **Standard (`/kontakt`):** `LeadFunnel` (Kunden-Leads), Anker-ID **`kontakt-anfrage`**. Deep-Link von Unterseiten: **`/kontakt#kontakt-anfrage`**.
 - **Karriere (`/kontakt?type=karriere`):** `CareerForm` (Bewerbungen), Anker **`bewerbung`**. Deep-Link z. B. **`/kontakt?type=karriere#bewerbung`** (siehe `/karriere`).
 - **Technik:** Server liest `searchParams` für linke Spalte; rechte Spalte: **`Suspense`** + `KontaktFormSwitch` mit **`useSearchParams`** (siehe `docs/architecture.md`).
-- **Startseite:** Funnel im Hero mit **`#kontakt-anfrage`**; **`HeroQuickSearch`** darüber scrollt je nach Leistung zum **`EngagementCalculator`** (`#engagement-calculator-section`) oder zum Funnel (Prefill via **`lib/hero/quick-search.ts`**).
+- **Startseite:** Funnel im Hero mit **`#kontakt-anfrage`**; **`HeroQuickSearch`** (volle Breite über dem 2-Spalten-Grid) routet per **`useRouter`** zu **`/leistungen/[slug]`** oder **`/standorte/[city]`** (Stadt hat Priorität) — siehe **`docs/architecture.md`**.
 
 ## Zweck
 
