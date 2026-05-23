@@ -23,7 +23,7 @@ export function HeroQuickSearch({ className = "" }: Props) {
   const serviceId = `${formId}-service`;
   const locationId = `${formId}-location`;
 
-  const [serviceSlug, setServiceSlug] = useState<ServiceSlug>(
+  const [serviceSlug, setServiceSlug] = useState<ServiceSlug | "">(
     "unterhaltsreinigung",
   );
   const [citySlug, setCitySlug] = useState<QuickSearchCitySlug>("");
@@ -60,8 +60,11 @@ export function HeroQuickSearch({ className = "" }: Props) {
             name="service"
             className={fieldClass}
             value={serviceSlug}
-            onChange={(e) => setServiceSlug(e.target.value as ServiceSlug)}
+            onChange={(e) =>
+              setServiceSlug(e.target.value as ServiceSlug | "")
+            }
           >
+            <option value="">Leistung wählen (optional)</option>
             {QUICK_SEARCH_SERVICE_OPTIONS.map((opt) => (
               <option key={opt.value} value={opt.value}>
                 {opt.label}

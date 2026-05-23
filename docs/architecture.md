@@ -14,7 +14,7 @@ Technisches Referenzdokument (DDD). Dateibaum: `docs/project_structure.md`. Änd
 | Security Headers | `next.config.ts` → `headers()` (u. a. `X-Frame-Options`, `X-Content-Type-Options`, `Referrer-Policy`, `Permissions-Policy`) |
 | AEO | `app/llms.txt/route.ts` → `/llms.txt` (Plaintext aus `lib/seo/llms-content.ts`) |
 | Engagement | `components/EngagementCalculator.tsx` (`"use client"`) — Navboost/Dwell-Time |
-| Hero Quick-Search | `components/HeroQuickSearch.tsx` (`"use client"`) — B2B-Leiste Startseite → **Next.js Routing** (`/leistungen`, `/standorte`) |
+| Hero Quick-Search | `components/HeroQuickSearch.tsx` (`"use client"`) — B2B-Leiste Startseite → **Next.js Routing** (`/standorte/[city]/[service]`, `/standorte/[city]`, `/leistungen/[slug]`) |
 | Freshness | `lib/utils/date.ts`, `FreshnessBadge`, `dateModified` im globalen JSON-LD |
 | Lexikon | `app/wissen/*`, `lib/config/lexikon.ts` (Wiki 2.0, 8 Terms) |
 | B2B-Onboarding | `components/B2BOnboardingProcess.tsx`, `lib/seo/b2b-onboarding.ts` (HowTo JSON-LD) |
@@ -62,6 +62,7 @@ flowchart LR
 - **Position-0-Tabellen:** **`components/SnippetBaitTable.tsx`** — Varianten pro Service (unterhalt, glas, treppenhaus, winterdienst, grundreinigung, fassade, entruempelung, sonstiges).
 - **SSG:** `app/zielgruppen/hausverwaltungen/page.tsx` — **B2B-Zielgruppen-Silo** (800+ Wörter) + **`Service`** JSON-LD (`lib/seo/hausverwaltungen-schema.ts`).
 - **SSG:** `app/standorte/[city]/page.tsx` — **16 Städte**, **600+ Wörter** via **`buildStandortDeepContent`**; Kernstädte mit **`LOCAL_ENTITIES_BY_CITY`** (Industry Mapping); **`LocalCityFaq`** + FAQPage JSON-LD; **`BreadcrumbJsonLd`**, **`SeoCrossLinks`**.
+- **SSG:** `app/standorte/[city]/[service]/page.tsx` — **160 Matrix-Routen** (16×10), **800+ Wörter** via **`buildMatrixDeepContent`** (`lib/seo/matrix-content.ts`); **`MatrixDeepPage`** mit **`EngagementCalculator`**, **`B2BOnboardingProcess`**, **`LeadFunnel`**; `generateStaticParams` aus **`generateMatrixStaticParams()`**.
 - **SSG:** `app/standorte/page.tsx` — **Standort-Hub** (`/standorte`): Liste aller City-Spokes + Stuttgart-Spezial.
 - **SSG:** `app/standorte/stuttgart/page.tsx` — **Hyper-Local Hub** (kein Eintrag in `STANDORT_CITIES`; feste Route, keine dynamische `[city]`-Kollision). **`SeoCrossLinks`** (`type="service"`).
 - **SSG:** `app/expertise/page.tsx` — EEAT-/Standards-Hub (statisch).

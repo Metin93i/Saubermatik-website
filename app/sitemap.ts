@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { SERVICES } from "@/lib/config/services";
 import { LEXIKON_TERMS } from "@/lib/config/lexikon";
+import { generateMatrixStaticParams } from "@/lib/seo/matrix-params";
 import { getSiteOrigin } from "@/lib/seo/site-origin";
 import { STANDORT_CITIES } from "@/lib/routes/standorte";
 
@@ -79,6 +80,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: STANDORT_PRIORITY,
   }));
 
+  const matrix: MetadataRoute.Sitemap = generateMatrixStaticParams().map(
+    ({ city, service }) => ({
+      url: `${base}/standorte/${city}/${service}`,
+      lastModified: now,
+      changeFrequency: "monthly" as const,
+      priority: 0.75,
+    }),
+  );
+
   const wissen: MetadataRoute.Sitemap = [
     {
       url: `${base}/wissen`,
@@ -94,5 +104,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })),
   ];
 
-  return [...core, ...extras, ...leistungen, ...standorte, ...wissen];
+  return [...core, ...extras, ...leistungen, ...standorte, ...matrix, ...wissen];
 }

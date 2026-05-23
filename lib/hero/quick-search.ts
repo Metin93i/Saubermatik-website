@@ -1,7 +1,11 @@
 import type { ServiceSlug } from "@/lib/config/services";
 import { SERVICES } from "@/lib/config/services";
 import type { LeadServiceType } from "@/lib/lead/submission";
-import { STANDORT_LABELS, type StandortCity } from "@/lib/routes/standorte";
+import {
+  STANDORT_CITIES,
+  STANDORT_LABELS,
+  type StandortCity,
+} from "@/lib/routes/standorte";
 
 /** SessionStorage-Key: Kalkulator-Vorauswahl (EngagementCalculator → LeadFunnel). */
 export const QUICK_SEARCH_CALC_KEY = "saubermatik-quick-search-calc";
@@ -21,22 +25,10 @@ export type QuickSearchCalcPrefill = {
   locationLabel: string;
 };
 
-/** Kernstädte für das Standort-Dropdown (Piepenbrock-Style Quick-Search). */
-export const QUICK_SEARCH_CITIES = [
-  "messstetten",
-  "balingen",
-  "albstadt",
-  "tuttlingen",
-  "hechingen",
-  "rottweil",
-  "tuebingen",
-  "reutlingen",
-] as const satisfies readonly StandortCity[];
+/** Alle 16 Standort-Städte für die Quick-Search. */
+export const QUICK_SEARCH_CITIES = STANDORT_CITIES;
 
-export type QuickSearchCitySlug =
-  | (typeof QUICK_SEARCH_CITIES)[number]
-  | ""
-  | "__custom__";
+export type QuickSearchCitySlug = StandortCity | "" | "__custom__";
 
 export const QUICK_SEARCH_CITY_OPTIONS = QUICK_SEARCH_CITIES.map((city) => ({
   value: city,
@@ -48,19 +40,28 @@ export const QUICK_SEARCH_SERVICE_OPTIONS = SERVICES.map((s) => ({
   label: s.funnelLabel,
 }));
 
+function isMatrixCity(
+  citySlug: QuickSearchCitySlug,
+): citySlug is StandortCity {
+  return (
+    citySlug !== "" &&
+    citySlug !== "__custom__" &&
+    (STANDORT_CITIES as readonly string[]).includes(citySlug)
+  );
+}
+
 /**
  * Routing für HeroQuickSearch (Next.js App Router).
- * Priorität: gültige Stadt → `/standorte/[city]`; sonst Leistung → `/leistungen/[slug]`.
+ * Stadt + Service → `/standorte/[city]/[service]`; nur Stadt → `/standorte/[city]`; nur Service → `/leistungen/[slug]`.
  */
 export function resolveQuickSearchRoute(
-  serviceSlug: ServiceSlug,
+  serviceSlug: ServiceSlug | "",
   citySlug: QuickSearchCitySlug,
 ): string {
-  if (
-    citySlug &&
-    citySlug !== "__custom__" &&
-    (QUICK_SEARCH_CITIES as readonly string[]).includes(citySlug)
-  ) {
+  if (isMatrixCity(citySlug)) {
+    if (serviceSlug) {
+      return `/standorte/${citySlug}/${serviceSlug}`;
+    }
     return `/standorte/${citySlug}`;
   }
 
@@ -68,5 +69,9 @@ export function resolveQuickSearchRoute(
     return "/standorte";
   }
 
-  return `/leistungen/${serviceSlug}`;
+  if (serviceSlug) {
+    return `/leistungen/${serviceSlug}`;
+  }
+
+  return "/standorte";
 }

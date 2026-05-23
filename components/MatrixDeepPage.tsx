@@ -1,0 +1,150 @@
+import Link from "next/link";
+import { B2BOnboardingProcess } from "@/components/B2BOnboardingProcess";
+import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
+import { EngagementCalculator } from "@/components/EngagementCalculator";
+import { FreshnessBadge } from "@/components/FreshnessBadge";
+import { LeadFunnel } from "@/components/LeadFunnel";
+import { SeoCrossLinks } from "@/components/SeoCrossLinks";
+import type { MatrixDeepContent } from "@/lib/seo/matrix-content";
+
+const PAGE_CONTAINER =
+  "mx-auto w-full max-w-[100rem] px-4 sm:px-8 lg:px-16";
+
+type Props = {
+  content: MatrixDeepContent;
+};
+
+export function MatrixDeepPage({ content }: Props) {
+  const {
+    city,
+    service,
+    cityLabel,
+    serviceLabel,
+    heroTitle,
+    heroSubtitle,
+    sections,
+    calcCategory,
+    funnelInitialService,
+  } = content;
+
+  const pagePath = `/standorte/${city}/${service}`;
+
+  return (
+    <>
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Startseite", path: "/" },
+          { name: "Standorte", path: "/standorte" },
+          { name: cityLabel, path: `/standorte/${city}` },
+          { name: serviceLabel, path: pagePath },
+        ]}
+      />
+      <div className="flex flex-1 flex-col bg-white">
+        <section className="border-b border-zinc-200 bg-zinc-50">
+          <div className={`${PAGE_CONTAINER} py-8 sm:py-10`}>
+            <nav className="text-sm font-semibold text-secondary">
+              <Link href="/standorte" className="hover:underline">
+                Standorte
+              </Link>
+              <span className="text-muted"> / </span>
+              <Link href={`/standorte/${city}`} className="hover:underline">
+                {cityLabel}
+              </Link>
+              <span className="text-muted"> / </span>
+              <span className="text-muted">{serviceLabel}</span>
+            </nav>
+            <p className="mt-3 text-xs font-bold uppercase tracking-widest text-primary">
+              {serviceLabel} · {cityLabel}
+            </p>
+            <h1 className="mt-2 max-w-5xl text-3xl font-black tracking-tight text-foreground sm:text-4xl lg:text-[2.5rem] lg:leading-tight">
+              {heroTitle}
+            </h1>
+            <p className="mt-4 max-w-4xl text-base leading-7 text-muted sm:text-lg sm:leading-8">
+              {heroSubtitle}
+            </p>
+            <FreshnessBadge className="mt-4" />
+            <div className="mt-6 flex flex-wrap gap-3">
+              <a
+                href="#kontakt-anfrage"
+                className="inline-flex h-11 items-center justify-center rounded-sm bg-primary px-5 text-sm font-bold text-primary-foreground transition hover:bg-primary/90"
+              >
+                Analyse anfordern
+              </a>
+              <Link
+                href={`/leistungen/${service}`}
+                className="inline-flex h-11 items-center justify-center rounded-sm border border-zinc-300 bg-white px-5 text-sm font-bold text-foreground transition hover:bg-zinc-100"
+              >
+                Leistungsdetails
+              </Link>
+            </div>
+          </div>
+        </section>
+
+        <section className="border-b border-zinc-200 bg-white py-10 sm:py-12">
+          <div className={`${PAGE_CONTAINER} space-y-12`}>
+            {sections.map((section) => (
+              <article key={section.id} id={section.id}>
+                <h2 className="text-xl font-extrabold tracking-tight text-foreground sm:text-2xl">
+                  {section.title}
+                </h2>
+                <div className="mt-4 space-y-4">
+                  {section.paragraphs.map((p, i) => (
+                    <p
+                      key={i}
+                      className="max-w-4xl text-base leading-7 text-muted sm:leading-8"
+                    >
+                      {p}
+                    </p>
+                  ))}
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        {calcCategory ? (
+          <section
+            id="engagement-calculator-section"
+            className="border-b border-zinc-200 bg-zinc-50 py-10 sm:py-12"
+            aria-labelledby="engagement-calculator-heading"
+          >
+            <div className={PAGE_CONTAINER}>
+              <EngagementCalculator
+                className="mx-auto max-w-4xl"
+                initialCategory={calcCategory}
+              />
+            </div>
+          </section>
+        ) : null}
+
+        <B2BOnboardingProcess
+          pagePath={pagePath}
+          className="border-b border-zinc-200 bg-white py-10 sm:py-12"
+        />
+
+        <section
+          id="kontakt-anfrage"
+          className="border-b border-zinc-200 bg-zinc-50 py-10 sm:py-12"
+        >
+          <div className={`${PAGE_CONTAINER} grid gap-8 lg:grid-cols-2 lg:gap-10`}>
+            <div>
+              <h2 className="text-2xl font-extrabold tracking-tight text-foreground">
+                {serviceLabel} in {cityLabel} anfragen
+              </h2>
+              <p className="mt-3 text-base leading-7 text-muted">
+                Objektgröße, Intervalle, Sonderflächen — wir erstellen nach
+                Begehung ein verbindliches, digitales Leistungsverzeichnis mit
+                transparenten SLAs.
+              </p>
+            </div>
+            <LeadFunnel initialServiceType={funnelInitialService} />
+          </div>
+        </section>
+
+        <div className={PAGE_CONTAINER}>
+          <SeoCrossLinks type="service" />
+        </div>
+      </div>
+    </>
+  );
+}

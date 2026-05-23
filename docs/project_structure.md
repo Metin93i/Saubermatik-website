@@ -68,7 +68,9 @@ app/
 │   ├── stuttgart/
 │   │   └── page.tsx              Hyper-Local Stuttgart-Hub (SSG)
 │   └── [city]/
-│       └── page.tsx              16 lokale Landingpages (SSG)
+│       ├── page.tsx              16 lokale Landingpages (SSG, 600+ Wörter)
+│       └── [service]/
+│           └── page.tsx          160 Matrix-Landingpages (16×10, 800+ Wörter, SSG)
 ├── ueber-uns/
 │   └── page.tsx                  Marken-Story & Vertrauen
 ├── globals.css                   Design-Tokens / Tailwind v4 @theme
@@ -85,7 +87,8 @@ components/
 ├── BreadcrumbJsonLd.tsx          BreadcrumbList JSON-LD (tiefes Routing)
 ├── CareerForm.tsx                Bewerber-Formular (`"use client"`) → `/api/career`
 ├── EngagementCalculator.tsx      3-Schritt-Kostenrechner (`"use client"`)
-├── HeroQuickSearch.tsx           B2B Quick-Search Startseite (`"use client"`) → Calculator/Funnel
+├── HeroQuickSearch.tsx           B2B Quick-Search Startseite (`"use client"`) → App-Router (`/standorte/[city]/[service]`, …)
+├── MatrixDeepPage.tsx            Matrix Deep-Content-Template (800+ Wörter, Calculator, Funnel)
 ├── KontaktFormFallback.tsx      Suspense-Fallback (serverkompatibel)
 ├── KontaktFormSwitch.tsx       `useSearchParams` Weiche Lead/Karriere (`"use client"`)
 ├── LeadFunnel.tsx              Multi-Step Kunden-Funnel (`"use client"`)
@@ -115,7 +118,7 @@ lib/
 │   ├── services.ts               Leistungsportfolio (10 Slugs inkl. Entrümpelung & Sonstiges)
 │   └── site.ts                   Firmenadresse, OSM-Embed (Single Source)
 ├── hero/
-│   └── quick-search.ts           Quick-Search-Städte + `resolveQuickSearchRoute` (App Router)
+│   └── quick-search.ts           16 Städte + `resolveQuickSearchRoute` (Matrix/Standort/Leistung)
 ├── image-blur.ts                 blurDataURL für `next/image` (Remote)
 ├── lead/
 │   ├── email.ts                  HTML-Mail Lead inkl. optionaler Objekthinweise
@@ -131,6 +134,11 @@ lib/
 │   ├── leistung-entity-facts.ts  TF-IDF-Entity-Absätze pro Leistung
 │   ├── leistung-sge-tldr.ts      SGE-TL;DR (Problem / Lösung / Zeitrahmen)
 │   ├── local-entities.ts         Industry Profiles (5 Kernstädte)
+│   ├── matrix-params.ts          160 Matrix-Routen, `generateMatrixStaticParams`
+│   ├── matrix-content.ts         Anti-Laziness Deep-Content-Engine (800+ Wörter)
+│   ├── matrix-service-tech.ts    Service-Tech-Blöcke (Normen, Compliance, Betrieb)
+│   ├── matrix-city-extended.ts   Wirtschaftsprofile aller 16 Städte
+│   ├── matrix-spin.ts            Deterministischer Spin city×service
 │   ├── standort-deep-content.ts  600+ Wörter Deep Local Content Generator
 │   ├── standort-faq.ts           3 B2B-FAQs pro Standortstadt
 │   └── site-origin.ts            `getSiteOrigin()` für absolute JSON-LD-URLs
@@ -145,7 +153,7 @@ lib/
 docs/
 ├── architecture.md             Technisches Gehirn: Stack, Datenflüsse, Routing, Formular-Weiche
 ├── competitor_analysis.md      Wettbewerbs-/Gap-Analyse (SEO & Funnel)
-├── pSEO_matrix.md               Programmatic-SEO-Matrix (lokale Entitäten)
+├── pSEO_matrix.md               16×10 Matrix-Engine (160 Routen, 800+ Wörter)
 ├── portfolio_seo_whitepaper.md Portfolio-Case-Study (CTO-Tonalität)
 ├── lead_funnel_spec.md           API & UI Lead-Funnel + Kontakt-Dual-Funnel
 ├── performance_audit.md          Speed-Maßnahmen (LCP, CLS, Fonts, Client-Bundle)

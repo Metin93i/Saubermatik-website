@@ -1,42 +1,75 @@
-# Programmatic SEO Matrix: Lokale Entitäten
+# Programmatic SEO Matrix: 16×10 Deep Content Engine
 
-Stand: **`lib/seo/local-entities.ts`**, **`lib/seo/standort-deep-content.ts`**, **`app/standorte/[city]/page.tsx`**, **`components/LocalCityFaq.tsx`**.
+Stand: **`lib/seo/matrix-params.ts`**, **`lib/seo/matrix-content.ts`**, **`lib/seo/matrix-service-tech.ts`**, **`lib/seo/matrix-spin.ts`**, **`app/standorte/[city]/[service]/page.tsx`**, **`components/MatrixDeepPage.tsx`**.
 
 ## Ziel
 
-- **600+ Wörter** Deep Local Content pro Stadt (16 `STANDORT_CITIES`) — kein Thin Content.
-- **Industry Mapping** für 5 Kernstädte: echte Gewerbegebiete, Infrastruktur, Wirtschaftsfokus → Vermeidung von Doorway-Pages.
-- **Deterministischer Spin** für Nebenstädte: unterschiedliche Satzstellung bei gleicher regionaler Logik.
-- **FAQPage JSON-LD** pro Stadt (3 B2B-FAQs).
+- **160 statische Routen** (`STANDORT_CITIES` × `SERVICES`) unter `/standorte/[city]/[service]`.
+- **800+ Wörter** Deep Content pro Kombination — kein Thin Content, keine Platzhalter.
+- **Anti-Laziness-Engine:** TypeScript kombiniert vier Textblöcke deterministisch; jede Seite ist inhaltlich einzigartig.
+- **B2B-Normen:** TRBS 2121, DIN EN 13549, HACCP, RKI, § 2 BetrKV, VOB/C — C-Level-taugliche Fachsprache.
 
-## Kernstädte (`PROGRAMMATIC_ENTITY_CITIES`)
+## Matrix-Dimensionen
 
-| Stadt | Gewerbegebiete | Infrastruktur | Wirtschaftsfokus |
-|-------|----------------|---------------|-------------------|
-| `balingen` | Gehrn, Auf dem Kies | B27 | Mittelstand, Verwaltung & Handel |
-| `tuttlingen` | Gänsäcker, Industriepark | B14, B311 | Medizintechnik (Medical Mountains) |
-| `albstadt` | Ebingen, Tailfingen | B463 | Maschinenbau, Textil, Produktionshallen |
-| `rottweil` | Berner Feld, IN⊙VATOR | A81, B27 | Gewerbeparks, historische Gebäude |
-| `hechingen` | Lotzenäcker, Nasswasen | B27 | Medizintechnik, High-Tech |
+| Dimension | Quelle | Anzahl |
+|-----------|--------|--------|
+| Städte | `STANDORT_CITIES` in `lib/routes/standorte.ts` | 16 |
+| Leistungen | `SERVICES` in `lib/config/services.ts` | 10 |
+| **Kombinationen** | `generateMatrixStaticParams()` | **160** |
 
-## Nebenstädte (11 + Meßstetten HQ)
+## Content-Engine (`buildMatrixDeepContent`)
 
-- **`buildStandortDeepContent`** in `standort-deep-content.ts` liefert regionalen Fallback: Schwarzwald-Baar-Heuberg, Zollernalbkreis, Verkehrssicherungspflicht, schnelle Notfall-Reaktion.
-- Meßstetten: HQ-Sonderlogik (Firmensitz, kürzeste Wege).
+Vier kombinierte Blöcke pro Route:
 
-## Spin-Algorithmus
+| Block | ID | Inhalt |
+|-------|-----|--------|
+| **A — Local B2B** | `local-b2b` | Wirtschaft & Gewerbe der Stadt (`LOCAL_ENTITIES_BY_CITY` für 5 Kernstädte; regionaler Fallback für 11 Nebenstädte + Meßstetten HQ) |
+| **B — Service Tech** | `service-tech`, `compliance`, `operational` | Technische Fakten, Normen, Betriebslogik aus `getMatrixServiceTech()` |
+| **C — Synergie** | `synergy` | Warum dieser Service für die lokale Industrie geschäftskritisch ist (pro Service 3 Varianten, rotiert) |
+| **D — Digital QM** | `digital-qm` | Saubermatik-Plattform, Ausfallsicherheit, Key Account |
 
-`spinVariant(city, mod)` — FNV-1a-ähnlicher Hash über Slug, stabil über Builds. Variiert Einleitungen und Infrastruktur-Formulierungen.
+**Spin:** `matrixSpinVariant(city, service, mod)` — stabiler Hash über Slug-Paar, variiert Satzstellung ohne Duplicate Content.
 
-## UI-Einbindung
+**QA:** `countMatrixWords(content)` — grobe Wortzahl für Build-/Review-Checks.
 
-- Hero: „Facility Management … Ihr Partner an der [Infrastruktur]“
-- 5–6 H2-Sections aus `deep.sections`
-- **`LocalCityFaq`** mit sichtbaren FAQs + JSON-LD
+## UI-Einbindung (`MatrixDeepPage`)
+
+- Full-Width Container: `max-w-[100rem]`, `px-4 sm:px-8 lg:px-16`
+- Breadcrumbs + `BreadcrumbJsonLd`
+- 6 H2-Sections aus der Engine
+- **`EngagementCalculator`** (optional `initialCategory` aus Service-Mapping)
+- **`B2BOnboardingProcess`** (HowTo JSON-LD)
+- **`LeadFunnel`** mit `initialServiceType`
 - **`SeoCrossLinks`** (`type="service"`)
+- **`FreshnessBadge`**
+
+## Sitemap
+
+`app/sitemap.ts` — alle 160 Matrix-Routen via `generateMatrixStaticParams()`, Priority `0.75`.
+
+## Hero Quick-Search → Matrix-Routing
+
+`components/HeroQuickSearch.tsx` + `lib/hero/quick-search.ts`:
+
+| Auswahl | Ziel |
+|---------|------|
+| Stadt + Service | `/standorte/[city]/[service]` |
+| Nur Stadt | `/standorte/[city]` |
+| Nur Service | `/leistungen/[service]` |
+| „Alle Standorte anzeigen“ | `/standorte` |
+
+Dropdown-Städte: alle **16** `STANDORT_CITIES`.
+
+## Standort-Spokes (bestehend)
+
+Einzelne Stadt-Routen `/standorte/[city]` bleiben unverändert:
+
+- **600+ Wörter** via `buildStandortDeepContent`
+- **5 Kernstädte** mit Industry Mapping (`PROGRAMMATIC_ENTITY_CITIES`)
+- **`LocalCityFaq`** + FAQPage JSON-LD
 
 ## Wartung
 
-- Neue Kernstadt: Profil in `LOCAL_ENTITIES_BY_CITY` + `PROGRAMMATIC_ENTITY_CITIES`.
-- FAQ-Anpassung: `lib/seo/standort-faq.ts`.
-- Fließtext-Schablonen: `lib/seo/standort-deep-content.ts`.
+- Neue Stadt: `STANDORT_CITIES` + Label; optional Profil in `LOCAL_ENTITIES_BY_CITY`.
+- Neue Leistung: `SERVICES` — Matrix, Sitemap und Service-Tech-Block automatisch erweitern.
+- Fließtext-Tiefe: `lib/seo/matrix-service-tech.ts` (Service-Blöcke), `lib/seo/matrix-content.ts` (Synergie/Local).
