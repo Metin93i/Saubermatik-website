@@ -125,7 +125,7 @@ export function EngagementCalculator({
   }, [funnelHref, selected, estimate, isB2b, sqm, weUnits]);
 
   const choiceClass =
-    "rounded-none border-2 border-zinc-800 bg-background px-4 py-3 text-left text-sm font-bold text-foreground transition hover:border-primary hover:bg-zinc-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary";
+    "rounded-sm border border-zinc-200 bg-background px-4 py-3 text-left text-sm font-bold text-foreground transition hover:border-primary hover:bg-zinc-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary";
 
   const stepLabels = isB2b
     ? (["Objekt", "WE", "Ergebnis"] as const)
@@ -134,8 +134,7 @@ export function EngagementCalculator({
   return (
     <section
       className={
-        className ??
-        "rounded-none border-2 border-zinc-800 bg-white p-6 sm:p-8"
+        className ?? "rounded-sm border border-zinc-200 bg-white p-6 sm:p-8"
       }
       aria-labelledby="engagement-calculator-heading"
     >
@@ -165,8 +164,8 @@ export function EngagementCalculator({
             aria-selected={step === i}
             className={
               step === i
-                ? "rounded-none border-2 border-primary bg-primary/15 px-3 py-1 text-xs font-black uppercase tracking-widest text-primary"
-                : "rounded-none border border-zinc-400 bg-zinc-100 px-3 py-1 text-xs font-bold uppercase tracking-wide text-muted"
+                ? "rounded-sm border border-primary bg-primary/10 px-3 py-1 text-xs font-black uppercase tracking-widest text-primary"
+                : "rounded-sm border border-zinc-200 bg-zinc-50 px-3 py-1 text-xs font-bold uppercase tracking-wide text-muted"
             }
           >
             {i + 1}. {label}
@@ -184,7 +183,7 @@ export function EngagementCalculator({
               <button
                 key={c.id}
                 type="button"
-                className={`${choiceClass} ${category === c.id ? "border-primary bg-primary/10 ring-2 ring-primary/40" : ""}`}
+                className={`${choiceClass} ${category === c.id ? "border-primary bg-primary/5" : ""}`}
                 onClick={() => setCategory(c.id)}
                 aria-pressed={category === c.id}
                 aria-label={`${c.label} auswählen`}
@@ -198,7 +197,7 @@ export function EngagementCalculator({
           </div>
           <button
             type="button"
-            className="mt-6 inline-flex h-11 w-full items-center justify-center rounded-none border-2 border-zinc-800 bg-primary text-sm font-bold text-primary-foreground transition hover:bg-primary/90 disabled:opacity-50 sm:w-auto sm:px-8"
+            className="mt-6 inline-flex h-11 w-full items-center justify-center rounded-sm bg-primary text-sm font-bold text-primary-foreground transition hover:bg-primary/90 disabled:opacity-50 sm:w-auto sm:px-8"
             disabled={!category}
             onClick={() => setStep(1)}
             aria-label={
@@ -276,7 +275,7 @@ export function EngagementCalculator({
           <div className="mt-6 flex flex-wrap gap-3">
             <button
               type="button"
-              className="inline-flex h-11 items-center justify-center rounded-none border-2 border-zinc-800 bg-white px-5 text-sm font-bold text-foreground hover:bg-zinc-100"
+              className="inline-flex h-11 items-center justify-center rounded-sm border border-zinc-300 bg-white px-5 text-sm font-bold text-foreground hover:bg-zinc-100"
               onClick={() => setStep(0)}
               aria-label="Zurück zur Objektauswahl"
             >
@@ -284,7 +283,7 @@ export function EngagementCalculator({
             </button>
             <button
               type="button"
-              className="inline-flex h-11 items-center justify-center rounded-none border-2 border-zinc-800 bg-primary px-6 text-sm font-bold text-primary-foreground hover:bg-primary/90"
+              className="inline-flex h-11 items-center justify-center rounded-sm bg-primary px-6 text-sm font-bold text-primary-foreground hover:bg-primary/90"
               onClick={() => setStep(2)}
               aria-label="Schätzung berechnen"
             >
@@ -315,7 +314,7 @@ export function EngagementCalculator({
             <button
               type="button"
               onClick={goToFunnel}
-              className="inline-flex h-12 flex-1 items-center justify-center rounded-none border-2 border-zinc-800 bg-secondary text-sm font-bold text-secondary-foreground hover:bg-secondary/90"
+              className="inline-flex h-12 flex-1 items-center justify-center rounded-sm bg-secondary text-sm font-bold text-secondary-foreground hover:bg-secondary/90"
               aria-label="Zur Objekt-Anfrage scrollen"
             >
               {isB2b
@@ -328,7 +327,7 @@ export function EngagementCalculator({
                   ? "/zielgruppen/hausverwaltungen#kontakt-anfrage"
                   : "/kontakt#kontakt-anfrage"
               }
-              className="inline-flex h-12 items-center justify-center rounded-none border border-foreground/15 px-5 text-sm font-semibold text-foreground hover:bg-secondary/5"
+              className="inline-flex h-12 items-center justify-center rounded-sm border border-zinc-300 px-5 text-sm font-semibold text-foreground hover:bg-zinc-100"
             >
               {isB2b ? "Hausverwaltungs-Silo" : "Kontaktseite"}
             </Link>

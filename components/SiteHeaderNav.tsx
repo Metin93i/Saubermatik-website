@@ -55,7 +55,7 @@ export function SiteHeaderNav() {
   }, [mobileOpen, closeMobile]);
 
   const callButtonClass =
-    "inline-flex h-10 shrink-0 items-center justify-center gap-1.5 border-2 border-zinc-800 bg-primary px-3.5 text-sm font-bold text-primary-foreground transition hover:bg-primary/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary";
+    "inline-flex h-10 shrink-0 items-center justify-center gap-1.5 rounded-sm bg-primary px-3.5 text-sm font-bold text-primary-foreground transition hover:bg-primary/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary";
 
   return (
     <>
@@ -79,7 +79,7 @@ export function SiteHeaderNav() {
                 ▾
               </span>
             </summary>
-            <div className="absolute left-0 top-full z-50 mt-0 w-[min(100vw-2rem,22rem)] overflow-hidden border-2 border-zinc-800 bg-background py-1 lg:left-auto lg:right-0">
+            <div className="absolute left-0 top-full z-50 mt-0 w-[min(100vw-2rem,22rem)] overflow-hidden rounded-sm border border-zinc-200 bg-background py-1 lg:left-auto lg:right-0">
               <ul className="max-h-[min(70vh,24rem)] overflow-y-auto py-1">
                 {SERVICES.map((s) => (
                   <li key={s.slug}>
@@ -98,7 +98,7 @@ export function SiteHeaderNav() {
                   </li>
                 ))}
               </ul>
-              <div className="border-t-2 border-zinc-800 px-2 py-2">
+              <div className="border-t border-zinc-200 px-2 py-2">
                 <PrefetchLink
                   href="/leistungen"
                   className="block px-3 py-2 text-center text-sm font-bold text-primary hover:bg-zinc-100"
@@ -141,7 +141,7 @@ export function SiteHeaderNav() {
 
           <button
             type="button"
-            className="inline-flex h-10 w-10 items-center justify-center border-2 border-zinc-800 bg-background text-sm font-bold text-foreground transition hover:bg-zinc-100 md:hidden"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-sm border border-zinc-200 bg-background text-sm font-bold text-foreground transition hover:bg-zinc-100 md:hidden"
             aria-expanded={mobileOpen}
             aria-controls={panelId}
             aria-label="Hauptmenü öffnen"
@@ -171,15 +171,15 @@ export function SiteHeaderNav() {
           />
           <div
             id={panelId}
-            className="absolute right-0 top-0 flex h-full w-full max-w-sm flex-col border-l-2 border-zinc-800 bg-background"
+            className="absolute right-0 top-0 flex h-full w-full max-w-sm flex-col border-l border-zinc-200 bg-background"
           >
-            <div className="flex items-center justify-between border-b-2 border-zinc-800 px-4 py-3">
+            <div className="flex items-center justify-between border-b border-zinc-200 px-4 py-3">
               <p className="text-sm font-black uppercase tracking-widest text-foreground">
                 Menü
               </p>
               <button
                 type="button"
-                className="flex h-10 w-10 items-center justify-center border border-zinc-800 text-lg font-bold text-muted transition hover:bg-zinc-100 hover:text-primary"
+                className="flex h-10 w-10 items-center justify-center rounded-sm border border-zinc-300 text-lg font-bold text-muted transition hover:bg-zinc-100 hover:text-primary"
                 onClick={closeMobile}
                 aria-label="Menü schließen"
               >
@@ -191,7 +191,7 @@ export function SiteHeaderNav() {
               {telHref ? (
                 <a
                   href={telHref}
-                  className="inline-flex h-12 w-full items-center justify-center gap-2 border-2 border-zinc-800 bg-primary text-base font-bold text-primary-foreground"
+                  className="inline-flex h-12 w-full items-center justify-center gap-2 rounded-sm bg-primary text-base font-bold text-primary-foreground"
                   onClick={closeMobile}
                   aria-label="Jetzt telefonisch anrufen"
                 >
@@ -201,14 +201,14 @@ export function SiteHeaderNav() {
               ) : (
                 <PrefetchLink
                   href="/kontakt"
-                  className="inline-flex h-12 w-full items-center justify-center border-2 border-zinc-800 bg-primary text-base font-bold text-primary-foreground"
+                  className="inline-flex h-12 w-full items-center justify-center rounded-sm bg-primary text-base font-bold text-primary-foreground"
                   onClick={closeMobile}
                 >
                   Kontakt aufnehmen
                 </PrefetchLink>
               )}
 
-              <div className="flex flex-col gap-1 border-t-2 border-zinc-800 pt-3">
+              <div className="flex flex-col gap-1 border-t border-zinc-200 pt-3">
                 {MAIN_PAGES.map((item) => (
                   <PrefetchLink
                     key={item.href}
@@ -221,7 +221,7 @@ export function SiteHeaderNav() {
                 ))}
               </div>
 
-              <div className="border-t-2 border-zinc-800 pt-3">
+              <div className="border-t border-zinc-200 pt-3">
                 <button
                   type="button"
                   className="flex w-full items-center justify-between px-2 py-2 text-left text-sm font-bold uppercase tracking-wide text-foreground"

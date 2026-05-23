@@ -44,13 +44,13 @@ export default function HausverwaltungenPage() {
             <div className="mt-8 flex flex-wrap gap-3">
               <a
                 href="#kontakt-anfrage"
-                className="inline-flex h-12 items-center justify-center rounded-none bg-primary px-6 text-sm font-semibold text-primary-foreground transition hover:bg-primary/90"
+                className="inline-flex h-12 items-center justify-center rounded-sm bg-primary px-6 text-sm font-semibold text-primary-foreground transition hover:bg-primary/90"
               >
                 Liegenschaft anfragen
               </a>
               <Link
                 href="/leistungen/treppenhausreinigung"
-                className="inline-flex h-12 items-center justify-center rounded-none border border-foreground/15 bg-white px-6 text-sm font-semibold text-foreground transition hover:border-secondary/50 hover:bg-secondary/5"
+                className="inline-flex h-12 items-center justify-center rounded-sm border border-zinc-300 bg-white px-6 text-sm font-semibold text-foreground transition hover:border-secondary/50 hover:bg-secondary/5"
               >
                 Leistungsportfolio
               </Link>
@@ -241,7 +241,7 @@ export default function HausverwaltungenPage() {
                   <li key={item.href}>
                     <Link
                       href={item.href}
-                      className="flex h-full flex-col rounded-none border-2 border-zinc-800 bg-white p-5 transition hover:border-primary hover:bg-zinc-100"
+                      className="flex h-full flex-col rounded-sm border border-zinc-300 bg-white p-5 transition hover:border-primary hover:bg-zinc-100"
                     >
                       <span className="font-semibold text-foreground">
                         {item.title}

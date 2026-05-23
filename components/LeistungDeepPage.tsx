@@ -65,21 +65,21 @@ export function LeistungDeepPage({ content }: Props) {
             <div className="mt-10 flex flex-wrap gap-4">
               <a
                 href="#kontakt-anfrage"
-                className="inline-flex h-12 items-center justify-center rounded-none bg-primary px-6 text-sm font-semibold text-primary-foreground transition hover:bg-primary/90"
+                className="inline-flex h-12 items-center justify-center rounded-sm bg-primary px-6 text-sm font-semibold text-primary-foreground transition hover:bg-primary/90"
               >
                 Analyse anfordern
               </a>
               {secondaryCta ? (
                 <Link
                   href={secondaryCta.href}
-                  className="inline-flex h-12 items-center justify-center rounded-none border border-foreground/15 px-6 text-sm font-semibold text-foreground transition hover:border-secondary/50 hover:bg-secondary/5"
+                  className="inline-flex h-12 items-center justify-center rounded-sm border border-zinc-300 px-6 text-sm font-semibold text-foreground transition hover:border-secondary/50 hover:bg-secondary/5"
                 >
                   {secondaryCta.label}
                 </Link>
               ) : (
                 <Link
                   href="/qualitaetsmanagement"
-                  className="inline-flex h-12 items-center justify-center rounded-none border border-foreground/15 px-6 text-sm font-semibold text-foreground transition hover:border-secondary/50 hover:bg-secondary/5"
+                  className="inline-flex h-12 items-center justify-center rounded-sm border border-zinc-300 px-6 text-sm font-semibold text-foreground transition hover:border-secondary/50 hover:bg-secondary/5"
                 >
                   Qualitätsmanagement
                 </Link>
@@ -109,7 +109,7 @@ export function LeistungDeepPage({ content }: Props) {
             </article>
           ))}
 
-          <div className="mt-16 rounded-none border border-secondary/25 bg-secondary/5 p-6 sm:p-8">
+          <div className="mt-16 rounded-sm border border-zinc-300/25 bg-secondary/5 p-6 sm:p-8">
             <h2 className="text-xl font-bold text-foreground">
               {highlight.title}
             </h2>

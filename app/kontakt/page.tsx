@@ -108,7 +108,7 @@ export default async function KontaktPage({ searchParams }: KontaktPageProps) {
           </Link>
         </p>
 
-        <div className="mt-10 min-h-[16rem] overflow-hidden rounded-none border border-foreground/10 ">
+        <div className="mt-10 min-h-[16rem] overflow-hidden rounded-sm border border-zinc-200 ">
           <iframe
             title={`Karte: ${SITE_OFFICE.locality}`}
             className="h-64 w-full bg-slate-100 lg:h-full lg:min-h-[16rem]"

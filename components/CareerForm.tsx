@@ -116,7 +116,7 @@ export function CareerForm({ className }: CareerFormProps) {
     return (
       <section
         className={classNames(
-          "min-h-[26rem] rounded-none border border-foreground/10 bg-white p-6 sm:min-h-[28rem] sm:p-8",
+          "min-h-[26rem] rounded-sm border border-zinc-200 bg-white p-6 sm:min-h-[28rem] sm:p-8",
           className,
         )}
         aria-live="polite"
@@ -132,7 +132,7 @@ export function CareerForm({ className }: CareerFormProps) {
         </p>
         {!emailSent ? (
           <div
-            className="mt-5 rounded-none border border-amber-200 bg-amber-50 px-4 py-3 text-sm leading-6 text-amber-950"
+            className="mt-5 rounded-sm border border-amber-200 bg-amber-50 px-4 py-3 text-sm leading-6 text-amber-950"
             role="status"
           >
             <p>
@@ -149,7 +149,7 @@ export function CareerForm({ className }: CareerFormProps) {
   return (
     <section
       className={classNames(
-        "min-h-[26rem] rounded-none border border-foreground/10 bg-white p-6 sm:min-h-[28rem] sm:p-8",
+        "min-h-[26rem] rounded-sm border border-zinc-200 bg-white p-6 sm:min-h-[28rem] sm:p-8",
         className,
       )}
       id="bewerbung"
@@ -173,7 +173,7 @@ export function CareerForm({ className }: CareerFormProps) {
         <label className="block text-sm font-medium text-foreground">
           Name
           <input
-            className="mt-1 w-full rounded-none border border-foreground/15 bg-background px-3 py-2 text-sm outline-none ring-secondary/40 transition focus:ring-2"
+            className="mt-1 w-full rounded-sm border border-zinc-300 bg-background px-3 py-2 text-sm outline-none ring-secondary/40 transition focus:ring-2"
             name="name"
             autoComplete="name"
             value={name}
@@ -185,7 +185,7 @@ export function CareerForm({ className }: CareerFormProps) {
         <label className="block text-sm font-medium text-foreground">
           Telefon
           <input
-            className="mt-1 w-full rounded-none border border-foreground/15 bg-background px-3 py-2 text-sm outline-none ring-secondary/40 transition focus:ring-2"
+            className="mt-1 w-full rounded-sm border border-zinc-300 bg-background px-3 py-2 text-sm outline-none ring-secondary/40 transition focus:ring-2"
             name="phone"
             type="tel"
             autoComplete="tel"
@@ -199,7 +199,7 @@ export function CareerForm({ className }: CareerFormProps) {
         <label className="block text-sm font-medium text-foreground">
           E-Mail
           <input
-            className="mt-1 w-full rounded-none border border-foreground/15 bg-background px-3 py-2 text-sm outline-none ring-secondary/40 transition focus:ring-2"
+            className="mt-1 w-full rounded-sm border border-zinc-300 bg-background px-3 py-2 text-sm outline-none ring-secondary/40 transition focus:ring-2"
             name="email"
             type="email"
             autoComplete="email"
@@ -213,7 +213,7 @@ export function CareerForm({ className }: CareerFormProps) {
         <label className="block text-sm font-medium text-foreground">
           Über mich
           <textarea
-            className="mt-1 min-h-[8rem] w-full resize-y rounded-none border border-foreground/15 bg-background px-3 py-2 text-sm outline-none ring-secondary/40 transition focus:ring-2"
+            className="mt-1 min-h-[8rem] w-full resize-y rounded-sm border border-zinc-300 bg-background px-3 py-2 text-sm outline-none ring-secondary/40 transition focus:ring-2"
             name="about"
             rows={5}
             maxLength={6000}
@@ -234,7 +234,7 @@ export function CareerForm({ className }: CareerFormProps) {
         <button
           type="submit"
           disabled={isLoading}
-          className="inline-flex h-11 w-full items-center justify-center gap-2 rounded-none bg-secondary px-5 text-sm font-bold text-secondary-foreground transition hover:bg-secondary/90 disabled:cursor-not-allowed disabled:opacity-60"
+          className="inline-flex h-11 w-full items-center justify-center gap-2 rounded-sm bg-secondary px-5 text-sm font-bold text-secondary-foreground transition hover:bg-secondary/90 disabled:cursor-not-allowed disabled:opacity-60"
         >
           {isLoading ? (
             <>

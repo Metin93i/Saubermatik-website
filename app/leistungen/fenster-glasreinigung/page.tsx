@@ -56,7 +56,7 @@ export default function FensterGlasreinigungPage() {
               dokumentierte Compliance in der Zollernalb und angrenzenden
               Regionen.
             </p>
-            <div className="relative mt-10 aspect-[16/9] max-w-4xl overflow-hidden rounded-none ">
+            <div className="relative mt-10 aspect-[16/9] max-w-4xl overflow-hidden rounded-sm ">
               <GeoImage
                 src={hero.src}
                 alt={hero.alt}
@@ -74,13 +74,13 @@ export default function FensterGlasreinigungPage() {
             <div className="mt-10 flex flex-wrap gap-4">
               <a
                 href="#kontakt-anfrage"
-                className="inline-flex h-12 items-center justify-center rounded-none bg-primary px-6 text-sm font-semibold text-primary-foreground transition hover:bg-primary/90"
+                className="inline-flex h-12 items-center justify-center rounded-sm bg-primary px-6 text-sm font-semibold text-primary-foreground transition hover:bg-primary/90"
               >
                 Glas-Analyse anfordern
               </a>
               <Link
                 href="/qualitaetsmanagement"
-                className="inline-flex h-12 items-center justify-center rounded-none border border-foreground/15 px-6 text-sm font-semibold text-foreground transition hover:border-secondary/50 hover:bg-secondary/5"
+                className="inline-flex h-12 items-center justify-center rounded-sm border border-zinc-300 px-6 text-sm font-semibold text-foreground transition hover:border-secondary/50 hover:bg-secondary/5"
               >
                 Qualitätsmanagement
               </Link>
@@ -249,7 +249,7 @@ export default function FensterGlasreinigungPage() {
             </div>
           </article>
 
-          <div className="mt-16 rounded-none border border-secondary/25 bg-secondary/5 p-6 sm:p-8">
+          <div className="mt-16 rounded-sm border border-zinc-300/25 bg-secondary/5 p-6 sm:p-8">
             <h2 className="text-xl font-bold text-foreground">
               Warum Saubermatik für Glas &amp; Fassade?
             </h2>

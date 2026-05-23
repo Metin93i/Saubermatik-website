@@ -67,7 +67,7 @@ export default function StandortStuttgartPage() {
         Einsatzplanung ein – für Glas, Büro und Objekt.
       </p>
 
-      <div className="relative mt-8 aspect-[16/9] w-full overflow-hidden rounded-none ">
+      <div className="relative mt-8 aspect-[16/9] w-full overflow-hidden rounded-sm ">
         <GeoImage
           src={imgStuttgartHero}
           alt="Glasfassade und Gewerbegebäude in Stuttgart – professionelle Fensterreinigung"
@@ -103,19 +103,19 @@ export default function StandortStuttgartPage() {
       <div className="mt-12 flex flex-col gap-3 sm:flex-row">
         <Link
           href="/leistungen/fenster-glasreinigung"
-          className="inline-flex h-11 items-center justify-center rounded-none bg-primary px-5 text-sm font-semibold text-primary-foreground transition hover:bg-primary/90"
+          className="inline-flex h-11 items-center justify-center rounded-sm bg-primary px-5 text-sm font-semibold text-primary-foreground transition hover:bg-primary/90"
         >
           Fenster- &amp; Glasreinigung
         </Link>
         <Link
           href="/kontakt#kontakt-anfrage"
-          className="inline-flex h-11 items-center justify-center rounded-none border border-foreground/15 px-5 text-sm font-semibold text-foreground transition hover:border-secondary/60 hover:bg-secondary/5"
+          className="inline-flex h-11 items-center justify-center rounded-sm border border-zinc-300 px-5 text-sm font-semibold text-foreground transition hover:border-secondary/60 hover:bg-secondary/5"
         >
           Objekt in Stuttgart anfragen
         </Link>
         <Link
           href="/expertise"
-          className="inline-flex h-11 items-center justify-center rounded-none border border-foreground/15 px-5 text-sm font-semibold text-foreground transition hover:border-secondary/60 hover:bg-secondary/5"
+          className="inline-flex h-11 items-center justify-center rounded-sm border border-zinc-300 px-5 text-sm font-semibold text-foreground transition hover:border-secondary/60 hover:bg-secondary/5"
         >
           Expertise &amp; Standards
         </Link>

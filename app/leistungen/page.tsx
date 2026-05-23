@@ -29,7 +29,7 @@ export default function LeistungenPage() {
             <li key={slug}>
               <Link
                 href={`/leistungen/${slug}`}
-                className="group block rounded-none border-2 border-zinc-800 bg-white p-6 transition hover:border-primary hover:bg-zinc-100"
+                className="group block rounded-sm border border-zinc-300 bg-white p-6 transition hover:border-primary hover:bg-zinc-100"
               >
                 <h2 className="text-lg font-semibold text-foreground group-hover:text-secondary">
                   {item.title}

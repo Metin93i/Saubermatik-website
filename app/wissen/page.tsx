@@ -36,7 +36,7 @@ export default function WissenHubPage() {
               <li key={slug}>
                 <Link
                   href={`/wissen/${slug}`}
-                  className="block rounded-none border border-foreground/10 p-5 transition hover:border-secondary/40 hover:bg-secondary/5"
+                  className="block rounded-sm border border-zinc-200 p-5 transition hover:border-secondary/40 hover:bg-secondary/5"
                 >
                   <h2 className="text-lg font-bold text-foreground">
                     {entry.title}

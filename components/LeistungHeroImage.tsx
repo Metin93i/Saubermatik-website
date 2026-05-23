@@ -18,7 +18,7 @@ export function LeistungHeroImage({
 
   return (
     <div
-      className={`relative aspect-[16/9] w-full overflow-hidden rounded-none ${className}`}
+      className={`relative aspect-[16/9] w-full overflow-hidden rounded-sm ${className}`}
     >
       <Image
         src={src}

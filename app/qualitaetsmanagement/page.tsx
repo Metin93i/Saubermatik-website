@@ -60,7 +60,7 @@ export default function QualitaetsmanagementPage() {
           ))}
         </ul>
 
-        <div className="mt-14 rounded-none border border-foreground/10 bg-slate-50/80 p-6 sm:p-8">
+        <div className="mt-14 rounded-sm border border-zinc-200 bg-slate-50/80 p-6 sm:p-8">
           <h2 className="text-lg font-bold text-foreground">
             Nächster Schritt
           </h2>
@@ -71,14 +71,14 @@ export default function QualitaetsmanagementPage() {
           <div className="mt-5 flex flex-col gap-3 sm:flex-row">
             <Link
               href="/kontakt#kontakt-anfrage"
-              className="inline-flex h-11 items-center justify-center rounded-none bg-primary px-5 text-sm font-semibold text-primary-foreground transition hover:bg-primary/90"
+              className="inline-flex h-11 items-center justify-center rounded-sm bg-primary px-5 text-sm font-semibold text-primary-foreground transition hover:bg-primary/90"
             >
               Qualitätsgespräch anfragen
             </Link>
             {telHref ? (
               <a
                 href={telHref}
-                className="inline-flex h-11 items-center justify-center rounded-none border border-foreground/15 px-5 text-sm font-semibold text-foreground transition hover:border-secondary/50 hover:bg-secondary/5"
+                className="inline-flex h-11 items-center justify-center rounded-sm border border-zinc-300 px-5 text-sm font-semibold text-foreground transition hover:border-secondary/50 hover:bg-secondary/5"
               >
                 Direkt anrufen
               </a>

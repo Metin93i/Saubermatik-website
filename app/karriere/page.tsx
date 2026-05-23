@@ -45,7 +45,7 @@ export default function KarrierePage() {
         Quereinstieg – sprechen Sie uns an.
       </p>
 
-      <div className="relative mt-8 aspect-[16/9] w-full overflow-hidden rounded-none ">
+      <div className="relative mt-8 aspect-[16/9] w-full overflow-hidden rounded-sm ">
         <Image
           src={imgKarriere}
           alt="Teamarbeit im Büro – Karriere bei Saubermatik"
@@ -62,7 +62,7 @@ export default function KarrierePage() {
         {benefits.map((b) => (
           <li
             key={b.title}
-            className="flex min-h-[11rem] flex-col rounded-none border border-foreground/10 bg-white p-5 sm:min-h-[12rem] sm:p-6"
+            className="flex min-h-[11rem] flex-col rounded-sm border border-zinc-200 bg-white p-5 sm:min-h-[12rem] sm:p-6"
           >
             <h2 className="text-base font-bold text-foreground sm:text-lg">
               {b.title}
@@ -74,7 +74,7 @@ export default function KarrierePage() {
         ))}
       </ul>
 
-      <div className="mt-14 rounded-none border border-foreground/10 bg-slate-50/90 p-6 sm:p-8">
+      <div className="mt-14 rounded-sm border border-zinc-200 bg-slate-50/90 p-6 sm:p-8">
         <h2 className="text-lg font-bold text-foreground">
           Initiativbewerbung
         </h2>
@@ -84,7 +84,7 @@ export default function KarrierePage() {
         </p>
         <Link
           href="/kontakt?type=karriere#bewerbung"
-          className="mt-5 inline-flex h-11 items-center justify-center rounded-none bg-secondary px-5 text-sm font-bold text-secondary-foreground transition hover:bg-secondary/90"
+          className="mt-5 inline-flex h-11 items-center justify-center rounded-sm bg-secondary px-5 text-sm font-bold text-secondary-foreground transition hover:bg-secondary/90"
         >
           Jetzt Kontakt aufnehmen
         </Link>

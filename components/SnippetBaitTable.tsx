@@ -313,7 +313,7 @@ export function SnippetBaitTable({ slug }: Props) {
 
   return (
     <section
-      className="mt-10 overflow-x-auto rounded-none border border-foreground/10"
+      className="mt-10 overflow-x-auto rounded-sm border border-zinc-200"
       aria-labelledby={`snippet-table-${slug}`}
     >
       <h2 id={`snippet-table-${slug}`} className="sr-only">

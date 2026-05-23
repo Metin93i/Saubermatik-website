@@ -91,13 +91,13 @@ export default function GruenanlagenpflegePage() {
             <div className="mt-10 flex flex-wrap gap-4">
               <a
                 href="#kontakt-anfrage"
-                className="inline-flex h-12 items-center justify-center rounded-none bg-primary px-6 text-sm font-semibold text-primary-foreground transition hover:bg-primary/90"
+                className="inline-flex h-12 items-center justify-center rounded-sm bg-primary px-6 text-sm font-semibold text-primary-foreground transition hover:bg-primary/90"
               >
                 Grünanlagen-Angebot
               </a>
               <Link
                 href="/zielgruppen/hausverwaltungen"
-                className="inline-flex h-12 items-center justify-center rounded-none border border-foreground/15 px-6 text-sm font-semibold text-foreground transition hover:border-secondary/50 hover:bg-secondary/5"
+                className="inline-flex h-12 items-center justify-center rounded-sm border border-zinc-300 px-6 text-sm font-semibold text-foreground transition hover:border-secondary/50 hover:bg-secondary/5"
               >
                 Für Hausverwaltungen
               </Link>
@@ -146,7 +146,7 @@ export default function GruenanlagenpflegePage() {
             {seasons.map((block) => (
               <li
                 key={block.title}
-                className="rounded-none border border-foreground/10 bg-white p-6 "
+                className="rounded-sm border border-zinc-200 bg-white p-6 "
               >
                 <h3 className="text-lg font-bold text-foreground">
                   {block.title}

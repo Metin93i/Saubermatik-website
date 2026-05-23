@@ -43,13 +43,13 @@ export function B2BOnboardingProcess({ pagePath, className = "" }: Props) {
           </p>
         </div>
 
-        <div className="mt-12 overflow-x-auto border-2 border-zinc-800">
+        <div className="mt-12 overflow-x-auto rounded-sm border border-zinc-200">
           <table className="w-full min-w-[40rem] border-collapse text-left text-sm">
             <caption className="sr-only">
               B2B-Onboarding: vier Phasen im Überblick
             </caption>
             <thead>
-              <tr className="border-b-2 border-zinc-800 bg-zinc-950 text-zinc-100">
+              <tr className="border-b border-zinc-200 bg-zinc-950 text-zinc-100">
                 <th
                   scope="col"
                   className="w-16 px-4 py-3 text-xs font-bold uppercase tracking-widest"
@@ -84,7 +84,7 @@ export function B2BOnboardingProcess({ pagePath, className = "" }: Props) {
                   className="border-b border-zinc-300 bg-white last:border-b-0"
                 >
                   <td className="align-top px-4 py-5">
-                    <span className="inline-flex h-10 w-10 items-center justify-center border-2 border-zinc-800 bg-primary text-base font-black text-primary-foreground">
+                    <span className="inline-flex h-10 w-10 items-center justify-center rounded-sm bg-primary text-base font-black text-primary-foreground">
                       {step.position}
                     </span>
                   </td>
@@ -100,7 +100,7 @@ export function B2BOnboardingProcess({ pagePath, className = "" }: Props) {
                     {step.body}
                   </td>
                   <td className="align-top px-4 py-5">
-                    <p className="border border-zinc-800 bg-zinc-100 px-3 py-2 text-xs font-bold uppercase tracking-wide text-foreground">
+                    <p className="rounded-sm border border-zinc-200 bg-zinc-50 px-3 py-2 text-xs font-bold uppercase tracking-wide text-foreground">
                       {step.deliverable}
                     </p>
                   </td>
@@ -113,13 +113,13 @@ export function B2BOnboardingProcess({ pagePath, className = "" }: Props) {
         <div className="mt-10 flex flex-wrap gap-3">
           <Link
             href="/kontakt#kontakt-anfrage"
-            className="inline-flex h-11 items-center justify-center border-2 border-zinc-800 bg-primary px-5 text-sm font-bold text-primary-foreground transition hover:bg-primary/90"
+            className="inline-flex h-11 items-center justify-center rounded-sm bg-primary px-5 text-sm font-bold text-primary-foreground transition hover:bg-primary/90"
           >
             Onboarding starten
           </Link>
           <Link
             href="/qualitaetsmanagement"
-            className="inline-flex h-11 items-center justify-center border-2 border-zinc-800 bg-white px-5 text-sm font-bold text-foreground transition hover:bg-zinc-100"
+            className="inline-flex h-11 items-center justify-center rounded-sm border border-zinc-300 bg-white px-5 text-sm font-bold text-foreground transition hover:bg-zinc-100"
           >
             Qualitätsmanagement
           </Link>

@@ -15,7 +15,7 @@ export function KeyAccountManager({ className = "", showCta = true }: Props) {
 
   return (
     <section
-      className={`rounded-none border-2 border-zinc-800 bg-zinc-100 p-6 sm:p-8 ${className}`}
+      className={`rounded-sm border border-zinc-200 bg-zinc-100 p-6 sm:p-8 ${className}`}
       aria-labelledby="key-account-heading"
     >
       <script
@@ -53,14 +53,14 @@ export function KeyAccountManager({ className = "", showCta = true }: Props) {
         <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
           <Link
             href="/kontakt#kontakt-anfrage"
-            className="inline-flex h-11 items-center justify-center rounded-none border-2 border-zinc-800 bg-primary px-5 text-sm font-bold text-primary-foreground transition hover:bg-primary/90"
+            className="inline-flex h-11 items-center justify-center rounded-sm bg-primary px-5 text-sm font-bold text-primary-foreground transition hover:bg-primary/90"
           >
             Key Account anfragen
           </Link>
           {telHref ? (
             <a
               href={telHref}
-              className="inline-flex h-11 items-center justify-center rounded-none border-2 border-zinc-800 bg-white px-5 text-sm font-bold text-foreground transition hover:bg-zinc-100"
+              className="inline-flex h-11 items-center justify-center rounded-sm border border-zinc-300 bg-white px-5 text-sm font-bold text-foreground transition hover:bg-zinc-100"
             >
               Direkte Erreichbarkeit
             </a>

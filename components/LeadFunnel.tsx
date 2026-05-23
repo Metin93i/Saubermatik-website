@@ -80,13 +80,12 @@ function classNames(...parts: Array<string | false | undefined>) {
 }
 
 const choiceButtonClass =
-  "rounded-none border-2 border-zinc-800 bg-background px-4 py-3 text-left text-sm font-bold text-foreground transition hover:border-primary hover:bg-zinc-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary";
+  "rounded-sm border border-zinc-200 bg-background px-4 py-3 text-left text-sm font-bold text-foreground transition hover:border-primary hover:bg-zinc-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary";
 
 const serviceTileClass =
-  "flex min-h-[4.5rem] flex-col items-start justify-center gap-0.5 rounded-none border-2 border-zinc-800 bg-background px-2.5 py-2.5 text-left transition hover:border-primary hover:bg-zinc-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary sm:min-h-[5rem] sm:gap-1 sm:px-3 sm:py-3";
+  "flex min-h-[4.5rem] flex-col items-start justify-center gap-0.5 rounded-sm border border-zinc-200 bg-background px-2.5 py-2.5 text-left transition hover:border-primary hover:bg-zinc-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary sm:min-h-[5rem] sm:gap-1 sm:px-3 sm:py-3";
 
-const choiceButtonActiveClass =
-  "border-secondary bg-secondary/10 ring-2 ring-secondary/30";
+const choiceButtonActiveClass = "border-primary bg-primary/5";
 
 function SubmitSpinner() {
   return (
@@ -260,7 +259,7 @@ export function LeadFunnel({ className, initialServiceType }: LeadFunnelProps) {
     return (
       <section
         className={classNames(
-          "min-h-[26rem] rounded-none border-2 border-zinc-800 bg-white p-6 sm:min-h-[28rem] sm:p-8",
+          "min-h-[26rem] rounded-sm border border-zinc-300 bg-white p-6 sm:min-h-[28rem] sm:p-8",
           className,
         )}
         aria-live="polite"
@@ -277,7 +276,7 @@ export function LeadFunnel({ className, initialServiceType }: LeadFunnelProps) {
         </p>
         {!leadEmailSent ? (
           <div
-            className="mt-5 rounded-none border border-amber-200 bg-amber-50 px-4 py-3 text-sm leading-6 text-amber-950"
+            className="mt-5 rounded-sm border border-amber-200 bg-amber-50 px-4 py-3 text-sm leading-6 text-amber-950"
             role="status"
           >
             <p>
@@ -307,7 +306,7 @@ export function LeadFunnel({ className, initialServiceType }: LeadFunnelProps) {
   return (
     <section
       className={classNames(
-        "min-h-[26rem] rounded-none border-2 border-zinc-800 bg-white p-6 sm:min-h-[28rem] sm:p-8",
+        "min-h-[26rem] rounded-sm border border-zinc-300 bg-white p-6 sm:min-h-[28rem] sm:p-8",
         className,
       )}
       id="kontakt-anfrage"
@@ -422,7 +421,7 @@ export function LeadFunnel({ className, initialServiceType }: LeadFunnelProps) {
               <label className="block text-sm font-medium text-foreground">
                 Name
                 <input
-                  className="mt-1 w-full rounded-none border-2 border-zinc-800 bg-background px-3 py-2 text-sm outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/30"
+                  className="mt-1 w-full rounded-sm border border-zinc-300 bg-background px-3 py-2 text-sm outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/30"
                   name="name"
                   autoComplete="name"
                   value={name}
@@ -434,7 +433,7 @@ export function LeadFunnel({ className, initialServiceType }: LeadFunnelProps) {
               <label className="block text-sm font-medium text-foreground">
                 Firma (optional)
                 <input
-                  className="mt-1 w-full rounded-none border-2 border-zinc-800 bg-background px-3 py-2 text-sm outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/30"
+                  className="mt-1 w-full rounded-sm border border-zinc-300 bg-background px-3 py-2 text-sm outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/30"
                   name="company"
                   autoComplete="organization"
                   value={company}
@@ -445,7 +444,7 @@ export function LeadFunnel({ className, initialServiceType }: LeadFunnelProps) {
               <label className="block text-sm font-medium text-foreground">
                 E-Mail
                 <input
-                  className="mt-1 w-full rounded-none border-2 border-zinc-800 bg-background px-3 py-2 text-sm outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/30"
+                  className="mt-1 w-full rounded-sm border border-zinc-300 bg-background px-3 py-2 text-sm outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/30"
                   name="email"
                   type="email"
                   autoComplete="email"
@@ -459,7 +458,7 @@ export function LeadFunnel({ className, initialServiceType }: LeadFunnelProps) {
               <label className="block text-sm font-medium text-foreground">
                 Telefon
                 <input
-                  className="mt-1 w-full rounded-none border-2 border-zinc-800 bg-background px-3 py-2 text-sm outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/30"
+                  className="mt-1 w-full rounded-sm border border-zinc-300 bg-background px-3 py-2 text-sm outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/30"
                   name="phone"
                   type="tel"
                   autoComplete="tel"
@@ -475,7 +474,7 @@ export function LeadFunnel({ className, initialServiceType }: LeadFunnelProps) {
             <label className="block text-sm font-medium text-foreground">
               Zusätzliche Objekthinweise (optional)
               <textarea
-                className="mt-1 min-h-[5.5rem] w-full resize-y rounded-none border-2 border-zinc-800 bg-background px-3 py-2 text-sm outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/30"
+                className="mt-1 min-h-[5.5rem] w-full resize-y rounded-sm border border-zinc-300 bg-background px-3 py-2 text-sm outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/30"
                 name="objectNotes"
                 rows={3}
                 maxLength={2000}
@@ -509,7 +508,7 @@ export function LeadFunnel({ className, initialServiceType }: LeadFunnelProps) {
                 type="submit"
                 disabled={isLoading}
                 aria-label="Anfrage absenden"
-                className="inline-flex h-11 min-w-[10.5rem] items-center justify-center gap-2 rounded-none border-2 border-zinc-800 bg-primary px-5 text-sm font-bold text-primary-foreground transition hover:bg-primary/90 disabled:cursor-not-allowed disabled:opacity-60"
+                className="inline-flex h-11 min-w-[10.5rem] items-center justify-center gap-2 rounded-sm bg-primary px-5 text-sm font-bold text-primary-foreground transition hover:bg-primary/90 disabled:cursor-not-allowed disabled:opacity-60"
               >
                 {isLoading ? (
                   <>

@@ -21,7 +21,7 @@ const TOP_LOCATION_LINKS = [
 ] as const;
 
 const asideClass =
-  "mt-12 rounded-none border border-foreground/10 bg-secondary/5 px-4 py-5 sm:px-5";
+  "mt-12 rounded-sm border border-zinc-200 bg-secondary/5 px-4 py-5 sm:px-5";
 
 type Props = {
   /** Auf Leistungsseiten: verlinkt priorisierte Standort-Hubs. */

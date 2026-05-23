@@ -86,13 +86,13 @@ export default function HausmeisterservicePage() {
             <div className="mt-10 flex flex-wrap gap-4">
               <a
                 href="#kontakt-anfrage"
-                className="inline-flex h-12 items-center justify-center rounded-none bg-primary px-6 text-sm font-semibold text-primary-foreground transition hover:bg-primary/90"
+                className="inline-flex h-12 items-center justify-center rounded-sm bg-primary px-6 text-sm font-semibold text-primary-foreground transition hover:bg-primary/90"
               >
                 Objekt-Analyse anfordern
               </a>
               <Link
                 href="/zielgruppen/hausverwaltungen"
-                className="inline-flex h-12 items-center justify-center rounded-none border border-foreground/15 px-6 text-sm font-semibold text-foreground transition hover:border-secondary/50 hover:bg-secondary/5"
+                className="inline-flex h-12 items-center justify-center rounded-sm border border-zinc-300 px-6 text-sm font-semibold text-foreground transition hover:border-secondary/50 hover:bg-secondary/5"
               >
                 Für Hausverwaltungen
               </Link>
@@ -143,7 +143,7 @@ export default function HausmeisterservicePage() {
             {sops.map((item) => (
               <li
                 key={item.title}
-                className="flex flex-col rounded-none border border-foreground/10 bg-white p-6 "
+                className="flex flex-col rounded-sm border border-zinc-200 bg-white p-6 "
               >
                 <h3 className="text-lg font-semibold text-foreground">
                   {item.title}
@@ -155,7 +155,7 @@ export default function HausmeisterservicePage() {
             ))}
           </ul>
 
-          <div className="mt-16 rounded-none border border-secondary/25 bg-secondary/5 p-6 sm:p-8">
+          <div className="mt-16 rounded-sm border border-zinc-300/25 bg-secondary/5 p-6 sm:p-8">
             <h2 className="text-xl font-bold text-foreground">
               Kombination mit Reinigung &amp; Winterdienst
             </h2>

@@ -84,20 +84,20 @@ export default function Home() {
             <div className="mt-8 flex flex-wrap gap-3">
               <Link
                 href="/leistungen"
-                className="inline-flex h-11 items-center justify-center rounded-none border-2 border-zinc-800 bg-primary px-5 text-sm font-bold text-primary-foreground transition hover:bg-primary/90"
+                className="inline-flex h-11 items-center justify-center rounded-sm bg-primary px-5 text-sm font-bold text-primary-foreground transition hover:bg-primary/90"
               >
                 Leistungen ansehen
               </Link>
               <Link
                 href="#kontakt-anfrage"
-                className="inline-flex h-11 items-center justify-center rounded-none border-2 border-zinc-800 bg-white px-5 text-sm font-bold text-foreground transition hover:bg-zinc-100"
+                className="inline-flex h-11 items-center justify-center rounded-sm border border-zinc-300 bg-white px-5 text-sm font-bold text-foreground transition hover:bg-zinc-100"
               >
                 Direkt anfragen
               </Link>
             </div>
           </div>
           <div className="flex flex-col gap-6 lg:items-end">
-            <div className="relative aspect-[4/3] w-full max-w-xl overflow-hidden rounded-none border-2 border-zinc-800 lg:ml-auto">
+            <div className="relative aspect-[4/3] w-full max-w-xl overflow-hidden rounded-sm border border-zinc-200 lg:ml-auto">
               <GeoImage
                 src={imgOffice}
                 alt="Moderner Bürobereich – sauber und repräsentativ"
@@ -112,7 +112,7 @@ export default function Home() {
                 imageId="geo-hero-office-zollernalb"
               />
             </div>
-            <LeadFunnel className="w-full max-w-xl border-2 border-zinc-800 lg:ml-auto" />
+            <LeadFunnel className="w-full max-w-xl rounded-sm border border-zinc-200 lg:ml-auto" />
           </div>
         </div>
       </section>
@@ -150,7 +150,7 @@ export default function Home() {
             </p>
           </div>
           <ul className="mt-10 grid gap-6 sm:grid-cols-2">
-            <li className="flex min-h-[14rem] flex-col rounded-none border-2 border-zinc-800 bg-white p-6 sm:min-h-[15rem] sm:p-8">
+            <li className="flex min-h-[14rem] flex-col rounded-sm border border-zinc-300 bg-white p-6 sm:min-h-[15rem] sm:p-8">
               <h3 className="text-lg font-bold text-foreground sm:text-xl">
                 Digitale Protokolle
               </h3>
@@ -161,7 +161,7 @@ export default function Home() {
                 Kontrolle im Alltag.
               </p>
             </li>
-            <li className="flex min-h-[14rem] flex-col rounded-none border-2 border-zinc-800 bg-white p-6 sm:min-h-[15rem] sm:p-8">
+            <li className="flex min-h-[14rem] flex-col rounded-sm border border-zinc-300 bg-white p-6 sm:min-h-[15rem] sm:p-8">
               <h3 className="text-lg font-bold text-foreground sm:text-xl">
                 Ausfallsicherheit über die Plattform
               </h3>
@@ -201,7 +201,7 @@ export default function Home() {
               Menschen, die Ihr Objekt kennen oder es sich aneignen.
             </p>
           </div>
-          <div className="relative order-1 aspect-[5/4] overflow-hidden rounded-none border-2 border-zinc-800 lg:order-2">
+          <div className="relative order-1 aspect-[5/4] overflow-hidden rounded-sm border border-zinc-200 lg:order-2">
             <GeoImage
               src={imgHandshake}
               alt="B2B-Gespräch und Handschlag – partnerschaftliche Zusammenarbeit"
@@ -221,7 +221,7 @@ export default function Home() {
       <section className="border-y border-foreground/10 bg-slate-50/80 py-14">
         <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            <div className="relative aspect-[4/3] overflow-hidden rounded-none border-2 border-zinc-800">
+            <div className="relative aspect-[4/3] overflow-hidden rounded-sm border border-zinc-200">
               <Image
                 src={imgOffice}
                 alt="Moderne Bürowelt"
@@ -232,7 +232,7 @@ export default function Home() {
                 blurDataURL={REMOTE_IMAGE_BLUR_DATA_URL}
               />
             </div>
-            <div className="relative aspect-[4/3] overflow-hidden rounded-none border-2 border-zinc-800">
+            <div className="relative aspect-[4/3] overflow-hidden rounded-sm border border-zinc-200">
               <Image
                 src={imgCleaning}
                 alt="Professionelle Reinigung"
@@ -243,7 +243,7 @@ export default function Home() {
                 blurDataURL={REMOTE_IMAGE_BLUR_DATA_URL}
               />
             </div>
-            <div className="relative aspect-[4/3] overflow-hidden rounded-none border-2 border-zinc-800 sm:col-span-2 lg:col-span-1">
+            <div className="relative aspect-[4/3] overflow-hidden rounded-sm border border-zinc-200 sm:col-span-2 lg:col-span-1">
               <Image
                 src={imgFacade}
                 alt="Glasfassade eines Geschäftsgebäudes"
@@ -271,7 +271,7 @@ export default function Home() {
             {testimonials.map((t) => (
               <li
                 key={t.name}
-                className="flex min-h-[17rem] flex-col rounded-none border-2 border-zinc-800 bg-white p-6 sm:min-h-[18rem]"
+                className="flex min-h-[17rem] flex-col rounded-sm border border-zinc-300 bg-white p-6 sm:min-h-[18rem]"
               >
                 <p className="text-sm leading-6 text-foreground/90">
                   &ldquo;{t.quote}&rdquo;
@@ -306,7 +306,7 @@ export default function Home() {
               <li key={city}>
                 <Link
                   href={`/standorte/${city}`}
-                  className="group flex min-h-[9.5rem] flex-col rounded-none border-2 border-zinc-800 bg-white p-5 transition hover:border-primary hover:bg-zinc-100"
+                  className="group flex min-h-[9.5rem] flex-col rounded-sm border border-zinc-300 bg-white p-5 transition hover:border-primary hover:bg-zinc-100"
                 >
                   <span className="text-base font-semibold text-foreground group-hover:text-secondary">
                     {STANDORT_LABELS[city]}
