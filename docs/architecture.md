@@ -56,8 +56,9 @@ flowchart LR
 
 - **SSG:** `app/leistungen/[slug]/page.tsx` — `generateStaticParams` aus **`LEISTUNG_SLUGS`** (ohne dedizierte Routen: `unterhaltsreinigung`, `fenster-glasreinigung`, `hausmeisterservice`, `gruenanlagenpflege`). Rendert **`LeistungFaqJsonLd`**, **`LeistungSgeTldr`** (SGE-Kurzblock), **`BreadcrumbJsonLd`**, **`SeoCrossLinks`** (`type="location"`).
 - **SSG:** `app/leistungen/hausmeisterservice/page.tsx`, `app/leistungen/gruenanlagenpflege/page.tsx` — **Deep-Content-Landings** (500+ Wörter, eigene Hero-Bilder aus **`lib/config/leistung-images.ts`**).
-- **SSG:** `app/leistungen/unterhaltsreinigung/page.tsx` — **Unterhaltsreinigungs-Silo** (800+ Wörter): 4-Farb-System, DIN EN 13549, HACCP; **`EngagementCalculator`** mit `initialCategory="buero"`; **`B2BOnboardingProcess`**.
-- **SSG:** `app/leistungen/fenster-glasreinigung/page.tsx` — **Glasreinigungs-Silo** (800+ Wörter): Reinwasser-Osmose, Handwerk, TRBS 2121; Hero via **`GeoImage`**; **`EngagementCalculator`** mit `initialCategory="glas"`; Redirect **`/leistungen/glasreinigung`** → kanonische Route.
+- **SSG:** Alle **10 Leistungs-Slugs** aus **`lib/config/services.ts`** haben dedizierte Deep-Content-Routen unter `app/leistungen/[slug]/page.tsx` bzw. eigene Ordner – **`app/leistungen/[slug]/page.tsx`** (dynamisch) dient nur noch als Fallback (`notFound`).
+- **Deep-Content-Template:** **`components/LeistungDeepPage.tsx`** + **`lib/seo/leistung-deep-content.ts`** (6 Services); Unterhalt, Glas, Hausmeister, Grün manuell erweitert.
+- **Position-0-Tabellen:** **`components/SnippetBaitTable.tsx`** — Varianten pro Service (unterhalt, glas, treppenhaus, winterdienst, grundreinigung, fassade, entruempelung, sonstiges).
 - **SSG:** `app/zielgruppen/hausverwaltungen/page.tsx` — **B2B-Zielgruppen-Silo** (800+ Wörter) + **`Service`** JSON-LD (`lib/seo/hausverwaltungen-schema.ts`).
 - **SSG:** `app/standorte/[city]/page.tsx` — `generateStaticParams` aus **`STANDORT_CITIES`** (16 Städte). Optional **lokale Entity-Injektion** aus **`lib/seo/local-entities.ts`** (Kernstädte) + **`BreadcrumbJsonLd`** (mit Hub **`/standorte`**) + **`SeoCrossLinks`** (`type="service"`).
 - **SSG:** `app/standorte/page.tsx` — **Standort-Hub** (`/standorte`): Liste aller City-Spokes + Stuttgart-Spezial.

@@ -232,8 +232,10 @@ export default function UnterhaltsreinigungPage() {
                 <strong className="text-foreground">HACCP-Richtlinien</strong>:
                 grün codierte Textilien, definierte Reinigungssequenzen,
                 Desinfektionspunkte an Kontaktflächen und dokumentierte
-                Intervalle. Kein Lebensmittelkontakt ohne klare Trennung von
-                Sanitär- und Küchenlogik.
+                Intervalle. In Arztpraxen und Behandlungszonen gelten zusätzlich
+                RKI-konforme Verfahren und VAH-gelistete Flächendesinfektion –
+                nosokomiale Infektionen werden durch Prozess statt Improvisation
+                reduziert.
               </p>
               <p>
                 Parallel optimieren wir die{" "}

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { B2BOnboardingProcess } from "@/components/B2BOnboardingProcess";
 import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
 import { EngagementCalculator } from "@/components/EngagementCalculator";
 import { LeistungFaqJsonLd } from "@/components/LeistungFaqJsonLd";
@@ -187,9 +188,17 @@ export default function GruenanlagenpflegePage() {
           </div>
         </section>
 
+        <B2BOnboardingProcess
+          pagePath="/leistungen/gruenanlagenpflege"
+          className="border-t border-foreground/10 bg-slate-50/80 py-16 sm:py-20"
+        />
+
         <section className="border-t border-slate-200 bg-slate-50 py-16">
           <div className="mx-auto w-full max-w-xl px-4 sm:px-6 lg:px-8">
-            <EngagementCalculator funnelHref="#kontakt-anfrage" />
+            <EngagementCalculator
+              funnelHref="#kontakt-anfrage"
+              initialCategory="hausverwaltung"
+            />
           </div>
         </section>
 
@@ -199,7 +208,10 @@ export default function GruenanlagenpflegePage() {
           </div>
         </section>
 
-        <section className="border-t border-slate-200 bg-gradient-to-b from-slate-50 to-white py-16 sm:py-20">
+        <section
+          id="kontakt-anfrage"
+          className="border-t border-slate-200 bg-gradient-to-b from-slate-50 to-white py-16 sm:py-20"
+        >
           <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">
             <div className="mx-auto max-w-2xl text-center">
               <h2 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl">

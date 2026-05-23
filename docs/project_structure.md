@@ -44,8 +44,20 @@ app/
 │   │   └── page.tsx              Deep Content (SOPs, B2B)
 │   ├── gruenanlagenpflege/
 │   │   └── page.tsx              Deep Content (Jahresprogramm)
+│   ├── treppenhausreinigung/
+│   │   └── page.tsx              Deep Content (Verkehrssicherung, BetrKV)
+│   ├── winterdienst/
+│   │   └── page.tsx              Deep Content (Räum-/Streupflicht)
+│   ├── grundreinigung/
+│   │   └── page.tsx              Deep Content (VOB/C, DIN 18365)
+│   ├── fassadenreinigung/
+│   │   └── page.tsx              Deep Content (Werterhalt, TRBS)
+│   ├── entruempelung/
+│   │   └── page.tsx              Deep Content (Haushaltsauflösung)
+│   ├── sonstiges/
+│   │   └── page.tsx              Deep Content (Spezialprojekte)
 │   └── [slug]/
-│       └── page.tsx              Dynamische Leistungs-Detailseiten (SSG) + FAQ JSON-LD
+│       └── page.tsx              Fallback (notFound) – alle Services dediziert
 ├── zielgruppen/
 │   └── hausverwaltungen/
 │       └── page.tsx              B2B-Silo Hausverwaltungen + Service JSON-LD
@@ -75,6 +87,7 @@ components/
 ├── KontaktFormFallback.tsx      Suspense-Fallback (serverkompatibel)
 ├── KontaktFormSwitch.tsx       `useSearchParams` Weiche Lead/Karriere (`"use client"`)
 ├── LeadFunnel.tsx              Multi-Step Kunden-Funnel (`"use client"`)
+├── LeistungDeepPage.tsx          Deep-Content-Template (800+ Wörter, alle Module)
 ├── LeistungFaqJsonLd.tsx       FAQPage JSON-LD pro Leistungsspoke (Server)
 ├── LeistungSgeTldr.tsx         SGE-TL;DR-Zusammenfassung pro Leistungsspoke (Server)
 ├── MobileStickyCta.tsx         Mobile Schnellaktionen (Anruf / Angebot)
@@ -109,6 +122,8 @@ lib/
 │   ├── hausverwaltungen-schema.ts Service JSON-LD für Zielgruppen-Silo
 │   ├── global-jsonld.ts          `@graph` LocalBusiness + CleaningService + OfferCatalog
 │   ├── leistung-faq.ts           FAQ-Texte pro Leistungsspoke (FAQPage)
+│   ├── leistung-deep-content.ts  Deep-Dive-Copy (6 Leistungen, Config)
+│   ├── leistung-entity-facts.ts  TF-IDF-Entity-Absätze pro Leistung
 │   ├── leistung-sge-tldr.ts      SGE-TL;DR (Problem / Lösung / Zeitrahmen)
 │   ├── local-entities.ts         Programmatic Local Entities + Spin
 │   └── site-origin.ts            `getSiteOrigin()` für absolute JSON-LD-URLs

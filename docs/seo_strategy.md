@@ -118,6 +118,25 @@ Intent: **B2B-Gewerbe/Büro/Praxis**, transaktional + Compliance (Facility, Eink
 
 **Interne Verlinkung:** `/wissen/farbcode-system-hygiene`, `/qualitaetsmanagement`, Standort-Spokes.
 
+### 8e. Ultimate Service Sweep — alle Leistungen Deep Content
+
+Stand: **10/10 Services** mit dedizierter Deep-Content-Route (800+ Wörter, 3 Deep Dives, Snippet-Tabelle, volle Conversion-Module).
+
+| Route | TF-IDF-Schwerpunkt |
+|-------|-------------------|
+| `/leistungen/unterhaltsreinigung` | 4-Farb-System, DIN EN 13549, HACCP, RKI, VAH |
+| `/leistungen/fenster-glasreinigung` | Osmose, TRBS 2121, Carbon-Teleskopstangen |
+| `/leistungen/treppenhausreinigung` | Verkehrssicherungspflicht, § 2 BetrKV, Trittsicherheit |
+| `/leistungen/hausmeisterservice` | SOPs, Objektbetreuung |
+| `/leistungen/gruenanlagenpflege` | Jahresprogramm, § 2 BetrKV |
+| `/leistungen/winterdienst` | Räum-/Streupflicht, Wetterführung, Haftung |
+| `/leistungen/grundreinigung` | VOB/C, Bauabnahme, DIN 18365, Polymerdispersion |
+| `/leistungen/fassadenreinigung` | Werterhalt, TRBS 2121, Materialgerecht |
+| `/leistungen/entruempelung` | Besenreine Übergabe, Entsorgung |
+| `/leistungen/sonstiges` | Teppichreinigung, Praxis-Sonderdesinfektion, SLA |
+
+**Architektur:** Content-Config **`lib/seo/leistung-deep-content.ts`**, Template **`components/LeistungDeepPage.tsx`**; manuell gepflegte Seiten für Unterhalt, Glas, Hausmeister, Grün. **`SnippetBaitTable`** mit service-spezifischen Varianten (LV, Bauphasen, Winterplan, Spezial-LV).
+
 ### 9. AEO — Answer Engine Optimization
 
 - **`/llms.txt`** via **`app/llms.txt/route.ts`** + Generator **`lib/seo/llms-content.ts`**: maschinenlesbare USPs, Leistungen und Standorte für LLM-Crawler (ChatGPT, Perplexity).
