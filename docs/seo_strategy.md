@@ -101,6 +101,23 @@ Intent: **B2B-Gewerbe/Industrie**, transaktional + Expertise (Ausschreibung, Fac
 
 **SGE-Entitäten (organisch im Fließtext):** *entmineralisiertes Wasser, osmose-verfahren, carbon-teleskopstangen, fassaden-ergonomie, trbs 2121, glas-korrosion, rahmen- und falzreinigung, hubsteiger-verzicht, streifenfreie glanzgarantie.*
 
+### 8d. Deep Content Silo — Unterhaltsreinigung (`/leistungen/unterhaltsreinigung`)
+
+Intent: **B2B-Gewerbe/Büro/Praxis**, transaktional + Compliance (Facility, Einkauf, Geschäftsführung).
+
+| Block | Inhalt / TF-IDF-Entitäten |
+|-------|---------------------------|
+| Hero | Zertifizierte Unterhaltsreinigung, messbare Qualität, **100 % Ausfallsicherheit** |
+| Deep Dive 1 | **4-Farb-System**, **Kreuzkontamination**, Zonentrennung (Rot/Gelb/Blau/Grün) |
+| Deep Dive 2 | **DIN EN 13549**, **digitales Leistungsverzeichnis (LV)**, **Echtzeit-QM**, **SLA**, **Ausfallsicherheit** |
+| Deep Dive 3 | **HACCP-Richtlinien**, Teeküchen/Pausenräume, **Flächenleistung** |
+| Snippet | **`SnippetBaitTable`** (Variante `unterhalt`): LV täglich/wöchentlich/monatlich/quartalsweise |
+| Conversion | **`EngagementCalculator`** (`initialCategory="buero"`), **`B2BOnboardingProcess`**, **`LeadFunnel`** |
+
+**SGE-Entitäten:** *4-farb-system, kreuzkontamination, din en 13549, digitales leistungsverzeichnis, service level agreement, haccp-richtlinien, flächenleistung, ausfallsicherheit, echtzeit-qm.*
+
+**Interne Verlinkung:** `/wissen/farbcode-system`, `/qualitaetsmanagement`, Standort-Spokes.
+
 ### 9. AEO — Answer Engine Optimization
 
 - **`/llms.txt`** via **`app/llms.txt/route.ts`** + Generator **`lib/seo/llms-content.ts`**: maschinenlesbare USPs, Leistungen und Standorte für LLM-Crawler (ChatGPT, Perplexity).

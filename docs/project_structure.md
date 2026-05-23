@@ -37,7 +37,7 @@ app/
 ├── leistungen/
 │   ├── page.tsx                  Hub „Leistungen“
 │   ├── unterhaltsreinigung/
-│   │   └── page.tsx              Sonder-Landing (SEO, Deep Content)
+│   │   └── page.tsx              Deep Content (4-Farb-System, DIN EN 13549, HACCP)
 │   ├── fenster-glasreinigung/
 │   │   └── page.tsx              Deep Content Glas/Osmose/TRBS 2121 + GeoImage
 │   ├── hausmeisterservice/

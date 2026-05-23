@@ -4,14 +4,41 @@ type Variant = "unterhalt" | "glas" | "default";
 
 type Row = { gebaeudeart: string; intervall: string; fokus: string };
 
-const TABLES: Record<Variant, { caption: string; rows: Row[] }> = {
+type TableConfig = {
+  caption: string;
+  columns?: { col1: string; col2: string; col3: string };
+  rows: Row[];
+};
+
+const TABLES: Record<Variant, TableConfig> = {
   unterhalt: {
-    caption: "Reinigungsintervalle nach Gebäudeart (Unterhaltsreinigung)",
+    caption: "Typisches Leistungsverzeichnis (LV) für die Büroreinigung",
+    columns: {
+      col1: "Intervall",
+      col2: "Programm",
+      col3: "Leistungspositionen (LV)",
+    },
     rows: [
-      { gebaeudeart: "Büro / Verwaltung", intervall: "Täglich bis 3× wöchentlich", fokus: "Arbeitsplätze, Sanitär, Boden" },
-      { gebaeudeart: "Arztpraxis", intervall: "Täglich", fokus: "Wartezimmer, Behandlung, Desinfektion" },
-      { gebaeudeart: "Kanzlei", intervall: "Täglich bis 5× wöchentlich", fokus: "Diskretion, Eingang, Besprechung" },
-      { gebaeudeart: "Einzelhandel", intervall: "Täglich nach Ladenschluss", fokus: "Verkaufsfläche, Lager, WC" },
+      {
+        gebaeudeart: "Täglich",
+        intervall: "Kernprogramm",
+        fokus: "Müllentsorgung, Sanitäranlagen (Desinfektion), Teeküchen",
+      },
+      {
+        gebaeudeart: "Wöchentlich",
+        intervall: "Detailpflege",
+        fokus: "Griffspuren entfernen (Türen/Glas), Staubwischen (Tische, Bildschirme)",
+      },
+      {
+        gebaeudeart: "Monatlich",
+        intervall: "Tiefenpflege",
+        fokus: "Fußleisten, Heizkörper, Spinnweben-Entfernung",
+      },
+      {
+        gebaeudeart: "Quartalsweise",
+        intervall: "Intensivprogramm",
+        fokus: "Intensive Polster- und Teppichreinigung",
+      },
     ],
   },
   glas: {
@@ -61,7 +88,13 @@ type Props = { slug: LeistungSlug };
 
 /** Semantische HTML-Tabelle für Featured-Snippet / Position-0-Kandidaten. */
 export function SnippetBaitTable({ slug }: Props) {
-  const { caption, rows } = TABLES[variantForSlug(slug)];
+  const config = TABLES[variantForSlug(slug)];
+  const { caption, rows, columns } = config;
+  const headers = columns ?? {
+    col1: "Gebäudeart",
+    col2: "Typisches Intervall",
+    col3: "Schwerpunkt",
+  };
 
   return (
     <section
@@ -81,13 +114,13 @@ export function SnippetBaitTable({ slug }: Props) {
         <thead>
           <tr className="border-b border-foreground/10 bg-foreground/[0.03]">
             <th scope="col" className="px-4 py-3 font-semibold text-foreground">
-              Gebäudeart
+              {headers.col1}
             </th>
             <th scope="col" className="px-4 py-3 font-semibold text-foreground">
-              Typisches Intervall
+              {headers.col2}
             </th>
             <th scope="col" className="px-4 py-3 font-semibold text-foreground">
-              Schwerpunkt
+              {headers.col3}
             </th>
           </tr>
         </thead>

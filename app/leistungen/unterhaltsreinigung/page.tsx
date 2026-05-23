@@ -1,255 +1,354 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { B2BOnboardingProcess } from "@/components/B2BOnboardingProcess";
+import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
 import { EngagementCalculator } from "@/components/EngagementCalculator";
+import { LeistungFaqJsonLd } from "@/components/LeistungFaqJsonLd";
 import { LeistungHeroImage } from "@/components/LeistungHeroImage";
+import { LeistungSgeTldr } from "@/components/LeistungSgeTldr";
 import { LeadFunnel } from "@/components/LeadFunnel";
+import { SeoCrossLinks } from "@/components/SeoCrossLinks";
 import { SnippetBaitTable } from "@/components/SnippetBaitTable";
 
+const SLUG = "unterhaltsreinigung" as const;
+
 export const metadata: Metadata = {
-  title: {
-    absolute:
-      "Unterhaltsreinigung & Büroreinigung | Saubermatik Zollernalb",
-  },
+  title: "Unterhaltsreinigung & Büroreinigung Gewerbe",
   description:
-    "Zuverlässige Unterhaltsreinigung für Büros, Kanzleien und Arztpraxen in Meßstetten, Balingen und Tuttlingen. 100% Ausfallsicherheit.",
-  alternates: {
-    canonical: "/leistungen/unterhaltsreinigung",
-  },
+    "Zertifizierte Unterhaltsreinigung für Gewerbe und Büros: 4-Farb-System, DIN EN 13549, digitales LV, HACCP, Echtzeit-QM und 100% Ausfallsicherheit in der Zollernalb.",
+  alternates: { canonical: "/leistungen/unterhaltsreinigung" },
 };
 
-const checklist = [
+const colorSystem = [
   {
-    title: "Arbeitsplätze & Büroflächen",
-            text: "Staubfreie Oberflächen, hygienische Schreibtischzonen, versiegelte Böden pflegen wir intervallbasiert – ohne Ihre Abläufe zu stören.",
+    color: "Rot",
+    zone: "Sanitäranlagen & WC",
+    text: "Höchste Hygienestufe – keine Vermischung mit anderen Zonen.",
   },
   {
-    title: "Sanitäranlagen & WC",
-    text: "Desinfektion nach Plan, Nachfüllen der Verbrauchsmaterialien, streifenfreie Spiegel: Ihre Gäste und Teams merken den Unterschied sofort.",
+    color: "Gelb",
+    zone: "Waschbecken & Lavabos",
+    text: "Getrennt von Sanitär und Küche, um Keimübertragung zu verhindern.",
   },
   {
-    title: "Müll & Entsorgungslogistik",
-    text: "Sortenreine Behälter, termingerechte Leerung, dokumentierte Touren – weniger Koordinationsaufwand für Ihre Facility-Verantwortlichen.",
+    color: "Blau",
+    zone: "Inventar & Arbeitsflächen",
+    text: "Schreibtische, Regale, Türgriffe – der Büro-Kern ohne Küchenkontakt.",
   },
   {
-    title: "Bodenpflege (Einscheiben / Saugen / Feuchtwischen)",
-    text: "Materialgerechte Intervalle statt „Einmal alles“. So bleiben Oberflächen länger wertstabil und wirken repräsentativ.",
+    color: "Grün",
+    zone: "Teeküchen & Pausenräume",
+    text: "HACCP-orientiert: Lebensmittelnähe nur mit grün codierten Textilien.",
   },
-  {
-    title: "Teeküchen & Gemeinschaftsflächen",
-    text: "Kaffeeflecken, Kühlschrank-Fronten, Spülen: Details, die anekdotisch nerven – bei uns sind sie Teil des Standards, nicht der Ausnahme.",
-  },
-];
+] as const;
 
 export default function UnterhaltsreinigungPage() {
   return (
-    <div className="flex flex-1 flex-col bg-white">
-      <section className="border-b border-slate-200/80 bg-gradient-to-b from-slate-50 via-white to-white">
-        <div className="mx-auto w-full max-w-6xl px-4 py-14 sm:px-6 sm:py-20 lg:px-8">
-          <nav className="text-sm font-semibold text-secondary">
-            <Link href="/leistungen" className="hover:underline">
-              Leistungen
-            </Link>
-            <span className="text-muted"> / </span>
-            <span className="text-muted">Unterhaltsreinigung</span>
-          </nav>
-          <h1 className="mt-6 max-w-4xl text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-[2.5rem] lg:leading-[1.15]">
-            Professionelle Unterhaltsreinigung für Gewerbe &amp; Praxen in der
-            Region Zollernalb.
-          </h1>
-          <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-600 sm:text-xl sm:leading-9">
-            Wir sorgen für makellose Hygiene, die Ihre Mitarbeiter motiviert und
-            Kunden beeindruckt. Ohne Ausfälle, ohne Kompromisse.
-          </p>
-          <LeistungHeroImage
-            slug="unterhaltsreinigung"
-            priority
-            className="mt-10 max-w-4xl"
-          />
-          <div className="mt-10 flex flex-wrap gap-4">
-            <a
-              href="#kontakt-anfrage"
-              className="inline-flex h-12 items-center justify-center rounded-xl bg-primary px-6 text-sm font-semibold text-primary-foreground shadow-md transition hover:bg-primary/90"
-            >
-              Jetzt Objekt-Analyse anfordern
-            </a>
-            <Link
-              href="/leistungen"
-              className="inline-flex h-12 items-center justify-center rounded-xl border border-slate-200 bg-white px-6 text-sm font-semibold text-foreground transition hover:border-secondary/40 hover:bg-slate-50"
-            >
-              Alle Leistungen
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      <section className="mx-auto w-full max-w-6xl px-4 py-16 sm:px-6 lg:px-8">
-        <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
-          <div>
-            <h2 className="text-sm font-bold uppercase tracking-wider text-secondary">
-              Problem
-            </h2>
-            <p className="mt-3 text-2xl font-bold tracking-tight text-foreground">
-              Wenn Reinigung zur Zufallsvariable wird, leidet Ihr Betrieb.
+    <>
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Startseite", path: "/" },
+          { name: "Leistungen", path: "/leistungen" },
+          {
+            name: "Unterhaltsreinigung",
+            path: "/leistungen/unterhaltsreinigung",
+          },
+        ]}
+      />
+      <LeistungFaqJsonLd slug={SLUG} />
+      <div className="flex flex-1 flex-col bg-white">
+        <section className="border-b border-slate-200/80 bg-gradient-to-b from-slate-50 via-white to-white">
+          <div className="mx-auto w-full max-w-6xl px-4 py-14 sm:px-6 sm:py-20 lg:px-8">
+            <nav className="text-sm font-semibold text-secondary">
+              <Link href="/leistungen" className="hover:underline">
+                Leistungen
+              </Link>
+              <span className="text-muted"> / </span>
+              <span className="text-muted">Unterhaltsreinigung</span>
+            </nav>
+            <h1 className="mt-6 max-w-4xl text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-[2.5rem] lg:leading-tight">
+              Zertifizierte Unterhaltsreinigung für Gewerbe und Büros. Maximale
+              Hygiene, messbare Qualität und 100&nbsp;% Ausfallsicherheit.
+            </h1>
+            <p className="mt-6 max-w-3xl text-lg leading-8 text-muted">
+              Saubermatik liefert Unterhaltsreinigung als Prozesssystem – nicht
+              als Stundenkontingent. Mit 4-Farb-Hygiene, digitalem
+              Leistungsverzeichnis und Echtzeit-QM für Facility Manager in der
+              Zollernalb und angrenzenden Regionen.
             </p>
-            <ul className="mt-6 space-y-4 text-base leading-7 text-slate-600">
+            <LeistungHeroImage
+              slug={SLUG}
+              priority
+              className="mt-10 max-w-4xl"
+            />
+            <div className="mt-10 flex flex-wrap gap-4">
+              <a
+                href="#kontakt-anfrage"
+                className="inline-flex h-12 items-center justify-center rounded-xl bg-primary px-6 text-sm font-semibold text-primary-foreground shadow-md transition hover:bg-primary/90"
+              >
+                Objekt-Analyse anfordern
+              </a>
+              <Link
+                href="/qualitaetsmanagement"
+                className="inline-flex h-12 items-center justify-center rounded-xl border border-foreground/15 px-6 text-sm font-semibold text-foreground transition hover:border-secondary/50 hover:bg-secondary/5"
+              >
+                Qualitätsmanagement
+              </Link>
+            </div>
+          </div>
+        </section>
+
+        <section className="mx-auto w-full max-w-6xl px-4 py-16 sm:px-6 lg:px-8">
+          <LeistungSgeTldr slug={SLUG} />
+
+          <div className="mt-12 space-y-6 text-base leading-[1.75] text-foreground/90">
+            <p>
+              Unterhaltsreinigung ist für B2B-Kunden kein Kosmetikposten – sie
+              ist Betriebsinfrastruktur. Schlechte Hygiene in Sanitäranlagen,
+              Kreuzkontamination zwischen Küche und WC oder undokumentierte
+              Ausfälle treffen direkt auf Produktivität, Mitarbeiterbindung und
+              Audit-Fähigkeit. Geschäftsführung und Facility Management brauchen
+              deshalb einen Partner, der Prozesse definiert, misst und bei
+              Störungen sofort reagiert – nicht einen Anbieter, der „irgendwann
+              vorbeikommt“.
+            </p>
+            <p>
+              Saubermatik positioniert Unterhaltsreinigung als
+              Service Level Agreement (SLA) mit messbarer{" "}
+              <strong className="text-foreground">Flächenleistung</strong>,
+              klarer Zonenlogik und digitaler Nachweisführung. Ihr Vorteil:
+              weniger Reklamationen, weniger interne Koordination, volle
+              Verteidigbarkeit gegenüber Eigentümern, ISO-Auditoren und
+              Betriebsräten.
+            </p>
+          </div>
+
+          <article className="mt-16 space-y-8">
+            <h2 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
+              Deep Dive 1: Hygiene &amp; Kreuzkontamination (Das 4-Farb-System)
+            </h2>
+            <div className="space-y-5 text-base leading-[1.75] text-foreground/90">
+              <p>
+                Der häufigste Fehler in der Büroreinigung ist unsichtbar:
+                dieselbe Mikrofaser, die zuerst ein WC und danach eine
+                Teeküche wischt, transportiert Keime quer durchs Gebäude –{" "}
+                <strong className="text-foreground">Kreuzkontamination</strong>{" "}
+                in Reinform. Für Praxen, Kanzleien und Produktionsbüros ist das
+                kein Detail, sondern ein Hygiene- und Haftungsthema.
+              </p>
+              <p>
+                Saubermatik setzt deshalb konsequent auf das{" "}
+                <strong className="text-foreground">4-Farb-System</strong>:
+                Jede Zone erhält ausschließlich farbcodierte Textilien und
+                Eimer – physisch getrennt, in der App dokumentiert, in der
+                Einweisung verpflichtend. Rot bleibt in Sanitäranlagen, Gelb
+                an Waschbecken, Blau am Inventar, Grün in Teeküchen und
+                Pausenbereichen. Keine Ausnahmen, keine „schnell mal mit
+                derselben Faser“-Improvisation.
+              </p>
+            </div>
+            <ul className="mt-8 grid gap-4 sm:grid-cols-2">
+              {colorSystem.map((item) => (
+                <li
+                  key={item.color}
+                  className="rounded-2xl border border-foreground/10 bg-white p-5 shadow-sm"
+                >
+                  <span className="inline-flex rounded-full bg-secondary/15 px-3 py-1 text-xs font-bold text-secondary">
+                    {item.color}
+                  </span>
+                  <h3 className="mt-3 font-semibold text-foreground">
+                    {item.zone}
+                  </h3>
+                  <p className="mt-2 text-sm leading-6 text-muted">
+                    {item.text}
+                  </p>
+                </li>
+              ))}
+            </ul>
+            <p className="text-base leading-[1.75] text-foreground/90">
+              Das System ist bewusst einfach – deshalb durchsetzbar. Neue
+              Kräfte verstehen es in Minuten; Ihr Facility Manager kann es in
+              Begehungen sofort prüfen. Mehr Tiefe finden Sie in unserem{" "}
+              <Link
+                href="/wissen/farbcode-system-hygiene"
+                className="font-semibold text-secondary hover:underline"
+              >
+                Lexikon-Artikel zum Farbcode-System
+              </Link>
+              .
+            </p>
+          </article>
+
+          <article className="mt-16 space-y-8">
+            <h2 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
+              Deep Dive 2: Digitale Qualitätssicherung (DIN EN 13549)
+            </h2>
+            <div className="space-y-5 text-base leading-[1.75] text-foreground/90">
+              <p>
+                Papier-Checklisten sind tot – zumindest dort, wo Qualität
+                nachweisbar sein muss. Die europäische Norm{" "}
+                <strong className="text-foreground">DIN EN 13549</strong>{" "}
+                definiert Anforderungen an die Qualitätsmessung von
+                Reinigungsleistungen. Saubermatik übersetzt das in die Praxis:
+                Jedes Objekt erhält ein{" "}
+                <strong className="text-foreground">
+                  digitales Leistungsverzeichnis (LV)
+                </strong>
+                , das unsere Teams in der Saubermatik-App Punkt für Punkt
+                abhaken – mit Zeitstempel, Mitarbeiter-ID und optionalen Fotos
+                bei Abweichungen.
+              </p>
+              <p>
+                Für Sie als Facility Manager bedeutet das{" "}
+                <strong className="text-foreground">Echtzeit-QM</strong>: Sie
+                sehen, welche Positionen erledigt wurden, wo Nacharbeit nötig
+                war und ob das vereinbarte SLA eingehalten wurde – ohne
+                Telefonkette, ohne Excel-Export am Monatsende. Das ist
+                Transparenz auf C-Level-Niveau: messbar, auditierbar,
+                verhandlungsfest bei Vertragsverlängerungen.
+              </p>
+              <p>
+                Kombiniert mit unserer{" "}
+                <strong className="text-foreground">Ausfallsicherheit</strong>{" "}
+                reagiert die Plattform auf Krankheits- oder Personalengpässe in
+                Echtzeit – Ersatzkräfte, Tourenumplanung, Eskalation an den Key
+                Account. Ihr Betrieb merkt den Ausfall nicht; Ihre KPIs bleiben
+                stabil. Genau das unterscheidet Reinigung 4.0 von
+                Subunternehmer-Chaos.
+              </p>
+            </div>
+          </article>
+
+          <article className="mt-16 space-y-8">
+            <h2 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
+              Deep Dive 3: Effizienz &amp; HACCP in Aufenthaltsräumen
+            </h2>
+            <div className="space-y-5 text-base leading-[1.75] text-foreground/90">
+              <p>
+                Teeküchen, Kaffeemaschinen und Pausenräume sind die sozialen
+                Herzstücke jedes Büros – und gleichzeitig Hotspots für
+                Lebensmittelkontamination, wenn Reinigung unsystematisch läuft.
+                Saubermatik behandelt diese Zonen nach{" "}
+                <strong className="text-foreground">HACCP-Richtlinien</strong>:
+                grün codierte Textilien, definierte Reinigungssequenzen,
+                Desinfektionspunkte an Kontaktflächen und dokumentierte
+                Intervalle. Kein Lebensmittelkontakt ohne klare Trennung von
+                Sanitär- und Küchenlogik.
+              </p>
+              <p>
+                Parallel optimieren wir die{" "}
+                <strong className="text-foreground">Flächenleistung</strong>:
+                Touren werden so geplant, dass Ihr Tagesgeschäft null
+                gestört wird – abends, früh morgens oder in definierten
+                Fenstern zwischen Schichten. Materialgerechte Bodenpflege,
+                staubarmes Wischen an Bildschirmzonen und leise Geräte in
+                Kanzleietagen sind Standard, keine Sonderwünsche. Das senkt
+                interne Beschwerden und hält die vereinbarte
+                Flächenleistung im SLA ohne Überstunden-Debatten.
+              </p>
+              <p>
+                Ob{" "}
+                <Link
+                  href="/standorte/balingen"
+                  className="font-semibold text-secondary hover:underline"
+                >
+                  Balingen
+                </Link>
+                ,{" "}
+                <Link
+                  href="/standorte/tuttlingen"
+                  className="font-semibold text-secondary hover:underline"
+                >
+                  Tuttlingen
+                </Link>{" "}
+                oder{" "}
+                <Link
+                  href="/standorte/stuttgart"
+                  className="font-semibold text-secondary hover:underline"
+                >
+                  Stuttgart
+                </Link>
+                – das Prozessmodell bleibt identisch; nur Objekt-LV und
+                Intervalle werden im Onboarding angepasst.
+              </p>
+            </div>
+          </article>
+
+          <div className="mt-16 rounded-2xl border border-secondary/25 bg-secondary/5 p-6 sm:p-8">
+            <h2 className="text-xl font-bold text-foreground">
+              Ihr Vorteil auf einen Blick
+            </h2>
+            <ul className="mt-4 list-inside list-disc space-y-2 text-sm leading-7 text-muted">
               <li>
-                <span className="font-semibold text-foreground">
-                  Wechselnde Gesichter:
-                </span>{" "}
-                Jedes Mal neue Ansprechpartner, jedes Mal andere Standards. Das
-                kostet Managementzeit, die Sie woanders brauchen.
+                4-Farb-System gegen Kreuzkontamination – auditfest und
+                alltagstauglich
               </li>
               <li>
-                <span className="font-semibold text-foreground">
-                  Unzuverlässige Zeitfenster:
-                </span>{" "}
-                Wenn Teams zu spät kommen oder ausfallen, steht Ihre Rezeption
-                oder Produktion – nicht unsere Ausrede.
+                Digitales LV + DIN EN 13549-orientiertes Echtzeit-QM in der App
               </li>
               <li>
-                <span className="font-semibold text-foreground">
-                  Kommunikationslücken:
-                </span>{" "}
-                Ohne klare Eskalationswege bleiben Mängel liegen, bis sie
-                sichtbar werden. In Kanzleien und Praxen ist das ein
-                Reputationsrisiko.
+                HACCP in Teeküchen und Pausenräumen, optimierte Flächenleistung
+              </li>
+              <li>
+                SLA mit 100&nbsp;% Ausfallsicherheit und festem Ansprechpartner
               </li>
             </ul>
           </div>
-          <div className="rounded-2xl border border-slate-200 bg-slate-50/80 p-8 shadow-sm">
-            <h2 className="text-sm font-bold uppercase tracking-wider text-secondary">
-              Lösung
+        </section>
+
+        <section className="border-t border-slate-200 bg-white py-16">
+          <div className="mx-auto w-full max-w-3xl px-4 sm:px-6 lg:px-8">
+            <h2 className="text-2xl font-bold tracking-tight text-foreground">
+              Leistungsverzeichnis (LV) – typische Büroreinigung
             </h2>
-            <p className="mt-3 text-2xl font-bold tracking-tight text-foreground">
-              Der SaaS-Vorteil für Ihr Objekt: digitale Objektsteuerung.
+            <p className="mt-3 text-sm leading-6 text-muted">
+              Strukturierte Orientierung für Einkauf und Facility – im
+              Onboarding wird daraus Ihr verbindliches, digitales LV.
             </p>
-            <p className="mt-4 text-base leading-7 text-slate-700">
-              Bei Saubermatik wird nichts dem Zufall überlassen. Unsere Teams
-              werden per App gesteuert. Fällt jemand aus, reagiert das System in
-              Echtzeit. Sie haben immer 100&nbsp;% Leistung – planbar,
-              dokumentierbar, skalierbar.
-            </p>
-            <p className="mt-4 text-base leading-7 text-slate-700">
-              Das ist keine Software, die Sie kaufen müssen. Es ist die
-              Betriebslogik dahinter: klare Checklisten, SLA-basierte Touren und
-              ein Ansprechpartner, der die KPIs Ihrer Sauberkeit mitverantwortet.
-            </p>
+            <SnippetBaitTable slug={SLUG} />
           </div>
-        </div>
-      </section>
+        </section>
 
-      <section className="border-y border-slate-200 bg-slate-50/50 py-16">
-        <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-center text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
-            Was wir konkret für Sie erledigen
-          </h2>
-          <p className="mx-auto mt-3 max-w-2xl text-center text-base text-slate-600">
-            Unterhaltsreinigung ist Operationsarbeit. Hier ist der Kernkatalog,
-            den wir für Gewerbeobjekte und Praxen in der Zollernalb typischerweise
-            abdecken – abgestimmt auf Ihre Frequenz und Ihre Flächenlogistik.
-          </p>
-          <ul className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {checklist.map((item) => (
-              <li
-                key={item.title}
-                className="flex flex-col rounded-2xl border border-white bg-white p-6 shadow-sm"
-              >
-                <span
-                  className="flex h-9 w-9 items-center justify-center rounded-lg bg-secondary/15 text-secondary"
-                  aria-hidden
-                >
-                  <svg
-                    className="h-5 w-5"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    strokeWidth={2}
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M5 13l4 4L19 7"
-                    />
-                  </svg>
-                </span>
-                <h3 className="mt-4 text-lg font-semibold text-foreground">
-                  {item.title}
-                </h3>
-                <p className="mt-2 text-sm leading-6 text-slate-600">
-                  {item.text}
-                </p>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section>
+        <B2BOnboardingProcess
+          pagePath="/leistungen/unterhaltsreinigung"
+          className="border-t border-foreground/10 bg-slate-50/80 py-16 sm:py-20"
+        />
 
-      <section className="mx-auto w-full max-w-6xl px-4 py-16 sm:px-6 lg:px-8">
-        <h2 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
-          Vertrauen, den Sie intern verteidigen können
-        </h2>
-        <div className="mt-10 grid gap-8 sm:grid-cols-3">
-          <div className="rounded-2xl border border-slate-200 p-6">
-            <h3 className="text-lg font-semibold text-foreground">
-              Feste Ansprechpartner
-            </h3>
-            <p className="mt-2 text-sm leading-6 text-slate-600">
-              Sie wissen immer, wen Sie anrufen. Kein anonymes Callcenter, kein
-              endloses Weiterleiten – sondern Verantwortung mit Namen.
-            </p>
+        <section className="border-t border-slate-200 bg-white py-16">
+          <div className="mx-auto w-full max-w-xl px-4 sm:px-6 lg:px-8">
+            <EngagementCalculator
+              funnelHref="#kontakt-anfrage"
+              initialCategory="buero"
+            />
           </div>
-          <div className="rounded-2xl border border-slate-200 p-6">
-            <h3 className="text-lg font-semibold text-foreground">
-              Geschultes Personal
-            </h3>
-            <p className="mt-2 text-sm leading-6 text-slate-600">
-              Standards statt Improvisation: Einweisung auf Ihr Objekt,
-              Materialkompetenz und Arbeitsschutz sind Pflicht, keine
-              „Nice-to-have“-Liste.
-            </p>
-          </div>
-          <div className="rounded-2xl border border-slate-200 p-6">
-            <h3 className="text-lg font-semibold text-foreground">
-              Diskretion &amp; Sensibilität
-            </h3>
-            <p className="mt-2 text-sm leading-6 text-slate-600">
-              Kanzleien, Arztpraxen, Steuerberater: Wir behandeln Räume und
-              Informationen so, wie Sie es von einem B2B-Partner erwarten – nicht
-              wie von einem anonymen Nebenjob-Pool.
-            </p>
-          </div>
-        </div>
-      </section>
+        </section>
 
-      <section className="border-t border-slate-200 bg-white py-16">
-        <div className="mx-auto w-full max-w-3xl px-4 sm:px-6 lg:px-8">
-          <SnippetBaitTable slug="unterhaltsreinigung" />
-        </div>
-      </section>
-
-      <section className="border-t border-slate-200 bg-slate-50 py-16">
-        <div className="mx-auto w-full max-w-xl px-4 sm:px-6 lg:px-8">
-          <EngagementCalculator funnelHref="#kontakt-anfrage" />
-        </div>
-      </section>
-
-      <section className="border-t border-slate-200 bg-gradient-to-b from-slate-50 to-white py-16 sm:py-20">
-        <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">
-          <div className="mx-auto max-w-2xl text-center">
-            <h2 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
-              Objekt-Analyse anfordern
-            </h2>
-            <p className="mt-3 text-base leading-7 text-slate-600">
-              Drei kurze Fragen zu Fläche und Start – dann Ihre Kontaktdaten.
-              Wir melden uns mit einem klaren Vorschlag, der zu Ihrem Betrieb
-              passt.
-            </p>
+        <section className="border-t border-slate-200 py-12">
+          <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+            <SeoCrossLinks type="location" />
           </div>
-          <div className="mx-auto mt-10 max-w-xl">
-            <LeadFunnel initialServiceType="unterhaltsreinigung" />
+        </section>
+
+        <section
+          id="kontakt-anfrage"
+          className="border-t border-slate-200 bg-gradient-to-b from-slate-50 to-white py-16 sm:py-20"
+        >
+          <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">
+            <div className="mx-auto max-w-2xl text-center">
+              <h2 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
+                Unterhaltsreinigung anfragen
+              </h2>
+              <p className="mt-3 text-base leading-7 text-muted">
+                Fläche, Intervalle, sensible Zonen – wir erstellen ein
+                SLA-fähiges Angebot nach Objektbegehung.
+              </p>
+            </div>
+            <div className="mx-auto mt-10 max-w-xl">
+              <LeadFunnel initialServiceType="unterhaltsreinigung" />
+            </div>
           </div>
-        </div>
-      </section>
-    </div>
+        </section>
+      </div>
+    </>
   );
 }

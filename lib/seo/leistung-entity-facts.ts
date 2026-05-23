@@ -5,8 +5,8 @@ export const LEISTUNG_ENTITY_FACTS: Partial<
   Record<LeistungSlug, readonly string[]>
 > = {
   unterhaltsreinigung: [
-    "Unsere Prozesse orientieren sich an ISO 9001 (Qualitätsmanagement): dokumentierte Arbeitsanweisungen, wiederkehrende Prüfpunkte und messbare Korrekturzyklen – nicht nur ein Versprechen auf der Visitenkarte.",
-    "Wir setzen auf umweltfreundliche Tenside und materialgerechte Pflegemittel, abgestimmt auf Bodenbeläge und Hygienezonen. Wo erforderlich, ergänzen wir Intervalle nach DIN-orientierten Sauberkeitsanforderungen für Büro, Praxis und Gewerbe.",
+    "4-Farb-System gegen Kreuzkontamination: Rot (Sanitär), Gelb (Waschbecken), Blau (Inventar), Grün (Teeküchen) – physisch getrennte Textilien in jedem Objekt.",
+    "Digitales Leistungsverzeichnis (LV) in der Saubermatik-App, DIN EN 13549-orientiertes Echtzeit-QM, SLA mit Ausfallsicherheit und optimierter Flächenleistung; Teeküchen nach HACCP-Richtlinien.",
   ],
   "fenster-glasreinigung": [
     "Reinwasser-Osmose mit entmineralisiertem Wasser, Carbon-Teleskopstangen (bis ca. 20 m) und Hubsteiger-Verzicht an vielen Objekten – streifenfreie Glanzgarantie ohne aggressive Chemie.",
