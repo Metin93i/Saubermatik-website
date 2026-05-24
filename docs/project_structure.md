@@ -97,7 +97,7 @@ components/
 ├── BreadcrumbJsonLd.tsx          BreadcrumbList JSON-LD (tiefes Routing)
 ├── CareerForm.tsx                Bewerber-Formular (`"use client"`) → `/api/career`
 ├── EngagementCalculator.tsx      3-Schritt-Kostenrechner (`"use client"`)
-├── HeroQuickSearch.tsx           B2B Quick-Search Startseite (`"use client"`) → App-Router (`/standorte/[city]/[service]`, …)
+├── JobListings.tsx               SaaS-Stellenportal (`GET /jobs/public`, Client)
 ├── MatrixDeepPage.tsx            Matrix Deep-Content-Template (800+ Wörter, Calculator, Funnel)
 ├── KontaktFormFallback.tsx      Suspense-Fallback (serverkompatibel)
 ├── KontaktFormSwitch.tsx       `useSearchParams` Weiche Lead/Karriere (`"use client"`)
@@ -130,6 +130,8 @@ lib/
 │   └── site.ts                   Firmenadresse, OSM-Embed (Single Source)
 ├── hero/
 │   └── quick-search.ts           16 Städte + `resolveQuickSearchRoute` (Matrix/Standort/Leistung)
+├── jobs/
+│   └── public-jobs.ts            Typen & Parser für `GET /jobs/public`
 ├── image-blur.ts                 blurDataURL für `next/image` (Remote)
 ├── lead/
 │   ├── email.ts                  HTML-Mail Lead inkl. optionaler Objekthinweise

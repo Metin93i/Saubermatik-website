@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { JobListings } from "@/components/JobListings";
 import { REMOTE_IMAGE_BLUR_DATA_URL } from "@/lib/image-blur";
 
 const imgKarriere =
@@ -34,7 +35,7 @@ const benefits = [
 
 export default function KarrierePage() {
   return (
-    <article className="mx-auto w-full max-w-3xl flex-1 px-4 py-12 sm:px-6 lg:px-8">
+    <article className="mx-auto w-full max-w-5xl flex-1 px-4 py-12 sm:px-6 lg:px-8">
       <p className="text-sm font-semibold text-secondary">Karriere</p>
       <h1 className="mt-3 text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
         Werden Sie Teil eines Teams, das digital denkt und handwerklich liefert.
@@ -57,6 +58,22 @@ export default function KarrierePage() {
           blurDataURL={REMOTE_IMAGE_BLUR_DATA_URL}
         />
       </div>
+
+      <section className="mt-12" aria-labelledby="offene-stellen-heading">
+        <h2
+          id="offene-stellen-heading"
+          className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl"
+        >
+          Offene Stellen
+        </h2>
+        <p className="mt-2 text-sm leading-6 text-muted sm:text-base">
+          Aktuelle Positionen aus unserem Stellenportal — direkt bewerben per
+          E-Mail oder über das Formular unten.
+        </p>
+        <div className="mt-6">
+          <JobListings />
+        </div>
+      </section>
 
       <ul className="mt-12 grid gap-6 sm:grid-cols-2">
         {benefits.map((b) => (
