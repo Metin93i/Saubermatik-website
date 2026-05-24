@@ -9,8 +9,6 @@ export const KAM_PROFILE = {
     "Spezialisiert auf digitale QM-Kontrolle & Kalkulation von Industrieobjekten.",
   portraitAlt:
     "Metin Altinsoy, Geschäftsführer Saubermatik — Key Account Manager",
-  portraitSrc:
-    "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=200&h=200",
   jobTitle: "Geschäftsführer & Key Account Manager",
   organizationName: "Saubermatik Gebäudereinigung",
 } as const;

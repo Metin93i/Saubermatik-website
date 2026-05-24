@@ -84,7 +84,7 @@ app/
 components/
 ├── B2BOnboardingProcess.tsx      4-Phasen-Onboarding + HowTo JSON-LD (Server)
 ├── KamProfileCard.tsx            Kompaktes KAM-Profil Metin Altinsoy + Person JSON-LD (Hero, Kontakt)
-├── KamPortrait.tsx               Portrait-Platzhalter (Unsplash, grayscale)
+├── KamPortrait.tsx               Generischer Industrial-Avatar (SVG, bg-zinc-800)
 ├── EsgComplianceStatement.tsx    ESG/CSRD-Compliance-Block (Hero)
 ├── AppMockup.tsx                 Geneigtes App-/Dashboard-Mockup (Hero)
 ├── KeyAccountManager.tsx         One Face to the Customer + Person/Role JSON-LD (Über-uns, Langform)
