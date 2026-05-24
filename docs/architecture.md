@@ -18,7 +18,7 @@ Technisches Referenzdokument (DDD). Dateibaum: `docs/project_structure.md`. Änd
 | Freshness | `lib/utils/date.ts`, `FreshnessBadge`, `dateModified` im globalen JSON-LD |
 | Lexikon | `app/wissen/*`, `lib/config/lexikon.ts` (Wiki 2.0, 8 Terms) |
 | B2B-Onboarding | `components/B2BOnboardingProcess.tsx`, `lib/seo/b2b-onboarding.ts` (HowTo JSON-LD) |
-| Key Account | `components/KeyAccountManager.tsx`, `lib/seo/key-account.ts` (Person/OrganizationRole JSON-LD) |
+| Key Account | `components/KamProfileCard.tsx`, `components/KamPortrait.tsx`, `lib/seo/kam-profile.ts` (Person JSON-LD Metin Altinsoy); **`KeyAccountManager.tsx`** auf `/ueber-uns` (Langform) |
 
 ## Datenfluss: Lead-Erfassung (Kunde)
 
@@ -127,7 +127,19 @@ flowchart TB
 
 - **Lexikon:** `LEXIKON_TERMS` erweitert → `generateStaticParams` auf **`/wissen/[term]`** rendert alle Spokes statisch; **`app/sitemap.ts`** mappt dieselbe Liste (keine Duplikation).
 - **HowTo:** `B2B_ONBOARDING_STEPS` speist UI-Timeline und `buildB2BOnboardingHowToJsonLd(pagePath)` — `pagePath` pro Einbindung (`/`, `/qualitaetsmanagement`) für korrekte Step-URLs.
-- **Key Account:** Copy + Schema zentral in **`lib/seo/key-account.ts`**; Einbindung auf **`/ueber-uns`** (volle Sektion) und **`/kontakt`** (flankierend, `showCta={false}` neben Lead-Funnel).
+- **Key Account:** Copy + Schema zentral in **`lib/seo/kam-profile.ts`** (Metin Altinsoy, `Person` + `OrganizationRole` JSON-LD); **`KamProfileCard`** auf **`/`** (Hero Trust-Stack) und **`/kontakt`** (neben Lead-Funnel). Langform **`KeyAccountManager`** auf **`/ueber-uns`** via **`lib/seo/key-account.ts`**.
+
+## Hero Trust-Stack (Startseite)
+
+**Layout:** Linker Hero-Stack unter CTAs — kompakt (`gap-2.5`), rechter Hero **`EngagementCalculator`** (`compact`).
+
+| Modul | Komponente | Zweck |
+|-------|------------|--------|
+| KAM-Profil | **`KamProfileCard`** + **`KamPortrait`** | Metin Altinsoy, direkter GF-Draht, Person JSON-LD |
+| ESG | **`EsgComplianceStatement`** | Osmose, VAH, CSRD/ESG-Rohdaten |
+| App-Signal | **`AppMockup`** | Geneigtes Smartphone-Bild (QM-Dashboard) |
+
+**Wiederverwendung:** Identisches **`KamProfileCard`** auf **`/kontakt`** neben **`LeadFunnel`** — reduziert Anonymität vor Formular-Absendung.
 
 ## EngagementCalculator — WE-Modus (Hausverwaltung)
 
@@ -142,7 +154,7 @@ Prefill-Key: **`saubermatik-calc-prefill`** → **`LeadFunnel`** setzt `objectNo
 
 ## HeroQuickSearch — B2B-Routing-Leiste (Startseite)
 
-**Layout:** Volle Breite im Hero (`app/page.tsx`), **außerhalb** des 2-Spalten-Grids; Startseiten-Container **`max-w-[100rem]`** mit **`px-4 sm:px-8 lg:px-16`**.
+**Layout:** Volle Breite im Hero (`app/page.tsx`), **außerhalb** des 2-Spalten-Grids; Startseiten-Container **`max-w-[100rem]`** mit **`px-4 sm:px-8 lg:px-16`**. Hero-Grid: links Trust-Stack (Copy, CTAs, KAM, ESG, App-Mockup), rechts **`EngagementCalculator`** (`compact`, `lg:sticky`).
 
 ```mermaid
 flowchart LR

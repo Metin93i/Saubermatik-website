@@ -79,7 +79,7 @@ Intent: **B2B-Entscheider** (Geschäftsführung Verwaltung, Einkauf, WEG-Beirat)
 | Deep Dive 1 | **Verkehrssicherungspflicht**, Winterdienst, Glatteis, Gehwegreinigung, **Haftung**, GPS-Fotoprotokolle |
 | Deep Dive 2 | **§ 2 BetrKV**, umlagefähige Betriebskosten, Leistungsprotokolle, Nebenkostenabrechnung |
 | Deep Dive 3 | Mieterzufriedenheit, feste Intervalle, proaktives Mängelmanagement |
-| Trust | **`KeyAccountManager`**, **`B2BOnboardingProcess`**, **`LeadFunnel`** |
+| Trust | **`KamProfileCard`**, **`EsgComplianceStatement`**, **`AppMockup`**, **`B2BOnboardingProcess`**, **`LeadFunnel`** |
 | Schema | **`Service`** JSON-LD „Property Management Maintenance Services“ (`lib/seo/hausverwaltungen-schema.ts`) |
 
 **Sitemap:** `priority: 0.95`, `changeFrequency: weekly` in **`app/sitemap.ts`**.
@@ -184,7 +184,7 @@ Stand: **10/10 Services** mit dedizierter Deep-Content-Route (800+ Wörter, 3 De
 - **Hyper-Local Schema:** pro Stadt ein **`LocalBusiness`/`CleaningService`** mit **`GeoCircle`** in **`lib/seo/standort-geo.ts`** (im `@graph`).
 - **`GeoImage`:** **`components/GeoImage.tsx`** — `ImageObject` + `contentLocation` für Local Image Search / Lens-Vorbereitung.
 - **Interne Links:** Header, Footer, Startseite-Standort-Grid, Leistungs-CTAs, **`SeoCrossLinks`** (Leistung ↔ Standort) → **`/kontakt#kontakt-anfrage`** (Kunde) bzw. **`/kontakt?type=karriere`** (Bewerber).
-- **Key Account Trust:** **`components/KeyAccountManager.tsx`** auf **`/ueber-uns`** und **`/kontakt`** — **`OrganizationRole`** + **`Person`** JSON-LD via **`lib/seo/key-account.ts`** („One Face to the Customer“).
+- **Key Account Trust:** **`KamProfileCard`** (Metin Altinsoy, **`lib/seo/kam-profile.ts`**) auf **`/`** (Hero) und **`/kontakt`**; **`KeyAccountManager`** Langform auf **`/ueber-uns`** — Person/OrganizationRole JSON-LD.
 
 ## Content-Prinzipien
 

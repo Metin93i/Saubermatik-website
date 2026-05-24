@@ -77,12 +77,15 @@ type Props = {
   funnelHref?: string;
   /** Vorauswahl Objekttyp (z. B. `glas` auf der Glasreinigungs-Landing). */
   initialCategory?: CalcCategory;
+  /** Kompakte Darstellung für Hero-Einbindung. */
+  compact?: boolean;
 };
 
 export function EngagementCalculator({
   className,
   funnelHref = "#kontakt-anfrage",
   initialCategory,
+  compact = false,
 }: Props) {
   const [step, setStep] = useState<0 | 1 | 2>(initialCategory ? 1 : 0);
   const [category, setCategory] = useState<CalcCategory | null>(
@@ -149,29 +152,37 @@ export function EngagementCalculator({
     ? (["Objekt", "WE", "Ergebnis"] as const)
     : (["Objekt", "Fläche", "Ergebnis"] as const);
 
+  const sectionPadding = compact ? "p-3 sm:p-4" : "p-5 sm:p-6";
+  const headingClass = compact
+    ? "mt-1 text-lg font-black tracking-tight text-foreground"
+    : "mt-2 text-xl font-black tracking-tight text-foreground sm:text-2xl";
+  const blockGap = compact ? "mt-3" : "mt-6";
+  const stepGap = compact ? "mt-3" : "mt-6";
+  const choicePadding = compact
+    ? "rounded-sm border border-zinc-200 bg-background px-3 py-2 text-left text-xs font-bold text-foreground transition hover:border-primary hover:bg-zinc-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+    : choiceClass;
+
   return (
     <section
       className={
-        className ?? "rounded-sm border border-zinc-200 bg-white p-5 sm:p-6"
+        className ??
+        `rounded-sm border border-zinc-200 bg-white ${sectionPadding}`
       }
       aria-labelledby="engagement-calculator-heading"
     >
       <p className="text-xs font-bold uppercase tracking-widest text-primary">
         Kosten-Richtwert
       </p>
-      <h2
-        id="engagement-calculator-heading"
-        className="mt-2 text-xl font-black tracking-tight text-foreground sm:text-2xl"
-      >
+      <h2 id="engagement-calculator-heading" className={headingClass}>
         In 3 Schritten zur groben Monats-Schätzung
       </h2>
-      <p className="mt-2 text-sm text-muted">
+      <p className={`${compact ? "mt-1 text-xs" : "mt-2 text-sm"} text-muted`}>
         Unverbindlich – für eine verbindliche Offerte starten Sie danach die
         Objekt-Anfrage.
       </p>
 
       <div
-        className="mt-6 flex flex-wrap gap-2"
+        className={`${blockGap} flex flex-wrap gap-1.5 sm:gap-2`}
         role="tablist"
         aria-label="Rechner-Schritte"
       >
@@ -192,16 +203,16 @@ export function EngagementCalculator({
       </div>
 
       {step === 0 ? (
-        <div className="mt-6">
+        <div className={stepGap}>
           <p className="text-sm font-medium text-foreground">
             Was soll gereinigt werden?
           </p>
-          <div className="mt-3 grid gap-3 sm:grid-cols-2">
+          <div className={`${compact ? "mt-2 grid gap-2" : "mt-3 grid gap-3"} sm:grid-cols-2`}>
             {CATEGORIES.map((c) => (
               <button
                 key={c.id}
                 type="button"
-                className={`${choiceClass} ${category === c.id ? "border-primary bg-primary/5" : ""}`}
+                className={`${choicePadding} ${category === c.id ? "border-primary bg-primary/5" : ""}`}
                 onClick={() => setCategory(c.id)}
                 aria-pressed={category === c.id}
                 aria-label={`${c.label} auswählen`}
@@ -215,7 +226,7 @@ export function EngagementCalculator({
           </div>
           <button
             type="button"
-            className="mt-6 inline-flex h-11 w-full items-center justify-center rounded-sm bg-primary text-sm font-bold text-primary-foreground transition hover:bg-primary/90 disabled:opacity-50 sm:w-auto sm:px-8"
+            className={`${compact ? "mt-3" : "mt-6"} inline-flex h-10 w-full items-center justify-center rounded-sm bg-primary text-sm font-bold text-primary-foreground transition hover:bg-primary/90 disabled:opacity-50 sm:w-auto sm:px-8`}
             disabled={!category}
             onClick={() => setStep(1)}
             aria-label={
@@ -228,7 +239,7 @@ export function EngagementCalculator({
       ) : null}
 
       {step === 1 ? (
-        <div className="mt-6">
+        <div className={stepGap}>
           {isB2b ? (
             <>
               <label
@@ -290,7 +301,7 @@ export function EngagementCalculator({
               </div>
             </>
           )}
-          <div className="mt-6 flex flex-wrap gap-3">
+          <div className={`${compact ? "mt-3" : "mt-6"} flex flex-wrap gap-2 sm:gap-3`}>
             <button
               type="button"
               className="inline-flex h-11 items-center justify-center rounded-sm border border-zinc-300 bg-white px-5 text-sm font-bold text-foreground hover:bg-zinc-100"
@@ -312,13 +323,13 @@ export function EngagementCalculator({
       ) : null}
 
       {step === 2 && selected && estimate ? (
-        <div className="mt-6" aria-live="polite">
+        <div className={stepGap} aria-live="polite">
           <p className="text-sm text-muted">
             Richtwert für{" "}
             <strong className="text-foreground">{selected.label}</strong> bei{" "}
             {estimate.unitLabel} (monatlich, netto-orientiert):
           </p>
-          <p className="mt-3 text-3xl font-black text-foreground">
+          <p className={`${compact ? "mt-2 text-2xl" : "mt-3 text-3xl"} font-black text-foreground`}>
             {formatEuro(estimate.min)} – {formatEuro(estimate.max)}
           </p>
           <p className="mt-2 text-xs text-muted">
@@ -328,11 +339,11 @@ export function EngagementCalculator({
               ? " Inkl. dokumentierter Leistungsnachweise für die NK-Abrechnung."
               : null}
           </p>
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+          <div className={`${compact ? "mt-4" : "mt-8"} flex flex-col gap-2 sm:flex-row sm:gap-3`}>
             <button
               type="button"
               onClick={goToFunnel}
-              className="inline-flex h-12 flex-1 items-center justify-center rounded-sm bg-secondary text-sm font-bold text-secondary-foreground hover:bg-secondary/90"
+              className="inline-flex h-10 flex-1 items-center justify-center rounded-sm bg-secondary text-sm font-bold text-secondary-foreground hover:bg-secondary/90"
               aria-label="Zur Objekt-Anfrage scrollen"
             >
               {isB2b
@@ -345,7 +356,7 @@ export function EngagementCalculator({
                   ? "/zielgruppen/hausverwaltungen#kontakt-anfrage"
                   : "/kontakt#kontakt-anfrage"
               }
-              className="inline-flex h-12 items-center justify-center rounded-sm border border-zinc-300 px-5 text-sm font-semibold text-foreground hover:bg-zinc-100"
+              className="inline-flex h-10 items-center justify-center rounded-sm border border-zinc-300 px-5 text-sm font-semibold text-foreground hover:bg-zinc-100"
             >
               {isB2b ? "Hausverwaltungs-Silo" : "Kontaktseite"}
             </Link>

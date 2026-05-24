@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Suspense } from "react";
-import { KeyAccountManager } from "@/components/KeyAccountManager";
+import { KamProfileCard } from "@/components/KamProfileCard";
 import { KontaktFormFallback } from "@/components/KontaktFormFallback";
 import { KontaktFormSwitch } from "@/components/KontaktFormSwitch";
 import {
@@ -129,8 +129,8 @@ export default async function KontaktPage({ searchParams }: KontaktPageProps) {
         </p>
       </div>
 
-      <div className="min-h-[24rem] flex-1 space-y-8 lg:max-w-xl">
-        {!isCareer ? <KeyAccountManager showCta={false} /> : null}
+      <div className="min-h-[24rem] flex-1 space-y-5 lg:max-w-xl">
+        {!isCareer ? <KamProfileCard /> : null}
         <Suspense fallback={<KontaktFormFallback isCareer={isCareer} />}>
           <KontaktFormSwitch />
         </Suspense>

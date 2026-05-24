@@ -1,11 +1,14 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { AppMockup } from "@/components/AppMockup";
 import { B2BOnboardingProcess } from "@/components/B2BOnboardingProcess";
 import { EngagementCalculator } from "@/components/EngagementCalculator";
+import { EsgComplianceStatement } from "@/components/EsgComplianceStatement";
 import { FreshnessBadge } from "@/components/FreshnessBadge";
 import { GeoImage } from "@/components/GeoImage";
 import { HeroQuickSearch } from "@/components/HeroQuickSearch";
+import { KamProfileCard } from "@/components/KamProfileCard";
 import { LeadFunnel } from "@/components/LeadFunnel";
 import { REMOTE_IMAGE_BLUR_DATA_URL } from "@/lib/image-blur";
 import { STANDORT_CITIES, STANDORT_LABELS } from "@/lib/routes/standorte";
@@ -58,20 +61,20 @@ export default function Home() {
   return (
     <div className="flex flex-1 flex-col">
       <section className="relative overflow-hidden bg-zinc-50">
-        <div className={`${PAGE_CONTAINER} py-8 lg:py-10`}>
+        <div className={`${PAGE_CONTAINER} py-5 lg:py-7`}>
           <p className="text-xs font-bold uppercase tracking-widest text-primary">
             Meßstetten · Zollernalb · Schwarzwald-Baar-Heuberg
           </p>
-          <h1 className="mt-1.5 max-w-5xl text-3xl font-black tracking-tight text-foreground sm:text-4xl lg:text-[2.5rem] lg:leading-tight">
+          <h1 className="mt-1 max-w-5xl text-3xl font-black tracking-tight text-foreground sm:text-4xl lg:text-[2.35rem] lg:leading-tight">
             Reinigung, die hält, was sie verspricht – mit Kopf, nicht nur mit
             dem Wischmob.
           </h1>
 
-          <HeroQuickSearch className="mt-5" />
+          <HeroQuickSearch className="mt-4" />
 
-          <div className="mt-6 grid items-start gap-6 lg:grid-cols-2 lg:gap-10">
-            <div>
-              <p className="text-base leading-7 text-muted sm:text-lg sm:leading-8">
+          <div className="mt-4 grid items-start gap-4 lg:grid-cols-2 lg:gap-6">
+            <div className="flex flex-col gap-3">
+              <p className="text-sm leading-6 text-muted sm:text-base sm:leading-7">
                 Bei uns bekommen Sie keinen Textbaustein aus der Großstadt,
                 sondern einen festen Ansprechpartner vor Ort. Unsere digitale
                 Objektsteuerung sorgt dafür, dass Touren und Qualität nicht vom
@@ -86,7 +89,7 @@ export default function Home() {
                 Kosten.
               </p>
               <FreshnessBadge />
-              <ul className="mt-3 flex flex-col gap-1.5 text-sm font-medium text-foreground">
+              <ul className="flex flex-col gap-1 text-sm font-medium text-foreground">
                 {trustItems.map((item) => (
                   <li key={item} className="flex items-start gap-2">
                     <span
@@ -99,50 +102,36 @@ export default function Home() {
                   </li>
                 ))}
               </ul>
-              <div className="mt-4 flex flex-wrap gap-2">
+              <div className="flex flex-wrap gap-2">
                 <Link
                   href="/leistungen"
-                  className="inline-flex h-11 items-center justify-center rounded-sm bg-primary px-5 text-sm font-bold text-primary-foreground transition hover:bg-primary/90"
+                  className="inline-flex h-10 items-center justify-center rounded-sm bg-primary px-4 text-sm font-bold text-primary-foreground transition hover:bg-primary/90"
                 >
                   Leistungen ansehen
                 </Link>
                 <Link
                   href="#kontakt-anfrage"
-                  className="inline-flex h-11 items-center justify-center rounded-sm border border-zinc-300 bg-white px-5 text-sm font-bold text-foreground transition hover:bg-zinc-100"
+                  className="inline-flex h-10 items-center justify-center rounded-sm border border-zinc-300 bg-white px-4 text-sm font-bold text-foreground transition hover:bg-zinc-100"
                 >
                   Direkt anfragen
                 </Link>
               </div>
-            </div>
-            <div className="flex flex-col gap-3 lg:items-stretch">
-              <div className="relative aspect-[4/3] w-full overflow-hidden rounded-sm border border-zinc-200">
-                <GeoImage
-                  src={imgOffice}
-                  alt="Moderner Bürobereich – sauber und repräsentativ"
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                  priority
-                  placeholder="blur"
-                  blurDataURL={REMOTE_IMAGE_BLUR_DATA_URL}
-                  contentLocation="Zollernalbkreis, Baden-Württemberg"
-                  author="Saubermatik"
-                  imageId="geo-hero-office-zollernalb"
-                />
+
+              <div className="flex flex-col gap-2.5 pt-1">
+                <KamProfileCard />
+                <EsgComplianceStatement />
+                <AppMockup />
               </div>
-              <LeadFunnel className="w-full rounded-sm border border-zinc-200" />
+            </div>
+
+            <div
+              id="engagement-calculator-section"
+              className="lg:sticky lg:top-20"
+              aria-labelledby="engagement-calculator-heading"
+            >
+              <EngagementCalculator compact className="w-full" />
             </div>
           </div>
-        </div>
-      </section>
-
-      <section
-        id="engagement-calculator-section"
-        className="border-t border-foreground/10 bg-white py-10 sm:py-12"
-        aria-labelledby="engagement-calculator-heading"
-      >
-        <div className={PAGE_CONTAINER}>
-          <EngagementCalculator className="mx-auto max-w-4xl" />
         </div>
       </section>
 
@@ -198,8 +187,27 @@ export default function Home() {
 
       <B2BOnboardingProcess
         pagePath="/"
-        className="border-t border-foreground/10 bg-white py-12 sm:py-14"
+        className="border-t border-foreground/10 bg-white py-8 sm:py-10"
       />
+
+      <section
+        id="kontakt-anfrage"
+        className="border-t border-foreground/10 bg-zinc-50 py-8 sm:py-10"
+      >
+        <div className={`${PAGE_CONTAINER} grid gap-5 lg:grid-cols-2 lg:gap-6`}>
+          <div>
+            <h2 className="text-xl font-extrabold tracking-tight text-foreground sm:text-2xl">
+              Objekt anfragen — direkt an Metin Altinsoys Team
+            </h2>
+            <p className="mt-2 text-sm leading-6 text-muted sm:text-base">
+              Fläche, Intervalle, Sonderzonen: Wir erstellen nach Begehung ein
+              verbindliches Leistungsverzeichnis mit transparenten SLAs.
+            </p>
+            <KamProfileCard className="mt-4" />
+          </div>
+          <LeadFunnel className="w-full rounded-sm border border-zinc-200" />
+        </div>
+      </section>
 
       <section className="border-t border-foreground/10 bg-zinc-50 py-12 sm:py-14">
         <div

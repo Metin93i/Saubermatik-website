@@ -15,7 +15,7 @@ type Props = {
 };
 
 const fieldClass =
-  "h-12 w-full min-w-0 rounded-sm border border-zinc-300 bg-white px-3 text-sm font-semibold text-foreground outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/25";
+  "h-10 w-full min-w-0 rounded-sm border border-zinc-300 bg-white px-3 text-sm font-semibold text-foreground outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/25";
 
 export function HeroQuickSearch({ className = "" }: Props) {
   const router = useRouter();
@@ -40,7 +40,7 @@ export function HeroQuickSearch({ className = "" }: Props) {
   return (
     <form
       onSubmit={handleSubmit}
-      className={`w-full rounded-sm border border-zinc-300 bg-white p-4 shadow-sm sm:p-5 ${className}`}
+      className={`w-full rounded-sm border border-zinc-300 bg-white p-3 shadow-sm sm:p-4 ${className}`}
       aria-labelledby={`${formId}-legend`}
     >
       <p
@@ -50,7 +50,7 @@ export function HeroQuickSearch({ className = "" }: Props) {
         Direkt die richtige Lösung finden
       </p>
 
-      <div className="mt-3 flex flex-col gap-3 lg:flex-row lg:items-end">
+      <div className="mt-2 flex flex-col gap-2 lg:flex-row lg:items-end">
         <div className="flex min-w-0 flex-1 flex-col gap-1">
           <label htmlFor={serviceId} className="text-xs font-bold text-muted">
             Ich suche…
@@ -96,7 +96,7 @@ export function HeroQuickSearch({ className = "" }: Props) {
 
         <button
           type="submit"
-          className="inline-flex h-12 w-full shrink-0 items-center justify-center rounded-sm bg-primary px-6 text-sm font-bold text-primary-foreground transition hover:bg-primary/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary lg:w-auto lg:min-w-[12rem]"
+          className="inline-flex h-10 w-full shrink-0 items-center justify-center rounded-sm bg-primary px-6 text-sm font-bold text-primary-foreground transition hover:bg-primary/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary lg:w-auto lg:min-w-[11rem]"
         >
           Jetzt finden
         </button>

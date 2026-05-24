@@ -83,7 +83,11 @@ app/
 ```
 components/
 ├── B2BOnboardingProcess.tsx      4-Phasen-Onboarding + HowTo JSON-LD (Server)
-├── KeyAccountManager.tsx         One Face to the Customer + Person/Role JSON-LD (Server)
+├── KamProfileCard.tsx            Kompaktes KAM-Profil Metin Altinsoy + Person JSON-LD (Hero, Kontakt)
+├── KamPortrait.tsx               Portrait-Platzhalter (Unsplash, grayscale)
+├── EsgComplianceStatement.tsx    ESG/CSRD-Compliance-Block (Hero)
+├── AppMockup.tsx                 Geneigtes App-/Dashboard-Mockup (Hero)
+├── KeyAccountManager.tsx         One Face to the Customer + Person/Role JSON-LD (Über-uns, Langform)
 ├── BreadcrumbJsonLd.tsx          BreadcrumbList JSON-LD (tiefes Routing)
 ├── CareerForm.tsx                Bewerber-Formular (`"use client"`) → `/api/career`
 ├── EngagementCalculator.tsx      3-Schritt-Kostenrechner (`"use client"`)
@@ -126,7 +130,8 @@ lib/
 ├── phone.ts                      `buildTelHref` (NEXT_PUBLIC_BUSINESS_PHONE)
 ├── seo/
 │   ├── b2b-onboarding.ts         HowTo-Schritte + `buildB2BOnboardingHowToJsonLd`
-│   ├── key-account.ts            Key-Account-Copy + Person/OrganizationRole JSON-LD
+│   ├── kam-profile.ts            Metin Altinsoy KAM-Copy + Person JSON-LD
+│   ├── key-account.ts            Key-Account-Langform + OrganizationRole JSON-LD
 │   ├── hausverwaltungen-schema.ts Service JSON-LD für Zielgruppen-Silo
 │   ├── global-jsonld.ts          `@graph` LocalBusiness + CleaningService + OfferCatalog
 │   ├── leistung-faq.ts           FAQ-Texte pro Leistungsspoke (FAQPage)
