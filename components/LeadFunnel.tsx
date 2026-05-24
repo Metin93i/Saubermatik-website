@@ -3,6 +3,7 @@
 import type { FormEvent } from "react";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { FUNNEL_SERVICE_OPTIONS, SERVICES } from "@/lib/config/services";
+import { apiUrl } from "@/lib/config/api";
 import { CALC_PREFILL_KEY } from "@/lib/hero/quick-search";
 import type {
   LeadAreaSize,
@@ -208,7 +209,7 @@ export function LeadFunnel({ className, initialServiceType }: LeadFunnelProps) {
 
       setIsLoading(true);
       try {
-        const response = await fetch("/api/lead", {
+        const response = await fetch(apiUrl("/api/lead"), {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(payload),

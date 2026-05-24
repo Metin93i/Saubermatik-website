@@ -17,6 +17,7 @@ Stand: **Master-Übersicht** ist `docs/architecture.md` (Datenflüsse, Routing).
 │   └── workflows/
 │       └── deploy.yml          CI/CD: SSH-Deploy auf Hostinger VPS
 ├── ecosystem.config.js         PM2-Prozessmanager (saubermatik-web)
+├── .env.example                  Vorlage für Umgebungsvariablen (inkl. NEXT_PUBLIC_API_URL)
 ├── next.config.ts
 ├── package.json
 ├── postcss.config.mjs
@@ -123,6 +124,7 @@ lib/
 │   ├── email.ts                  HTML-Mail Bewerbung (HR-Layout)
 │   └── submission.ts             parseCareerSubmission
 ├── config/
+│   ├── api.ts                    `getApiBaseUrl`, `apiUrl` — NEXT_PUBLIC_API_URL
 │   ├── lexikon.ts                Wiki 2.0 — 8 Lexikon-Einträge (LEXIKON_TERMS)
 │   ├── services.ts               Leistungsportfolio (10 Slugs inkl. Entrümpelung & Sonstiges)
 │   └── site.ts                   Firmenadresse, OSM-Embed (Single Source)

@@ -81,6 +81,7 @@ flowchart LR
 
 - Leistungen inkl. Funnel-Kacheln: **`lib/config/services.ts`** → **`LEAD_SERVICE_TYPES`**, **`FUNNEL_SERVICE_OPTIONS`**, **`LEISTUNGEN_BY_SLUG`** (`lib/routes/leistungen.ts`).
 - Firmenadresse / Karte: **`lib/config/site.ts`**.
+- API-Basis-URL (Client): **`lib/config/api.ts`** → **`getApiBaseUrl()`**, **`apiUrl()`**; Env **`NEXT_PUBLIC_API_URL`** (leer = same-origin `/api/*`).
 - Telefon-Links: **`lib/phone.ts`** (`buildTelHref`).
 - JSON-LD **`OfferCatalog`**: aus **`SERVICES`** generiert (`lib/seo/global-jsonld.ts`, eingebunden über **`components/StructuredData.tsx`**) — neue Slugs erscheinen automatisch im Schema. Absolute URLs nutzen **`getSiteOrigin()`** (`lib/seo/site-origin.ts`).
 
