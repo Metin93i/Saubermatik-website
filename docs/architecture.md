@@ -10,7 +10,7 @@ Technisches Referenzdokument (DDD). Dateibaum: `docs/project_structure.md`. Änd
 | Sprache | **TypeScript** (strict) |
 | Styling | **Tailwind CSS v4** (`@import "tailwindcss"`, `@theme` in `app/globals.css`) |
 | E-Mail (Transaktional) | **Resend** (`resend`-Paket, Node-Runtime in Route Handlers) |
-| Deployment-Ziel | Vercel-kompatibel (keine DB im UI-Pfad) |
+| Deployment-Ziel | **Hostinger VPS** (PM2 + Nginx); alternativ Vercel-kompatibel (keine DB im UI-Pfad) |
 | Security Headers | `next.config.ts` → `headers()` (u. a. `X-Frame-Options`, `X-Content-Type-Options`, `Referrer-Policy`, `Permissions-Policy`) |
 | AEO | `app/llms.txt/route.ts` → `/llms.txt` (Plaintext aus `lib/seo/llms-content.ts`) |
 | Engagement | `components/EngagementCalculator.tsx` (`"use client"`) — Navboost/Dwell-Time |
@@ -174,3 +174,26 @@ flowchart LR
 Routing-Logik (Single Source: **`lib/hero/quick-search.ts`** → **`resolveQuickSearchRoute`**).
 
 **Hinweis:** SessionStorage-Prefill (`saubermatik-calc-prefill`, `saubermatik-quick-search-calc`) bleibt für **`EngagementCalculator`** → **`LeadFunnel`**; die Hero-Leiste nutzt kein Scroll-Prefill mehr.
+
+## Deployment — Hostinger VPS
+
+```mermaid
+flowchart LR
+  GH[GitHub push main] --> GA[GitHub Actions deploy.yml]
+  GA -->|SSH| VPS[Hostinger VPS]
+  VPS --> PULL[git pull + npm ci + npm run build]
+  PULL --> PM2[pm2 reload ecosystem.config.js]
+  PM2 --> NX[Next.js :3000]
+  NG[Nginx :80] --> NX
+  USER[Besucher] --> NG
+```
+
+| Datei | Zweck |
+|-------|--------|
+| **`ecosystem.config.js`** | PM2: App `saubermatik-web`, `npm start`, Cluster, Port 3000 |
+| **`.github/workflows/deploy.yml`** | CI/CD: SSH → pull → build → pm2 reload |
+| **`ops/nginx-template.conf`** | Reverse Proxy Port 80 → localhost:3000 |
+| **`docs/devops_handbuch_fuer_einsteiger.md`** | Einsteiger-Erklärung (VPS, PM2, Nginx, CI/CD) |
+
+**GitHub Secrets:** `SSH_HOST`, `SSH_USER`, `SSH_PRIVATE_KEY`, `DEPLOY_PATH`, optional `SSH_PORT`.  
+**Server-Umgebung:** `.env.local` auf dem VPS mit `RESEND_API_KEY`, `NEXT_PUBLIC_*`, etc.

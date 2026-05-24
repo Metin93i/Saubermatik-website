@@ -11,7 +11,12 @@ Stand: **Master-Übersicht** ist `docs/architecture.md` (Datenflüsse, Routing).
 ├── components/
 ├── docs/
 ├── lib/
+├── ops/                        VPS-Betrieb (Nginx-Vorlage)
 ├── public/                 (statische Assets, falls vorhanden)
+├── .github/
+│   └── workflows/
+│       └── deploy.yml          CI/CD: SSH-Deploy auf Hostinger VPS
+├── ecosystem.config.js         PM2-Prozessmanager (saubermatik-web)
 ├── next.config.ts
 ├── package.json
 ├── postcss.config.mjs
@@ -152,11 +157,19 @@ lib/
     └── standorte.ts              16 Städte, Labels, Fließtexte
 ```
 
+## `ops/` — VPS & Reverse Proxy
+
+```
+ops/
+└── nginx-template.conf           Nginx: Port 80 → localhost:3000 (Domain ersetzen)
+```
+
 ## `docs/` — Spezifikation (DDD)
 
 ```
 docs/
 ├── architecture.md             Technisches Gehirn: Stack, Datenflüsse, Routing, Formular-Weiche
+├── devops_handbuch_fuer_einsteiger.md  VPS/PM2/Nginx/CI/CD für Einsteiger (Hostinger)
 ├── competitor_analysis.md      Wettbewerbs-/Gap-Analyse (SEO & Funnel)
 ├── pSEO_matrix.md               16×10 Matrix-Engine (160 Routen, 800+ Wörter)
 ├── portfolio_seo_whitepaper.md Portfolio-Case-Study (CTO-Tonalität)
