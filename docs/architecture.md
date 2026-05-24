@@ -90,6 +90,7 @@ flowchart LR
 | `"use client"` | Grund |
 |----------------|--------|
 | `HeroQuickSearch` | Service/Standort-Auswahl, **`useRouter().push`** zu Leistungs- oder Standort-Spoke |
+| `ClientLoginButton` | SaaS-Kundenlogin (`NEXT_PUBLIC_PLATFORM_URL`, neuer Tab) |
 | `LeadFunnel` | Multi-Step-State, `fetch`, liest optional Kalkulator-Prefill aus `sessionStorage` |
 | `CareerForm` | Formular-State, `fetch` |
 | `SiteHeaderNav` | Mobile-Menü, Scroll-Lock, Tastatur (Escape), **Hover-Prefetch** (`PrefetchLink`), **aria-label** auf Menü-Button |

@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useId, useState } from "react";
 import { PrefetchLink } from "@/components/PrefetchLink";
+import { ClientLoginButton } from "@/components/ClientLoginButton";
 import { SERVICES } from "@/lib/config/services";
 import { buildTelHref } from "@/lib/phone";
 
@@ -118,6 +119,8 @@ export function SiteHeaderNav() {
               {item.label}
             </PrefetchLink>
           ))}
+
+          <ClientLoginButton className="ml-1 hidden h-9 md:inline-flex" />
         </nav>
 
         <div className="flex items-center gap-2 md:ml-0">
@@ -257,6 +260,16 @@ export function SiteHeaderNav() {
                     </li>
                   </ul>
                 ) : null}
+              </div>
+
+              <div className="mt-auto border-t border-zinc-200 pt-4">
+                <ClientLoginButton
+                  className="h-11 w-full"
+                  onNavigate={closeMobile}
+                />
+                <p className="mt-2 text-center text-xs text-muted">
+                  Saubermatik Kundenportal — öffnet in neuem Tab
+                </p>
               </div>
             </div>
           </div>

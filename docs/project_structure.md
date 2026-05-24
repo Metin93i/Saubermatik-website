@@ -107,6 +107,7 @@ components/
 ├── LeistungFaqJsonLd.tsx       FAQPage JSON-LD pro Leistungsspoke (Server)
 ├── LeistungSgeTldr.tsx         SGE-TL;DR-Zusammenfassung pro Leistungsspoke (Server)
 ├── MobileStickyCta.tsx         Mobile Schnellaktionen (Anruf / Angebot)
+├── ClientLoginButton.tsx         Kunden-Login → SaaS-Plattform (Header Desktop/Mobile)
 ├── PrefetchLink.tsx            Hover-Prefetch um `next/link` (`"use client"`)
 ├── SeoCrossLinks.tsx           Hub-&-Spoke-Querverweise Leistung ↔ Standort (Server)
 ├── SaubermatikLogo.tsx           Logo `/public/logo.png` (next/image)
@@ -125,6 +126,7 @@ lib/
 │   └── submission.ts             parseCareerSubmission
 ├── config/
 │   ├── api.ts                    `getApiBaseUrl`, `apiUrl` — NEXT_PUBLIC_API_URL
+│   ├── platform.ts               `getPlatformLoginUrl` — NEXT_PUBLIC_PLATFORM_URL
 │   ├── lexikon.ts                Wiki 2.0 — 8 Lexikon-Einträge (LEXIKON_TERMS)
 │   ├── services.ts               Leistungsportfolio (10 Slugs inkl. Entrümpelung & Sonstiges)
 │   └── site.ts                   Firmenadresse, OSM-Embed (Single Source)
