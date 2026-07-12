@@ -183,7 +183,7 @@ Beispiel Pfad: `/standorte/balingen/unterhaltsreinigung` — Beleg: `lib/seo/mat
 
 | Schema-Typ | Felder (zusammengefasst) | Einbindungsort |
 |------------|--------------------------|----------------|
-| **LocalBusiness + CleaningService** (Organisation) | name, url, address (Meßstetten 72461), geo, areaServed (16 Städte + 3 GeoCircle-Hubs), openingHours 08:00–22:00 täglich, aggregateRating 4.9/124, hasOfferCatalog (10 Services) | `lib/seo/global-jsonld.ts` → `components/StructuredData.tsx` in `app/layout.tsx` (global) |
+| **LocalBusiness + CleaningService** (Organisation) | name, url, address (Meßstetten 72461), geo, areaServed (16 Städte + 3 GeoCircle-Hubs), openingHours 08:00–22:00 täglich, hasOfferCatalog (10 Services) — *aggregateRating entfernt am 2026-07-12* | `lib/seo/global-jsonld.ts` → `components/StructuredData.tsx` in `app/layout.tsx` (global) |
 | **LocalBusiness + CleaningService** (pro Stadt) | name, url, geo, GeoCircle areaServed, parentOrganization | `lib/seo/standort-geo.ts` → global `@graph` |
 | **LocalBusiness** (Stuttgart) | wie oben, Radius 28 km | `buildStuttgartCleaningServiceNode` |
 | **OfferCatalog + Service** | 10 Leistungen mit URL, CleaningService category | global JSON-LD |
@@ -196,7 +196,7 @@ Beispiel Pfad: `/standorte/balingen/unterhaltsreinigung` — Beleg: `lib/seo/mat
 | **Service** (Hausverwaltungen) | serviceType, audience BusinessAudience, offers | `lib/seo/hausverwaltungen-schema.ts` → `app/zielgruppen/hausverwaltungen/page.tsx` |
 | **ImageObject + Place** | contentUrl, contentLocation, author | `components/GeoImage.tsx` (Startseite „Warum wir"-Bild) |
 
-**Auffälligkeit:** `aggregateRating` (4.9, 124 Reviews) im globalen Schema — Beschreibung verweist auf „QM-Protokolle", nicht auf Google Reviews (`lib/seo/global-jsonld.ts`).
+**Auffälligkeit (historisch):** `aggregateRating` (4.9, 124 Reviews) war im globalen Schema — **entfernt am 2026-07-12** (`lib/seo/global-jsonld.ts`).
 
 ### Redirects / Rewrites / 404
 
@@ -351,8 +351,8 @@ Beispiel Pfad: `/standorte/balingen/unterhaltsreinigung` — Beleg: `lib/seo/mat
 
 | Element | IST | Beleg |
 |---------|-----|-------|
-| Testimonials | 3 Zitate, explizit „Beispielzitate für den Relaunch (Namen anonymisiert)" | `app/page.tsx` |
-| AggregateRating JSON-LD | 4.9 / 124 | `lib/seo/global-jsonld.ts` |
+| Testimonials | **Entfernt am 2026-07-12** — zuvor 3 Beispielzitate auf Startseite (`app/page.tsx`) | `app/page.tsx` (historisch) |
+| AggregateRating JSON-LD | **Entfernt am 2026-07-12** — zuvor 4.9 / 124 im globalen Schema | `lib/seo/global-jsonld.ts` (historisch) |
 | KAM-Profil Metin Altinsoy | Hero, Kontakt, JSON-LD Person | `lib/seo/kam-profile.ts` |
 | ESG-Statement | Startseite | `components/EsgComplianceStatement.tsx` |
 | FreshnessBadge | Startseite, Standort, Matrix, Stuttgart | `components/FreshnessBadge.tsx` |
@@ -431,8 +431,8 @@ Karriere: `/karriere` → `/kontakt?type=karriere` → CareerForm → `/api/care
 | 4 | **mittel** | **Canonical fehlt** auf `/` und `/leistungen` | `app/page.tsx`, `app/leistungen/page.tsx` |
 | 5 | **mittel** | **Kein Favicon/App-Icon** im Repo | Glob `favicon*`, `icon.*` |
 | 6 | **mittel** | **NAP unvollständig:** keine Straße, Telefon nur via Env, keine sichtbare E-Mail auf Kontakt | `lib/config/site.ts`, `app/kontakt/page.tsx` |
-| 7 | **mittel** | **aggregateRating 4.9/124** im JSON-LD ohne erkennbaren Review-Quellen-Link; Beschreibung verweist auf interne QM-Protokolle | `lib/seo/global-jsonld.ts` |
-| 8 | **mittel** | **Testimonials als „Beispielzitate (Namen anonymisiert)"** deklariert — kein echter Social Proof | `app/page.tsx` |
+| 7 | **mittel** | ~~**aggregateRating 4.9/124** im JSON-LD~~ — **entfernt am 2026-07-12** | `lib/seo/global-jsonld.ts` |
+| 8 | **mittel** | ~~**Testimonials als „Beispielzitate"**~~ — **entfernt am 2026-07-12** | `app/page.tsx` |
 | 9 | **niedrig** | **`/zielgruppen/hausverwaltungen` nicht in Header-Nav**, nur Footer/Sitemap/interne Links | `components/SiteHeaderNav.tsx` vs. `app/sitemap.ts` |
 | 10 | **niedrig** | **Open Graph/Twitter unvollständig** — kein og:image, keine Twitter Cards | `app/layout.tsx` |
 

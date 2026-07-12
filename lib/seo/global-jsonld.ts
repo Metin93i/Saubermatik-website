@@ -126,15 +126,6 @@ export function buildOrganizationJsonLd(): Record<string, unknown> {
         closes: "22:00",
       },
     ],
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: "4.9",
-      bestRating: "5",
-      worstRating: "1",
-      reviewCount: "124",
-      description:
-        "Basierend auf verifizierten digitalen QM-Protokollen der Saubermatik-Plattform.",
-    },
     hasOfferCatalog: buildOfferCatalog(),
   };
 
