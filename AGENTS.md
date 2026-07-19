@@ -26,6 +26,7 @@
 7. Abschluss-Output im **Teil-B-Format**:
    - `STATUS` / `GEBAUT` / `DATEIEN` / `ENTSCHEIDUNGEN`
    - `OFFEN-TODO-UNKLAR` / `FEHLER-WARNUNGEN` / `NÄCHSTER SCHRITT`
+8. Deploy-Logik lebt in `ops/deploy.sh` (versioniert) — Server-Dateien nie manuell ändern.
 
 ## Inhalts-Regeln
 
