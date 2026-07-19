@@ -135,6 +135,7 @@ export function LeadFunnel({ className, initialServiceType }: LeadFunnelProps) {
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
   useEffect(() => {
+    let cancelled = false;
     try {
       const raw = sessionStorage.getItem(CALC_PREFILL_KEY);
       if (!raw) return;
@@ -142,18 +143,24 @@ export function LeadFunnel({ className, initialServiceType }: LeadFunnelProps) {
         service?: LeadServiceType;
         objectNotes?: string;
       };
-      if (data.objectNotes) setObjectNotes(data.objectNotes);
-      if (
-        data.service &&
-        (LEAD_SERVICE_TYPES as readonly string[]).includes(data.service)
-      ) {
-        setServiceType(data.service);
-        setStep(1);
-      }
       sessionStorage.removeItem(CALC_PREFILL_KEY);
+      queueMicrotask(() => {
+        if (cancelled) return;
+        if (data.objectNotes) setObjectNotes(data.objectNotes);
+        if (
+          data.service &&
+          (LEAD_SERVICE_TYPES as readonly string[]).includes(data.service)
+        ) {
+          setServiceType(data.service);
+          setStep(1);
+        }
+      });
     } catch {
       /* ignore malformed prefill */
     }
+    return () => {
+      cancelled = true;
+    };
   }, []);
   const [isLoading, setIsLoading] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
