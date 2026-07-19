@@ -1,14 +1,24 @@
 name: Deploy to Hostinger VPS
 
+# Deploy nur nach erfolgreichem CI auf main (nicht mehr bei jedem Push allein).
 on:
-  push:
+  workflow_run:
+    workflows: ["CI"]
+    types:
+      - completed
     branches:
       - main
+
+concurrency:
+  group: deploy
+  cancel-in-progress: false
 
 jobs:
   deploy:
     name: Deploy via SSH
     runs-on: ubuntu-latest
+    # Nur bei grünem CI-Lauf — rote/abgebrochene CI-Runs triggern kein Deploy.
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
 
     steps:
       - name: Deploy on VPS
@@ -21,8 +31,8 @@ jobs:
           script_stop: true
           script: |
             set -euo pipefail
-            cd "${{ secrets.DEPLOY_PATH }}"
-            git pull origin main
-            npm ci
-            npm run build
-            pm2 reload ecosystem.config.js --update-env
+            # Erst Code holen (inkl. aktueller ops/deploy.sh), dann Skript ausführen.
+            cd /var/www/saubermatik-web
+            git fetch origin main
+            git reset --hard origin/main
+            bash ops/deploy.sh

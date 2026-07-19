@@ -24,6 +24,10 @@
 .DS_Store
 *.pem
 
+# Deploy: letzter guter SHA auf dem VPS (nur serverseitig)
+.letzter-guter-stand
+
+
 # debug
 npm-debug.log*
 yarn-debug.log*
