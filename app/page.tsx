@@ -33,27 +33,6 @@ const imgHandshake =
 const imgFacade =
   "https://images.unsplash.com/photo-1520110120835-c96534a4c984?auto=format&fit=crop&q=80&w=1200";
 
-const testimonials = [
-  {
-    quote:
-      "Was zählt, ist, dass es klappt – ohne Diskussion. Seit wir mit Saubermatik fahren, ist die Treppenhaus- und Büroqualität stabil, und ich habe einen Namen für den Notfall.",
-    name: "Michael R.",
-    role: "Geschäftsführung, mittelständischer Betrieb · Tuttlingen",
-  },
-  {
-    quote:
-      "In der Praxis geht es um Verlässlichkeit und Diskretion. Die Teams halten sich an Zeitfenster, und wenn mal jemand ausfällt, wird neu geplant – das merkt man am laufenden Betrieb.",
-    name: "Dr. Elena W.",
-    role: "Fachärztin · Balingen",
-  },
-  {
-    quote:
-      "Wir brauchen keine Superlative, sondern saubere Objektdokumentation und Erreichbarkeit. Genau das liefern sie – bodenständig, aber auf dem Niveau, das unsere Mieter erwarten.",
-    name: "Stefan K.",
-    role: "Liegenschaftsverwaltung · Tuttlingen",
-  },
-] as const;
-
 /** Breiter Startseiten-Container (2XL / ~100rem) — weniger Rand-Whitespace auf großen Monitoren. */
 const PAGE_CONTAINER = "mx-auto w-full max-w-[100rem] px-4 sm:px-8 lg:px-16";
 
@@ -285,36 +264,6 @@ export default function Home() {
               />
             </div>
           </div>
-        </div>
-      </section>
-
-      <section className="bg-zinc-50 py-12 sm:py-14">
-        <div className={PAGE_CONTAINER}>
-          <h2 className="text-center text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
-            Stimmen aus der Region
-          </h2>
-          <p className="mx-auto mt-2 max-w-2xl text-center text-sm text-muted">
-            Beispielzitate für den Relaunch (Namen anonymisiert) – so arbeiten
-            wir gern mit Geschäftsführung, Praxen und Verwaltung zusammen.
-          </p>
-          <ul className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {testimonials.map((t) => (
-              <li
-                key={t.name}
-                className="flex flex-col rounded-sm border border-zinc-200 bg-white p-5"
-              >
-                <p className="text-sm leading-6 text-foreground/90">
-                  &ldquo;{t.quote}&rdquo;
-                </p>
-                <div className="mt-5 border-t border-foreground/10 pt-4">
-                  <p className="text-sm font-semibold text-foreground">
-                    {t.name}
-                  </p>
-                  <p className="mt-1 text-xs text-muted">{t.role}</p>
-                </div>
-              </li>
-            ))}
-          </ul>
         </div>
       </section>
 
