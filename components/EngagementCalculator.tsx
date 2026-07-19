@@ -95,18 +95,26 @@ export function EngagementCalculator({
   const [weUnits, setWeUnits] = useState(24);
 
   useEffect(() => {
+    let cancelled = false;
     try {
       const raw = sessionStorage.getItem(QUICK_SEARCH_CALC_KEY);
       if (!raw) return;
       const data = JSON.parse(raw) as QuickSearchCalcPrefill;
-      if (data.category) {
-        setCategory(data.category);
-        setStep(1);
-      }
       sessionStorage.removeItem(QUICK_SEARCH_CALC_KEY);
+      if (data.category) {
+        const nextCategory = data.category;
+        queueMicrotask(() => {
+          if (cancelled) return;
+          setCategory(nextCategory);
+          setStep(1);
+        });
+      }
     } catch {
       /* ignore malformed prefill */
     }
+    return () => {
+      cancelled = true;
+    };
   }, []);
 
   const selected = useMemo(
