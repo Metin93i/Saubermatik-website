@@ -72,13 +72,13 @@
 
 ## B · SEITEN-INVENTAR
 
-**Gesamt indexierbare Routen laut `app/sitemap.ts`:** ca. **205 URLs** (6 Kern + 4 Extra + 10 Leistungen + 16 Standorte + 160 Matrix + 9 Wissen).
+**Gesamt indexierbare Routen laut `app/sitemap.ts`:** ca. **207 URLs** (8 Kern + 4 Extra + 10 Leistungen + 16 Standorte + 160 Matrix + 9 Wissen).
 
 **Title-Template:** `%s | Saubermatik Gebäudereinigung` (`app/layout.tsx`). Seiten ohne eigenes `title` erben Default.
 
 **404:** Keine Custom-Seite; unbekannte Pfade → Next.js-Standard-404 (**unklar:** exakter Wortlaut live).
 
-**Impressum / Datenschutz:** **Keine Route** im Repo (Grep nach `Impressum`/`Datenschutz` in TSX: 0 Treffer außer Fließtext in SEO-Content).
+**Impressum / Datenschutz:** **Vorhanden** — `/impressum`, `/datenschutz` (Server Components); Footer-Links in `components/SiteFooter.tsx`; Sitemap-Einträge.
 
 ### B.1 Kern- & Hub-Seiten
 
@@ -89,8 +89,10 @@
 | `/qualitaetsmanagement` | QM / Garantie | „Qualitätsmanagement \| …" | „Saubermatik-Garantie: digitale Objektüberwachung, Echtzeit-Checks, DIN-orientierte Standards und nachvollziehbare Protokolle für B2B-Reinigung in der Zollernalb." | „Qualität, die Sie messen können – nicht nur riechen." | ~550 | Links zu Kontakt/Leistungen (Seitenende) | SaaS-Überwachung, DIN, Echtzeit-Checks |
 | `/expertise` | EEAT-Hub | „Expertise, Zertifizierung & technische Standards \| …" | „EEAT-Hub von Saubermatik: Arbeitssicherheit, Qualitätsstandards, Echtzeit-Monitoring und digitale Objektprotokolle – für messbare Gebäudereinigung in der Zollernalb und darüber hinaus." | „Beweis-Zentrum: Standards, Sicherheit & digitale Objektsteuerung" | ~500 | Beratung/Kontakt-Links | E-E-A-T, Zertifizierung, TRBS |
 | `/karriere` | Recruiting | „Karriere \| …" | „Karriere bei Saubermatik Meßstetten: faire Bezahlung, moderne digitale Arbeitsmittel und Tablets im Objekt, Teamkultur in der Zollernalb – jetzt initiativ bewerben." | „Werden Sie Teil eines Teams, das digital denkt und handwerklich liefert." | ~600 | Bewerbung → `/kontakt?type=karriere`, Job-Listings (API) | Tablets, Zollernalb, Reinigungskraft |
-| `/kontakt` | NAP, Karte, Lead/Karriere-Formular | „Kontakt \| …" | „Saubermatik Meßstetten: Adresse, Anfahrt, Kundenanfrage (Lead) und Bewerbungen – digital und persönlich für die Zollernalb und Region Tübingen." | Kunde: „Sprechen wir über Ihr Objekt." / Karriere (`?type=karriere`): „Bewerbung & erste Fragen zum Job." | ~350 (+ Formular-UI) | Tel-Link, LeadFunnel, CareerForm, Karte | Meßstetten, 72461 |
+| `/kontakt` | NAP, Karte, Lead/Karriere-Formular | „Kontakt \| …" | „Saubermatik Meßstetten: Adresse, Anfahrt, Kundenanfrage (Lead) und Bewerbungen – digital und persönlich für die Zollernalb und Region Tübingen." | Kunde: „Sprechen wir über Ihr Objekt." / Karriere (`?type=karriere`): „Bewerbung & erste Fragen zum Job." | ~350 (+ Formular-UI) | Tel-Link, LeadFunnel, CareerForm, Karte | Meßstetten, 72469, Schelmenwasenstraße 11 |
 | `/kontakt?type=karriere` | Bewerbungsformular | wie `/kontakt` | wie `/kontakt` | „Bewerbung & erste Fragen zum Job." | wie oben | CareerForm → `/api/career` | Karriere |
+| `/impressum` | Pflichtangaben § 5 DDG | „Impressum \| Saubermatik Gebäudereinigung" | „Impressum der Saubermatik Reinigungsservice, Inhaber Metin Altinsoy, mit Angaben gemäß § 5 DDG." | „Impressum" | ~200 | — | DDG, USt-IdNr., HWK Reutlingen |
+| `/datenschutz` | Datenschutzerklärung | „Datenschutzerklärung \| Saubermatik Gebäudereinigung" | „Datenschutzerklärung der Saubermatik Reinigungsservice: Informationen zur Verarbeitung personenbezogener Daten auf dieser Website." | „Datenschutzerklärung" | ~1.200 | — | DSGVO, Resend, OSM |
 | `/zielgruppen/hausverwaltungen` | HV/WEG-Landing (nicht in Header-Nav) | „Hausverwaltungen & WEG \| …" | „All-in-One für Hausverwaltungen: Treppenhaus, Hausmeister, Grünpflege, Winterdienst mit GPS-Nachweisen. Verkehrssicherungspflicht, § 2 BetrKV-Umlagefähigkeit, Mieterzufriedenheit." | „Die All-in-One Lösung für Hausverwaltungen: Treppenhaus, Hausmeister & Grünpflege mit digitalem Echtzeit-Nachweis." | ~900+ | Liegenschaft anfragen, Lead-Funnel | BetrKV, GPS, Verkehrssicherungspflicht |
 | `/leistungen` | Leistungs-Hub | „Leistungen \| …" | „Facility & Reinigung in der Zollernalb: Unterhalts- & Büroreinigung, Glas, Treppenhaus, Hausmeister, Grünanlagen, Winterdienst, Grund-/Bau- und Fassadenreinigung." | „Reinigung, die zu Ihrem Objekt passt" | ~350 | 10 Leistungs-Karten | Facility, Intervalle |
 | `/standorte` | Standort-Hub | „Standorte & Region \| …" | „Gebäudereinigung in der Zollernalb und angrenzenden Städten — Übersicht aller lokalen Saubermatik-Standortseiten inklusive Stuttgart-Metropolregion." | „Standorte & Einsatzgebiete" | ~200 | Stadt-Links, Objekt anfragen | Zollernalb, Stuttgart |
@@ -183,7 +185,7 @@ Beispiel Pfad: `/standorte/balingen/unterhaltsreinigung` — Beleg: `lib/seo/mat
 
 | Schema-Typ | Felder (zusammengefasst) | Einbindungsort |
 |------------|--------------------------|----------------|
-| **LocalBusiness + CleaningService** (Organisation) | name, url, address (Meßstetten 72461), geo, areaServed (16 Städte + 3 GeoCircle-Hubs), openingHours 08:00–22:00 täglich, hasOfferCatalog (10 Services) — *aggregateRating entfernt am 2026-07-12* | `lib/seo/global-jsonld.ts` → `components/StructuredData.tsx` in `app/layout.tsx` (global) |
+| **LocalBusiness + CleaningService** (Organisation) | name, url, address (Schelmenwasenstraße 11, Meßstetten 72469), geo, areaServed (16 Städte + 3 GeoCircle-Hubs), openingHours 08:00–22:00 täglich, hasOfferCatalog (10 Services) — *aggregateRating entfernt am 2026-07-12* | `lib/seo/global-jsonld.ts` → `components/StructuredData.tsx` in `app/layout.tsx` (global) |
 | **LocalBusiness + CleaningService** (pro Stadt) | name, url, geo, GeoCircle areaServed, parentOrganization | `lib/seo/standort-geo.ts` → global `@graph` |
 | **LocalBusiness** (Stuttgart) | wie oben, Radius 28 km | `buildStuttgartCleaningServiceNode` |
 | **OfferCatalog + Service** | 10 Leistungen mit URL, CleaningService category | global JSON-LD |
@@ -301,7 +303,7 @@ Beispiel Pfad: `/standorte/balingen/unterhaltsreinigung` — Beleg: `lib/seo/mat
 
 | Ebene | Orte/Regionen | Beleg |
 |-------|---------------|-------|
-| Firmensitz | Meßstetten, 72461, Baden-Württemberg | `lib/config/site.ts` |
+| Firmensitz | Schelmenwasenstraße 11, 72469 Meßstetten, Baden-Württemberg | `lib/config/site.ts` |
 | Kernregion | Zollernalb, Schwarzwald-Baar-Heuberg | `app/page.tsx`, `app/layout.tsx` |
 | 16 Stadt-Landingpages | siehe B.3 | `lib/routes/standorte.ts` |
 | Metropolregion | Stuttgart (+ Degerloch, Vaihingen, Bad Cannstatt, B14/B27) | `app/standorte/stuttgart/page.tsx` |
@@ -313,7 +315,7 @@ Beispiel Pfad: `/standorte/balingen/unterhaltsreinigung` — Beleg: `lib/seo/mat
 | Feld | Wert im Repo | Vorkommen | Konsistenz |
 |------|--------------|-----------|------------|
 | Name | „Saubermatik Gebäudereinigung" | Footer, JSON-LD, Adressblock, Metadata | **Konsistent** |
-| Adresse | „72461 Meßstetten", „Baden-Württemberg, Deutschland" (keine Straße!) | `lib/config/site.ts`, `app/kontakt/page.tsx` | **Konsistent, aber ohne Straßenzeile** |
+| Adresse | „Schelmenwasenstraße 11", „72469 Meßstetten", „Baden-Württemberg, Deutschland" | `lib/config/site.ts`, `app/kontakt/page.tsx`, JSON-LD `streetAddress` | **Konsistent (PLZ 72469 + Straße)** |
 | Telefon | `NEXT_PUBLIC_BUSINESS_PHONE` (Beispiel: `+497123456789`) | Kontakt, Über uns, QM, MobileStickyCta, JSON-LD (wenn gesetzt) | **Abhängig von Env — Live-Wert unklar** |
 | E-Mail | Nicht als sichtbare Mail auf Kontaktseite; nur Formular/Resend | `.env.example`, Resend | **Kein öffentliches mailto auf Kontakt (außer Karriere-Fallback)** |
 
@@ -417,7 +419,7 @@ Karriere: `/karriere` → `/kontakt?type=karriere` → CareerForm → `/api/care
 | Einzugsgebiet | Ja | JSON-LD areaServed, Standortseiten, llms.txt |
 | Kontakt/Anfrage | Ja | `/kontakt`, Lead-API |
 | Telefon | Nur wenn Env gesetzt | `NEXT_PUBLIC_BUSINESS_PHONE` |
-| Straßenadresse | **Nein** (nur PLZ/Ort) | `lib/config/site.ts` |
+| Straßenadresse | **Ja** — Schelmenwasenstraße 11 | `lib/config/site.ts`, JSON-LD, Kontakt, Impressum/Datenschutz |
 
 ---
 
@@ -425,12 +427,12 @@ Karriere: `/karriere` → `/kontakt?type=karriere` → CareerForm → `/api/care
 
 | # | Schwere | Beobachtung | Beleg |
 |---|---------|-------------|-------|
-| 1 | **hoch** | **Keine Impressum- und Datenschutz-Seiten** — für DE-B2B-Website rechtlich erforderlich, im Repo nicht vorhanden | Grep Impressum/Datenschutz; kein `app/impressum` |
+| 1 | **hoch** | ~~**Keine Impressum- und Datenschutz-Seiten**~~ — **erledigt 2026-08-10** (`/impressum`, `/datenschutz`, Footer, Sitemap) | `app/impressum/page.tsx`, `app/datenschutz/page.tsx` |
 | 2 | **hoch** | **AI-Crawler in robots.txt blockiert** (`GPTBot`, `Claude-Web`, …), parallel existiert `/llms.txt` für KI — widersprüchliche GEO-Strategie | `app/robots.ts`, `lib/seo/llms-content.ts` |
 | 3 | **hoch** | **Kein Analytics/Tracking** im Code — Conversion-Messung live **unklar** | Grep Analytics |
 | 4 | **mittel** | **Canonical fehlt** auf `/` und `/leistungen` | `app/page.tsx`, `app/leistungen/page.tsx` |
 | 5 | **mittel** | **Kein Favicon/App-Icon** im Repo | Glob `favicon*`, `icon.*` |
-| 6 | **mittel** | **NAP unvollständig:** keine Straße, Telefon nur via Env, keine sichtbare E-Mail auf Kontakt | `lib/config/site.ts`, `app/kontakt/page.tsx` |
+| 6 | **mittel** | **NAP teilweise offen:** Straße + PLZ 72469 korrigiert; Telefon nur via Env, keine sichtbare E-Mail auf Kontakt | `lib/config/site.ts`, `app/kontakt/page.tsx` |
 | 7 | **mittel** | ~~**aggregateRating 4.9/124** im JSON-LD~~ — **entfernt am 2026-07-12** | `lib/seo/global-jsonld.ts` |
 | 8 | **mittel** | ~~**Testimonials als „Beispielzitate"**~~ — **entfernt am 2026-07-12** | `app/page.tsx` |
 | 9 | **niedrig** | **`/zielgruppen/hausverwaltungen` nicht in Header-Nav**, nur Footer/Sitemap/interne Links | `components/SiteHeaderNav.tsx` vs. `app/sitemap.ts` |

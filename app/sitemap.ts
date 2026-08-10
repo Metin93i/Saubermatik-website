@@ -16,6 +16,8 @@ const CORE_PAGES: readonly {
   { path: "/qualitaetsmanagement", priority: 0.9 },
   { path: "/karriere", priority: 0.85 },
   { path: "/kontakt", priority: 0.8 },
+  { path: "/impressum", priority: 0.3 },
+  { path: "/datenschutz", priority: 0.3 },
 ] as const;
 
 const LEISTUNG_PRIORITY = 0.9;
