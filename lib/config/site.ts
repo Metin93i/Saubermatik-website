@@ -1,13 +1,15 @@
 /** Zentrale Firmen-Stammdaten (Adresse, Region) — UI + Doku synchron. */
 export const SITE_OFFICE = {
+  streetAddress: "Schelmenwasenstraße 11",
   locality: "Meßstetten",
-  postalCode: "72461",
+  postalCode: "72469",
   region: "Baden-Württemberg",
   country: "Deutschland",
 } as const;
 
 export const SITE_ADDRESS_LINES = [
   "Saubermatik Gebäudereinigung",
+  SITE_OFFICE.streetAddress,
   `${SITE_OFFICE.postalCode} ${SITE_OFFICE.locality}`,
   `${SITE_OFFICE.region}, ${SITE_OFFICE.country}`,
 ] as const;

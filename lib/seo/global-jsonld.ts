@@ -93,6 +93,7 @@ export function buildOrganizationJsonLd(): Record<string, unknown> {
     priceRange: "$$",
     address: {
       "@type": "PostalAddress",
+      streetAddress: SITE_OFFICE.streetAddress,
       addressLocality: SITE_OFFICE.locality,
       addressRegion: SITE_OFFICE.region,
       postalCode: SITE_OFFICE.postalCode,

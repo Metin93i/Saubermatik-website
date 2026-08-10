@@ -98,6 +98,18 @@ export function SiteFooter() {
             >
               Wissen &amp; Lexikon
             </PrefetchLink>
+            <PrefetchLink
+              href="/impressum"
+              className="hover:text-[color:var(--link-on-inverse)] hover:underline"
+            >
+              Impressum
+            </PrefetchLink>
+            <PrefetchLink
+              href="/datenschutz"
+              className="hover:text-[color:var(--link-on-inverse)] hover:underline"
+            >
+              Datenschutz
+            </PrefetchLink>
           </div>
         </div>
       </div>

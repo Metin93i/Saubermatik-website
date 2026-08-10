@@ -119,7 +119,7 @@ export default async function KontaktPage({ searchParams }: KontaktPageProps) {
         </div>
         <p className="mt-2 text-right text-xs text-muted">
           <a
-            href="https://www.openstreetmap.org/search?query=Me%C3%9Fstetten%2072461"
+            href="https://www.openstreetmap.org/search?query=Me%C3%9Fstetten%2072469"
             className="text-secondary hover:underline"
             target="_blank"
             rel="noopener noreferrer"
