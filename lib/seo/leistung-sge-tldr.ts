@@ -24,6 +24,14 @@ export const LEISTUNG_SGE_TLDR: Record<LeistungSlug, LeistungSgeTldr> = {
     zeitrahmen:
       "Ersttermin nach Kapazität oft innerhalb von 1–2 Wochen; Wiederkehrende Slots werden dauerhaft reserviert.",
   },
+  "raffstore-lamellenreinigung": {
+    problem:
+      "Staub, Pollen und Wetterablagerungen setzen sich auf Lamellen und in Führungen fest; Anlagen laufen schwergängig.",
+    saubermatikLoesung:
+      "Schonende Reinigung von Außenraffstoren im Reinwasser-Verfahren – ohne Chemie und ohne Risiko für die Mechanik.",
+    zeitrahmen:
+      "Termine stimmen wir auf Ihren Betrieb ab; nach kurzen Angaben oder Besichtigung erhalten Sie ein unverbindliches Angebot.",
+  },
   treppenhausreinigung: {
     problem:
       "Treppenhäuser sind Visitenkarte und Reklamationsmagnet – besonders bei WEG und Mieterhochfrequenz.",

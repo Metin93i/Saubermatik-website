@@ -25,6 +25,38 @@ export function getLeistungFaqItems(slug: LeistungSlug): readonly FaqPair[] {
           "Ja, mit abgestimmter Zuwegung, Arbeitssicherheit und geprüfter Technik. Wir planen Logistik und Zeitfenster so, dass Mitarbeiter- und Besucherströme nicht gestört werden.",
       },
     ],
+    "raffstore-lamellenreinigung": [
+      {
+        question: "Wie oft sollte man Außenraffstoren reinigen lassen?",
+        answer:
+          "In der Praxis empfiehlt sich ein- bis zweimal pro Jahr. Anlagen an Straßen, auf der Wetterseite oder mit starkem Pollenflug brauchen eher zwei Termine.",
+      },
+      {
+        question: "Was kostet die Raffstorereinigung?",
+        answer:
+          "Das hängt von der Anzahl der Behänge, der Größe und der Zugänglichkeit ab. Nach ein paar kurzen Angaben oder einer Besichtigung erhalten Sie ein unverbindliches Angebot.",
+      },
+      {
+        question: "Was ist das Reinwasser-Verfahren?",
+        answer:
+          "Entmineralisiertes Wasser löst Schmutz zuverlässig und trocknet ohne Streifen und Kalkflecken ab. In Verbindung mit weichen Spezialbürsten werden die Lamellen gründlich und schonend sauber – ganz ohne Chemie.",
+      },
+      {
+        question: "Können die Raffstoren bei der Reinigung beschädigt werden?",
+        answer:
+          "Das Verfahren ist materialschonend. Wir arbeiten ohne Hochdruck, reinigen Lamelle für Lamelle und prüfen die Anlage vor Beginn auf sichtbare Schäden.",
+      },
+      {
+        question: "Kann ich meine Raffstoren selbst reinigen?",
+        answer:
+          "Kleine, gut erreichbare Anlagen ja – aber ohne Hochdruckreiniger und ohne scharfe Reiniger, die Lamellen verbiegen leicht. Bei Höhe oder vielen Behängen empfehlen wir den Fachbetrieb.",
+      },
+      {
+        question: "Übernehmt ihr auch große Gewerbeobjekte?",
+        answer:
+          "Ja. Gerade Objekte mit vielen Behängen sind unser Alltag. Termine stimmen wir auf Ihren Betrieb ab, als Projektauftrag kommen wir auch überregional.",
+      },
+    ],
     unterhaltsreinigung: [
       {
         question: "Was umfasst eine professionelle Unterhaltsreinigung im Büro?",
@@ -107,6 +139,10 @@ export function getLeistungFaqItems(slug: LeistungSlug): readonly FaqPair[] {
 
   const specific = bySlug[slug];
   if (specific && specific.length > 0) {
+    // Wortgetreue FAQs (E2 Raffstore): ohne angehängten commonClosing.
+    if (slug === "raffstore-lamellenreinigung") {
+      return specific;
+    }
     return specific.map((p) => ({
       ...p,
       answer: `${p.answer} ${commonClosing}`,

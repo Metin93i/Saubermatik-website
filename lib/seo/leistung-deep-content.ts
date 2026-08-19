@@ -385,6 +385,7 @@ export function getLeistungDeepContent(
 export const ALL_DEDICATED_LEISTUNG_SLUGS: readonly LeistungSlug[] = [
   "unterhaltsreinigung",
   "fenster-glasreinigung",
+  "raffstore-lamellenreinigung",
   "treppenhausreinigung",
   "hausmeisterservice",
   "gruenanlagenpflege",

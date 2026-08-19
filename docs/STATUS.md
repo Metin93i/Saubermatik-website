@@ -1,31 +1,31 @@
 # STATUS · saubermatik-website
 
-Living Doc nach Bau-Schritten. Stand: **2026-08-19** · PR-Branch `chore/e1-fundament`.
+Living Doc nach Bau-Schritten. Stand: **2026-08-19** · Branch `feat/e2-raffstore-lp`.
 
 ## Live-Stand
 
-- `main` vor diesem PR: Rechtsfundament (Impressum/Datenschutz, NAP 72469) live.
-- Diese Welle (E1): Claims-Bereinigung, Nav-Umbau, Hero-Slogan, KI-Crawler offen, Kalkulator entfernt, Stubs `/secureops` + `/zielgruppen`.
+- `main`: E1 gemerged (Claims, Nav, Slogan, KI-Crawler, Stubs).
+- Diese Welle (E2): Landingpage Raffstore- & Lamellenreinigung + Matrix-Ausschluss.
 
 ## Erledigt (E1)
 
-- EngagementCalculator entfernt (Einbettungen + Datei); Prefill-Keys aus `lib/hero/quick-search.ts` / LeadFunnel.
-- Unbelegte Claims (GPS-/Foto-Zwang, 24/7, „direkter Draht“) in `app/`, `components/`, `lib/` bereinigt.
-- Sichtbares Wording „Standorte“ → „Einsatzgebiete“ (URLs unverändert).
-- Hero-Slogan: „Wir digitalisieren die Reinigung.“ + Unterzeile „Beweis statt Versprechen.“; Banner-Platzhalter mit TODO.
-- Stubs: `/secureops`, `/zielgruppen` (nicht in Sitemap).
-- Nav: Leistungen · Branchen · SecureOps · QM · Über uns · Karriere · Kontakt; Expertise nur noch Footer.
-- `robots.ts`: alle Crawler erlaubt.
-- `docs/CLAIMS-INVENTAR.md` auf `main` fehlte — Claims per Volltextsuche.
+- EngagementCalculator entfernt; Claims bereinigt; Einsatzgebiete-Wording; Hero-Slogan; Stubs; robots offen.
+
+## Erledigt (E2)
+
+- Service `raffstore-lamellenreinigung` in `lib/config/services.ts` mit `includeInMatrix: false`.
+- Matrix: `MATRIX_SERVICES` / `MatrixServiceSlug` — neue Leistung **nicht** in Stadt×Service-Matrix (bleibt 16×10).
+- Seite `/leistungen/raffstore-lamellenreinigung` mit wortgetreuen Texten, FAQ + FAQPage-JSON-LD.
+- Sitemap/Nav/Hub ziehen den Service aus `SERVICES` (automatisch).
+- Querverweis von Fenster-/Glasreinigung; llms.txt-Zeile ergänzt.
 
 ## Nächste Schritte
 
-- Hero-Banner-Asset freigeben und einbinden.
-- Leistungs-/Branchen-/SecureOps-Inhaltsseiten (spätere Wellen).
-- Städte-Kuration / Claims-Inventar ggf. von `audit-claims` auf `main` bringen.
+- Hero-Banner-Asset (Startseite) freigeben.
+- E3: Städte-Kuration / ggf. Matrix für Raffstore später.
+- Branchen-/SecureOps-Inhaltsseiten.
 
 ## Offen & Risiken
 
-- DNS/Horizons vs. dieses VPS-Deploy: aus Repo allein unklar.
-- Stubs sind bewusst dünn — keine Feature-Versprechen.
-- Interne Docs (`docs/*.md` außer STATUS/CHANGELOG) können noch alte Claims/Standorte-Wording enthalten (bewusst nicht in E1 umgeschrieben).
+- Raffstore-Hero: Übergangs-Unsplash + TODO „durch echtes Einsatzfoto ersetzen“.
+- DNS/Horizons vs. VPS: aus Repo allein unklar.

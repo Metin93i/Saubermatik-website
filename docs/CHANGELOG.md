@@ -1,3 +1,4 @@
+2026-08-19 · E2 · Raffstore- & Lamellenreinigung Landingpage (Matrix ausgenommen)
 2026-08-19 · E1 · Claims-Bereinigung, Nav-Umbau, Slogan, KI-Crawler offen
 2026-08-10 · recht · Impressum + Datenschutz-Seiten; NAP korrigiert (PLZ 72469, Schelmenwasenstraße 11); Footer-/Sitemap-Links
 2026-07-19 · deploy-hardening · Deploy nur nach grünem CI (workflow_run); ops/deploy.sh mit Health-Check + Rollback; docs/deploy.md
