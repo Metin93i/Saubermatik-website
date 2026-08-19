@@ -18,7 +18,6 @@ Technisches Referenzdokument (DDD). Dateibaum: `docs/project_structure.md`. Änd
 | Freshness | `lib/utils/date.ts`, `FreshnessBadge`, `dateModified` im globalen JSON-LD |
 | Lexikon | `app/wissen/*`, `lib/config/lexikon.ts` (Wiki 2.0, 8 Terms) |
 | B2B-Onboarding | `components/B2BOnboardingProcess.tsx`, `lib/seo/b2b-onboarding.ts` (HowTo JSON-LD) |
-| Key Account | `components/KamProfileCard.tsx`, `components/KamPortrait.tsx`, `lib/seo/kam-profile.ts` (Person JSON-LD Metin Altinsoy); **`KeyAccountManager.tsx`** auf `/ueber-uns` (Langform) |
 
 ## Datenfluss: Lead-Erfassung (Kunde)
 
@@ -98,7 +97,7 @@ flowchart LR
 | `KontaktFormSwitch` | **`useSearchParams`** für `/kontakt`-Weiche |
 | `PrefetchLink` | `next/link` + `useRouter().prefetch` auf `pointerenter` für Kern-Routen (Header/Footer) |
 
-Alle übrigen Seiten unter `app/` sind Server Components (inkl. eingebundene **`SeoCrossLinks`**, **`BreadcrumbJsonLd`**, **`LeistungSgeTldr`**, **`B2BOnboardingProcess`**, **`KeyAccountManager`**).
+Alle übrigen Seiten unter `app/` sind Server Components (inkl. eingebundene **`SeoCrossLinks`**, **`BreadcrumbJsonLd`**, **`LeistungSgeTldr`**, **`B2BOnboardingProcess`**).
 
 ## Enterprise B2B-Module (Datenfluss)
 
@@ -107,29 +106,23 @@ flowchart TB
   subgraph config [Single Source]
     L[lib/config/lexikon.ts]
     O[lib/seo/b2b-onboarding.ts]
-    K[lib/seo/key-account.ts]
   end
   subgraph ui [Server Components]
     W[app/wissen/term/page.tsx]
     B[B2BOnboardingProcess]
-    KA[KeyAccountManager]
   end
   subgraph seo [Discovery]
     S[app/sitemap.ts]
     H[HowTo JSON-LD]
-    P[Person JSON-LD]
   end
   L --> W
   L --> S
   O --> B
   O --> H
-  K --> KA
-  K --> P
 ```
 
 - **Lexikon:** `LEXIKON_TERMS` erweitert → `generateStaticParams` auf **`/wissen/[term]`** rendert alle Spokes statisch; **`app/sitemap.ts`** mappt dieselbe Liste (keine Duplikation).
 - **HowTo:** `B2B_ONBOARDING_STEPS` speist UI-Timeline und `buildB2BOnboardingHowToJsonLd(pagePath)` — `pagePath` pro Einbindung (`/`, `/qualitaetsmanagement`) für korrekte Step-URLs.
-- **Key Account:** Copy + Schema zentral in **`lib/seo/kam-profile.ts`** (Metin Altinsoy, `Person` + `OrganizationRole` JSON-LD); **`KamProfileCard`** auf **`/`** (Hero Trust-Stack) und **`/kontakt`** (neben Lead-Funnel). Langform **`KeyAccountManager`** auf **`/ueber-uns`** via **`lib/seo/key-account.ts`**.
 
 ## Hero Trust-Stack (Startseite)
 
@@ -137,11 +130,8 @@ flowchart TB
 
 | Modul | Komponente | Zweck |
 |-------|------------|--------|
-| KAM-Profil | **`KamProfileCard`** + **`KamPortrait`** | Metin Altinsoy, direkter GF-Draht, Person JSON-LD |
 | ESG | **`EsgComplianceStatement`** | Osmose, VAH, CSRD/ESG-Rohdaten |
 | App-Signal | **`AppMockup`** | Geneigtes Smartphone-Bild (QM-Dashboard) |
-
-**Wiederverwendung:** Identisches **`KamProfileCard`** auf **`/kontakt`** neben **`LeadFunnel`** — reduziert Anonymität vor Formular-Absendung.
 
 ## EngagementCalculator — WE-Modus (Hausverwaltung)
 
@@ -156,7 +146,7 @@ Prefill-Key: **`saubermatik-calc-prefill`** → **`LeadFunnel`** setzt `objectNo
 
 ## HeroQuickSearch — B2B-Routing-Leiste (Startseite)
 
-**Layout:** Volle Breite im Hero (`app/page.tsx`), **außerhalb** des 2-Spalten-Grids; Startseiten-Container **`max-w-[100rem]`** mit **`px-4 sm:px-8 lg:px-16`**. Hero-Grid: links Trust-Stack (Copy, CTAs, KAM, ESG, App-Mockup), rechts **`EngagementCalculator`** (`compact`, `lg:sticky`).
+**Layout:** Volle Breite im Hero (`app/page.tsx`), **außerhalb** des 2-Spalten-Grids; Startseiten-Container **`max-w-[100rem]`** mit **`px-4 sm:px-8 lg:px-16`**. Hero-Grid: links Trust-Stack (Copy, CTAs, ESG, App-Mockup), rechts **`EngagementCalculator`** (`compact`, `lg:sticky`).
 
 ```mermaid
 flowchart LR
