@@ -139,5 +139,5 @@ export function isProjektCity(city: StandortCity | "stuttgart"): boolean {
 
 /** Wortgetreuer Rahmen-Absatz für Projekt-Städte (Paket 6). */
 export function getProjektRahmenAbsatz(cityLabel: string): string {
-  return `Unser Kernradius für regelmäßige Unterhaltsreinigung liegt rund um Meßstetten auf der Schwäbischen Alb. In ${cityLabel} übernehmen wir Projekt- und Sonderaufträge – zum Beispiel Glas- und Fensterreinigung, Raffstore-Reinigung, Grund- und Fassadenreinigung.`;
+  return `Unser Kernradius für die regelmäßige Unterhaltsreinigung liegt rund um Meßstetten auf der Schwäbischen Alb. In ${cityLabel} übernehmen wir Projekt- und Sonderaufträge – zum Beispiel Glas- und Fensterreinigung, Raffstore-Reinigung, Grund- und Fassadenreinigung. Sie planen eine größere regelmäßige Betreuung in ${cityLabel}? Sprechen Sie uns an – für passende Objekte bauen wir die Betreuung vor Ort gerne auf.`;
 }

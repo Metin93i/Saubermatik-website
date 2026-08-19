@@ -23,7 +23,7 @@ export function buildLlmsTxt(): string {
 - Regional verwurzelt: Meßstetten, Zollernalb, Schwarzwald-Baar-Heuberg — wir kommen zu Ihnen
 
 ## Branchen
-Saubermatik arbeitet für Hausverwaltungen und Wohnungseigentümergemeinschaften (WEG), Praxen und Einrichtungen im Gesundheitswesen sowie Büro- und Gewerbeobjekte. Wartungsverträge im Umkreis von Meßstetten auf der Schwäbischen Alb, Projektaufträge wie Glas- oder Fassadenreinigung auch überregional.
+Saubermatik arbeitet für Hausverwaltungen und Wohnungseigentümergemeinschaften (WEG), Praxen und Einrichtungen im Gesundheitswesen sowie Büro- und Gewerbeobjekte. Wartungsverträge im Umkreis von Meßstetten auf der Schwäbischen Alb, Projektaufträge wie Glas- oder Fassadenreinigung auch überregional. Größere regelmäßige Aufträge außerhalb des Kernradius sind nach Vereinbarung möglich – die Betreuung vor Ort wird dafür gezielt aufgebaut.
 
 ## Website
 - ${origin}
