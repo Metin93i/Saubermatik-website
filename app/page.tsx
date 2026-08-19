@@ -3,7 +3,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { AppMockup } from "@/components/AppMockup";
 import { B2BOnboardingProcess } from "@/components/B2BOnboardingProcess";
-import { EngagementCalculator } from "@/components/EngagementCalculator";
 import { EsgComplianceStatement } from "@/components/EsgComplianceStatement";
 import { FreshnessBadge } from "@/components/FreshnessBadge";
 import { GeoImage } from "@/components/GeoImage";
@@ -15,11 +14,11 @@ import { STANDORT_CITIES, STANDORT_LABELS } from "@/lib/routes/standorte";
 
 export const metadata: Metadata = {
   description:
-    "Saubermatik aus Meßstetten: Facility & Reinigung für die Zollernalb und den Schwarzwald-Baar-Heuberg-Kreis – mit festem Ansprechpartner vor Ort und digitaler Objektsteuerung.",
+    "Saubermatik aus Meßstetten: Facility & Reinigung für die Zollernalb und den Schwarzwald-Baar-Heuberg-Kreis – mit festem Ansprechpartner und digitaler Objektsteuerung.",
 };
 
 const trustItems = [
-  "Fester Ansprechpartner vor Ort – kein anonymes Weiterreichen",
+  "Fester Ansprechpartner statt Callcenter",
   "Digitale Objektsteuerung: Ausfälle werden abgefangen, bevor Sie es merken",
   "Regional verwurzelt: Zollernalb & Schwarzwald-Baar-Heuberg, kurze Wege",
 ] as const;
@@ -45,9 +44,11 @@ export default function Home() {
             Meßstetten · Zollernalb · Schwarzwald-Baar-Heuberg
           </p>
           <h1 className="mt-1 max-w-5xl text-3xl font-black tracking-tight text-foreground sm:text-4xl lg:text-[2.35rem] lg:leading-tight">
-            Reinigung, die hält, was sie verspricht – mit Kopf, nicht nur mit
-            dem Wischmob.
+            Wir digitalisieren die Reinigung.
           </h1>
+          <p className="mt-2 max-w-3xl text-base font-semibold text-foreground sm:text-lg">
+            Beweis statt Versprechen.
+          </p>
 
           <HeroQuickSearch className="mt-4" />
 
@@ -55,7 +56,7 @@ export default function Home() {
             <div className="flex flex-col gap-3">
               <p className="text-sm leading-6 text-muted sm:text-base sm:leading-7">
                 Bei uns bekommen Sie keinen Textbaustein aus der Großstadt,
-                sondern einen festen Ansprechpartner vor Ort. Unsere digitale
+                sondern einen festen Ansprechpartner. Unsere digitale
                 Objektsteuerung sorgt dafür, dass Touren und Qualität nicht vom
                 Zufall abhängen: Wenn jemand ausfällt, reagiert das System – Sie
                 merken vor allem eins: dass es weiterläuft. Wir kombinieren
@@ -103,12 +104,18 @@ export default function Home() {
               </div>
             </div>
 
+            {/* TODO(E1): Hero-Banner-Bild noch nicht freigegeben — Platzhalter bis Asset vorliegt. Keinen Bildpfad erfinden. */}
             <div
-              id="engagement-calculator-section"
-              className="lg:sticky lg:top-20"
-              aria-labelledby="engagement-calculator-heading"
+              className="flex min-h-[16rem] items-center justify-center rounded-sm border border-dashed border-zinc-300 bg-zinc-100/80 px-6 py-10 text-center lg:sticky lg:top-20 lg:min-h-[22rem]"
+              aria-label="Banner-Bild folgt"
             >
-              <EngagementCalculator compact className="w-full" />
+              <p className="max-w-xs text-sm leading-6 text-muted">
+                Banner-Bild folgt.
+                <br />
+                <span className="text-xs">
+                  TODO: freigegebenes Hero-Asset einbinden
+                </span>
+              </p>
             </div>
           </div>
         </div>

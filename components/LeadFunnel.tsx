@@ -1,10 +1,9 @@
 "use client";
 
 import type { FormEvent } from "react";
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useMemo, useState } from "react";
 import { FUNNEL_SERVICE_OPTIONS, SERVICES } from "@/lib/config/services";
 import { apiUrl } from "@/lib/config/api";
-import { CALC_PREFILL_KEY } from "@/lib/hero/quick-search";
 import type {
   LeadAreaSize,
   LeadFunnelSubmission,
@@ -133,35 +132,6 @@ export function LeadFunnel({ className, initialServiceType }: LeadFunnelProps) {
   const [phone, setPhone] = useState("");
   const [objectNotes, setObjectNotes] = useState("");
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
-
-  useEffect(() => {
-    let cancelled = false;
-    try {
-      const raw = sessionStorage.getItem(CALC_PREFILL_KEY);
-      if (!raw) return;
-      const data = JSON.parse(raw) as {
-        service?: LeadServiceType;
-        objectNotes?: string;
-      };
-      sessionStorage.removeItem(CALC_PREFILL_KEY);
-      queueMicrotask(() => {
-        if (cancelled) return;
-        if (data.objectNotes) setObjectNotes(data.objectNotes);
-        if (
-          data.service &&
-          (LEAD_SERVICE_TYPES as readonly string[]).includes(data.service)
-        ) {
-          setServiceType(data.service);
-          setStep(1);
-        }
-      });
-    } catch {
-      /* ignore malformed prefill */
-    }
-    return () => {
-      cancelled = true;
-    };
-  }, []);
   const [isLoading, setIsLoading] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
   const [leadEmailSent, setLeadEmailSent] = useState(true);

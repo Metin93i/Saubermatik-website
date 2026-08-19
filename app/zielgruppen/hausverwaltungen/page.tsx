@@ -3,13 +3,12 @@ import Link from "next/link";
 import { B2BOnboardingProcess } from "@/components/B2BOnboardingProcess";
 import { KeyAccountManager } from "@/components/KeyAccountManager";
 import { LeadFunnel } from "@/components/LeadFunnel";
-import { EngagementCalculator } from "@/components/EngagementCalculator";
 import { buildHausverwaltungenServiceJsonLd } from "@/lib/seo/hausverwaltungen-schema";
 
 export const metadata: Metadata = {
   title: "Hausverwaltungen & WEG",
   description:
-    "All-in-One für Hausverwaltungen: Treppenhaus, Hausmeister, Grünpflege, Winterdienst mit GPS-Nachweisen. Verkehrssicherungspflicht, § 2 BetrKV-Umlagefähigkeit, Mieterzufriedenheit.",
+    "All-in-One für Hausverwaltungen: Treppenhaus, Hausmeister, Grünpflege, Winterdienst mit dokumentierten Einsätzen. Verkehrssicherungspflicht, § 2 BetrKV-Umlagefähigkeit, Mieterzufriedenheit.",
   alternates: { canonical: "/zielgruppen/hausverwaltungen" },
 };
 
@@ -37,8 +36,9 @@ export default function HausverwaltungenPage() {
               Sie verwalten nicht nur Quadratmeter – Sie tragen Verantwortung
               für Haftung, Nebenkostenabrechnung und Mieterzufriedenheit.
               Saubermatik bündelt operative Leistungen in einem vertraglich
-              messbaren System: mit dokumentierten Touren, GPS-gestützten
-              Fotoprotokollen und einem Key Account, der Ihre Liegenschaften
+              messbaren System: mit dokumentierten Touren und Einsätzen
+              (Umfang je nach Objekt und Vereinbarung) und einem Key Account,
+              der Ihre Liegenschaften
               kennt.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
@@ -99,9 +99,10 @@ export default function HausverwaltungenPage() {
                     Saubermatik übersetzt die Verkehrssicherungspflicht in
                     belastbare Prozesse: Wetterführung, Einsatzfenster,
                     Streumittelklassen und Kontrollgänge sind vertraglich
-                    fixiert. Unsere Saubermatik-App erzeugt GPS-gestempelte
-                    Fotoprotokolle pro Einsatz – Zeitstempel, Objektzuordnung,
-                    Leistungsart. Das ist Ihr Schutzschild gegen Haftungsklagen
+                    fixiert. Unsere Saubermatik-App erzeugt dokumentierte
+                    Einsatznachweise – Zeitstempel, Objektzuordnung,
+                    Leistungsart (Umfang je nach Objekt und Vereinbarung). Das
+                    ist Ihr Schutzschild gegen Haftungsklagen
                     und Regress von Versicherern: nicht die Behauptung „wir
                     waren da“, sondern strukturierte Beweiskette.
                   </p>
@@ -265,12 +266,6 @@ export default function HausverwaltungenPage() {
           pagePath="/zielgruppen/hausverwaltungen"
           className="border-t border-foreground/10 bg-slate-50/80 py-12 sm:py-14"
         />
-
-        <section className="border-t border-foreground/10 bg-white py-12">
-          <div className="mx-auto w-full max-w-xl px-4 sm:px-6 lg:px-8">
-            <EngagementCalculator funnelHref="#kontakt-anfrage" />
-          </div>
-        </section>
 
         <section
           id="kontakt-anfrage"

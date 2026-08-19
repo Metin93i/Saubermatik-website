@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { B2BOnboardingProcess } from "@/components/B2BOnboardingProcess";
 import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
-import { EngagementCalculator } from "@/components/EngagementCalculator";
 import { FreshnessBadge } from "@/components/FreshnessBadge";
 import { LeadFunnel } from "@/components/LeadFunnel";
 import { SeoCrossLinks } from "@/components/SeoCrossLinks";
@@ -23,7 +22,6 @@ export function MatrixDeepPage({ content }: Props) {
     heroTitle,
     heroSubtitle,
     sections,
-    calcCategory,
     funnelInitialService,
   } = content;
 
@@ -34,7 +32,7 @@ export function MatrixDeepPage({ content }: Props) {
       <BreadcrumbJsonLd
         items={[
           { name: "Startseite", path: "/" },
-          { name: "Standorte", path: "/standorte" },
+          { name: "Einsatzgebiete", path: "/standorte" },
           { name: cityLabel, path: `/standorte/${city}` },
           { name: serviceLabel, path: pagePath },
         ]}
@@ -44,7 +42,7 @@ export function MatrixDeepPage({ content }: Props) {
           <div className={`${PAGE_CONTAINER} py-8 sm:py-10`}>
             <nav className="text-sm font-semibold text-secondary">
               <Link href="/standorte" className="hover:underline">
-                Standorte
+                Einsatzgebiete
               </Link>
               <span className="text-muted"> / </span>
               <Link href={`/standorte/${city}`} className="hover:underline">
@@ -101,21 +99,6 @@ export function MatrixDeepPage({ content }: Props) {
             ))}
           </div>
         </section>
-
-        {calcCategory ? (
-          <section
-            id="engagement-calculator-section"
-            className="border-b border-zinc-200 bg-zinc-50 py-10 sm:py-12"
-            aria-labelledby="engagement-calculator-heading"
-          >
-            <div className={PAGE_CONTAINER}>
-              <EngagementCalculator
-                className="mx-auto max-w-4xl"
-                initialCategory={calcCategory}
-              />
-            </div>
-          </section>
-        ) : null}
 
         <B2BOnboardingProcess
           pagePath={pagePath}

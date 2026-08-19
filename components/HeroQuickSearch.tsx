@@ -75,7 +75,7 @@ export function HeroQuickSearch({ className = "" }: Props) {
 
         <div className="flex min-w-0 flex-1 flex-col gap-1">
           <label htmlFor={locationId} className="text-xs font-bold text-muted">
-            in / Standort
+            in / Einsatzgebiet
           </label>
           <select
             id={locationId}
@@ -90,7 +90,7 @@ export function HeroQuickSearch({ className = "" }: Props) {
                 {opt.label}
               </option>
             ))}
-            <option value="__custom__">Alle Standorte anzeigen</option>
+            <option value="__custom__">Alle Einsatzgebiete anzeigen</option>
           </select>
         </div>
 

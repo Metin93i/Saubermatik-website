@@ -166,7 +166,7 @@ export const MATRIX_CITY_EXTENDED: Record<
   "villingen-schwenningen": {
     economicContext: [
       "Villingen-Schwenningen ist Doppelstadt im Schwarzwald-Baar-Kreis: Uhrenindustrie, Technologie, große Verwaltung und Einzelhandel. Facility Manager betreuen oft größere Flächen mit mehreren Zugängen — digitale Tourenplanung und Echtzeit-QM sind hier Pflicht, nicht Kür.",
-      "Die Schwarzwald-Baar-Heuberg-Region verlangt winterfesten Betrieb: GPS-Fotoprotokolle beim Winterdienst, priorisierte Räumung an Klinik- und Verwaltungszufahrten, Kombination mit Treppenhaus und Gehwegsicherung aus einem Portfolio.",
+      "Die Schwarzwald-Baar-Heuberg-Region verlangt winterfesten Betrieb: dokumentierte Einsätze beim Winterdienst, priorisierte Räumung an Klinik- und Verwaltungszufahrten, Kombination mit Treppenhaus und Gehwegsicherung aus einem Portfolio.",
       "Saubermatik bedient VS von Meßstetten aus mit überregionaler Prozessqualität: ein Key Account, messbare SLAs, skalierbare Plattform für Multi-Objekt-Bestände — ohne Qualitätsverlust bei wachsender Objektzahl.",
     ],
     objectTypes: [
@@ -283,7 +283,7 @@ export function buildProcurementParagraphs(
       cityLabel +
       ".",
     winterdienst:
-      "Winterdienst-Vergaben sollten GPS-Protokolle und Einsatzschwellen schriftlich fixieren — Haftung ist kein Detail.",
+      "Winterdienst-Vergaben sollten dokumentierte Einsätze und Einsatzschwellen schriftlich fixieren — Haftung ist kein Detail.",
     hausmeisterservice:
       "Hausmeister-Leistungen werden als Stunden- oder Pauschalpaket mit Kontrollgängen im LV beschrieben — kein offenes Mandat.",
   };

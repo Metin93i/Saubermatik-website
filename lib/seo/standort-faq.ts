@@ -20,7 +20,7 @@ export function getStandortFaqItems(city: StandortCity): StandortFaqItem[] {
     },
     {
       question: `Übernehmen Sie die Verkehrssicherungspflicht (Winterdienst) für Hausverwaltungen in ${label}?`,
-      answer: `Ja. Wir übernehmen Räum- und Streupflicht für WEG, Gewerbe und Hausverwaltungen in ${label} – wettergeführt, mit GPS-Fotoprotokollen und umlagefähiger Dokumentation nach § 2 BetrKV. Kombinierbar mit Treppenhausreinigung und Grünpflege aus einem Portfolio und einem SLA.`,
+      answer: `Ja. Wir übernehmen Räum- und Streupflicht für WEG, Gewerbe und Hausverwaltungen in ${label} – wettergeführt, mit dokumentierten Einsätzen und umlagefähiger Dokumentation nach § 2 BetrKV (Umfang je nach Objekt und Vereinbarung). Kombinierbar mit Treppenhausreinigung und Grünpflege aus einem Portfolio und einem SLA.`,
     },
   ];
 }

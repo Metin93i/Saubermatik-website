@@ -8,11 +8,11 @@ export const KEY_ACCOUNT_COPY = {
   pillars: [
     {
       title: "Eine Gesicht, eine Verantwortung",
-      body: "Ihr Key Account Manager kennt Vertragslogik, SLA-KPIs und Objektbesonderheiten. Entscheidungen werden nicht „weitergeleitet“, sondern im direkten Draht getroffen – mit dokumentierter Nachverfolgung in der Saubermatik-Plattform.",
+      body: "Ihr Key Account Manager kennt Vertragslogik, SLA-KPIs und Objektbesonderheiten. Entscheidungen werden nicht „weitergeleitet“, sondern mit festem Ansprechpartner getroffen – mit dokumentierter Nachverfolgung in der Saubermatik-Plattform.",
     },
     {
-      title: "Direkte Durchwahl & 24/7-Eskalation",
-      body: "Nach Vertragsstart erhalten Sie eine feste Eskalationsmatrix: operativer Tageskontakt, strategische Quartalsreviews und eine 24/7-Notfallstufe für sicherheits- oder reputationskritische Ereignisse – ohne Warteschleife.",
+      title: "Direkte Durchwahl & klare Eskalation",
+      body: "Nach Vertragsstart erhalten Sie eine feste Eskalationsmatrix: operativer Tageskontakt, strategische Quartalsreviews und eine definierte Notfallstufe für sicherheits- oder reputationskritische Ereignisse – ohne Warteschleife.",
     },
     {
       title: "Null anonyme Hotline",

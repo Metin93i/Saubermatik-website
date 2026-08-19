@@ -15,8 +15,9 @@ const DROPDOWN_LINK =
   "flex items-start gap-2 border-b border-slate-100 px-4 py-2.5 text-sm text-slate-700 transition last:border-b-0 hover:bg-slate-50 hover:text-slate-900";
 
 const MAIN_PAGES = [
+  { href: "/zielgruppen", label: "Branchen" },
+  { href: "/secureops", label: "SecureOps" },
   { href: "/qualitaetsmanagement", label: "Qualitätsmanagement" },
-  { href: "/expertise", label: "Expertise" },
   { href: "/ueber-uns", label: "Über uns" },
   { href: "/karriere", label: "Karriere" },
   { href: "/kontakt", label: "Kontakt" },

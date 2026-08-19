@@ -17,7 +17,7 @@ export const LEISTUNG_ENTITY_FACTS: Partial<
     "Repräsentative Eingangsbereiche, digitale Touren und Ausfallsicherheit – kombinierbar mit Winterdienst und Hausverwaltungs-SLA.",
   ],
   winterdienst: [
-    "Räum- und Streupflicht wettergeführt mit GPS-Fotoprotokollen; Verkehrssicherungspflicht dokumentiert für WEG und Gewerbe.",
+    "Räum- und Streupflicht wettergeführt mit dokumentierten Einsätzen; Verkehrssicherungspflicht dokumentiert für WEG und Gewerbe.",
     "§ 2 BetrKV-transparente Abrechnung, BG-BAU-orientierte Einsatzsicherheit, Eskalation bei Extremwetter.",
   ],
   grundreinigung: [

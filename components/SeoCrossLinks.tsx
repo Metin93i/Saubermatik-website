@@ -55,7 +55,7 @@ export function SeoCrossLinks({ type }: Props) {
               href="/standorte"
               className="text-sm font-medium text-muted underline-offset-4 transition hover:text-secondary hover:underline"
             >
-              Alle Standorte
+              Alle Einsatzgebiete
             </Link>
           </li>
         </ul>

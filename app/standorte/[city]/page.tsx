@@ -25,7 +25,7 @@ export async function generateMetadata({
 }: PageProps): Promise<Metadata> {
   const { city } = await params;
   if (!isStandortCity(city)) {
-    return { title: "Standort" };
+    return { title: "Einsatzgebiet" };
   }
   const label = STANDORT_LABELS[city];
   const deep = buildStandortDeepContent(city, label);
@@ -51,7 +51,7 @@ export default async function StandortPage({ params }: PageProps) {
       <BreadcrumbJsonLd
         items={[
           { name: "Startseite", path: "/" },
-          { name: "Standorte", path: "/standorte" },
+          { name: "Einsatzgebiete", path: "/standorte" },
           { name: label, path: `/standorte/${city}` },
         ]}
       />
@@ -60,13 +60,13 @@ export default async function StandortPage({ params }: PageProps) {
           <div className="mx-auto w-full max-w-6xl px-4 py-10 sm:px-6 sm:py-12 lg:px-8">
             <nav className="text-sm font-semibold text-secondary">
               <Link href="/standorte" className="hover:underline">
-                Standorte
+                Einsatzgebiete
               </Link>
               <span className="text-muted"> / </span>
               <span className="text-muted">{label}</span>
             </nav>
             <p className="mt-4 text-xs font-bold uppercase tracking-widest text-primary">
-              Standort {label}
+              Einsatzgebiet {label}
             </p>
             <h1 className="mt-4 max-w-4xl text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-[2.5rem] lg:leading-tight">
               {deep.heroTitle}

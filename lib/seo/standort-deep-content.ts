@@ -79,7 +79,7 @@ function buildCoreCitySections(
       title: `Leistungen vor Ort in ${label}`,
       paragraphs: [
         `Unterhaltsreinigung mit 4-Farb-System und HACCP in Teeküchen, streifenfreie Glasreinigung (Reinwasser-Osmose), Grund- und Bauendreinigung, Fassadenpflege, Entrümpelung und Winterdienst – alles aus einem Portfolio. Das reduziert Schnittstellen für Verwalter und Facility in ${label}.`,
-        `Treppenhausreinigung und Verkehrssicherungspflicht sind für WEG und Gewerbe in ${label} besonders sensibel: Trittsicherheit, repräsentative Eingänge und GPS-protokollierte Winterdienste schützen vor Haftung und Mieterbeschwerden.`,
+        `Treppenhausreinigung und Verkehrssicherungspflicht sind für WEG und Gewerbe in ${label} besonders sensibel: Trittsicherheit, repräsentative Eingänge und dokumentierte Winterdienste schützen vor Haftung und Mieterbeschwerden.`,
       ],
     },
     {
@@ -112,7 +112,7 @@ function buildRegionalSections(
 
   const regionalIntro = isHq
     ? [
-        `Meßstetten ist unser Firmensitz – hier starten Disposition, Key-Account-Betreuung und die Saubermatik-Plattform. Für Objekte in Meßstetten bedeutet das: kürzeste Wege, maximale Reaktionsgeschwindigkeit und direkter Draht zur Geschäftsführung.`,
+        `Meßstetten ist unser Firmensitz – hier starten Disposition, Key-Account-Betreuung und die Saubermatik-Plattform. Für Objekte in Meßstetten bedeutet das: kürzeste Wege, maximale Reaktionsgeschwindigkeit und fester Ansprechpartner statt Callcenter.`,
         `Als regional verwurzelter Partner kennen wir Zollernalbkreis und angrenzende Räume nicht aus dem Navi, sondern aus täglicher Praxis: WEG, Mittelstand, Praxen und Gewerbe mit unterschiedlichsten Anforderungen.`,
         `Digitale Objektsteuerung, Ausfallsicherheit und messbare Qualität sind bei uns kein Upsell – sie sind die Betriebslogik, mit der Meßstetten und die gesamte Region bedient werden.`,
       ]
@@ -143,7 +143,7 @@ function buildRegionalSections(
       id: "compliance",
       title: `Verkehrssicherung, Winterdienst & Hausverwaltung`,
       paragraphs: [
-        `Verkehrssicherungspflicht ist in ${label} kein Nebenthema: Winterdienst, Treppenhaus, Glätte auf Zufahrten und dokumentierte Räum- und Streupflicht schützen Eigentümer und Verwalter vor Haftung. Saubermatik liefert GPS-protokollierte Einsätze und umlagefähige Abrechnung nach § 2 BetrKV.`,
+        `Verkehrssicherungspflicht ist in ${label} kein Nebenthema: Winterdienst, Treppenhaus, Glätte auf Zufahrten und dokumentierte Räum- und Streupflicht schützen Eigentümer und Verwalter vor Haftung. Saubermatik liefert dokumentierte Einsätze und umlagefähige Abrechnung nach § 2 BetrKV (Umfang je nach Objekt und Vereinbarung).`,
         `Hausverwaltungen und WEG in ${label} bündeln bei uns Treppenhaus, Grünpflege, Winterdienst und Hausmeisterservice – ein Key Account, ein SLA, eine App. Mieterzufriedenheit steigt, wenn Intervalle stimmen und Mängel proaktiv gemeldet werden.`,
         `Notfall-Reaktionszeiten sind vertraglich steuerbar: Glasbruch, Wasserschaden oder kurzfristige Sonderreinigung werden über dieselbe Plattform dispositioniert wie der tägliche Unterhalt – transparent für Sie, steuerbar für uns.`,
       ],
