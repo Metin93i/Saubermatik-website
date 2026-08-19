@@ -24,7 +24,7 @@ export async function generateMetadata({
   const { city, service } = await params;
   const route = parseMatrixRoute(city, service);
   if (!route) {
-    return { title: "Standort & Leistung" };
+    return { title: "Einsatzgebiet & Leistung" };
   }
   const content = buildMatrixDeepContent(route.city, route.service);
   return {

@@ -1,5 +1,4 @@
 import { SERVICES, type ServiceSlug } from "@/lib/config/services";
-import type { QuickSearchCalcCategory } from "@/lib/hero/quick-search";
 import {
   formatInfrastructure,
   formatZones,
@@ -34,7 +33,6 @@ export type MatrixDeepContent = {
   heroTitle: string;
   heroSubtitle: string;
   sections: readonly MatrixContentSection[];
-  calcCategory?: QuickSearchCalcCategory;
   funnelInitialService: ServiceSlug;
 };
 
@@ -69,7 +67,7 @@ function buildLocalBlockA(
 
   const regionalLeads = isHq
     ? [
-        `Meßstetten ist unser Firmensitz — für ${serviceLabel} bedeutet das kürzeste Wege, direkter Draht zur Geschäftsführung und maximale Reaktionsgeschwindigkeit. Disposition, Key Account und Saubermatik-Plattform starten hier; Objekte in Meßstetten sind Referenz für den gesamten Zollernalbkreis.`,
+        `Meßstetten ist unser Firmensitz — für ${serviceLabel} bedeutet das kürzeste Wege, fester Ansprechpartner statt Callcenter und maximale Reaktionsgeschwindigkeit. Disposition, Key Account und Saubermatik-Plattform starten hier; Objekte in Meßstetten sind Referenz für den gesamten Zollernalbkreis.`,
         `Als regional verwurzelter Partner kennen wir WEG, Mittelstand, Praxen und Gewerbe nicht aus dem Navi, sondern aus täglicher Praxis. ${serviceLabel} wird mit festen Teams, digitalen Protokollen und messbarer Qualität (DIN EN 13549-orientiert) umgesetzt — nicht als anonyme Subunternehmer-Kette.`,
         `Digitale Objektsteuerung und Ausfallsicherheit sind bei uns Betriebslogik: Wenn jemand ausfällt, reagiert das System — Sie merken, dass es weiterläuft. Transparente SLAs, keine versteckten Kosten.`,
       ]
@@ -121,7 +119,7 @@ function buildSynergyBlockC(
       `Verkehrssicherungspflicht und NK-Abrechnung aus einer Hand — weniger Streit in Eigentümerversammlungen.`,
     ],
     winterdienst: [
-      `Winterdienst in ${cityLabel} ist Haftung: ${industry} GPS-Fotoprotokolle, wettergeführt, § 2 BetrKV-transparent — Saubermatik liefert Nachweise, die vor Versicherer und Gericht bestehen.`,
+      `Winterdienst in ${cityLabel} ist Haftung: ${industry} dokumentierte Einsätze, wettergeführt, § 2 BetrKV-transparent — Saubermatik liefert Nachweise, die vor Versicherer und Gericht bestehen (Umfang je nach Objekt und Vereinbarung).`,
       `Gehwege, Zufahrten, Treppen — priorisiert nach Objektrisiko. Bereitschaftslogik statt Bürozeiten.`,
       `Kombination mit Treppenhaus und Grünpflege — eine Verkehrssicherungsstrategie für die Liegenschaft.`,
     ],
@@ -228,7 +226,7 @@ function buildStandardsBlock(
     paragraphs: [
       `${serviceLabel} in ${cityLabel} orientiert sich bei Saubermatik an anerkannten Standards: ${norms}. Diese Normen sind nicht Dekoration im Angebot, sondern Grundlage für Leistungsverzeichnis, Unterweisung und Abnahme — auditierbar für ISO, Konzern-Einkauf, Versicherer und Behörden.`,
       `DIN EN 13549 strukturiert messbare Qualität: Was wird wie oft mit welchen Mitteln gereinigt? Welche Abnahmekriterien gelten? Wo sind Sonderzonen (RKI, HACCP, TRBS 2121) definiert? Das wird vor Vertragsbeginn schriftlich fixiert — nicht nachträglich per Telefon.`,
-      `Verkehrssicherungspflicht und § 2 BetrKV spielen in ${cityLabel} in Treppenhaus, Winterdienst und Außenanlagen eine zentrale Rolle. Wir liefern Nachweise, die vor Gericht und in Eigentümerversammlungen bestehen — GPS-Protokolle, Fotodokumentation, Eskalationslogs aus der Saubermatik-App.`,
+      `Verkehrssicherungspflicht und § 2 BetrKV spielen in ${cityLabel} in Treppenhaus, Winterdienst und Außenanlagen eine zentrale Rolle. Wir liefern Nachweise, die vor Gericht und in Eigentümerversammlungen bestehen — dokumentierte Einsätze und Eskalationslogs aus der Saubermatik-App (Umfang je nach Objekt und Vereinbarung).`,
       `Qualitätsmanagement endet nicht bei der ersten Abnahme. Regelmäßige Begehungen, KPI-Auswertungen und Anpassungen im digitalen LV sichern, dass ${serviceLabel} über die Vertragslaufzeit auf dem vereinbarten Niveau bleibt — auch wenn sich Belegung, Flächen oder Anforderungen ändern.`,
     ],
   };
@@ -315,7 +313,6 @@ export function buildMatrixDeepContent(
     heroTitle: `${tech.breadcrumbLabel} in ${cityLabel} — regional, digital, verbindlich.`,
     heroSubtitle: heroVariants[variant],
     sections: [blockA, blockE, blockB, blockC, blockB2, blockB3, blockF, blockG, blockH, blockD],
-    calcCategory: tech.calcCategory,
     funnelInitialService: serviceSlug,
   };
 }

@@ -4,7 +4,7 @@ import { getSiteOrigin } from "@/lib/seo/site-origin";
 export const KAM_PROFILE = {
   eyebrow: "Ihr persönlicher Key Account Manager",
   name: "Metin Altinsoy | Geschäftsführer",
-  usp: "Kein Callcenter. Ihr direkter Draht in die Geschäftsleitung.",
+  usp: "Fester Ansprechpartner statt Callcenter.",
   expertise:
     "Spezialisiert auf digitale QM-Kontrolle & Kalkulation von Industrieobjekten.",
   portraitAlt:

@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { B2BOnboardingProcess } from "@/components/B2BOnboardingProcess";
 import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
-import { EngagementCalculator } from "@/components/EngagementCalculator";
 import { LeistungFaqJsonLd } from "@/components/LeistungFaqJsonLd";
 import { LeistungHeroImage } from "@/components/LeistungHeroImage";
 import { LeistungSgeTldr } from "@/components/LeistungSgeTldr";
@@ -194,15 +193,6 @@ export default function GruenanlagenpflegePage() {
           pagePath="/leistungen/gruenanlagenpflege"
           className="border-t border-foreground/10 bg-slate-50/80 py-12 sm:py-14"
         />
-
-        <section className="border-t border-slate-200 bg-slate-50 py-12">
-          <div className="mx-auto w-full max-w-xl px-4 sm:px-6 lg:px-8">
-            <EngagementCalculator
-              funnelHref="#kontakt-anfrage"
-              initialCategory="hausverwaltung"
-            />
-          </div>
-        </section>
 
         <section className="border-t border-slate-200 py-12">
           <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">

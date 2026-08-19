@@ -1,7 +1,5 @@
 import type { LeistungSlug } from "@/lib/routes/leistungen";
 
-export type CalcCategoryProp = "buero" | "glas" | "treppe" | "hausverwaltung";
-
 export type LeistungDeepDive = {
   title: string;
   paragraphs: readonly string[];
@@ -17,7 +15,6 @@ export type LeistungDeepContent = {
   introParagraphs: readonly string[];
   deepDives: readonly LeistungDeepDive[];
   highlight: { title: string; bullets: readonly string[] };
-  calcCategory?: CalcCategoryProp;
   secondaryCta?: { href: string; label: string };
   funnelTitle: string;
   funnelSubtitle: string;
@@ -35,7 +32,7 @@ const treppenhausreinigung: LeistungDeepContent = {
     "Verkehrssicherungspflicht, Trittsicherheit und Mieterzufriedenheit – dokumentiert, intervalbasiert und umlagefähig nach § 2 BetrKV.",
   introParagraphs: [
     "Das Treppenhaus ist die Visitenkarte jeder Liegenschaft – und ein klassischer Haftungs- und Kostenblock für Hausverwaltungen. Schmutzige Stufen, unsichere Beläge und undokumentierte Reinigung erzeugen Beschwerden, Versicherungsfragen und Streit in Eigentümerversammlungen. Saubermatik behandelt Treppenhausreinigung deshalb nicht als Nebenleistung, sondern als Kernprozess der Verkehrssicherungspflicht.",
-    "Wir kombinieren feste Intervalle, materialschonende Verfahren und GPS-gestützte Protokolle in der Saubermatik-App. Für Verwalter bedeutet das: weniger Reklamationen, belastbare Positionen in der Nebenkostenabrechnung und ein repräsentativer Standard, den Mieter sofort wahrnehmen.",
+    "Wir kombinieren feste Intervalle, materialschonende Verfahren und dokumentierte Einsätze in der Saubermatik-App (Umfang je nach Objekt und Vereinbarung). Für Verwalter bedeutet das: weniger Reklamationen, belastbare Positionen in der Nebenkostenabrechnung und ein repräsentativer Standard, den Mieter sofort wahrnehmen.",
   ],
   deepDives: [
     {
@@ -72,7 +69,6 @@ const treppenhausreinigung: LeistungDeepContent = {
       "Digitale Touren & Ausfallsicherheit in der Saubermatik-App",
     ],
   },
-  calcCategory: "treppe",
   secondaryCta: {
     href: "/zielgruppen/hausverwaltungen",
     label: "Für Hausverwaltungen",
@@ -87,13 +83,13 @@ const winterdienst: LeistungDeepContent = {
   breadcrumbLabel: "Winterdienst",
   metaTitle: "Winterdienst & Räum- und Streupflicht",
   metaDescription:
-    "Professioneller Winterdienst: Räum- und Streupflicht, Verkehrssicherungspflicht, Wetterführung, GPS-Nachweise – haftungssicher für WEG und Gewerbe.",
+    "Professioneller Winterdienst: Räum- und Streupflicht, Verkehrssicherungspflicht, Wetterführung, dokumentierte Einsätze – haftungssicher für WEG und Gewerbe.",
   heroTitle:
     "Haftungssicher durch den Winter. Professioneller Winterdienst mit Wetterführung und Echtzeit-Nachweis.",
   heroSubtitle:
     "Räum- und Streupflicht erfüllen, Verkehrssicherungspflicht dokumentieren – für Hausverwaltungen, Gewerbe und öffentliche Zugänge in der Zollernalb.",
   introParagraphs: [
-    "Der Winterdienst ist keine Saisonalität nebenbei – er ist Haftungsmanagement. Jede Glätteperiode kann zu Personenschäden, Versicherungsfällen und Eigentümerstreit führen, wenn Räumen und Streuen nicht nachweisbar erfolgen. Saubermatik betreibt Winterdienst als wettergeführtes System mit Einsatzplänen, Meldewege und GPS-gestützten Fotoprotokollen.",
+    "Der Winterdienst ist keine Saisonalität nebenbei – er ist Haftungsmanagement. Jede Glätteperiode kann zu Personenschäden, Versicherungsfällen und Eigentümerstreit führen, wenn Räumen und Streuen nicht nachweisbar erfolgen. Saubermatik betreibt Winterdienst als wettergeführtes System mit Einsatzplänen, Meldewegen und dokumentierten Einsätzen (Umfang je nach Objekt und Vereinbarung).",
     "Für Verwalter und Facility Manager bedeutet das: Sie erfüllen Ihre Sorgfaltspflicht gegenüber Mietern, Besuchern und Versicherern – ohne nächtliche Koordinationsmarathons. Kombinierbar mit Treppenhausreinigung, Grünpflege und Hausmeisterservice aus einem Portfolio.",
   ],
   deepDives: [
@@ -102,7 +98,7 @@ const winterdienst: LeistungDeepContent = {
       paragraphs: [
         "Eigentümer und Verwalter tragen die Verkehrssicherungspflicht für Gehwege, Zufahrten, Parkflächen und Objektzugänge. Saubermatik definiert pro Liegenschaft Räum- und Streupflicht-Zonen, Prioritäten (Haupteingang, Feuerwehrzufahrt, Müllstellplätze) und Reaktionszeiten ab Wetterauslösung – schriftlich im Winterdienstplan, nicht mündlich „irgendwann“.",
         "Streumittel werden materialschonend und umweltbewusst eingesetzt; Mengen und Touren werden protokolliert. Bei Glätteereignissen außerhalb der Standardfenster greifen Eskalationsstufen: Nachfahrt, Zusatzstreue, Information an den Verwalter – alles mit Zeitstempel in der App.",
-        "Das schützt vor dem klassischen Haftungsfall: „Niemand war da.“ GPS-gestützte Fotos und Checklisten sind Ihr Beweis gegenüber Versicherung und Gericht – nicht Marketing, sondern Risikoreduktion.",
+        "Das schützt vor dem klassischen Haftungsfall: „Niemand war da.“ Dokumentierte Einsätze und Checklisten sind Ihr Beweis gegenüber Versicherung und Gericht – nicht Marketing, sondern Risikoreduktion.",
       ],
     },
     {
@@ -125,13 +121,12 @@ const winterdienst: LeistungDeepContent = {
   highlight: {
     title: "Winterdienst – Ihr Vorteil",
     bullets: [
-      "Räum- und Streupflicht dokumentiert (GPS-Fotoprotokolle)",
+      "Räum- und Streupflicht dokumentiert (Umfang je nach Objekt und Vereinbarung)",
       "Wettergeführt mit Eskalationsstufen & festen Reaktionszeiten",
       "§ 2 BetrKV-transparente Abrechnung für Verwaltungen",
       "BG-BAU-orientierte Arbeitssicherheit im Einsatz",
     ],
   },
-  calcCategory: "hausverwaltung",
   secondaryCta: {
     href: "/zielgruppen/hausverwaltungen",
     label: "Für Hausverwaltungen",
@@ -190,7 +185,6 @@ const grundreinigung: LeistungDeepContent = {
       "RKI-konform & VAH-gelistete Desinfektion für Praxen",
     ],
   },
-  calcCategory: "buero",
   secondaryCta: {
     href: "/leistungen/unterhaltsreinigung",
     label: "Unterhaltsreinigung",
@@ -228,7 +222,7 @@ const fassadenreinigung: LeistungDeepContent = {
       paragraphs: [
         "Fassadenreinigung in der Höhe unterliegt TRBS 2121 und BG-BAU-Regeln. Saubermatik führt Gefährdungsbeurteilungen durch, setzt geprüfte PSA und Hubsteiger-Logistik ein und sichert öffentliche Gehwege bei Bedarf ab. Für Ausschreibungen liefern wir Nachweise – Versicherung, Unterweisung, Geräteprüfung.",
         "Zuwegung, Halteverbote und Anliegerinformation werden vorab mit Verwaltung oder Facility abgestimmt – besonders in Innenstädten und WEG-Ensembles. So bleibt der Betrieb störungsarm und haftungsarm.",
-        "Dokumentierte Einsätze mit Fotoprotokoll geben Eigentümern Transparenz über Zustand vor/nach – wertvoll bei Sanierungsplanung und Versicherungsfällen.",
+        "Dokumentierte Einsätze geben Eigentümern Transparenz über Zustand vor/nach – wertvoll bei Sanierungsplanung und Versicherungsfällen (Umfang je nach Objekt und Vereinbarung).",
       ],
     },
     {
@@ -249,7 +243,6 @@ const fassadenreinigung: LeistungDeepContent = {
       "Digitale Protokolle & Kombination mit Glasreinigung",
     ],
   },
-  calcCategory: "glas",
   secondaryCta: {
     href: "/leistungen/fenster-glasreinigung",
     label: "Glasreinigung",
@@ -308,7 +301,6 @@ const entruempelung: LeistungDeepContent = {
       "Kombinierbar mit Grundreinigung & Hausmeisterservice",
     ],
   },
-  calcCategory: "buero",
   funnelTitle: "Entrümpelung anfragen",
   funnelSubtitle:
     "Objektgröße, Termin, Besonderheiten – wir erstellen ein transparentes Festpreis-LV.",

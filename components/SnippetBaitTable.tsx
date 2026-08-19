@@ -118,7 +118,7 @@ const TABLES: Record<Variant, TableConfig> = {
       {
         gebaeudeart: "Haupteingang / Feuerwehrzufahrt",
         intervall: "Bei Glätte / Schnee",
-        fokus: "Räumen, Streuen, GPS-Fotoprotokoll",
+        fokus: "Räumen, Streuen, dokumentierte Einsätze",
       },
       {
         gebaeudeart: "Gehwege & Zufahrten",
@@ -223,7 +223,7 @@ const TABLES: Record<Variant, TableConfig> = {
       {
         gebaeudeart: "Dokumentation",
         intervall: "Abschluss",
-        fokus: "Fotoprotokoll, Entsorgungsnachweise, Übergabe an Verwalter",
+        fokus: "Dokumentierte Einsätze, Entsorgungsnachweise, Übergabe an Verwalter",
       },
     ],
   },

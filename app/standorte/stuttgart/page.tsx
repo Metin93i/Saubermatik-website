@@ -51,7 +51,7 @@ export default function StandortStuttgartPage() {
           Start
         </Link>
         <span className="text-muted"> / </span>
-        <span className="text-muted">Standort</span>
+        <span className="text-muted">Einsatzgebiet</span>
         <span className="text-muted"> / </span>
         <span>Stuttgart</span>
       </p>

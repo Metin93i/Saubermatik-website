@@ -53,7 +53,7 @@ export function SiteFooter() {
           </ul>
         </div>
         <div className="sm:col-span-2 lg:col-span-1">
-          <p className="text-sm font-semibold">Standorte &amp; Region</p>
+          <p className="text-sm font-semibold">Einsatzgebiete</p>
           <ul className="mt-4 grid grid-cols-2 gap-x-4 gap-y-2 sm:grid-cols-3 lg:grid-cols-2">
             {STANDORT_CITIES.map((city) => (
               <li key={city} className="min-h-[1.25rem]">

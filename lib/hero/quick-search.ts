@@ -1,31 +1,12 @@
 import type { ServiceSlug } from "@/lib/config/services";
 import { SERVICES } from "@/lib/config/services";
-import type { LeadServiceType } from "@/lib/lead/submission";
 import {
   STANDORT_CITIES,
   STANDORT_LABELS,
   type StandortCity,
 } from "@/lib/routes/standorte";
 
-/** SessionStorage-Key: Kalkulator-Vorauswahl (EngagementCalculator → LeadFunnel). */
-export const QUICK_SEARCH_CALC_KEY = "saubermatik-quick-search-calc";
-
-/** SessionStorage-Key: Lead-Funnel-Prefill (EngagementCalculator CTA). */
-export const CALC_PREFILL_KEY = "saubermatik-calc-prefill";
-
-export type QuickSearchCalcCategory =
-  | "buero"
-  | "glas"
-  | "treppe"
-  | "hausverwaltung";
-
-export type QuickSearchCalcPrefill = {
-  category: QuickSearchCalcCategory;
-  service: LeadServiceType;
-  locationLabel: string;
-};
-
-/** Alle 16 Standort-Städte für die Quick-Search. */
+/** Alle 16 Einsatzgebiet-Städte für die Quick-Search. */
 export const QUICK_SEARCH_CITIES = STANDORT_CITIES;
 
 export type QuickSearchCitySlug = StandortCity | "" | "__custom__";
@@ -53,6 +34,7 @@ function isMatrixCity(
 /**
  * Routing für HeroQuickSearch (Next.js App Router).
  * Stadt + Service → `/standorte/[city]/[service]`; nur Stadt → `/standorte/[city]`; nur Service → `/leistungen/[slug]`.
+ * Kein Kalkulator-Prefill mehr — Navigation zu Leistungs-/Einsatzgebietsseiten.
  */
 export function resolveQuickSearchRoute(
   serviceSlug: ServiceSlug | "",
