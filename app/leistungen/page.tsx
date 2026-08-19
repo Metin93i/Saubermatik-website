@@ -18,7 +18,7 @@ export default function LeistungenPage() {
         </h1>
         <p className="mt-4 text-base leading-7 text-muted">
           Wählen Sie eine Leistung – wir beraten Sie transparent zu Umfang,
-          Intervallen und Festpreis-Modellen.
+          Intervallen und einem unverbindlichen Angebot.
         </p>
       </div>
 

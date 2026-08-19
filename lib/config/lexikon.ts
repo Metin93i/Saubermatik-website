@@ -65,7 +65,6 @@ export const LEXIKON_BY_SLUG: Record<LexikonTermSlug, LexikonEntry> = {
       "Reinigung ist im CAFM-Kontext selten isoliert – sie kollidiert mit Instandhaltung, Sicherheitsdienst, Catering und Energiemanagement. Ohne saubere Schnittstellen entstehen Medienbrüche: Excel-Listen, PDF-Protokolle, Messenger-Gruppen. Genau hier setzt Saubermatik an: unsere Plattform exportiert strukturierte Einsatz- und Qualitätsdaten, die in Ihr CAFM oder Reporting-Tool überführt werden können.",
       "Für Einkäufer bedeutet CAFM-Reife: weniger Blindflug. Statt „Reinigung läuft irgendwie“ sehen Sie dokumentierte Touren, Ausfallersatz, Reklamationszyklen und KPI-Trends. Das erleichtert Benchmarks zwischen Standorten und die Verteidigung von Budgets gegenüber CFO und Revision.",
       "Die Integration folgt keinem starren Vendor-Lock-in: Wir liefern definierte Datenfelder (Objekt-ID, Zone, Leistung, Zeitstempel, Mängelstatus) und abstimmbare Exportrhythmen. Ob SAP, Planon, Archibus oder ein eigenes Data Warehouse – entscheidend ist die Vertraglichkeit der Datenqualität, nicht das Logo auf der Folie.",
-      "Strategisch trennt CAFM-Reife Marktführer von regionalen Putztrupps: Wer digitale Protokolle, Eskalationslogik und revisionssichere Historie liefert, skaliert über 50.000 m² ohne Qualitätsverlust. Wer nur Personal stellt, skaliert nicht – er hofft.",
     ],
   },
   "din-31051-instandhaltung-reinigung": {
@@ -89,9 +88,9 @@ export const LEXIKON_BY_SLUG: Record<LexikonTermSlug, LexikonEntry> = {
     paragraphs: [
       "Ein SLA ist der vertragliche Kern zwischen Auftraggeber und Dienstleister – nicht das Anschreiben mit Marketingfloskeln. Es definiert messbare Leistungen: Reaktionszeiten bei Mängeln, Mindestqualität je Zone, Nachweispflichten, Eskalationsstufen und Review-Zyklen.",
       "Typische KPIs in der Reinigung: Erfüllungsquote geplanter Touren, Zeit bis zur Mängelbehebung, Wiederholungsquote bei Reklamationen, Ausfallquote ohne Ersatzlogik, Dokumentationsvollständigkeit. Ohne KPIs bleibt „sauber“ subjektiv – und streitanfällig.",
-      "Saubermatik strukturiert SLAs entlang des Onboarding-Audits: Zonenplan, Materialfreigaben, Sicherheitsvorgaben und Kommunikationswege werden vor Vertragsstart fixiert. Die Plattform liefert die Datenbasis – nicht das Bauchgefühl des Vorarbeiters.",
+      "Saubermatik strukturiert Vereinbarungen vor Vertragsstart: Zonenplan, Materialfreigaben, Sicherheitsvorgaben und Kommunikationswege werden fixiert. Die Plattform liefert die Datenbasis – nicht das Bauchgefühl des Vorarbeiters.",
       "Für Einkauf und Revision zählen Sanktionen und Transparenz: Was passiert bei SLA-Verletzung? Wer ist erreichbar? Wie werden Abweichungen innerhalb der vereinbarten Reaktionsfenster geschlossen? Ein SLA ohne Eskalationsmatrix ist nur ein PDF ohne Zähne.",
-      "Großkonzerne koppeln SLAs an Bonus-Malus-Modelle. Das funktioniert nur mit digitaler Nachweisführung. Manuelle Zettelwirtschaft scheitert bei Flächen über 10.000 m² – hier gewinnt, wer Protokolle, Fotos und Zeitstempel revisionssicher liefert.",
+      "Großkonzerne koppeln SLAs an Bonus-Malus-Modelle. Das funktioniert nur mit digitaler Nachweisführung. Manuelle Zettelwirtschaft scheitert bei größeren Portfolios – hier gewinnt, wer Protokolle, Fotos und Zeitstempel revisionssicher liefert.",
     ],
   },
   "farbcode-system-hygiene": {

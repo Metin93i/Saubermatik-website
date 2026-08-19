@@ -10,7 +10,7 @@ const imgKarriere =
 export const metadata: Metadata = {
   title: "Karriere",
   description:
-    "Karriere bei Saubermatik Meßstetten: faire Bezahlung, moderne digitale Arbeitsmittel und Tablets im Objekt, Teamkultur in der Zollernalb – jetzt initiativ bewerben.",
+    "Karriere bei Saubermatik Meßstetten: faire Bezahlung, digitale Erfassung über mobile Endgeräte, Teamkultur in der Zollernalb – jetzt initiativ bewerben.",
   alternates: { canonical: "/karriere" },
 };
 
@@ -20,8 +20,8 @@ const benefits = [
     text: "Wir verstehen Reinigung als Handwerk mit Verantwortung. Leistung wird anerkannt, Schichten und Aufgaben sind transparent geplant.",
   },
   {
-    title: "Modernste Arbeitsmittel & Tablets",
-    text: "Checklisten, Objektinfos und Touren laufen digital: Sie arbeiten mit aktueller Ausstattung statt mit vergilbten Formularblättern.",
+    title: "Mobile Endgeräte statt Zettel",
+    text: "Checklisten, Objektinfos und Touren laufen digital: Sie arbeiten mit Handy oder Platform-App statt mit vergilbten Formularblättern.",
   },
   {
     title: "Regionale Einsätze, kurze Wege",

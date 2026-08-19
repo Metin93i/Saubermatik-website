@@ -5,7 +5,7 @@ import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
 import { LeistungFaqJsonLd } from "@/components/LeistungFaqJsonLd";
 import { LeistungHeroImage } from "@/components/LeistungHeroImage";
 import { LeistungSgeTldr } from "@/components/LeistungSgeTldr";
-import { LeadFunnel } from "@/components/LeadFunnel";
+import { AnfrageCta } from "@/components/AnfrageCta";
 import { SeoCrossLinks } from "@/components/SeoCrossLinks";
 import { SnippetBaitTable } from "@/components/SnippetBaitTable";
 
@@ -83,12 +83,12 @@ export default function HausmeisterservicePage() {
               className="mt-10 max-w-4xl"
             />
             <div className="mt-10 flex flex-wrap gap-4">
-              <a
-                href="#kontakt-anfrage"
+              <Link
+                href="/kontakt#kontakt-anfrage"
                 className="inline-flex h-12 items-center justify-center rounded-sm bg-primary px-6 text-sm font-semibold text-primary-foreground transition hover:bg-primary/90"
               >
-                Objekt-Analyse anfordern
-              </a>
+                Anfrage stellen
+              </Link>
               <Link
                 href="/zielgruppen/hausverwaltungen"
                 className="inline-flex h-12 items-center justify-center rounded-sm border border-zinc-300 px-6 text-sm font-semibold text-foreground transition hover:border-secondary/50 hover:bg-secondary/5"
@@ -133,8 +133,8 @@ export default function HausmeisterservicePage() {
             Standard Operating Procedures (SOPs) – unser Leistungskatalog
           </h2>
           <p className="mt-4 max-w-3xl text-base leading-7 text-muted">
-            Jede Liegenschaft erhält ein objektspezifisches SOP-Set im
-            Onboarding. Nachfolgend die Kernmodule, die wir für
+            Jede Liegenschaft erhält ein objektspezifisches SOP-Set vor
+            Vertragsstart. Nachfolgend die Kernmodule, die wir für
             Mehrfamilienhäuser und Gewerbeobjekte typischerweise verbindlich
             definieren.
           </p>
@@ -195,14 +195,7 @@ export default function HausmeisterservicePage() {
           className="border-t border-slate-200 bg-zinc-100 py-12 sm:py-14"
         >
           <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">
-            <div className="mx-auto max-w-2xl text-center">
-              <h2 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
-                Hausmeisterservice anfragen
-              </h2>
-            </div>
-            <div className="mx-auto mt-10 max-w-xl">
-              <LeadFunnel initialServiceType="hausmeisterservice" />
-            </div>
+            <AnfrageCta title="Hausmeisterservice anfragen" />
           </div>
         </section>
       </div>

@@ -1,25 +1,25 @@
 import { getSiteOrigin } from "@/lib/seo/site-origin";
 
 export const KEY_ACCOUNT_COPY = {
-  eyebrow: "One Face to the Customer",
-  title: "Ihr dedizierter Key Account Manager",
+  eyebrow: "Fester Ansprechpartner",
+  title: "Geschäftsführer als persönlicher Ansprechpartner",
   intro:
-    "Konzerne und mittelständische Liegenschaftsverantwortliche erwarten keine wechselnden Callcenter-Ketten – sondern einen strategischen Partner mit direkter Erreichbarkeit, klaren Eskalationsstufen und Verantwortung bis zur Geschäftsführungsebene.",
+    "Sie erreichen bei uns keine Callcenter-Kette, sondern Metin Altinsoy – Geschäftsführer und fester Ansprechpartner. Rückmeldung innerhalb eines Werktags; bei Spezialanfragen auch direkt über die Geschäftsführung.",
   pillars: [
     {
-      title: "Eine Gesicht, eine Verantwortung",
-      body: "Ihr Key Account Manager kennt Vertragslogik, SLA-KPIs und Objektbesonderheiten. Entscheidungen werden nicht „weitergeleitet“, sondern mit festem Ansprechpartner getroffen – mit dokumentierter Nachverfolgung in der Saubermatik-Plattform.",
+      title: "Ein Gesicht, eine Verantwortung",
+      body: "Ihr Ansprechpartner kennt Objekt und Vereinbarung. Entscheidungen werden nicht weitergereicht – mit dokumentierter Nachverfolgung in der Saubermatik-Plattform, Umfang nach Absprache.",
     },
     {
-      title: "Direkte Durchwahl & klare Eskalation",
-      body: "Nach Vertragsstart erhalten Sie eine feste Eskalationsmatrix: operativer Tageskontakt, strategische Quartalsreviews und eine definierte Notfallstufe für sicherheits- oder reputationskritische Ereignisse – ohne Warteschleife.",
+      title: "Erreichbarkeit mit Klärung",
+      body: "Rückmeldung innerhalb eines Werktags. Bei Urlaub oder Ausfall übernimmt ein bewährtes Vertretungsteam; sonst die Geschäftsführung persönlich. Vertraglich vereinbarte Reaktionszeiten legen wir im Angebot fest.",
     },
     {
-      title: "Null anonyme Hotline",
-      body: "Kein anonymes „Ticket #48291“. Stattdessen: benannte Verantwortlichkeit, SLA-konforme Reaktionszeiten und Reporting, das Einkauf, Facility und Geschäftsführung in einem Format lesen können.",
+      title: "Kein anonymes Ticketsystem",
+      body: "Kein Callcenter. Stattdessen: benannte Verantwortlichkeit und Nachweise, die Sie intern verwenden können – ohne leere Versprechen.",
     },
   ],
-  roleTitle: "Key Account Manager Gebäudereinigung",
+  roleTitle: "Geschäftsführer Gebäudereinigung",
   organizationName: "Saubermatik Gebäudereinigung",
 } as const;
 
@@ -34,12 +34,12 @@ export function buildKeyAccountJsonLd() {
         "@id": `${origin}/#key-account-role`,
         name: KEY_ACCOUNT_COPY.roleTitle,
         description: KEY_ACCOUNT_COPY.intro,
-        roleName: "Key Account Manager",
+        roleName: "Geschäftsführer",
         knowsAbout: [
           "Facility Management",
-          "Service Level Agreement",
+          "Glasreinigung",
+          "Raffstore-Reinigung",
           "Gebäudereinigung B2B",
-          "CAFM-Integration",
         ],
       },
       {
@@ -49,11 +49,11 @@ export function buildKeyAccountJsonLd() {
         url: origin,
         employee: {
           "@type": "Person",
-          name: "Saubermatik Key Account Management",
+          name: "Metin Altinsoy",
           jobTitle: KEY_ACCOUNT_COPY.roleTitle,
           worksFor: { "@id": `${origin}/#organization` },
           description:
-            "Dedizierte strategische Ansprechpartner für Enterprise- und Mittelstandsobjekte – One Face to the Customer.",
+            "Geschäftsführer und persönlicher Ansprechpartner – fester Kontakt statt Callcenter.",
         },
       },
     ],

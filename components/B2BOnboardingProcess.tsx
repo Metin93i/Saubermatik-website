@@ -27,26 +27,25 @@ export function B2BOnboardingProcess({ pagePath, className = "" }: Props) {
       <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl border-l-4 border-primary pl-5">
           <p className="text-xs font-bold uppercase tracking-widest text-primary">
-            Enterprise-Onboarding
+            So starten wir
           </p>
           <h2
             id="b2b-onboarding-heading"
             className="mt-2 text-2xl font-black tracking-tight text-foreground sm:text-3xl"
           >
-            Vier Phasen. Ein verbindlicher Qualitätsstandard.
+            Vier Schritte. Ein klarer Einstieg.
           </h2>
           <p className="mt-4 text-base leading-7 text-muted sm:text-lg">
-            Für Einkauf, Facility Management und Geschäftsführung: Unser
-            Onboarding ist kein Verkaufsgespräch, sondern ein dokumentierter
-            Übergabeprozess – von der Bedarfsanalyse bis zum live geschalteten
-            SLA-Betrieb.
+            Für Einkauf, Facility Management und Geschäftsführung: Der Einstieg
+            ist kein Verkaufsgespräch, sondern ein dokumentierter Ablauf – von
+            der Bedarfsklärung bis zum laufenden Betrieb.
           </p>
         </div>
 
         <div className="mt-8 overflow-x-auto rounded-sm border border-zinc-200">
           <table className="w-full min-w-[40rem] border-collapse text-left text-sm">
             <caption className="sr-only">
-              B2B-Onboarding: vier Phasen im Überblick
+              Zusammenarbeit: vier Schritte im Überblick
             </caption>
             <thead>
               <tr className="border-b border-zinc-200 bg-zinc-950 text-zinc-100">
@@ -54,7 +53,7 @@ export function B2BOnboardingProcess({ pagePath, className = "" }: Props) {
                   scope="col"
                   className="w-16 px-4 py-3 text-xs font-bold uppercase tracking-widest"
                 >
-                  Phase
+                  Nr.
                 </th>
                 <th
                   scope="col"
@@ -115,7 +114,7 @@ export function B2BOnboardingProcess({ pagePath, className = "" }: Props) {
             href="/kontakt#kontakt-anfrage"
             className="inline-flex h-11 items-center justify-center rounded-sm bg-primary px-5 text-sm font-bold text-primary-foreground transition hover:bg-primary/90"
           >
-            Onboarding starten
+            Anfrage stellen
           </Link>
           <Link
             href="/qualitaetsmanagement"

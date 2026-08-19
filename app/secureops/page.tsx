@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
-import { LeadFunnel } from "@/components/LeadFunnel";
+import { AnfrageCta } from "@/components/AnfrageCta";
 import { SecureOpsFaqJsonLd } from "@/components/SecureOpsFaqJsonLd";
 import { buildTelHref } from "@/lib/phone";
 import { getSecureOpsFaqItems } from "@/lib/seo/secureops-faq";
@@ -61,13 +61,13 @@ export default function SecureOpsPage() {
               der wir Einsätze dokumentieren und unseren Kunden Einblick geben.
             </p>
             <div className="mt-10 flex flex-wrap gap-4">
-              <a
-                href="#kontakt-anfrage"
+              <Link
+                href="/kontakt#kontakt-anfrage"
                 className="inline-flex h-12 items-center justify-center rounded-sm px-6 text-sm font-semibold text-white transition hover:opacity-90"
                 style={{ backgroundColor: "#0066b3" }}
               >
-                SecureOps im Gespräch ansehen
-              </a>
+                Anfrage stellen
+              </Link>
               <Link
                 href="/kontakt#kontakt-anfrage"
                 className="inline-flex h-12 items-center justify-center rounded-sm border border-zinc-300 px-6 text-sm font-semibold text-foreground transition hover:border-secondary/50 hover:bg-secondary/5"
@@ -309,35 +309,10 @@ export default function SecureOpsPage() {
           className="border-t border-slate-200 bg-zinc-100 py-12 sm:py-14"
         >
           <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">
-            <div className="mx-auto max-w-2xl text-center">
-              <h2 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
-                SecureOps im Gespräch ansehen
-              </h2>
-              <p className="mt-3 text-base leading-7 text-muted">
-                Am besten zeigen wir es Ihnen direkt an Ihrem Objekt. Schreiben
-                Sie uns kurz, um welches Objekt es geht – wir melden uns zügig.
-                Fester Ansprechpartner statt Callcenter.
-              </p>
-              <div className="mt-6 flex flex-wrap justify-center gap-3">
-                <Link
-                  href="/kontakt#kontakt-anfrage"
-                  className="inline-flex h-11 items-center justify-center rounded-sm border border-zinc-300 bg-white px-5 text-sm font-semibold text-foreground transition hover:border-secondary/50 hover:bg-secondary/5"
-                >
-                  Kontaktseite
-                </Link>
-                {telHref ? (
-                  <a
-                    href={telHref}
-                    className="inline-flex h-11 items-center justify-center rounded-sm border border-zinc-300 bg-white px-5 text-sm font-semibold text-foreground transition hover:border-secondary/50 hover:bg-secondary/5"
-                  >
-                    {raw}
-                  </a>
-                ) : null}
-              </div>
-            </div>
-            <div className="mx-auto mt-10 max-w-xl">
-              <LeadFunnel />
-            </div>
+            <AnfrageCta
+              title="SecureOps im Gespräch ansehen"
+              text="Am besten zeigen wir es Ihnen direkt an Ihrem Objekt. Schreiben Sie uns kurz, um welches Objekt es geht – wir melden uns zügig. Fester Ansprechpartner statt Callcenter."
+            />
           </div>
         </section>
       </div>

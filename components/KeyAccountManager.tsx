@@ -62,7 +62,7 @@ export function KeyAccountManager({ className = "", showCta = true }: Props) {
               href={telHref}
               className="inline-flex h-11 items-center justify-center rounded-sm border border-zinc-300 bg-white px-5 text-sm font-bold text-foreground transition hover:bg-zinc-100"
             >
-              Direkte Erreichbarkeit
+              Anrufen
             </a>
           ) : null}
         </div>

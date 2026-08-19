@@ -6,14 +6,14 @@ import { buildTelHref } from "@/lib/phone";
 export const metadata: Metadata = {
   title: "Qualitätsmanagement",
   description:
-    "Saubermatik-Garantie: digitale Objektüberwachung, Echtzeit-Checks, DIN-orientierte Standards und nachvollziehbare Protokolle für B2B-Reinigung in der Zollernalb.",
+    "Digitale Objektüberwachung, dokumentierte Einsätze, anerkannte Reinigungsstandards und nachvollziehbare Protokolle für B2B-Reinigung in der Zollernalb.",
   alternates: { canonical: "/qualitaetsmanagement" },
 };
 
 const pillars = [
   {
-    title: "Saubermatik-Garantie",
-    body: "Wir geben kein leeres Versprechen ab, sondern verbinden feste Qualitätskriterien mit technischer Nachverfolgung: Was auf dem Objekt passiert, wird strukturiert erfasst – damit Sie jederzeit wissen, wo Sie stehen.",
+    title: "Dokumentierte Qualität",
+    body: "Wir geben kein leeres Versprechen ab, sondern verbinden feste Qualitätskriterien mit technischer Nachverfolgung: Was auf dem Objekt passiert, wird strukturiert erfasst – damit Sie jederzeit wissen, wo Sie stehen. Streifenfreiheit merken wir selbst und arbeiten nach; eine Garantiezusage geben wir nicht.",
   },
   {
     title: "SaaS-Überwachung statt Zettelwirtschaft",

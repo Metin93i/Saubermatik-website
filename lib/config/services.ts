@@ -1,6 +1,5 @@
 /**
- * Zentrales Facility- & Reinigungsportfolio (Slugs, Marketingtexte, Funnel-UI).
- * Alle Slugs müssen mit `LeadServiceType` / API-`serviceType` übereinstimmen.
+ * Zentrales Facility- & Reinigungsportfolio (Slugs, Marketingtexte).
  *
  * `includeInMatrix: false` → keine `/standorte/[city]/[service]`-Routen (E3-Kuration).
  */
@@ -84,7 +83,7 @@ export const SERVICES = [
     funnelLabel: "Winterdienst",
     emoji: "❄️",
     summary:
-      "Räum- und Streupflicht professionell erfüllt – dokumentiert, wetterführend und haftungssicher vorbereitet.",
+      "Räum- und Streupflicht professionell erfüllt – dokumentiert, wettergeführt und in der Saison nach vereinbarten Reaktionszeiten.",
     body: [
       "Einsatzpläne, Meldewege und Nachweise: Sie erfüllen Ihre Sorgfaltspflicht gegenüber Nutzern und Versicherern.",
       "Kombinierbar mit Außenanlagen- und Gebäudeservice für eine durchgängige Objektstrategie.",
@@ -152,17 +151,3 @@ export const MATRIX_SERVICES = SERVICES.filter(
   (s): s is (typeof SERVICES)[number] & { slug: MatrixServiceSlug } =>
     !("includeInMatrix" in s && s.includeInMatrix === false),
 );
-
-export const LEAD_SERVICE_TYPES = SERVICES.map(
-  (s) => s.slug,
-) as readonly ServiceSlug[];
-
-export const FUNNEL_SERVICE_OPTIONS = SERVICES.map((s) => ({
-  value: s.slug,
-  label: s.funnelLabel,
-  emoji: s.emoji,
-})) as readonly {
-  value: ServiceSlug;
-  label: string;
-  emoji: string;
-}[];

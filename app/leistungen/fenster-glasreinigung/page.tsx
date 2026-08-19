@@ -5,7 +5,7 @@ import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
 import { GeoImage } from "@/components/GeoImage";
 import { LeistungFaqJsonLd } from "@/components/LeistungFaqJsonLd";
 import { LeistungSgeTldr } from "@/components/LeistungSgeTldr";
-import { LeadFunnel } from "@/components/LeadFunnel";
+import { AnfrageCta } from "@/components/AnfrageCta";
 import { SeoCrossLinks } from "@/components/SeoCrossLinks";
 import { SnippetBaitTable } from "@/components/SnippetBaitTable";
 import { getLeistungImage } from "@/lib/config/leistung-images";
@@ -71,12 +71,12 @@ export default function FensterGlasreinigungPage() {
               />
             </div>
             <div className="mt-10 flex flex-wrap gap-4">
-              <a
-                href="#kontakt-anfrage"
+              <Link
+                href="/kontakt#kontakt-anfrage"
                 className="inline-flex h-12 items-center justify-center rounded-sm bg-primary px-6 text-sm font-semibold text-primary-foreground transition hover:bg-primary/90"
               >
-                Glas-Analyse anfordern
-              </a>
+                Anfrage stellen
+              </Link>
               <Link
                 href="/qualitaetsmanagement"
                 className="inline-flex h-12 items-center justify-center rounded-sm border border-zinc-300 px-6 text-sm font-semibold text-foreground transition hover:border-secondary/50 hover:bg-secondary/5"
@@ -111,7 +111,15 @@ export default function FensterGlasreinigungPage() {
               Präzisions-Handwerk mit Einwascher und Abzieher für Innenräume,
               Showrooms und feingliedrige Glasbauten. Beide Welten teilen sich
               eine digitale Protokollkette: Sie sehen, wann welche Fläche
-              bearbeitet wurde – ohne Reklamations-Pingpong.
+              bearbeitet wurde – ohne Reklamations-Pingpong. Für Büros und
+              Gewerbeflächen siehe{" "}
+              <Link
+                href="/zielgruppen/buero-gewerbe"
+                className="font-semibold text-secondary hover:underline"
+              >
+                Büroreinigung und Gewerbereinigung
+              </Link>
+              .
             </p>
           </div>
 
@@ -308,18 +316,10 @@ export default function FensterGlasreinigungPage() {
           className="border-t border-slate-200 bg-zinc-100 py-12 sm:py-14"
         >
           <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">
-            <div className="mx-auto max-w-2xl text-center">
-              <h2 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
-                Glas- &amp; Fensterreinigung anfragen
-              </h2>
-              <p className="mt-3 text-base leading-7 text-muted">
-                Flächen, Höhe, Intervalle – wir erstellen ein verbindliches
-                Angebot nach Objektbegehung.
-              </p>
-            </div>
-            <div className="mx-auto mt-10 max-w-xl">
-              <LeadFunnel initialServiceType="fenster-glasreinigung" />
-            </div>
+            <AnfrageCta
+              title="Glas- & Fensterreinigung anfragen"
+              text="Flächen, Höhe, Intervalle – nach einer Objektbegehung erhalten Sie ein unverbindliches Angebot."
+            />
           </div>
         </section>
       </div>

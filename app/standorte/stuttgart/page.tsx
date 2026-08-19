@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { FreshnessBadge } from "@/components/FreshnessBadge";
 import { GeoImage } from "@/components/GeoImage";
+import { ProjektRahmen } from "@/components/ProjektRahmen";
 import { SeoCrossLinks } from "@/components/SeoCrossLinks";
 import { REMOTE_IMAGE_BLUR_DATA_URL } from "@/lib/image-blur";
 
@@ -66,6 +67,7 @@ export default function StandortStuttgartPage() {
         <strong className="text-foreground">B14 / B27</strong> fließen in unsere
         Einsatzplanung ein – für Glas, Büro und Objekt.
       </p>
+      <ProjektRahmen cityLabel="Stuttgart" className="mt-6" />
 
       <div className="relative mt-8 aspect-[16/9] w-full overflow-hidden rounded-sm ">
         <GeoImage

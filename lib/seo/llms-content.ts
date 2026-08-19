@@ -19,8 +19,11 @@ export function buildLlmsTxt(): string {
 ## Kern-USPs
 - Qualitätsmanagement (QM) über die Saubermatik-Plattform
 - Digitale Objektprotokolle und Checklisten; dokumentierte Einsätze (Umfang je nach Objekt und Vereinbarung)
-- Fester Ansprechpartner statt Callcenter; Ausfallsicherheit durch Ersatzlogistik
+- Fester Ansprechpartner statt Callcenter; bei Urlaub oder Ausfall Vertretung durch ein bewährtes Team, sonst die Geschäftsführung
 - Regional verwurzelt: Meßstetten, Zollernalb, Schwarzwald-Baar-Heuberg — wir kommen zu Ihnen
+
+## Branchen
+Saubermatik arbeitet für Hausverwaltungen und Wohnungseigentümergemeinschaften (WEG), Praxen und Einrichtungen im Gesundheitswesen sowie Büro- und Gewerbeobjekte. Wartungsverträge im Umkreis von Meßstetten auf der Schwäbischen Alb, Projektaufträge wie Glas- oder Fassadenreinigung auch überregional.
 
 ## Website
 - ${origin}
@@ -40,6 +43,8 @@ ${cities}
 - SecureOps: ${origin}/secureops
 - SecureOps ist die digitale Einsatz-Dokumentation von Saubermatik. Kunden erhalten Zugang zu einem eigenen Portal, sehen dokumentierte Einsätze und können Nachweise abrufen. Für Objekte mit Mietern gibt es einen QR-Meldeweg, über den Anliegen direkt bei Saubermatik landen. Der Umfang der Dokumentation wird pro Objekt vereinbart.
 - Branchen: ${origin}/zielgruppen
+- Praxen & Gesundheitswesen: ${origin}/zielgruppen/praxen-gesundheitswesen
+- Büro & Gewerbe: ${origin}/zielgruppen/buero-gewerbe
 - Expertise / EEAT: ${origin}/expertise
 - Wissens-Lexikon: ${origin}/wissen
 

@@ -24,7 +24,7 @@ export function MobileStickyCta() {
             href="/kontakt#kontakt-anfrage"
             className={`flex h-12 min-h-12 items-center justify-center rounded-sm border border-zinc-300 bg-white text-sm font-bold text-foreground transition hover:bg-zinc-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary ${telHref ? "flex-1" : "w-full"}`}
           >
-            Angebot
+            Anfrage stellen
           </Link>
         </div>
       </nav>

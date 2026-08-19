@@ -51,8 +51,8 @@ function buildCoreCitySections(
       id: "partner",
       title: `Ihr Facility-Partner in ${label}`,
       paragraphs: [
-        `Saubermatik ist Ihr Ansprechpartner für Gebäudereinigung und Facility-Services in ${label} – mit Sitz in Meßstetten im Herzen der Zollernalb. Kurze Wege entlang ${infra} bedeuten schnelle Reaktionszeiten, feste Teams und weniger anonyme Subunternehmer-Ketten.`,
-        `Ob Unterhaltsreinigung, Glas- und Fassadenpflege, Treppenhaus für WEG, Winterdienst oder Hausmeisterservice: Sie erhalten ein digitales Leistungsverzeichnis, Ausfallsicherheit über unsere Plattform und einen Key Account, der Ihre Objekte kennt – nicht nur Ihre Postleitzahl.`,
+        `Saubermatik ist Ihr Ansprechpartner für Gebäudereinigung und Facility-Services in ${label} – mit Sitz in Meßstetten im Herzen der Zollernalb. Kurze Wege entlang ${infra} bedeuten schnelle Reaktionszeiten, feste Ansprechpartner und weniger anonyme Subunternehmer-Ketten.`,
+        `Ob Unterhaltsreinigung, Glas- und Fassadenpflege, Treppenhaus für WEG, Winterdienst oder Hausmeisterservice: Sie erhalten ein digitales Leistungsverzeichnis, Vertretung bei Urlaub oder Ausfall und einen festen Ansprechpartner, der Ihre Objekte kennt – nicht nur Ihre Postleitzahl.`,
         `Facility Manager und Geschäftsführung in ${label} profitieren von messbarer Qualität (DIN EN 13549-orientiert), transparenten Protokollen und SLAs, die intern verteidigbar sind – bei Audits, Eigentümerversammlungen und Vertragsverlängerungen.`,
       ],
     },
@@ -61,7 +61,7 @@ function buildCoreCitySections(
       title: `Wirtschaftsfokus ${label}`,
       paragraphs: [
         industryLead,
-        `Medizintechnik, Produktion, Mittelstand oder historische Bestände – jedes Profil braucht andere Schwerpunkte: Desinfektionszonen, Hallenboden, Schaufenster oder sensibler Werterhalt. Wir definieren das im Onboarding schriftlich, nicht auf der Rechnung nachträglich.`,
+        `Medizintechnik, Produktion, Mittelstand oder historische Bestände – jedes Profil braucht andere Schwerpunkte: Desinfektionszonen, Hallenboden, Schaufenster oder sensibler Werterhalt. Wir definieren das vor Vertragsstart schriftlich, nicht auf der Rechnung nachträglich.`,
         `Die Anbindung über ${infra} macht ${label} zum planbaren Einsatzgebiet: Touren werden gebündelt, Leerfahrten minimiert und Ersatzlogistik bei Ausfällen über die Saubermatik-App gesteuert – Ihr Betrieb merkt den Unterschied an weniger Reklamationen und klaren Ansprechpartnern.`,
       ],
     },
@@ -84,10 +84,10 @@ function buildCoreCitySections(
     },
     {
       id: "digital",
-      title: `Digitale Objektsteuerung & Ausfallsicherheit`,
+      title: `Digitale Objektsteuerung & Vertretung`,
       paragraphs: [
-        `Die Saubermatik-Plattform ist kein Marketing-Buzzword: Reinigungskräfte haken digitale LVs ab, Facility Manager sehen Echtzeit-QM, Ausfälle werden durch Ersatzkräfte geschlossen – bevor Ihr Objekt in ${label} leidet. Protokolle stehen für Abrechnung, Audits und Eigentümer-Reports bereit.`,
-        `Das ist Reinigung 4.0 für die Region: nicht mehr Excel und Telefonkette, sondern ein System, das Skalierung ohne Qualitätsverlust ermöglicht – vom Einzelbüro bis zum Multi-Objekt-Portfolio entlang ${infra}.`,
+        `Die Saubermatik-Plattform ist kein Marketing-Buzzword: Reinigungskräfte haken digitale LVs ab, Facility Manager sehen dokumentierte Einsätze. Bei Urlaub oder Ausfall übernimmt ein bewährtes Vertretungsteam – sonst die Geschäftsführung persönlich. Protokolle stehen für Abrechnung, Audits und Eigentümer-Reports bereit.`,
+        `Das ist Reinigung 4.0 für die Region: nicht mehr Excel und Telefonkette, sondern ein System mit dokumentierten Einsätzen – vom Einzelbüro bis zum Multi-Objekt-Portfolio entlang ${infra}.`,
       ],
     },
   ];
@@ -112,13 +112,13 @@ function buildRegionalSections(
 
   const regionalIntro = isHq
     ? [
-        `Meßstetten ist unser Firmensitz – hier starten Disposition, Key-Account-Betreuung und die Saubermatik-Plattform. Für Objekte in Meßstetten bedeutet das: kürzeste Wege, maximale Reaktionsgeschwindigkeit und fester Ansprechpartner statt Callcenter.`,
+        `Meßstetten ist unser Firmensitz – hier starten Tourenplanung, Ansprechpartner-Betreuung und die Saubermatik-Plattform. Für Objekte in Meßstetten bedeutet das: kürzeste Wege und fester Ansprechpartner statt Callcenter.`,
         `Als regional verwurzelter Partner kennen wir Zollernalbkreis und angrenzende Räume nicht aus dem Navi, sondern aus täglicher Praxis: WEG, Mittelstand, Praxen und Gewerbe mit unterschiedlichsten Anforderungen.`,
-        `Digitale Objektsteuerung, Ausfallsicherheit und messbare Qualität sind bei uns kein Upsell – sie sind die Betriebslogik, mit der Meßstetten und die gesamte Region bedient werden.`,
+        `Digitale Objektsteuerung, Vertretung bei Urlaub oder Ausfall und dokumentierte Qualität sind bei uns kein Upsell – sie sind die Betriebslogik, mit der Meßstetten und die gesamte Region bedient werden.`,
       ]
     : [
         focusFn(label),
-        `${label} profitiert von unserem Netzwerk in der Zollernalb: gebündelte Touren, Ersatzlogistik und ein Qualitätsstandard, der auch in kleineren Städten nicht abgeschwächt wird. Sie erhalten dieselbe App, dieselben Protokolle und dieselbe Ausfallsicherheit wie in Balingen oder Tuttlingen.`,
+        `${label} profitiert von unserem Netzwerk in der Zollernalb: gebündelte Touren und ein Qualitätsstandard, der auch in kleineren Städten nicht abgeschwächt wird. Sie erhalten dieselbe Plattform und dieselben Protokolle wie in Balingen oder Tuttlingen.`,
         `Facility Manager in ${label} brauchen Planbarkeit: feste Intervalle für Unterhalt, Glas und Treppenhaus, Winterdienst mit Verkehrssicherungspflicht und – wo nötig – Hausmeisterservice aus einem Guss. Saubermatik liefert das als SLA, nicht als Stundenkontingent ohne Nachweis.`,
       ];
 
@@ -153,7 +153,7 @@ function buildRegionalSections(
       title: `Leistungsspektrum in ${label}`,
       paragraphs: [
         `Unterhaltsreinigung (4-Farb-System, DIN EN 13549-orientiertes QM), Glas- und Fassadenreinigung, Grund- und Bauendreinigung, Entrümpelung, Grünpflege und Spezialanfragen – das volle Saubermatik-Portfolio steht ${label} zur Verfügung. Deep-Content-Leistungsseiten dokumentieren Normen, Prozesse und TF-IDF-Entitäten für Einkauf und Facility.`,
-        `Praxen und Kanzleien in ${label} erhalten RKI- und HACCP-orientierte Prozesse wo erforderlich; Gewerbe und Industrie erhalten Hallen- und Bürokonzepte mit optimierter Flächenleistung – ohne Störung des Tagesgeschäfts.`,
+        `Praxen und Kanzleien in ${label} erhalten Hygieneprozesse nach abgestimmtem Plan; Gewerbe und Industrie erhalten Hallen- und Bürokonzepte – ohne Störung des Tagesgeschäfts.`,
       ],
     },
     {
@@ -161,7 +161,7 @@ function buildRegionalSections(
       title: `Digitale Qualitätssicherung für ${label}`,
       paragraphs: [
         `Jeder Einsatz in ${label} kann digital protokolliert werden: LV-Positionen, Zeitstempel, Sonderfotos bei Abweichungen. Facility Manager haben Echtzeit-Einsicht – keine monatliche Überraschung, keine undokumentierte „war schon jemand da?“-Diskussion.`,
-        `Ausfallsicherheit ist vertraglich relevant: Krankheit oder Personalengpass löst Ersatzlogik aus, bevor Qualität bricht. Das ist der Unterschied zwischen Reinigung als Einkaufsposition und Facility als strategischem Risikomanagement in ${label} und der gesamten Region.`,
+        `Bei Urlaub oder Ausfall übernimmt ein bewährtes Vertretungsteam – sonst die Geschäftsführung persönlich. Das ist der Unterschied zwischen Reinigung als Einkaufsposition und Facility mit klarem Ansprechpartner in ${label} und der gesamten Region.`,
       ],
     },
   ];

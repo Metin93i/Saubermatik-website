@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { B2BOnboardingProcess } from "@/components/B2BOnboardingProcess";
 import { KeyAccountManager } from "@/components/KeyAccountManager";
-import { LeadFunnel } from "@/components/LeadFunnel";
+import { AnfrageCta } from "@/components/AnfrageCta";
 import { buildHausverwaltungenServiceJsonLd } from "@/lib/seo/hausverwaltungen-schema";
 
 export const metadata: Metadata = {
@@ -42,12 +42,12 @@ export default function HausverwaltungenPage() {
               kennt.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <a
-                href="#kontakt-anfrage"
+              <Link
+                href="/kontakt#kontakt-anfrage"
                 className="inline-flex h-12 items-center justify-center rounded-sm bg-primary px-6 text-sm font-semibold text-primary-foreground transition hover:bg-primary/90"
               >
-                Liegenschaft anfragen
-              </a>
+                Anfrage stellen
+              </Link>
               <Link
                 href="/leistungen/treppenhausreinigung"
                 className="inline-flex h-12 items-center justify-center rounded-sm border border-zinc-300 bg-white px-6 text-sm font-semibold text-foreground transition hover:border-secondary/50 hover:bg-secondary/5"
@@ -137,7 +137,7 @@ export default function HausverwaltungenPage() {
                   id="hv-betrkv"
                   className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl"
                 >
-                  Betriebskosten (§&nbsp;2 BetrKV): 100&nbsp;% umlagefähig
+                  Betriebskosten (§&nbsp;2 BetrKV): umlagefähig
                   dokumentieren
                 </h2>
                 <div className="mt-6 space-y-5 text-base leading-[1.75] text-foreground/90">
@@ -171,8 +171,8 @@ export default function HausverwaltungenPage() {
                     Prozess – nicht zum forensischen Projekt.
                   </p>
                   <p>
-                    Kombinieren Sie umlagefähige Positionen mit unserem
-                    Onboarding-Audit: vor Vertragsstart wird definiert, welche
+                    Kombinieren Sie umlagefähige Positionen mit der Abstimmung
+                    vor Vertragsstart: es wird definiert, welche
                     Flächen in welcher BetrKV-Logik laufen – Treppenhaus,
                     Gemeinschaftsanlagen, Außenflächen, Winterdienst separat
                     ausgewiesen. Das schützt vor pauschalen „Pauschalen“, die
@@ -207,8 +207,8 @@ export default function HausverwaltungenPage() {
                     Vandalismus, Sturmschäden – bevor der erste Mieter anruft.
                     Der Key Account priorisiert, beauftragt und schließt den
                     Vorgang dokumentiert ab. Ziel ist nicht „null Beschwerden“
-                    als Marketingphrase, sondern messbar weniger Eskalationen
-                    pro 100 Wohneinheiten.
+                    als Marketingphrase, sondern weniger Eskalationen, die bei
+                    der Verwaltung landen.
                   </p>
                   <p>
                     Repräsentative Treppenhäuser und gepflegte Außenanlagen sind
@@ -280,18 +280,10 @@ export default function HausverwaltungenPage() {
           className="border-t border-foreground/10 bg-zinc-100 py-12 sm:py-14"
         >
           <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">
-            <div className="mx-auto max-w-2xl text-center">
-              <h2 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
-                Liegenschaftsportfolio anfragen
-              </h2>
-              <p className="mt-3 text-base leading-7 text-muted">
-                Objektanzahl, WE-Struktur und Leistungsmix – wir erstellen ein
-                SLA-fähiges Angebot für Ihre Hausverwaltung.
-              </p>
-            </div>
-            <div className="mx-auto mt-10 max-w-xl">
-              <LeadFunnel initialServiceType="hausmeisterservice" />
-            </div>
+            <AnfrageCta
+              title="Liegenschaftsportfolio anfragen"
+              text="Objektanzahl, WE-Struktur und Leistungsmix – wir erstellen ein Angebot für Ihre Hausverwaltung. Fester Ansprechpartner statt Callcenter."
+            />
           </div>
         </section>
       </div>

@@ -163,7 +163,7 @@ const TABLES: Record<Variant, TableConfig> = {
       {
         gebaeudeart: "Praxis / Hygienezone",
         intervall: "Vor Eröffnung",
-        fokus: "RKI-konform, VAH-Desinfektion, Hygieneschleuse",
+        fokus: "Desinfektion nach Hygieneplan, Hygieneschleuse",
       },
     ],
   },
@@ -243,12 +243,12 @@ const TABLES: Record<Variant, TableConfig> = {
       {
         gebaeudeart: "Praxis-Sonderdesinfektion",
         intervall: "Ereignis / Audit",
-        fokus: "RKI-konform, VAH-gelistet, Kreuzkontamination vermeiden",
+        fokus: "Hygieneplan, Mittel nach Standards, Kreuzkontamination vermeiden",
       },
       {
         gebaeudeart: "Event / Messe",
         intervall: "Temporär",
-        fokus: "Flächenleistung, Ausfallsicherheit, Nachtfenster",
+        fokus: "Flächenleistung, Vertretung, Nachtfenster",
       },
       {
         gebaeudeart: "Ausschreibung",

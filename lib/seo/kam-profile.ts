@@ -2,14 +2,14 @@ import { getSiteOrigin } from "@/lib/seo/site-origin";
 
 /** Single Source: Key-Account-Profil Metin Altinsoy (Hero, Kontakt, JSON-LD). */
 export const KAM_PROFILE = {
-  eyebrow: "Ihr persönlicher Key Account Manager",
+  eyebrow: "Ihr persönlicher Ansprechpartner",
   name: "Metin Altinsoy | Geschäftsführer",
-  usp: "Fester Ansprechpartner statt Callcenter.",
+  usp: "Geschäftsführer und fester Ansprechpartner statt Callcenter.",
   expertise:
-    "Spezialisiert auf digitale QM-Kontrolle & Kalkulation von Industrieobjekten.",
+    "Glas- und Raffstore-Spezialist. Digitale Plattform für dokumentierte Einsätze – Umfang nach Vereinbarung.",
   portraitAlt:
-    "Metin Altinsoy, Geschäftsführer Saubermatik — Key Account Manager",
-  jobTitle: "Geschäftsführer & Key Account Manager",
+    "Metin Altinsoy, Geschäftsführer Saubermatik — persönlicher Ansprechpartner",
+  jobTitle: "Geschäftsführer & persönlicher Ansprechpartner",
   organizationName: "Saubermatik Gebäudereinigung",
 } as const;
 
@@ -33,16 +33,16 @@ export function buildKamProfileJsonLd() {
         description: `${KAM_PROFILE.usp} ${KAM_PROFILE.expertise}`,
         knowsAbout: [
           "Facility Management",
-          "Digitale Qualitätskontrolle",
+          "Glasreinigung",
+          "Raffstore-Reinigung",
+          "Digitale Einsatzdokumentation",
           "Gebäudereinigung B2B",
-          "Service Level Agreement",
-          "Industrieobjekte",
         ],
       },
       {
         "@type": "OrganizationRole",
         "@id": `${origin}/#kam-role-metin-altinsoy`,
-        roleName: "Key Account Manager",
+        roleName: "Geschäftsführer",
         namedPosition: KAM_PROFILE.jobTitle,
         description: KAM_PROFILE.usp,
         holder: { "@id": `${origin}/#metin-altinsoy` },

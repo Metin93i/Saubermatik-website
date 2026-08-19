@@ -28,6 +28,14 @@ export async function POST(request: Request) {
   }
 
   const lead = parsed.data;
+  if (parsed.spam) {
+    return Response.json({
+      ok: true,
+      message: "Anfrage erfolgreich übermittelt.",
+      emailed: true,
+    });
+  }
+
   const apiKey = process.env.RESEND_API_KEY?.trim();
   /** Live-Eingang: primär `LEAD_EMAIL_RECIPIENT` (z. B. info@saubermatik-reinigung.de). */
   const recipient =
