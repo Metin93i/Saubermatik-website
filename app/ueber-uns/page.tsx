@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { KeyAccountManager } from "@/components/KeyAccountManager";
 import { REMOTE_IMAGE_BLUR_DATA_URL } from "@/lib/image-blur";
 import { buildTelHref } from "@/lib/phone";
 
@@ -64,8 +63,6 @@ export default function UeberUnsPage() {
           sondern Partner, die Ihre Flächen und Rhythmen kennenlernen.
         </p>
       </div>
-
-      <KeyAccountManager className="mt-12" />
 
       <div className="mt-12 min-h-[10rem] rounded-sm border border-zinc-300/25 bg-secondary/5 p-5 sm:p-6">
         <h2 className="text-lg font-bold text-foreground">Was uns antreibt</h2>
