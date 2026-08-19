@@ -7,7 +7,6 @@ import { EsgComplianceStatement } from "@/components/EsgComplianceStatement";
 import { FreshnessBadge } from "@/components/FreshnessBadge";
 import { GeoImage } from "@/components/GeoImage";
 import { AnfrageCta } from "@/components/AnfrageCta";
-import { KamProfileCard } from "@/components/KamProfileCard";
 import { REMOTE_IMAGE_BLUR_DATA_URL } from "@/lib/image-blur";
 import { STANDORT_CITIES, STANDORT_LABELS } from "@/lib/routes/standorte";
 
@@ -91,7 +90,6 @@ export default function Home() {
               </div>
 
               <div className="flex flex-col gap-2.5 pt-1">
-                <KamProfileCard />
                 <EsgComplianceStatement />
                 <AppMockup />
               </div>
@@ -177,9 +175,6 @@ export default function Home() {
             title="Objekt anfragen"
             text="Fläche, Intervalle, Sonderzonen: Nach einer Begehung erhalten Sie ein unverbindliches Angebot. Fester Ansprechpartner statt Callcenter."
           />
-          <div className="mx-auto mt-8 max-w-xl">
-            <KamProfileCard />
-          </div>
         </div>
       </section>
 
