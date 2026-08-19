@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Suspense } from "react";
-import { KamProfileCard } from "@/components/KamProfileCard";
 import { KontaktFormFallback } from "@/components/KontaktFormFallback";
 import { KontaktFormSwitch } from "@/components/KontaktFormSwitch";
 import {
@@ -77,35 +76,24 @@ export default async function KontaktPage({ searchParams }: KontaktPageProps) {
           </ul>
         </address>
 
-        {telHref ? (
-          <p className="mt-6">
-            <span className="text-xs font-semibold uppercase tracking-wide text-muted">
-              Telefon
-            </span>
-            <br />
+        <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+          {telHref ? (
             <a
               href={telHref}
-              className="text-lg font-bold text-secondary underline-offset-2 hover:underline"
+              className="inline-flex h-12 items-center justify-center rounded-sm bg-primary px-6 text-sm font-semibold text-primary-foreground transition hover:bg-primary/90"
             >
-              {display}
+              Anrufen · {display}
             </a>
-          </p>
-        ) : null}
-
-        <p className="mt-4">
-          <span className="text-xs font-semibold uppercase tracking-wide text-muted">
-            WhatsApp
-          </span>
-          <br />
+          ) : null}
           <a
             href={SITE_WHATSAPP_HREF}
-            className="text-lg font-bold text-secondary underline-offset-2 hover:underline"
+            className="inline-flex h-12 items-center justify-center rounded-sm border border-zinc-300 bg-white px-6 text-sm font-semibold text-foreground transition hover:border-secondary/50 hover:bg-secondary/5"
             target="_blank"
             rel="noopener noreferrer"
           >
-            Nachricht senden
+            WhatsApp
           </a>
-        </p>
+        </div>
 
         <p className="mt-6 text-sm text-muted">
           <Link
@@ -145,7 +133,6 @@ export default async function KontaktPage({ searchParams }: KontaktPageProps) {
       </div>
 
       <div className="min-h-[24rem] flex-1 space-y-5 lg:max-w-xl">
-        {!isCareer ? <KamProfileCard /> : null}
         <Suspense fallback={<KontaktFormFallback isCareer={isCareer} />}>
           <KontaktFormSwitch />
         </Suspense>
