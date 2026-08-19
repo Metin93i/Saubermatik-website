@@ -1,6 +1,8 @@
 /**
  * Zentrales Facility- & Reinigungsportfolio (Slugs, Marketingtexte, Funnel-UI).
  * Alle Slugs müssen mit `LeadServiceType` / API-`serviceType` übereinstimmen.
+ *
+ * `includeInMatrix: false` → keine `/standorte/[city]/[service]`-Routen (E3-Kuration).
  */
 export const SERVICES = [
   {
@@ -26,6 +28,19 @@ export const SERVICES = [
       "Von Schaufenster bis Wintergarten: Wir arbeiten mit professioneller Logistik und klaren Zugangszeiten.",
       "Repräsentative Glasflächen sind Ihr Aushängeschild – wir halten sie dauerhaft wettbewerbsfähig.",
     ],
+  },
+  {
+    slug: "raffstore-lamellenreinigung",
+    title: "Raffstore- & Lamellenreinigung",
+    funnelLabel: "Raffstore & Lamellen",
+    emoji: "☀️",
+    summary:
+      "Schonende Reinigung von Außenraffstoren im Reinwasser-Verfahren – für Gewerbe und Privat.",
+    body: [
+      "Wir reinigen Außenraffstoren schonend im Reinwasser-Verfahren – ohne Chemie und ohne Risiko für die Mechanik.",
+      "Für Firmen und Privathaushalte, von Meßstetten aus auf der Schwäbischen Alb und im Umkreis.",
+    ],
+    includeInMatrix: false,
   },
   {
     slug: "treppenhausreinigung",
@@ -126,6 +141,17 @@ export const SERVICES = [
 ] as const;
 
 export type ServiceSlug = (typeof SERVICES)[number]["slug"];
+
+/** Services mit Stadt×Leistung-Matrix (`includeInMatrix` nicht `false`). */
+export type MatrixServiceSlug = Exclude<
+  ServiceSlug,
+  "raffstore-lamellenreinigung"
+>;
+
+export const MATRIX_SERVICES = SERVICES.filter(
+  (s): s is (typeof SERVICES)[number] & { slug: MatrixServiceSlug } =>
+    !("includeInMatrix" in s && s.includeInMatrix === false),
+);
 
 export const LEAD_SERVICE_TYPES = SERVICES.map(
   (s) => s.slug,

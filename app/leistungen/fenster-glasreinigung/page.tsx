@@ -244,6 +244,15 @@ export default function FensterGlasreinigungPage() {
                   Hausverwaltungs-Portfolio
                 </Link>
                 , wenn Außenflächen ganzheitlich im SLA gebündelt werden sollen.
+                Ihre Außenraffstoren reinigen wir gleich mit – schonend im
+                Reinwasser-Verfahren (
+                <Link
+                  href="/leistungen/raffstore-lamellenreinigung"
+                  className="font-semibold text-secondary hover:underline"
+                >
+                  Raffstore- &amp; Lamellenreinigung
+                </Link>
+                ).
               </p>
             </div>
           </article>

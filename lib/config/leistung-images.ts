@@ -16,6 +16,11 @@ export const LEISTUNG_IMAGES: Record<
     src: u("photo-1520110120835-c96534a4c984"),
     alt: "Glasfassade eines Gewerbegebäudes – streifenfreie Fensterreinigung",
   },
+  // TODO(E2): durch echtes Einsatzfoto ersetzen
+  "raffstore-lamellenreinigung": {
+    src: u("photo-1486406146926-c627a92ad1ab"),
+    alt: "Moderne Gebäudefassade mit Sonnenschutz – Raffstore- und Lamellenreinigung",
+  },
   treppenhausreinigung: {
     src: u("photo-1560448204-e02f11c3d0e2"),
     alt: "Repräsentatives Treppenhaus in einer Gewerbeimmobilie",

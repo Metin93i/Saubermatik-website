@@ -1,4 +1,4 @@
-import type { ServiceSlug } from "@/lib/config/services";
+import type { MatrixServiceSlug } from "@/lib/config/services";
 export type MatrixServiceTechBlock = {
   breadcrumbLabel: string;
   normRefs: readonly string[];
@@ -10,7 +10,10 @@ export type MatrixServiceTechBlock = {
   operationalParagraphs: readonly string[];
 };
 
-export const MATRIX_SERVICE_TECH: Record<ServiceSlug, MatrixServiceTechBlock> = {
+export const MATRIX_SERVICE_TECH: Record<
+  MatrixServiceSlug,
+  MatrixServiceTechBlock
+> = {
   unterhaltsreinigung: {
     breadcrumbLabel: "Unterhalts- & Büroreinigung",
     normRefs: ["DIN EN 13549", "HACCP", "RKI", "VAH"],
@@ -233,6 +236,8 @@ export const MATRIX_SERVICE_TECH: Record<ServiceSlug, MatrixServiceTechBlock> = 
   },
 };
 
-export function getMatrixServiceTech(slug: ServiceSlug): MatrixServiceTechBlock {
+export function getMatrixServiceTech(
+  slug: MatrixServiceSlug,
+): MatrixServiceTechBlock {
   return MATRIX_SERVICE_TECH[slug];
 }

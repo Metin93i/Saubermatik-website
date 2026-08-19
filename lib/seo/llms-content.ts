@@ -28,6 +28,7 @@ export function buildLlmsTxt(): string {
 ## Leistungen (Services)
 ${services}
 - Sonder-Landing Unterhaltsreinigung: ${origin}/leistungen/unterhaltsreinigung
+- Außenraffstore- und Lamellenreinigung im Reinwasser-Verfahren – für Gewerbe und Privat, als Projekt auch überregional: ${origin}/leistungen/raffstore-lamellenreinigung
 
 ## Einsatzgebiete (Local SEO)
 ${cities}

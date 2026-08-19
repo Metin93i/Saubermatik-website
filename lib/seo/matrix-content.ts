@@ -1,4 +1,4 @@
-import { SERVICES, type ServiceSlug } from "@/lib/config/services";
+import { SERVICES, type MatrixServiceSlug } from "@/lib/config/services";
 import {
   formatInfrastructure,
   formatZones,
@@ -25,7 +25,7 @@ export type MatrixContentSection = {
 
 export type MatrixDeepContent = {
   city: StandortCity;
-  service: ServiceSlug;
+  service: MatrixServiceSlug;
   cityLabel: string;
   serviceLabel: string;
   metaTitle: string;
@@ -33,7 +33,7 @@ export type MatrixDeepContent = {
   heroTitle: string;
   heroSubtitle: string;
   sections: readonly MatrixContentSection[];
-  funnelInitialService: ServiceSlug;
+  funnelInitialService: MatrixServiceSlug;
 };
 
 function buildLocalBlockA(
@@ -91,13 +91,13 @@ function buildSynergyBlockC(
   city: StandortCity,
   cityLabel: string,
   serviceLabel: string,
-  serviceSlug: ServiceSlug,
+  serviceSlug: MatrixServiceSlug,
   variant: number,
 ): MatrixContentSection {
   const profile = getLocalEntityProfile(city);
   const industry = profile?.industryFocus ?? "Mittelstand, Verwaltung und Gewerbe in der Region Zollernalb";
 
-  const synergyByService: Partial<Record<ServiceSlug, readonly string[]>> = {
+  const synergyByService: Partial<Record<MatrixServiceSlug, readonly string[]>> = {
     unterhaltsreinigung: [
       `${serviceLabel} in ${cityLabel} ist die Basis für produktive Arbeitsplätze — ob Verwaltung entlang der B27, Produktionsbüro in ${profile?.industrialZones[0] ?? "lokalen Gewerbegebieten"} oder Praxisflächen mit RKI-Anforderung. Saubermatik übersetzt ${industry} in konkrete Reinigungs-SLAs mit 4-Farb-System und HACCP in Teeküchen.`,
       `Facility Manager profitieren von einem digitalen LV, das Flächen, Intervalle und Abnahmekriterien nach DIN EN 13549 fixiert — nicht monatlich neu verhandelt wird. Ausfallsicherheit über die Plattform bedeutet: Ihr Objekt in ${cityLabel} bleibt im Rhythmus, auch wenn einzelne Kräfte ausfallen.`,
@@ -190,7 +190,7 @@ function buildCityEconomyBlock(
 function buildProcurementBlock(
   city: StandortCity,
   serviceLabel: string,
-  serviceSlug: ServiceSlug,
+  serviceSlug: MatrixServiceSlug,
   variant: number,
 ): MatrixContentSection {
   const cityLabel = STANDORT_LABELS[city];
@@ -204,7 +204,7 @@ function buildProcurementBlock(
 function buildObjectTypesBlock(
   city: StandortCity,
   serviceLabel: string,
-  serviceSlug: ServiceSlug,
+  serviceSlug: MatrixServiceSlug,
 ): MatrixContentSection {
   const cityLabel = STANDORT_LABELS[city];
   return {
@@ -251,7 +251,7 @@ function buildDigitalBlock(
 
 export function buildMatrixDeepContent(
   city: StandortCity,
-  serviceSlug: ServiceSlug,
+  serviceSlug: MatrixServiceSlug,
 ): MatrixDeepContent {
   const cityLabel = STANDORT_LABELS[city];
   const service = SERVICES.find((s) => s.slug === serviceSlug)!;
