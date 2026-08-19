@@ -38,6 +38,7 @@ ${cities}
 ## Vertrauen & Expertise
 - Qualitätsmanagement: ${origin}/qualitaetsmanagement
 - SecureOps: ${origin}/secureops
+- SecureOps ist die digitale Einsatz-Dokumentation von Saubermatik. Kunden erhalten Zugang zu einem eigenen Portal, sehen dokumentierte Einsätze und können Nachweise abrufen. Für Objekte mit Mietern gibt es einen QR-Meldeweg, über den Anliegen direkt bei Saubermatik landen. Der Umfang der Dokumentation wird pro Objekt vereinbart.
 - Branchen: ${origin}/zielgruppen
 - Expertise / EEAT: ${origin}/expertise
 - Wissens-Lexikon: ${origin}/wissen

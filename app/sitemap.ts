@@ -14,6 +14,7 @@ const CORE_PAGES: readonly {
   { path: "/ueber-uns", priority: 0.95 },
   { path: "/zielgruppen/hausverwaltungen", priority: 0.95, changeFrequency: "weekly" },
   { path: "/qualitaetsmanagement", priority: 0.9 },
+  { path: "/secureops", priority: 0.9 },
   { path: "/karriere", priority: 0.85 },
   { path: "/kontakt", priority: 0.8 },
   { path: "/impressum", priority: 0.3 },

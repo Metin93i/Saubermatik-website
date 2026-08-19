@@ -68,7 +68,15 @@ export default function HausverwaltungenPage() {
               Jeder Vorfall landet beim Verwalter, nicht beim Anbieter. Wir
               strukturieren das Gegenteil: ein integriertes Portfolio aus
               Reinigung, Objektbetreuung, Grünpflege und Winterdienst – digital
-              gesteuert, revisionssicher dokumentiert.
+              gesteuert, revisionssicher dokumentiert. Mieter-Anliegen zur
+              Reinigung können über den QR-Meldeweg in{" "}
+              <Link
+                href="/secureops"
+                className="font-semibold text-secondary hover:underline"
+              >
+                SecureOps
+              </Link>{" "}
+              direkt bei uns landen – statt auf dem Schreibtisch der Verwaltung.
             </p>
           </article>
 
