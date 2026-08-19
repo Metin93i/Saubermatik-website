@@ -75,8 +75,7 @@ export default async function WissenTermPage({ params }: PageProps) {
           </p>
           <p className="mt-2 text-base leading-7 text-muted">
             Sie möchten diesen Begriff auf Ihr Objekt übertragen? Wir
-            strukturieren Bedarf, Audit und Service Level Agreement in einem
-            dokumentierten Onboarding.
+            strukturieren Bedarf, Begehung und Vereinbarung vor Vertragsstart.
           </p>
           <Link
             href="/kontakt#kontakt-anfrage"

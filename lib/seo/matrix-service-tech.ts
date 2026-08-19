@@ -19,21 +19,21 @@ export const MATRIX_SERVICE_TECH: Record<
     normRefs: ["DIN EN 13549", "HACCP", "RKI", "VAH"],
     technicalTitle: "Unterhaltsreinigung: 4-Farb-System & ph-Wert-Steuerung",
     technicalParagraphs: [
-      "Professionelle Unterhaltsreinigung beginnt bei Saubermatik mit dem 4-Farb-System zur Vermeidung von Kreuzkontamination: Rot für Sanitärbereiche, Gelb für Waschbecken und Armaturen, Blau für Büromöbel und Inventar, Grün für Teeküchen und Aufenthaltszonen. Jede Farbe ist physisch getrennt — eigene Eimer, Mikrofasertücher und Mopp-Systeme pro Objekt. Das ist keine Marketing-Metapher, sondern ein auditierbarer Standard, den Facility Manager in Hygiene- und Qualitätsaudits gegenüber Behörden, ISO-Zertifizierern und Konzern-Einkauf vorlegen können.",
-      "Bodenbeläge werden materialspezifisch behandelt: Vinyl, Designboden, Naturstein, Linoleum und Teppich erhalten unterschiedliche pH-Wert-Profile. Alkalische Grundreiniger nur dort, wo das Pflegekonzept es vorsieht; neutrale Unterhaltsreiniger für den Tagesbetrieb. In Praxen und medizinischen Nebenräumen orientieren wir uns an RKI-Empfehlungen und VAH-gelisteten Flächendesinfektionsmitteln — dokumentiert im digitalen Leistungsverzeichnis, nicht als mündliche Zusage.",
+      "Professionelle Unterhaltsreinigung beginnt bei Saubermatik mit dem 4-Farb-System zur Vermeidung von Kreuzkontamination: Rot für Sanitärbereiche, Gelb für Waschbecken und Armaturen, Blau für Büromöbel und Inventar, Grün für Teeküchen und Aufenthaltszonen. Jede Farbe ist physisch getrennt — eigene Eimer, Mikrofasertücher und Mopp-Systeme pro Objekt.",
+      "Bodenbeläge werden materialspezifisch behandelt: Vinyl, Designboden, Naturstein, Linoleum und Teppich erhalten unterschiedliche pH-Wert-Profile. Alkalische Grundreiniger nur dort, wo das Pflegekonzept es vorsieht; neutrale Unterhaltsreiniger für den Tagesbetrieb. In Praxen und medizinischen Nebenräumen stimmen wir Desinfektionsmittel und Ablauf mit Ihrem Hygieneplan ab — Mittel nach anerkannten Standards, dokumentiert im Leistungsverzeichnis.",
       "DIN EN 13549 dient als methodischer Rahmen für messbare Qualität: Leistungsumfang, Intervalle und Abnahmekriterien werden vor Vertragsbeginn schriftlich fixiert. Die Saubermatik-App erfasst Echtzeit-QM, Ausfallmanagement und Ersatzlogistik — wenn eine Tour ausfällt, wird sie neu disponiert, bevor der Auftraggeber es merkt.",
     ],
     complianceTitle: "Compliance: HACCP, RKI & Praxishygiene",
     complianceParagraphs: [
       "Teeküchen und Kantinen in Büro- und Verwaltungsgebäuden unterliegen praktischen HACCP-Anforderungen: Lebensmittelkontaktflächen, Abfallzonen und Spülbecken werden getrennt behandelt. Unsere Teams sind geschult, Mängel (undichte Kühlschränke, Schimmelansätze, defekte Lüftungen) zu melden — ein Frühwarnsystem für Facility und Eigentümer.",
-      "In Arztpraxen und medizinischen MVZ kombinieren wir Unterhaltsreinigung mit desinfizierenden Zwischenreinigungen in Behandlungs- und Wartezonen. VAH-Listen und RKI-Leitfäden sind Bestandteil der Objektunterweisung. Für Hausverwaltungen mit gemischten Mieterstrukturen bedeutet das: ein Partner, der Büroflächen und hygiene-sensitive Bereiche im selben Gebäude beherrscht.",
+      "In Arztpraxen und medizinischen MVZ kombinieren wir Unterhaltsreinigung mit desinfizierenden Zwischenreinigungen in Behandlungs- und Wartezonen. Grundlage ist Ihr Hygieneplan; Mittel nach anerkannten Standards. Für Hausverwaltungen mit gemischten Mieterstrukturen bedeutet das: ein Partner, der Büroflächen und hygiene-sensitive Bereiche im selben Gebäude betreut.",
       "Abrechnung und Nachweis erfolgen digital: dokumentierte Einsätze (Umfang je nach Objekt und Vereinbarung), exportierbare Protokolle für Nebenkosten, ISO-Audits und Eigentümerversammlungen. Transparente SLAs ohne versteckte Zusatzpositionen.",
     ],
-    operationalTitle: "Betrieb: Intervalle, Touren & Ausfallsicherheit",
+    operationalTitle: "Betrieb: Intervalle, Touren & Vertretung",
     operationalParagraphs: [
-      "Unterhaltsreinigung lebt von Konstanz: feste Teams, feste Zeitfenster, feste Checklisten. Saubermatik plant Touren entlang realer Verkehrsachsen — nicht als theoretische Karte, sondern als dispositionstechnische Realität mit Puffer für Ersatzkräfte.",
-      "Verbrauchsmaterial (Seifen, Papier, Müllbeutel) kann optional integriert werden — ein Ansprechpartner, eine Rechnung, ein SLA. Für Multi-Objekt-Portfolios skaliert die Plattform ohne Qualitätsverlust: jedes Objekt erhält sein digitales LV, die Zentrale behält den Überblick.",
-      "Bei Vertragsverlängerung liefern wir Auswertungen: Reklamationsquote, Ausfallquote, durchschnittliche Reaktionszeit. Das ist B2B-Handwerk mit SaaS-Transparenz — nicht anonyme Subunternehmer-Ketten.",
+      "Unterhaltsreinigung lebt von Konstanz: feste Zeitfenster, feste Checklisten. Saubermatik plant Touren entlang realer Verkehrsachsen — mit Puffer für Vertretung bei Urlaub oder Ausfall.",
+      "Verbrauchsmaterial (Seifen, Papier, Müllbeutel) kann optional integriert werden — ein Ansprechpartner, eine Rechnung. Jedes Objekt erhält sein digitales LV, die Zentrale behält den Überblick.",
+      "Bei Vertragsverlängerung liefern wir Auswertungen zu Einsätzen und Reaktionszeiten. Das ist Handwerk mit Plattform-Transparenz — nicht anonyme Subunternehmer-Ketten.",
     ],
   },
   "fenster-glasreinigung": {
@@ -51,11 +51,11 @@ export const MATRIX_SERVICE_TECH: Record<
       "Bei Medizintechnik-Standorten (Medical Mountains, Tuttlingen) gelten erhöhte Anforderungen an Staub- und Schmutzeintrag in Produktionsnähe: wir planen Eingangsbereiche und Schleusenlogik mit ein, nicht nur die Fensterscheibe isoliert.",
       "Kombination mit Fassadenreinigung und Unterhalt aus einem Portfolio reduziert Schnittstellen und Koordinationsaufwand für den Auftraggeber.",
     ],
-    operationalTitle: "Disposition & Streifenfrei-Garantie im Betrieb",
+    operationalTitle: "Tourenplanung & streifenfreies Ergebnis",
     operationalParagraphs: [
-      "Glas-Touren sind wetterabhängig: Wind, Frost und Starkregen verschieben Einsätze. Unsere Disposition kommuniziert proaktiv — kein Schweigen bis zur Reklamation. Ersatztermine werden in der App nachvollziehbar.",
+      "Glas-Touren sind wetterabhängig: Wind, Frost und Starkregen verschieben Einsätze. Wir kommunizieren proaktiv — kein Schweigen bis zur Reklamation. Ersatztermine werden in der App nachvollziehbar.",
       "Für Hochhäuser und Hallenfassaden koordinieren wir Hubsteiger, Seilzugang oder Gerüstbauer — ein Projektleiter, ein SLA. Dokumentierte Einsätze halten den Zustand vor/nach nachvollziehbar, besonders bei Übergaben und Mietvertragswechsel (Umfang je nach Vereinbarung).",
-      "Streifenfreiheit ist messbar am Ergebnis, nicht am Versprechen: Reklamationen werden als QM-Signal verarbeitet, nicht als Kundenproblem abgewiesen.",
+      "Streifenfreiheit merken wir selbst und arbeiten nach. Eine Garantiezusage geben wir nicht; Reklamationen werden als QM-Signal verarbeitet.",
     ],
   },
   treppenhausreinigung: {
@@ -73,9 +73,9 @@ export const MATRIX_SERVICE_TECH: Record<
       "Repräsentativität: Eingänge, Spiegel, Glas, Briefkastenzonen und Fahrstuhl-Vorhallen prägen den ersten Eindruck bei Vermietung und Verkauf. Saubermatik plant leise Geräte und störungsarme Zeitfenster — wichtig in Wohnobjekten mit Kinderwagen, Lieferverkehr und Schichtbetrieb.",
       "Mängelmeldung ist Teil des Service: defekte Beleuchtung, lose Geländer, rissige Stufen werden eskaliert — bevor der Mieter stolpert.",
     ],
-    operationalTitle: "WEG-Touren & Ausfallsicherheit",
+    operationalTitle: "WEG-Touren & Vertretung",
     operationalParagraphs: [
-      "Feste Teams pro Stadt-Cluster sichern Wiedererkennung und Qualität. Verwalter sparen Koordinationszeit; Mieter erleben Konstanz. Bei Ausfällen greift die Saubermatik-Plattform — Ersatzkräfte ohne Qualitätsbruch.",
+      "Feste Ansprechpersonen sichern Wiedererkennung und Qualität. Verwalter sparen Koordinationszeit; Mieter erleben Konstanz. Bei Urlaub oder Ausfall übernimmt ein bewährtes Vertretungsteam — sonst die Geschäftsführung persönlich.",
       "Kombination mit Winterdienst, Grünpflege und Hausmeisterservice aus einem Portfolio: ein Ansprechpartner, ein SLA, eine App.",
       "Skalierbar von Einzel-MFH bis zum Verwalter-Portfolio mit dutzenden Liegenschaften in der Region.",
     ],
@@ -97,9 +97,9 @@ export const MATRIX_SERVICE_TECH: Record<
     ],
     operationalTitle: "WE-Skalierung & Key Account",
     operationalParagraphs: [
-      "Für Mehrfamilienhäuser mit 4 bis 100+ WE staffeln wir Richtwerte und Touren — eine erste Orientierung besprechen wir im Gespräch, das verbindliche Angebot folgt nach Objekt-Audit.",
+      "Für Mehrfamilienhäuser staffeln wir Touren nach Objekt – eine erste Orientierung besprechen wir im Gespräch, das verbindliche Angebot folgt nach Objektbegehung.",
       "Key Account Manager begleiten Hausverwaltungen über das gesamte Portfolio: ein Gesicht, ein SLA, eine Plattform.",
-      "Ausfallsicherheit: Krankheit und Urlaub ersetzen wir über die Disposition — das Objekt bleibt im Rhythmus.",
+      "Ausfälle: Krankheit und Urlaub ersetzen wir mit bewährtem Vertretungsteam — sonst die Geschäftsführung persönlich. Das Objekt bleibt im Rhythmus.",
     ],
   },
   gruenanlagenpflege: {
@@ -117,9 +117,9 @@ export const MATRIX_SERVICE_TECH: Record<
       "Pflanzenschutz und Entsorgung erfolgen fachgerecht; Schnittgut und Grüngut werden dokumentiert.",
       "Koordination mit Hausmeister und Reinigung: Außenanlage und Eingangsbereich wirken als Einheit.",
     ],
-    operationalTitle: "Saisonplan & Disposition",
+    operationalTitle: "Saisonplan & Touren",
     operationalParagraphs: [
-      "Wetter und Vegetationsphase steuern Einsätze — unsere Disposition kommuniziert Verschiebungen proaktiv.",
+      "Wetter und Vegetationsphase steuern Einsätze — Verschiebungen kommunizieren wir proaktiv.",
       "Feste Teams pro Region kennen die Objekte — Hecken, Bäume, sensibles Pflaster.",
       "Skalierbar von Einfamilien-WEG bis Gewerbepark mit mehreren Hektar.",
     ],
@@ -139,9 +139,9 @@ export const MATRIX_SERVICE_TECH: Record<
       "§ 2 BetrKV: umlagefähige, nachvollziehbare Abrechnung für WEG — keine undurchsichtigen Pauschalen.",
       "BG-BAU-orientierte Einsatzsicherheit für Mitarbeiter bei Nacht und Eis.",
     ],
-    operationalTitle: "Wetterführung & Bereitschaft laut SLA",
+    operationalTitle: "Wetterführung in der Saison",
     operationalParagraphs: [
-      "Schneefall und Glätte warten nicht auf Bürozeiten — unsere Bereitschaftslogik ist Teil des SLA.",
+      "Schneefall und Glätte kommen in der Saison — wir räumen und streuen nach vertraglich vereinbarten Reaktionszeiten, ohne Rund-um-die-Uhr-Bereitschaft.",
       "Kommunikation an Verwalter bei Extremwetter: proaktiv, nicht reaktiv.",
       "Regionale Tourenbündelung entlang B27, B14, A81 — effizient für Multi-Objekt-Verwalter.",
     ],
@@ -152,7 +152,7 @@ export const MATRIX_SERVICE_TECH: Record<
     technicalTitle: "Grundreinigung: Bauabnahme & Tiefenreinigung",
     technicalParagraphs: [
       "Grundreinigung und Bauendreinigung sind meilensteingetrieben: Nach Sanierung, Neubau oder Mieterwechsel muss der Zustand abnahmefähig sein — besenrein reicht selten. Saubermatik entfernt Baustaub, Zementschleier, Folienreste und Feinpartikel materialspezifisch, ohne Oberflächen zu beschädigen.",
-      "DIN 18365 und VOB/C-orientierte Übergaben: Bodenbeläge werden eingepflegt, Sanitär desinfiziert, Glas und Rahmen final gereinigt. In Praxen und Laborn: RKI-konforme Desinfektion, VAH-gelistete Mittel, dokumentierte Freigabe.",
+      "DIN 18365 und VOB/C-orientierte Übergaben: Bodenbeläge werden eingepflegt, Sanitär desinfiziert, Glas und Rahmen final gereinigt. In Praxen und Laboren: Desinfektion nach Hygieneplan, Mittel nach anerkannten Standards, dokumentierte Freigabe.",
       "Projektleitung koordiniert Gewerke, Termine und Zugänge — ein Ansprechpartner bis zur keys-off-Übergabe.",
     ],
     complianceTitle: "Abnahme & Hygiene-Freigabe",
@@ -217,9 +217,9 @@ export const MATRIX_SERVICE_TECH: Record<
     normRefs: ["DIN EN 13549", "RKI", "VAH", "Ausschreibung"],
     technicalTitle: "Spezialreinigung: Teppich, Events & Sonderdesinfektion",
     technicalParagraphs: [
-      "Spezialanfragen — Teppich- und Polsterreinigung, Event-Reinigung, Industrie-Sonderflächen, Ausschreibungsprojekte — werden bei Saubermatik nicht abgewiesen, sondern in messbare Leistungsverzeichnisse übersetzt. Jedes Briefing durchläuft Audit, LV-Erstellung und Kick-Off — identisch zum B2B-Onboarding.",
-      "RKI-konforme Sonderdesinfektion und VAH-gelistete Verfahren für Praxen, Labore und Lebensmittel-Nähe. Teppichreinigung mit Werterhalt-Fokus — kein „nass bis in die Dämmung“ ohne Konzept.",
-      "Event-SLAs mit definierten Reaktionszeiten und Ausfallsicherheit — Messen, Stadtfeste, Produktionswechsel in Industriezonen.",
+      "Spezialanfragen — Teppich- und Polsterreinigung, Event-Reinigung, Industrie-Sonderflächen, Ausschreibungsprojekte — werden bei Saubermatik nicht abgewiesen, sondern in Leistungsverzeichnisse übersetzt. Jedes Briefing durchläuft Begehung, LV-Erstellung und Start.",
+      "Sonderdesinfektion nach Hygieneplan und anerkannten Standards für Praxen, Labore und Lebensmittel-Nähe. Teppichreinigung mit Werterhalt-Fokus — kein „nass bis in die Dämmung“ ohne Konzept.",
+      "Event-Einsätze mit vereinbarten Reaktionszeiten — Messen, Stadtfeste, Produktionswechsel in Industriezonen.",
     ],
     complianceTitle: "Ausschreibung & Compliance",
     complianceParagraphs: [
@@ -229,7 +229,7 @@ export const MATRIX_SERVICE_TECH: Record<
     ],
     operationalTitle: "Skalierung & Projektleitung",
     operationalParagraphs: [
-      "Temporäre Team-Skalierung über die Saubermatik-Plattform — ohne Qualitätsbruch.",
+      "Temporäre Einsätze über die Saubermatik-Plattform — ohne Qualitätsbruch-Versprechen über große Flächen.",
       "Ein Projektleiter pro Sonderauftrag — klare Eskalation.",
       "Regionale Reichweite Zollernalb bis Stuttgart/Bodensee — ein Prozess.",
     ],

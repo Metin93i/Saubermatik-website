@@ -32,8 +32,8 @@ export function AppMockup({ className = "" }: Props) {
           Saubermatik-Plattform
         </span>
         <span className="mt-1 block">
-          Echtzeit-QM, digitale Leistungsverzeichnisse und Ausfallsicherheit —
-          steuerbar vom Desktop und mobil im Objekt.
+          Dokumentierte Einsätze über die Plattform — am Rechner und über
+          mobile Endgeräte (Handy, auch Platform-App).
         </span>
       </figcaption>
     </figure>

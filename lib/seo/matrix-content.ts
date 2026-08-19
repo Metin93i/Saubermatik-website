@@ -51,7 +51,7 @@ function buildLocalBlockA(
     const leads = [
       `${cityLabel} ist geprägt von ${profile.industryFocus} Für ${serviceLabel} bedeutet das: Reinigungs-SLAs, die zur lokalen Wirtschaft passen — nicht generische Textbausteine aus der Großstadt. Saubermatik verbindet Meßstetten als Firmensitz mit Branchenkompetenz vor Ort: digitale Leistungsverzeichnisse, Echtzeit-QM und Key-Account-Betreuung für Facility Manager, Hausverwaltungen und Geschäftsführung.`,
       `In ${cityLabel} planen wir ${serviceLabel} entlang realer Gewerbestrukturen — ${zones} und die Anbindung über ${infra} sind Planungsanker für Touren, Reaktionszeiten und Ausfallsicherheit. Objekte in diesen Zonen erhalten priorisierte Disposition und dokumentierte Einsätze in der Saubermatik-App.`,
-      `Der Wirtschaftsschwerpunkt (${profile.industryFocus}) verlangt mehr als Intervalle von der Stange: Hygienezonen, Werterhalt sensibler Substanz und Verkehrssicherungspflicht werden im Onboarding schriftlich fixiert — auditierbar für Einkauf, ISO und Eigentümerversammlungen.`,
+      `Der Wirtschaftsschwerpunkt (${profile.industryFocus}) verlangt mehr als Intervalle von der Stange: Hygienezonen, Werterhalt sensibler Substanz und Verkehrssicherungspflicht werden vor Vertragsstart schriftlich fixiert — nachvollziehbar für Einkauf und Eigentümerversammlungen.`,
     ];
     return {
       id: "local-b2b",
@@ -242,8 +242,8 @@ function buildDigitalBlock(
     paragraphs: [
       `Die Saubermatik-Plattform ist kein Marketing-Buzzword: Reinigungskräfte haken digitale Leistungsverzeichnisse ab, Facility Manager sehen Echtzeit-QM, Ausfälle werden durch Ersatzkräfte geschlossen — bevor Ihr Objekt in ${cityLabel} leidet. Protokolle stehen für Abrechnung, ISO-Audits, BetrKV und Eigentümer-Reports bereit.`,
       `${serviceLabel} wird damit planbar und skalierbar — vom Einzelobjekt bis zum Multi-Standort-Portfolio. Key Account Manager begleiten Sie über Vertragslaufzeit, Anpassungen und Eskalationen — ein Gesicht, ein SLA, keine Hotline.`,
-      `Onboarding in vier Phasen: Bedarfsanalyse, LV-Freigabe, Team-Einweisung, Live-Betrieb mit messbaren KPIs. Das ist B2B-Facility-Service auf Augenhöhe — regional aus Meßstetten, digital auf Enterprise-Niveau.`,
-      `Exportierbare Reports, Versicherungsnachweise und Unterweisungsbelege sind jederzeit abrufbar — für ${cityLabel} und alle Standorte in Ihrem Portfolio. Sie sparen interne Koordination, weil Disposition und Qualität in einem System laufen.`,
+      `Einstieg in vier Schritten: Bedarf klären, Begehung, unverbindliches Angebot, Start im Objekt. Das ist Facility-Service auf Augenhöhe — regional aus Meßstetten, digital dokumentiert.`,
+      `Exportierbare Reports, Versicherungsnachweise und Unterweisungsbelege sind jederzeit abrufbar — für ${cityLabel} und alle Standorte in Ihrem Portfolio. Sie sparen interne Koordination, weil Tourenplanung und Qualität in einem System laufen.`,
       `Wenn Sie ${serviceLabel} in ${cityLabel} neu vergeben oder wechseln wollen: Starten Sie mit einer unverbindlichen Begehung. Wir liefern ein schriftliches LV mit klaren SLAs — ohne versteckte Kosten, ohne Platzhalter, ohne Großstadt-Textbausteine.`,
     ],
   };

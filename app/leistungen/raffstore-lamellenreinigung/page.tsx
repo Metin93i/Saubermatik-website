@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
 import { GeoImage } from "@/components/GeoImage";
-import { LeadFunnel } from "@/components/LeadFunnel";
+import { AnfrageCta } from "@/components/AnfrageCta";
 import { LeistungFaqJsonLd } from "@/components/LeistungFaqJsonLd";
 import { SeoCrossLinks } from "@/components/SeoCrossLinks";
 import { getLeistungImage } from "@/lib/config/leistung-images";
@@ -76,12 +76,12 @@ export default function RaffstoreLamellenreinigungPage() {
               />
             </div>
             <div className="mt-10 flex flex-wrap gap-4">
-              <a
-                href="#kontakt-anfrage"
+              <Link
+                href="/kontakt#kontakt-anfrage"
                 className="inline-flex h-12 items-center justify-center rounded-sm bg-primary px-6 text-sm font-semibold text-primary-foreground transition hover:bg-primary/90"
               >
-                Angebot anfragen
-              </a>
+                Anfrage stellen
+              </Link>
               <Link
                 href="/kontakt#kontakt-anfrage"
                 className="inline-flex h-12 items-center justify-center rounded-sm border border-zinc-300 px-6 text-sm font-semibold text-foreground transition hover:border-secondary/50 hover:bg-secondary/5"
@@ -259,36 +259,10 @@ export default function RaffstoreLamellenreinigungPage() {
           className="border-t border-slate-200 bg-zinc-100 py-12 sm:py-14"
         >
           <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">
-            <div className="mx-auto max-w-2xl text-center">
-              <h2 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
-                Angebot anfragen
-              </h2>
-              <p className="mt-3 text-base leading-7 text-muted">
-                Beschreiben Sie uns kurz Ihr Objekt – Anzahl der Fenster oder
-                Behänge und der Ort genügen. Wir melden uns zügig mit einem
-                unverbindlichen Angebot. Fester Ansprechpartner statt
-                Callcenter.
-              </p>
-              <div className="mt-6 flex flex-wrap justify-center gap-3">
-                <Link
-                  href="/kontakt#kontakt-anfrage"
-                  className="inline-flex h-11 items-center justify-center rounded-sm border border-zinc-300 bg-white px-5 text-sm font-semibold text-foreground transition hover:border-secondary/50 hover:bg-secondary/5"
-                >
-                  Kontaktseite
-                </Link>
-                {telHref ? (
-                  <a
-                    href={telHref}
-                    className="inline-flex h-11 items-center justify-center rounded-sm border border-zinc-300 bg-white px-5 text-sm font-semibold text-foreground transition hover:border-secondary/50 hover:bg-secondary/5"
-                  >
-                    {raw}
-                  </a>
-                ) : null}
-              </div>
-            </div>
-            <div className="mx-auto mt-10 max-w-xl">
-              <LeadFunnel initialServiceType={SLUG} />
-            </div>
+            <AnfrageCta
+              title="Angebot anfragen"
+              text="Beschreiben Sie uns kurz Ihr Objekt – Anzahl der Fenster oder Behänge und der Ort genügen. Wir melden uns zügig mit einem unverbindlichen Angebot. Fester Ansprechpartner statt Callcenter."
+            />
           </div>
         </section>
       </div>

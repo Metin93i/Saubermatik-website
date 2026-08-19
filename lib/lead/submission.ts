@@ -1,53 +1,15 @@
-/** Gemeinsame Typen & Parser für Lead-Funnel UI und `POST /api/lead` (nur Server/Shared, kein `"use client"`). */
+/** Gemeinsame Typen & Parser für Kontaktformular und `POST /api/lead`. */
 
-import type { ServiceSlug } from "@/lib/config/services";
-import { LEAD_SERVICE_TYPES } from "@/lib/config/services";
-
-export type LeadServiceType = ServiceSlug;
-
-export { LEAD_SERVICE_TYPES };
-
-export const LEAD_AREA_SIZES = ["bis-100", "100-500", "ueber-500"] as const;
-
-export type LeadAreaSize = (typeof LEAD_AREA_SIZES)[number];
-
-export const LEAD_TIMINGS = [
-  "sofort",
-  "naechster-monat",
-  "preisvergleich",
-] as const;
-
-export type LeadTiming = (typeof LEAD_TIMINGS)[number];
-
-export type LeadFunnelSubmission = {
-  serviceType: LeadServiceType;
-  areaSize: LeadAreaSize;
-  timing: LeadTiming;
+export type LeadSubmission = {
   name: string;
   company: string;
   email: string;
   phone: string;
-  /** Optional: Zusätzliche Objekthinweise (max. 2000 Zeichen). */
-  objectNotes?: string;
+  message: string;
 };
 
 function isNonEmptyString(v: unknown): v is string {
   return typeof v === "string" && v.trim().length > 0;
-}
-
-function isLeadServiceType(v: unknown): v is LeadServiceType {
-  return (
-    typeof v === "string" &&
-    (LEAD_SERVICE_TYPES as readonly string[]).includes(v)
-  );
-}
-
-function isLeadAreaSize(v: unknown): v is LeadAreaSize {
-  return typeof v === "string" && (LEAD_AREA_SIZES as readonly string[]).includes(v);
-}
-
-function isLeadTiming(v: unknown): v is LeadTiming {
-  return typeof v === "string" && (LEAD_TIMINGS as readonly string[]).includes(v);
 }
 
 /** Einfache RFC-5322-nahe Prüfung (ohne externe Lib). */
@@ -58,7 +20,7 @@ export function isValidEmailFormat(email: string): boolean {
 }
 
 export type ParseLeadResult =
-  | { ok: true; data: LeadFunnelSubmission }
+  | { ok: true; data: LeadSubmission; spam: boolean }
   | { ok: false; error: string; status: number };
 
 export function parseLeadSubmission(body: unknown): ParseLeadResult {
@@ -68,14 +30,21 @@ export function parseLeadSubmission(body: unknown): ParseLeadResult {
 
   const o = body as Record<string, unknown>;
 
-  if (!isLeadServiceType(o.serviceType)) {
-    return { ok: false, error: "Ungültige Dienstleistung.", status: 400 };
-  }
-  if (!isLeadAreaSize(o.areaSize)) {
-    return { ok: false, error: "Ungültige Flächenangabe.", status: 400 };
-  }
-  if (!isLeadTiming(o.timing)) {
-    return { ok: false, error: "Ungültiger Startzeitpunkt.", status: 400 };
+  /** Honeypot: ausgefüllt = Bot. Stille Annahme, kein Versand. */
+  const honeypot =
+    typeof o.website === "string" ? o.website.trim() : "";
+  if (honeypot.length > 0) {
+    return {
+      ok: true,
+      spam: true,
+      data: {
+        name: "honeypot",
+        company: "",
+        email: "honeypot@invalid.local",
+        phone: "",
+        message: "",
+      },
+    };
   }
 
   if (!isNonEmptyString(o.name)) {
@@ -84,50 +53,47 @@ export function parseLeadSubmission(body: unknown): ParseLeadResult {
   if (!isNonEmptyString(o.email) || !isValidEmailFormat(o.email)) {
     return { ok: false, error: "Ungültige E-Mail-Adresse.", status: 400 };
   }
-  if (!isNonEmptyString(o.phone)) {
-    return { ok: false, error: "Telefon fehlt.", status: 400 };
+  if (!isNonEmptyString(o.message)) {
+    return { ok: false, error: "Anliegen fehlt.", status: 400 };
   }
 
   const name = String(o.name).trim();
   const email = String(o.email).trim();
-  const phone = String(o.phone).trim();
+  const message = String(o.message).trim();
   if (name.length > 200) {
     return { ok: false, error: "Name zu lang.", status: 400 };
   }
-  if (phone.length < 5 || phone.length > 40) {
-    return { ok: false, error: "Telefonnummer ungültig.", status: 400 };
+  if (message.length > 4000) {
+    return {
+      ok: false,
+      error: "Anliegen: maximal 4000 Zeichen.",
+      status: 400,
+    };
   }
 
   const company =
     typeof o.company === "string" ? o.company.trim().slice(0, 200) : "";
 
-  let objectNotes: string | undefined;
-  if (o.objectNotes !== undefined && o.objectNotes !== null) {
-    if (typeof o.objectNotes !== "string") {
-      return { ok: false, error: "Ungültiges Zusatzfeld.", status: 400 };
+  let phone = "";
+  if (o.phone !== undefined && o.phone !== null && o.phone !== "") {
+    if (typeof o.phone !== "string") {
+      return { ok: false, error: "Ungültige Telefonnummer.", status: 400 };
     }
-    const trimmed = o.objectNotes.trim();
-    if (trimmed.length > 2000) {
-      return {
-        ok: false,
-        error: "Zusätzliche Hinweise: maximal 2000 Zeichen.",
-        status: 400,
-      };
+    phone = o.phone.trim();
+    if (phone.length > 0 && (phone.length < 5 || phone.length > 40)) {
+      return { ok: false, error: "Telefonnummer ungültig.", status: 400 };
     }
-    objectNotes = trimmed.length > 0 ? trimmed : undefined;
   }
 
   return {
     ok: true,
+    spam: false,
     data: {
-      serviceType: o.serviceType,
-      areaSize: o.areaSize,
-      timing: o.timing,
       name,
       company,
       email,
       phone,
-      ...(objectNotes !== undefined ? { objectNotes } : {}),
+      message,
     },
   };
 }

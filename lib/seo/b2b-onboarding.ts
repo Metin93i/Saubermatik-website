@@ -9,38 +9,39 @@ export type OnboardingStep = {
   deliverable: string;
 };
 
+/** Vier Schritte bis zum laufenden Betrieb — ohne Onboarding-Jargon, ohne Zwei-Wochen-Zusage. */
 export const B2B_ONBOARDING_STEPS: readonly OnboardingStep[] = [
   {
     position: 1,
     id: "bedarfsanalyse",
-    title: "Digitale Bedarfsanalyse",
+    title: "Bedarf klären",
     tagline: "Strukturiert statt Bauchgefühl",
-    body: "Über unseren Lead-Funnel erfassen wir Objekttyp, Flächenlogik, Nutzungszeiten und Qualitätsanspruch in einem konsistenten Datenmodell – ohne zehn PDF-Runden. Facility-Leitung und Geschäftsführung sehen auf einen Blick, welche Leistungsbausteine, Intervalle und Schnittstellen (Winterdienst, Glas, Sonderflächen) relevant sind. Das beschleunigt die interne Freigabe und reduziert Rückfragen in der Ausschreibungsphase.",
-    deliverable: "Digitaler Bedarfssteckbrief & Prioritätenliste",
+    body: "Im Gespräch klären wir Objekttyp, Flächen, Nutzungszeiten und Qualitätsanspruch. Facility-Leitung und Geschäftsführung sehen, welche Leistungsbausteine, Intervalle und Schnittstellen (Winterdienst, Glas, Sonderflächen) relevant sind.",
+    deliverable: "Kurzes Leistungsbild & offene Punkte",
   },
   {
     position: 2,
     id: "objektbegehung",
-    title: "Objektbegehung & Audit",
+    title: "Objektbegehung",
     tagline: "Substanz vor Angebot",
-    body: "Vor Ort validieren wir Bodenbeläge, Verkehrszonen, Sicherheitsvorgaben und dokumentierte Risiken – von Praxisflächen über Produktion bis repräsentative Eingänge. Wir fotografieren kritische Punkte, erfassen Materialfreigaben und definieren messbare Qualitätskriterien je Zone. Ergebnis ist kein Standardkatalog, sondern ein objektspezifisches Leistungsbild, das Einkauf, Hausverwaltung und Betrieb gemeinsam tragen können.",
-    deliverable: "Audit-Protokoll mit Zonenplan & Risikomatrix",
+    body: "Vor Ort schauen wir uns Böden, Verkehrszonen, Zugänge und sensible Bereiche an. Ergebnis ist kein Standardkatalog, sondern ein objektspezifisches Leistungsbild, das Einkauf, Hausverwaltung und Betrieb gemeinsam tragen können.",
+    deliverable: "Begehungsnotiz mit Zonenplan",
   },
   {
     position: 3,
     id: "sla-angebot",
-    title: "Transparentes SLA-Angebot",
-    tagline: "Vertraglich messbar",
-    body: "Auf Basis des Audits formulieren wir ein Service Level Agreement mit klaren Reaktionszeiten, Eskalationsstufen, Nachweispflichten und dokumentierten KPIs – statt vager Formulierungen wie „regelmäßig“ oder „nach Absprache“. Sie erhalten eine kalkulierbare Kostenstruktur mit definierten Leistungsumfängen, Ausnahmeprozessen und Review-Zyklen. Das ist die Grundlage für langfristige Konzernverträge und revisionssichere Nachweise gegenüber Auditoren.",
-    deliverable: "SLA-Dokument inkl. KPI-Set & Preislogik",
+    title: "Unverbindliches Angebot",
+    tagline: "Umfang nach Vereinbarung",
+    body: "Auf Basis der Begehung formulieren wir ein klares Angebot mit Leistungsumfang und vertraglich vereinbarten Reaktionszeiten – statt vager Formulierungen wie „regelmäßig“. Ausnahmeprozesse und Review-Termine legen wir offen fest.",
+    deliverable: "Angebot mit Reaktionszeiten",
   },
   {
     position: 4,
     id: "kick-off",
-    title: "Kick-Off & App-Integration",
-    tagline: "Betrieb ab Tag 1",
-    body: "Nach Vertragsstart richten wir Touren, Checklisten und Kommunikationswege in der Saubermatik-Plattform ein. Ihr dedizierter Key Account Manager koordiniert Übergabe, Schulung vor Ort und die erste Review-Phase. Ab dem ersten Einsatz liegen Protokolle, Ausfallabsicherung und Eskalationswege digital vor – Sie behalten die Kontrolle, ohne Mikromanagement.",
-    deliverable: "Live-Dashboard, Tourenplan & Kick-Off-Protokoll",
+    title: "Start im Objekt",
+    tagline: "Betrieb nach Vertragsstart",
+    body: "Zum Vertragsstart richten wir Touren, Checklisten und Kommunikationswege in der Saubermatik-Plattform ein. Ihr fester Ansprechpartner koordiniert die Übergabe. Einsätze erfassen wir über mobile Endgeräte – Umfang der Dokumentation nach Vereinbarung.",
+    deliverable: "Tourenplan & Startprotokoll",
   },
 ] as const;
 
@@ -52,10 +53,9 @@ export function buildB2BOnboardingHowToJsonLd(pagePath: string) {
     "@context": "https://schema.org",
     "@type": "HowTo",
     "@id": `${url}#b2b-onboarding`,
-    name: "B2B-Onboarding bei Saubermatik Gebäudereinigung",
+    name: "Zusammenarbeit mit Saubermatik Gebäudereinigung starten",
     description:
-      "Vierphasiger Enterprise-Onboarding-Prozess: digitale Bedarfsanalyse, Objektaudit, SLA-Angebot und Kick-Off mit App-Integration für Facility Management und Großobjekte.",
-    totalTime: "P14D",
+      "Vier Schritte: Bedarf klären, Objektbegehung, unverbindliches Angebot und Start im Objekt mit dokumentierten Einsätzen.",
     inLanguage: "de-DE",
     provider: {
       "@type": "Organization",

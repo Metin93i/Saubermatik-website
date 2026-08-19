@@ -2,8 +2,10 @@ import Link from "next/link";
 import { B2BOnboardingProcess } from "@/components/B2BOnboardingProcess";
 import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
 import { FreshnessBadge } from "@/components/FreshnessBadge";
-import { LeadFunnel } from "@/components/LeadFunnel";
+import { AnfrageCta } from "@/components/AnfrageCta";
+import { ProjektRahmen } from "@/components/ProjektRahmen";
 import { SeoCrossLinks } from "@/components/SeoCrossLinks";
+import { isProjektCity } from "@/lib/config/city-tiers";
 import type { MatrixDeepContent } from "@/lib/seo/matrix-content";
 
 const PAGE_CONTAINER =
@@ -22,7 +24,6 @@ export function MatrixDeepPage({ content }: Props) {
     heroTitle,
     heroSubtitle,
     sections,
-    funnelInitialService,
   } = content;
 
   const pagePath = `/standorte/${city}/${service}`;
@@ -60,14 +61,17 @@ export function MatrixDeepPage({ content }: Props) {
             <p className="mt-4 max-w-4xl text-base leading-7 text-muted sm:text-lg sm:leading-8">
               {heroSubtitle}
             </p>
+            {isProjektCity(city) ? (
+              <ProjektRahmen cityLabel={cityLabel} className="mt-4" />
+            ) : null}
             <FreshnessBadge className="mt-4" />
             <div className="mt-6 flex flex-wrap gap-3">
-              <a
-                href="#kontakt-anfrage"
+              <Link
+                href="/kontakt#kontakt-anfrage"
                 className="inline-flex h-11 items-center justify-center rounded-sm bg-primary px-5 text-sm font-bold text-primary-foreground transition hover:bg-primary/90"
               >
-                Analyse anfordern
-              </a>
+                Anfrage stellen
+              </Link>
               <Link
                 href={`/leistungen/${service}`}
                 className="inline-flex h-11 items-center justify-center rounded-sm border border-zinc-300 bg-white px-5 text-sm font-bold text-foreground transition hover:bg-zinc-100"
@@ -109,18 +113,11 @@ export function MatrixDeepPage({ content }: Props) {
           id="kontakt-anfrage"
           className="border-b border-zinc-200 bg-zinc-50 py-10 sm:py-12"
         >
-          <div className={`${PAGE_CONTAINER} grid gap-8 lg:grid-cols-2 lg:gap-10`}>
-            <div>
-              <h2 className="text-2xl font-extrabold tracking-tight text-foreground">
-                {serviceLabel} in {cityLabel} anfragen
-              </h2>
-              <p className="mt-3 text-base leading-7 text-muted">
-                Objektgröße, Intervalle, Sonderflächen — wir erstellen nach
-                Begehung ein verbindliches, digitales Leistungsverzeichnis mit
-                transparenten SLAs.
-              </p>
-            </div>
-            <LeadFunnel initialServiceType={funnelInitialService} />
+          <div className={`${PAGE_CONTAINER}`}>
+            <AnfrageCta
+              title={`${serviceLabel} in ${cityLabel} anfragen`}
+              text="Objektgröße, Intervalle, Sonderflächen — nach einer Begehung erhalten Sie ein unverbindliches Angebot."
+            />
           </div>
         </section>
 

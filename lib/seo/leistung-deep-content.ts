@@ -55,7 +55,7 @@ const treppenhausreinigung: LeistungDeepContent = {
       title: "Deep Dive 3: Digitale Touren & Mieterzufriedenheit",
       paragraphs: [
         "Mieterbeschwerden entstehen selten wegen „zu wenig Politik“ – sie entstehen wegen Unzuverlässigkeit und fehlender Transparenz. Die Saubermatik-Plattform macht Touren sichtbar: Wann wurde welches Treppenhaus gereinigt? Gab es Sonderereignisse (Umzug, Bau, Wasserschaden)? Der Key Account kann Abweichungen in Echtzeit adressieren.",
-        "Feste Teams pro Cluster (z. B. Balingen, Tuttlingen, Albstadt) sichern Wiedererkennung und Qualität. Verwalter sparen Koordinationszeit; Mieter erleben Konstanz. Bei Ausfällen greift unsere Ausfallsicherheit – Ersatzkräfte ohne Qualitätsbruch, dokumentiert im Protokoll.",
+        "Feste Ansprechpersonen und dokumentierte Touren sichern Wiedererkennung und Qualität. Verwalter sparen Koordinationszeit; Mieter erleben Konstanz. Bei Urlaub oder Ausfall übernimmt ein bewährtes Vertretungsteam – sonst die Geschäftsführung persönlich.",
         "Ob WEG, Mietshaus oder Gewerbeobjekt: Treppenhausreinigung wird zum planbaren Qualitätsmerkmal statt zum Reklamationsmagneten.",
       ],
     },
@@ -66,7 +66,7 @@ const treppenhausreinigung: LeistungDeepContent = {
       "Verkehrssicherungspflicht & Trittsicherheit checklistenbasiert",
       "§ 2 BetrKV: transparente, umlagefähige Leistungsnachweise",
       "Repräsentative Eingangsbereiche, feste Intervalle",
-      "Digitale Touren & Ausfallsicherheit in der Saubermatik-App",
+      "Dokumentierte Touren; Vertretung bei Urlaub oder Ausfall",
     ],
   },
   secondaryCta: {
@@ -104,7 +104,7 @@ const winterdienst: LeistungDeepContent = {
     {
       title: "Deep Dive 2: Wetterführung & Einsatzlogistik",
       paragraphs: [
-        "Winterdienst ohne Wetterführung ist Glücksspiel. Saubermatik nutzt Wetterdienst-Trigger, Objekt-Prioritäten und regionale Cluster-Teams (Zollernalb, Schwarzwald-Baar) für planbare Reaktionszeiten. Touren werden dynamisch angepasst – ohne dass der Verwalter jede Nacht selbst koordinieren muss.",
+        "Winterdienst ohne Wetterführung ist Glücksspiel. Saubermatik nutzt Wetterdienst-Trigger, Objekt-Prioritäten und vertraglich vereinbarte Reaktionszeiten in der Saison. Touren werden angepasst – ohne dass der Verwalter jede Nacht selbst koordinieren muss. Keine Rund-um-die-Uhr-Bereitschaft.",
         "BG-BAU-orientierte Arbeitssicherheit gilt auch im Winter: Beleuchtung, PSA, Schulung im Umgang mit Streugut und Räumgerät. Mitarbeiter sind unterwiesen, nicht improvisiert. Für Gewerbeobjekte mit Produktionsstart früh morgens sind definierte Fertigstellungszeiten vertraglich fixiert.",
         "Die Kombination mit Laubentsorgung im Herbst (Grünpflege) vermeidet Konflikte: Kein Laub auf Streuflächen, keine doppelten Einsätze ohne Plan.",
       ],
@@ -170,7 +170,7 @@ const grundreinigung: LeistungDeepContent = {
     {
       title: "Deep Dive 3: Praxis & Hygienezonen (RKI, VAH, Dokumentation)",
       paragraphs: [
-        "Grundreinigung in Praxen und Klinikzonen erfordert mehr als Bodenwisch: RKI-konforme Verfahren, VAH-gelistete Flächendesinfektion und strikte Vermeidung von Kreuzkontamination zwischen Wartezimmer, Behandlung und Sanitär. Saubermatik trennt Zonen farblich (4-Farb-System), desinfiziert nach Plan und dokumentiert jeden Schritt für Hygieneaudits.",
+        "Grundreinigung in Praxen und Klinikzonen erfordert mehr als Bodenwisch: Desinfektionsmittel nach anerkannten Standards, Abstimmung mit Ihrem Hygieneplan und strikte Vermeidung von Kreuzkontamination zwischen Wartezimmer, Behandlung und Sanitär. Saubermatik trennt Zonen farblich (4-Farb-System), desinfiziert nach Plan und dokumentiert jeden Schritt – Umfang nach Vereinbarung.",
         "Hygieneschleusen, Behandlungsräume und Aufbereitungszonen werden nach validierten Kontaktzeiten behandelt – nosokomiale Infektionsrisiken senken sich durch Prozess, nicht durch Slogans. Absolute Diskretion und DSGVO-bewusste Abläufe sind für Kanzleien und Arztpraxen selbstverständlich.",
         "Kombinieren Sie Grundreinigung mit Unterhaltsreinigung für einen durchgängigen Hygienestandard – ein Partner, ein digitales LV, Echtzeit-QM.",
       ],
@@ -182,7 +182,7 @@ const grundreinigung: LeistungDeepContent = {
       "Baufeinreinigung & Bauabnahme VOB/C-orientiert",
       "Zementschleierentfernung, Bautrocknung-Nachläufe",
       "Polymerdispersion, Einpflegen, DIN 18365-Bodenbeläge",
-      "RKI-konform & VAH-gelistete Desinfektion für Praxen",
+      "Desinfektion nach Hygieneplan & anerkannten Standards für Praxen",
     ],
   },
   secondaryCta: {
@@ -303,7 +303,7 @@ const entruempelung: LeistungDeepContent = {
   },
   funnelTitle: "Entrümpelung anfragen",
   funnelSubtitle:
-    "Objektgröße, Termin, Besonderheiten – wir erstellen ein transparentes Festpreis-LV.",
+    "Objektgröße, Termin, Besonderheiten – wir erstellen ein unverbindliches Angebot.",
 };
 
 const sonstiges: LeistungDeepContent = {
@@ -318,7 +318,7 @@ const sonstiges: LeistungDeepContent = {
     "Teppich- und Polsterreinigung, Praxis-Sonderdesinfektion, Event-Reinigung oder Ausschreibungen – wir übersetzen Ihr Briefing in messbare Prozesse.",
   introParagraphs: [
     "Nicht jedes Objekt passt in eine Schublade. Teppichreinigung in Konferenzräumen, Praxis-Sonderdesinfektion nach Kontamination, Messe- oder Event-Reinigung, Industrie-Sonderflächen oder öffentliche Ausschreibungen – Saubermatik nimmt Sonderanfragen ernst und strukturiert sie in digitale Leistungsverzeichnisse mit SLA und Echtzeit-QM.",
-    "Nutzen Sie diesen Einstieg, wenn Ihr Projekt mehrere Gewerke berührt oder normative Anforderungen (RKI, VAH, DIN EN 13549, VOB) explizit vertraglich fixiert werden müssen.",
+    "Nutzen Sie diesen Einstieg, wenn Ihr Projekt mehrere Gewerke berührt oder normative Anforderungen explizit vertraglich fixiert werden müssen.",
   ],
   deepDives: [
     {
@@ -332,7 +332,7 @@ const sonstiges: LeistungDeepContent = {
     {
       title: "Deep Dive 2: Praxis-Sonderdesinfektion & Hygiene (RKI, VAH)",
       paragraphs: [
-        "Sonderfälle in Praxen und Klinikzonen erfordern RKI-konforme Verfahren, VAH-gelistete Flächendesinfektion und strikte Trennung der Hygieneschleuse von Standardzonen. Kreuzkontamination wird durch 4-Farb-System und dokumentierte Kontaktzeiten ausgeschlossen.",
+        "Sonderfälle in Praxen und Klinikzonen erfordern Desinfektion nach Ihrem Hygieneplan, Mittel nach anerkannten Standards und strikte Trennung der Hygieneschleuse von Standardzonen. Kreuzkontamination wird durch 4-Farb-System und dokumentierte Kontaktzeiten vermieden.",
         "Nach Infektionsfällen oder Audit-Vorbereitung liefern wir Sonder-LVs mit Desinfektionsplan, Freigabemessung und Protokollkette für Behörden und Qualitätsmanagement. Absolute Diskretion und minimale Betriebsunterbrechung sind vertraglich fixierbar.",
         "Verlinkung zu unserem Lexikon: HACCP, DIN 13063, Farbcode-System – Topical Authority für Ihre interne Freigabe.",
       ],
@@ -340,8 +340,8 @@ const sonstiges: LeistungDeepContent = {
     {
       title: "Deep Dive 3: Events, Industrie & Ausschreibungen (SLA)",
       paragraphs: [
-        "Messen, Stadtfeste, Produktionswechsel oder Logistik-Hochphasen brauchen temporäre Reinigungs-SLAs mit klaren KPIs: Flächenleistung, Reaktionszeit, Ausfallsicherheit. Saubermatik skaliert Teams regional (Zollernalb, Stuttgart, Schwarzwald-Baar) und steuert sie über die App.",
-        "Bei öffentlichen oder konzernweiten Ausschreibungen liefern wir strukturierte LV-Texte, Referenzobjekte und Compliance-Nachweise (BG, TRBS, DIN EN 13549). Sonderprojekte werden nicht „geschätzt“, sondern in Phasen (Audit → LV → Kick-Off) überführt – identisch zum B2B-Onboarding.",
+        "Messen, Stadtfeste, Produktionswechsel oder Logistik-Hochphasen brauchen temporäre Reinigungsvereinbarungen mit klaren Reaktionszeiten. Saubermatik steuert Einsätze über die Plattform – Umfang nach Vereinbarung, ohne Skalierungsversprechen über große Flächen.",
+        "Bei öffentlichen oder konzernweiten Ausschreibungen liefern wir strukturierte LV-Texte und Nachweise zu Arbeitssicherheit. Sonderprojekte werden nicht „geschätzt“, sondern in Schritte (Begehung → LV → Start) überführt.",
         "Ihr Briefing ist der Start – unser Output ist ein messbares, digitales Leistungsverzeichnis.",
       ],
     },
@@ -350,8 +350,8 @@ const sonstiges: LeistungDeepContent = {
     title: "Spezialanfrage – Ihr Vorteil",
     bullets: [
       "Teppich- & Polsterreinigung mit Werterhalt-Fokus",
-      "RKI-konform & VAH-gelistete Sonderdesinfektion",
-      "Event-/Industrie-SLAs mit Ausfallsicherheit",
+      "Desinfektion nach Hygieneplan & anerkannten Standards",
+      "Event-/Industrie-Einsätze mit vereinbarten Reaktionszeiten",
       "Ausschreibungsfähige LV-Texte & digitales QM",
     ],
   },

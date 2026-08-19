@@ -4,7 +4,9 @@ import { notFound } from "next/navigation";
 import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
 import { FreshnessBadge } from "@/components/FreshnessBadge";
 import { LocalCityFaq } from "@/components/LocalCityFaq";
+import { ProjektRahmen } from "@/components/ProjektRahmen";
 import { SeoCrossLinks } from "@/components/SeoCrossLinks";
+import { isProjektCity } from "@/lib/config/city-tiers";
 import { buildStandortDeepContent } from "@/lib/seo/standort-deep-content";
 import {
   STANDORT_CITIES,
@@ -74,6 +76,9 @@ export default async function StandortPage({ params }: PageProps) {
             <p className="mt-6 max-w-3xl text-lg leading-8 text-muted">
               {deep.heroSubtitle}
             </p>
+            {isProjektCity(city) ? (
+              <ProjektRahmen cityLabel={label} className="mt-6" />
+            ) : null}
             <FreshnessBadge className="mt-6" />
             <div className="mt-10 flex flex-wrap gap-4">
               <Link

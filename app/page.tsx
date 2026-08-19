@@ -6,9 +6,8 @@ import { B2BOnboardingProcess } from "@/components/B2BOnboardingProcess";
 import { EsgComplianceStatement } from "@/components/EsgComplianceStatement";
 import { FreshnessBadge } from "@/components/FreshnessBadge";
 import { GeoImage } from "@/components/GeoImage";
-import { HeroQuickSearch } from "@/components/HeroQuickSearch";
+import { AnfrageCta } from "@/components/AnfrageCta";
 import { KamProfileCard } from "@/components/KamProfileCard";
-import { LeadFunnel } from "@/components/LeadFunnel";
 import { REMOTE_IMAGE_BLUR_DATA_URL } from "@/lib/image-blur";
 import { STANDORT_CITIES, STANDORT_LABELS } from "@/lib/routes/standorte";
 
@@ -19,7 +18,7 @@ export const metadata: Metadata = {
 
 const trustItems = [
   "Fester Ansprechpartner statt Callcenter",
-  "Digitale Objektsteuerung: Ausfälle werden abgefangen, bevor Sie es merken",
+  "Bei Urlaub oder Ausfall: bewährtes Vertretungsteam, sonst die Geschäftsführung",
   "Regional verwurzelt: Zollernalb & Schwarzwald-Baar-Heuberg, kurze Wege",
 ] as const;
 
@@ -50,23 +49,17 @@ export default function Home() {
             Beweis statt Versprechen.
           </p>
 
-          <HeroQuickSearch className="mt-4" />
-
           <div className="mt-4 grid items-start gap-4 lg:grid-cols-2 lg:gap-6">
             <div className="flex flex-col gap-3">
               <p className="text-sm leading-6 text-muted sm:text-base sm:leading-7">
                 Bei uns bekommen Sie keinen Textbaustein aus der Großstadt,
-                sondern einen festen Ansprechpartner. Unsere digitale
-                Objektsteuerung sorgt dafür, dass Touren und Qualität nicht vom
-                Zufall abhängen: Wenn jemand ausfällt, reagiert das System – Sie
-                merken vor allem eins: dass es weiterläuft. Wir kombinieren
-                modernste SaaS-Protokolle mit echtem, regionalem Handwerk. Ob
-                rechtssichere Verkehrssicherung für Hausverwaltungen,
-                RKI-konforme Praxisreinigung oder die tägliche
-                Unterhaltsreinigung Ihres Büros – wir sichern den Werterhalt
-                Ihrer Immobilien im gesamten Zollernalbkreis und
-                Schwarzwald-Baar-Heuberg. Transparente SLAs, keine versteckten
-                Kosten.
+                sondern einen festen Ansprechpartner. Bei Urlaub oder Ausfall
+                übernimmt ein bewährtes Vertretungsteam – sonst die
+                Geschäftsführung persönlich. Ob Verkehrssicherung für
+                Hausverwaltungen, Praxisreinigung nach abgestimmtem Plan oder
+                die Unterhaltsreinigung Ihres Büros: Wir halten Ihre Immobilien
+                im Zollernalbkreis und im Schwarzwald-Baar-Heuberg im Rhythmus.
+                Angebot auf Anfrage.
               </p>
               <FreshnessBadge />
               <ul className="flex flex-col gap-1 text-sm font-medium text-foreground">
@@ -84,16 +77,16 @@ export default function Home() {
               </ul>
               <div className="flex flex-wrap gap-2">
                 <Link
-                  href="/leistungen"
+                  href="/kontakt#kontakt-anfrage"
                   className="inline-flex h-10 items-center justify-center rounded-sm bg-primary px-4 text-sm font-bold text-primary-foreground transition hover:bg-primary/90"
                 >
-                  Leistungen ansehen
+                  Anfrage stellen
                 </Link>
                 <Link
-                  href="#kontakt-anfrage"
+                  href="/leistungen"
                   className="inline-flex h-10 items-center justify-center rounded-sm border border-zinc-300 bg-white px-4 text-sm font-bold text-foreground transition hover:bg-zinc-100"
                 >
-                  Direkt anfragen
+                  Leistungen ansehen
                 </Link>
               </div>
 
@@ -138,10 +131,10 @@ export default function Home() {
               dokumentieren.
             </h2>
             <p className="mt-3 text-base leading-7 text-muted sm:text-lg">
-              Statt Excel und WhatsApp-Chaos steuern wir Ihr Objekt über die
+              Statt Excel-Chaos steuern wir Ihr Objekt über die
               Saubermatik-Plattform: digitale Protokolle, klare Checklisten und
-              eine Disposition, die Ausfälle abfängt – damit Reinigung bei Ihnen
-              nicht vom Zufall abhängt.
+              ein Team, das Ausfälle persönlich oder mit bewährter Vertretung
+              auffängt – damit Reinigung bei Ihnen nicht vom Zufall abhängt.
             </p>
           </div>
           <ul className="mt-8 grid gap-5 sm:grid-cols-2">
@@ -158,13 +151,12 @@ export default function Home() {
             </li>
             <li className="flex flex-col rounded-sm border border-zinc-200 bg-white p-5 sm:p-6">
               <h3 className="text-lg font-bold text-foreground sm:text-xl">
-                Ausfallsicherheit über die Plattform
+                Vertretung, die Sie kennen
               </h3>
               <p className="mt-3 flex-1 text-sm leading-6 text-muted sm:text-base sm:leading-7">
-                Wenn jemand ausfällt, springt die Saubermatik-Plattform ein:
-                Ersatzlogistik und Touren werden neu geplant, bevor Lücken
-                spürbar werden. So bleibt Ihr Objekt im Rhythmus – ohne dass Sie
-                jedes Mal selbst koordinieren müssen.
+                Wenn jemand ausfällt, springt ein bewährtes Vertretungsteam ein
+                – oder die Geschäftsführung selbst. So bleibt Ihr Objekt im
+                Rhythmus, ohne dass Sie jedes Mal selbst koordinieren müssen.
               </p>
             </li>
           </ul>
@@ -180,18 +172,14 @@ export default function Home() {
         id="kontakt-anfrage"
         className="border-t border-foreground/10 bg-zinc-50 py-8 sm:py-10"
       >
-        <div className={`${PAGE_CONTAINER} grid gap-5 lg:grid-cols-2 lg:gap-6`}>
-          <div>
-            <h2 className="text-xl font-extrabold tracking-tight text-foreground sm:text-2xl">
-              Objekt anfragen — direkt an Metin Altinsoys Team
-            </h2>
-            <p className="mt-2 text-sm leading-6 text-muted sm:text-base">
-              Fläche, Intervalle, Sonderzonen: Wir erstellen nach Begehung ein
-              verbindliches Leistungsverzeichnis mit transparenten SLAs.
-            </p>
-            <KamProfileCard className="mt-4" />
+        <div className={PAGE_CONTAINER}>
+          <AnfrageCta
+            title="Objekt anfragen"
+            text="Fläche, Intervalle, Sonderzonen: Nach einer Begehung erhalten Sie ein unverbindliches Angebot. Fester Ansprechpartner statt Callcenter."
+          />
+          <div className="mx-auto mt-8 max-w-xl">
+            <KamProfileCard />
           </div>
-          <LeadFunnel className="w-full rounded-sm border border-zinc-200" />
         </div>
       </section>
 

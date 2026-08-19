@@ -51,7 +51,7 @@ export const STANDORTE_BY_CITY: Record<StandortCity, StandortContent> = {
   messstetten: {
     headline: "Gebäudereinigung in Meßstetten",
     paragraphs: [
-      "Mit Sitz in Meßstetten sind wir mitten in der Zollernalb – kurze Wege, feste Ansprechpartner und Teams, die Ihre Objekte kennenlernen und behalten.",
+      "Mit Sitz in Meßstetten sind wir mitten in der Zollernalb – kurze Wege, feste Ansprechpartner und Kräfte, die Ihre Objekte kennenlernen und behalten.",
       "Digitale Protokolle und die Saubermatik-Plattform steuern Touren und Qualität: Ausfälle werden abgefangen, bevor sie zum Stillstand werden – Sie merken vor allem, dass es zuverlässig weiterläuft.",
     ],
   },
@@ -59,7 +59,7 @@ export const STANDORTE_BY_CITY: Record<StandortCity, StandortContent> = {
     headline: "Gebäudereinigung in Albstadt",
     paragraphs: [
       "Saubermatik ist Ihr Partner für professionelle Reinigung in Albstadt und der Region Zollernalb.",
-      "Qualität entsteht durch Routine: feste Teams, klare Checklisten und messbare Standards – digital abgesichert über unsere Plattform.",
+      "Qualität entsteht durch Routine: klare Checklisten und messbare Standards – digital abgesichert über unsere Plattform.",
     ],
   },
   balingen: {
@@ -73,14 +73,14 @@ export const STANDORTE_BY_CITY: Record<StandortCity, StandortContent> = {
     headline: "Gebäudereinigung in Hechingen",
     paragraphs: [
       "Für Hechingen planen wir Unterhalts- und Objektreinigung mit klaren Intervallen – und kurzer Anfahrt aus Meßstetten.",
-      "Die Saubermatik-Plattform dokumentiert Leistungen digital und sorgt für Ersatzlogistik, wenn einmal jemand ausfällt.",
+      "Die Saubermatik-Plattform dokumentiert Leistungen digital. Bei Urlaub oder Ausfall übernimmt ein bewährtes Vertretungsteam – sonst die Geschäftsführung persönlich.",
     ],
   },
   sigmaringen: {
     headline: "Gebäudereinigung in Sigmaringen",
     paragraphs: [
       "In Sigmaringen betreuen wir Büros, Praxen und Gewerbe mit dem Fokus auf Verlässlichkeit und saubere Kommunikation.",
-      "Ausfallsicherheit heißt bei uns: die Saubermatik-Plattform fängt Personal- und Tourenlücken ab, bevor Ihr Objekt leidet – mit dokumentierter Qualität und klarer Disposition.",
+      "Bei Urlaub oder Ausfall übernimmt ein bewährtes Vertretungsteam – sonst die Geschäftsführung persönlich. Qualität und Einsätze bleiben dokumentiert.",
     ],
   },
   moessingen: {
@@ -121,7 +121,7 @@ export const STANDORTE_BY_CITY: Record<StandortCity, StandortContent> = {
   "villingen-schwenningen": {
     headline: "Gebäudereinigung in Villingen-Schwenningen",
     paragraphs: [
-      "Für Villingen-Schwenningen organisieren wir Reinigung und Objektbetreuung mit belastbarer Planung und festen Teams.",
+      "Für Villingen-Schwenningen organisieren wir Reinigung und Objektbetreuung mit belastbarer Planung und festen Ansprechpartnern.",
       "Digitale Protokolle schaffen Klarheit bei Übergaben und Qualität – besonders bei größeren Flächen und mehreren Zugängen.",
     ],
   },
@@ -143,14 +143,14 @@ export const STANDORTE_BY_CITY: Record<StandortCity, StandortContent> = {
     headline: "Gebäudereinigung in Rottenburg",
     paragraphs: [
       "Rottenburg am Neckar und Umgebung betreuen wir mit denselben Standards wie in der Zollernalb – nur mit anderer Anfahrtlogistik.",
-      "Saubermatik vernetzt Disposition und Qualität: Sie erhalten nachvollziehbare Abläufe statt Bauchgefühl.",
+      "Saubermatik verbindet Tourenplanung und Qualität: Sie erhalten nachvollziehbare Abläufe statt Bauchgefühl.",
     ],
   },
   reutlingen: {
     headline: "Gebäudereinigung in Reutlingen",
     paragraphs: [
       "Für Reutlingen liefern wir Facility-nahe Reinigungsleistungen mit klarem Scope und festen Ansprechpartnern.",
-      "Unsere Plattform unterstützt die Ausfallsicherheit Ihres Objekts – mit dokumentierten Einsätzen und steuerbaren Standards.",
+      "Unsere Plattform unterstützt dokumentierte Einsätze – mit steuerbaren Standards und einem festen Ansprechpartner.",
     ],
   },
   ueberlingen: {

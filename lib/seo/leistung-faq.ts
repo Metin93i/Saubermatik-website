@@ -17,7 +17,7 @@ export function getLeistungFaqItems(slug: LeistungSlug): readonly FaqPair[] {
       {
         question: "Was kostet eine Fenster- und Glasreinigung ungefähr?",
         answer:
-          "Die Kosten hängen von Höhe, Zugänglichkeit, Glasfläche und Verschmutzungsgrad ab. Über unser Kurzformular erhalten Sie eine belastbare Einschätzung; Festpreise sind nach Objektbegehung oder Fotodokumentation möglich.",
+          "Die Kosten hängen von Höhe, Zugänglichkeit, Glasfläche und Verschmutzungsgrad ab. Nach einer kurzen Besichtigung erhalten Sie ein unverbindliches Angebot.",
       },
       {
         question: "Sind Außenarbeiten und Fassadenhoch hängende Scheiben machbar?",

@@ -1,5 +1,7 @@
 import { SaubermatikLogo } from "@/components/SaubermatikLogo";
 import { PrefetchLink } from "@/components/PrefetchLink";
+import { SITE_WHATSAPP_HREF } from "@/lib/config/site";
+import { getBusinessPhone } from "@/lib/phone";
 import { LEISTUNG_SLUGS, LEISTUNGEN_BY_SLUG } from "@/lib/routes/leistungen";
 import { STANDORT_CITIES, STANDORT_LABELS } from "@/lib/routes/standorte";
 
@@ -12,6 +14,8 @@ const UNTERNEHMEN_LINKS = [
 ] as const;
 
 export function SiteFooter() {
+  const { display, telHref } = getBusinessPhone();
+
   return (
     <footer className="mt-auto border-t border-foreground/10 bg-surface-inverse text-surface-inverse-foreground">
       <div className="mx-auto grid w-full max-w-6xl gap-8 px-4 py-10 sm:grid-cols-2 sm:px-6 lg:grid-cols-4 lg:px-8">
@@ -21,6 +25,28 @@ export function SiteFooter() {
             Professionelle Gebäudereinigung aus Meßstetten – für die Region
             Zollernalb, Tübingen und angrenzende Wirtschaftsräume.
           </p>
+          <ul className="mt-4 space-y-1 text-sm">
+            {telHref ? (
+              <li>
+                <a
+                  href={telHref}
+                  className="font-semibold text-surface-inverse-foreground transition hover:text-[color:var(--link-on-inverse)] hover:underline"
+                >
+                  {display}
+                </a>
+              </li>
+            ) : null}
+            <li>
+              <a
+                href={SITE_WHATSAPP_HREF}
+                className="font-semibold text-surface-inverse-foreground transition hover:text-[color:var(--link-on-inverse)] hover:underline"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                WhatsApp
+              </a>
+            </li>
+          </ul>
         </div>
         <div>
           <p className="text-sm font-semibold">Leistungen</p>

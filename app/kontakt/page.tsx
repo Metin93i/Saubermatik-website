@@ -8,8 +8,9 @@ import {
   SITE_ADDRESS_LINES,
   SITE_MAP_EMBED_SRC,
   SITE_OFFICE,
+  SITE_WHATSAPP_HREF,
 } from "@/lib/config/site";
-import { buildTelHref } from "@/lib/phone";
+import { getBusinessPhone } from "@/lib/phone";
 
 export const metadata: Metadata = {
   title: "Kontakt",
@@ -28,8 +29,7 @@ export default async function KontaktPage({ searchParams }: KontaktPageProps) {
   const typeVal = Array.isArray(rawType) ? rawType[0] : rawType;
   const isCareer = typeVal === "karriere";
 
-  const raw = process.env.NEXT_PUBLIC_BUSINESS_PHONE?.trim();
-  const telHref = raw ? buildTelHref(raw) : null;
+  const { display, telHref } = getBusinessPhone();
 
   return (
     <div className="mx-auto flex w-full max-w-6xl flex-1 flex-col gap-8 px-4 py-10 sm:px-6 lg:flex-row lg:gap-8 lg:px-8 lg:py-12">
@@ -87,10 +87,25 @@ export default async function KontaktPage({ searchParams }: KontaktPageProps) {
               href={telHref}
               className="text-lg font-bold text-secondary underline-offset-2 hover:underline"
             >
-              {raw}
+              {display}
             </a>
           </p>
         ) : null}
+
+        <p className="mt-4">
+          <span className="text-xs font-semibold uppercase tracking-wide text-muted">
+            WhatsApp
+          </span>
+          <br />
+          <a
+            href={SITE_WHATSAPP_HREF}
+            className="text-lg font-bold text-secondary underline-offset-2 hover:underline"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Nachricht senden
+          </a>
+        </p>
 
         <p className="mt-6 text-sm text-muted">
           <Link
