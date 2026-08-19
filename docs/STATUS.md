@@ -1,31 +1,35 @@
 # STATUS · saubermatik-website
 
-Living Doc nach Bau-Schritten. Stand: **2026-08-19** · Branch `feat/e2-raffstore-lp`.
+Living Doc nach Bau-Schritten. Stand: **2026-08-19** · Branch `feat/e4-secureops-seite`.
 
 ## Live-Stand
 
-- `main`: E1 gemerged (Claims, Nav, Slogan, KI-Crawler, Stubs).
-- Diese Welle (E2): Landingpage Raffstore- & Lamellenreinigung + Matrix-Ausschluss.
+- `main`: E1 + E2 gemerged.
+- Diese Welle (E4): SecureOps-Erklärseite (Stub ersetzt).
 
 ## Erledigt (E1)
 
-- EngagementCalculator entfernt; Claims bereinigt; Einsatzgebiete-Wording; Hero-Slogan; Stubs; robots offen.
+- Claims, Nav, Slogan, KI-Crawler, Stubs, Kalkulator entfernt.
 
 ## Erledigt (E2)
 
-- Service `raffstore-lamellenreinigung` in `lib/config/services.ts` mit `includeInMatrix: false`.
-- Matrix: `MATRIX_SERVICES` / `MatrixServiceSlug` — neue Leistung **nicht** in Stadt×Service-Matrix (bleibt 16×10).
-- Seite `/leistungen/raffstore-lamellenreinigung` mit wortgetreuen Texten, FAQ + FAQPage-JSON-LD.
-- Sitemap/Nav/Hub ziehen den Service aus `SERVICES` (automatisch).
-- Querverweis von Fenster-/Glasreinigung; llms.txt-Zeile ergänzt.
+- Raffstore-LP; Matrix-Ausschluss `includeInMatrix: false`.
+
+## Erledigt (E4)
+
+- `/secureops` vollwertige Erklärseite (wortgetreue Texte, FAQ + FAQPage-JSON-LD).
+- In Sitemap aufgenommen; Nav-Eintrag war bereits vorhanden.
+- Querverweise: HV ↔ SecureOps (Mieter-Meldeweg), SecureOps → Leistungen.
+- llms.txt um SecureOps-Absatz ergänzt.
+- Drei Screenshot-Platzhalter (Portal / Einsatz / Nachweis) — Assets offen.
 
 ## Nächste Schritte
 
-- Hero-Banner-Asset (Startseite) freigeben.
-- E3: Städte-Kuration / ggf. Matrix für Raffstore später.
-- Branchen-/SecureOps-Inhaltsseiten.
+- SecureOps-Screenshots mit Demo-Daten.
+- Hero-Banner Startseite.
+- E3 Städte-Kuration / ggf. weitere Branchen.
 
 ## Offen & Risiken
 
-- Raffstore-Hero: Übergangs-Unsplash + TODO „durch echtes Einsatzfoto ersetzen“.
+- Kunden-Login führt auf SaaS-Portal (`getPlatformLoginUrl` → `{PLATFORM}/login`), nicht auf diese Marketing-Seite.
 - DNS/Horizons vs. VPS: aus Repo allein unklar.
