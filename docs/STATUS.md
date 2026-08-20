@@ -13,7 +13,7 @@ Living Doc nach Bau-Schritten. Stand: **2026-08-20** · Branch `feat/bilder-favi
 - SecureOps-Teaser: klickbares Banner `banner-secureops-digitalisierung.png` → `/secureops`.
 - Leistungsbilder lokal: Fenster, Grünanlagen, Fassade (übrige Unsplash-Einträge unverändert).
 - Open Graph: global `og-image.jpg`, `/secureops` → `og-secureops.jpg` (1200×630).
-- Favicon: `app/icon.svg` + `app/apple-icon.png` (180×180); Default-`favicon.ico` entfernt.
+- Favicon: Wortmarken-Logo als `app/icon.png` (500×500) + `app/apple-icon.png` (180×180); Default-`favicon.ico` und das Zwischen-„S“-SVG entfernt.
 - PSA-Satz auf Glas- und Fassadenseite; eine Zeile auf Über uns (DGUV 112-198/199, 07/2026).
 - `banner-sauber-zuverlaessig.png` nur abgelegt, noch nicht eingebunden.
 
