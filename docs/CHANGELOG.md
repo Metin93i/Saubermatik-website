@@ -1,3 +1,4 @@
+2026-08-20 · vertrieb · Identitaet + Trust/Prozess/FAQ/Formular, Gebietstexte, Site-Audit
 2026-08-20 · header · Kunden-Login im Header vorübergehend ausgeblendet
 2026-08-20 · design · Platzhalter/Leerflächen entfernt, Hero-Ausschnitt, CTA-Block, HQ-Bilder
 2026-08-20 · startseite · Hover-Nav, größerer Hero, Marken-/SecureOps-Sektion, Fremdbilder entfernt

@@ -42,6 +42,18 @@ export const SERVICES = [
     includeInMatrix: false,
   },
   {
+    slug: "grundreinigung",
+    title: "Grund- & Baureinigung",
+    funnelLabel: "Grund & Bau",
+    emoji: "🧱",
+    summary:
+      "Tiefenreinigung, Übergabenach Bau oder Sanierung – termingetrieben und abnahmefertig.",
+    body: [
+      "Wir entfernen Baustaub, Schutzfolien und Verschmutzungen materialspezifisch – ohne Ihre Oberflächen zu riskieren.",
+      "Klare Meilensteine und Abstimmung mit Ihrem Projektleiter halten den Zeitplan stabil.",
+    ],
+  },
+  {
     slug: "treppenhausreinigung",
     title: "Treppenhausreinigung",
     funnelLabel: "Treppenhaus",
@@ -87,18 +99,6 @@ export const SERVICES = [
     body: [
       "Einsatzpläne, Meldewege und Nachweise: Sie erfüllen Ihre Sorgfaltspflicht gegenüber Nutzern und Versicherern.",
       "Kombinierbar mit Außenanlagen- und Gebäudeservice für eine durchgängige Objektstrategie.",
-    ],
-  },
-  {
-    slug: "grundreinigung",
-    title: "Grund- & Baureinigung",
-    funnelLabel: "Grund & Bau",
-    emoji: "🧱",
-    summary:
-      "Tiefenreinigung, Übergabenach Bau oder Sanierung – termingetrieben und abnahmefertig.",
-    body: [
-      "Wir entfernen Baustaub, Schutzfolien und Verschmutzungen materialspezifisch – ohne Ihre Oberflächen zu riskieren.",
-      "Klare Meilensteine und Abstimmung mit Ihrem Projektleiter halten den Zeitplan stabil.",
     ],
   },
   {

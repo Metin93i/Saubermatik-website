@@ -165,8 +165,8 @@ export const MATRIX_CITY_EXTENDED: Record<
   },
   "villingen-schwenningen": {
     economicContext: [
-      "Villingen-Schwenningen ist Doppelstadt im Schwarzwald-Baar-Kreis: Uhrenindustrie, Technologie, große Verwaltung und Einzelhandel. Facility Manager betreuen oft größere Flächen mit mehreren Zugängen — digitale Tourenplanung und Echtzeit-QM sind hier Pflicht, nicht Kür.",
-      "Die Schwarzwald-Baar-Heuberg-Region verlangt winterfesten Betrieb: dokumentierte Einsätze beim Winterdienst, priorisierte Räumung an Klinik- und Verwaltungszufahrten, Kombination mit Treppenhaus und Gehwegsicherung aus einem Portfolio.",
+      "Villingen-Schwenningen ist Doppelstadt mit Uhrenindustrie, Technologie, großer Verwaltung und Einzelhandel. Facility Manager betreuen oft größere Flächen mit mehreren Zugängen — digitale Tourenplanung und Echtzeit-QM sind hier Pflicht, nicht Kür.",
+      "Die Region verlangt winterfesten Betrieb: dokumentierte Einsätze beim Winterdienst, priorisierte Räumung an Klinik- und Verwaltungszufahrten, Kombination mit Treppenhaus und Gehwegsicherung aus einem Portfolio.",
       "Saubermatik bedient VS von Meßstetten aus mit überregionaler Prozessqualität: ein Key Account, messbare SLAs, skalierbare Plattform für Multi-Objekt-Bestände — ohne Qualitätsverlust bei wachsender Objektzahl.",
     ],
     objectTypes: [
@@ -176,11 +176,11 @@ export const MATRIX_CITY_EXTENDED: Record<
       "Kliniken und Gesundheitswesen",
     ],
     regionalNote:
-      "Schwarzwald-Baar Doppelstadt — größere Flächen, VS-Verwaltung, Winter prioritär.",
+      "VS-Doppelstadt — größere Flächen, VS-Verwaltung, Winter prioritär.",
   },
   spaichingen: {
     economicContext: [
-      "Spaichingen verbindet Textiltradition mit modernem Mittelstand und Gewerbe an der Schwarzwald-Baar-Grenze. Produktions- und Büroflächen, WEG-Bestand und Praxen erwarten zuverlässige Intervalle und materialschonende Pflege — besonders bei historischen Bodenbelägen in Innenstadtlagen.",
+      "Spaichingen verbindet Textiltradition mit modernem Mittelstand und Gewerbe zwischen Tuttlingen und der Baar. Produktions- und Büroflächen, WEG-Bestand und Praxen erwarten zuverlässige Intervalle und materialschonende Pflege — besonders bei historischen Bodenbelägen in Innenstadtlagen.",
       "Verwalter schätzen die Nähe zu Meßstetten und Tuttlingen: kurze Wege, feste Teams, digitale NK-Abrechnungsunterlagen. Winterdienst und Treppenhaus aus einer Hand reduzieren Haftungsrisiken an Übergängen zwischen Gewerbe- und Wohnzonen.",
       "Saubermatik strukturiert Spaichingen-Objekte in einem LV mit klaren Abnahmekriterien nach DIN EN 13549 — auditierbar für Einkauf und Eigentümerversammlungen.",
     ],
@@ -191,7 +191,7 @@ export const MATRIX_CITY_EXTENDED: Record<
       "Praxen und Therapie",
     ],
     regionalNote:
-      "Textiltradition, Schwarzwald-Baar-Grenze — Mittelstand, WEG, kurze Wege von Meßstetten.",
+      "Textiltradition, Nähe Tuttlingen — Mittelstand, WEG, kurze Wege von Meßstetten.",
   },
   burladingen: {
     economicContext: [

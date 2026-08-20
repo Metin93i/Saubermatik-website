@@ -5,7 +5,7 @@ import { buildTelHref } from "@/lib/phone";
 export const metadata: Metadata = {
   title: "Über uns",
   description:
-    "Saubermatik aus Meßstetten: regionale Wurzeln, digitale Objektsteuerung und B2B-Reinigung mit festen Ansprechpartnern für Zollernalb, Tübingen und den Schwarzwald-Baar-Heuberg.",
+    "Saubermatik aus Meßstetten: regionale Wurzeln, digitale Objektsteuerung und B2B-Reinigung mit festen Ansprechpartnern für Zollernalbkreis, Sigmaringen, Rottweil, Hechingen und Tübingen – Projekte bis Stuttgart und an den Bodensee.",
   alternates: { canonical: "/ueber-uns" },
 };
 

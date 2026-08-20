@@ -57,6 +57,15 @@ export default function HausverwaltungenPage() {
           </div>
         </section>
 
+        <section className="border-b border-foreground/10 bg-white">
+          <div className="mx-auto w-full max-w-6xl px-4 py-10 sm:px-6 lg:px-8">
+            <p className="max-w-3xl text-base leading-[1.75] text-foreground/90 sm:text-lg">
+              Weniger Anrufe auf Ihrem Tisch: Mieter melden Reinigungsanliegen
+              per QR-Code direkt an uns – dokumentiert und nachvollziehbar.
+            </p>
+          </div>
+        </section>
+
         <section className="mx-auto w-full max-w-6xl px-4 py-12 sm:px-6 lg:px-8">
           <article className="max-w-3xl space-y-6 text-base leading-[1.75] text-foreground/90">
             <p>
@@ -276,6 +285,7 @@ export default function HausverwaltungenPage() {
             <AnfrageCta
               title="Liegenschaftsportfolio anfragen"
               text="Objektanzahl, WE-Struktur und Leistungsmix – wir erstellen ein Angebot für Ihre Hausverwaltung. Fester Ansprechpartner statt Callcenter."
+              note="Besichtigung und Angebot sind kostenlos und unverbindlich."
             />
           </div>
         </section>

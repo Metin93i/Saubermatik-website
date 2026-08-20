@@ -58,7 +58,7 @@ const TABLES: Record<Variant, TableConfig> = {
       {
         gebaeudeart: "Ladengeschäfte / Schaufenster",
         intervall: "1× bis 2× monatlich",
-        fokus: "Außen- und Innenscheiben, streifenfreie Glanzgarantie",
+        fokus: "Außen- und Innenscheiben, streifenfreie Optik",
       },
       {
         gebaeudeart: "Bürogebäude & Kanzleien",

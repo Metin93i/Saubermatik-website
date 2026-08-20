@@ -5,19 +5,24 @@ import { AppMockup } from "@/components/AppMockup";
 import { B2BOnboardingProcess } from "@/components/B2BOnboardingProcess";
 import { QrCodeIcon, ShieldCheckIcon, UserCheckIcon } from "@/components/BrandIcons";
 import { EsgComplianceStatement } from "@/components/EsgComplianceStatement";
+import { FaqPageJsonLd } from "@/components/FaqPageJsonLd";
 import { FreshnessBadge } from "@/components/FreshnessBadge";
 import { AnfrageCta } from "@/components/AnfrageCta";
+import { StartHowItWorks } from "@/components/StartHowItWorks";
+import { StartLeistungsGrid } from "@/components/StartLeistungsGrid";
+import { StartTrustBar } from "@/components/StartTrustBar";
 import { STANDORT_CITIES, STANDORT_LABELS } from "@/lib/routes/standorte";
+import { getStartseiteFaqItems } from "@/lib/seo/startseite-faq";
 
 export const metadata: Metadata = {
   description:
-    "Saubermatik aus Meßstetten: Facility & Reinigung für die Zollernalb und den Schwarzwald-Baar-Heuberg-Kreis – mit festem Ansprechpartner und digitaler Objektsteuerung.",
+    "Saubermatik aus Meßstetten: Gebäudereinigung für Zollernalbkreis, Sigmaringen, Rottweil, Hechingen und Tübingen – Projekte bis Stuttgart und an den Bodensee. Fester Ansprechpartner, dokumentierte Einsätze.",
 };
 
 const trustItems = [
   "Fester Ansprechpartner statt Callcenter",
   "Bei Urlaub oder Ausfall: bewährtes Vertretungsteam, sonst die Geschäftsführung",
-  "Regional verwurzelt: Zollernalb & Schwarzwald-Baar-Heuberg, kurze Wege",
+  "Regional verwurzelt: Zollernalbkreis, Sigmaringen, Rottweil, Hechingen, Tübingen – Projekte bis Stuttgart und an den Bodensee",
 ] as const;
 
 const galleryImages = [
@@ -54,41 +59,45 @@ const secureOpsPoints = [
   },
 ] as const;
 
+const CTA_NOTE =
+  "Besichtigung und Angebot sind kostenlos und unverbindlich." as const;
+
 /** Breiter Startseiten-Container (2XL / ~100rem) — weniger Rand-Whitespace auf großen Monitoren. */
 const PAGE_CONTAINER = "mx-auto w-full max-w-[100rem] px-4 sm:px-8 lg:px-16";
+
+const startFaqItems = getStartseiteFaqItems();
 
 export default function Home() {
   return (
     <div className="flex flex-1 flex-col">
-      <section className="relative isolate min-h-[60vh] overflow-hidden lg:min-h-[80vh]">
-        <Image
-          src="/images/einsatz-glasfassade-hoehe.jpg"
-          alt="Saubermatik-Mitarbeiter reinigt hohe Glasfassade mit Teleskopstange im Reinwasser-Verfahren"
-          fill
-          className="object-cover object-[60%_75%]"
-          sizes="100vw"
-          quality={85}
-          priority
-        />
-        <div
-          className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent"
-          aria-hidden
-        />
-        <div
-          className={`${PAGE_CONTAINER} relative z-10 flex min-h-[60vh] flex-col justify-end py-8 lg:min-h-[80vh] lg:py-14`}
-        >
-          <div className="max-w-xl lg:max-w-2xl">
-            <p className="text-xs font-bold uppercase tracking-widest text-primary sm:text-[0.8rem]">
-              Zollernalbkreis · Sigmaringen · Stuttgart · Bodensee · Rottweil ·
-              Hechingen · Tübingen
+      <FaqPageJsonLd items={startFaqItems} />
+      <section className="flex flex-col lg:grid lg:min-h-[80vh] lg:grid-cols-[minmax(0,58%)_minmax(0,42%)]">
+        <div className="relative h-[45vh] w-full lg:order-2 lg:h-auto lg:min-h-[80vh]">
+          <Image
+            src="/images/einsatz-fensterreinigung-hero.jpg"
+            alt="Saubermatik-Mitarbeiter reinigt Fenster mit Teleskopstange und Bürste an einer Glasfassade"
+            fill
+            className="object-cover object-top"
+            sizes="(max-width: 768px) 100vw, 45vw"
+            quality={85}
+            priority
+          />
+        </div>
+        <div className="flex flex-col justify-center bg-[#13181d] px-4 py-10 sm:px-8 lg:order-1 lg:min-h-[80vh] lg:px-16 lg:py-14">
+          <div className="max-w-xl">
+            <p className="text-xs font-semibold tracking-wide text-primary sm:text-sm">
+              Gebäudereinigung · Zollernalbkreis · Sigmaringen · Stuttgart ·
+              Bodensee · Rottweil · Hechingen · Tübingen
             </p>
-            <h1 className="mt-2 text-3xl font-black tracking-tight text-white sm:text-4xl lg:text-[2.75rem] lg:leading-tight">
+            <h1 className="mt-3 text-3xl font-black tracking-tight text-white sm:text-4xl lg:text-[2.75rem] lg:leading-tight">
               Wir digitalisieren die Reinigung.
             </h1>
-            <p className="mt-2 text-base font-semibold text-white sm:text-lg">
-              Beweis statt Versprechen.
+            <p className="mt-4 text-base leading-7 text-white/90 sm:text-lg sm:leading-8">
+              Beweis statt Versprechen. Ihr Reinigungsservice für Gewerbe,
+              Hausverwaltungen und Praxen – mit dokumentierten Einsätzen im
+              eigenen Kundenportal.
             </p>
-            <div className="mt-6 flex flex-wrap gap-2">
+            <div className="mt-8 flex flex-wrap gap-2">
               <Link
                 href="/kontakt#kontakt-anfrage"
                 className="inline-flex h-10 items-center justify-center rounded-sm bg-primary px-4 text-sm font-bold text-primary-foreground transition hover:bg-primary/90"
@@ -106,19 +115,52 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="bg-zinc-50 py-8 sm:py-10">
+      <StartTrustBar />
+
+      <StartLeistungsGrid />
+
+      <section className="border-t border-foreground/10 bg-zinc-50 py-10 sm:py-12">
         <div className={`${PAGE_CONTAINER} flex flex-col gap-3`}>
-          <p className="max-w-3xl text-sm leading-6 text-muted sm:text-base sm:leading-7">
-            Bei uns bekommen Sie keinen Textbaustein aus der Großstadt, sondern
-            einen festen Ansprechpartner. Bei Urlaub oder Ausfall übernimmt ein
+          <p className="max-w-4xl text-sm leading-6 text-muted sm:text-base sm:leading-7">
+            Saubermatik ist ein Reinigungsservice aus Meßstetten. Bei uns
+            bekommen Sie keinen Textbaustein aus der Großstadt, sondern einen
+            festen Ansprechpartner. Bei Urlaub oder Ausfall übernimmt ein
             bewährtes Vertretungsteam – sonst die Geschäftsführung persönlich.
             Ob Verkehrssicherung für Hausverwaltungen, Praxisreinigung nach
             abgestimmtem Plan oder die Unterhaltsreinigung Ihres Büros: Wir
-            halten Ihre Immobilien im Zollernalbkreis und im
-            Schwarzwald-Baar-Heuberg im Rhythmus. Angebot auf Anfrage.
+            halten Ihre Immobilien im Zollernalbkreis, in Sigmaringen, Rottweil,
+            Hechingen und Tübingen im Rhythmus – Projektaufträge bis Stuttgart
+            und an den Bodensee. Angebot auf Anfrage.
           </p>
           <FreshnessBadge />
-          <ul className="flex flex-col gap-1 text-sm font-medium text-foreground">
+        </div>
+      </section>
+
+      <section className="border-t border-foreground/10 bg-zinc-50 py-12 sm:py-14">
+        <div className={PAGE_CONTAINER}>
+          <h2 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
+            Warum wir? Weil wir nicht nur putzen.
+          </h2>
+          <p className="mt-4 max-w-4xl text-base leading-7 text-muted sm:text-lg">
+            Wir übernehmen Verantwortung für Ihre Liegenschaft: klare
+            Intervalle, nachvollziehbare Qualität und ein Team, das weiß, was
+            in Kanzleien, Praxen und Gewerbeobjekten zählt. Digital gestützt
+            heißt bei uns: weniger Ausfälle, weniger Telefonate – mehr Ruhe im
+            Alltag.
+          </p>
+          <p className="mt-4 max-w-4xl text-base leading-7 text-muted">
+            Regional verwurzelt zwischen Zollernalbkreis, Sigmaringen, Rottweil,
+            Hechingen und Tübingen bleiben Entscheidungswege kurz – Projektaufträge
+            übernehmen wir bis Stuttgart und an den Bodensee. Wer bei uns
+            anruft, landet nicht in einer Hotline, sondern bei Menschen, die
+            Ihr Objekt kennen oder es sich aneignen.
+          </p>
+        </div>
+      </section>
+
+      <section className="border-t border-foreground/10 bg-white py-10 sm:py-12">
+        <div className={PAGE_CONTAINER}>
+          <ul className="flex flex-col gap-2 text-sm font-medium text-foreground sm:text-base">
             {trustItems.map((item) => (
               <li key={item} className="flex items-start gap-2">
                 <span className="mt-0.5 shrink-0 text-secondary" aria-hidden>
@@ -128,6 +170,51 @@ export default function Home() {
               </li>
             ))}
           </ul>
+        </div>
+      </section>
+
+      <section
+        className="py-12 sm:py-16"
+        style={{
+          background: "linear-gradient(105deg, #003a6b 0%, #0066b3 70%, #1a7cc4 100%)",
+        }}
+        aria-labelledby="secureops-band-heading"
+      >
+        <div className={PAGE_CONTAINER}>
+          <p className="text-xs font-bold uppercase tracking-[0.18em] text-white/80">
+            SecureOps by Saubermatik
+          </p>
+          <h2
+            id="secureops-band-heading"
+            className="mt-3 max-w-3xl text-3xl font-black tracking-tight text-white sm:text-4xl"
+          >
+            Ein Scan im Objekt – das Anliegen landet direkt bei uns.
+          </h2>
+          <p className="mt-4 max-w-3xl text-base leading-7 text-white/90 sm:text-lg">
+            Dokumentierte Einsätze im Kundenportal, nachvollziehbar statt
+            versprochen. Den Umfang vereinbaren wir je Objekt. Für
+            Hausverwaltungen, Gewerbe und Kommunen.
+          </p>
+          <p className="mt-3 max-w-3xl text-base leading-7 text-white/90 sm:text-lg">
+            Keine Software, die Sie kaufen – SecureOps ist Teil unserer
+            Reinigungsleistung.
+          </p>
+          <ul className="mt-8 grid gap-5 sm:grid-cols-3">
+            {secureOpsPoints.map((item) => (
+              <li key={item.text} className="flex items-start gap-3 text-white">
+                <item.icon className="mt-0.5 h-6 w-6 shrink-0" />
+                <span className="text-sm font-semibold leading-6 sm:text-base">
+                  {item.text}
+                </span>
+              </li>
+            ))}
+          </ul>
+          <Link
+            href="/secureops"
+            className="mt-8 inline-flex h-11 items-center justify-center rounded-sm bg-white px-5 text-sm font-bold text-[#0066b3] transition hover:bg-white/90"
+          >
+            SecureOps ansehen
+          </Link>
         </div>
       </section>
 
@@ -167,47 +254,6 @@ export default function Home() {
       </section>
 
       <section
-        className="py-12 sm:py-16"
-        style={{
-          background: "linear-gradient(105deg, #003a6b 0%, #0066b3 70%, #1a7cc4 100%)",
-        }}
-        aria-labelledby="secureops-band-heading"
-      >
-        <div className={PAGE_CONTAINER}>
-          <p className="text-xs font-bold uppercase tracking-[0.18em] text-white/80">
-            SecureOps by Saubermatik
-          </p>
-          <h2
-            id="secureops-band-heading"
-            className="mt-3 max-w-3xl text-3xl font-black tracking-tight text-white sm:text-4xl"
-          >
-            Ein Scan im Objekt – das Anliegen landet direkt bei uns.
-          </h2>
-          <p className="mt-4 max-w-3xl text-base leading-7 text-white/90 sm:text-lg">
-            Dokumentierte Einsätze im Kundenportal, nachvollziehbar statt
-            versprochen. Den Umfang vereinbaren wir je Objekt. Für
-            Hausverwaltungen, Gewerbe und Kommunen.
-          </p>
-          <ul className="mt-8 grid gap-5 sm:grid-cols-3">
-            {secureOpsPoints.map((item) => (
-              <li key={item.text} className="flex items-start gap-3 text-white">
-                <item.icon className="mt-0.5 h-6 w-6 shrink-0" />
-                <span className="text-sm font-semibold leading-6 sm:text-base">
-                  {item.text}
-                </span>
-              </li>
-            ))}
-          </ul>
-          <Link
-            href="/secureops"
-            className="mt-8 inline-flex h-11 items-center justify-center rounded-sm bg-white px-5 text-sm font-bold text-[#0066b3] transition hover:bg-white/90"
-          >
-            SecureOps ansehen
-          </Link>
-        </div>
-      </section>
-
-      <section
         className="border-t border-foreground/10 bg-zinc-50 py-10 sm:py-12"
         aria-labelledby="reinigung-4-heading"
       >
@@ -236,9 +282,9 @@ export default function Home() {
                 Digitale Protokolle
               </h3>
               <p className="mt-3 flex-1 text-sm leading-6 text-muted sm:text-base sm:leading-7">
-                Jeder Einsatz hinterlässt eine Spur: Was wurde wann erledigt –
-                nachvollziehbar für Geschäftsführung, Hausverwaltung und
-                Qualitätssicherung. Weniger Streit, weniger Rückfragen, mehr
+                Dokumentierte Einsätze hinterlassen eine Spur: Was wurde wann
+                erledigt – nachvollziehbar für Geschäftsführung, Hausverwaltung
+                und Qualitätssicherung. Weniger Streit, weniger Rückfragen, mehr
                 Kontrolle im Alltag.
               </p>
             </li>
@@ -260,27 +306,6 @@ export default function Home() {
         pagePath="/"
         className="border-t border-foreground/10 bg-white py-8 sm:py-10"
       />
-
-      <section className="border-t border-foreground/10 bg-zinc-50 py-12 sm:py-14">
-        <div className={PAGE_CONTAINER}>
-          <h2 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
-            Warum wir? Weil wir nicht nur putzen.
-          </h2>
-          <p className="mt-4 max-w-4xl text-base leading-7 text-muted sm:text-lg">
-            Wir übernehmen Verantwortung für Ihre Liegenschaft: klare
-            Intervalle, nachvollziehbare Qualität und ein Team, das weiß, was
-            in Kanzleien, Praxen und Gewerbeobjekten zählt. Digital gestützt
-            heißt bei uns: weniger Ausfälle, weniger Telefonate – mehr Ruhe im
-            Alltag.
-          </p>
-          <p className="mt-4 max-w-4xl text-base leading-7 text-muted">
-            Regional verwurzelt in der Zollernalb und im
-            Schwarzwald-Baar-Heuberg-Kreis bleiben Entscheidungswege kurz. Wer
-            bei uns anruft, landet nicht in einer Hotline, sondern bei
-            Menschen, die Ihr Objekt kennen oder es sich aneignen.
-          </p>
-        </div>
-      </section>
 
       <section className="border-y border-foreground/10 bg-zinc-50 py-10">
         <div className={PAGE_CONTAINER}>
@@ -340,6 +365,34 @@ export default function Home() {
         </div>
       </section>
 
+      <StartHowItWorks />
+
+      <section
+        className="border-t border-foreground/10 bg-zinc-50 py-12 sm:py-14"
+        aria-labelledby="start-faq-heading"
+      >
+        <div className={PAGE_CONTAINER}>
+          <h2
+            id="start-faq-heading"
+            className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl"
+          >
+            Häufige Fragen
+          </h2>
+          <dl className="mt-8 max-w-3xl space-y-8">
+            {startFaqItems.map((item) => (
+              <div key={item.question}>
+                <dt className="text-lg font-semibold text-foreground">
+                  {item.question}
+                </dt>
+                <dd className="mt-2 text-base leading-[1.75] text-foreground/90">
+                  {item.answer}
+                </dd>
+              </div>
+            ))}
+          </dl>
+        </div>
+      </section>
+
       <section
         id="kontakt-anfrage"
         className="border-t border-foreground/10 bg-zinc-100 py-12 sm:py-16"
@@ -348,6 +401,7 @@ export default function Home() {
           <AnfrageCta
             title="Objekt anfragen"
             text="Fläche, Intervalle, Sonderzonen: Nach einer Begehung erhalten Sie ein unverbindliches Angebot. Fester Ansprechpartner statt Callcenter."
+            note={CTA_NOTE}
           />
         </div>
       </section>

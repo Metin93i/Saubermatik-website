@@ -5,6 +5,7 @@ import { getBusinessPhone } from "@/lib/phone";
 type Props = {
   title?: string;
   text?: string;
+  note?: string;
   className?: string;
 };
 
@@ -21,6 +22,7 @@ const secondaryBtn =
 export function AnfrageCta({
   title = "Anfrage stellen",
   text = "Beschreiben Sie uns kurz Ihr Anliegen – wir melden uns innerhalb eines Werktags. Fester Ansprechpartner statt Callcenter.",
+  note,
   className = "",
 }: Props) {
   const { display, telHref } = getBusinessPhone();
@@ -31,6 +33,9 @@ export function AnfrageCta({
         {title}
       </h2>
       <p className="mt-3 text-base leading-7 text-muted">{text}</p>
+      {note ? (
+        <p className="mt-2 text-sm leading-6 text-muted">{note}</p>
+      ) : null}
       <div className="mt-6 flex flex-wrap justify-center gap-3">
         <Link href="/kontakt#kontakt-anfrage" className={primaryBtn}>
           Anfrage stellen

@@ -3,7 +3,10 @@
 import type { FormEvent } from "react";
 import { useCallback, useState } from "react";
 import { apiUrl } from "@/lib/config/api";
-import type { LeadSubmission } from "@/lib/lead/submission";
+import {
+  LEAD_TOPIC_OPTIONS,
+  type LeadSubmission,
+} from "@/lib/lead/submission";
 
 type Props = {
   className?: string;
@@ -47,6 +50,8 @@ export function KontaktForm({ className = "" }: Props) {
   const [company, setCompany] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
+  const [topic, setTopic] = useState("");
+  const [location, setLocation] = useState("");
   const [message, setMessage] = useState("");
   const [website, setWebsite] = useState("");
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
@@ -64,6 +69,8 @@ export function KontaktForm({ className = "" }: Props) {
         company: company.trim(),
         email: email.trim(),
         phone: phone.trim(),
+        topic: topic.trim(),
+        location: location.trim(),
         message: message.trim(),
         website,
       };
@@ -120,7 +127,7 @@ export function KontaktForm({ className = "" }: Props) {
         setIsLoading(false);
       }
     },
-    [company, email, message, name, phone, website],
+    [company, email, location, message, name, phone, topic, website],
   );
 
   if (isSuccess) {
@@ -249,6 +256,34 @@ export function KontaktForm({ className = "" }: Props) {
               inputMode="tel"
               value={phone}
               onChange={(ev) => setPhone(ev.target.value)}
+              disabled={isLoading}
+            />
+          </label>
+          <label className="block text-sm font-medium text-foreground">
+            Worum geht es? (optional)
+            <select
+              className={inputClass}
+              name="topic"
+              value={topic}
+              onChange={(ev) => setTopic(ev.target.value)}
+              disabled={isLoading}
+            >
+              <option value="">Bitte wählen</option>
+              {LEAD_TOPIC_OPTIONS.map((opt) => (
+                <option key={opt} value={opt}>
+                  {opt}
+                </option>
+              ))}
+            </select>
+          </label>
+          <label className="block text-sm font-medium text-foreground">
+            Ort oder PLZ (optional)
+            <input
+              className={inputClass}
+              name="location"
+              autoComplete="address-level2"
+              value={location}
+              onChange={(ev) => setLocation(ev.target.value)}
               disabled={isLoading}
             />
           </label>

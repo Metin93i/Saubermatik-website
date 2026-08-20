@@ -39,7 +39,7 @@ const treppenhausreinigung: LeistungDeepContent = {
       title: "Deep Dive 1: Verkehrssicherungspflicht & Trittsicherheit",
       paragraphs: [
         "Treppen, Podeste und Eingangsbereiche unterliegen der Verkehrssicherungspflicht des Eigentümers bzw. Verwalters. Nasse Stufen, Sand, Streusalzreste oder lose Verschmutzungen erhöhen Sturzrisiken – mit potenzieller Haftung bei Personenschäden. Saubermatik definiert deshalb pro Objekt klare Reinigungs- und Kontrollintervalle: Stufen, Handläufe, Schmutzfangmatten und Beleuchtungsnähe werden checklistenbasiert bearbeitet, nicht nach Gefühl.",
-        "Trittsicherheit ist messbar: rutschhemmende Beläge werden materialspezifisch gepflegt, Feuchtigkeit zeitnah entfernt, Warnhinweise bei Glätteereignissen koordiniert mit unserem Winterdienst. Jeder Einsatz wird digital dokumentiert – für Sie ein Nachweis, dass Sorgfaltspflichten aktiv wahrgenommen werden, nicht erst im Schadensfall.",
+        "Trittsicherheit ist messbar: rutschhemmende Beläge werden materialspezifisch gepflegt, Feuchtigkeit zeitnah entfernt, Warnhinweise bei Glätteereignissen koordiniert mit unserem Winterdienst. Einsätze werden digital dokumentiert – für Sie ein Nachweis, dass Sorgfaltspflichten aktiv wahrgenommen werden, nicht erst im Schadensfall.",
         "Besonders in Mehrfamilienhäusern mit hoher Frequenz (Kinderwagen, Lieferverkehr, ältere Bewohner) ist die Kombination aus Unterhaltsreinigung und proaktiver Mängelmeldung entscheidend. Ausgefallene Leuchtmittel, lose Geländer oder rissige Stufen werden im Kontrollgang eskaliert – bevor der Mieter stolpert.",
       ],
     },
@@ -206,7 +206,7 @@ const fassadenreinigung: LeistungDeepContent = {
     "Materialgerechte Verfahren, Arbeitssicherheit in der Höhe und dokumentierte Einsätze – für Werterhalt und repräsentative Außenwirkung.",
   introParagraphs: [
     "Fassaden sind Witterungsschild und Markenfläche zugleich. Algen, Moos, Industrieablagerungen und Biokorrosion mindern nicht nur die Optik – sie beschleunigen Materialschäden und treiben Instandhaltungskosten. Saubermatik reinigt Fassaden materialspezifisch: von Naturstein über Klinker und Metall bis zu großflächiger Glasarchitektur.",
-    "Jeder Einsatz wird unter Berücksichtigung von TRBS 2121, BG-BAU-Vorgaben und Zuwegungsplanung durchgeführt – Hubsteiger, Seiltechnik oder Reinwasser-Osmose je nach Objekt. Digital protokolliert für Facility und Eigentümer.",
+    "Einsätze werden unter Berücksichtigung von TRBS 2121, BG-BAU-Vorgaben und Zuwegungsplanung durchgeführt – Hubsteiger, Seiltechnik oder Reinwasser-Osmose je nach Objekt. Digital protokolliert für Facility und Eigentümer.",
   ],
   deepDives: [
     {
