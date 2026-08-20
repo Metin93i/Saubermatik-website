@@ -14,6 +14,9 @@ const DESKTOP_NAV_ITEM =
 const DROPDOWN_LINK =
   "flex items-start gap-2 border-b border-slate-100 px-4 py-2.5 text-sm text-slate-700 transition last:border-b-0 hover:bg-slate-50 hover:text-slate-900";
 
+/** Vorübergehend false: Kunden-Login im Header ausblenden. Wieder einblenden: true. */
+const SHOW_HEADER_CLIENT_LOGIN = false;
+
 const MAIN_PAGES = [
   { href: "/zielgruppen", label: "Branchen" },
   { href: "/secureops", label: "SecureOps" },
@@ -175,7 +178,9 @@ export function SiteHeaderNav() {
           ))}
         </nav>
 
-        <ClientLoginButton className="hidden shrink-0 md:inline-flex" />
+        {SHOW_HEADER_CLIENT_LOGIN ? (
+          <ClientLoginButton className="hidden shrink-0 md:inline-flex" />
+        ) : null}
 
         <button
           type="button"
@@ -276,15 +281,17 @@ export function SiteHeaderNav() {
                 ) : null}
               </div>
 
-              <div className="mt-auto border-t border-slate-100 pt-4">
-                <ClientLoginButton
-                  className="h-10 w-full"
-                  onNavigate={closeMobile}
-                />
-                <p className="mt-2 text-center text-xs text-slate-400">
-                  Kundenportal — öffnet in neuem Tab
-                </p>
-              </div>
+              {SHOW_HEADER_CLIENT_LOGIN ? (
+                <div className="mt-auto border-t border-slate-100 pt-4">
+                  <ClientLoginButton
+                    className="h-10 w-full"
+                    onNavigate={closeMobile}
+                  />
+                  <p className="mt-2 text-center text-xs text-slate-400">
+                    Kundenportal — öffnet in neuem Tab
+                  </p>
+                </div>
+              ) : null}
             </div>
           </div>
         </div>

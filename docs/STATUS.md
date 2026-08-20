@@ -1,12 +1,16 @@
 # STATUS · saubermatik-website
 
-Living Doc nach Bau-Schritten. Stand: **2026-08-20** · Branch `fix/design-und-bildqualitaet`.
+Living Doc nach Bau-Schritten. Stand: **2026-08-20** · Branch `fix/header-kunden-login-ausblenden`.
 
 ## Live-Stand
 
-- Diese Welle: Design-/Bildqualitäts-Fix nach Sichtprüfung (Leerflächen, Hero-Ausschnitt, CTA-Block, HQ-Einsatzfotos).
+- Diese Welle: Kunden-Login im Header vorübergehend ausgeblendet (`SHOW_HEADER_CLIENT_LOGIN = false`).
 
-## Erledigt (Design & Bildqualität, dieser PR)
+## Erledigt (Header Kunden-Login, dieser PR)
+
+- `ClientLoginButton` im Desktop-Header und im Mobil-Menü hinter `SHOW_HEADER_CLIENT_LOGIN = false` (Komponente bleibt).
+
+## Erledigt (Design & Bildqualität)
 
 - Bild-Fallback-Regel in `AGENTS.md`: ohne echtes Bild kein Bildbereich (keine Deko-Flächen, keine UI-TODOs).
 - Leerflächen entfernt: Plattform-Kachel, „Warum wir“, Über uns, Karriere, Stuttgart, Leistungs-Hero ohne Foto.
@@ -37,9 +41,10 @@ Living Doc nach Bau-Schritten. Stand: **2026-08-20** · Branch `fix/design-und-b
 - WhatsApp auf +49 1512 9860059 bestätigen.
 - SecureOps-Screenshots mit Demo-Daten.
 - Domain-Umstellung www.saubermatik-reinigung.de nach Merge.
+- Kunden-Login im Header wieder einblenden (`SHOW_HEADER_CLIENT_LOGIN = true`), sobald das Portal live ist.
 
 ## Offen & Risiken
 
-- Kunden-Login führt auf SaaS-Portal (`getPlatformLoginUrl` → `{PLATFORM}/login`).
+- Kunden-Login im Header ist vorübergehend ausgeblendet; Komponente und URL bleiben.
 - DNS/Horizons vs. VPS: aus Repo allein unklar.
 - Chat-Upload der HQ-Fotos kam mit 984×1024 / 768×1024 an (angegeben waren 2462×2560 / 1800×2400).
