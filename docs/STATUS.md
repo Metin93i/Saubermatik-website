@@ -1,55 +1,35 @@
 # STATUS · saubermatik-website
 
-Living Doc nach Bau-Schritten. Stand: **2026-08-20** · Branch `feat/startseite-power-bildbereinigung`.
+Living Doc nach Bau-Schritten. Stand: **2026-08-20** · Branch `fix/design-und-bildqualitaet`.
 
 ## Live-Stand
 
-- `main`: E1–E5 + Header-/Ansprechpartner-Fix (PR #13).
-- Offener Vorgänger-PR #14 (`feat/bilder-favicon-psa`) wird von diesem Branch mitgeführt (Assets, OG, Favicon, PSA).
-- Diese Welle: Hover-Nav, größerer Hero, Marken- + SecureOps-HTML-Sektionen, Fremdbilder raus.
+- Diese Welle: Design-/Bildqualitäts-Fix nach Sichtprüfung (Leerflächen, Hero-Ausschnitt, CTA-Block, HQ-Einsatzfotos).
 
-## Erledigt (Startseite Power + Bildbereinigung, dieser PR)
+## Erledigt (Design & Bildqualität, dieser PR)
 
-- Desktop-Nav „Leistungen“: Hover öffnet, 150 ms Delay beim Schließen; Klick, Fokus, Escape bleiben.
-- Fremdbilder entfernt: nur noch lokale Einsatzfotos (Fenster, Grün, Fassade). Sonst Markenfläche `#13181d` mit Orangestreifen. Externe `images.remotePatterns` entfernt.
-- SecureOps: drei gestrichelte Screenshot-Platzhalter entfernt (Screenshots folgen separat).
-- Startseite: Eyebrow-Einsatzgebiete, Hero ~80vh Desktop / 60vh mobil, CTAs im Hero; HTML-Markenband + SecureOps-Band (kein PNG-Banner mehr auf der Startseite).
-- Claim: „Dokumentierte Qualitätsstandards“ (FreshnessBadge); weitere `ertifiz`-Stellen in app/components/lib umgestellt.
-- Next-Boilerplate-SVGs unter `public/` gelöscht.
+- Bild-Fallback-Regel in `AGENTS.md`: ohne echtes Bild kein Bildbereich (keine Deko-Flächen, keine UI-TODOs).
+- Leerflächen entfernt: Plattform-Kachel, „Warum wir“, Über uns, Karriere, Stuttgart, Leistungs-Hero ohne Foto.
+- Branchen-Karten ohne Bildplatzhalter; drei Kurzzeilen wortgetreu.
+- Hero `object-position: 60% 75%`, Verlauf von links, Text links (`max-w-2xl`), Person rechts frei.
+- Abschluss-CTA (Anfrage / Anrufen / WhatsApp) am Ende der Startseite; `MobileStickyCta` bleibt `md:hidden`.
+- HQ-Einsatzfotos ersetzt; Hero `quality={85}` `sizes="100vw"`; Leistungsbilder `quality={80}` `sizes="(max-width: 768px) 100vw, 50vw"`; `images.formats` avif+webp.
 
 ### OG prüfen (View-Source)
 
-Seitenquelltext der Startseite: `og:image` → `https://www.saubermatik-reinigung.de/images/og-image.jpg`. Auf `/secureops` analog `og-secureops.jpg`.
+`og:image` → `https://www.saubermatik-reinigung.de/images/og-image.jpg`. `/secureops` analog `og-secureops.jpg`.
 
-## Erledigt (Bilder / Favicon / PSA, mitgeführt)
+## Erledigt (Startseite Power + Bildbereinigung)
 
-- Einsatzfotos, OG-Bilder, Wortmarken-Favicon (`icon.png` + `apple-icon.png`), PSA-Hinweis DGUV 112-198/199.
-- `banner-sauber-zuverlaessig.png` / `banner-secureops-digitalisierung.png` liegen in `public/images/` (OG bzw. Vorlage), Startseite bindet die PNGs nicht mehr ein.
+- Hover-Nav, größerer Hero, Marken- + SecureOps-HTML-Sektionen, Fremdbilder raus.
 
-## Erledigt (E1)
+## Erledigt (Bilder / Favicon / PSA)
 
-- Claims, Nav, Slogan, KI-Crawler, Stubs, Kalkulator entfernt.
+- Einsatzfotos, OG-Bilder, Wortmarken-Favicon, PSA-Hinweis DGUV 112-198/199.
 
-## Erledigt (E2)
+## Erledigt (E1–E5)
 
-- Raffstore-LP; Matrix-Ausschluss `includeInMatrix: false`.
-
-## Erledigt (E4)
-
-- `/secureops` vollwertige Erklärseite (wortgetreue Texte, FAQ + FAQPage-JSON-LD).
-- In Sitemap aufgenommen; Nav-Eintrag war bereits vorhanden.
-- Querverweise: HV ↔ SecureOps (Mieter-Meldeweg), SecureOps → Leistungen.
-- llms.txt um SecureOps-Absatz ergänzt.
-- Screenshot-Platzhalter entfernt; echte Demo-Screenshots noch offen.
-
-## Erledigt (E5+E3+Konsolidierung)
-
-- Paket 1: Claims-Review gegen D1–D10 (Vertretung statt 100 %, kein GPS/24/7/direkter Draht, keine Streifenfrei-Garantie, Onboarding-Jargon, VAH-/Prüfzeichen-Behauptungen, Cluster-Teams).
-- Paket 2: Euro-/Richtwert-/Kalkulator-Reste; „Angebot auf Anfrage“.
-- Paket 3: LeadFunnel von allen Nicht-Kontakt-Seiten entfernt; ein Kontaktformular (Name, Firma opt., E-Mail, Telefon opt., Anliegen, Honeypot); CTA „Anfrage stellen“ + Telefon + WhatsApp.
-- Paket 4: `/zielgruppen` Hub + `/zielgruppen/praxen-gesundheitswesen` + `/zielgruppen/buero-gewerbe` (wortgetreue Texte, FAQ + JSON-LD); Sitemap +3.
-- Paket 5: LocalBusiness Mo–Sa 08–22, Telefon kanonisch, kein aggregateRating; llms Branchensektion; Querverweise Glas→Büro, Unterhalt→Praxis/Büro.
-- Paket 6: `lib/config/city-tiers.ts` (16 Matrix-Städte + Stuttgart, Radius vs. Projekt); Rahmen-Absatz auf Projekt-Stadt- und Matrix-Seiten.
+- Claims, Raffstore-LP, SecureOps-Erklärseite, Lead-Weg/Branchen/Städte/Schema.
 
 ## Nächste Schritte
 
@@ -60,6 +40,6 @@ Seitenquelltext der Startseite: `og:image` → `https://www.saubermatik-reinigun
 
 ## Offen & Risiken
 
-- Kunden-Login führt auf SaaS-Portal (`getPlatformLoginUrl` → `{PLATFORM}/login`), nicht auf diese Marketing-Seite.
+- Kunden-Login führt auf SaaS-Portal (`getPlatformLoginUrl` → `{PLATFORM}/login`).
 - DNS/Horizons vs. VPS: aus Repo allein unklar.
-- Hero `object-position: center 62 %` — Teleskopstange/Mitarbeiter vs. Text-Overlay visuell prüfen.
+- Chat-Upload der HQ-Fotos kam mit 984×1024 / 768×1024 an (angegeben waren 2462×2560 / 1800×2400).

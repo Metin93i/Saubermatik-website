@@ -2,7 +2,7 @@ import type { LeistungSlug } from "@/lib/routes/leistungen";
 
 export type LeistungImage = { src: string; alt: string };
 
-/** Nur eigene Einsatzfotos. Fehlende Slugs → Markenfläche (kein Fremdbild). */
+/** Nur eigene Einsatzfotos. Ohne Datei: kein Bildbereich (siehe AGENTS.md Bild-Fallback). */
 export const LEISTUNG_IMAGES: Partial<Record<LeistungSlug, LeistungImage>> = {
   "fenster-glasreinigung": {
     src: "/images/einsatz-fensterreinigung-reinwasser.jpg",

@@ -14,17 +14,17 @@ const BRANCHEN = [
   {
     href: "/zielgruppen/hausverwaltungen",
     title: "Hausverwaltungen & WEG",
-    placeholder: "Bild folgt: Hausverwaltungen & WEG",
+    line: "Weniger Mieteranrufe, klare Nachweise.",
   },
   {
     href: "/zielgruppen/praxen-gesundheitswesen",
     title: "Praxen & Gesundheitswesen",
-    placeholder: "Bild folgt: Praxen & Gesundheitswesen",
+    line: "Hygienesensibel, außerhalb der Sprechzeiten.",
   },
   {
     href: "/zielgruppen/buero-gewerbe",
     title: "Büro & Gewerbe",
-    placeholder: "Bild folgt: Büro & Gewerbe",
+    line: "Zuverlässig sauber, ohne Ihren Betrieb zu stören.",
   },
 ] as const;
 
@@ -54,26 +54,17 @@ export default function ZielgruppenHubPage() {
             <li key={item.href}>
               <Link
                 href={item.href}
-                className="group flex h-full flex-col overflow-hidden rounded-sm border border-zinc-200 bg-white transition hover:border-secondary/50 hover:bg-secondary/5"
+                className="group flex h-full flex-col rounded-sm border border-zinc-200 bg-white p-5 transition hover:border-primary hover:bg-white sm:p-6"
               >
-                <div
-                  className="flex min-h-[10rem] items-center justify-center border-b border-dashed border-zinc-300 bg-zinc-100/80 px-4 py-8 text-center"
-                  aria-label={`Platzhalter: ${item.title}`}
-                >
-                  <p className="max-w-xs text-sm leading-6 text-muted">
-                    {item.placeholder}
-                    <br />
-                    <span className="text-xs">TODO: freigegebenes Bild</span>
-                  </p>
-                </div>
-                <div className="flex flex-1 flex-col p-5">
-                  <h2 className="text-lg font-semibold text-foreground group-hover:text-secondary">
-                    {item.title}
-                  </h2>
-                  <span className="mt-3 text-sm font-semibold text-secondary">
-                    Mehr erfahren →
-                  </span>
-                </div>
+                <h2 className="text-lg font-semibold text-foreground group-hover:text-secondary">
+                  {item.title}
+                </h2>
+                <p className="mt-2 flex-1 text-sm leading-6 text-muted">
+                  {item.line}
+                </p>
+                <span className="mt-4 text-sm font-semibold text-secondary">
+                  Mehr erfahren →
+                </span>
               </Link>
             </li>
           ))}

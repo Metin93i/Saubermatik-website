@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { JobListings } from "@/components/JobListings";
-import { BrandSurface } from "@/components/BrandSurface";
 
 export const metadata: Metadata = {
   title: "Karriere",
@@ -41,8 +40,6 @@ export default function KarrierePage() {
         Lust auf saubere Prozesse. Ob Reinigungskraft, Objektleitung oder
         Quereinstieg – sprechen Sie uns an.
       </p>
-
-      <BrandSurface className="mt-8 aspect-[16/9] w-full rounded-sm" />
 
       <section className="mt-12" aria-labelledby="offene-stellen-heading">
         <h2

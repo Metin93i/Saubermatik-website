@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { FreshnessBadge } from "@/components/FreshnessBadge";
-import { BrandSurface } from "@/components/BrandSurface";
 import { ProjektRahmen } from "@/components/ProjektRahmen";
 import { SeoCrossLinks } from "@/components/SeoCrossLinks";
 
@@ -64,8 +63,6 @@ export default function StandortStuttgartPage() {
         Einsatzplanung ein – für Glas, Büro und Objekt.
       </p>
       <ProjektRahmen cityLabel="Stuttgart" className="mt-6" />
-
-      <BrandSurface className="mt-8 aspect-[16/9] w-full rounded-sm" />
 
       <div className="mt-10 space-y-12">
         {chunks.map((section) => (
