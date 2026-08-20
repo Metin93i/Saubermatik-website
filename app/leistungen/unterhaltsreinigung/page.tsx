@@ -245,7 +245,8 @@ export default function UnterhaltsreinigungPage() {
                 Desinfektionspunkte an Kontaktflächen und dokumentierte
                 Intervalle. In Arztpraxen und Behandlungszonen stimmen wir
                 Desinfektionsmittel und Ablauf mit Ihrem Hygieneplan ab –
-                Mittel nach anerkannten Standards, ohne Zertifizierungsbehauptung.
+                Mittel nach anerkannten Standards, ohne Prüfzeichen als
+                Werbeaussage.
               </p>
               <p>
                 Parallel optimieren wir die{" "}

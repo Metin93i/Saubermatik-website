@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { BrandSurface } from "@/components/BrandSurface";
 import type { LeistungSlug } from "@/lib/routes/leistungen";
 import { getLeistungImage } from "@/lib/config/leistung-images";
 import { REMOTE_IMAGE_BLUR_DATA_URL } from "@/lib/image-blur";
@@ -14,15 +15,23 @@ export function LeistungHeroImage({
   priority = false,
   className = "mt-8",
 }: Props) {
-  const { src, alt } = getLeistungImage(slug);
+  const image = getLeistungImage(slug);
+
+  if (!image) {
+    return (
+      <BrandSurface
+        className={`aspect-[16/9] w-full rounded-sm ${className}`}
+      />
+    );
+  }
 
   return (
     <div
       className={`relative aspect-[16/9] w-full overflow-hidden rounded-sm ${className}`}
     >
       <Image
-        src={src}
-        alt={alt}
+        src={image.src}
+        alt={image.alt}
         fill
         className="object-cover"
         sizes="(max-width: 768px) 100vw, 48rem"

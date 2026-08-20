@@ -1,17 +1,14 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
-import { GeoImage } from "@/components/GeoImage";
 import { AnfrageCta } from "@/components/AnfrageCta";
 import { LeistungFaqJsonLd } from "@/components/LeistungFaqJsonLd";
+import { LeistungHeroImage } from "@/components/LeistungHeroImage";
 import { SeoCrossLinks } from "@/components/SeoCrossLinks";
-import { getLeistungImage } from "@/lib/config/leistung-images";
-import { REMOTE_IMAGE_BLUR_DATA_URL } from "@/lib/image-blur";
 import { buildTelHref } from "@/lib/phone";
 import { getLeistungFaqItems } from "@/lib/seo/leistung-faq";
 
 const SLUG = "raffstore-lamellenreinigung" as const;
-const hero = getLeistungImage(SLUG);
 const faqItems = getLeistungFaqItems(SLUG);
 
 export const metadata: Metadata = {
@@ -59,22 +56,11 @@ export default function RaffstoreLamellenreinigungPage() {
               Chemie und ohne Risiko für die Mechanik. Für Firmen und
               Privathaushalte.
             </p>
-            {/* TODO(E2): durch echtes Einsatzfoto ersetzen */}
-            <div className="relative mt-10 aspect-[16/9] max-w-4xl overflow-hidden rounded-sm ">
-              <GeoImage
-                src={hero.src}
-                alt={hero.alt}
-                fill
-                className="object-cover"
-                sizes="(max-width: 768px) 100vw, 48rem"
-                priority
-                placeholder="blur"
-                blurDataURL={REMOTE_IMAGE_BLUR_DATA_URL}
-                contentLocation="Zollernalbkreis, Baden-Württemberg"
-                author="Saubermatik"
-                imageId="geo-hero-raffstore-lamellenreinigung"
-              />
-            </div>
+            <LeistungHeroImage
+              slug={SLUG}
+              priority
+              className="mt-10 max-w-4xl"
+            />
             <div className="mt-10 flex flex-wrap gap-4">
               <Link
                 href="/kontakt#kontakt-anfrage"
