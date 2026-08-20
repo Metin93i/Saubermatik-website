@@ -9,7 +9,6 @@ import { AnfrageCta } from "@/components/AnfrageCta";
 import { SeoCrossLinks } from "@/components/SeoCrossLinks";
 import { SnippetBaitTable } from "@/components/SnippetBaitTable";
 import { getLeistungImage } from "@/lib/config/leistung-images";
-import { BrandSurface } from "@/components/BrandSurface";
 import { REMOTE_IMAGE_BLUR_DATA_URL } from "@/lib/image-blur";
 
 const SLUG = "fenster-glasreinigung" as const;
@@ -56,14 +55,15 @@ export default function FensterGlasreinigungPage() {
               dokumentierte Compliance in der Zollernalb und angrenzenden
               Regionen.
             </p>
-            <div className="relative mt-10 aspect-[16/9] max-w-4xl overflow-hidden rounded-sm ">
-              {hero ? (
+            {hero ? (
+              <div className="relative mt-10 aspect-[16/9] max-w-4xl overflow-hidden rounded-sm">
                 <GeoImage
                   src={hero.src}
                   alt={hero.alt}
                   fill
                   className="object-cover"
-                  sizes="(max-width: 768px) 100vw, 48rem"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  quality={80}
                   priority
                   placeholder="blur"
                   blurDataURL={REMOTE_IMAGE_BLUR_DATA_URL}
@@ -71,10 +71,8 @@ export default function FensterGlasreinigungPage() {
                   author="Saubermatik"
                   imageId="geo-hero-glasreinigung-zollernalb"
                 />
-              ) : (
-                <BrandSurface className="absolute inset-0" />
-              )}
-            </div>
+              </div>
+            ) : null}
             <div className="mt-10 flex flex-wrap gap-4">
               <Link
                 href="/kontakt#kontakt-anfrage"

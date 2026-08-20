@@ -34,6 +34,14 @@
 - JSON-LD nur für sichtbar Vorhandenes und Wahres (keine Fake-`aggregateRating`).
 - Firmenspezifische Angaben (Preise, interne Daten) als **`[INTERN]`**-Platzhalter lassen.
 
+## Bild-Fallback
+
+Existiert für eine Stelle **kein echtes Bild**, wird **kein Bildbereich** gerendert.
+
+Verboten im sichtbaren Frontend: leere Farb-/Deko-Flächen, rotierte Panels, gestrichelte Rahmen, graue Boxen, Texte wie „Bild folgt“, „TODO“, „folgt in Kürze“.
+
+Das Layout muss ohne Bild vollständig aussehen: Sektion einspaltig bzw. Text über die volle Inhaltsbreite. TODO-Vermerke gehören ausschließlich in Code-Kommentare oder `docs/`, nie ins UI.
+
 ## CI
 
 - `.github/workflows/ci.yml`: PR (alle Branches) + Push auf `main`

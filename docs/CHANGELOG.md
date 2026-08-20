@@ -1,3 +1,4 @@
+2026-08-20 · design · Platzhalter/Leerflächen entfernt, Hero-Ausschnitt, CTA-Block, HQ-Bilder
 2026-08-20 · startseite · Hover-Nav, größerer Hero, Marken-/SecureOps-Sektion, Fremdbilder entfernt
 2026-08-20 · favicon · Wortmarken-Logo als icon.png + apple-icon.png
 2026-08-20 · assets · echte Einsatzfotos, OG-Bilder, Favicon, PSA-Hinweis

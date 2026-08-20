@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { BrandSurface } from "@/components/BrandSurface";
 import { buildTelHref } from "@/lib/phone";
 
 export const metadata: Metadata = {
@@ -20,8 +19,6 @@ export default function UeberUnsPage() {
       <h1 className="mt-3 text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
         Regional verwurzelt. Digital vorbereitet.
       </h1>
-
-      <BrandSurface className="mt-8 aspect-[16/9] w-full rounded-sm" />
 
       <div className="mt-8 space-y-6 text-base leading-7 text-muted">
         <p>

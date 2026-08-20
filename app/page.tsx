@@ -3,7 +3,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { AppMockup } from "@/components/AppMockup";
 import { B2BOnboardingProcess } from "@/components/B2BOnboardingProcess";
-import { BrandSurface } from "@/components/BrandSurface";
 import { QrCodeIcon, ShieldCheckIcon, UserCheckIcon } from "@/components/BrandIcons";
 import { EsgComplianceStatement } from "@/components/EsgComplianceStatement";
 import { FreshnessBadge } from "@/components/FreshnessBadge";
@@ -66,40 +65,43 @@ export default function Home() {
           src="/images/einsatz-glasfassade-hoehe.jpg"
           alt="Saubermatik-Mitarbeiter reinigt hohe Glasfassade mit Teleskopstange im Reinwasser-Verfahren"
           fill
-          className="object-cover object-[center_62%]"
+          className="object-cover object-[60%_75%]"
           sizes="100vw"
+          quality={85}
           priority
         />
         <div
-          className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/20"
+          className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent"
           aria-hidden
         />
         <div
           className={`${PAGE_CONTAINER} relative z-10 flex min-h-[60vh] flex-col justify-end py-8 lg:min-h-[80vh] lg:py-14`}
         >
-          <p className="max-w-4xl text-xs font-bold uppercase tracking-widest text-primary sm:text-[0.8rem]">
-            Zollernalbkreis · Sigmaringen · Stuttgart · Bodensee · Rottweil ·
-            Hechingen · Tübingen
-          </p>
-          <h1 className="mt-2 max-w-5xl text-3xl font-black tracking-tight text-white sm:text-4xl lg:text-[2.75rem] lg:leading-tight">
-            Wir digitalisieren die Reinigung.
-          </h1>
-          <p className="mt-2 max-w-3xl text-base font-semibold text-white sm:text-lg">
-            Beweis statt Versprechen.
-          </p>
-          <div className="mt-6 flex flex-wrap gap-2">
-            <Link
-              href="/kontakt#kontakt-anfrage"
-              className="inline-flex h-10 items-center justify-center rounded-sm bg-primary px-4 text-sm font-bold text-primary-foreground transition hover:bg-primary/90"
-            >
-              Anfrage stellen
-            </Link>
-            <Link
-              href="/leistungen"
-              className="inline-flex h-10 items-center justify-center rounded-sm border border-white/70 bg-white/10 px-4 text-sm font-bold text-white transition hover:bg-white/20"
-            >
-              Leistungen ansehen
-            </Link>
+          <div className="max-w-xl lg:max-w-2xl">
+            <p className="text-xs font-bold uppercase tracking-widest text-primary sm:text-[0.8rem]">
+              Zollernalbkreis · Sigmaringen · Stuttgart · Bodensee · Rottweil ·
+              Hechingen · Tübingen
+            </p>
+            <h1 className="mt-2 text-3xl font-black tracking-tight text-white sm:text-4xl lg:text-[2.75rem] lg:leading-tight">
+              Wir digitalisieren die Reinigung.
+            </h1>
+            <p className="mt-2 text-base font-semibold text-white sm:text-lg">
+              Beweis statt Versprechen.
+            </p>
+            <div className="mt-6 flex flex-wrap gap-2">
+              <Link
+                href="/kontakt#kontakt-anfrage"
+                className="inline-flex h-10 items-center justify-center rounded-sm bg-primary px-4 text-sm font-bold text-primary-foreground transition hover:bg-primary/90"
+              >
+                Anfrage stellen
+              </Link>
+              <Link
+                href="/leistungen"
+                className="inline-flex h-10 items-center justify-center rounded-sm border border-white/70 bg-white/10 px-4 text-sm font-bold text-white transition hover:bg-white/20"
+              >
+                Leistungen ansehen
+              </Link>
+            </div>
           </div>
         </div>
       </section>
@@ -259,41 +261,24 @@ export default function Home() {
         className="border-t border-foreground/10 bg-white py-8 sm:py-10"
       />
 
-      <section
-        id="kontakt-anfrage"
-        className="border-t border-foreground/10 bg-zinc-50 py-8 sm:py-10"
-      >
-        <div className={PAGE_CONTAINER}>
-          <AnfrageCta
-            title="Objekt anfragen"
-            text="Fläche, Intervalle, Sonderzonen: Nach einer Begehung erhalten Sie ein unverbindliches Angebot. Fester Ansprechpartner statt Callcenter."
-          />
-        </div>
-      </section>
-
       <section className="border-t border-foreground/10 bg-zinc-50 py-12 sm:py-14">
-        <div
-          className={`${PAGE_CONTAINER} grid gap-8 lg:grid-cols-2 lg:items-center lg:gap-10`}
-        >
-          <div className="order-2 lg:order-1">
-            <h2 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
-              Warum wir? Weil wir nicht nur putzen.
-            </h2>
-            <p className="mt-4 text-base leading-7 text-muted sm:text-lg">
-              Wir übernehmen Verantwortung für Ihre Liegenschaft: klare
-              Intervalle, nachvollziehbare Qualität und ein Team, das weiß, was
-              in Kanzleien, Praxen und Gewerbeobjekten zählt. Digital gestützt
-              heißt bei uns: weniger Ausfälle, weniger Telefonate – mehr Ruhe im
-              Alltag.
-            </p>
-            <p className="mt-4 text-base leading-7 text-muted">
-              Regional verwurzelt in der Zollernalb und im
-              Schwarzwald-Baar-Heuberg-Kreis bleiben Entscheidungswege kurz. Wer
-              bei uns anruft, landet nicht in einer Hotline, sondern bei
-              Menschen, die Ihr Objekt kennen oder es sich aneignen.
-            </p>
-          </div>
-          <BrandSurface className="order-1 aspect-[5/4] rounded-sm lg:order-2" />
+        <div className={PAGE_CONTAINER}>
+          <h2 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
+            Warum wir? Weil wir nicht nur putzen.
+          </h2>
+          <p className="mt-4 max-w-4xl text-base leading-7 text-muted sm:text-lg">
+            Wir übernehmen Verantwortung für Ihre Liegenschaft: klare
+            Intervalle, nachvollziehbare Qualität und ein Team, das weiß, was
+            in Kanzleien, Praxen und Gewerbeobjekten zählt. Digital gestützt
+            heißt bei uns: weniger Ausfälle, weniger Telefonate – mehr Ruhe im
+            Alltag.
+          </p>
+          <p className="mt-4 max-w-4xl text-base leading-7 text-muted">
+            Regional verwurzelt in der Zollernalb und im
+            Schwarzwald-Baar-Heuberg-Kreis bleiben Entscheidungswege kurz. Wer
+            bei uns anruft, landet nicht in einer Hotline, sondern bei
+            Menschen, die Ihr Objekt kennen oder es sich aneignen.
+          </p>
         </div>
       </section>
 
@@ -311,6 +296,7 @@ export default function Home() {
                   fill
                   className="object-cover"
                   sizes={img.sizes}
+                  quality={80}
                 />
               </div>
             ))}
@@ -351,6 +337,18 @@ export default function Home() {
               </li>
             ))}
           </ul>
+        </div>
+      </section>
+
+      <section
+        id="kontakt-anfrage"
+        className="border-t border-foreground/10 bg-zinc-100 py-12 sm:py-16"
+      >
+        <div className={PAGE_CONTAINER}>
+          <AnfrageCta
+            title="Objekt anfragen"
+            text="Fläche, Intervalle, Sonderzonen: Nach einer Begehung erhalten Sie ein unverbindliches Angebot. Fester Ansprechpartner statt Callcenter."
+          />
         </div>
       </section>
     </div>
