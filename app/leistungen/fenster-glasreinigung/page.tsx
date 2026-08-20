@@ -229,6 +229,11 @@ export default function FensterGlasreinigungPage() {
                 öffentlichem Grund.
               </p>
               <p>
+                Arbeiten in der Höhe führen wir mit persönlicher
+                Schutzausrüstung gegen Absturz aus – geschult nach DGUV 112-198
+                und DGUV 112-199.
+              </p>
+              <p>
                 Für Ausschreibungen und Rahmenverträge liefern wir
                 nachvollziehbare Unterlagen: Einsatzprotokolle, Versicherungs-
                 und Unterweisungsnachweise, Abstimmung mit Ihrem Objektleiter.

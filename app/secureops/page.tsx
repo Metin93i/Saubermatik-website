@@ -11,6 +11,20 @@ export const metadata: Metadata = {
   description:
     "Mit SecureOps dokumentieren wir Reinigungseinsätze digital. Kundenportal mit eigenem Zugang, nachvollziehbare Nachweise und ein direkter Meldeweg für Mieter. Umfang je nach Objekt.",
   alternates: { canonical: "/secureops" },
+  openGraph: {
+    images: [
+      {
+        url: "/images/og-secureops.jpg",
+        width: 1200,
+        height: 630,
+        alt: "SecureOps by Saubermatik",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: ["/images/og-secureops.jpg"],
+  },
 };
 
 const faqItems = getSecureOpsFaqItems();
