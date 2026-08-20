@@ -29,21 +29,6 @@ export const metadata: Metadata = {
 
 const faqItems = getSecureOpsFaqItems();
 
-const SCREENSHOT_SLOTS = [
-  {
-    id: "portal",
-    label: "Kundenportal-Ansicht",
-  },
-  {
-    id: "einsatz",
-    label: "Einsatz-Dokumentation",
-  },
-  {
-    id: "nachweis",
-    label: "Nachweis-Dokument",
-  },
-] as const;
-
 export default function SecureOpsPage() {
   const raw = process.env.NEXT_PUBLIC_BUSINESS_PHONE?.trim();
   const telHref = raw ? buildTelHref(raw) : null;
@@ -139,19 +124,6 @@ export default function SecureOpsPage() {
                 wir vorher gemeinsam.
               </p>
             </div>
-            {/* TODO(E4): echten Screenshot mit Demo-Daten einsetzen */}
-            <div
-              className="flex min-h-[12rem] items-center justify-center rounded-sm border border-dashed border-zinc-300 bg-zinc-100/80 px-6 py-10 text-center"
-              aria-label="Platzhalter: Kundenportal-Ansicht"
-            >
-              <p className="max-w-sm text-sm leading-6 text-muted">
-                {SCREENSHOT_SLOTS[0].label}
-                <br />
-                <span className="text-xs">
-                  TODO: echten Screenshot mit Demo-Daten einsetzen
-                </span>
-              </p>
-            </div>
           </article>
 
           <article className="mt-16 space-y-8">
@@ -216,34 +188,6 @@ export default function SecureOpsPage() {
                 Bereich strittig ist. Statt Diskussion aus dem Gedächtnis liegt
                 etwas Schriftliches auf dem Tisch.
               </p>
-            </div>
-            <div className="grid gap-4 sm:grid-cols-2">
-              {/* TODO(E4): echten Screenshot mit Demo-Daten einsetzen */}
-              <div
-                className="flex min-h-[12rem] items-center justify-center rounded-sm border border-dashed border-zinc-300 bg-zinc-100/80 px-6 py-10 text-center"
-                aria-label="Platzhalter: Einsatz-Dokumentation"
-              >
-                <p className="max-w-sm text-sm leading-6 text-muted">
-                  {SCREENSHOT_SLOTS[1].label}
-                  <br />
-                  <span className="text-xs">
-                    TODO: echten Screenshot mit Demo-Daten einsetzen
-                  </span>
-                </p>
-              </div>
-              {/* TODO(E4): echten Screenshot mit Demo-Daten einsetzen */}
-              <div
-                className="flex min-h-[12rem] items-center justify-center rounded-sm border border-dashed border-zinc-300 bg-zinc-100/80 px-6 py-10 text-center"
-                aria-label="Platzhalter: Nachweis-Dokument"
-              >
-                <p className="max-w-sm text-sm leading-6 text-muted">
-                  {SCREENSHOT_SLOTS[2].label}
-                  <br />
-                  <span className="text-xs">
-                    TODO: echten Screenshot mit Demo-Daten einsetzen
-                  </span>
-                </p>
-              </div>
             </div>
           </article>
 

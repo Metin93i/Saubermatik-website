@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useId, useState } from "react";
+import { useCallback, useEffect, useId, useRef, useState } from "react";
 import { PrefetchLink } from "@/components/PrefetchLink";
 import { ClientLoginButton } from "@/components/ClientLoginButton";
 import { SERVICES } from "@/lib/config/services";
@@ -23,10 +23,35 @@ const MAIN_PAGES = [
   { href: "/kontakt", label: "Kontakt" },
 ] as const;
 
+const DESKTOP_CLOSE_MS = 150;
+
 export function SiteHeaderNav() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [leistungenOpen, setLeistungenOpen] = useState(false);
+  const [desktopLeistungenOpen, setDesktopLeistungenOpen] = useState(false);
   const panelId = useId();
+  const desktopPanelId = useId();
+  const desktopCloseTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const clearDesktopCloseTimer = useCallback(() => {
+    if (desktopCloseTimer.current !== null) {
+      clearTimeout(desktopCloseTimer.current);
+      desktopCloseTimer.current = null;
+    }
+  }, []);
+
+  const openDesktopLeistungen = useCallback(() => {
+    clearDesktopCloseTimer();
+    setDesktopLeistungenOpen(true);
+  }, [clearDesktopCloseTimer]);
+
+  const scheduleCloseDesktopLeistungen = useCallback(() => {
+    clearDesktopCloseTimer();
+    desktopCloseTimer.current = setTimeout(() => {
+      setDesktopLeistungenOpen(false);
+      desktopCloseTimer.current = null;
+    }, DESKTOP_CLOSE_MS);
+  }, [clearDesktopCloseTimer]);
 
   const closeMobile = useCallback(() => {
     setMobileOpen(false);
@@ -51,6 +76,22 @@ export function SiteHeaderNav() {
     return () => window.removeEventListener("keydown", onKey);
   }, [mobileOpen, closeMobile]);
 
+  useEffect(() => {
+    if (!desktopLeistungenOpen) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        clearDesktopCloseTimer();
+        setDesktopLeistungenOpen(false);
+      }
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [desktopLeistungenOpen, clearDesktopCloseTimer]);
+
+  useEffect(() => {
+    return () => clearDesktopCloseTimer();
+  }, [clearDesktopCloseTimer]);
+
   return (
     <>
       <div className="flex min-w-0 flex-1 items-center justify-end gap-2 lg:gap-4">
@@ -58,47 +99,70 @@ export function SiteHeaderNav() {
           className="hidden items-center md:flex md:flex-nowrap"
           aria-label="Hauptnavigation"
         >
-          <details className="group relative">
-            <summary
-              className={`${DESKTOP_NAV_ITEM} cursor-pointer list-none select-none [&::-webkit-details-marker]:hidden`}
+          <div
+            className="relative"
+            onMouseEnter={openDesktopLeistungen}
+            onMouseLeave={scheduleCloseDesktopLeistungen}
+            onBlur={(e) => {
+              const next = e.relatedTarget as Node | null;
+              if (!e.currentTarget.contains(next)) {
+                scheduleCloseDesktopLeistungen();
+              }
+            }}
+          >
+            <button
+              type="button"
+              className={`${DESKTOP_NAV_ITEM} cursor-pointer`}
+              aria-expanded={desktopLeistungenOpen}
+              aria-controls={desktopPanelId}
+              onClick={() => {
+                clearDesktopCloseTimer();
+                setDesktopLeistungenOpen((open) => !open);
+              }}
+              onFocus={openDesktopLeistungen}
             >
               Leistungen
               <span
-                className="ml-0.5 inline-block text-[10px] text-slate-400 transition-transform group-open:rotate-180"
+                className={`ml-0.5 inline-block text-[10px] text-slate-400 transition-transform ${desktopLeistungenOpen ? "rotate-180" : ""}`}
                 aria-hidden
               >
                 ▾
               </span>
-            </summary>
-            <div className="absolute left-0 top-full z-50 mt-1 w-[min(100vw-2rem,22rem)] overflow-hidden rounded-sm border border-slate-200 bg-white py-1 shadow-sm lg:left-auto lg:right-0">
-              <ul className="max-h-[min(70vh,24rem)] overflow-y-auto py-1">
-                {SERVICES.map((s) => (
-                  <li key={s.slug}>
-                    <PrefetchLink
-                      href={`/leistungen/${s.slug}`}
-                      className={DROPDOWN_LINK}
-                    >
-                      <span
-                        className="shrink-0 text-base leading-none opacity-80"
-                        aria-hidden
+            </button>
+            {desktopLeistungenOpen ? (
+              <div
+                id={desktopPanelId}
+                className="absolute left-0 top-full z-50 mt-1 w-[min(100vw-2rem,22rem)] overflow-hidden rounded-sm border border-slate-200 bg-white py-1 shadow-sm lg:left-auto lg:right-0"
+              >
+                <ul className="max-h-[min(70vh,24rem)] overflow-y-auto py-1">
+                  {SERVICES.map((s) => (
+                    <li key={s.slug}>
+                      <PrefetchLink
+                        href={`/leistungen/${s.slug}`}
+                        className={DROPDOWN_LINK}
                       >
-                        {s.emoji}
-                      </span>
-                      <span className="min-w-0 leading-snug">{s.title}</span>
-                    </PrefetchLink>
-                  </li>
-                ))}
-              </ul>
-              <div className="border-t border-slate-100 px-2 py-2">
-                <PrefetchLink
-                  href="/leistungen"
-                  className="block rounded-sm px-3 py-2 text-center text-sm font-medium text-slate-700 transition hover:bg-slate-50 hover:text-slate-900"
-                >
-                  Zur Leistungsübersicht →
-                </PrefetchLink>
+                        <span
+                          className="shrink-0 text-base leading-none opacity-80"
+                          aria-hidden
+                        >
+                          {s.emoji}
+                        </span>
+                        <span className="min-w-0 leading-snug">{s.title}</span>
+                      </PrefetchLink>
+                    </li>
+                  ))}
+                </ul>
+                <div className="border-t border-slate-100 px-2 py-2">
+                  <PrefetchLink
+                    href="/leistungen"
+                    className="block rounded-sm px-3 py-2 text-center text-sm font-medium text-slate-700 transition hover:bg-slate-50 hover:text-slate-900"
+                  >
+                    Zur Leistungsübersicht →
+                  </PrefetchLink>
+                </div>
               </div>
-            </div>
-          </details>
+            ) : null}
+          </div>
 
           {MAIN_PAGES.map((item) => (
             <PrefetchLink

@@ -1,3 +1,4 @@
+2026-08-20 · startseite · Hover-Nav, größerer Hero, Marken-/SecureOps-Sektion, Fremdbilder entfernt
 2026-08-20 · favicon · Wortmarken-Logo als icon.png + apple-icon.png
 2026-08-20 · assets · echte Einsatzfotos, OG-Bilder, Favicon, PSA-Hinweis
 2026-08-19 · header · Kontakt-Elemente aus Header auf Kontaktseite; Ansprechpartner-Sektionen Kontakt/Über uns entfernt

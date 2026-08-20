@@ -116,8 +116,8 @@ export default function DatenschutzPage() {
             <strong className="font-semibold text-foreground">Resend</strong>{" "}
             (Resend, Inc., USA) als Auftragsverarbeiter ein. Mit Resend besteht
             ein Auftragsverarbeitungsvertrag; die Übermittlung in die USA
-            erfolgt auf Grundlage der EU-Standardvertragsklauseln bzw. einer
-            Zertifizierung nach dem EU-U.S. Data Privacy Framework. Ihre Daten
+            erfolgt auf Grundlage der EU-Standardvertragsklauseln bzw. der
+            Listung im EU-U.S. Data Privacy Framework. Ihre Daten
             werden ausschließlich zum Zweck der Zustellung der Anfrage
             verarbeitet.
           </p>

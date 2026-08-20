@@ -62,7 +62,6 @@
 | `info@saubermatik-reinigung.de` | Karriere mailto-Fallback | `.env.example` → `NEXT_PUBLIC_CAREER_EMAIL` |
 | `http://72.62.88.65:3001` | SaaS-Kundenplattform-Fallback | `lib/config/platform.ts` → `PLATFORM_URL_FALLBACK` |
 | `http://localhost:8000` | Optionales separates Backend | `.env.example` → `NEXT_PUBLIC_API_URL` |
-| `https://images.unsplash.com/...` | Hero-/Content-Bilder | `app/page.tsx`, `lib/config/leistung-images.ts`, diverse Seiten |
 | `https://www.openstreetmap.org/...` | Karten-Embed + externer Link | `lib/config/site.ts`, `app/kontakt/page.tsx` |
 | `https://schema.org` | JSON-LD `@context` | diverse `lib/seo/*.ts`, Komponenten |
 | `www.example.de` | Platzhalter in Nginx-Template | `ops/nginx-template.conf` |

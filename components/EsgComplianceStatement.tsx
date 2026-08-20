@@ -17,7 +17,7 @@ export function EsgComplianceStatement({ className = "" }: Props) {
       <p className="mt-2 text-xs leading-relaxed text-muted sm:text-sm sm:leading-6">
         Wir arbeiten mit einem 4-Farb-Tuchsystem und setzen
         Reinigungs- und Desinfektionsmittel nach anerkannten Standards ein –
-        abgestimmt auf Ihr Objekt, ohne Zertifizierungsbehauptung. Wo es passt,
+        abgestimmt auf Ihr Objekt, ohne Prüfzeichen als Werbeaussage. Wo es passt,
         nutzen wir chemiefreies entmineralisiertes Reinwasser. Den Umfang der
         Dokumentation vereinbaren wir mit Ihnen.
       </p>

@@ -1,11 +1,7 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import { JobListings } from "@/components/JobListings";
-import { REMOTE_IMAGE_BLUR_DATA_URL } from "@/lib/image-blur";
-
-const imgKarriere =
-  "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=1200";
+import { BrandSurface } from "@/components/BrandSurface";
 
 export const metadata: Metadata = {
   title: "Karriere",
@@ -46,18 +42,7 @@ export default function KarrierePage() {
         Quereinstieg – sprechen Sie uns an.
       </p>
 
-      <div className="relative mt-8 aspect-[16/9] w-full overflow-hidden rounded-sm ">
-        <Image
-          src={imgKarriere}
-          alt="Teamarbeit im Büro – Karriere bei Saubermatik"
-          fill
-          className="object-cover"
-          sizes="(max-width: 768px) 100vw, 48rem"
-          priority
-          placeholder="blur"
-          blurDataURL={REMOTE_IMAGE_BLUR_DATA_URL}
-        />
-      </div>
+      <BrandSurface className="mt-8 aspect-[16/9] w-full rounded-sm" />
 
       <section className="mt-12" aria-labelledby="offene-stellen-heading">
         <h2

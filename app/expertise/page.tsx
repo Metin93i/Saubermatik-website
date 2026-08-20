@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Expertise, Zertifizierung & technische Standards",
+  title: "Expertise, Nachweise & technische Standards",
   description:
     "EEAT-Hub von Saubermatik: Arbeitssicherheit, Qualitätsstandards, Echtzeit-Monitoring und digitale Objektprotokolle – für messbare Gebäudereinigung in der Zollernalb und darüber hinaus.",
   alternates: { canonical: "/expertise" },
@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 const pillars = [
   {
-    title: "Zertifizierungen & Nachweise",
+    title: "Nachweise & Dokumentation",
     body: "Wir arbeiten versichert und dokumentieren Leistungen so, dass Facility- und Verwaltungsteams Prüfungen und Übergaben souverän bestehen. Auf Wunsch stimmen wir Leistungsverzeichnisse mit Ihren Ausschreibungen oder SLAs ab – inklusive definierter Prüfpunkte und Abnahmeprotokollen.",
   },
   {
