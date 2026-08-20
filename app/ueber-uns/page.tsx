@@ -62,6 +62,10 @@ export default function UeberUnsPage() {
           treffen dürfen. Keine anonyme Hotline, kein endloses Weiterreichen –
           sondern Partner, die Ihre Flächen und Rhythmen kennenlernen.
         </p>
+        <p>
+          Sicherheit: Schulung PSA gegen Absturz &amp; Rettung (DGUV
+          112-198/199), zuletzt 07/2026.
+        </p>
       </div>
 
       <div className="mt-12 min-h-[10rem] rounded-sm border border-zinc-300/25 bg-secondary/5 p-5 sm:p-6">

@@ -1,3 +1,4 @@
+2026-08-20 · assets · echte Einsatzfotos, OG-Bilder, Favicon, PSA-Hinweis
 2026-08-19 · header · Kontakt-Elemente aus Header auf Kontaktseite; Ansprechpartner-Sektionen Kontakt/Über uns entfernt
 2026-08-19 · E5+E3+Konsolidierung: Lead-Weg, Branchen, Städte, Schema
 2026-08-19 · E4 · SecureOps-Erklärseite (Portal, Mieter-Meldeweg, Nachweise); Sitemap

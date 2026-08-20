@@ -38,77 +38,95 @@ export default function Home() {
     <div className="flex flex-1 flex-col">
       <section className="relative overflow-hidden bg-zinc-50">
         <div className={`${PAGE_CONTAINER} py-5 lg:py-7`}>
-          <p className="text-xs font-bold uppercase tracking-widest text-primary">
-            Meßstetten · Zollernalb · Schwarzwald-Baar-Heuberg
-          </p>
-          <h1 className="mt-1 max-w-5xl text-3xl font-black tracking-tight text-foreground sm:text-4xl lg:text-[2.35rem] lg:leading-tight">
-            Wir digitalisieren die Reinigung.
-          </h1>
-          <p className="mt-2 max-w-3xl text-base font-semibold text-foreground sm:text-lg">
-            Beweis statt Versprechen.
-          </p>
-
-          <div className="mt-4 grid items-start gap-4 lg:grid-cols-2 lg:gap-6">
-            <div className="flex flex-col gap-3">
-              <p className="text-sm leading-6 text-muted sm:text-base sm:leading-7">
-                Bei uns bekommen Sie keinen Textbaustein aus der Großstadt,
-                sondern einen festen Ansprechpartner. Bei Urlaub oder Ausfall
-                übernimmt ein bewährtes Vertretungsteam – sonst die
-                Geschäftsführung persönlich. Ob Verkehrssicherung für
-                Hausverwaltungen, Praxisreinigung nach abgestimmtem Plan oder
-                die Unterhaltsreinigung Ihres Büros: Wir halten Ihre Immobilien
-                im Zollernalbkreis und im Schwarzwald-Baar-Heuberg im Rhythmus.
-                Angebot auf Anfrage.
-              </p>
-              <FreshnessBadge />
-              <ul className="flex flex-col gap-1 text-sm font-medium text-foreground">
-                {trustItems.map((item) => (
-                  <li key={item} className="flex items-start gap-2">
-                    <span
-                      className="mt-0.5 shrink-0 text-secondary"
-                      aria-hidden
-                    >
-                      ✓
-                    </span>
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-              <div className="flex flex-wrap gap-2">
-                <Link
-                  href="/kontakt#kontakt-anfrage"
-                  className="inline-flex h-10 items-center justify-center rounded-sm bg-primary px-4 text-sm font-bold text-primary-foreground transition hover:bg-primary/90"
-                >
-                  Anfrage stellen
-                </Link>
-                <Link
-                  href="/leistungen"
-                  className="inline-flex h-10 items-center justify-center rounded-sm border border-zinc-300 bg-white px-4 text-sm font-bold text-foreground transition hover:bg-zinc-100"
-                >
-                  Leistungen ansehen
-                </Link>
-              </div>
-
-              <div className="flex flex-col gap-2.5 pt-1">
-                <EsgComplianceStatement />
-                <AppMockup />
-              </div>
-            </div>
-
-            {/* TODO(E1): Hero-Banner-Bild noch nicht freigegeben — Platzhalter bis Asset vorliegt. Keinen Bildpfad erfinden. */}
+          <div className="relative min-h-[16rem] overflow-hidden rounded-sm lg:min-h-[22rem]">
+            <Image
+              src="/images/einsatz-glasfassade-hoehe.jpg"
+              alt="Saubermatik-Mitarbeiter reinigt hohe Glasfassade mit Teleskopstange im Reinwasser-Verfahren"
+              fill
+              className="object-cover object-[center_30%]"
+              sizes="(max-width: 1600px) 100vw, 100rem"
+              priority
+            />
             <div
-              className="flex min-h-[16rem] items-center justify-center rounded-sm border border-dashed border-zinc-300 bg-zinc-100/80 px-6 py-10 text-center lg:sticky lg:top-20 lg:min-h-[22rem]"
-              aria-label="Banner-Bild folgt"
-            >
-              <p className="max-w-xs text-sm leading-6 text-muted">
-                Banner-Bild folgt.
-                <br />
-                <span className="text-xs">
-                  TODO: freigegebenes Hero-Asset einbinden
-                </span>
+              className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-black/25"
+              aria-hidden
+            />
+            <div className="relative z-10 flex min-h-[16rem] flex-col justify-end px-4 py-5 sm:px-6 sm:py-6 lg:min-h-[22rem] lg:px-8 lg:py-8">
+              <p className="text-xs font-bold uppercase tracking-widest text-primary">
+                Meßstetten · Zollernalb · Schwarzwald-Baar-Heuberg
+              </p>
+              <h1 className="mt-1 max-w-5xl text-3xl font-black tracking-tight text-white sm:text-4xl lg:text-[2.35rem] lg:leading-tight">
+                Wir digitalisieren die Reinigung.
+              </h1>
+              <p className="mt-2 max-w-3xl text-base font-semibold text-white sm:text-lg">
+                Beweis statt Versprechen.
               </p>
             </div>
           </div>
+
+          <div className="mt-6 flex flex-col gap-3">
+            <p className="max-w-3xl text-sm leading-6 text-muted sm:text-base sm:leading-7">
+              Bei uns bekommen Sie keinen Textbaustein aus der Großstadt,
+              sondern einen festen Ansprechpartner. Bei Urlaub oder Ausfall
+              übernimmt ein bewährtes Vertretungsteam – sonst die
+              Geschäftsführung persönlich. Ob Verkehrssicherung für
+              Hausverwaltungen, Praxisreinigung nach abgestimmtem Plan oder die
+              Unterhaltsreinigung Ihres Büros: Wir halten Ihre Immobilien im
+              Zollernalbkreis und im Schwarzwald-Baar-Heuberg im Rhythmus.
+              Angebot auf Anfrage.
+            </p>
+            <FreshnessBadge />
+            <ul className="flex flex-col gap-1 text-sm font-medium text-foreground">
+              {trustItems.map((item) => (
+                <li key={item} className="flex items-start gap-2">
+                  <span
+                    className="mt-0.5 shrink-0 text-secondary"
+                    aria-hidden
+                  >
+                    ✓
+                  </span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+            <div className="flex flex-wrap gap-2">
+              <Link
+                href="/kontakt#kontakt-anfrage"
+                className="inline-flex h-10 items-center justify-center rounded-sm bg-primary px-4 text-sm font-bold text-primary-foreground transition hover:bg-primary/90"
+              >
+                Anfrage stellen
+              </Link>
+              <Link
+                href="/leistungen"
+                className="inline-flex h-10 items-center justify-center rounded-sm border border-zinc-300 bg-white px-4 text-sm font-bold text-foreground transition hover:bg-zinc-100"
+              >
+                Leistungen ansehen
+              </Link>
+            </div>
+
+            <div className="flex flex-col gap-2.5 pt-1">
+              <EsgComplianceStatement />
+              <AppMockup />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        className="border-t border-foreground/10 bg-white py-6 sm:py-8"
+        aria-label="SecureOps"
+      >
+        <div className={PAGE_CONTAINER}>
+          <Link href="/secureops" className="block overflow-hidden rounded-sm">
+            <Image
+              src="/images/banner-secureops-digitalisierung.png"
+              alt="SecureOps by Saubermatik – wir digitalisieren die Reinigung: QR-Meldung im Objekt, Einsätze dokumentiert im Kundenportal"
+              width={1024}
+              height={290}
+              className="h-auto w-full"
+              sizes="(max-width: 1600px) 100vw, 100rem"
+            />
+          </Link>
         </div>
       </section>
 

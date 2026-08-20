@@ -13,8 +13,8 @@ export const LEISTUNG_IMAGES: Record<
     alt: "Modernes Büro mit großzügigen Glasflächen – Unterhaltsreinigung",
   },
   "fenster-glasreinigung": {
-    src: u("photo-1520110120835-c96534a4c984"),
-    alt: "Glasfassade eines Gewerbegebäudes – streifenfreie Fensterreinigung",
+    src: "/images/einsatz-fensterreinigung-reinwasser.jpg",
+    alt: "Fensterreinigung mit Reinwasser-Teleskopstange an Bürogebäude",
   },
   // TODO(E2): durch echtes Einsatzfoto ersetzen
   "raffstore-lamellenreinigung": {
@@ -30,8 +30,8 @@ export const LEISTUNG_IMAGES: Record<
     alt: "Professionelle Gebäude- und Objektbetreuung im Gewerbebereich",
   },
   gruenanlagenpflege: {
-    src: u("photo-1558905617-15a8aa7e374e"),
-    alt: "Repräsentative Grünanlage an einer Wohnanlage",
+    src: "/images/einsatz-gruenanlagenpflege.jpg",
+    alt: "Saubermatik-Mitarbeiter bei der Grünanlagenpflege mit Trimmer",
   },
   winterdienst: {
     src: u("photo-1418985991508-e47386d96a71"),
@@ -42,8 +42,8 @@ export const LEISTUNG_IMAGES: Record<
     alt: "Baureinigung und Übergabe in einem modernen Gewerbeobjekt",
   },
   fassadenreinigung: {
-    src: u("photo-1486325212027-8081e485255e"),
-    alt: "Moderne Gebäudefassade – Fassadenreinigung und Werterhalt",
+    src: "/images/einsatz-glasfassade-hoehe.jpg",
+    alt: "Saubermatik-Mitarbeiter reinigt hohe Glasfassade mit Teleskopstange im Reinwasser-Verfahren",
   },
   entruempelung: {
     src: u("photo-1584622650111-993a426fbf0a"),

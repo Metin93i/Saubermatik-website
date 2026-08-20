@@ -4,6 +4,7 @@ import { MobileStickyCta } from "@/components/MobileStickyCta";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
 import { StructuredData } from "@/components/StructuredData";
+import { getSiteOrigin } from "@/lib/seo/site-origin";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -18,9 +19,7 @@ const geistMono = Geist_Mono({
   display: "swap",
 });
 
-const metadataBaseUrl = (
-  process.env.NEXT_PUBLIC_SITE_URL || "https://www.saubermatik-reinigung.de"
-).replace(/\/+$/, "");
+const metadataBaseUrl = getSiteOrigin();
 
 export const metadata: Metadata = {
   metadataBase: new URL(metadataBaseUrl),
@@ -38,6 +37,18 @@ export const metadata: Metadata = {
     type: "website",
     locale: "de_DE",
     siteName: "Saubermatik Gebäudereinigung",
+    images: [
+      {
+        url: "/images/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Saubermatik Gebäudereinigung",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: ["/images/og-image.jpg"],
   },
 };
 

@@ -1,12 +1,25 @@
 # STATUS · saubermatik-website
 
-Living Doc nach Bau-Schritten. Stand: **2026-08-19** · Branch `chore/mega-e5-e3-konsolidierung`.
+Living Doc nach Bau-Schritten. Stand: **2026-08-20** · Branch `feat/bilder-favicon-psa`.
 
 ## Live-Stand
 
-- `main`: E1 + E2 gemerged.
-- E4 (SecureOps-Erklärseite): auf `feat/e4-secureops-seite`, in diesem Konsolidierungs-PR mitgeführt.
-- Diese Welle (E5+E3+Konsolidierung): Lead-Weg, Branchen-Hub + 2 Seiten, Städte-Rahmung, Schema, Claims nach D1–D10.
+- `main`: E1–E5 + Header-/Ansprechpartner-Fix (PR #13).
+- Diese Welle: echte Einsatzfotos, OG-Bilder, Marken-Favicon, PSA-Hinweis.
+
+## Erledigt (Bilder / Favicon / PSA, dieser PR)
+
+- Startseiten-Hero: `einsatz-glasfassade-hoehe.jpg` statt gestricheltem Platzhalter; H1/Unterzeile als HTML über dem Bild.
+- SecureOps-Teaser: klickbares Banner `banner-secureops-digitalisierung.png` → `/secureops`.
+- Leistungsbilder lokal: Fenster, Grünanlagen, Fassade (übrige Unsplash-Einträge unverändert).
+- Open Graph: global `og-image.jpg`, `/secureops` → `og-secureops.jpg` (1200×630).
+- Favicon: `app/icon.svg` + `app/apple-icon.png` (180×180); Default-`favicon.ico` entfernt.
+- PSA-Satz auf Glas- und Fassadenseite; eine Zeile auf Über uns (DGUV 112-198/199, 07/2026).
+- `banner-sauber-zuverlaessig.png` nur abgelegt, noch nicht eingebunden.
+
+### OG prüfen (View-Source)
+
+Nach Deploy bzw. lokalem `npm run build && npm start`: Seitenquelltext der Startseite öffnen und nach `og:image` suchen. Erwartet: absolute URL `https://www.saubermatik-reinigung.de/images/og-image.jpg` (bzw. `NEXT_PUBLIC_SITE_URL` + `/images/og-image.jpg`). Auf `/secureops` analog `og-secureops.jpg`.
 
 ## Erledigt (E1)
 
@@ -24,7 +37,7 @@ Living Doc nach Bau-Schritten. Stand: **2026-08-19** · Branch `chore/mega-e5-e3
 - llms.txt um SecureOps-Absatz ergänzt.
 - Drei Screenshot-Platzhalter (Portal / Einsatz / Nachweis) — Assets offen.
 
-## Erledigt (E5+E3+Konsolidierung, dieser PR)
+## Erledigt (E5+E3+Konsolidierung)
 
 - Paket 1: Claims-Review gegen D1–D10 (Vertretung statt 100 %, kein GPS/24/7/direkter Draht, keine Streifenfrei-Garantie, Onboarding-Jargon, VAH-/Zertifizierungsbehauptungen, Cluster-Teams).
 - Paket 2: Euro-/Richtwert-/Kalkulator-Reste; „Angebot auf Anfrage“.
@@ -38,11 +51,11 @@ Living Doc nach Bau-Schritten. Stand: **2026-08-19** · Branch `chore/mega-e5-e3
 - Metin validiert City-Tiers (Rottenburg 33 km Grenzwert; Tuttlingen 24 km = radius).
 - WhatsApp auf +49 1512 9860059 bestätigen.
 - SecureOps-Screenshots mit Demo-Daten.
-- Hero-Banner Startseite.
+- `banner-sauber-zuverlaessig.png` einbinden (Auftrag ausstehend).
 - Domain-Umstellung www.saubermatik-reinigung.de nach Merge.
 
 ## Offen & Risiken
 
 - Kunden-Login führt auf SaaS-Portal (`getPlatformLoginUrl` → `{PLATFORM}/login`), nicht auf diese Marketing-Seite.
 - DNS/Horizons vs. VPS: aus Repo allein unklar.
-- Untracked Finder-Duplikat `app/leistungen/raffstore-lamellenreinigung/page 2.tsx` nicht Teil dieses PRs.
+- Hero: Foto ist Hochformat; `object-cover` beschneidet. Overlay-Hero statt altem Zwei-Spalten-Platzhalter — Layout-Feinschliff offen, falls Zwei-Spalten gewünscht.

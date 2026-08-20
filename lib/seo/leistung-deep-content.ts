@@ -221,6 +221,7 @@ const fassadenreinigung: LeistungDeepContent = {
       title: "Deep Dive 2: Arbeitssicherheit (TRBS 2121) & Logistik",
       paragraphs: [
         "Fassadenreinigung in der Höhe unterliegt TRBS 2121 und BG-BAU-Regeln. Saubermatik führt Gefährdungsbeurteilungen durch, setzt geprüfte PSA und Hubsteiger-Logistik ein und sichert öffentliche Gehwege bei Bedarf ab. Für Ausschreibungen liefern wir Nachweise – Versicherung, Unterweisung, Geräteprüfung.",
+        "Arbeiten in der Höhe führen wir mit persönlicher Schutzausrüstung gegen Absturz aus – geschult nach DGUV 112-198 und DGUV 112-199.",
         "Zuwegung, Halteverbote und Anliegerinformation werden vorab mit Verwaltung oder Facility abgestimmt – besonders in Innenstädten und WEG-Ensembles. So bleibt der Betrieb störungsarm und haftungsarm.",
         "Dokumentierte Einsätze geben Eigentümern Transparenz über Zustand vor/nach – wertvoll bei Sanierungsplanung und Versicherungsfällen (Umfang je nach Objekt und Vereinbarung).",
       ],
