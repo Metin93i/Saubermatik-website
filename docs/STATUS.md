@@ -1,9 +1,10 @@
 # STATUS · saubermatik-website
 
-Living Doc nach Bau-Schritten. Stand: **2026-08-21** · Branch `fix/header-kundenportal-ausblenden`.
+Living Doc nach Bau-Schritten. Stand: **2026-08-21** · Branch `fix/header-mobile-menu`.
 
 ## Live-Stand
 
+- Mobilmenü: Overlay per Portal auf `document.body`, damit `backdrop-filter` am Header es nicht unsichtbar clippt.
 - Header: Button **Kundenportal** (Desktop + Mobil) vorübergehend ausgeblendet (`SHOW_HEADER_CLIENT_LOGIN = false`). Komponente und Portal-URL bleiben; sichtbar nach Freigabe (Flag auf `true`).
 - Vorherige Welle (in main): Top-10 aus `docs/SITE-AUDIT.md`.
 
