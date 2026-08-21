@@ -1,12 +1,13 @@
 # STATUS · saubermatik-website
 
-Living Doc nach Bau-Schritten. Stand: **2026-08-21** · Branch `fix/audit-top10`.
+Living Doc nach Bau-Schritten. Stand: **2026-08-21** · Branch `fix/header-kundenportal-ausblenden`.
 
 ## Live-Stand
 
-- Diese Welle: Top-10 aus `docs/SITE-AUDIT.md` (Inhaber-Entscheidungen): Tübingen Radius, Echtzeit-Rhetorik raus, B2BOnboarding/AppMockup/HeroQuickSearch entfernt, Markenband ohne Leistungen-CTA, Standort-Kacheln nach Tier, HV-QR gestrafft. Haftpflicht-Chip 10 Mio. € belassen.
+- Header: Button **Kundenportal** (Desktop + Mobil) vorübergehend ausgeblendet (`SHOW_HEADER_CLIENT_LOGIN = false`). Komponente und Portal-URL bleiben; sichtbar nach Freigabe (Flag auf `true`).
+- Vorherige Welle (in main): Top-10 aus `docs/SITE-AUDIT.md`.
 
-## Erledigt (Audit Top-10, dieser PR)
+## Erledigt (vorher: Audit Top-10, in main)
 
 - `CITY_TIERS.tuebingen` → `radius` (FAQ Startseite unverändert).
 - Alle sichtbaren „Echtzeit“-Formulierungen in `app/` / `components/` / `lib/` auf Dokumentations-Sprache.
@@ -17,7 +18,7 @@ Living Doc nach Bau-Schritten. Stand: **2026-08-21** · Branch `fix/audit-top10`
 
 ## Nächste Schritte
 
-- PR `fix/audit-top10` reviewen/mergen (nicht self-merge).
+- Kundenportal im Header wieder einblenden, sobald freigegeben (`SHOW_HEADER_CLIENT_LOGIN = true`).
 - Originale Hero-JPEG 2124×2600 nachliefern, falls Chat-Upload (836×1024) nicht reicht.
 - WhatsApp-Nummer bestätigen.
 - SecureOps-Screenshots mit Demo-Daten.
