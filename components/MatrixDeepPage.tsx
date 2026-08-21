@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { B2BOnboardingProcess } from "@/components/B2BOnboardingProcess";
 import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
 import { FreshnessBadge } from "@/components/FreshnessBadge";
 import { AnfrageCta } from "@/components/AnfrageCta";
@@ -103,11 +102,6 @@ export function MatrixDeepPage({ content }: Props) {
             ))}
           </div>
         </section>
-
-        <B2BOnboardingProcess
-          pagePath={pagePath}
-          className="border-b border-zinc-200 bg-white py-10 sm:py-12"
-        />
 
         <section
           id="kontakt-anfrage"

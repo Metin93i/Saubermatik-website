@@ -54,7 +54,7 @@ const treppenhausreinigung: LeistungDeepContent = {
     {
       title: "Deep Dive 3: Digitale Touren & Mieterzufriedenheit",
       paragraphs: [
-        "Mieterbeschwerden entstehen selten wegen „zu wenig Politik“ – sie entstehen wegen Unzuverlässigkeit und fehlender Transparenz. Die Saubermatik-Plattform macht Touren sichtbar: Wann wurde welches Treppenhaus gereinigt? Gab es Sonderereignisse (Umzug, Bau, Wasserschaden)? Der Key Account kann Abweichungen in Echtzeit adressieren.",
+        "Mieterbeschwerden entstehen selten wegen „zu wenig Politik“ – sie entstehen wegen Unzuverlässigkeit und fehlender Transparenz. Die Saubermatik-Plattform macht Touren sichtbar: Wann wurde welches Treppenhaus gereinigt? Gab es Sonderereignisse (Umzug, Bau, Wasserschaden)? Der Key Account kann Abweichungen anhand dokumentierter Einsätze adressieren.",
         "Feste Ansprechpersonen und dokumentierte Touren sichern Wiedererkennung und Qualität. Verwalter sparen Koordinationszeit; Mieter erleben Konstanz. Bei Urlaub oder Ausfall übernimmt ein bewährtes Vertretungsteam – sonst die Geschäftsführung persönlich.",
         "Ob WEG, Mietshaus oder Gewerbeobjekt: Treppenhausreinigung wird zum planbaren Qualitätsmerkmal statt zum Reklamationsmagneten.",
       ],
@@ -85,7 +85,7 @@ const winterdienst: LeistungDeepContent = {
   metaDescription:
     "Professioneller Winterdienst: Räum- und Streupflicht, Verkehrssicherungspflicht, Wetterführung, dokumentierte Einsätze – haftungssicher für WEG und Gewerbe.",
   heroTitle:
-    "Haftungssicher durch den Winter. Professioneller Winterdienst mit Wetterführung und Echtzeit-Nachweis.",
+    "Haftungssicher durch den Winter. Professioneller Winterdienst mit Wetterführung und dokumentierten Nachweisen.",
   heroSubtitle:
     "Räum- und Streupflicht erfüllen, Verkehrssicherungspflicht dokumentieren – für Hausverwaltungen, Gewerbe und öffentliche Zugänge in der Zollernalb.",
   introParagraphs: [
@@ -172,7 +172,7 @@ const grundreinigung: LeistungDeepContent = {
       paragraphs: [
         "Grundreinigung in Praxen und Klinikzonen erfordert mehr als Bodenwisch: Desinfektionsmittel nach anerkannten Standards, Abstimmung mit Ihrem Hygieneplan und strikte Vermeidung von Kreuzkontamination zwischen Wartezimmer, Behandlung und Sanitär. Saubermatik trennt Zonen farblich (4-Farb-System), desinfiziert nach Plan und dokumentiert jeden Schritt – Umfang nach Vereinbarung.",
         "Hygieneschleusen, Behandlungsräume und Aufbereitungszonen werden nach validierten Kontaktzeiten behandelt – nosokomiale Infektionsrisiken senken sich durch Prozess, nicht durch Slogans. Absolute Diskretion und DSGVO-bewusste Abläufe sind für Kanzleien und Arztpraxen selbstverständlich.",
-        "Kombinieren Sie Grundreinigung mit Unterhaltsreinigung für einen durchgängigen Hygienestandard – ein Partner, ein digitales LV, Echtzeit-QM.",
+        "Kombinieren Sie Grundreinigung mit Unterhaltsreinigung für einen durchgängigen Hygienestandard – ein Partner, ein digitales LV, dokumentierte Qualität.",
       ],
     },
   ],
@@ -318,7 +318,7 @@ const sonstiges: LeistungDeepContent = {
   heroSubtitle:
     "Teppich- und Polsterreinigung, Praxis-Sonderdesinfektion, Event-Reinigung oder Ausschreibungen – wir übersetzen Ihr Briefing in messbare Prozesse.",
   introParagraphs: [
-    "Nicht jedes Objekt passt in eine Schublade. Teppichreinigung in Konferenzräumen, Praxis-Sonderdesinfektion nach Kontamination, Messe- oder Event-Reinigung, Industrie-Sonderflächen oder öffentliche Ausschreibungen – Saubermatik nimmt Sonderanfragen ernst und strukturiert sie in digitale Leistungsverzeichnisse mit SLA und Echtzeit-QM.",
+    "Nicht jedes Objekt passt in eine Schublade. Teppichreinigung in Konferenzräumen, Praxis-Sonderdesinfektion nach Kontamination, Messe- oder Event-Reinigung, Industrie-Sonderflächen oder öffentliche Ausschreibungen – Saubermatik nimmt Sonderanfragen ernst und strukturiert sie in digitale Leistungsverzeichnisse mit SLA und dokumentierte Qualität.",
     "Nutzen Sie diesen Einstieg, wenn Ihr Projekt mehrere Gewerke berührt oder normative Anforderungen explizit vertraglich fixiert werden müssen.",
   ],
   deepDives: [

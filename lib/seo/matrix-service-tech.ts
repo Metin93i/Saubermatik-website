@@ -21,7 +21,7 @@ export const MATRIX_SERVICE_TECH: Record<
     technicalParagraphs: [
       "Professionelle Unterhaltsreinigung beginnt bei Saubermatik mit dem 4-Farb-System zur Vermeidung von Kreuzkontamination: Rot für Sanitärbereiche, Gelb für Waschbecken und Armaturen, Blau für Büromöbel und Inventar, Grün für Teeküchen und Aufenthaltszonen. Jede Farbe ist physisch getrennt — eigene Eimer, Mikrofasertücher und Mopp-Systeme pro Objekt.",
       "Bodenbeläge werden materialspezifisch behandelt: Vinyl, Designboden, Naturstein, Linoleum und Teppich erhalten unterschiedliche pH-Wert-Profile. Alkalische Grundreiniger nur dort, wo das Pflegekonzept es vorsieht; neutrale Unterhaltsreiniger für den Tagesbetrieb. In Praxen und medizinischen Nebenräumen stimmen wir Desinfektionsmittel und Ablauf mit Ihrem Hygieneplan ab — Mittel nach anerkannten Standards, dokumentiert im Leistungsverzeichnis.",
-      "DIN EN 13549 dient als methodischer Rahmen für messbare Qualität: Leistungsumfang, Intervalle und Abnahmekriterien werden vor Vertragsbeginn schriftlich fixiert. Die Saubermatik-App erfasst Echtzeit-QM, Ausfallmanagement und Ersatzlogistik — wenn eine Tour ausfällt, wird sie neu disponiert, bevor der Auftraggeber es merkt.",
+      "DIN EN 13549 dient als methodischer Rahmen für messbare Qualität: Leistungsumfang, Intervalle und Abnahmekriterien werden vor Vertragsbeginn schriftlich fixiert. Die Saubermatik-App erfasst dokumentierte Qualität, Ausfallmanagement und Ersatzlogistik — wenn eine Tour ausfällt, wird sie neu disponiert, bevor der Auftraggeber es merkt.",
     ],
     complianceTitle: "Compliance: HACCP, RKI & Praxishygiene",
     complianceParagraphs: [
@@ -224,7 +224,7 @@ export const MATRIX_SERVICE_TECH: Record<
     complianceTitle: "Ausschreibung & Compliance",
     complianceParagraphs: [
       "Öffentliche und konzernweite Ausschreibungen: strukturierte LV-Texte, Referenzen, BG- und TRBS-Nachweise.",
-      "DIN EN 13549-orientiertes Echtzeit-QM auch für Sonderprojekte — nicht nur für Standard-Unterhalt.",
+      "DIN EN 13549-orientierte, dokumentierte Qualität auch für Sonderprojekte — nicht nur für Standard-Unterhalt.",
       "Datenschutz und Zutrittsregeln in sensiblen Objekten — schriftlich fixiert.",
     ],
     operationalTitle: "Skalierung & Projektleitung",

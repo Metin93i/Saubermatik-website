@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { AppMockup } from "@/components/AppMockup";
-import { B2BOnboardingProcess } from "@/components/B2BOnboardingProcess";
 import { QrCodeIcon, ShieldCheckIcon, UserCheckIcon } from "@/components/BrandIcons";
 import { EsgComplianceStatement } from "@/components/EsgComplianceStatement";
 import { FaqPageJsonLd } from "@/components/FaqPageJsonLd";
@@ -11,6 +9,7 @@ import { AnfrageCta } from "@/components/AnfrageCta";
 import { StartHowItWorks } from "@/components/StartHowItWorks";
 import { StartLeistungsGrid } from "@/components/StartLeistungsGrid";
 import { StartTrustBar } from "@/components/StartTrustBar";
+import { getStandortKachelUntertitel } from "@/lib/config/city-tiers";
 import { STANDORT_CITIES, STANDORT_LABELS } from "@/lib/routes/standorte";
 import { getStartseiteFaqItems } from "@/lib/seo/startseite-faq";
 
@@ -236,12 +235,6 @@ export default function Home() {
               Unterhaltsreinigung über Glas- und Raffstore-Reinigung bis zum
               Winterdienst.
             </p>
-            <Link
-              href="/leistungen"
-              className="mt-6 inline-flex text-sm font-bold text-[#f47920] transition hover:text-[#f47920]/80"
-            >
-              Alle Leistungen ansehen →
-            </Link>
           </div>
         </div>
       </section>
@@ -249,7 +242,6 @@ export default function Home() {
       <section className="bg-zinc-50 py-8 sm:py-10">
         <div className={`${PAGE_CONTAINER} flex flex-col gap-2.5`}>
           <EsgComplianceStatement />
-          <AppMockup />
         </div>
       </section>
 
@@ -302,11 +294,6 @@ export default function Home() {
         </div>
       </section>
 
-      <B2BOnboardingProcess
-        pagePath="/"
-        className="border-t border-foreground/10 bg-white py-8 sm:py-10"
-      />
-
       <section className="border-y border-foreground/10 bg-zinc-50 py-10">
         <div className={PAGE_CONTAINER}>
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -353,7 +340,7 @@ export default function Home() {
                     {STANDORT_LABELS[city]}
                   </span>
                   <span className="mt-2 text-sm text-muted">
-                    Gebäudereinigung &amp; Objektbetreuung
+                    {getStandortKachelUntertitel(city)}
                   </span>
                   <span className="mt-4 text-sm font-semibold text-secondary">
                     Mehr erfahren →

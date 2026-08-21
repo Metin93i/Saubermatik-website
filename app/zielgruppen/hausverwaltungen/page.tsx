@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { B2BOnboardingProcess } from "@/components/B2BOnboardingProcess";
 import { AnfrageCta } from "@/components/AnfrageCta";
 import { buildHausverwaltungenServiceJsonLd } from "@/lib/seo/hausverwaltungen-schema";
 
@@ -29,7 +28,7 @@ export default function HausverwaltungenPage() {
             </p>
             <h1 className="mt-4 max-w-4xl text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-[2.5rem] lg:leading-tight">
               Die All-in-One Lösung für Hausverwaltungen: Treppenhaus,
-              Hausmeister &amp; Grünpflege mit digitalem Echtzeit-Nachweis.
+              Hausmeister &amp; Grünpflege mit dokumentierten Nachweisen.
             </h1>
             <p className="mt-6 max-w-3xl text-lg leading-8 text-muted">
               Sie verwalten nicht nur Quadratmeter – Sie tragen Verantwortung
@@ -76,15 +75,16 @@ export default function HausverwaltungenPage() {
               Jeder Vorfall landet beim Verwalter, nicht beim Anbieter. Wir
               strukturieren das Gegenteil: ein integriertes Portfolio aus
               Reinigung, Objektbetreuung, Grünpflege und Winterdienst – digital
-              gesteuert, revisionssicher dokumentiert. Mieter-Anliegen zur
-              Reinigung können über den QR-Meldeweg in{" "}
+              gesteuert, revisionssicher dokumentiert. Den QR-Meldeweg für
+              Mieter-Anliegen beschreiben wir oben; das Portal erklären wir
+              unter{" "}
               <Link
                 href="/secureops"
                 className="font-semibold text-secondary hover:underline"
               >
                 SecureOps
-              </Link>{" "}
-              direkt bei uns landen – statt auf dem Schreibtisch der Verwaltung.
+              </Link>
+              .
             </p>
           </article>
 
@@ -271,11 +271,6 @@ export default function HausverwaltungenPage() {
             </ul>
           </div>
         </section>
-
-        <B2BOnboardingProcess
-          pagePath="/zielgruppen/hausverwaltungen"
-          className="border-t border-foreground/10 bg-slate-50/80 py-12 sm:py-14"
-        />
 
         <section
           id="kontakt-anfrage"

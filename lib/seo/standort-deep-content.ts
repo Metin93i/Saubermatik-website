@@ -41,7 +41,7 @@ function buildCoreCitySections(
 
   const industryLead =
     v === 0
-      ? `${label} lebt von ${profile.industryFocus} Saubermatik übersetzt das in konkrete Reinigungs-SLAs: digitale Leistungsverzeichnisse, Echtzeit-QM und Prozesse, die zu Ihrer Branche passen – nicht generische „Büroreinigung“ ohne Kontext.`
+      ? `${label} lebt von ${profile.industryFocus} Saubermatik übersetzt das in konkrete Reinigungs-SLAs: digitale Leistungsverzeichnisse, dokumentierte Qualität und Prozesse, die zu Ihrer Branche passen – nicht generische „Büroreinigung“ ohne Kontext.`
       : v === 1
         ? `Der Wirtschaftsschwerpunkt in ${label} (${profile.industryFocus}) verlangt mehr als Standardintervalle. Wir planen Unterhalt, Glas, Winterdienst und Objektbetreuung entlang Ihrer Nutzung – mit dokumentierten Nachweisen für Einkauf, Facility und Hausverwaltung.`
         : `In ${label} verbinden wir regionale Nähe aus Meßstetten mit Branchenkompetenz: ${profile.industryFocus} Unsere Teams kennen die Anforderungen an Hygiene, Werterhalt und Verkehrssicherung in genau dieser Mischung aus Gewerbe, Produktion und Verwaltung.`;
@@ -160,7 +160,7 @@ function buildRegionalSections(
       id: "digital",
       title: `Digitale Qualitätssicherung für ${label}`,
       paragraphs: [
-        `Einsätze in ${label} können digital protokolliert werden: LV-Positionen, Zeitstempel, Sonderfotos bei Abweichungen. Facility Manager haben Echtzeit-Einsicht – keine monatliche Überraschung, keine undokumentierte „war schon jemand da?“-Diskussion.`,
+        `Einsätze in ${label} können digital protokolliert werden: LV-Positionen, Zeitstempel, Sonderfotos bei Abweichungen. Facility Manager haben Einsicht in dokumentierte Einsätze – keine monatliche Überraschung, keine undokumentierte „war schon jemand da?“-Diskussion.`,
         `Bei Urlaub oder Ausfall übernimmt ein bewährtes Vertretungsteam – sonst die Geschäftsführung persönlich. Das ist der Unterschied zwischen Reinigung als Einkaufsposition und Facility mit klarem Ansprechpartner in ${label} und der gesamten Region.`,
       ],
     },

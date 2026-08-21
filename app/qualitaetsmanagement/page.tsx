@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { B2BOnboardingProcess } from "@/components/B2BOnboardingProcess";
 import { buildTelHref } from "@/lib/phone";
 
 export const metadata: Metadata = {
@@ -20,7 +19,7 @@ const pillars = [
     body: "Unsere Plattform bündelt Touren, Checklisten und Einsatznachweise. Statt Excel und Messenger-Ketten erhalten Sie eine Quelle der Wahrheit für Ihre Liegenschaft – skalierbar über mehrere Standorte und Zugänge.",
   },
   {
-    title: "Echtzeit-Checks & Eskalation",
+    title: "Dokumentierte Checks & Eskalation",
     body: "Abweichungen werden sichtbar, bevor sie zum Dauerproblem werden. Wir arbeiten mit klaren Eskalationspfaden: erst digital dokumentiert, dann persönlich gelöst – mit festem Ansprechpartner.",
   },
   {
@@ -86,10 +85,6 @@ export default function QualitaetsmanagementPage() {
           </div>
         </div>
       </article>
-      <B2BOnboardingProcess
-        pagePath="/qualitaetsmanagement"
-        className="border-t border-foreground/10 bg-white py-12 sm:py-14"
-      />
     </>
   );
 }
