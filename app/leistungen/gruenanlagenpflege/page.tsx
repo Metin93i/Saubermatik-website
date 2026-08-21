@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { B2BOnboardingProcess } from "@/components/B2BOnboardingProcess";
 import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
 import { LeistungFaqJsonLd } from "@/components/LeistungFaqJsonLd";
 import { LeistungHeroImage } from "@/components/LeistungHeroImage";
@@ -188,11 +187,6 @@ export default function GruenanlagenpflegePage() {
             <SnippetBaitTable slug="gruenanlagenpflege" />
           </div>
         </section>
-
-        <B2BOnboardingProcess
-          pagePath="/leistungen/gruenanlagenpflege"
-          className="border-t border-foreground/10 bg-slate-50/80 py-12 sm:py-14"
-        />
 
         <section className="border-t border-slate-200 py-12">
           <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">

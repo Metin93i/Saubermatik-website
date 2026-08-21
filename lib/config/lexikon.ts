@@ -52,7 +52,7 @@ export const LEXIKON_BY_SLUG: Record<LexikonTermSlug, LexikonEntry> = {
       "Die DIN 13063 strukturiert Anforderungen an die Reinigung und Desinfektion in medizinischen Einrichtungen – von Risikogruppen über Flächenklassen bis zu Prüfintervallen. Auch außerhalb von Kliniken nutzen Praxen und Labore diese Logik als Qualitätsrahmen.",
       "Saubermatik übersetzt Normen in umsetzbare Tourenpläne: getrennte Einsatzketten, PSA, dokumentierte Desinfektionsfenster und Eskalation bei Abweichungen. So bleibt Compliance prüfbar – nicht nur auf dem Papier.",
       "Für nicht-klinische, aber sensible Gewerbeobjekte (Arztpraxen, Labore, Reha) lohnt sich die DIN-Logik als Benchmark in Ausschreibungen: Sie schafft eine gemeinsame Sprache zwischen Einkauf, Hygienebeauftragten und Dienstleister – unabhängig von Marketingversprechen.",
-      "Die digitale Objektsteuerung ergänzt die Norm um Echtzeitnachweise: Welche Fläche wurde wann in welcher Risikoklasse bearbeitet? Wer war vor Ort? Welche Abweichung wurde binnen welcher Frist geschlossen? Das ist die Brücke zwischen Norm und Betrieb.",
+      "Die digitale Objektsteuerung ergänzt die Norm um dokumentierte Nachweise: Welche Fläche wurde wann in welcher Risikoklasse bearbeitet? Wer war vor Ort? Welche Abweichung wurde binnen welcher Frist geschlossen? Das ist die Brücke zwischen Norm und Betrieb.",
     ],
   },
   "facility-management-software-cafm": {

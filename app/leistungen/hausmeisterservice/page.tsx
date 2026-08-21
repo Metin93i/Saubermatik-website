@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { B2BOnboardingProcess } from "@/components/B2BOnboardingProcess";
 import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
 import { LeistungFaqJsonLd } from "@/components/LeistungFaqJsonLd";
 import { LeistungHeroImage } from "@/components/LeistungHeroImage";
@@ -74,8 +73,8 @@ export default function HausmeisterservicePage() {
             <p className="mt-6 max-w-3xl text-lg leading-8 text-muted">
               Für Hausverwaltungen, WEG und Gewerbeimmobilien: Wir übernehmen
               die operative Objektpräsenz zwischen den großen Gewerken – mit
-              dokumentierten Standard Operating Procedures und
-              Echtzeit-Meldungen über die Saubermatik-App.
+              dokumentierten Standard Operating Procedures und dokumentierten
+              Meldungen über die Saubermatik-App.
             </p>
             <LeistungHeroImage
               slug="hausmeisterservice"
@@ -178,11 +177,6 @@ export default function HausmeisterservicePage() {
             <SnippetBaitTable slug="hausmeisterservice" />
           </div>
         </section>
-
-        <B2BOnboardingProcess
-          pagePath="/leistungen/hausmeisterservice"
-          className="border-t border-foreground/10 bg-slate-50/80 py-12 sm:py-14"
-        />
 
         <section className="border-t border-slate-200 py-12">
           <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">

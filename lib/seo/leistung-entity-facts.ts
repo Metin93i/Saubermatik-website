@@ -34,7 +34,7 @@ export const LEISTUNG_ENTITY_FACTS: Partial<
   ],
   sonstiges: [
     "Teppich- und Polsterreinigung, Praxis-Sonderdesinfektion nach Hygieneplan, Event-Einsätze mit vereinbarten Reaktionszeiten.",
-    "Ausschreibungsfähige digitale LV-Texte, DIN EN 13549-orientiertes Echtzeit-QM für Sonderprojekte.",
+    "Ausschreibungsfähige digitale LV-Texte, DIN EN 13549-orientierte, dokumentierte Qualität für Sonderprojekte.",
   ],
 };
 

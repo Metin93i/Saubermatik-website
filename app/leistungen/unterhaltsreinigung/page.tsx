@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { B2BOnboardingProcess } from "@/components/B2BOnboardingProcess";
 import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
 import { LeistungFaqJsonLd } from "@/components/LeistungFaqJsonLd";
 import { LeistungHeroImage } from "@/components/LeistungHeroImage";
@@ -222,7 +221,9 @@ export default function UnterhaltsreinigungPage() {
               </p>
               <p>
                 Für Sie als Facility Manager bedeutet das{" "}
-                <strong className="text-foreground">Echtzeit-QM</strong>: Sie
+                <strong className="text-foreground">
+                  dokumentierte Einsätze im Kundenportal
+                </strong>: Sie
                 sehen, welche Positionen erledigt wurden, wo Nacharbeit nötig
                 war und ob das vereinbarte SLA eingehalten wurde – ohne
                 Telefonkette, ohne Excel-Export am Monatsende. Das ist
@@ -306,7 +307,8 @@ export default function UnterhaltsreinigungPage() {
                 alltagstauglich
               </li>
               <li>
-                Digitales LV + DIN EN 13549-orientiertes Echtzeit-QM in der App
+                Digitales LV + DIN EN 13549-orientierte, dokumentierte Qualität
+                in der App
               </li>
               <li>
                 HACCP in Teeküchen und Pausenräumen, optimierte Flächenleistung
@@ -330,11 +332,6 @@ export default function UnterhaltsreinigungPage() {
             <SnippetBaitTable slug={SLUG} />
           </div>
         </section>
-
-        <B2BOnboardingProcess
-          pagePath="/leistungen/unterhaltsreinigung"
-          className="border-t border-foreground/10 bg-slate-50/80 py-12 sm:py-14"
-        />
 
         <section className="border-t border-slate-200 py-12">
           <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">

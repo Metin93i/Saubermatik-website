@@ -17,7 +17,7 @@ export const MATRIX_CITY_EXTENDED: Record<
     economicContext: [
       "Meßstetten ist Firmensitz von Saubermatik und Drehscheibe für den gesamten Zollernalbkreis. Als Verwaltungs- und Dienstleistungsstandort mit Nähe zu Alb-Werkstätten und regionalen Mittelständlern verbindet die Stadt ländliche Strukturen mit modernen Gewerbe- und Verwaltungsflächen. Für Facility Manager bedeutet das: kürzeste Reaktionswege, direkter Zugang zur Geschäftsführung und Referenzobjekte, an denen Prozesse erprobt werden, bevor sie auf andere Standorte skaliert werden.",
       "Typische Objekte in Meßstetten umfassen Verwaltungsgebäude, Arztpraxen, WEG-Portfolios und kleinere Produktionsbetriebe entlang der B463. Die Mischung aus Wohn- und Gewerbestruktur erfordert flexible Reinigungs-SLAs: leise Geräte in Mehrfamilienhäusern, HACCP in Teeküchen, RKI-orientierte Prozesse in Praxen — alles aus einem digitalen Leistungsverzeichnis.",
-      "Als HQ-Standort profitieren Meßstettener Auftraggeber von maximaler Dispositionspriorität. Touren starten hier, Ersatzkräfte werden zuerst lokal eingesetzt, Eskalationen laufen über den Key Account ohne Umwege über Callcenter. Das ist kein Marketing-Versprechen, sondern operative Realität: Meßstetten ist unser Referenzmarkt für Ausfallsicherheit und Echtzeit-QM.",
+      "Als HQ-Standort profitieren Meßstettener Auftraggeber von maximaler Dispositionspriorität. Touren starten hier, Ersatzkräfte werden zuerst lokal eingesetzt, Eskalationen laufen über den Key Account ohne Umwege über Callcenter. Das ist kein Marketing-Versprechen, sondern operative Realität: Meßstetten ist unser Referenzmarkt für Ausfallsicherheit und dokumentierte Qualität.",
     ],
     objectTypes: [
       "Verwaltungs- und Bürogebäude",
@@ -92,7 +92,7 @@ export const MATRIX_CITY_EXTENDED: Record<
     economicContext: [
       "Hechingen ist High-Tech- und Medizintechnik-Standort mit Zonen Lotzenäcker und Nasswasen entlang der B27. Praxisnahe Hygiene, Labor- und Büroflächen mit SLA-Anforderungen prägen den Markt — Facility Manager brauchen Partner, die RKI, VAH und DIN EN 13549 nicht als Buzzwords, sondern als operative Checklisten verstehen.",
       "Zulieferer und Mittelständler in Hechingen erwarten streifenfreie Glasflächen, desinfizierte Sozialräume und dokumentierte Grundreinigung nach Mieterwechsel. Die Nähe zu Tuttlingen und der Medical-Mountains-Cluster schärft Qualitätsanforderungen — Audits sind Alltag, nicht Ausnahme.",
-      "Saubermatik bedient Hechingen von Meßstetten aus mit kurzen Anfahrten und festen Teams. Digitale Leistungsverzeichnisse, Echtzeit-QM und Key-Account-Betreuung machen den Unterschied gegenüber Billig-Anbietern ohne Nachweiskette.",
+      "Saubermatik bedient Hechingen von Meßstetten aus mit kurzen Anfahrten und festen Teams. Digitale Leistungsverzeichnisse, dokumentierte Qualität und Key-Account-Betreuung machen den Unterschied gegenüber Billig-Anbietern ohne Nachweiskette.",
     ],
     objectTypes: [
       "Medizintechnik und Zulieferer Lotzenäcker",
@@ -165,7 +165,7 @@ export const MATRIX_CITY_EXTENDED: Record<
   },
   "villingen-schwenningen": {
     economicContext: [
-      "Villingen-Schwenningen ist Doppelstadt mit Uhrenindustrie, Technologie, großer Verwaltung und Einzelhandel. Facility Manager betreuen oft größere Flächen mit mehreren Zugängen — digitale Tourenplanung und Echtzeit-QM sind hier Pflicht, nicht Kür.",
+      "Villingen-Schwenningen ist Doppelstadt mit Uhrenindustrie, Technologie, großer Verwaltung und Einzelhandel. Facility Manager betreuen oft größere Flächen mit mehreren Zugängen — digitale Tourenplanung und dokumentierte Qualität sind hier Pflicht, nicht Kür.",
       "Die Region verlangt winterfesten Betrieb: dokumentierte Einsätze beim Winterdienst, priorisierte Räumung an Klinik- und Verwaltungszufahrten, Kombination mit Treppenhaus und Gehwegsicherung aus einem Portfolio.",
       "Saubermatik bedient VS von Meßstetten aus mit überregionaler Prozessqualität: ein Key Account, messbare SLAs, skalierbare Plattform für Multi-Objekt-Bestände — ohne Qualitätsverlust bei wachsender Objektzahl.",
     ],

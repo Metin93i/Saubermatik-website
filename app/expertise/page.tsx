@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Expertise, Nachweise & technische Standards",
   description:
-    "EEAT-Hub von Saubermatik: Arbeitssicherheit, Qualitätsstandards, Echtzeit-Monitoring und digitale Objektprotokolle – für messbare Gebäudereinigung in der Zollernalb und darüber hinaus.",
+    "EEAT-Hub von Saubermatik: Arbeitssicherheit, Qualitätsstandards, dokumentierte Einsätze im Kundenportal und digitale Objektprotokolle – für messbare Gebäudereinigung in der Zollernalb und darüber hinaus.",
   alternates: { canonical: "/expertise" },
 };
 
@@ -18,8 +18,8 @@ const pillars = [
     body: "Von Arbeiten in der Höhe bis zu sensiblen Bereichen (Praxis, Kanzlei) gelten klare Regeln: Einweisungen, PSA, materialgerechte Mittel und getrennte Einsatzketten wo nötig. Hygienepläne und Desinfektionsintervalle werden dort ergänzt, wo regulatorisch oder betrieblich erforderlich.",
   },
   {
-    title: "Echtzeit-Monitoring & Software-Vorsprung",
-    body: "Die Saubermatik-Plattform bündelt Touren, Checklisten und Eskalationen. Ausfälle werden sichtbar, bevor sie zum Stillstand werden – mit Ersatzlogistik statt improvisiertem Telefonieren. Für Geschäftsführung und Eigentümer heißt das: höhere Trustworthiness durch nachvollziehbare Daten statt Bauchgefühl.",
+    title: "Dokumentierte Einsätze im Kundenportal",
+    body: "Die Saubermatik-Plattform bündelt Touren, Checklisten und Eskalationen. Abweichungen werden in dokumentierten Einsätzen sichtbar – mit Ersatzlogistik statt improvisiertem Telefonieren. Für Geschäftsführung und Eigentümer heißt das: nachvollziehbare Daten statt Bauchgefühl.",
   },
   {
     title: "Qualitätssicherung & Transparenz",

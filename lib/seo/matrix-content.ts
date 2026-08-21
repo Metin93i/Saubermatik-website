@@ -49,7 +49,7 @@ function buildLocalBlockA(
     const zones = formatZones(profile.industrialZones);
     const infra = formatInfrastructure(profile.infrastructure);
     const leads = [
-      `${cityLabel} ist geprägt von ${profile.industryFocus} Für ${serviceLabel} bedeutet das: Reinigungs-SLAs, die zur lokalen Wirtschaft passen — nicht generische Textbausteine aus der Großstadt. Saubermatik verbindet Meßstetten als Firmensitz mit Branchenkompetenz vor Ort: digitale Leistungsverzeichnisse, Echtzeit-QM und Key-Account-Betreuung für Facility Manager, Hausverwaltungen und Geschäftsführung.`,
+      `${cityLabel} ist geprägt von ${profile.industryFocus} Für ${serviceLabel} bedeutet das: Reinigungs-SLAs, die zur lokalen Wirtschaft passen — nicht generische Textbausteine aus der Großstadt. Saubermatik verbindet Meßstetten als Firmensitz mit Branchenkompetenz vor Ort: digitale Leistungsverzeichnisse, dokumentierte Qualität und Key-Account-Betreuung für Facility Manager, Hausverwaltungen und Geschäftsführung.`,
       `In ${cityLabel} planen wir ${serviceLabel} entlang realer Gewerbestrukturen — ${zones} und die Anbindung über ${infra} sind Planungsanker für Touren, Reaktionszeiten und Ausfallsicherheit. Objekte in diesen Zonen erhalten priorisierte Disposition und dokumentierte Einsätze in der Saubermatik-App.`,
       `Der Wirtschaftsschwerpunkt (${profile.industryFocus}) verlangt mehr als Intervalle von der Stange: Hygienezonen, Werterhalt sensibler Substanz und Verkehrssicherungspflicht werden vor Vertragsstart schriftlich fixiert — nachvollziehbar für Einkauf und Eigentümerversammlungen.`,
     ];
@@ -74,7 +74,7 @@ function buildLocalBlockA(
     : [
         `${cityLabel} liegt im Zollernalbkreis und Umkreis — ${serviceLabel} von Saubermatik kombiniert regionale Nähe aus Meßstetten mit überregionaler Prozessqualität. Kurze Anfahrten, feste Ansprechpartner, dieselben digitalen Standards wie in unseren Kernstädten.`,
         `Für ${cityLabel} setzen Unternehmen und Hausverwaltungen auf Verlässlichkeit statt Billig-Anbieter. Wir liefern dokumentierte Touren, Verkehrssicherungsnachweise und SLAs, die intern verteidigbar sind — bei Audits, Versicherern und Mieterversammlungen.`,
-        `Ob Unterhalt, Glas, Winterdienst oder Objektbetreuung: ${serviceLabel} wird über die Saubermatik-App gesteuert — Echtzeit-QM, Ersatzlogistik, exportierbare Protokolle. Ein Partner statt vier Schnittstellen.`,
+        `Ob Unterhalt, Glas, Winterdienst oder Objektbetreuung: ${serviceLabel} wird über die Saubermatik-App gesteuert — dokumentierte Qualität, Ersatzlogistik, exportierbare Protokolle. Ein Partner statt vier Schnittstellen.`,
       ];
 
   return {
@@ -240,7 +240,7 @@ function buildDigitalBlock(
     id: "digital-qm",
     title: `Reinigung 4.0: ${serviceLabel} digital gesteuert in ${cityLabel}`,
     paragraphs: [
-      `Die Saubermatik-Plattform ist kein Marketing-Buzzword: Reinigungskräfte haken digitale Leistungsverzeichnisse ab, Facility Manager sehen Echtzeit-QM, Ausfälle werden durch Ersatzkräfte geschlossen — bevor Ihr Objekt in ${cityLabel} leidet. Protokolle stehen für Abrechnung, ISO-Audits, BetrKV und Eigentümer-Reports bereit.`,
+      `Die Saubermatik-Plattform ist kein Marketing-Buzzword: Reinigungskräfte haken digitale Leistungsverzeichnisse ab, Facility Manager sehen dokumentierte Qualität, Ausfälle werden durch Ersatzkräfte geschlossen — bevor Ihr Objekt in ${cityLabel} leidet. Protokolle stehen für Abrechnung, ISO-Audits, BetrKV und Eigentümer-Reports bereit.`,
       `${serviceLabel} wird damit planbar und skalierbar — vom Einzelobjekt bis zum Multi-Standort-Portfolio. Key Account Manager begleiten Sie über Vertragslaufzeit, Anpassungen und Eskalationen — ein Gesicht, ein SLA, keine Hotline.`,
       `Einstieg in vier Schritten: Bedarf klären, Begehung, unverbindliches Angebot, Start im Objekt. Das ist Facility-Service auf Augenhöhe — regional aus Meßstetten, digital dokumentiert.`,
       `Exportierbare Reports, Versicherungsnachweise und Unterweisungsbelege sind jederzeit abrufbar — für ${cityLabel} und alle Standorte in Ihrem Portfolio. Sie sparen interne Koordination, weil Tourenplanung und Qualität in einem System laufen.`,

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
+import { getStandortKachelUntertitel } from "@/lib/config/city-tiers";
 import { STANDORT_CITIES, STANDORT_LABELS } from "@/lib/routes/standorte";
 
 export const metadata: Metadata = {
@@ -45,6 +46,9 @@ export default function StandorteHubPage() {
                 className="block rounded-sm border border-zinc-200 px-4 py-3 text-sm font-medium text-foreground transition hover:border-secondary/50 hover:bg-secondary/5"
               >
                 {STANDORT_LABELS[city]}
+                <span className="mt-1 block text-xs font-normal text-muted">
+                  {getStandortKachelUntertitel(city)}
+                </span>
               </Link>
             </li>
           ))}

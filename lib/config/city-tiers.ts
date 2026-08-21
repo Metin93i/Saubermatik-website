@@ -7,6 +7,7 @@ import { STANDORT_LABELS } from "@/lib/routes/standorte";
  * Regel (Vorschlag, Metin validiert):
  * - bis ca. 35 km = `radius` (regelmäßige Unterhaltsreinigung typisch)
  * - über 35 km = `projekt` (Einzelaufträge Glas, Grund, Fassade, Raffstore)
+ * - Tübingen = `radius` (Inhaber 2026-08-21: wöchentliche Aufträge)
  * - Stuttgart = `projekt` (beschlossen)
  *
  * Distanzen aus WGS84 in `lib/seo/standort-geo.ts` (Haversine, gerundet).
@@ -61,7 +62,8 @@ export const CITY_TIERS: Record<StandortCity, CityTierEntry> = {
     slug: "tuebingen",
     label: STANDORT_LABELS.tuebingen,
     distanceKm: 38,
-    tier: "projekt",
+    /** Inhaber 2026-08-21: wöchentliche Aufträge, daher radius trotz >35 km. */
+    tier: "radius",
   },
   schoemberg: {
     slug: "schoemberg",
@@ -135,6 +137,15 @@ export function getCityTier(
 
 export function isProjektCity(city: StandortCity | "stuttgart"): boolean {
   return getCityTier(city).tier === "projekt";
+}
+
+/** Untertitel für Standort-Kacheln (wortgetreu). */
+export function getStandortKachelUntertitel(
+  city: StandortCity,
+): "Regelmäßige Reinigung & Projekte" | "Projekt- und Sonderaufträge" {
+  return getCityTier(city).tier === "radius"
+    ? "Regelmäßige Reinigung & Projekte"
+    : "Projekt- und Sonderaufträge";
 }
 
 /** Wortgetreuer Rahmen-Absatz für Projekt-Städte (Paket 6). */
