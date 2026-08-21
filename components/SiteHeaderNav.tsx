@@ -1,6 +1,7 @@
 "use client";
 
-import { useCallback, useEffect, useId, useRef, useState } from "react";
+import { useCallback, useEffect, useId, useRef, useState, useSyncExternalStore } from "react";
+import { createPortal } from "react-dom";
 import { PrefetchLink } from "@/components/PrefetchLink";
 import { ClientLoginButton } from "@/components/ClientLoginButton";
 import { SERVICES } from "@/lib/config/services";
@@ -28,7 +29,13 @@ const MAIN_PAGES = [
 
 const DESKTOP_CLOSE_MS = 150;
 
+const subscribeNoop = () => () => {};
+function useIsClient() {
+  return useSyncExternalStore(subscribeNoop, () => true, () => false);
+}
+
 export function SiteHeaderNav() {
+  const isClient = useIsClient();
   const [mobileOpen, setMobileOpen] = useState(false);
   const [leistungenOpen, setLeistungenOpen] = useState(false);
   const [desktopLeistungenOpen, setDesktopLeistungenOpen] = useState(false);
@@ -199,103 +206,107 @@ export function SiteHeaderNav() {
         </button>
       </div>
 
-      {mobileOpen ? (
-        <div
-          className="fixed inset-0 z-[100] md:hidden"
-          role="dialog"
-          aria-modal="true"
-        >
-          <button
-            type="button"
-            className="absolute inset-0 bg-slate-950/40 backdrop-blur-[1px]"
-            aria-label="Menü schließen"
-            onClick={closeMobile}
-          />
-          <div
-            id={panelId}
-            className="absolute right-0 top-0 flex h-full w-full max-w-sm flex-col border-l border-slate-200 bg-white shadow-xl"
-          >
-            <div className="flex items-center justify-between border-b border-slate-100 px-4 py-3">
-              <p className="text-xs font-semibold uppercase tracking-widest text-slate-500">
-                Menü
-              </p>
+      {/* Overlay auf body: backdrop-filter am Header würde position:fixed sonst clippen. */}
+      {isClient && mobileOpen
+        ? createPortal(
+            <div
+              className="fixed inset-0 z-[100] md:hidden"
+              role="dialog"
+              aria-modal="true"
+            >
               <button
                 type="button"
-                className="flex h-9 w-9 items-center justify-center rounded-sm text-lg text-slate-500 transition hover:bg-slate-50 hover:text-slate-900"
-                onClick={closeMobile}
+                className="absolute inset-0 bg-slate-950/40 backdrop-blur-[1px]"
                 aria-label="Menü schließen"
+                onClick={closeMobile}
+              />
+              <div
+                id={panelId}
+                className="absolute right-0 top-0 flex h-full w-full max-w-sm flex-col border-l border-slate-200 bg-white shadow-xl"
               >
-                ×
-              </button>
-            </div>
-
-            <div className="flex flex-1 flex-col gap-1 overflow-y-auto px-3 py-3 pb-[max(1rem,env(safe-area-inset-bottom))]">
-              <div className="flex flex-col gap-0.5">
-                {MAIN_PAGES.map((item) => (
-                  <PrefetchLink
-                    key={item.href}
-                    href={item.href}
-                    className={NAV_LINK_CLASS}
+                <div className="flex items-center justify-between border-b border-slate-100 px-4 py-3">
+                  <p className="text-xs font-semibold uppercase tracking-widest text-slate-500">
+                    Menü
+                  </p>
+                  <button
+                    type="button"
+                    className="flex h-9 w-9 items-center justify-center rounded-sm text-lg text-slate-500 transition hover:bg-slate-50 hover:text-slate-900"
                     onClick={closeMobile}
+                    aria-label="Menü schließen"
                   >
-                    {item.label}
-                  </PrefetchLink>
-                ))}
-              </div>
+                    ×
+                  </button>
+                </div>
 
-              <div className="mt-2 border-t border-slate-100 pt-2">
-                <button
-                  type="button"
-                  className="flex w-full items-center justify-between rounded-sm px-3 py-2.5 text-left text-sm font-medium text-slate-700 transition hover:text-slate-900"
-                  aria-expanded={leistungenOpen}
-                  onClick={() => setLeistungenOpen((o) => !o)}
-                >
-                  Leistungen
-                  <span className="text-slate-400" aria-hidden>
-                    {leistungenOpen ? "▾" : "▸"}
-                  </span>
-                </button>
-                {leistungenOpen ? (
-                  <ul className="mt-1 max-h-60 space-y-0.5 overflow-y-auto border-l border-slate-200 pl-3">
-                    {SERVICES.map((s) => (
-                      <li key={s.slug}>
-                        <PrefetchLink
-                          href={`/leistungen/${s.slug}`}
-                          className="block rounded-sm py-1.5 pl-2 text-sm text-slate-600 transition hover:text-slate-900"
-                          onClick={closeMobile}
-                        >
-                          {s.title}
-                        </PrefetchLink>
-                      </li>
-                    ))}
-                    <li>
+                <div className="flex flex-1 flex-col gap-1 overflow-y-auto px-3 py-3 pb-[max(1rem,env(safe-area-inset-bottom))]">
+                  <div className="flex flex-col gap-0.5">
+                    {MAIN_PAGES.map((item) => (
                       <PrefetchLink
-                        href="/leistungen"
-                        className="block rounded-sm py-2 pl-2 text-sm font-medium text-slate-700 transition hover:text-slate-900"
+                        key={item.href}
+                        href={item.href}
+                        className={NAV_LINK_CLASS}
                         onClick={closeMobile}
                       >
-                        Alle Leistungen →
+                        {item.label}
                       </PrefetchLink>
-                    </li>
-                  </ul>
-                ) : null}
-              </div>
+                    ))}
+                  </div>
 
-              {SHOW_HEADER_CLIENT_LOGIN ? (
-                <div className="mt-auto border-t border-slate-100 pt-4">
-                  <ClientLoginButton
-                    className="h-10 w-full"
-                    onNavigate={closeMobile}
-                  />
-                  <p className="mt-2 text-center text-xs text-slate-400">
-                    Kundenportal — öffnet in neuem Tab
-                  </p>
+                  <div className="mt-2 border-t border-slate-100 pt-2">
+                    <button
+                      type="button"
+                      className="flex w-full items-center justify-between rounded-sm px-3 py-2.5 text-left text-sm font-medium text-slate-700 transition hover:text-slate-900"
+                      aria-expanded={leistungenOpen}
+                      onClick={() => setLeistungenOpen((o) => !o)}
+                    >
+                      Leistungen
+                      <span className="text-slate-400" aria-hidden>
+                        {leistungenOpen ? "▾" : "▸"}
+                      </span>
+                    </button>
+                    {leistungenOpen ? (
+                      <ul className="mt-1 max-h-60 space-y-0.5 overflow-y-auto border-l border-slate-200 pl-3">
+                        {SERVICES.map((s) => (
+                          <li key={s.slug}>
+                            <PrefetchLink
+                              href={`/leistungen/${s.slug}`}
+                              className="block rounded-sm py-1.5 pl-2 text-sm text-slate-600 transition hover:text-slate-900"
+                              onClick={closeMobile}
+                            >
+                              {s.title}
+                            </PrefetchLink>
+                          </li>
+                        ))}
+                        <li>
+                          <PrefetchLink
+                            href="/leistungen"
+                            className="block rounded-sm py-2 pl-2 text-sm font-medium text-slate-700 transition hover:text-slate-900"
+                            onClick={closeMobile}
+                          >
+                            Alle Leistungen →
+                          </PrefetchLink>
+                        </li>
+                      </ul>
+                    ) : null}
+                  </div>
+
+                  {SHOW_HEADER_CLIENT_LOGIN ? (
+                    <div className="mt-auto border-t border-slate-100 pt-4">
+                      <ClientLoginButton
+                        className="h-10 w-full"
+                        onNavigate={closeMobile}
+                      />
+                      <p className="mt-2 text-center text-xs text-slate-400">
+                        Kundenportal — öffnet in neuem Tab
+                      </p>
+                    </div>
+                  ) : null}
                 </div>
-              ) : null}
-            </div>
-          </div>
-        </div>
-      ) : null}
+              </div>
+            </div>,
+            document.body,
+          )
+        : null}
     </>
   );
 }

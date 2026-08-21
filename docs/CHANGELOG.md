@@ -1,3 +1,4 @@
+2026-08-21 · header · Mobilmenü per Portal sichtbar (nicht mehr vom Header geclippt)
 2026-08-21 · header · Kundenportal im Header vorübergehend ausgeblendet
 2026-08-21 · audit · Top-10: Echtzeit raus, Dopplungen entfernt, Tuebingen Radius
 2026-08-20 · vertrieb · Identitaet + Trust/Prozess/FAQ/Formular, Gebietstexte, Site-Audit
