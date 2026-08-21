@@ -30,7 +30,7 @@ export function ClientLoginButton({ className = "", onNavigate }: Props) {
       className={`${baseClass} ${className}`}
       onClick={onNavigate}
     >
-      Kunden-Login
+      Kundenportal
     </a>
   );
 }

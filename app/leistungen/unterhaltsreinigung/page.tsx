@@ -90,6 +90,15 @@ export default function UnterhaltsreinigungPage() {
               </Link>
               .
             </p>
+            <p className="mt-4 max-w-3xl text-lg leading-8 text-muted">
+              <Link
+                href="/leistungen/raffstore-lamellenreinigung"
+                className="font-semibold text-secondary hover:underline"
+              >
+                Außenraffstoren reinigen wir auf Wunsch gleich mit – als eigene
+                Spezialleistung.
+              </Link>
+            </p>
             <LeistungHeroImage
               slug={SLUG}
               priority

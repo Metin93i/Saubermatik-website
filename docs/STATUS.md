@@ -1,50 +1,39 @@
 # STATUS · saubermatik-website
 
-Living Doc nach Bau-Schritten. Stand: **2026-08-20** · Branch `fix/header-kunden-login-ausblenden`.
+Living Doc nach Bau-Schritten. Stand: **2026-08-20** · Branch `feat/vertrieb-identitaet-audit`.
 
 ## Live-Stand
 
-- Diese Welle: Kunden-Login im Header vorübergehend ausgeblendet (`SHOW_HEADER_CLIENT_LOGIN = false`).
+- Diese Welle: Vertriebs-/Identitäts-Ausbau (Split-Hero, Trust, Grid, FAQ, Formular), Gebietstexte, Site-Audit.
 
-## Erledigt (Header Kunden-Login, dieser PR)
+## Erledigt (Identität + Vertrieb, dieser PR)
 
-- `ClientLoginButton` im Desktop-Header und im Mobil-Menü hinter `SHOW_HEADER_CLIENT_LOGIN = false` (Komponente bleibt).
+- Split-Hero: Text `#13181d` + `einsatz-fensterreinigung-hero.jpg` (`object-top`, `quality={85}`).
+- Trust-Leiste, Leistungs-Grid (8 Kacheln, Lucide-inline), USP/Gebietstexte, SecureOps-Satz, Drei-Schritte, Start-FAQ + JSON-LD, Abschluss-CTA mit Kostenlos-Zeile.
+- Header-Button **Kundenportal** (wieder sichtbar). HV: QR-Sektion zuerst. Hub-Reihenfolge Unterhalt → Glas → Raffstore → Grund.
+- Kontakt: Mo–Sa 08–22. Formular: optionale Felder `topic` / `location` in der Lead-Mail.
+- `docs/SITE-AUDIT.md` neu.
 
-## Erledigt (Design & Bildqualität)
+### Lead-Mail prüfen (Inhaber)
 
-- Bild-Fallback-Regel in `AGENTS.md`: ohne echtes Bild kein Bildbereich (keine Deko-Flächen, keine UI-TODOs).
-- Leerflächen entfernt: Plattform-Kachel, „Warum wir“, Über uns, Karriere, Stuttgart, Leistungs-Hero ohne Foto.
-- Branchen-Karten ohne Bildplatzhalter; drei Kurzzeilen wortgetreu.
-- Hero `object-position: 60% 75%`, Verlauf von links, Text links (`max-w-2xl`), Person rechts frei.
-- Abschluss-CTA (Anfrage / Anrufen / WhatsApp) am Ende der Startseite; `MobileStickyCta` bleibt `md:hidden`.
-- HQ-Einsatzfotos ersetzt; Hero `quality={85}` `sizes="100vw"`; Leistungsbilder `quality={80}` `sizes="(max-width: 768px) 100vw, 50vw"`; `images.formats` avif+webp.
+1. `/kontakt` öffnen, Pflichtfelder plus „Worum geht es?“ und „Ort oder PLZ“ füllen, absenden.
+2. Eingangsmail: Zeile **Worum geht es?** und **Ort oder PLZ** (leer = „—“).
+3. Lokal ohne `RESEND_API_KEY`: Server-Konsole `[lead] … console.dir` mit `topic`/`location`.
 
 ### OG prüfen (View-Source)
 
 `og:image` → `https://www.saubermatik-reinigung.de/images/og-image.jpg`. `/secureops` analog `og-secureops.jpg`.
 
-## Erledigt (Startseite Power + Bildbereinigung)
-
-- Hover-Nav, größerer Hero, Marken- + SecureOps-HTML-Sektionen, Fremdbilder raus.
-
-## Erledigt (Bilder / Favicon / PSA)
-
-- Einsatzfotos, OG-Bilder, Wortmarken-Favicon, PSA-Hinweis DGUV 112-198/199.
-
-## Erledigt (E1–E5)
-
-- Claims, Raffstore-LP, SecureOps-Erklärseite, Lead-Weg/Branchen/Städte/Schema.
-
 ## Nächste Schritte
 
-- Metin validiert City-Tiers (Rottenburg 33 km Grenzwert; Tuttlingen 24 km = radius).
-- WhatsApp auf +49 1512 9860059 bestätigen.
+- Top-10 aus `docs/SITE-AUDIT.md` entscheiden (FAQ vs. Zwei-Radien Tübingen, Onboarding-Doppel, tote HeroQuickSearch).
+- Originale Hero-JPEG 2124×2600 nachliefern, falls Chat-Upload (836×1024) nicht reicht.
+- WhatsApp-Nummer bestätigen.
 - SecureOps-Screenshots mit Demo-Daten.
 - Domain-Umstellung www.saubermatik-reinigung.de nach Merge.
-- Kunden-Login im Header wieder einblenden (`SHOW_HEADER_CLIENT_LOGIN = true`), sobald das Portal live ist.
 
 ## Offen & Risiken
 
-- Kunden-Login im Header ist vorübergehend ausgeblendet; Komponente und URL bleiben.
+- Chat-Upload Hero: 836×1024 statt 2124×2600 (nicht hochskaliert).
+- Kundenportal-URL weiter `getPlatformLoginUrl`.
 - DNS/Horizons vs. VPS: aus Repo allein unklar.
-- Chat-Upload der HQ-Fotos kam mit 984×1024 / 768×1024 an (angegeben waren 2462×2560 / 1800×2400).

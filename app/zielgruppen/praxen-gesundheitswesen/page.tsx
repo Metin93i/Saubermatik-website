@@ -144,6 +144,7 @@ export default function PraxenGesundheitswesenPage() {
             <AnfrageCta
               title="Angebot für Ihre Praxis anfragen"
               text="Beschreiben Sie uns kurz Ihre Praxis – Größe, Räume und gewünschte Zeiten genügen für den Anfang. Wir melden uns zügig. Fester Ansprechpartner statt Callcenter."
+              note="Besichtigung und Angebot sind kostenlos und unverbindlich."
             />
           </div>
         </section>

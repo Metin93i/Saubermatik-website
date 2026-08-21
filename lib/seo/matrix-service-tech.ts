@@ -63,7 +63,7 @@ export const MATRIX_SERVICE_TECH: Record<
     normRefs: ["§ 2 BetrKV", "Verkehrssicherungspflicht", "DIN EN 13549"],
     technicalTitle: "Treppenhaus: Verkehrssicherung & Trittsicherheit",
     technicalParagraphs: [
-      "Treppenhausreinigung ist Verkehrssicherungspflicht in Reinform: Stufen, Podeste, Handläufe, Schmutzfangmatten und Eingangsbereiche müssen so betreut werden, dass Sturz- und Rutschrisiken minimiert werden. Saubermatik arbeitet checklistenbasiert — jede Position im Treppenhaus ist im digitalen LV abgebildet, jeder Einsatz wird protokolliert.",
+      "Treppenhausreinigung ist Verkehrssicherungspflicht in Reinform: Stufen, Podeste, Handläufe, Schmutzfangmatten und Eingangsbereiche müssen so betreut werden, dass Sturz- und Rutschrisiken minimiert werden. Saubermatik arbeitet checklistenbasiert — jede Position im Treppenhaus ist im digitalen LV abgebildet, Einsätze werden protokolliert.",
       "Materialspezifische Pflege: Stein, Granit, PVC, Gummi, Holz und Metall erhalten passende Reinigungs- und Pflegemittel. Feuchtigkeit wird zeitnah entfernt, Streusalzreste in Wintermonaten koordiniert mit unserem Winterdienst — eine durchgängige Logik statt widersprüchlicher Dienstleister.",
       "Für WEG und Hausverwaltungen liefern wir umlagefähige Nachweise nach § 2 BetrKV: transparente Intervalle, objektbezogene Abrechnung, digitale Protokolle für Eigentümerversammlungen.",
     ],

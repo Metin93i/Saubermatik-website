@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     template: "%s | Saubermatik Gebäudereinigung",
   },
   description:
-    "Gründliche Gebäudereinigung in der Region Zollernalb: Büro, Glas, Außenanlagen und Bauendreinigung – mit digitaler Objektsteuerung und festen Ansprechpartnern.",
+    "Gründliche Gebäudereinigung aus Meßstetten: Zollernalbkreis, Sigmaringen, Rottweil, Hechingen, Tübingen – Projekte bis Stuttgart und an den Bodensee. Digitale Objektsteuerung, feste Ansprechpartner.",
   robots: {
     index: true,
     follow: true,

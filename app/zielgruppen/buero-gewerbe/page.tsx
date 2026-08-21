@@ -137,6 +137,7 @@ export default function BueroGewerbePage() {
             <AnfrageCta
               title="Angebot für Ihr Büro anfragen"
               text="Schreiben Sie uns kurz Fläche, Nutzung und gewünschten Rhythmus – wir melden uns zügig mit einem unverbindlichen Angebot. Fester Ansprechpartner statt Callcenter."
+              note="Besichtigung und Angebot sind kostenlos und unverbindlich."
             />
           </div>
         </section>

@@ -95,7 +95,7 @@ function buildCoreCitySections(
 
 const REGIONAL_FOCUS_VARIANTS = [
   (label: string) =>
-    `${label} liegt im Einzugsgebiet Schwarzwald-Baar-Heuberg und Zollernalbkreis – eine Region mit starkem Mittelstand, etablierten Hausverwaltungen und Gewerbe, das kurze Wege von Meßstetten aus erlaubt.`,
+    `${label} liegt im Zollernalbkreis und Umkreis – etwa Sigmaringen, Rottweil, Hechingen und Tübingen; Projektaufträge auch bis Stuttgart und an den Bodensee. Eine Region mit starkem Mittelstand, etablierten Hausverwaltungen und Gewerbe, das kurze Wege von Meßstetten aus erlaubt.`,
   (label: string) =>
     `Für ${label} kombinieren wir regionale Nähe mit überregionaler Prozessqualität: dieselben SLAs und digitale Standards wie in unseren Kernstädten, angepasst an Anfahrt und Objektstruktur.`,
   (label: string) =>
@@ -132,9 +132,9 @@ function buildRegionalSections(
     },
     {
       id: "region",
-      title: `Regionale Verankerung: Zollernalb & Schwarzwald-Baar-Heuberg`,
+      title: `Regionale Verankerung: Zollernalbkreis bis Stuttgart und Bodensee`,
       paragraphs: [
-        `Schwarzwald-Baar-Heuberg und Zollernalbkreis verbinden Mittelstand, Industrie, Handel und Wohnbestand – mit unterschiedlichen Reinigungsanforderungen. Saubermatik orchestriert diese Vielfalt über digitale LVs: von Büro und Praxis über Produktions-Sozialräume bis Treppenhaus und Außenanlage.`,
+        `Zollernalbkreis, Sigmaringen, Rottweil, Hechingen und Tübingen verbinden Mittelstand, Industrie, Handel und Wohnbestand – mit unterschiedlichen Reinigungsanforderungen. Projektaufträge übernehmen wir bis Stuttgart und an den Bodensee. Saubermatik orchestriert diese Vielfalt über digitale LVs: von Büro und Praxis über Produktions-Sozialräume bis Treppenhaus und Außenanlage.`,
         `Regionale Nähe heißt für ${label}: schnelle Reaktion bei Notfällen (Glasbruch, Wasserschaden, Sonderreinigung), kurze Entscheidungswege und Teams, die Ihre Objektlogik lernen und behalten. Kein Callcenter in einer fernen Metropole – sondern Meßstetten als Steuerungszentrale.`,
         `Wir vermeiden Doorway-Pages: Jede Stadt erhält eigenen, substanziellen Fließtext mit lokaler Einordnung – keine leeren Copy-Paste-Landings ohne regionalen Mehrwert.`,
       ],
@@ -160,7 +160,7 @@ function buildRegionalSections(
       id: "digital",
       title: `Digitale Qualitätssicherung für ${label}`,
       paragraphs: [
-        `Jeder Einsatz in ${label} kann digital protokolliert werden: LV-Positionen, Zeitstempel, Sonderfotos bei Abweichungen. Facility Manager haben Echtzeit-Einsicht – keine monatliche Überraschung, keine undokumentierte „war schon jemand da?“-Diskussion.`,
+        `Einsätze in ${label} können digital protokolliert werden: LV-Positionen, Zeitstempel, Sonderfotos bei Abweichungen. Facility Manager haben Echtzeit-Einsicht – keine monatliche Überraschung, keine undokumentierte „war schon jemand da?“-Diskussion.`,
         `Bei Urlaub oder Ausfall übernimmt ein bewährtes Vertretungsteam – sonst die Geschäftsführung persönlich. Das ist der Unterschied zwischen Reinigung als Einkaufsposition und Facility mit klarem Ansprechpartner in ${label} und der gesamten Region.`,
       ],
     },
@@ -189,7 +189,7 @@ export function buildStandortDeepContent(
   const heroSubtitle =
     profile !== null
       ? `${profile.industryFocus} – mit digitaler Objektsteuerung, dokumentierter Verkehrssicherung und festen Ansprechpartnern aus Meßstetten.`
-      : `Schwarzwald-Baar-Heuberg & Zollernalbkreis: regionale Nähe, schnelle Reaktionszeiten und SLAs für Unterhalt, Glas, Winterdienst und Hausverwaltung.`;
+      : `Zollernalbkreis und Umkreis (Sigmaringen, Rottweil, Hechingen, Tübingen): regionale Nähe, schnelle Reaktionszeiten und SLAs für Unterhalt, Glas, Winterdienst und Hausverwaltung. Projektaufträge bis Stuttgart und an den Bodensee.`;
 
   const sections =
     profile !== null

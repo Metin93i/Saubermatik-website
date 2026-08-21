@@ -167,10 +167,12 @@ export default function FensterGlasreinigungPage() {
                 Stangenlänge, Reinigungsrichtung und Wetterfenster werden im
                 Objektplan festgehalten. So wird die{" "}
                 <strong className="text-foreground">
-                  streifenfreie Glanzgarantie
+                  streifenfreie Optik
                 </strong>{" "}
                 nicht zur Marketingfloskel, sondern zum wiederholbaren
                 Qualitätsmerkmal – messbar für Einkauf und Facility.
+                Streifenfreiheit merken wir selbst; eine Garantiezusage geben
+                wir nicht.
               </p>
             </div>
           </article>

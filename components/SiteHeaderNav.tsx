@@ -14,8 +14,8 @@ const DESKTOP_NAV_ITEM =
 const DROPDOWN_LINK =
   "flex items-start gap-2 border-b border-slate-100 px-4 py-2.5 text-sm text-slate-700 transition last:border-b-0 hover:bg-slate-50 hover:text-slate-900";
 
-/** Vorübergehend false: Kunden-Login im Header ausblenden. Wieder einblenden: true. */
-const SHOW_HEADER_CLIENT_LOGIN = false;
+/** Kundenportal im Header (Paket D). Ausblenden: auf false setzen. */
+const SHOW_HEADER_CLIENT_LOGIN = true;
 
 const MAIN_PAGES = [
   { href: "/zielgruppen", label: "Branchen" },

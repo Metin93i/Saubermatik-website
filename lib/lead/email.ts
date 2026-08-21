@@ -37,6 +37,7 @@ export function buildGfLeadNotificationHtml(lead: LeadSubmission): string {
   const phone = lead.phone.trim() || "—";
 
   const gridTop = `<tr>${metricCell("Name / Firma", nameOrCompanyLine(lead))}${metricCell("Firma", company)}</tr>`;
+  const qualifyRow = `<tr>${metricCell("Worum geht es?", lead.topic.trim() || "—")}${metricCell("Ort oder PLZ", lead.location.trim() || "—")}</tr>`;
 
   const phoneCell = lead.phone.trim()
     ? `<a href="tel:${encodeURIComponent(lead.phone.replace(/\s/g, ""))}" style="color:#fb923c;text-decoration:none;">${escapeHtml(lead.phone)}</a>`
@@ -87,6 +88,7 @@ export function buildGfLeadNotificationHtml(lead: LeadSubmission): string {
             <td style="padding:20px 18px 24px;">
               <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="border-collapse:collapse;">
                 ${gridTop}
+                ${qualifyRow}
                 ${contactRow}
                 ${messageRow}
               </table>

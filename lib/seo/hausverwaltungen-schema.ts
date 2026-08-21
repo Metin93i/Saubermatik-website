@@ -22,7 +22,7 @@ export function buildHausverwaltungenServiceJsonLd() {
     },
     areaServed: {
       "@type": "AdministrativeArea",
-      name: "Zollernalb, Schwarzwald-Baar-Heuberg, Stuttgart Metropolregion",
+      name: "Zollernalbkreis, Sigmaringen, Rottweil, Hechingen, Tübingen; Projekte Stuttgart und Bodensee",
     },
     audience: {
       "@type": "BusinessAudience",

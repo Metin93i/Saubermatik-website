@@ -1,15 +1,43 @@
 /** Gemeinsame Typen & Parser für Kontaktformular und `POST /api/lead`. */
 
+export const LEAD_TOPIC_OPTIONS = [
+  "Büro & Gewerbe",
+  "Praxis & Gesundheitswesen",
+  "Wohnanlage & Hausverwaltung",
+  "Privathaushalt",
+  "Sonstiges",
+] as const;
+
+export type LeadTopic = (typeof LEAD_TOPIC_OPTIONS)[number];
+
 export type LeadSubmission = {
   name: string;
   company: string;
   email: string;
   phone: string;
   message: string;
+  /** Optional: „Worum geht es?“ */
+  topic: string;
+  /** Optional: Ort oder PLZ */
+  location: string;
 };
 
 function isNonEmptyString(v: unknown): v is string {
   return typeof v === "string" && v.trim().length > 0;
+}
+
+function parseOptionalTopic(v: unknown): string {
+  if (typeof v !== "string") return "";
+  const trimmed = v.trim();
+  if (trimmed.length === 0) return "";
+  return (LEAD_TOPIC_OPTIONS as readonly string[]).includes(trimmed)
+    ? trimmed
+    : "";
+}
+
+function parseOptionalLocation(v: unknown): string {
+  if (typeof v !== "string") return "";
+  return v.trim().slice(0, 80);
 }
 
 /** Einfache RFC-5322-nahe Prüfung (ohne externe Lib). */
@@ -43,6 +71,8 @@ export function parseLeadSubmission(body: unknown): ParseLeadResult {
         email: "honeypot@invalid.local",
         phone: "",
         message: "",
+        topic: "",
+        location: "",
       },
     };
   }
@@ -94,6 +124,8 @@ export function parseLeadSubmission(body: unknown): ParseLeadResult {
       email,
       phone,
       message,
+      topic: parseOptionalTopic(o.topic),
+      location: parseOptionalLocation(o.location),
     },
   };
 }

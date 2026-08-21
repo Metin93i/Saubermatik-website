@@ -95,6 +95,10 @@ export default async function KontaktPage({ searchParams }: KontaktPageProps) {
           </a>
         </div>
 
+        <p className="mt-3 text-sm text-muted">
+          Erreichbar Mo–Sa, 08:00–22:00 Uhr.
+        </p>
+
         <p className="mt-6 text-sm text-muted">
           <Link
             href="/leistungen"

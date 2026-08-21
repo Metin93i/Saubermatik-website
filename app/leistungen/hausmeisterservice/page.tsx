@@ -114,7 +114,7 @@ export default function HausmeisterservicePage() {
               Saubermatik entlastet Eigentümer, Verwaltungen und interne
               Facility-Teams bei genau den Aufgaben, die den Alltag sprengen:
               Kleinreparaturen, Kontrollgänge, Koordination mit Handwerkern,
-              Schlüssel und Lieferanten. Jeder Einsatz wird in der App
+              Schlüssel und Lieferanten. Einsätze werden in der App
               dokumentiert – der Key Account Manager sieht den Status, ohne
               WhatsApp-Ketten oder Zettelwirtschaft.
             </p>

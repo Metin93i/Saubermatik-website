@@ -72,7 +72,7 @@ function buildLocalBlockA(
         `Digitale Objektsteuerung und Ausfallsicherheit sind bei uns Betriebslogik: Wenn jemand ausfällt, reagiert das System — Sie merken, dass es weiterläuft. Transparente SLAs, keine versteckten Kosten.`,
       ]
     : [
-        `${cityLabel} liegt im Einzugsgebiet Schwarzwald-Baar-Heuberg und Zollernalb — ${serviceLabel} von Saubermatik kombiniert regionale Nähe aus Meßstetten mit überregionaler Prozessqualität. Kurze Anfahrten, feste Ansprechpartner, dieselben digitalen Standards wie in unseren Kernstädten.`,
+        `${cityLabel} liegt im Zollernalbkreis und Umkreis — ${serviceLabel} von Saubermatik kombiniert regionale Nähe aus Meßstetten mit überregionaler Prozessqualität. Kurze Anfahrten, feste Ansprechpartner, dieselben digitalen Standards wie in unseren Kernstädten.`,
         `Für ${cityLabel} setzen Unternehmen und Hausverwaltungen auf Verlässlichkeit statt Billig-Anbieter. Wir liefern dokumentierte Touren, Verkehrssicherungsnachweise und SLAs, die intern verteidigbar sind — bei Audits, Versicherern und Mieterversammlungen.`,
         `Ob Unterhalt, Glas, Winterdienst oder Objektbetreuung: ${serviceLabel} wird über die Saubermatik-App gesteuert — Echtzeit-QM, Ersatzlogistik, exportierbare Protokolle. Ein Partner statt vier Schnittstellen.`,
       ];

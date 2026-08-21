@@ -20,7 +20,7 @@ export function buildLlmsTxt(): string {
 - Qualitätsmanagement (QM) über die Saubermatik-Plattform
 - Digitale Objektprotokolle und Checklisten; dokumentierte Einsätze (Umfang je nach Objekt und Vereinbarung)
 - Fester Ansprechpartner statt Callcenter; bei Urlaub oder Ausfall Vertretung durch ein bewährtes Team, sonst die Geschäftsführung
-- Regional verwurzelt: Meßstetten, Zollernalb, Schwarzwald-Baar-Heuberg — wir kommen zu Ihnen
+- Regional verwurzelt: Zollernalbkreis, Sigmaringen, Rottweil, Hechingen, Tübingen – Projekte bis Stuttgart und an den Bodensee
 
 ## Branchen
 Saubermatik arbeitet für Hausverwaltungen und Wohnungseigentümergemeinschaften (WEG), Praxen und Einrichtungen im Gesundheitswesen sowie Büro- und Gewerbeobjekte. Wartungsverträge im Umkreis von Meßstetten auf der Schwäbischen Alb, Projektaufträge wie Glas- oder Fassadenreinigung auch überregional. Größere regelmäßige Aufträge außerhalb des Kernradius sind nach Vereinbarung möglich – die Betreuung vor Ort wird dafür gezielt aufgebaut.
