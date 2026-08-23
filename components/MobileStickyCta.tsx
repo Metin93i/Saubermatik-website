@@ -15,14 +15,14 @@ export function MobileStickyCta() {
           {telHref ? (
             <a
               href={telHref}
-              className="flex h-12 min-h-12 flex-1 items-center justify-center rounded-sm bg-secondary text-sm font-bold text-secondary-foreground transition hover:bg-secondary/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary"
+              className="btn-primary h-12 min-h-12 flex-1"
             >
               Jetzt anrufen
             </a>
           ) : null}
           <Link
             href="/kontakt#kontakt-anfrage"
-            className={`flex h-12 min-h-12 items-center justify-center rounded-sm border border-zinc-300 bg-white text-sm font-bold text-foreground transition hover:bg-zinc-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary ${telHref ? "flex-1" : "w-full"}`}
+            className={`btn-secondary h-12 min-h-12 ${telHref ? "flex-1" : "w-full"}`}
           >
             Anfrage stellen
           </Link>

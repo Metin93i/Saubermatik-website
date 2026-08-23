@@ -1,86 +1,100 @@
 @import "tailwindcss";
 
-/* ─── Brand palette (compile-time + runtime) ─────────────────────────────── */
+/* ─── Leitstand tokens (compile-time + runtime) ──────────────────────────── */
 @theme {
   --color-background: #ffffff;
   --color-foreground: #09090b;
   --color-muted: #52525b;
 
-  --color-primary: #f97316;
+  --color-nacht: #13181d;
+  --color-anthrazit: #1e242e;
+  --color-navy: #0d2745;
+  --color-secureops: #0066b3;
+  --color-glow: #67bfff;
+  --color-orange: #f47920;
+  --color-text-dunkel: #cfd2d8;
+  --color-hell: #f6f7f9;
+
+  --color-primary: #f47920;
   --color-primary-foreground: #09090b;
-
-  --color-secondary: #f97316;
+  --color-secondary: #f47920;
   --color-secondary-foreground: #09090b;
-
-  --color-accent: #f97316;
+  --color-accent: #f47920;
   --color-accent-foreground: #09090b;
 
-  --color-surface-inverse: #09090b;
-  --color-surface-inverse-foreground: #fafafa;
+  --color-surface-inverse: #13181d;
+  --color-surface-inverse-foreground: #cfd2d8;
 
-  --color-brand-orange: #f97316;
-  --color-brand-orange-hover: #ea580c;
-  --color-brand-black: #09090b;
+  --color-brand-orange: #f47920;
+  --color-brand-orange-hover: #d96a18;
+  --color-brand-black: #13181d;
 
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-space-grotesk), ui-sans-serif, system-ui, sans-serif;
 }
 
-/* Lock tokens on every root selector Tailwind / browsers may use */
 :root,
 :host,
 html {
   color-scheme: light;
 
+  --nacht: #13181d;
+  --anthrazit: #1e242e;
+  --navy: #0d2745;
+  --secureops: #0066b3;
+  --glow: #67bfff;
+  --orange: #f47920;
+  --text-dunkel: #cfd2d8;
+  --hell: #f6f7f9;
+
   --background: #ffffff;
   --foreground: #09090b;
   --muted: #52525b;
 
-  --primary: #f97316;
-  --primary-hover: #ea580c;
+  --primary: #f47920;
+  --primary-hover: #d96a18;
   --primary-foreground: #09090b;
 
-  --secondary: #f97316;
-  --secondary-hover: #ea580c;
+  --secondary: #f47920;
+  --secondary-hover: #d96a18;
   --secondary-foreground: #09090b;
 
-  --accent: #f97316;
+  --accent: #f47920;
   --accent-foreground: #09090b;
 
-  --color-primary: #f97316;
+  --color-primary: #f47920;
   --color-primary-foreground: #09090b;
-  --color-secondary: #f97316;
+  --color-secondary: #f47920;
   --color-secondary-foreground: #09090b;
-  --color-accent: #f97316;
+  --color-accent: #f47920;
   --color-accent-foreground: #09090b;
 
-  --surface-inverse: #09090b;
-  --surface-inverse-foreground: #fafafa;
-  --link-on-inverse: #fb923c;
-  --logo-focus-ring: #f97316;
+  --surface-inverse: #13181d;
+  --surface-inverse-foreground: #cfd2d8;
+  --link-on-inverse: #67bfff;
+  --logo-focus-ring: #f47920;
 }
 
-/* Force light brand even if OS / .dark / data-theme flips */
 .dark,
 html.dark,
 html[data-theme="dark"],
 [data-theme="dark"] {
   color-scheme: light;
 
-  --primary: #f97316;
-  --primary-hover: #ea580c;
+  --primary: #f47920;
+  --primary-hover: #d96a18;
   --primary-foreground: #09090b;
-  --secondary: #f97316;
-  --secondary-hover: #ea580c;
+  --secondary: #f47920;
+  --secondary-hover: #d96a18;
   --secondary-foreground: #09090b;
-  --accent: #f97316;
+  --accent: #f47920;
   --accent-foreground: #09090b;
 
-  --color-primary: #f97316;
+  --color-primary: #f47920;
   --color-primary-foreground: #09090b;
-  --color-secondary: #f97316;
+  --color-secondary: #f47920;
   --color-secondary-foreground: #09090b;
-  --color-accent: #f97316;
+  --color-accent: #f47920;
   --color-accent-foreground: #09090b;
 }
 
@@ -90,20 +104,20 @@ html[data-theme="dark"],
   html {
     color-scheme: light;
 
-    --primary: #f97316;
-    --primary-hover: #ea580c;
+    --primary: #f47920;
+    --primary-hover: #d96a18;
     --primary-foreground: #09090b;
-    --secondary: #f97316;
-    --secondary-hover: #ea580c;
+    --secondary: #f47920;
+    --secondary-hover: #d96a18;
     --secondary-foreground: #09090b;
-    --accent: #f97316;
+    --accent: #f47920;
     --accent-foreground: #09090b;
 
-    --color-primary: #f97316;
+    --color-primary: #f47920;
     --color-primary-foreground: #09090b;
-    --color-secondary: #f97316;
+    --color-secondary: #f47920;
     --color-secondary-foreground: #09090b;
-    --color-accent: #f97316;
+    --color-accent: #f47920;
     --color-accent-foreground: #09090b;
   }
 }
@@ -111,18 +125,160 @@ html[data-theme="dark"],
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--font-sans);
 }
 
-/* ─── Industrial / Heavy Duty UI baseline ─────────────────────────────────── */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
 h1 {
-  font-weight: 900;
   letter-spacing: -0.025em;
 }
 
-h2 {
-  font-weight: 800;
-  letter-spacing: -0.02em;
+/* Blueprint-Raster — nur auf dunklen Flächen verwenden */
+.bg-blueprint {
+  background-image:
+    linear-gradient(rgba(103, 191, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(103, 191, 255, 0.05) 1px, transparent 1px);
+  background-size: 84px 84px;
+}
+
+/* ─── Buttons ────────────────────────────────────────────────────────────── */
+.btn-primary {
+  display: inline-flex;
+  height: 2.75rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background-color: var(--orange);
+  padding: 0 1.25rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #09090b;
+  transition: background-color 0.15s ease;
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-hover);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  height: 2.75rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  border: 1px solid #d4d4d8;
+  background-color: #ffffff;
+  padding: 0 1.25rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--foreground);
+  transition:
+    border-color 0.15s ease,
+    background-color 0.15s ease;
+}
+
+.btn-secondary:hover {
+  border-color: var(--orange);
+  background-color: #fff7f0;
+}
+
+.btn-secondary-on-dark {
+  display: inline-flex;
+  height: 2.75rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  border: 1px solid rgba(207, 210, 216, 0.7);
+  background-color: transparent;
+  padding: 0 1.25rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #ffffff;
+  transition: background-color 0.15s ease;
+}
+
+.btn-secondary-on-dark:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+.btn-secureops {
+  display: inline-flex;
+  height: 2.75rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background-color: var(--secureops);
+  padding: 0 1.25rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #ffffff;
+  transition: background-color 0.15s ease;
+}
+
+.btn-secureops:hover {
+  background-color: #005291;
+}
+
+.btn-primary:focus-visible,
+.btn-secondary:focus-visible,
+.btn-secondary-on-dark:focus-visible,
+.btn-secureops:focus-visible {
+  outline: 2px solid var(--glow);
+  outline-offset: 3px;
+}
+
+/* Statuskarte Puls */
+@keyframes leitstand-pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.45);
+    opacity: 0.45;
+  }
+}
+
+.leitstand-pulse {
+  animation: leitstand-pulse 2.4s ease-in-out infinite;
+}
+
+/* Scroll-Einblendung */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(16px);
+  transition:
+    opacity 0.55s ease,
+    transform 0.55s ease;
+}
+
+.reveal-on-scroll.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .leitstand-pulse,
+  .reveal-on-scroll {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .reveal-on-scroll {
+    opacity: 1;
+    transform: none;
+  }
 }
 
 input[type="range"] {
@@ -148,9 +304,8 @@ input[type="range"]::-moz-range-thumb {
   border-radius: 2px;
 }
 
-/* Orange CTA hover → orange-600 (baked hex, not opacity-mix) */
 .hover\:bg-primary\/90:hover,
 .hover\:bg-primary\/92:hover,
 .hover\:bg-secondary\/90:hover {
-  background-color: #ea580c !important;
+  background-color: #d96a18 !important;
 }
