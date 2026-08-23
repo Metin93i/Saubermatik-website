@@ -6,8 +6,9 @@ import { EsgComplianceStatement } from "@/components/EsgComplianceStatement";
 import { FaqPageJsonLd } from "@/components/FaqPageJsonLd";
 import { FreshnessBadge } from "@/components/FreshnessBadge";
 import { AnfrageCta } from "@/components/AnfrageCta";
+import { LeitstandButton } from "@/components/LeitstandButton";
 import { RevealOnScroll } from "@/components/RevealOnScroll";
-import { SecureOpsStatusCard } from "@/components/SecureOpsStatusCard";
+import { SecureOpsFlyerCard } from "@/components/SecureOpsFlyerCard";
 import { StartHowItWorks } from "@/components/StartHowItWorks";
 import { StartLeistungsGrid } from "@/components/StartLeistungsGrid";
 import { StartTrustBar } from "@/components/StartTrustBar";
@@ -72,49 +73,47 @@ export default function Home() {
   return (
     <div className="flex flex-1 flex-col">
       <FaqPageJsonLd items={startFaqItems} />
-      <section className="relative bg-linear-to-b from-anthrazit to-nacht bg-blueprint pb-20 pt-8 sm:pt-10 lg:min-h-[62vh] lg:pb-24 lg:pt-12">
-        <div
-          className={`${PAGE_CONTAINER} flex flex-col gap-8 lg:grid lg:grid-cols-[minmax(0,1fr)_minmax(0,40%)] lg:items-center lg:gap-12`}
-        >
-          <div className="relative order-1 lg:order-2">
-            <div className="relative aspect-[4/5] overflow-hidden rounded-[18px] shadow-[0_24px_48px_rgba(0,0,0,0.35)]">
+      <section className="surface-hero relative min-h-[90vh] pb-20 pt-8 sm:pt-10 lg:pb-24 lg:pt-12">
+        <div className={`${PAGE_CONTAINER} flex flex-col gap-10`}>
+          <div className="max-w-4xl">
+            <p className="text-xs font-semibold tracking-[0.18em] text-brand-orange uppercase sm:text-sm">
+              Gebäudereinigung · Zollernalbkreis · Sigmaringen · Stuttgart ·
+              Bodensee · Rottweil · Hechingen · Tübingen
+            </p>
+            <h1 className="mt-4 text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-[2.65rem] lg:leading-tight">
+              Wir digitalisieren die Reinigung.
+            </h1>
+            <p className="mt-4 max-w-2xl text-base leading-7 text-text-dunkel sm:text-lg sm:leading-8">
+              Beweis statt Versprechen. Ihr Reinigungsservice für Gewerbe,
+              Hausverwaltungen und Praxen.
+            </p>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <LeitstandButton
+                variant="primary"
+                href="/kontakt#kontakt-anfrage"
+              >
+                Anfrage stellen
+              </LeitstandButton>
+              <LeitstandButton variant="secondary-on-dark" href="/leistungen">
+                Leistungen ansehen
+              </LeitstandButton>
+            </div>
+          </div>
+
+          <div className="grid items-stretch gap-6 lg:grid-cols-[minmax(0,55%)_minmax(0,45%)] lg:gap-8">
+            <div className="relative order-1 h-[38vh] overflow-hidden rounded-[18px] shadow-[0_24px_48px_rgba(0,0,0,0.35)] lg:order-2 lg:h-auto lg:min-h-[28rem]">
               <Image
                 src="/images/einsatz-fensterreinigung-hero.jpg"
                 alt="Saubermatik-Mitarbeiter reinigt Fenster mit Teleskopstange und Bürste an einer Glasfassade"
                 fill
                 className="object-cover object-top"
-                sizes="(max-width: 768px) 100vw, 40vw"
+                sizes="(max-width: 1024px) 100vw, 45vw"
                 quality={85}
                 priority
               />
             </div>
-            <SecureOpsStatusCard className="absolute -bottom-6 -left-3 hidden w-[min(22.5rem,calc(100%-0.5rem))] lg:flex" />
+            <SecureOpsFlyerCard className="order-2 lg:order-1" />
           </div>
-
-          <div className="order-2 max-w-xl lg:order-1">
-            <p className="text-xs font-semibold tracking-[0.18em] text-orange uppercase sm:text-sm">
-              Gebäudereinigung · Zollernalbkreis · Sigmaringen · Stuttgart ·
-              Bodensee · Rottweil · Hechingen · Tübingen
-            </p>
-            <h1 className="mt-4 text-3xl font-bold tracking-tight text-white sm:text-4xl xl:whitespace-nowrap xl:text-[2.55rem] lg:text-[2.2rem] lg:leading-tight">
-              Wir digitalisieren die Reinigung.
-            </h1>
-            <p className="mt-4 text-base leading-7 text-text-dunkel sm:text-lg sm:leading-8">
-              Beweis statt Versprechen. Ihr Reinigungsservice für Gewerbe,
-              Hausverwaltungen und Praxen – mit dokumentierten Einsätzen im
-              eigenen Kundenportal.
-            </p>
-            <div className="mt-8 flex flex-wrap gap-3">
-              <Link href="/kontakt#kontakt-anfrage" className="btn-primary">
-                Anfrage stellen
-              </Link>
-              <Link href="/leistungen" className="btn-secondary-on-dark">
-                Leistungen ansehen
-              </Link>
-            </div>
-          </div>
-
-          <SecureOpsStatusCard className="order-3 lg:hidden" />
         </div>
       </section>
 
@@ -183,7 +182,7 @@ export default function Home() {
 
       <RevealOnScroll>
       <section
-        className="bg-linear-to-br from-navy to-nacht bg-blueprint py-12 sm:py-16"
+        className="surface-navy py-12 sm:py-16"
         aria-labelledby="secureops-band-heading"
       >
         <div className={PAGE_CONTAINER}>
@@ -215,14 +214,18 @@ export default function Home() {
               </li>
             ))}
           </ul>
-          <Link href="/secureops" className="btn-secureops mt-8">
+          <LeitstandButton
+            variant="secondary-on-dark"
+            href="/secureops"
+            className="mt-8"
+          >
             SecureOps ansehen
-          </Link>
+          </LeitstandButton>
         </div>
       </section>
       </RevealOnScroll>
 
-      <section className="bg-nacht bg-blueprint py-12 sm:py-16" aria-labelledby="marken-band-heading">
+      <section className="surface-nacht py-12 sm:py-16" aria-labelledby="marken-band-heading">
         <div className={PAGE_CONTAINER}>
           <div className="border-l-4 border-[#f47920] pl-5 sm:pl-8">
             <p className="text-xs font-bold uppercase tracking-[0.18em] text-white/80">
@@ -233,7 +236,7 @@ export default function Home() {
               className="mt-3 text-3xl font-black tracking-tight text-white sm:text-4xl"
             >
               Sauber. Zuverlässig.{" "}
-              <span className="text-orange">Vor Ort.</span>
+              <span className="text-brand-orange">Vor Ort.</span>
             </h2>
             <p className="mt-4 max-w-3xl text-base leading-7 text-white/85 sm:text-lg">
               Ihr Gebäudeservice auf der Schwäbischen Alb – von der

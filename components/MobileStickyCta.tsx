@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { LeitstandButton } from "@/components/LeitstandButton";
 import { buildTelHref } from "@/lib/phone";
 
 export function MobileStickyCta() {
@@ -13,19 +13,21 @@ export function MobileStickyCta() {
       >
         <div className="mx-auto flex max-w-lg gap-2">
           {telHref ? (
-            <a
+            <LeitstandButton
+              variant="primary"
               href={telHref}
-              className="btn-primary h-12 min-h-12 flex-1"
+              className="h-12 min-h-12 flex-1"
             >
               Jetzt anrufen
-            </a>
+            </LeitstandButton>
           ) : null}
-          <Link
+          <LeitstandButton
+            variant="secondary-on-light"
             href="/kontakt#kontakt-anfrage"
-            className={`btn-secondary h-12 min-h-12 ${telHref ? "flex-1" : "w-full"}`}
+            className={`h-12 min-h-12 ${telHref ? "flex-1" : "w-full"}`}
           >
             Anfrage stellen
-          </Link>
+          </LeitstandButton>
         </div>
       </nav>
     </div>

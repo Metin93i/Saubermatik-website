@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { LeitstandButton } from "@/components/LeitstandButton";
 import { SITE_WHATSAPP_HREF } from "@/lib/config/site";
 import { getBusinessPhone } from "@/lib/phone";
 
@@ -10,8 +10,7 @@ type Props = {
 };
 
 /**
- * Einheitlicher Lead-CTA außerhalb von /kontakt:
- * „Anfrage stellen“ → Formular, plus Telefon und WhatsApp.
+ * Einheitlicher Lead-CTA außerhalb von /kontakt.
  * Dunkle Leitstand-Klammer — ohne Umbau der Aufrufer-Seiten.
  */
 export function AnfrageCta({
@@ -24,7 +23,7 @@ export function AnfrageCta({
 
   return (
     <div
-      className={`rounded-[18px] border border-[rgba(103,191,255,0.18)] bg-nacht bg-blueprint px-6 py-10 text-center sm:px-10 ${className}`}
+      className={`surface-nacht rounded-[18px] border border-[rgba(103,191,255,0.18)] px-6 py-10 text-center sm:px-10 ${className}`}
     >
       <h2 className="text-2xl font-bold tracking-tight text-white sm:text-3xl">
         {title}
@@ -34,22 +33,21 @@ export function AnfrageCta({
         <p className="mt-2 text-sm leading-6 text-text-dunkel">{note}</p>
       ) : null}
       <div className="mt-6 flex flex-wrap justify-center gap-3">
-        <Link href="/kontakt#kontakt-anfrage" className="btn-primary">
+        <LeitstandButton variant="primary" href="/kontakt#kontakt-anfrage">
           Anfrage stellen
-        </Link>
+        </LeitstandButton>
         {telHref ? (
-          <a href={telHref} className="btn-secondary-on-dark">
+          <LeitstandButton variant="secondary-on-dark" href={telHref}>
             Anrufen · {display}
-          </a>
+          </LeitstandButton>
         ) : null}
-        <a
+        <LeitstandButton
+          variant="secondary-on-dark"
           href={SITE_WHATSAPP_HREF}
-          className="btn-secondary-on-dark"
-          target="_blank"
-          rel="noopener noreferrer"
+          external
         >
           WhatsApp
-        </a>
+        </LeitstandButton>
       </div>
     </div>
   );

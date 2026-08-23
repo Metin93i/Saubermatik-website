@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
 import { AnfrageCta } from "@/components/AnfrageCta";
+import { LeitstandButton } from "@/components/LeitstandButton";
 import { SecureOpsFaqJsonLd } from "@/components/SecureOpsFaqJsonLd";
 import { buildTelHref } from "@/lib/phone";
 import { getSecureOpsFaqItems } from "@/lib/seo/secureops-faq";
@@ -44,19 +45,24 @@ export default function SecureOpsPage() {
       />
       <SecureOpsFaqJsonLd />
       <div className="flex flex-1 flex-col bg-hell">
-        <section className="bg-linear-to-br from-navy to-nacht bg-blueprint">
+        <section className="surface-navy">
           <div className="mx-auto w-full max-w-6xl px-4 py-10 sm:px-6 sm:py-14 lg:px-8">
-            <Image
-              src="/images/secureops-logo-weiss.png"
-              alt="SecureOps by Saubermatik"
-              width={320}
-              height={59}
-              className="mb-8 h-auto w-[220px] mix-blend-screen sm:w-[280px]"
-              priority
-            />
-            <p className="text-xs font-bold uppercase tracking-widest text-glow">
-              SecureOps
-            </p>
+            <div className="mb-8 flex items-center gap-3">
+              <Image
+                src="/images/secureops-schild-icon.png"
+                alt=""
+                width={48}
+                height={48}
+                className="h-12 w-12 object-contain mix-blend-screen"
+                priority
+              />
+              <div>
+                <p className="font-display text-2xl font-bold leading-none text-white">
+                  Secure<span className="text-glow">Ops</span>
+                </p>
+                <p className="mt-1 text-xs text-text-dunkel">by Saubermatik</p>
+              </div>
+            </div>
             <h1 className="mt-6 max-w-4xl text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-[2.5rem] lg:leading-tight">
               SecureOps – wir digitalisieren die Reinigung
             </h1>
@@ -66,19 +72,28 @@ export default function SecureOpsPage() {
               der wir Einsätze dokumentieren und unseren Kunden Einblick geben.
             </p>
             <div className="mt-10 flex flex-wrap gap-4">
-              <Link href="/kontakt#kontakt-anfrage" className="btn-secureops h-12">
-                Anfrage stellen
-              </Link>
-              <Link
+              <LeitstandButton
+                variant="primary"
                 href="/kontakt#kontakt-anfrage"
-                className="btn-secondary-on-dark h-12"
+                className="h-12"
+              >
+                Anfrage stellen
+              </LeitstandButton>
+              <LeitstandButton
+                variant="secondary-on-dark"
+                href="/kontakt#kontakt-anfrage"
+                className="h-12"
               >
                 Zur Kontaktseite
-              </Link>
+              </LeitstandButton>
               {telHref ? (
-                <a href={telHref} className="btn-secondary-on-dark h-12">
+                <LeitstandButton
+                  variant="secondary-on-dark"
+                  href={telHref}
+                  className="h-12"
+                >
                   Anrufen
-                </a>
+                </LeitstandButton>
               ) : null}
             </div>
           </div>

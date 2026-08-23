@@ -1,3 +1,4 @@
+2026-08-23 · design · Kontrast-System repariert, Hero nach Flyer-Seite-2 mit SecureOps-Karte und QR
 2026-08-23 · design · Leitstand-System: Tokens, Space Grotesk, Hero C+A, Statuskarte, Navy-SecureOps
 2026-08-21 · header · Mobilmenü per Portal sichtbar (nicht mehr vom Header geclippt)
 2026-08-21 · header · Kundenportal im Header vorübergehend ausgeblendet
