@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
 import { AnfrageCta } from "@/components/AnfrageCta";
@@ -42,42 +43,40 @@ export default function SecureOpsPage() {
         ]}
       />
       <SecureOpsFaqJsonLd />
-      <div className="flex flex-1 flex-col bg-white">
-        <section className="border-b border-slate-200/80 bg-zinc-100">
-          <div className="mx-auto w-full max-w-6xl px-4 py-10 sm:px-6 sm:py-12 lg:px-8">
-            <p
-              className="text-xs font-bold uppercase tracking-widest"
-              style={{ color: "#0066b3" }}
-            >
+      <div className="flex flex-1 flex-col bg-hell">
+        <section className="bg-linear-to-br from-navy to-nacht bg-blueprint">
+          <div className="mx-auto w-full max-w-6xl px-4 py-10 sm:px-6 sm:py-14 lg:px-8">
+            <Image
+              src="/images/secureops-logo-weiss.png"
+              alt="SecureOps by Saubermatik"
+              width={320}
+              height={59}
+              className="mb-8 h-auto w-[220px] mix-blend-screen sm:w-[280px]"
+              priority
+            />
+            <p className="text-xs font-bold uppercase tracking-widest text-glow">
               SecureOps
             </p>
-            <h1 className="mt-6 max-w-4xl text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-[2.5rem] lg:leading-tight">
+            <h1 className="mt-6 max-w-4xl text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-[2.5rem] lg:leading-tight">
               SecureOps – wir digitalisieren die Reinigung
             </h1>
-            <p className="mt-6 max-w-3xl text-lg leading-8 text-muted">
+            <p className="mt-6 max-w-3xl text-lg leading-8 text-text-dunkel">
               Die meisten Reinigungsfirmen liefern eine Rechnung. Wir liefern
               zusätzlich den Nachweis. SecureOps ist unsere eigene Software, mit
               der wir Einsätze dokumentieren und unseren Kunden Einblick geben.
             </p>
             <div className="mt-10 flex flex-wrap gap-4">
-              <Link
-                href="/kontakt#kontakt-anfrage"
-                className="inline-flex h-12 items-center justify-center rounded-sm px-6 text-sm font-semibold text-white transition hover:opacity-90"
-                style={{ backgroundColor: "#0066b3" }}
-              >
+              <Link href="/kontakt#kontakt-anfrage" className="btn-secureops h-12">
                 Anfrage stellen
               </Link>
               <Link
                 href="/kontakt#kontakt-anfrage"
-                className="inline-flex h-12 items-center justify-center rounded-sm border border-zinc-300 px-6 text-sm font-semibold text-foreground transition hover:border-secondary/50 hover:bg-secondary/5"
+                className="btn-secondary-on-dark h-12"
               >
                 Zur Kontaktseite
               </Link>
               {telHref ? (
-                <a
-                  href={telHref}
-                  className="inline-flex h-12 items-center justify-center rounded-sm border border-zinc-300 px-6 text-sm font-semibold text-foreground transition hover:border-secondary/50 hover:bg-secondary/5"
-                >
+                <a href={telHref} className="btn-secondary-on-dark h-12">
                   Anrufen
                 </a>
               ) : null}
@@ -87,7 +86,7 @@ export default function SecureOpsPage() {
 
         <section className="mx-auto w-full max-w-6xl px-4 py-12 sm:px-6 lg:px-8">
           <article className="space-y-8">
-            <h2 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
+            <h2 className="text-2xl font-bold tracking-tight text-navy sm:text-3xl">
               Warum wir das gebaut haben
             </h2>
             <div className="space-y-5 text-base leading-[1.75] text-foreground/90">
@@ -107,7 +106,7 @@ export default function SecureOpsPage() {
           </article>
 
           <article className="mt-16 space-y-8">
-            <h2 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
+            <h2 className="text-2xl font-bold tracking-tight text-navy sm:text-3xl">
               Ihr eigener Zugang zum Objekt
             </h2>
             <div className="space-y-5 text-base leading-[1.75] text-foreground/90">
@@ -127,7 +126,7 @@ export default function SecureOpsPage() {
           </article>
 
           <article className="mt-16 space-y-8">
-            <h2 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
+            <h2 className="text-2xl font-bold tracking-tight text-navy sm:text-3xl">
               Der Meldeweg für Mieter
             </h2>
             <div className="space-y-5 text-base leading-[1.75] text-foreground/90">
@@ -166,8 +165,7 @@ export default function SecureOpsPage() {
                 unsere Aufgabe sind. Mehr dazu für Verwalter unter{" "}
                 <Link
                   href="/zielgruppen/hausverwaltungen"
-                  className="font-semibold hover:underline"
-                  style={{ color: "#0066b3" }}
+                  className="font-semibold text-secureops hover:underline"
                 >
                   Hausverwaltungen &amp; WEG
                 </Link>
@@ -177,7 +175,7 @@ export default function SecureOpsPage() {
           </article>
 
           <article className="mt-16 space-y-8">
-            <h2 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
+            <h2 className="text-2xl font-bold tracking-tight text-navy sm:text-3xl">
               Nachweise, wenn Sie sie brauchen
             </h2>
             <div className="space-y-5 text-base leading-[1.75] text-foreground/90">
@@ -192,7 +190,7 @@ export default function SecureOpsPage() {
           </article>
 
           <article className="mt-16 space-y-8">
-            <h2 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
+            <h2 className="text-2xl font-bold tracking-tight text-navy sm:text-3xl">
               Ehrlich gesagt
             </h2>
             <div className="space-y-5 text-base leading-[1.75] text-foreground/90">
@@ -210,7 +208,7 @@ export default function SecureOpsPage() {
           </article>
 
           <article className="mt-16 space-y-8">
-            <h2 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
+            <h2 className="text-2xl font-bold tracking-tight text-navy sm:text-3xl">
               Wie Sie starten
             </h2>
             <ol className="list-decimal space-y-3 pl-5 text-base leading-[1.75] text-foreground/90">
@@ -231,8 +229,7 @@ export default function SecureOpsPage() {
               Passende Leistungen finden Sie in der{" "}
               <Link
                 href="/leistungen"
-                className="font-semibold hover:underline"
-                style={{ color: "#0066b3" }}
+                className="font-semibold text-secureops hover:underline"
               >
                 Leistungsübersicht
               </Link>
@@ -243,13 +240,16 @@ export default function SecureOpsPage() {
           <section className="mt-16" aria-labelledby="secureops-faq-heading">
             <h2
               id="secureops-faq-heading"
-              className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl"
+              className="text-2xl font-bold tracking-tight text-navy sm:text-3xl"
             >
               Häufige Fragen
             </h2>
-            <dl className="mt-8 space-y-8">
+            <dl className="mt-8 space-y-4">
               {faqItems.map((item) => (
-                <div key={item.question}>
+                <div
+                  key={item.question}
+                  className="rounded-[14px] border border-[#e1e4e9] bg-white p-5"
+                >
                   <dt className="text-lg font-semibold text-foreground">
                     {item.question}
                   </dt>
@@ -264,7 +264,7 @@ export default function SecureOpsPage() {
 
         <section
           id="kontakt-anfrage"
-          className="border-t border-slate-200 bg-zinc-100 py-12 sm:py-14"
+          className="bg-hell py-12 sm:py-14"
         >
           <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">
             <AnfrageCta

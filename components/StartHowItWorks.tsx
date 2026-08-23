@@ -7,7 +7,7 @@ const STEPS = [
 export function StartHowItWorks() {
   return (
     <section
-      className="border-t border-foreground/10 bg-white py-12 sm:py-14"
+      className="bg-hell py-12 sm:py-14"
       aria-labelledby="so-einfach-heading"
     >
       <div className="mx-auto w-full max-w-[100rem] px-4 sm:px-8 lg:px-16">
@@ -21,9 +21,9 @@ export function StartHowItWorks() {
           {STEPS.map((text, index) => (
             <li
               key={text}
-              className="flex gap-3 rounded-sm border border-zinc-200 bg-zinc-50 p-5"
+              className="flex gap-3 rounded-[14px] border border-[#e1e4e9] bg-white p-5"
             >
-              <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-sm bg-[#13181d] text-sm font-bold text-white">
+              <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-[10px] bg-nacht text-sm font-bold text-white">
                 {index + 1}
               </span>
               <p className="text-sm font-medium leading-6 text-foreground sm:text-base">

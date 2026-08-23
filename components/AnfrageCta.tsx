@@ -9,15 +9,10 @@ type Props = {
   className?: string;
 };
 
-const primaryBtn =
-  "inline-flex h-12 items-center justify-center rounded-sm bg-primary px-6 text-sm font-semibold text-primary-foreground transition hover:bg-primary/90";
-
-const secondaryBtn =
-  "inline-flex h-12 items-center justify-center rounded-sm border border-zinc-300 bg-white px-6 text-sm font-semibold text-foreground transition hover:border-secondary/50 hover:bg-secondary/5";
-
 /**
  * Einheitlicher Lead-CTA außerhalb von /kontakt:
  * „Anfrage stellen“ → Formular, plus Telefon und WhatsApp.
+ * Dunkle Leitstand-Klammer — ohne Umbau der Aufrufer-Seiten.
  */
 export function AnfrageCta({
   title = "Anfrage stellen",
@@ -28,26 +23,28 @@ export function AnfrageCta({
   const { display, telHref } = getBusinessPhone();
 
   return (
-    <div className={`mx-auto max-w-2xl text-center ${className}`}>
-      <h2 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
+    <div
+      className={`rounded-[18px] border border-[rgba(103,191,255,0.18)] bg-nacht bg-blueprint px-6 py-10 text-center sm:px-10 ${className}`}
+    >
+      <h2 className="text-2xl font-bold tracking-tight text-white sm:text-3xl">
         {title}
       </h2>
-      <p className="mt-3 text-base leading-7 text-muted">{text}</p>
+      <p className="mt-3 text-base leading-7 text-text-dunkel">{text}</p>
       {note ? (
-        <p className="mt-2 text-sm leading-6 text-muted">{note}</p>
+        <p className="mt-2 text-sm leading-6 text-text-dunkel">{note}</p>
       ) : null}
       <div className="mt-6 flex flex-wrap justify-center gap-3">
-        <Link href="/kontakt#kontakt-anfrage" className={primaryBtn}>
+        <Link href="/kontakt#kontakt-anfrage" className="btn-primary">
           Anfrage stellen
         </Link>
         {telHref ? (
-          <a href={telHref} className={secondaryBtn}>
+          <a href={telHref} className="btn-secondary-on-dark">
             Anrufen · {display}
           </a>
         ) : null}
         <a
           href={SITE_WHATSAPP_HREF}
-          className={secondaryBtn}
+          className="btn-secondary-on-dark"
           target="_blank"
           rel="noopener noreferrer"
         >

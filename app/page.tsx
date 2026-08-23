@@ -6,6 +6,8 @@ import { EsgComplianceStatement } from "@/components/EsgComplianceStatement";
 import { FaqPageJsonLd } from "@/components/FaqPageJsonLd";
 import { FreshnessBadge } from "@/components/FreshnessBadge";
 import { AnfrageCta } from "@/components/AnfrageCta";
+import { RevealOnScroll } from "@/components/RevealOnScroll";
+import { SecureOpsStatusCard } from "@/components/SecureOpsStatusCard";
 import { StartHowItWorks } from "@/components/StartHowItWorks";
 import { StartLeistungsGrid } from "@/components/StartLeistungsGrid";
 import { StartTrustBar } from "@/components/StartTrustBar";
@@ -70,55 +72,60 @@ export default function Home() {
   return (
     <div className="flex flex-1 flex-col">
       <FaqPageJsonLd items={startFaqItems} />
-      <section className="flex flex-col lg:grid lg:min-h-[80vh] lg:grid-cols-[minmax(0,58%)_minmax(0,42%)]">
-        <div className="relative h-[45vh] w-full lg:order-2 lg:h-auto lg:min-h-[80vh]">
-          <Image
-            src="/images/einsatz-fensterreinigung-hero.jpg"
-            alt="Saubermatik-Mitarbeiter reinigt Fenster mit Teleskopstange und Bürste an einer Glasfassade"
-            fill
-            className="object-cover object-top"
-            sizes="(max-width: 768px) 100vw, 45vw"
-            quality={85}
-            priority
-          />
-        </div>
-        <div className="flex flex-col justify-center bg-[#13181d] px-4 py-10 sm:px-8 lg:order-1 lg:min-h-[80vh] lg:px-16 lg:py-14">
-          <div className="max-w-xl">
-            <p className="text-xs font-semibold tracking-wide text-primary sm:text-sm">
+      <section className="relative bg-linear-to-b from-anthrazit to-nacht bg-blueprint pb-20 pt-8 sm:pt-10 lg:min-h-[62vh] lg:pb-24 lg:pt-12">
+        <div
+          className={`${PAGE_CONTAINER} flex flex-col gap-8 lg:grid lg:grid-cols-[minmax(0,1fr)_minmax(0,40%)] lg:items-center lg:gap-12`}
+        >
+          <div className="relative order-1 lg:order-2">
+            <div className="relative aspect-[4/5] overflow-hidden rounded-[18px] shadow-[0_24px_48px_rgba(0,0,0,0.35)]">
+              <Image
+                src="/images/einsatz-fensterreinigung-hero.jpg"
+                alt="Saubermatik-Mitarbeiter reinigt Fenster mit Teleskopstange und Bürste an einer Glasfassade"
+                fill
+                className="object-cover object-top"
+                sizes="(max-width: 768px) 100vw, 40vw"
+                quality={85}
+                priority
+              />
+            </div>
+            <SecureOpsStatusCard className="absolute -bottom-6 -left-3 hidden w-[min(22.5rem,calc(100%-0.5rem))] lg:flex" />
+          </div>
+
+          <div className="order-2 max-w-xl lg:order-1">
+            <p className="text-xs font-semibold tracking-[0.18em] text-orange uppercase sm:text-sm">
               Gebäudereinigung · Zollernalbkreis · Sigmaringen · Stuttgart ·
               Bodensee · Rottweil · Hechingen · Tübingen
             </p>
-            <h1 className="mt-3 text-3xl font-black tracking-tight text-white sm:text-4xl lg:text-[2.75rem] lg:leading-tight">
+            <h1 className="mt-4 text-3xl font-bold tracking-tight text-white sm:text-4xl xl:whitespace-nowrap xl:text-[2.55rem] lg:text-[2.2rem] lg:leading-tight">
               Wir digitalisieren die Reinigung.
             </h1>
-            <p className="mt-4 text-base leading-7 text-white/90 sm:text-lg sm:leading-8">
+            <p className="mt-4 text-base leading-7 text-text-dunkel sm:text-lg sm:leading-8">
               Beweis statt Versprechen. Ihr Reinigungsservice für Gewerbe,
               Hausverwaltungen und Praxen – mit dokumentierten Einsätzen im
               eigenen Kundenportal.
             </p>
-            <div className="mt-8 flex flex-wrap gap-2">
-              <Link
-                href="/kontakt#kontakt-anfrage"
-                className="inline-flex h-10 items-center justify-center rounded-sm bg-primary px-4 text-sm font-bold text-primary-foreground transition hover:bg-primary/90"
-              >
+            <div className="mt-8 flex flex-wrap gap-3">
+              <Link href="/kontakt#kontakt-anfrage" className="btn-primary">
                 Anfrage stellen
               </Link>
-              <Link
-                href="/leistungen"
-                className="inline-flex h-10 items-center justify-center rounded-sm border border-white/70 bg-white/10 px-4 text-sm font-bold text-white transition hover:bg-white/20"
-              >
+              <Link href="/leistungen" className="btn-secondary-on-dark">
                 Leistungen ansehen
               </Link>
             </div>
           </div>
+
+          <SecureOpsStatusCard className="order-3 lg:hidden" />
         </div>
       </section>
 
+      <div className="bg-hell">
       <StartTrustBar />
 
+      <RevealOnScroll>
       <StartLeistungsGrid />
+      </RevealOnScroll>
 
-      <section className="border-t border-foreground/10 bg-zinc-50 py-10 sm:py-12">
+      <section className="bg-hell py-10 sm:py-12">
         <div className={`${PAGE_CONTAINER} flex flex-col gap-3`}>
           <p className="max-w-4xl text-sm leading-6 text-muted sm:text-base sm:leading-7">
             Saubermatik ist ein Reinigungsservice aus Meßstetten. Bei uns
@@ -135,7 +142,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="border-t border-foreground/10 bg-zinc-50 py-12 sm:py-14">
+      <section className="bg-hell py-12 sm:py-14">
         <div className={PAGE_CONTAINER}>
           <h2 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
             Warum wir? Weil wir nicht nur putzen.
@@ -157,7 +164,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="border-t border-foreground/10 bg-white py-10 sm:py-12">
+      <section className="bg-hell py-10 sm:py-12">
         <div className={PAGE_CONTAINER}>
           <ul className="flex flex-col gap-2 text-sm font-medium text-foreground sm:text-base">
             {trustItems.map((item) => (
@@ -172,11 +179,11 @@ export default function Home() {
         </div>
       </section>
 
+      </div>
+
+      <RevealOnScroll>
       <section
-        className="py-12 sm:py-16"
-        style={{
-          background: "linear-gradient(105deg, #003a6b 0%, #0066b3 70%, #1a7cc4 100%)",
-        }}
+        className="bg-linear-to-br from-navy to-nacht bg-blueprint py-12 sm:py-16"
         aria-labelledby="secureops-band-heading"
       >
         <div className={PAGE_CONTAINER}>
@@ -189,35 +196,33 @@ export default function Home() {
           >
             Ein Scan im Objekt – das Anliegen landet direkt bei uns.
           </h2>
-          <p className="mt-4 max-w-3xl text-base leading-7 text-white/90 sm:text-lg">
+          <p className="mt-4 max-w-3xl text-base leading-7 text-text-dunkel sm:text-lg">
             Dokumentierte Einsätze im Kundenportal, nachvollziehbar statt
             versprochen. Den Umfang vereinbaren wir je Objekt. Für
             Hausverwaltungen, Gewerbe und Kommunen.
           </p>
-          <p className="mt-3 max-w-3xl text-base leading-7 text-white/90 sm:text-lg">
+          <p className="mt-3 max-w-3xl text-base leading-7 text-text-dunkel sm:text-lg">
             Keine Software, die Sie kaufen – SecureOps ist Teil unserer
             Reinigungsleistung.
           </p>
           <ul className="mt-8 grid gap-5 sm:grid-cols-3">
             {secureOpsPoints.map((item) => (
               <li key={item.text} className="flex items-start gap-3 text-white">
-                <item.icon className="mt-0.5 h-6 w-6 shrink-0" />
+                <item.icon className="mt-0.5 h-6 w-6 shrink-0 text-glow" />
                 <span className="text-sm font-semibold leading-6 sm:text-base">
                   {item.text}
                 </span>
               </li>
             ))}
           </ul>
-          <Link
-            href="/secureops"
-            className="mt-8 inline-flex h-11 items-center justify-center rounded-sm bg-white px-5 text-sm font-bold text-[#0066b3] transition hover:bg-white/90"
-          >
+          <Link href="/secureops" className="btn-secureops mt-8">
             SecureOps ansehen
           </Link>
         </div>
       </section>
+      </RevealOnScroll>
 
-      <section className="bg-[#13181d] py-12 sm:py-16" aria-labelledby="marken-band-heading">
+      <section className="bg-nacht bg-blueprint py-12 sm:py-16" aria-labelledby="marken-band-heading">
         <div className={PAGE_CONTAINER}>
           <div className="border-l-4 border-[#f47920] pl-5 sm:pl-8">
             <p className="text-xs font-bold uppercase tracking-[0.18em] text-white/80">
@@ -228,7 +233,7 @@ export default function Home() {
               className="mt-3 text-3xl font-black tracking-tight text-white sm:text-4xl"
             >
               Sauber. Zuverlässig.{" "}
-              <span className="text-[#f47920]">Vor Ort.</span>
+              <span className="text-orange">Vor Ort.</span>
             </h2>
             <p className="mt-4 max-w-3xl text-base leading-7 text-white/85 sm:text-lg">
               Ihr Gebäudeservice auf der Schwäbischen Alb – von der
@@ -239,14 +244,15 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="bg-zinc-50 py-8 sm:py-10">
+      <div className="bg-hell">
+      <section className="bg-hell py-8 sm:py-10">
         <div className={`${PAGE_CONTAINER} flex flex-col gap-2.5`}>
           <EsgComplianceStatement />
         </div>
       </section>
 
       <section
-        className="border-t border-foreground/10 bg-zinc-50 py-10 sm:py-12"
+        className="bg-hell py-10 sm:py-12"
         aria-labelledby="reinigung-4-heading"
       >
         <div className={PAGE_CONTAINER}>
@@ -269,7 +275,7 @@ export default function Home() {
             </p>
           </div>
           <ul className="mt-8 grid gap-5 sm:grid-cols-2">
-            <li className="flex flex-col rounded-sm border border-zinc-200 bg-white p-5 sm:p-6">
+            <li className="flex flex-col rounded-[14px] border border-[#e1e4e9] bg-white p-5 sm:p-6">
               <h3 className="text-lg font-bold text-foreground sm:text-xl">
                 Digitale Protokolle
               </h3>
@@ -280,7 +286,7 @@ export default function Home() {
                 Kontrolle im Alltag.
               </p>
             </li>
-            <li className="flex flex-col rounded-sm border border-zinc-200 bg-white p-5 sm:p-6">
+            <li className="flex flex-col rounded-[14px] border border-[#e1e4e9] bg-white p-5 sm:p-6">
               <h3 className="text-lg font-bold text-foreground sm:text-xl">
                 Vertretung, die Sie kennen
               </h3>
@@ -294,13 +300,13 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="border-y border-foreground/10 bg-zinc-50 py-10">
+      <section className="bg-hell py-10">
         <div className={PAGE_CONTAINER}>
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {galleryImages.map((img) => (
               <div
                 key={img.src}
-                className={`relative aspect-[4/3] overflow-hidden rounded-sm ${"className" in img ? img.className : ""}`}
+                className={`relative aspect-[4/3] overflow-hidden rounded-[14px] ${"className" in img ? img.className : ""}`}
               >
                 <Image
                   src={img.src}
@@ -316,7 +322,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="border-t border-foreground/10 bg-white py-12 sm:py-14">
+      <section className="bg-hell py-12 sm:py-14">
         <div className={PAGE_CONTAINER}>
           <div className="max-w-2xl">
             <h2 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
@@ -334,7 +340,7 @@ export default function Home() {
               <li key={city}>
                 <Link
                   href={`/standorte/${city}`}
-                  className="group flex min-h-[8rem] flex-col rounded-sm border border-zinc-200 bg-zinc-50 p-4 transition hover:border-primary hover:bg-white"
+                  className="group flex min-h-[8rem] flex-col rounded-[14px] border border-[#e1e4e9] bg-white p-4 transition hover:-translate-y-0.5 hover:border-orange motion-reduce:hover:translate-y-0"
                 >
                   <span className="text-base font-semibold text-foreground group-hover:text-secondary">
                     {STANDORT_LABELS[city]}
@@ -355,7 +361,7 @@ export default function Home() {
       <StartHowItWorks />
 
       <section
-        className="border-t border-foreground/10 bg-zinc-50 py-12 sm:py-14"
+        className="bg-hell py-12 sm:py-14"
         aria-labelledby="start-faq-heading"
       >
         <div className={PAGE_CONTAINER}>
@@ -365,9 +371,12 @@ export default function Home() {
           >
             Häufige Fragen
           </h2>
-          <dl className="mt-8 max-w-3xl space-y-8">
+          <dl className="mt-8 max-w-3xl space-y-4">
             {startFaqItems.map((item) => (
-              <div key={item.question}>
+              <div
+                key={item.question}
+                className="rounded-[14px] border border-[#e1e4e9] bg-white p-5"
+              >
                 <dt className="text-lg font-semibold text-foreground">
                   {item.question}
                 </dt>
@@ -380,9 +389,11 @@ export default function Home() {
         </div>
       </section>
 
+      </div>
+
       <section
         id="kontakt-anfrage"
-        className="border-t border-foreground/10 bg-zinc-100 py-12 sm:py-16"
+        className="bg-hell py-12 sm:py-16"
       >
         <div className={PAGE_CONTAINER}>
           <AnfrageCta

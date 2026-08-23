@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter, Space_Grotesk } from "next/font/google";
 import { MobileStickyCta } from "@/components/MobileStickyCta";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
@@ -7,15 +7,17 @@ import { StructuredData } from "@/components/StructuredData";
 import { getSiteOrigin } from "@/lib/seo/site-origin";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
+  weight: ["400", "500", "600"],
   display: "swap",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const spaceGrotesk = Space_Grotesk({
+  variable: "--font-space-grotesk",
   subsets: ["latin"],
+  weight: ["500", "700"],
   display: "swap",
 });
 
@@ -60,7 +62,7 @@ export default function RootLayout({
   return (
     <html
       lang="de"
-      className={`${geistSans.variable} ${geistMono.variable} light h-full scroll-smooth antialiased`}
+      className={`${inter.variable} ${spaceGrotesk.variable} light h-full scroll-smooth antialiased`}
       style={{ colorScheme: "light" }}
       suppressHydrationWarning
     >
@@ -68,7 +70,7 @@ export default function RootLayout({
         {/* Hard-lock brand tokens – prevents post-hydration teal overrides */}
         <style
           dangerouslySetInnerHTML={{
-            __html: `:root,:host,html,.dark,html.dark,html[data-theme="dark"]{--primary:#f97316!important;--secondary:#f97316!important;--accent:#f97316!important;--color-primary:#f97316!important;--color-secondary:#f97316!important;--color-accent:#f97316!important;--primary-foreground:#09090b!important;--secondary-foreground:#09090b!important;color-scheme:light!important}`,
+            __html: `:root,:host,html,.dark,html.dark,html[data-theme="dark"]{--primary:#f47920!important;--secondary:#f47920!important;--accent:#f47920!important;--orange:#f47920!important;--color-primary:#f47920!important;--color-secondary:#f47920!important;--color-accent:#f47920!important;--primary-foreground:#09090b!important;--secondary-foreground:#09090b!important;color-scheme:light!important}`,
           }}
         />
         <StructuredData />

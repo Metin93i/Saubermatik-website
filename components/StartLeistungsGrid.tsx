@@ -69,7 +69,7 @@ type Props = {
 export function StartLeistungsGrid({ className = "" }: Props) {
   return (
     <section
-      className={`border-t border-foreground/10 bg-white py-12 sm:py-14 ${className}`}
+      className={`bg-hell py-12 sm:py-14 ${className}`}
       aria-labelledby="leistungs-grid-heading"
     >
       <div className="mx-auto w-full max-w-[100rem] px-4 sm:px-8 lg:px-16">
@@ -84,13 +84,13 @@ export function StartLeistungsGrid({ className = "" }: Props) {
             <li key={tile.href}>
               <Link
                 href={tile.href}
-                className="group flex h-full flex-col rounded-sm border border-zinc-200 bg-white p-4 transition hover:border-primary hover:bg-zinc-50 sm:p-5"
+                className="group flex h-full flex-col rounded-[14px] border border-[#e1e4e9] bg-white p-4 transition hover:-translate-y-0.5 hover:border-orange hover:shadow-[0_8px_20px_rgba(19,24,29,0.06)] motion-reduce:hover:translate-y-0 sm:p-5"
               >
-                <tile.icon className="h-6 w-6 text-secondary" />
-                <span className="mt-3 flex items-start gap-2 text-sm font-semibold text-foreground group-hover:text-secondary sm:text-base">
+                <tile.icon className="h-6 w-6 text-orange" />
+                <span className="mt-3 flex items-start gap-2 text-sm font-semibold text-foreground sm:text-base">
                   {tile.title}
                   {tile.badge ? (
-                    <span className="rounded-sm bg-primary/15 px-1.5 py-0.5 text-[10px] font-bold uppercase tracking-wide text-primary">
+                    <span className="rounded-md bg-orange px-1.5 py-0.5 text-[10px] font-bold uppercase tracking-wide text-white">
                       {tile.badge}
                     </span>
                   ) : null}

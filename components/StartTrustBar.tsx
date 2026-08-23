@@ -1,25 +1,14 @@
-import {
-  HardHatIcon,
-  MonitorIcon,
-  ShieldCheckIcon,
-  UserCheckIcon,
-} from "@/components/BrandIcons";
-
 const CHIPS = [
   {
-    icon: ShieldCheckIcon,
-    text: "Betriebshaftpflicht bis 10 Mio. € – Nachweis auf Anfrage",
-  },
-  {
-    icon: HardHatIcon,
+    dot: "bg-orange",
     text: "Höhenarbeit geschult nach DGUV 112-198/199",
   },
   {
-    icon: MonitorIcon,
+    dot: "bg-secureops",
     text: "Eigene Plattform: dokumentierte Einsätze im Kundenportal",
   },
   {
-    icon: UserCheckIcon,
+    dot: "bg-orange",
     text: "Fester Ansprechpartner · Mo–Sa 08:00–22:00 erreichbar",
   },
 ] as const;
@@ -27,16 +16,19 @@ const CHIPS = [
 export function StartTrustBar() {
   return (
     <section
-      className="border-b border-zinc-200 bg-zinc-50 py-4 sm:py-5"
+      className="relative z-10 mx-auto w-full max-w-[100rem] -translate-y-14 px-4 sm:px-8 lg:px-16"
       aria-label="Vertrauensfakten"
     >
-      <ul className="mx-auto grid w-full max-w-[100rem] grid-cols-2 gap-3 px-4 sm:px-8 lg:grid-cols-4 lg:gap-4 lg:px-16">
+      <ul className="grid gap-4 rounded-[18px] border border-[#e1e4e9] bg-white px-5 py-5 shadow-[0_18px_40px_rgba(19,24,29,0.08)] sm:grid-cols-3 sm:px-6 sm:py-6">
         {CHIPS.map((chip) => (
           <li
             key={chip.text}
-            className="flex items-start gap-2 text-xs leading-5 text-foreground sm:text-sm sm:leading-6"
+            className="flex items-start gap-2.5 text-sm leading-6 text-foreground"
           >
-            <chip.icon className="mt-0.5 h-4 w-4 shrink-0 text-secondary" />
+            <span
+              className={`mt-1.5 h-2 w-2 shrink-0 rounded-full ${chip.dot}`}
+              aria-hidden
+            />
             <span>{chip.text}</span>
           </li>
         ))}
