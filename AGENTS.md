@@ -61,10 +61,16 @@ Regeln:
 
 - **Orange nur für Aktionen** (Buttons, aktive Signale, Spezialität-Badge).
 - **Navy = SecureOps-Welt** (Statuskarte, SecureOps-Sektionen, `/secureops`-Hero).
-- **Raster** (`.bg-blueprint`) nur auf dunklen Flächen.
+- Raster nur über feste Flächen-Klassen (`.surface-nacht` / `.surface-hero` / `.surface-navy`).
 - Fonts: Space Grotesk (500/700) für alle Überschriften; Inter (400/500/600) als Body.
-- Buttons: `.btn-primary` (Orange, radius 10px), `.btn-secondary` / `.btn-secondary-on-dark`, `.btn-secureops`.
+- Buttons über `LeitstandButton`: `primary` · `secondary-on-dark` · `secondary-on-light`.
 - Bild-Fallback-Regel gilt weiter (kein Bildbereich ohne echtes Asset).
+
+## Kontrast-Pflicht
+
+- Helle Textfarben (`text-white`, `text-text-dunkel`, `text-glow`) nur mit explizit dunklem Hintergrund (`surface-nacht` / `surface-hero` / `surface-navy` / `bg-navy` / `bg-nacht`) im selben Render-Baum.
+- Keine dynamisch zusammengesetzten Tailwind-Klassennamen mit Token-Farben (werden gepurged).
+- Nach jedem UI-PR Sichtprüfung durch den Inhaber auf `/`, `/secureops`, `/kontakt`.
 
 ## CI
 

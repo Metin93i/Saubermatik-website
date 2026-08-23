@@ -12,8 +12,10 @@
   --color-secureops: #0066b3;
   --color-glow: #67bfff;
   --color-orange: #f47920;
+  --color-brand-orange: #f47920;
   --color-text-dunkel: #cfd2d8;
   --color-hell: #f6f7f9;
+  --color-navy-inset: #0a1d33;
 
   --color-primary: #f47920;
   --color-primary-foreground: #09090b;
@@ -25,7 +27,6 @@
   --color-surface-inverse: #13181d;
   --color-surface-inverse-foreground: #cfd2d8;
 
-  --color-brand-orange: #f47920;
   --color-brand-orange-hover: #d96a18;
   --color-brand-black: #13181d;
 
@@ -143,12 +144,39 @@ h1 {
   letter-spacing: -0.025em;
 }
 
-/* Blueprint-Raster — nur auf dunklen Flächen verwenden */
-.bg-blueprint {
+/*
+ * Dunkle Flächen: Farbe + Raster (+ optional Verlauf) in EINER Klasse.
+ * .bg-blueprint allein setzt nur background-image und überschreibt Verläufe
+ * ohne background-color → weißer Hero (Live-Bug).
+ */
+.surface-nacht,
+.surface-hero,
+.surface-navy {
+  background-color: #13181d;
+}
+
+.surface-nacht {
   background-image:
     linear-gradient(rgba(103, 191, 255, 0.05) 1px, transparent 1px),
     linear-gradient(90deg, rgba(103, 191, 255, 0.05) 1px, transparent 1px);
   background-size: 84px 84px;
+}
+
+.surface-hero {
+  background-image:
+    linear-gradient(rgba(103, 191, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(103, 191, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, #1e242e, #13181d);
+  background-size: 84px 84px, 84px 84px, 100% 100%;
+}
+
+.surface-navy {
+  background-color: #0d2745;
+  background-image:
+    linear-gradient(rgba(103, 191, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(103, 191, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom right, #0d2745, #13181d);
+  background-size: 84px 84px, 84px 84px, 100% 100%;
 }
 
 /* ─── Buttons ────────────────────────────────────────────────────────────── */
