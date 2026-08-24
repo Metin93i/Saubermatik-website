@@ -2,7 +2,6 @@
 
 import type { FormEvent } from "react";
 import { useCallback, useState } from "react";
-import { apiUrl } from "@/lib/config/api";
 import {
   LEAD_TOPIC_OPTIONS,
   type LeadSubmission,
@@ -82,7 +81,7 @@ export function KontaktForm({ className = "" }: Props) {
 
       setIsLoading(true);
       try {
-        const response = await fetch(apiUrl("/api/lead"), {
+        const response = await fetch("/api/lead", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(payload),
