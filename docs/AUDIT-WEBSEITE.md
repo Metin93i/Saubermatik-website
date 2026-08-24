@@ -33,7 +33,7 @@
 | `app/robots.ts`, `app/sitemap.ts` | **Generiert** (Metadata Route) | `app/robots.ts`, `app/sitemap.ts` |
 | `app/llms.txt/route.ts` | **Route Handler** (GET, dynamisch aus Config) | `app/llms.txt/route.ts` |
 | `app/api/lead/route.ts`, `app/api/career/route.ts` | **Server/API** (`runtime = "nodejs"`) | jeweilige `route.ts` |
-| Client-only-Inseln | **Teilhydration** in sonst SSG-Seiten | `'use client'` in: `components/LeadFunnel.tsx`, `components/CareerForm.tsx`, `components/KontaktFormSwitch.tsx`, `components/EngagementCalculator.tsx`, `components/HeroQuickSearch.tsx`, `components/SiteHeaderNav.tsx`, `components/MobileStickyCta.tsx` (indirekt), `components/ClientLoginButton.tsx`, `components/JobListings.tsx`, `components/PrefetchLink.tsx` |
+| Client-only-Inseln | **Teilhydration** in sonst SSG-Seiten | `'use client'` in: `components/LeadFunnel.tsx`, `components/CareerForm.tsx`, `components/KontaktFormSwitch.tsx`, `components/EngagementCalculator.tsx`, `components/HeroQuickSearch.tsx`, `components/SiteHeaderNav.tsx`, `components/MobileStickyCta.tsx` (indirekt), `components/ClientLoginButton.tsx`, `components/PrefetchLink.tsx` |
 | 404 | **Next.js-Standard** (keine `not-found.tsx` im Repo) | Glob-Suche: 0 Treffer für `app/**/not-found*` |
 
 **SEO-relevant:** Sichtbarer Fließtext, H1–H3, JSON-LD in Server Components landen im **initialen HTML**. Formularschritte (`LeadFunnel`, `CareerForm`) und Mobile-Nav rendern Client-seitig; Hero-Text, Leistungs-Deep-Content, Standort-Texte sind serverseitig.
@@ -60,8 +60,7 @@
 | `http://localhost:3000` | Dev-Fallback `NEXT_PUBLIC_SITE_URL` | `.env.example` |
 | `anfragen@mail.saubermatik-reinigung.de` | Resend-Absender (Live) | `lib/lead/email.ts` → `RESEND_FROM_LIVE` |
 | `info@saubermatik-reinigung.de` | Karriere mailto-Fallback | `.env.example` → `NEXT_PUBLIC_CAREER_EMAIL` |
-| `http://72.62.88.65:3001` | SaaS-Kundenplattform-Fallback | `lib/config/platform.ts` → `PLATFORM_URL_FALLBACK` |
-| `http://localhost:8000` | Optionales separates Backend | `.env.example` → `NEXT_PUBLIC_API_URL` |
+| `NEXT_PUBLIC_PLATFORM_URL` | SaaS-Kundenplattform (optional) | `.env.example`, `lib/config/platform.ts` |
 | `https://www.openstreetmap.org/...` | Karten-Embed + externer Link | `lib/config/site.ts`, `app/kontakt/page.tsx` |
 | `https://schema.org` | JSON-LD `@context` | diverse `lib/seo/*.ts`, Komponenten |
 | `www.example.de` | Platzhalter in Nginx-Template | `ops/nginx-template.conf` |
@@ -246,7 +245,7 @@ Beispiel Pfad: `/standorte/balingen/unterhaltsreinigung` — Beleg: `lib/seo/mat
 | Third-Party Bilder | Unsplash CDN (Blocking durch next/image-Optimierung **unklar** live) | Remote URLs |
 | OSM iframe | Lazy-loaded Karte auf Kontakt | `app/kontakt/page.tsx` |
 | Analytics/Pixel | **Keine** gtag/GTM/Matomo/Hotjar im Repo | Grep |
-| Client-Bundles | LeadFunnel, HeaderNav, EngagementCalculator, JobListings | `'use client'`-Dateien |
+| Client-Bundles | LeadFunnel, HeaderNav, EngagementCalculator | `'use client'`-Dateien |
 | Große Assets | Keine lokalen Hero-Bilder; alles remote Unsplash | `public/` nur 3 Default-SVGs |
 | Favicon | **Kein** `favicon.ico`, `icon.png` oder `app/icon.*` | Glob |
 | Hardcoded inline CSS | Brand-color lock in `<head>` | `app/layout.tsx` |
@@ -342,7 +341,7 @@ Beispiel Pfad: `/standorte/balingen/unterhaltsreinigung` — Beleg: `lib/seo/mat
 | Adresse + OSM-Karte | Kontakt | `app/kontakt/page.tsx` |
 | Kunden-Login (extern) | Header | `components/ClientLoginButton.tsx` → Plattform :3001 |
 | WhatsApp | **nicht vorhanden** | Grep |
-| Karriere mailto | JobListings-Fallback | `lib/jobs/public-jobs.ts` |
+| Karriere mailto | Parser/mailto-Helfer vorhanden, UI ohne Live-Feed | `lib/jobs/public-jobs.ts` |
 
 ### Tracking / Analytics / Pixel
 
@@ -359,7 +358,7 @@ Beispiel Pfad: `/standorte/balingen/unterhaltsreinigung` — Beleg: `lib/seo/mat
 | FreshnessBadge | Startseite, Standort, Matrix, Stuttgart | `components/FreshnessBadge.tsx` |
 | App-Mockup / QM-App | Startseite | `components/AppMockup.tsx` |
 | Zertifikate/Siegel-Bilder | **Keine** echten Badge-Assets | — |
-| Job-Listings | Dynamisch via `NEXT_PUBLIC_API_URL` + `/jobs/public` | `components/JobListings.tsx` |
+| Job-Listings | Leerzustand „Aktuell keine offenen Stellen.“ (keine Jobs-API in diesem Repo) | `components/JobListings.tsx` |
 
 ### Conversion-Pfad
 
@@ -386,7 +385,7 @@ Karriere: `/karriere` → `/kontakt?type=karriere` → CareerForm → `/api/care
 |-----------|----------------------------|-------|
 | Startseite, Leistungs-Deep-Pages, Standort, Matrix, Lexikon, statische Infoseiten | **Ja** — Server Components | Architektur |
 | LeadFunnel / CareerForm Labels | **Teilweise** — Formular-UI client-seitig; umgebender Copy serverseitig | `'use client'` in Formularen |
-| JobListings | **Client-fetch** — Stellenliste nicht im initialen HTML | `components/JobListings.tsx` |
+| JobListings | **Server** — Leerzustand im initialen HTML | `components/JobListings.tsx` |
 | EngagementCalculator | **Client** — Rechner-UI | `components/EngagementCalculator.tsx` |
 
 ### Semantik
