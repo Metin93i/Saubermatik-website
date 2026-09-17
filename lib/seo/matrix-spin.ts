@@ -1,10 +1,10 @@
-import type { ServiceSlug } from "@/lib/config/services";
+import type { MatrixServiceSlug } from "@/lib/config/services";
 import type { StandortCity } from "@/lib/routes/standorte";
 
 /** Deterministischer Spin über Stadt+Leistung — stabil pro Build, unique pro Matrix-Zelle. */
 export function matrixSpinVariant(
   city: StandortCity,
-  service: ServiceSlug,
+  service: MatrixServiceSlug,
   mod: number,
 ): number {
   let h = 2166136261;

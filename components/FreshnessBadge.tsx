@@ -10,7 +10,7 @@ export function FreshnessBadge({ className }: Props) {
     <p
       className={className ?? "mt-3 text-xs font-medium text-muted sm:text-sm"}
     >
-      Zertifizierte Qualitätsstandards – Stand:{" "}
+      Dokumentierte Qualitätsstandards – Stand:{" "}
       <time dateTime={new Date().toISOString().slice(0, 7)}>
         {getCurrentMonthYear()}
       </time>

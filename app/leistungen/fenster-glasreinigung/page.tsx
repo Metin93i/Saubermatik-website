@@ -1,12 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { B2BOnboardingProcess } from "@/components/B2BOnboardingProcess";
 import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
-import { EngagementCalculator } from "@/components/EngagementCalculator";
 import { GeoImage } from "@/components/GeoImage";
 import { LeistungFaqJsonLd } from "@/components/LeistungFaqJsonLd";
 import { LeistungSgeTldr } from "@/components/LeistungSgeTldr";
-import { LeadFunnel } from "@/components/LeadFunnel";
+import { AnfrageCta } from "@/components/AnfrageCta";
 import { SeoCrossLinks } from "@/components/SeoCrossLinks";
 import { SnippetBaitTable } from "@/components/SnippetBaitTable";
 import { getLeistungImage } from "@/lib/config/leistung-images";
@@ -56,28 +54,31 @@ export default function FensterGlasreinigungPage() {
               dokumentierte Compliance in der Zollernalb und angrenzenden
               Regionen.
             </p>
-            <div className="relative mt-10 aspect-[16/9] max-w-4xl overflow-hidden rounded-sm ">
-              <GeoImage
-                src={hero.src}
-                alt={hero.alt}
-                fill
-                className="object-cover"
-                sizes="(max-width: 768px) 100vw, 48rem"
-                priority
-                placeholder="blur"
-                blurDataURL={REMOTE_IMAGE_BLUR_DATA_URL}
-                contentLocation="Zollernalbkreis, Baden-Württemberg"
-                author="Saubermatik"
-                imageId="geo-hero-glasreinigung-zollernalb"
-              />
-            </div>
+            {hero ? (
+              <div className="relative mt-10 aspect-[16/9] max-w-4xl overflow-hidden rounded-sm">
+                <GeoImage
+                  src={hero.src}
+                  alt={hero.alt}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  quality={80}
+                  priority
+                  placeholder="blur"
+                  blurDataURL={REMOTE_IMAGE_BLUR_DATA_URL}
+                  contentLocation="Zollernalbkreis, Baden-Württemberg"
+                  author="Saubermatik"
+                  imageId="geo-hero-glasreinigung-zollernalb"
+                />
+              </div>
+            ) : null}
             <div className="mt-10 flex flex-wrap gap-4">
-              <a
-                href="#kontakt-anfrage"
+              <Link
+                href="/kontakt#kontakt-anfrage"
                 className="inline-flex h-12 items-center justify-center rounded-sm bg-primary px-6 text-sm font-semibold text-primary-foreground transition hover:bg-primary/90"
               >
-                Glas-Analyse anfordern
-              </a>
+                Anfrage stellen
+              </Link>
               <Link
                 href="/qualitaetsmanagement"
                 className="inline-flex h-12 items-center justify-center rounded-sm border border-zinc-300 px-6 text-sm font-semibold text-foreground transition hover:border-secondary/50 hover:bg-secondary/5"
@@ -112,7 +113,15 @@ export default function FensterGlasreinigungPage() {
               Präzisions-Handwerk mit Einwascher und Abzieher für Innenräume,
               Showrooms und feingliedrige Glasbauten. Beide Welten teilen sich
               eine digitale Protokollkette: Sie sehen, wann welche Fläche
-              bearbeitet wurde – ohne Reklamations-Pingpong.
+              bearbeitet wurde – ohne Reklamations-Pingpong. Für Büros und
+              Gewerbeflächen siehe{" "}
+              <Link
+                href="/zielgruppen/buero-gewerbe"
+                className="font-semibold text-secondary hover:underline"
+              >
+                Büroreinigung und Gewerbereinigung
+              </Link>
+              .
             </p>
           </div>
 
@@ -157,10 +166,12 @@ export default function FensterGlasreinigungPage() {
                 Stangenlänge, Reinigungsrichtung und Wetterfenster werden im
                 Objektplan festgehalten. So wird die{" "}
                 <strong className="text-foreground">
-                  streifenfreie Glanzgarantie
+                  streifenfreie Optik
                 </strong>{" "}
                 nicht zur Marketingfloskel, sondern zum wiederholbaren
                 Qualitätsmerkmal – messbar für Einkauf und Facility.
+                Streifenfreiheit merken wir selbst; eine Garantiezusage geben
+                wir nicht.
               </p>
             </div>
           </article>
@@ -222,6 +233,11 @@ export default function FensterGlasreinigungPage() {
                 öffentlichem Grund.
               </p>
               <p>
+                Arbeiten in der Höhe führen wir mit persönlicher
+                Schutzausrüstung gegen Absturz aus – geschult nach DGUV 112-198
+                und DGUV 112-199.
+              </p>
+              <p>
                 Für Ausschreibungen und Rahmenverträge liefern wir
                 nachvollziehbare Unterlagen: Einsatzprotokolle, Versicherungs-
                 und Unterweisungsnachweise, Abstimmung mit Ihrem Objektleiter.
@@ -245,6 +261,15 @@ export default function FensterGlasreinigungPage() {
                   Hausverwaltungs-Portfolio
                 </Link>
                 , wenn Außenflächen ganzheitlich im SLA gebündelt werden sollen.
+                Ihre Außenraffstoren reinigen wir gleich mit – schonend im
+                Reinwasser-Verfahren (
+                <Link
+                  href="/leistungen/raffstore-lamellenreinigung"
+                  className="font-semibold text-secondary hover:underline"
+                >
+                  Raffstore- &amp; Lamellenreinigung
+                </Link>
+                ).
               </p>
             </div>
           </article>
@@ -284,20 +309,6 @@ export default function FensterGlasreinigungPage() {
           </div>
         </section>
 
-        <B2BOnboardingProcess
-          pagePath="/leistungen/fenster-glasreinigung"
-          className="border-t border-foreground/10 bg-slate-50/80 py-12 sm:py-14"
-        />
-
-        <section className="border-t border-slate-200 bg-white py-12">
-          <div className="mx-auto w-full max-w-xl px-4 sm:px-6 lg:px-8">
-            <EngagementCalculator
-              funnelHref="#kontakt-anfrage"
-              initialCategory="glas"
-            />
-          </div>
-        </section>
-
         <section className="border-t border-slate-200 py-12">
           <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
             <SeoCrossLinks type="location" />
@@ -309,18 +320,10 @@ export default function FensterGlasreinigungPage() {
           className="border-t border-slate-200 bg-zinc-100 py-12 sm:py-14"
         >
           <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">
-            <div className="mx-auto max-w-2xl text-center">
-              <h2 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
-                Glas- &amp; Fensterreinigung anfragen
-              </h2>
-              <p className="mt-3 text-base leading-7 text-muted">
-                Flächen, Höhe, Intervalle – wir erstellen ein verbindliches
-                Angebot nach Objektbegehung.
-              </p>
-            </div>
-            <div className="mx-auto mt-10 max-w-xl">
-              <LeadFunnel initialServiceType="fenster-glasreinigung" />
-            </div>
+            <AnfrageCta
+              title="Glas- & Fensterreinigung anfragen"
+              text="Flächen, Höhe, Intervalle – nach einer Objektbegehung erhalten Sie ein unverbindliches Angebot."
+            />
           </div>
         </section>
       </div>

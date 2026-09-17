@@ -1,3 +1,21 @@
+2026-08-24 · lead · Formular postet relativ an /api/lead, API-URL-Altlast entfernt
+2026-08-23 · design · Kontrast-System repariert, Hero nach Flyer-Seite-2 mit SecureOps-Karte und QR
+2026-08-23 · design · Leitstand-System: Tokens, Space Grotesk, Hero C+A, Statuskarte, Navy-SecureOps
+2026-08-21 · header · Mobilmenü per Portal sichtbar (nicht mehr vom Header geclippt)
+2026-08-21 · header · Kundenportal im Header vorübergehend ausgeblendet
+2026-08-21 · audit · Top-10: Echtzeit raus, Dopplungen entfernt, Tuebingen Radius
+2026-08-20 · vertrieb · Identitaet + Trust/Prozess/FAQ/Formular, Gebietstexte, Site-Audit
+2026-08-20 · header · Kunden-Login im Header vorübergehend ausgeblendet
+2026-08-20 · design · Platzhalter/Leerflächen entfernt, Hero-Ausschnitt, CTA-Block, HQ-Bilder
+2026-08-20 · startseite · Hover-Nav, größerer Hero, Marken-/SecureOps-Sektion, Fremdbilder entfernt
+2026-08-20 · favicon · Wortmarken-Logo als icon.png + apple-icon.png
+2026-08-20 · assets · echte Einsatzfotos, OG-Bilder, Favicon, PSA-Hinweis
+2026-08-19 · header · Kontakt-Elemente aus Header auf Kontaktseite; Ansprechpartner-Sektionen Kontakt/Über uns entfernt
+2026-08-19 · E5+E3+Konsolidierung: Lead-Weg, Branchen, Städte, Schema
+2026-08-19 · E4 · SecureOps-Erklärseite (Portal, Mieter-Meldeweg, Nachweise); Sitemap
+2026-08-19 · E2 · Raffstore- & Lamellenreinigung Landingpage (Matrix ausgenommen)
+2026-08-19 · E1 · Claims-Bereinigung, Nav-Umbau, Slogan, KI-Crawler offen
+2026-08-10 · recht · Impressum + Datenschutz-Seiten; NAP korrigiert (PLZ 72469, Schelmenwasenstraße 11); Footer-/Sitemap-Links
 2026-07-19 · claims-inventar · Neutrales Claims-Inventar (docs/CLAIMS-INVENTAR.md) aller überprüfbaren Website-Behauptungen für Wahrheits-Abgleich
 2026-07-19 · deploy-hardening · Deploy nur nach grünem CI (workflow_run); ops/deploy.sh mit Health-Check + Rollback; docs/deploy.md
 2026-07-19 · ci-gate · Hartes CI-Gate (lint+build bei PR/main); Lint-Altlasten in ClientLoginButton, EngagementCalculator, LeadFunnel bereinigt; AGENTS.md

@@ -1,5 +1,4 @@
-import { SERVICES, type ServiceSlug } from "@/lib/config/services";
-import type { QuickSearchCalcCategory } from "@/lib/hero/quick-search";
+import { SERVICES, type MatrixServiceSlug } from "@/lib/config/services";
 import {
   formatInfrastructure,
   formatZones,
@@ -26,7 +25,7 @@ export type MatrixContentSection = {
 
 export type MatrixDeepContent = {
   city: StandortCity;
-  service: ServiceSlug;
+  service: MatrixServiceSlug;
   cityLabel: string;
   serviceLabel: string;
   metaTitle: string;
@@ -34,8 +33,7 @@ export type MatrixDeepContent = {
   heroTitle: string;
   heroSubtitle: string;
   sections: readonly MatrixContentSection[];
-  calcCategory?: QuickSearchCalcCategory;
-  funnelInitialService: ServiceSlug;
+  funnelInitialService: MatrixServiceSlug;
 };
 
 function buildLocalBlockA(
@@ -51,9 +49,9 @@ function buildLocalBlockA(
     const zones = formatZones(profile.industrialZones);
     const infra = formatInfrastructure(profile.infrastructure);
     const leads = [
-      `${cityLabel} ist geprägt von ${profile.industryFocus} Für ${serviceLabel} bedeutet das: Reinigungs-SLAs, die zur lokalen Wirtschaft passen — nicht generische Textbausteine aus der Großstadt. Saubermatik verbindet Meßstetten als Firmensitz mit Branchenkompetenz vor Ort: digitale Leistungsverzeichnisse, Echtzeit-QM und Key-Account-Betreuung für Facility Manager, Hausverwaltungen und Geschäftsführung.`,
+      `${cityLabel} ist geprägt von ${profile.industryFocus} Für ${serviceLabel} bedeutet das: Reinigungs-SLAs, die zur lokalen Wirtschaft passen — nicht generische Textbausteine aus der Großstadt. Saubermatik verbindet Meßstetten als Firmensitz mit Branchenkompetenz vor Ort: digitale Leistungsverzeichnisse, dokumentierte Qualität und Key-Account-Betreuung für Facility Manager, Hausverwaltungen und Geschäftsführung.`,
       `In ${cityLabel} planen wir ${serviceLabel} entlang realer Gewerbestrukturen — ${zones} und die Anbindung über ${infra} sind Planungsanker für Touren, Reaktionszeiten und Ausfallsicherheit. Objekte in diesen Zonen erhalten priorisierte Disposition und dokumentierte Einsätze in der Saubermatik-App.`,
-      `Der Wirtschaftsschwerpunkt (${profile.industryFocus}) verlangt mehr als Intervalle von der Stange: Hygienezonen, Werterhalt sensibler Substanz und Verkehrssicherungspflicht werden im Onboarding schriftlich fixiert — auditierbar für Einkauf, ISO und Eigentümerversammlungen.`,
+      `Der Wirtschaftsschwerpunkt (${profile.industryFocus}) verlangt mehr als Intervalle von der Stange: Hygienezonen, Werterhalt sensibler Substanz und Verkehrssicherungspflicht werden vor Vertragsstart schriftlich fixiert — nachvollziehbar für Einkauf und Eigentümerversammlungen.`,
     ];
     return {
       id: "local-b2b",
@@ -69,14 +67,14 @@ function buildLocalBlockA(
 
   const regionalLeads = isHq
     ? [
-        `Meßstetten ist unser Firmensitz — für ${serviceLabel} bedeutet das kürzeste Wege, direkter Draht zur Geschäftsführung und maximale Reaktionsgeschwindigkeit. Disposition, Key Account und Saubermatik-Plattform starten hier; Objekte in Meßstetten sind Referenz für den gesamten Zollernalbkreis.`,
+        `Meßstetten ist unser Firmensitz — für ${serviceLabel} bedeutet das kürzeste Wege, fester Ansprechpartner statt Callcenter und maximale Reaktionsgeschwindigkeit. Disposition, Key Account und Saubermatik-Plattform starten hier; Objekte in Meßstetten sind Referenz für den gesamten Zollernalbkreis.`,
         `Als regional verwurzelter Partner kennen wir WEG, Mittelstand, Praxen und Gewerbe nicht aus dem Navi, sondern aus täglicher Praxis. ${serviceLabel} wird mit festen Teams, digitalen Protokollen und messbarer Qualität (DIN EN 13549-orientiert) umgesetzt — nicht als anonyme Subunternehmer-Kette.`,
         `Digitale Objektsteuerung und Ausfallsicherheit sind bei uns Betriebslogik: Wenn jemand ausfällt, reagiert das System — Sie merken, dass es weiterläuft. Transparente SLAs, keine versteckten Kosten.`,
       ]
     : [
-        `${cityLabel} liegt im Einzugsgebiet Schwarzwald-Baar-Heuberg und Zollernalb — ${serviceLabel} von Saubermatik kombiniert regionale Nähe aus Meßstetten mit überregionaler Prozessqualität. Kurze Anfahrten, feste Ansprechpartner, dieselben digitalen Standards wie in unseren Kernstädten.`,
+        `${cityLabel} liegt im Zollernalbkreis und Umkreis — ${serviceLabel} von Saubermatik kombiniert regionale Nähe aus Meßstetten mit überregionaler Prozessqualität. Kurze Anfahrten, feste Ansprechpartner, dieselben digitalen Standards wie in unseren Kernstädten.`,
         `Für ${cityLabel} setzen Unternehmen und Hausverwaltungen auf Verlässlichkeit statt Billig-Anbieter. Wir liefern dokumentierte Touren, Verkehrssicherungsnachweise und SLAs, die intern verteidigbar sind — bei Audits, Versicherern und Mieterversammlungen.`,
-        `Ob Unterhalt, Glas, Winterdienst oder Objektbetreuung: ${serviceLabel} wird über die Saubermatik-App gesteuert — Echtzeit-QM, Ersatzlogistik, exportierbare Protokolle. Ein Partner statt vier Schnittstellen.`,
+        `Ob Unterhalt, Glas, Winterdienst oder Objektbetreuung: ${serviceLabel} wird über die Saubermatik-App gesteuert — dokumentierte Qualität, Ersatzlogistik, exportierbare Protokolle. Ein Partner statt vier Schnittstellen.`,
       ];
 
   return {
@@ -93,13 +91,13 @@ function buildSynergyBlockC(
   city: StandortCity,
   cityLabel: string,
   serviceLabel: string,
-  serviceSlug: ServiceSlug,
+  serviceSlug: MatrixServiceSlug,
   variant: number,
 ): MatrixContentSection {
   const profile = getLocalEntityProfile(city);
   const industry = profile?.industryFocus ?? "Mittelstand, Verwaltung und Gewerbe in der Region Zollernalb";
 
-  const synergyByService: Partial<Record<ServiceSlug, readonly string[]>> = {
+  const synergyByService: Partial<Record<MatrixServiceSlug, readonly string[]>> = {
     unterhaltsreinigung: [
       `${serviceLabel} in ${cityLabel} ist die Basis für produktive Arbeitsplätze — ob Verwaltung entlang der B27, Produktionsbüro in ${profile?.industrialZones[0] ?? "lokalen Gewerbegebieten"} oder Praxisflächen mit RKI-Anforderung. Saubermatik übersetzt ${industry} in konkrete Reinigungs-SLAs mit 4-Farb-System und HACCP in Teeküchen.`,
       `Facility Manager profitieren von einem digitalen LV, das Flächen, Intervalle und Abnahmekriterien nach DIN EN 13549 fixiert — nicht monatlich neu verhandelt wird. Ausfallsicherheit über die Plattform bedeutet: Ihr Objekt in ${cityLabel} bleibt im Rhythmus, auch wenn einzelne Kräfte ausfallen.`,
@@ -121,7 +119,7 @@ function buildSynergyBlockC(
       `Verkehrssicherungspflicht und NK-Abrechnung aus einer Hand — weniger Streit in Eigentümerversammlungen.`,
     ],
     winterdienst: [
-      `Winterdienst in ${cityLabel} ist Haftung: ${industry} GPS-Fotoprotokolle, wettergeführt, § 2 BetrKV-transparent — Saubermatik liefert Nachweise, die vor Versicherer und Gericht bestehen.`,
+      `Winterdienst in ${cityLabel} ist Haftung: ${industry} dokumentierte Einsätze, wettergeführt, § 2 BetrKV-transparent — Saubermatik liefert Nachweise, die vor Versicherer und Gericht bestehen (Umfang je nach Objekt und Vereinbarung).`,
       `Gehwege, Zufahrten, Treppen — priorisiert nach Objektrisiko. Bereitschaftslogik statt Bürozeiten.`,
       `Kombination mit Treppenhaus und Grünpflege — eine Verkehrssicherungsstrategie für die Liegenschaft.`,
     ],
@@ -192,7 +190,7 @@ function buildCityEconomyBlock(
 function buildProcurementBlock(
   city: StandortCity,
   serviceLabel: string,
-  serviceSlug: ServiceSlug,
+  serviceSlug: MatrixServiceSlug,
   variant: number,
 ): MatrixContentSection {
   const cityLabel = STANDORT_LABELS[city];
@@ -206,7 +204,7 @@ function buildProcurementBlock(
 function buildObjectTypesBlock(
   city: StandortCity,
   serviceLabel: string,
-  serviceSlug: ServiceSlug,
+  serviceSlug: MatrixServiceSlug,
 ): MatrixContentSection {
   const cityLabel = STANDORT_LABELS[city];
   return {
@@ -228,7 +226,7 @@ function buildStandardsBlock(
     paragraphs: [
       `${serviceLabel} in ${cityLabel} orientiert sich bei Saubermatik an anerkannten Standards: ${norms}. Diese Normen sind nicht Dekoration im Angebot, sondern Grundlage für Leistungsverzeichnis, Unterweisung und Abnahme — auditierbar für ISO, Konzern-Einkauf, Versicherer und Behörden.`,
       `DIN EN 13549 strukturiert messbare Qualität: Was wird wie oft mit welchen Mitteln gereinigt? Welche Abnahmekriterien gelten? Wo sind Sonderzonen (RKI, HACCP, TRBS 2121) definiert? Das wird vor Vertragsbeginn schriftlich fixiert — nicht nachträglich per Telefon.`,
-      `Verkehrssicherungspflicht und § 2 BetrKV spielen in ${cityLabel} in Treppenhaus, Winterdienst und Außenanlagen eine zentrale Rolle. Wir liefern Nachweise, die vor Gericht und in Eigentümerversammlungen bestehen — GPS-Protokolle, Fotodokumentation, Eskalationslogs aus der Saubermatik-App.`,
+      `Verkehrssicherungspflicht und § 2 BetrKV spielen in ${cityLabel} in Treppenhaus, Winterdienst und Außenanlagen eine zentrale Rolle. Wir liefern Nachweise, die vor Gericht und in Eigentümerversammlungen bestehen — dokumentierte Einsätze und Eskalationslogs aus der Saubermatik-App (Umfang je nach Objekt und Vereinbarung).`,
       `Qualitätsmanagement endet nicht bei der ersten Abnahme. Regelmäßige Begehungen, KPI-Auswertungen und Anpassungen im digitalen LV sichern, dass ${serviceLabel} über die Vertragslaufzeit auf dem vereinbarten Niveau bleibt — auch wenn sich Belegung, Flächen oder Anforderungen ändern.`,
     ],
   };
@@ -242,10 +240,10 @@ function buildDigitalBlock(
     id: "digital-qm",
     title: `Reinigung 4.0: ${serviceLabel} digital gesteuert in ${cityLabel}`,
     paragraphs: [
-      `Die Saubermatik-Plattform ist kein Marketing-Buzzword: Reinigungskräfte haken digitale Leistungsverzeichnisse ab, Facility Manager sehen Echtzeit-QM, Ausfälle werden durch Ersatzkräfte geschlossen — bevor Ihr Objekt in ${cityLabel} leidet. Protokolle stehen für Abrechnung, ISO-Audits, BetrKV und Eigentümer-Reports bereit.`,
+      `Die Saubermatik-Plattform ist kein Marketing-Buzzword: Reinigungskräfte haken digitale Leistungsverzeichnisse ab, Facility Manager sehen dokumentierte Qualität, Ausfälle werden durch Ersatzkräfte geschlossen — bevor Ihr Objekt in ${cityLabel} leidet. Protokolle stehen für Abrechnung, ISO-Audits, BetrKV und Eigentümer-Reports bereit.`,
       `${serviceLabel} wird damit planbar und skalierbar — vom Einzelobjekt bis zum Multi-Standort-Portfolio. Key Account Manager begleiten Sie über Vertragslaufzeit, Anpassungen und Eskalationen — ein Gesicht, ein SLA, keine Hotline.`,
-      `Onboarding in vier Phasen: Bedarfsanalyse, LV-Freigabe, Team-Einweisung, Live-Betrieb mit messbaren KPIs. Das ist B2B-Facility-Service auf Augenhöhe — regional aus Meßstetten, digital auf Enterprise-Niveau.`,
-      `Exportierbare Reports, Versicherungsnachweise und Unterweisungsbelege sind jederzeit abrufbar — für ${cityLabel} und alle Standorte in Ihrem Portfolio. Sie sparen interne Koordination, weil Disposition und Qualität in einem System laufen.`,
+      `Einstieg in vier Schritten: Bedarf klären, Begehung, unverbindliches Angebot, Start im Objekt. Das ist Facility-Service auf Augenhöhe — regional aus Meßstetten, digital dokumentiert.`,
+      `Exportierbare Reports, Versicherungsnachweise und Unterweisungsbelege sind jederzeit abrufbar — für ${cityLabel} und alle Standorte in Ihrem Portfolio. Sie sparen interne Koordination, weil Tourenplanung und Qualität in einem System laufen.`,
       `Wenn Sie ${serviceLabel} in ${cityLabel} neu vergeben oder wechseln wollen: Starten Sie mit einer unverbindlichen Begehung. Wir liefern ein schriftliches LV mit klaren SLAs — ohne versteckte Kosten, ohne Platzhalter, ohne Großstadt-Textbausteine.`,
     ],
   };
@@ -253,7 +251,7 @@ function buildDigitalBlock(
 
 export function buildMatrixDeepContent(
   city: StandortCity,
-  serviceSlug: ServiceSlug,
+  serviceSlug: MatrixServiceSlug,
 ): MatrixDeepContent {
   const cityLabel = STANDORT_LABELS[city];
   const service = SERVICES.find((s) => s.slug === serviceSlug)!;
@@ -315,7 +313,6 @@ export function buildMatrixDeepContent(
     heroTitle: `${tech.breadcrumbLabel} in ${cityLabel} — regional, digital, verbindlich.`,
     heroSubtitle: heroVariants[variant],
     sections: [blockA, blockE, blockB, blockC, blockB2, blockB3, blockF, blockG, blockH, blockD],
-    calcCategory: tech.calcCategory,
     funnelInitialService: serviceSlug,
   };
 }

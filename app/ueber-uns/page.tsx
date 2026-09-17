@@ -1,17 +1,11 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
-import { KeyAccountManager } from "@/components/KeyAccountManager";
-import { REMOTE_IMAGE_BLUR_DATA_URL } from "@/lib/image-blur";
 import { buildTelHref } from "@/lib/phone";
-
-const imgUeberUns =
-  "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&q=80&w=1200";
 
 export const metadata: Metadata = {
   title: "Über uns",
   description:
-    "Saubermatik aus Meßstetten: regionale Wurzeln, digitale Objektsteuerung und B2B-Reinigung mit festen Ansprechpartnern für Zollernalb, Tübingen und den Schwarzwald-Baar-Heuberg.",
+    "Saubermatik aus Meßstetten: regionale Wurzeln, digitale Objektsteuerung und B2B-Reinigung mit festen Ansprechpartnern für Zollernalbkreis, Sigmaringen, Rottweil, Hechingen und Tübingen – Projekte bis Stuttgart und an den Bodensee.",
   alternates: { canonical: "/ueber-uns" },
 };
 
@@ -25,19 +19,6 @@ export default function UeberUnsPage() {
       <h1 className="mt-3 text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
         Regional verwurzelt. Digital vorbereitet.
       </h1>
-
-      <div className="relative mt-8 aspect-[16/9] w-full overflow-hidden rounded-sm ">
-        <Image
-          src={imgUeberUns}
-          alt="Professionelles Teammeeting – Saubermatik als B2B-Partner"
-          fill
-          className="object-cover"
-          sizes="(max-width: 768px) 100vw, 48rem"
-          priority
-          placeholder="blur"
-          blurDataURL={REMOTE_IMAGE_BLUR_DATA_URL}
-        />
-      </div>
 
       <div className="mt-8 space-y-6 text-base leading-7 text-muted">
         <p>
@@ -63,9 +44,11 @@ export default function UeberUnsPage() {
           treffen dürfen. Keine anonyme Hotline, kein endloses Weiterreichen –
           sondern Partner, die Ihre Flächen und Rhythmen kennenlernen.
         </p>
+        <p>
+          Sicherheit: Schulung PSA gegen Absturz &amp; Rettung (DGUV
+          112-198/199), zuletzt 07/2026.
+        </p>
       </div>
-
-      <KeyAccountManager className="mt-12" />
 
       <div className="mt-12 min-h-[10rem] rounded-sm border border-zinc-300/25 bg-secondary/5 p-5 sm:p-6">
         <h2 className="text-lg font-bold text-foreground">Was uns antreibt</h2>

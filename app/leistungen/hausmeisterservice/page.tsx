@@ -1,12 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { B2BOnboardingProcess } from "@/components/B2BOnboardingProcess";
 import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
-import { EngagementCalculator } from "@/components/EngagementCalculator";
 import { LeistungFaqJsonLd } from "@/components/LeistungFaqJsonLd";
 import { LeistungHeroImage } from "@/components/LeistungHeroImage";
 import { LeistungSgeTldr } from "@/components/LeistungSgeTldr";
-import { LeadFunnel } from "@/components/LeadFunnel";
+import { AnfrageCta } from "@/components/AnfrageCta";
 import { SeoCrossLinks } from "@/components/SeoCrossLinks";
 import { SnippetBaitTable } from "@/components/SnippetBaitTable";
 
@@ -75,8 +73,8 @@ export default function HausmeisterservicePage() {
             <p className="mt-6 max-w-3xl text-lg leading-8 text-muted">
               Für Hausverwaltungen, WEG und Gewerbeimmobilien: Wir übernehmen
               die operative Objektpräsenz zwischen den großen Gewerken – mit
-              dokumentierten Standard Operating Procedures und
-              Echtzeit-Meldungen über die Saubermatik-App.
+              dokumentierten Standard Operating Procedures und dokumentierten
+              Meldungen über die Saubermatik-App.
             </p>
             <LeistungHeroImage
               slug="hausmeisterservice"
@@ -84,12 +82,12 @@ export default function HausmeisterservicePage() {
               className="mt-10 max-w-4xl"
             />
             <div className="mt-10 flex flex-wrap gap-4">
-              <a
-                href="#kontakt-anfrage"
+              <Link
+                href="/kontakt#kontakt-anfrage"
                 className="inline-flex h-12 items-center justify-center rounded-sm bg-primary px-6 text-sm font-semibold text-primary-foreground transition hover:bg-primary/90"
               >
-                Objekt-Analyse anfordern
-              </a>
+                Anfrage stellen
+              </Link>
               <Link
                 href="/zielgruppen/hausverwaltungen"
                 className="inline-flex h-12 items-center justify-center rounded-sm border border-zinc-300 px-6 text-sm font-semibold text-foreground transition hover:border-secondary/50 hover:bg-secondary/5"
@@ -115,7 +113,7 @@ export default function HausmeisterservicePage() {
               Saubermatik entlastet Eigentümer, Verwaltungen und interne
               Facility-Teams bei genau den Aufgaben, die den Alltag sprengen:
               Kleinreparaturen, Kontrollgänge, Koordination mit Handwerkern,
-              Schlüssel und Lieferanten. Jeder Einsatz wird in der App
+              Schlüssel und Lieferanten. Einsätze werden in der App
               dokumentiert – der Key Account Manager sieht den Status, ohne
               WhatsApp-Ketten oder Zettelwirtschaft.
             </p>
@@ -134,8 +132,8 @@ export default function HausmeisterservicePage() {
             Standard Operating Procedures (SOPs) – unser Leistungskatalog
           </h2>
           <p className="mt-4 max-w-3xl text-base leading-7 text-muted">
-            Jede Liegenschaft erhält ein objektspezifisches SOP-Set im
-            Onboarding. Nachfolgend die Kernmodule, die wir für
+            Jede Liegenschaft erhält ein objektspezifisches SOP-Set vor
+            Vertragsstart. Nachfolgend die Kernmodule, die wir für
             Mehrfamilienhäuser und Gewerbeobjekte typischerweise verbindlich
             definieren.
           </p>
@@ -180,20 +178,6 @@ export default function HausmeisterservicePage() {
           </div>
         </section>
 
-        <B2BOnboardingProcess
-          pagePath="/leistungen/hausmeisterservice"
-          className="border-t border-foreground/10 bg-slate-50/80 py-12 sm:py-14"
-        />
-
-        <section className="border-t border-slate-200 bg-slate-50 py-12">
-          <div className="mx-auto w-full max-w-xl px-4 sm:px-6 lg:px-8">
-            <EngagementCalculator
-              funnelHref="#kontakt-anfrage"
-              initialCategory="hausverwaltung"
-            />
-          </div>
-        </section>
-
         <section className="border-t border-slate-200 py-12">
           <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
             <SeoCrossLinks type="location" />
@@ -205,14 +189,7 @@ export default function HausmeisterservicePage() {
           className="border-t border-slate-200 bg-zinc-100 py-12 sm:py-14"
         >
           <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">
-            <div className="mx-auto max-w-2xl text-center">
-              <h2 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
-                Hausmeisterservice anfragen
-              </h2>
-            </div>
-            <div className="mx-auto mt-10 max-w-xl">
-              <LeadFunnel initialServiceType="hausmeisterservice" />
-            </div>
+            <AnfrageCta title="Hausmeisterservice anfragen" />
           </div>
         </section>
       </div>

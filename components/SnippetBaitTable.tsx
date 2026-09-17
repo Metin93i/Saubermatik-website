@@ -58,7 +58,7 @@ const TABLES: Record<Variant, TableConfig> = {
       {
         gebaeudeart: "Ladengeschäfte / Schaufenster",
         intervall: "1× bis 2× monatlich",
-        fokus: "Außen- und Innenscheiben, streifenfreie Glanzgarantie",
+        fokus: "Außen- und Innenscheiben, streifenfreie Optik",
       },
       {
         gebaeudeart: "Bürogebäude & Kanzleien",
@@ -118,7 +118,7 @@ const TABLES: Record<Variant, TableConfig> = {
       {
         gebaeudeart: "Haupteingang / Feuerwehrzufahrt",
         intervall: "Bei Glätte / Schnee",
-        fokus: "Räumen, Streuen, GPS-Fotoprotokoll",
+        fokus: "Räumen, Streuen, dokumentierte Einsätze",
       },
       {
         gebaeudeart: "Gehwege & Zufahrten",
@@ -163,7 +163,7 @@ const TABLES: Record<Variant, TableConfig> = {
       {
         gebaeudeart: "Praxis / Hygienezone",
         intervall: "Vor Eröffnung",
-        fokus: "RKI-konform, VAH-Desinfektion, Hygieneschleuse",
+        fokus: "Desinfektion nach Hygieneplan, Hygieneschleuse",
       },
     ],
   },
@@ -223,7 +223,7 @@ const TABLES: Record<Variant, TableConfig> = {
       {
         gebaeudeart: "Dokumentation",
         intervall: "Abschluss",
-        fokus: "Fotoprotokoll, Entsorgungsnachweise, Übergabe an Verwalter",
+        fokus: "Dokumentierte Einsätze, Entsorgungsnachweise, Übergabe an Verwalter",
       },
     ],
   },
@@ -243,12 +243,12 @@ const TABLES: Record<Variant, TableConfig> = {
       {
         gebaeudeart: "Praxis-Sonderdesinfektion",
         intervall: "Ereignis / Audit",
-        fokus: "RKI-konform, VAH-gelistet, Kreuzkontamination vermeiden",
+        fokus: "Hygieneplan, Mittel nach Standards, Kreuzkontamination vermeiden",
       },
       {
         gebaeudeart: "Event / Messe",
         intervall: "Temporär",
-        fokus: "Flächenleistung, Ausfallsicherheit, Nachtfenster",
+        fokus: "Flächenleistung, Vertretung, Nachtfenster",
       },
       {
         gebaeudeart: "Ausschreibung",

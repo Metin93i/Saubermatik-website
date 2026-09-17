@@ -1,15 +1,15 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Suspense } from "react";
-import { KamProfileCard } from "@/components/KamProfileCard";
 import { KontaktFormFallback } from "@/components/KontaktFormFallback";
 import { KontaktFormSwitch } from "@/components/KontaktFormSwitch";
 import {
   SITE_ADDRESS_LINES,
   SITE_MAP_EMBED_SRC,
   SITE_OFFICE,
+  SITE_WHATSAPP_HREF,
 } from "@/lib/config/site";
-import { buildTelHref } from "@/lib/phone";
+import { getBusinessPhone } from "@/lib/phone";
 
 export const metadata: Metadata = {
   title: "Kontakt",
@@ -28,8 +28,7 @@ export default async function KontaktPage({ searchParams }: KontaktPageProps) {
   const typeVal = Array.isArray(rawType) ? rawType[0] : rawType;
   const isCareer = typeVal === "karriere";
 
-  const raw = process.env.NEXT_PUBLIC_BUSINESS_PHONE?.trim();
-  const telHref = raw ? buildTelHref(raw) : null;
+  const { display, telHref } = getBusinessPhone();
 
   return (
     <div className="mx-auto flex w-full max-w-6xl flex-1 flex-col gap-8 px-4 py-10 sm:px-6 lg:flex-row lg:gap-8 lg:px-8 lg:py-12">
@@ -77,20 +76,28 @@ export default async function KontaktPage({ searchParams }: KontaktPageProps) {
           </ul>
         </address>
 
-        {telHref ? (
-          <p className="mt-6">
-            <span className="text-xs font-semibold uppercase tracking-wide text-muted">
-              Telefon
-            </span>
-            <br />
+        <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+          {telHref ? (
             <a
               href={telHref}
-              className="text-lg font-bold text-secondary underline-offset-2 hover:underline"
+              className="inline-flex h-12 items-center justify-center rounded-sm bg-primary px-6 text-sm font-semibold text-primary-foreground transition hover:bg-primary/90"
             >
-              {raw}
+              Anrufen · {display}
             </a>
-          </p>
-        ) : null}
+          ) : null}
+          <a
+            href={SITE_WHATSAPP_HREF}
+            className="inline-flex h-12 items-center justify-center rounded-sm border border-zinc-300 bg-white px-6 text-sm font-semibold text-foreground transition hover:border-secondary/50 hover:bg-secondary/5"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            WhatsApp
+          </a>
+        </div>
+
+        <p className="mt-3 text-sm text-muted">
+          Erreichbar Mo–Sa, 08:00–22:00 Uhr.
+        </p>
 
         <p className="mt-6 text-sm text-muted">
           <Link
@@ -119,7 +126,7 @@ export default async function KontaktPage({ searchParams }: KontaktPageProps) {
         </div>
         <p className="mt-2 text-right text-xs text-muted">
           <a
-            href="https://www.openstreetmap.org/search?query=Me%C3%9Fstetten%2072461"
+            href="https://www.openstreetmap.org/search?query=Me%C3%9Fstetten%2072469"
             className="text-secondary hover:underline"
             target="_blank"
             rel="noopener noreferrer"
@@ -130,7 +137,6 @@ export default async function KontaktPage({ searchParams }: KontaktPageProps) {
       </div>
 
       <div className="min-h-[24rem] flex-1 space-y-5 lg:max-w-xl">
-        {!isCareer ? <KamProfileCard /> : null}
         <Suspense fallback={<KontaktFormFallback isCareer={isCareer} />}>
           <KontaktFormSwitch />
         </Suspense>

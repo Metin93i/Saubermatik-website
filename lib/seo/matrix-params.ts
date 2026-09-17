@@ -1,4 +1,4 @@
-import { SERVICES, type ServiceSlug } from "@/lib/config/services";
+import { MATRIX_SERVICES, type MatrixServiceSlug } from "@/lib/config/services";
 import {
   STANDORT_CITIES,
   isStandortCity,
@@ -7,20 +7,22 @@ import {
 
 export type MatrixRouteParams = {
   city: StandortCity;
-  service: ServiceSlug;
+  service: MatrixServiceSlug;
 };
 
-const SERVICE_SLUGS = new Set(SERVICES.map((s) => s.slug));
+const MATRIX_SERVICE_SLUGS = new Set(MATRIX_SERVICES.map((s) => s.slug));
 
-export function isServiceSlug(service: string): service is ServiceSlug {
-  return SERVICE_SLUGS.has(service as ServiceSlug);
+export function isMatrixServiceSlug(
+  service: string,
+): service is MatrixServiceSlug {
+  return MATRIX_SERVICE_SLUGS.has(service as MatrixServiceSlug);
 }
 
-/** Alle 16×10 = 160 Kombinationen für SSG & Sitemap. */
+/** Alle Stadt×Matrix-Service-Kombinationen für SSG & Sitemap (ohne `includeInMatrix: false`). */
 export function generateMatrixStaticParams(): MatrixRouteParams[] {
   const params: MatrixRouteParams[] = [];
   for (const city of STANDORT_CITIES) {
-    for (const service of SERVICES) {
+    for (const service of MATRIX_SERVICES) {
       params.push({ city, service: service.slug });
     }
   }
@@ -32,7 +34,7 @@ export function isValidMatrixRoute(
   service: string,
 ): city is StandortCity {
   if (!isStandortCity(city)) return false;
-  return isServiceSlug(service);
+  return isMatrixServiceSlug(service);
 }
 
 export function parseMatrixRoute(
@@ -40,9 +42,9 @@ export function parseMatrixRoute(
   service: string,
 ): MatrixRouteParams | null {
   if (!isStandortCity(city)) return null;
-  if (!isServiceSlug(service)) return null;
+  if (!isMatrixServiceSlug(service)) return null;
   return { city, service };
 }
 
 export const MATRIX_ROUTE_COUNT =
-  STANDORT_CITIES.length * SERVICES.length;
+  STANDORT_CITIES.length * MATRIX_SERVICES.length;

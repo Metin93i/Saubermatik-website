@@ -12,7 +12,7 @@ export function buildHausverwaltungenServiceJsonLd() {
     serviceType:
       "Gebäudereinigung, Hausmeisterservice, Grünanlagenpflege und Winterdienst für Hausverwaltungen",
     description:
-      "All-in-One Objektbetreuung für Hausverwaltungen: Treppenhausreinigung, Hausmeister, Grünpflege und dokumentierter Winterdienst mit GPS-gestützten Echtzeit-Nachweisen über die Saubermatik-Plattform.",
+      "All-in-One Objektbetreuung für Hausverwaltungen: Treppenhausreinigung, Hausmeister, Grünpflege und dokumentierter Winterdienst mit dokumentierten Einsätzen über die Saubermatik-Plattform (Umfang je nach Objekt und Vereinbarung).",
     url,
     inLanguage: "de-DE",
     provider: {
@@ -22,7 +22,7 @@ export function buildHausverwaltungenServiceJsonLd() {
     },
     areaServed: {
       "@type": "AdministrativeArea",
-      name: "Zollernalb, Schwarzwald-Baar-Heuberg, Stuttgart Metropolregion",
+      name: "Zollernalbkreis, Sigmaringen, Rottweil, Hechingen, Tübingen; Projekte Stuttgart und Bodensee",
     },
     audience: {
       "@type": "BusinessAudience",

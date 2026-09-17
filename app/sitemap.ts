@@ -12,10 +12,16 @@ const CORE_PAGES: readonly {
 }[] = [
   { path: "/", priority: 1.0, changeFrequency: "weekly" },
   { path: "/ueber-uns", priority: 0.95 },
+  { path: "/zielgruppen", priority: 0.95, changeFrequency: "weekly" },
   { path: "/zielgruppen/hausverwaltungen", priority: 0.95, changeFrequency: "weekly" },
+  { path: "/zielgruppen/praxen-gesundheitswesen", priority: 0.9, changeFrequency: "weekly" },
+  { path: "/zielgruppen/buero-gewerbe", priority: 0.9, changeFrequency: "weekly" },
   { path: "/qualitaetsmanagement", priority: 0.9 },
+  { path: "/secureops", priority: 0.9 },
   { path: "/karriere", priority: 0.85 },
   { path: "/kontakt", priority: 0.8 },
+  { path: "/impressum", priority: 0.3 },
+  { path: "/datenschutz", priority: 0.3 },
 ] as const;
 
 const LEISTUNG_PRIORITY = 0.9;

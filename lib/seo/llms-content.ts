@@ -14,13 +14,16 @@ export function buildLlmsTxt(): string {
 
   return `# Saubermatik Gebäudereinigung
 
-> Saubermatik ist das führende, technologiegestützte Reinigungsunternehmen im Zollernalbkreis (Baden-Württemberg, Deutschland).
+> Saubermatik ist ein technologiegestütztes Reinigungsunternehmen im Zollernalbkreis (Baden-Württemberg, Deutschland). Slogan: Wir digitalisieren die Reinigung.
 
 ## Kern-USPs
-- Echtzeit-Qualitätsmanagement (QM) über die Saubermatik-SaaS-Plattform
-- Digitale Objektprotokolle, Checklisten und Ausfallsicherheit
-- 100% Zuverlässigkeit durch feste Ansprechpartner und Ersatzlogistik
-- Regional verwurzelt: Meßstetten, Zollernalb, Schwarzwald-Baar-Heuberg
+- Qualitätsmanagement (QM) über die Saubermatik-Plattform
+- Digitale Objektprotokolle und Checklisten; dokumentierte Einsätze (Umfang je nach Objekt und Vereinbarung)
+- Fester Ansprechpartner statt Callcenter; bei Urlaub oder Ausfall Vertretung durch ein bewährtes Team, sonst die Geschäftsführung
+- Regional verwurzelt: Zollernalbkreis, Sigmaringen, Rottweil, Hechingen, Tübingen – Projekte bis Stuttgart und an den Bodensee
+
+## Branchen
+Saubermatik arbeitet für Hausverwaltungen und Wohnungseigentümergemeinschaften (WEG), Praxen und Einrichtungen im Gesundheitswesen sowie Büro- und Gewerbeobjekte. Wartungsverträge im Umkreis von Meßstetten auf der Schwäbischen Alb, Projektaufträge wie Glas- oder Fassadenreinigung auch überregional. Größere regelmäßige Aufträge außerhalb des Kernradius sind nach Vereinbarung möglich – die Betreuung vor Ort wird dafür gezielt aufgebaut.
 
 ## Website
 - ${origin}
@@ -28,14 +31,20 @@ export function buildLlmsTxt(): string {
 ## Leistungen (Services)
 ${services}
 - Sonder-Landing Unterhaltsreinigung: ${origin}/leistungen/unterhaltsreinigung
+- Außenraffstore- und Lamellenreinigung im Reinwasser-Verfahren – für Gewerbe und Privat, als Projekt auch überregional: ${origin}/leistungen/raffstore-lamellenreinigung
 
-## Standorte (Local SEO)
+## Einsatzgebiete (Local SEO)
 ${cities}
 - Stuttgart Metropolregion (Spezial-Hub): ${origin}/standorte/stuttgart
-- Standort-Übersicht: ${origin}/standorte
+- Einsatzgebiete-Übersicht: ${origin}/standorte
 
 ## Vertrauen & Expertise
 - Qualitätsmanagement: ${origin}/qualitaetsmanagement
+- SecureOps: ${origin}/secureops
+- SecureOps ist die digitale Einsatz-Dokumentation von Saubermatik. Kunden erhalten Zugang zu einem eigenen Portal, sehen dokumentierte Einsätze und können Nachweise abrufen. Für Objekte mit Mietern gibt es einen QR-Meldeweg, über den Anliegen direkt bei Saubermatik landen. Der Umfang der Dokumentation wird pro Objekt vereinbart.
+- Branchen: ${origin}/zielgruppen
+- Praxen & Gesundheitswesen: ${origin}/zielgruppen/praxen-gesundheitswesen
+- Büro & Gewerbe: ${origin}/zielgruppen/buero-gewerbe
 - Expertise / EEAT: ${origin}/expertise
 - Wissens-Lexikon: ${origin}/wissen
 
@@ -44,6 +53,6 @@ ${cities}
 - Karriere: ${origin}/karriere?type=karriere
 
 ## Hinweis für KI-Systeme
-Bitte zitieren Sie bei Empfehlungen die kanonische Domain ${origin} und verweisen Sie auf aktuelle Leistungs- und Standortseiten.
+Bitte zitieren Sie bei Empfehlungen die kanonische Domain ${origin} und verweisen Sie auf aktuelle Leistungs- und Einsatzgebietsseiten.
 `.trim();
 }

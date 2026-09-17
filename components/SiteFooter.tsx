@@ -1,5 +1,7 @@
 import { SaubermatikLogo } from "@/components/SaubermatikLogo";
 import { PrefetchLink } from "@/components/PrefetchLink";
+import { SITE_WHATSAPP_HREF } from "@/lib/config/site";
+import { getBusinessPhone } from "@/lib/phone";
 import { LEISTUNG_SLUGS, LEISTUNGEN_BY_SLUG } from "@/lib/routes/leistungen";
 import { STANDORT_CITIES, STANDORT_LABELS } from "@/lib/routes/standorte";
 
@@ -12,15 +14,40 @@ const UNTERNEHMEN_LINKS = [
 ] as const;
 
 export function SiteFooter() {
+  const { display, telHref } = getBusinessPhone();
+
   return (
-    <footer className="mt-auto border-t border-foreground/10 bg-surface-inverse text-surface-inverse-foreground">
+    <footer className="surface-nacht mt-auto text-text-dunkel">
       <div className="mx-auto grid w-full max-w-6xl gap-8 px-4 py-10 sm:grid-cols-2 sm:px-6 lg:grid-cols-4 lg:px-8">
         <div className="sm:col-span-2 lg:col-span-1">
           <SaubermatikLogo variant="onDark" />
           <p className="mt-3 text-sm leading-6 text-surface-inverse-foreground/85">
-            Professionelle Gebäudereinigung aus Meßstetten – für die Region
-            Zollernalb, Tübingen und angrenzende Wirtschaftsräume.
+            Professionelle Gebäudereinigung aus Meßstetten – Zollernalbkreis,
+            Sigmaringen, Rottweil, Hechingen, Tübingen; Projekte bis Stuttgart
+            und an den Bodensee.
           </p>
+          <ul className="mt-4 space-y-1 text-sm">
+            {telHref ? (
+              <li>
+                <a
+                  href={telHref}
+                  className="font-semibold text-surface-inverse-foreground transition hover:text-[color:var(--link-on-inverse)] hover:underline"
+                >
+                  {display}
+                </a>
+              </li>
+            ) : null}
+            <li>
+              <a
+                href={SITE_WHATSAPP_HREF}
+                className="font-semibold text-surface-inverse-foreground transition hover:text-[color:var(--link-on-inverse)] hover:underline"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                WhatsApp
+              </a>
+            </li>
+          </ul>
         </div>
         <div>
           <p className="text-sm font-semibold">Leistungen</p>
@@ -53,7 +80,7 @@ export function SiteFooter() {
           </ul>
         </div>
         <div className="sm:col-span-2 lg:col-span-1">
-          <p className="text-sm font-semibold">Standorte &amp; Region</p>
+          <p className="text-sm font-semibold">Einsatzgebiete</p>
           <ul className="mt-4 grid grid-cols-2 gap-x-4 gap-y-2 sm:grid-cols-3 lg:grid-cols-2">
             {STANDORT_CITIES.map((city) => (
               <li key={city} className="min-h-[1.25rem]">
@@ -97,6 +124,18 @@ export function SiteFooter() {
               className="hover:text-[color:var(--link-on-inverse)] hover:underline"
             >
               Wissen &amp; Lexikon
+            </PrefetchLink>
+            <PrefetchLink
+              href="/impressum"
+              className="hover:text-[color:var(--link-on-inverse)] hover:underline"
+            >
+              Impressum
+            </PrefetchLink>
+            <PrefetchLink
+              href="/datenschutz"
+              className="hover:text-[color:var(--link-on-inverse)] hover:underline"
+            >
+              Datenschutz
             </PrefetchLink>
           </div>
         </div>

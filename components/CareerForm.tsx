@@ -2,7 +2,6 @@
 
 import type { FormEvent } from "react";
 import { useCallback, useState } from "react";
-import { apiUrl } from "@/lib/config/api";
 
 function classNames(...parts: Array<string | false | undefined>) {
   return parts.filter(Boolean).join(" ");
@@ -60,7 +59,7 @@ export function CareerForm({ className }: CareerFormProps) {
 
       setIsLoading(true);
       try {
-        const response = await fetch(apiUrl("/api/career"), {
+        const response = await fetch("/api/career", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({

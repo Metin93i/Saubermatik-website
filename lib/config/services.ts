@@ -1,6 +1,7 @@
 /**
- * Zentrales Facility- & Reinigungsportfolio (Slugs, Marketingtexte, Funnel-UI).
- * Alle Slugs müssen mit `LeadServiceType` / API-`serviceType` übereinstimmen.
+ * Zentrales Facility- & Reinigungsportfolio (Slugs, Marketingtexte).
+ *
+ * `includeInMatrix: false` → keine `/standorte/[city]/[service]`-Routen (E3-Kuration).
  */
 export const SERVICES = [
   {
@@ -25,6 +26,31 @@ export const SERVICES = [
     body: [
       "Von Schaufenster bis Wintergarten: Wir arbeiten mit professioneller Logistik und klaren Zugangszeiten.",
       "Repräsentative Glasflächen sind Ihr Aushängeschild – wir halten sie dauerhaft wettbewerbsfähig.",
+    ],
+  },
+  {
+    slug: "raffstore-lamellenreinigung",
+    title: "Raffstore- & Lamellenreinigung",
+    funnelLabel: "Raffstore & Lamellen",
+    emoji: "☀️",
+    summary:
+      "Schonende Reinigung von Außenraffstoren im Reinwasser-Verfahren – für Gewerbe und Privat.",
+    body: [
+      "Wir reinigen Außenraffstoren schonend im Reinwasser-Verfahren – ohne Chemie und ohne Risiko für die Mechanik.",
+      "Für Firmen und Privathaushalte, von Meßstetten aus auf der Schwäbischen Alb und im Umkreis.",
+    ],
+    includeInMatrix: false,
+  },
+  {
+    slug: "grundreinigung",
+    title: "Grund- & Baureinigung",
+    funnelLabel: "Grund & Bau",
+    emoji: "🧱",
+    summary:
+      "Tiefenreinigung, Übergabenach Bau oder Sanierung – termingetrieben und abnahmefertig.",
+    body: [
+      "Wir entfernen Baustaub, Schutzfolien und Verschmutzungen materialspezifisch – ohne Ihre Oberflächen zu riskieren.",
+      "Klare Meilensteine und Abstimmung mit Ihrem Projektleiter halten den Zeitplan stabil.",
     ],
   },
   {
@@ -69,22 +95,10 @@ export const SERVICES = [
     funnelLabel: "Winterdienst",
     emoji: "❄️",
     summary:
-      "Räum- und Streupflicht professionell erfüllt – dokumentiert, wetterführend und haftungssicher vorbereitet.",
+      "Räum- und Streupflicht professionell erfüllt – dokumentiert, wettergeführt und in der Saison nach vereinbarten Reaktionszeiten.",
     body: [
       "Einsatzpläne, Meldewege und Nachweise: Sie erfüllen Ihre Sorgfaltspflicht gegenüber Nutzern und Versicherern.",
       "Kombinierbar mit Außenanlagen- und Gebäudeservice für eine durchgängige Objektstrategie.",
-    ],
-  },
-  {
-    slug: "grundreinigung",
-    title: "Grund- & Baureinigung",
-    funnelLabel: "Grund & Bau",
-    emoji: "🧱",
-    summary:
-      "Tiefenreinigung, Übergabenach Bau oder Sanierung – termingetrieben und abnahmefertig.",
-    body: [
-      "Wir entfernen Baustaub, Schutzfolien und Verschmutzungen materialspezifisch – ohne Ihre Oberflächen zu riskieren.",
-      "Klare Meilensteine und Abstimmung mit Ihrem Projektleiter halten den Zeitplan stabil.",
     ],
   },
   {
@@ -127,16 +141,13 @@ export const SERVICES = [
 
 export type ServiceSlug = (typeof SERVICES)[number]["slug"];
 
-export const LEAD_SERVICE_TYPES = SERVICES.map(
-  (s) => s.slug,
-) as readonly ServiceSlug[];
+/** Services mit Stadt×Leistung-Matrix (`includeInMatrix` nicht `false`). */
+export type MatrixServiceSlug = Exclude<
+  ServiceSlug,
+  "raffstore-lamellenreinigung"
+>;
 
-export const FUNNEL_SERVICE_OPTIONS = SERVICES.map((s) => ({
-  value: s.slug,
-  label: s.funnelLabel,
-  emoji: s.emoji,
-})) as readonly {
-  value: ServiceSlug;
-  label: string;
-  emoji: string;
-}[];
+export const MATRIX_SERVICES = SERVICES.filter(
+  (s): s is (typeof SERVICES)[number] & { slug: MatrixServiceSlug } =>
+    !("includeInMatrix" in s && s.includeInMatrix === false),
+);

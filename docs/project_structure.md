@@ -17,7 +17,7 @@ Stand: **Master-Übersicht** ist `docs/architecture.md` (Datenflüsse, Routing).
 │   └── workflows/
 │       └── deploy.yml          CI/CD: SSH-Deploy auf Hostinger VPS
 ├── ecosystem.config.js         PM2-Prozessmanager (saubermatik-web)
-├── .env.example                  Vorlage für Umgebungsvariablen (inkl. NEXT_PUBLIC_API_URL)
+├── .env.example                  Vorlage für Umgebungsvariablen
 ├── next.config.ts
 ├── package.json
 ├── postcss.config.mjs
@@ -89,15 +89,12 @@ app/
 ```
 components/
 ├── B2BOnboardingProcess.tsx      4-Phasen-Onboarding + HowTo JSON-LD (Server)
-├── KamProfileCard.tsx            Kompaktes KAM-Profil Metin Altinsoy + Person JSON-LD (Hero, Kontakt)
-├── KamPortrait.tsx               Generischer Industrial-Avatar (SVG, bg-zinc-800)
 ├── EsgComplianceStatement.tsx    ESG/CSRD-Compliance-Block (Hero)
 ├── AppMockup.tsx                 Geneigtes App-/Dashboard-Mockup (Hero)
-├── KeyAccountManager.tsx         One Face to the Customer + Person/Role JSON-LD (Über-uns, Langform)
 ├── BreadcrumbJsonLd.tsx          BreadcrumbList JSON-LD (tiefes Routing)
 ├── CareerForm.tsx                Bewerber-Formular (`"use client"`) → `/api/career`
 ├── EngagementCalculator.tsx      3-Schritt-Kostenrechner (`"use client"`)
-├── JobListings.tsx               SaaS-Stellenportal (`GET /jobs/public`, Client)
+├── JobListings.tsx               Stellenliste (Leerzustand, keine externe Jobs-API)
 ├── MatrixDeepPage.tsx            Matrix Deep-Content-Template (800+ Wörter, Calculator, Funnel)
 ├── KontaktFormFallback.tsx      Suspense-Fallback (serverkompatibel)
 ├── KontaktFormSwitch.tsx       `useSearchParams` Weiche Lead/Karriere (`"use client"`)
@@ -125,7 +122,6 @@ lib/
 │   ├── email.ts                  HTML-Mail Bewerbung (HR-Layout)
 │   └── submission.ts             parseCareerSubmission
 ├── config/
-│   ├── api.ts                    `getApiBaseUrl`, `apiUrl` — NEXT_PUBLIC_API_URL
 │   ├── platform.ts               `getPlatformLoginUrl` — NEXT_PUBLIC_PLATFORM_URL
 │   ├── lexikon.ts                Wiki 2.0 — 8 Lexikon-Einträge (LEXIKON_TERMS)
 │   ├── services.ts               Leistungsportfolio (10 Slugs inkl. Entrümpelung & Sonstiges)
@@ -141,8 +137,6 @@ lib/
 ├── phone.ts                      `buildTelHref` (NEXT_PUBLIC_BUSINESS_PHONE)
 ├── seo/
 │   ├── b2b-onboarding.ts         HowTo-Schritte + `buildB2BOnboardingHowToJsonLd`
-│   ├── kam-profile.ts            Metin Altinsoy KAM-Copy + Person JSON-LD
-│   ├── key-account.ts            Key-Account-Langform + OrganizationRole JSON-LD
 │   ├── hausverwaltungen-schema.ts Service JSON-LD für Zielgruppen-Silo
 │   ├── global-jsonld.ts          `@graph` LocalBusiness + CleaningService + OfferCatalog
 │   ├── leistung-faq.ts           FAQ-Texte pro Leistungsspoke (FAQPage)

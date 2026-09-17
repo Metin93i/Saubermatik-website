@@ -1,16 +1,11 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import { JobListings } from "@/components/JobListings";
-import { REMOTE_IMAGE_BLUR_DATA_URL } from "@/lib/image-blur";
-
-const imgKarriere =
-  "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=1200";
 
 export const metadata: Metadata = {
   title: "Karriere",
   description:
-    "Karriere bei Saubermatik Meßstetten: faire Bezahlung, moderne digitale Arbeitsmittel und Tablets im Objekt, Teamkultur in der Zollernalb – jetzt initiativ bewerben.",
+    "Karriere bei Saubermatik Meßstetten: faire Bezahlung, digitale Erfassung über mobile Endgeräte, Teamkultur in der Zollernalb – jetzt initiativ bewerben.",
   alternates: { canonical: "/karriere" },
 };
 
@@ -20,8 +15,8 @@ const benefits = [
     text: "Wir verstehen Reinigung als Handwerk mit Verantwortung. Leistung wird anerkannt, Schichten und Aufgaben sind transparent geplant.",
   },
   {
-    title: "Modernste Arbeitsmittel & Tablets",
-    text: "Checklisten, Objektinfos und Touren laufen digital: Sie arbeiten mit aktueller Ausstattung statt mit vergilbten Formularblättern.",
+    title: "Mobile Endgeräte statt Zettel",
+    text: "Checklisten, Objektinfos und Touren laufen digital: Sie arbeiten mit Handy oder Platform-App statt mit vergilbten Formularblättern.",
   },
   {
     title: "Regionale Einsätze, kurze Wege",
@@ -45,19 +40,6 @@ export default function KarrierePage() {
         Lust auf saubere Prozesse. Ob Reinigungskraft, Objektleitung oder
         Quereinstieg – sprechen Sie uns an.
       </p>
-
-      <div className="relative mt-8 aspect-[16/9] w-full overflow-hidden rounded-sm ">
-        <Image
-          src={imgKarriere}
-          alt="Teamarbeit im Büro – Karriere bei Saubermatik"
-          fill
-          className="object-cover"
-          sizes="(max-width: 768px) 100vw, 48rem"
-          priority
-          placeholder="blur"
-          blurDataURL={REMOTE_IMAGE_BLUR_DATA_URL}
-        />
-      </div>
 
       <section className="mt-12" aria-labelledby="offene-stellen-heading">
         <h2

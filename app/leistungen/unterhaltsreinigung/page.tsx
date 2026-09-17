@@ -1,12 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { B2BOnboardingProcess } from "@/components/B2BOnboardingProcess";
 import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
-import { EngagementCalculator } from "@/components/EngagementCalculator";
 import { LeistungFaqJsonLd } from "@/components/LeistungFaqJsonLd";
 import { LeistungHeroImage } from "@/components/LeistungHeroImage";
 import { LeistungSgeTldr } from "@/components/LeistungSgeTldr";
-import { LeadFunnel } from "@/components/LeadFunnel";
+import { AnfrageCta } from "@/components/AnfrageCta";
 import { SeoCrossLinks } from "@/components/SeoCrossLinks";
 import { SnippetBaitTable } from "@/components/SnippetBaitTable";
 
@@ -15,7 +13,7 @@ const SLUG = "unterhaltsreinigung" as const;
 export const metadata: Metadata = {
   title: "Unterhaltsreinigung & Büroreinigung Gewerbe",
   description:
-    "Zertifizierte Unterhaltsreinigung für Gewerbe und Büros: 4-Farb-System, DIN EN 13549, digitales LV, HACCP, Echtzeit-QM und 100% Ausfallsicherheit in der Zollernalb.",
+    "Unterhaltsreinigung für Gewerbe und Büros: 4-Farb-System, digitales Leistungsverzeichnis und dokumentierte Einsätze in der Zollernalb. Angebot auf Anfrage.",
   alternates: { canonical: "/leistungen/unterhaltsreinigung" },
 };
 
@@ -67,14 +65,38 @@ export default function UnterhaltsreinigungPage() {
               <span className="text-muted">Unterhaltsreinigung</span>
             </nav>
             <h1 className="mt-6 max-w-4xl text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-[2.5rem] lg:leading-tight">
-              Zertifizierte Unterhaltsreinigung für Gewerbe und Büros. Maximale
-              Hygiene, messbare Qualität und 100&nbsp;% Ausfallsicherheit.
+              Unterhaltsreinigung für Gewerbe und Büros. 4-Farb-System,
+              dokumentierte Einsätze und ein fester Ansprechpartner.
             </h1>
             <p className="mt-6 max-w-3xl text-lg leading-8 text-muted">
               Saubermatik liefert Unterhaltsreinigung als Prozesssystem – nicht
               als Stundenkontingent. Mit 4-Farb-Hygiene, digitalem
-              Leistungsverzeichnis und Echtzeit-QM für Facility Manager in der
-              Zollernalb und angrenzenden Regionen.
+              Leistungsverzeichnis und dokumentierten Einsätzen für Facility
+              Manager in der Zollernalb und angrenzenden Regionen. Für Praxen
+              siehe{" "}
+              <Link
+                href="/zielgruppen/praxen-gesundheitswesen"
+                className="font-semibold text-secondary hover:underline"
+              >
+                Praxen &amp; Gesundheitswesen
+              </Link>
+              , für Büros{" "}
+              <Link
+                href="/zielgruppen/buero-gewerbe"
+                className="font-semibold text-secondary hover:underline"
+              >
+                Büro &amp; Gewerbe
+              </Link>
+              .
+            </p>
+            <p className="mt-4 max-w-3xl text-lg leading-8 text-muted">
+              <Link
+                href="/leistungen/raffstore-lamellenreinigung"
+                className="font-semibold text-secondary hover:underline"
+              >
+                Außenraffstoren reinigen wir auf Wunsch gleich mit – als eigene
+                Spezialleistung.
+              </Link>
             </p>
             <LeistungHeroImage
               slug={SLUG}
@@ -82,12 +104,12 @@ export default function UnterhaltsreinigungPage() {
               className="mt-10 max-w-4xl"
             />
             <div className="mt-10 flex flex-wrap gap-4">
-              <a
-                href="#kontakt-anfrage"
+              <Link
+                href="/kontakt#kontakt-anfrage"
                 className="inline-flex h-12 items-center justify-center rounded-sm bg-primary px-6 text-sm font-semibold text-primary-foreground transition hover:bg-primary/90"
               >
-                Objekt-Analyse anfordern
-              </a>
+                Anfrage stellen
+              </Link>
               <Link
                 href="/qualitaetsmanagement"
                 className="inline-flex h-12 items-center justify-center rounded-sm border border-zinc-300 px-6 text-sm font-semibold text-foreground transition hover:border-secondary/50 hover:bg-secondary/5"
@@ -118,8 +140,7 @@ export default function UnterhaltsreinigungPage() {
               <strong className="text-foreground">Flächenleistung</strong>,
               klarer Zonenlogik und digitaler Nachweisführung. Ihr Vorteil:
               weniger Reklamationen, weniger interne Koordination, volle
-              Verteidigbarkeit gegenüber Eigentümern, ISO-Auditoren und
-              Betriebsräten.
+              Verteidigbarkeit gegenüber Eigentümern und Betriebsräten.
             </p>
           </div>
 
@@ -200,7 +221,9 @@ export default function UnterhaltsreinigungPage() {
               </p>
               <p>
                 Für Sie als Facility Manager bedeutet das{" "}
-                <strong className="text-foreground">Echtzeit-QM</strong>: Sie
+                <strong className="text-foreground">
+                  dokumentierte Einsätze im Kundenportal
+                </strong>: Sie
                 sehen, welche Positionen erledigt wurden, wo Nacharbeit nötig
                 war und ob das vereinbarte SLA eingehalten wurde – ohne
                 Telefonkette, ohne Excel-Export am Monatsende. Das ist
@@ -208,12 +231,10 @@ export default function UnterhaltsreinigungPage() {
                 verhandlungsfest bei Vertragsverlängerungen.
               </p>
               <p>
-                Kombiniert mit unserer{" "}
-                <strong className="text-foreground">Ausfallsicherheit</strong>{" "}
-                reagiert die Plattform auf Krankheits- oder Personalengpässe in
-                Echtzeit – Ersatzkräfte, Tourenumplanung, Eskalation an den Key
-                Account. Ihr Betrieb merkt den Ausfall nicht; Ihre KPIs bleiben
-                stabil. Genau das unterscheidet Reinigung 4.0 von
+                Kombiniert mit unserer Vertretung bei Urlaub oder Ausfall
+                bleibt Ihr Objekt im Rhythmus: bewährtes Team oder die
+                Geschäftsführung persönlich. Ihr Betrieb merkt den Ausfall
+                nicht. Genau das unterscheidet dokumentierte Reinigung von
                 Subunternehmer-Chaos.
               </p>
             </div>
@@ -232,10 +253,10 @@ export default function UnterhaltsreinigungPage() {
                 <strong className="text-foreground">HACCP-Richtlinien</strong>:
                 grün codierte Textilien, definierte Reinigungssequenzen,
                 Desinfektionspunkte an Kontaktflächen und dokumentierte
-                Intervalle. In Arztpraxen und Behandlungszonen gelten zusätzlich
-                RKI-konforme Verfahren und VAH-gelistete Flächendesinfektion –
-                nosokomiale Infektionen werden durch Prozess statt Improvisation
-                reduziert.
+                Intervalle. In Arztpraxen und Behandlungszonen stimmen wir
+                Desinfektionsmittel und Ablauf mit Ihrem Hygieneplan ab –
+                Mittel nach anerkannten Standards, ohne Prüfzeichen als
+                Werbeaussage.
               </p>
               <p>
                 Parallel optimieren wir die{" "}
@@ -271,7 +292,7 @@ export default function UnterhaltsreinigungPage() {
                   Stuttgart
                 </Link>
                 – das Prozessmodell bleibt identisch; nur Objekt-LV und
-                Intervalle werden im Onboarding angepasst.
+                Intervalle werden vor Vertragsstart angepasst.
               </p>
             </div>
           </article>
@@ -286,13 +307,14 @@ export default function UnterhaltsreinigungPage() {
                 alltagstauglich
               </li>
               <li>
-                Digitales LV + DIN EN 13549-orientiertes Echtzeit-QM in der App
+                Digitales LV + DIN EN 13549-orientierte, dokumentierte Qualität
+                in der App
               </li>
               <li>
                 HACCP in Teeküchen und Pausenräumen, optimierte Flächenleistung
               </li>
               <li>
-                SLA mit 100&nbsp;% Ausfallsicherheit und festem Ansprechpartner
+                Vertretung bei Urlaub oder Ausfall und fester Ansprechpartner
               </li>
             </ul>
           </div>
@@ -304,24 +326,10 @@ export default function UnterhaltsreinigungPage() {
               Leistungsverzeichnis (LV) – typische Büroreinigung
             </h2>
             <p className="mt-3 text-sm leading-6 text-muted">
-              Strukturierte Orientierung für Einkauf und Facility – im
-              Onboarding wird daraus Ihr verbindliches, digitales LV.
+              Strukturierte Orientierung für Einkauf und Facility – vor
+              Vertragsstart wird daraus Ihr verbindliches, digitales LV.
             </p>
             <SnippetBaitTable slug={SLUG} />
-          </div>
-        </section>
-
-        <B2BOnboardingProcess
-          pagePath="/leistungen/unterhaltsreinigung"
-          className="border-t border-foreground/10 bg-slate-50/80 py-12 sm:py-14"
-        />
-
-        <section className="border-t border-slate-200 bg-white py-12">
-          <div className="mx-auto w-full max-w-xl px-4 sm:px-6 lg:px-8">
-            <EngagementCalculator
-              funnelHref="#kontakt-anfrage"
-              initialCategory="buero"
-            />
           </div>
         </section>
 
@@ -336,18 +344,10 @@ export default function UnterhaltsreinigungPage() {
           className="border-t border-slate-200 bg-zinc-100 py-12 sm:py-14"
         >
           <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">
-            <div className="mx-auto max-w-2xl text-center">
-              <h2 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
-                Unterhaltsreinigung anfragen
-              </h2>
-              <p className="mt-3 text-base leading-7 text-muted">
-                Fläche, Intervalle, sensible Zonen – wir erstellen ein
-                SLA-fähiges Angebot nach Objektbegehung.
-              </p>
-            </div>
-            <div className="mx-auto mt-10 max-w-xl">
-              <LeadFunnel initialServiceType="unterhaltsreinigung" />
-            </div>
+            <AnfrageCta
+              title="Unterhaltsreinigung anfragen"
+              text="Fläche, Intervalle, sensible Zonen – nach einer Objektbegehung erhalten Sie ein unverbindliches Angebot."
+            />
           </div>
         </section>
       </div>

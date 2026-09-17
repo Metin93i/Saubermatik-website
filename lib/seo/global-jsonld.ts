@@ -1,5 +1,5 @@
 import { SERVICES } from "@/lib/config/services";
-import { SITE_OFFICE } from "@/lib/config/site";
+import { SITE_OFFICE, getBusinessPhoneDisplay } from "@/lib/config/site";
 import { getSiteOrigin } from "@/lib/seo/site-origin";
 import {
   buildCityCleaningServiceNode,
@@ -93,6 +93,7 @@ export function buildOrganizationJsonLd(): Record<string, unknown> {
     priceRange: "$$",
     address: {
       "@type": "PostalAddress",
+      streetAddress: SITE_OFFICE.streetAddress,
       addressLocality: SITE_OFFICE.locality,
       addressRegion: SITE_OFFICE.region,
       postalCode: SITE_OFFICE.postalCode,
@@ -120,7 +121,6 @@ export function buildOrganizationJsonLd(): Record<string, unknown> {
           "Thursday",
           "Friday",
           "Saturday",
-          "Sunday",
         ],
         opens: "08:00",
         closes: "22:00",
@@ -129,10 +129,7 @@ export function buildOrganizationJsonLd(): Record<string, unknown> {
     hasOfferCatalog: buildOfferCatalog(),
   };
 
-  const phone = process.env.NEXT_PUBLIC_BUSINESS_PHONE;
-  if (phone) {
-    org.telephone = phone;
-  }
+  org.telephone = getBusinessPhoneDisplay();
 
   return org;
 }

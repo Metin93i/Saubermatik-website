@@ -9,23 +9,30 @@ type Props = {
   className?: string;
 };
 
+const LEISTUNG_IMAGE_SIZES = "(max-width: 768px) 100vw, 50vw";
+
 export function LeistungHeroImage({
   slug,
   priority = false,
   className = "mt-8",
 }: Props) {
-  const { src, alt } = getLeistungImage(slug);
+  const image = getLeistungImage(slug);
+
+  if (!image) {
+    return null;
+  }
 
   return (
     <div
       className={`relative aspect-[16/9] w-full overflow-hidden rounded-sm ${className}`}
     >
       <Image
-        src={src}
-        alt={alt}
+        src={image.src}
+        alt={image.alt}
         fill
         className="object-cover"
-        sizes="(max-width: 768px) 100vw, 48rem"
+        sizes={LEISTUNG_IMAGE_SIZES}
+        quality={80}
         priority={priority}
         placeholder="blur"
         blurDataURL={REMOTE_IMAGE_BLUR_DATA_URL}
