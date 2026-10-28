@@ -6,35 +6,34 @@ import { LeistungHeroImage } from "@/components/LeistungHeroImage";
 import { LeistungSgeTldr } from "@/components/LeistungSgeTldr";
 import { AnfrageCta } from "@/components/AnfrageCta";
 import { SeoCrossLinks } from "@/components/SeoCrossLinks";
-import { SnippetBaitTable } from "@/components/SnippetBaitTable";
 
 export const metadata: Metadata = {
   title: "Hausmeisterservice & Objektbetreuung",
   description:
-    "Hausmeisterservice für Hausverwaltungen und Gewerbe: SOPs für Kleinreparaturen, Kontrollgänge, Leuchtmittel, Mülllogistik, Zählerstände – digital dokumentiert in der Zollernalb.",
+    "Hausmeisterservice für Hausverwaltungen und Gewerbe: SOPs für einfache Kleinreparaturen, Kontrollgänge, Mängelmeldung, Mülllogistik, Zählerstände – nachvollziehbar dokumentiert in der Zollernalb.",
   alternates: { canonical: "/leistungen/hausmeisterservice" },
 };
 
 const sops = [
   {
-    title: "Kleinreparaturen & Instandsetzung",
-    text: "Lose Türgriffe, klemmende Schlösser, defekte Beschilderungen, leichte Silikon- und Dichtungsarbeiten: Wir erfassen Mängel in der App, priorisieren nach Sicherheitsrelevanz und schließen Vorgänge mit Foto-Nachweis – ohne dass der Verwalter jeden Handgriff selbst koordinieren muss.",
+    title: "Kleinreparaturen",
+    text: "Einfache Tätigkeiten ohne Eingriff in Elektro-, Sanitär-, Brandschutz- und Sicherheitstechnik – etwa lose Türgriffe, klemmende Schlösser, defekte Beschilderungen, leichte Silikon- und Dichtungsarbeiten: Wir erfassen Mängel, priorisieren nach Sicherheitsrelevanz und schließen Vorgänge mit Protokoll (PDF) ab. Fachgewerke beauftragen wir nach Freigabe – ohne dass der Verwalter jeden Handgriff selbst koordinieren muss.",
   },
   {
-    title: "Leuchtmittelwechsel & Sicherheitsbeleuchtung",
-    text: "Ausgefallene Lampen im Treppenhaus sind einer der häufigsten Mieterbeschwerden – und ein klassisches Haftungsthema bei Stürzen. Unsere Kontrollgänge beinhalten systematische Lichtchecks, dokumentierten Wechsel und Meldung an den Verwalter, wenn Sondermaterial oder Elektriker nötig wird.",
+    title: "Beleuchtung: Ausfälle melden",
+    text: "Ausgefallene Lampen im Treppenhaus sind eine der häufigsten Mieterbeschwerden – und ein klassisches Haftungsthema bei Stürzen. Unsere Kontrollgänge beinhalten eine Sichtkontrolle der Beleuchtung und die Meldung von Ausfällen an den Verwalter. Leuchtmittel wechseln wir nur, wenn eine Elektrofachkraft diese Tätigkeit festgelegt hat; die Prüfung der Sicherheitsbeleuchtung übernimmt ein Elektrofachbetrieb.",
   },
   {
     title: "Mülltonnen-Bereitstellung & Entsorgungslogistik",
-    text: "Am Abfuhrtermin stellen Teams Behälter bereit, kontrollieren Verschmutzungen im Müllraum und reinigen bei Bedarf Oberflächen. Für Hausverwaltungen bedeutet das: weniger Konflikte mit Entsorgern und weniger Beschwerden wegen „vergessener“ Tonnen.",
+    text: "Am Abfuhrtermin stellen wir Behälter bereit, kontrollieren Verschmutzungen im Müllraum und reinigen bei Bedarf Oberflächen. Für Hausverwaltungen bedeutet das: weniger Konflikte mit Entsorgern und weniger Beschwerden wegen „vergessener“ Tonnen.",
   },
   {
     title: "Zählerstände ablesen",
-    text: "Wo vertraglich vorgesehen, lesen geschulte Mitarbeiter Zählerstände ab – mit Zeitstempel und Objektzuordnung in der digitalen Protokollkette. Das entlastet Verwalter bei Übergaben, Mieterwechseln und Abrechnungszeiträumen.",
+    text: "Wo vertraglich vorgesehen, lesen wir Zählerstände ab – mit Datum und Objektzuordnung im Protokoll (PDF). Das entlastet Verwalter bei Übergaben, Mieterwechseln und Abrechnungszeiträumen.",
   },
   {
     title: "Visuelle Objektkontrolle",
-    text: "Vandalismus, Graffiti, Sturmschäden an Dachrinnen, lose Zäune, undicht wirkende Fenster: Die visuelle Kontrolle ist kein „Rundgang ohne Plan“, sondern checklistenbasiert. Auffälligkeiten werden sofort eskaliert – nicht erst beim nächsten Eigentümertermin.",
+    text: "Vandalismus, Graffiti, Sturmschäden an Dachrinnen (Sichtkontrolle vom Boden), lose Zäune, undicht wirkende Fenster: Die visuelle Kontrolle ist kein „Rundgang ohne Plan“, sondern checklistenbasiert. Auffälligkeiten werden sofort eskaliert – nicht erst beim nächsten Eigentümertermin.",
   },
   {
     title: "Schlüssel- & Zutrittslogistik",
@@ -72,9 +71,10 @@ export default function HausmeisterservicePage() {
             </h1>
             <p className="mt-6 max-w-3xl text-lg leading-8 text-muted">
               Für Hausverwaltungen, WEG und Gewerbeimmobilien: Wir übernehmen
-              die operative Objektpräsenz zwischen den großen Gewerken – mit
-              dokumentierten Standard Operating Procedures und dokumentierten
-              Meldungen über die Saubermatik-App.
+              die operative Objektbetreuung zwischen den großen Gewerken – im
+              vereinbarten Umfang, mit dokumentierten Standard Operating
+              Procedures und Meldungen per Melde-QR im Kundenportal (im
+              Aufbau).
             </p>
             <LeistungHeroImage
               slug="hausmeisterservice"
@@ -107,24 +107,24 @@ export default function HausmeisterservicePage() {
               auf – wenn er versagt, landet jede Kleinigkeit beim Verwalter.
               Genau hier setzen wir an: nicht als „Mann für alles“ ohne Regeln,
               sondern als strukturiertes Betriebssystem mit klaren SOPs,
-              Eskalationsstufen und digitaler Nachweisführung.
+              Eskalationsstufen und Nachweisen als Protokoll (PDF).
             </p>
             <p>
               Saubermatik entlastet Eigentümer, Verwaltungen und interne
               Facility-Teams bei genau den Aufgaben, die den Alltag sprengen:
               Kleinreparaturen, Kontrollgänge, Koordination mit Handwerkern,
-              Schlüssel und Lieferanten. Einsätze werden in der App
-              dokumentiert – der Key Account Manager sieht den Status, ohne
-              WhatsApp-Ketten oder Zettelwirtschaft.
+              Schlüssel und Lieferanten. Einsätze werden als Protokoll (PDF)
+              dokumentiert, Meldungen laufen per Melde-QR im Kundenportal (im
+              Aufbau) – Ihr fester Ansprechpartner ist der Inhaber persönlich,
+              ohne WhatsApp-Ketten oder Zettelwirtschaft.
             </p>
             <p>
-              Für Hausverwaltungen ist das strategisch relevant: Sie kaufen
-              keine Stunden, sondern Risikoreduktion. Ein defektes Leuchtmittel
-              wird gemeldet, bevor der Mieter stolpert. Ein Sturmschaden an der
-              Regenrinne wird fotografiert, bevor Wasserschäden entstehen. Eine
+              Für Hausverwaltungen ist das strategisch relevant: Auffälligkeiten
+              werden im Rahmen der vereinbarten Kontrollgänge erkannt und
+              gemeldet. Ein defektes Leuchtmittel wird gemeldet, ein
+              Sturmschaden an der Regenrinne wird gemeldet, eine
               Müllraumverschmutzung wird bereinigt, bevor der Abfuhrtermin
-              eskaliert. Das senkt Beschwerdequote und schützt vor
-              Haftungsdiskussionen.
+              eskaliert.
             </p>
           </div>
 
@@ -160,7 +160,8 @@ export default function HausmeisterservicePage() {
             <p className="mt-4 text-base leading-7 text-muted">
               Hausmeister, Treppenhausreinigung, Grünpflege und Winterdienst aus
               einem Portfolio vermeiden Schnittstellenchaos – ein
-              Ansprechpartner, ein SLA, eine App. Besonders für{" "}
+              Ansprechpartner, ein SLA, ein Kundenportal (im Aufbau). Besonders
+              für{" "}
               <Link
                 href="/zielgruppen/hausverwaltungen"
                 className="font-semibold text-secondary hover:underline"
@@ -169,12 +170,6 @@ export default function HausmeisterservicePage() {
               </Link>{" "}
               ist das der Unterschied zwischen Verwaltung und Systemführung.
             </p>
-          </div>
-        </section>
-
-        <section className="border-t border-slate-200 bg-white py-12">
-          <div className="mx-auto w-full max-w-3xl px-4 sm:px-6 lg:px-8">
-            <SnippetBaitTable slug="hausmeisterservice" />
           </div>
         </section>
 

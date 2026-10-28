@@ -5,18 +5,18 @@ import { buildTelHref } from "@/lib/phone";
 export const metadata: Metadata = {
   title: "Qualitätsmanagement",
   description:
-    "Digitale Objektüberwachung, dokumentierte Einsätze, anerkannte Reinigungsstandards und nachvollziehbare Protokolle für B2B-Reinigung in der Zollernalb.",
+    "Dokumentierte Einsätze, anerkannte Reinigungsstandards und nachvollziehbare Protokolle (PDF) für B2B-Reinigung in der Zollernalb.",
   alternates: { canonical: "/qualitaetsmanagement" },
 };
 
 const pillars = [
   {
     title: "Dokumentierte Qualität",
-    body: "Wir geben kein leeres Versprechen ab, sondern verbinden feste Qualitätskriterien mit technischer Nachverfolgung: Was auf dem Objekt passiert, wird strukturiert erfasst – damit Sie jederzeit wissen, wo Sie stehen. Streifenfreiheit merken wir selbst und arbeiten nach; eine Garantiezusage geben wir nicht.",
+    body: "Wir geben kein leeres Versprechen ab, sondern verbinden feste Qualitätskriterien mit nachvollziehbarer Dokumentation: Was auf dem Objekt passiert, halten wir als Protokoll (PDF) fest. Streifenfreiheit prüfen wir selbst und arbeiten nach; eine Garantiezusage geben wir nicht.",
   },
   {
-    title: "SaaS-Überwachung statt Zettelwirtschaft",
-    body: "Unsere Plattform bündelt Touren, Checklisten und Einsatznachweise. Statt Excel und Messenger-Ketten erhalten Sie eine Quelle der Wahrheit für Ihre Liegenschaft – skalierbar über mehrere Standorte und Zugänge.",
+    title: "Protokolle statt Zettelwirtschaft",
+    body: "Checklisten und Protokolle (PDF) statt Excel und Messenger-Ketten. Meldungen und Dokumente bündeln wir künftig in unserem Kundenportal (im Aufbau).",
   },
   {
     title: "Dokumentierte Checks & Eskalation",

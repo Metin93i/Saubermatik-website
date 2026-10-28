@@ -74,8 +74,8 @@ export default function BueroGewerbePage() {
               Ein Ansprechpartner, klare Abläufe
             </h2>
             <p>
-              Sie bekommen bei uns eine feste Ansprechperson, die Ihr Objekt
-              kennt. Wünsche, Änderungen und kurzfristige Anliegen klären Sie
+              Sie bekommen bei uns einen festen Ansprechpartner – den Inhaber
+              persönlich –, der Ihr Objekt kennt. Wünsche, Änderungen und kurzfristige Anliegen klären Sie
               direkt – ohne Ticketsystem und ohne Callcenter.
             </p>
           </article>
@@ -85,15 +85,16 @@ export default function BueroGewerbePage() {
               Nachvollziehbar auf Wunsch
             </h2>
             <p>
-              Wenn Sie es genauer wissen wollen: Über unsere Plattform{" "}
+              Wenn Sie es genauer wissen wollen: Wir dokumentieren Einsätze
+              als Protokoll (PDF); unser Kundenportal{" "}
               <Link
                 href="/secureops"
                 className="font-semibold text-secondary hover:underline"
               >
                 SecureOps
               </Link>{" "}
-              dokumentieren wir Einsätze und geben Ihnen Einblick in Ihr
-              Objekt. Ob und in welchem Umfang, entscheiden Sie – wir beraten
+              (im Aufbau) bündelt Meldungen per Melde-QR, Anfragen mit Status
+              und Dokumente. Ob und in welchem Umfang, entscheiden Sie – wir beraten
               Sie ehrlich, was für Ihre Fläche sinnvoll ist.
             </p>
           </article>
@@ -103,7 +104,9 @@ export default function BueroGewerbePage() {
               Vom Einzelbüro bis zum Gewerbeobjekt
             </h2>
             <p>
-              Wir betreuen kleine Büros genauso wie größere Gewerbeflächen.
+              Wir reinigen kleine Büros genauso wie größere Gewerbeflächen;
+              Vertretung und Kapazität regeln wir vor Leistungsbeginn
+              schriftlich.
               Regelmäßige Unterhaltsreinigung übernehmen wir im Umkreis von
               Meßstetten auf der Schwäbischen Alb; Projekt- und Sonderaufträge
               wie Glas-, Grund- oder Fassadenreinigung auch überregional.

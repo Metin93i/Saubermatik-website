@@ -138,7 +138,7 @@ export default function UnterhaltsreinigungPage() {
               Saubermatik positioniert Unterhaltsreinigung als Service Level
               Agreement (SLA) mit messbarer{" "}
               <strong className="text-foreground">Flächenleistung</strong>,
-              klarer Zonenlogik und digitaler Nachweisführung. Ihr Vorteil:
+              klarer Zonenlogik und dokumentierter Nachweisführung. Ihr Vorteil:
               weniger Reklamationen, weniger interne Koordination, volle
               Verteidigbarkeit gegenüber Eigentümern und Betriebsräten.
             </p>
@@ -161,8 +161,8 @@ export default function UnterhaltsreinigungPage() {
                 Saubermatik setzt deshalb konsequent auf das{" "}
                 <strong className="text-foreground">4-Farb-System</strong>: Jede
                 Zone erhält ausschließlich farbcodierte Textilien und Eimer –
-                physisch getrennt, in der App dokumentiert, in der Einweisung
-                verpflichtend. Rot bleibt in Sanitäranlagen, Gelb an
+                physisch getrennt, im Leistungsverzeichnis festgelegt, in der
+                Einweisung verpflichtend. Rot bleibt in Sanitäranlagen, Gelb an
                 Waschbecken, Blau am Inventar, Grün in Teeküchen und
                 Pausenbereichen. Keine Ausnahmen, keine „schnell mal mit
                 derselben Faser“-Improvisation.
@@ -187,9 +187,9 @@ export default function UnterhaltsreinigungPage() {
               ))}
             </ul>
             <p className="text-base leading-[1.75] text-foreground/90">
-              Das System ist bewusst einfach – deshalb durchsetzbar. Neue Kräfte
-              verstehen es in Minuten; Ihr Facility Manager kann es in
-              Begehungen sofort prüfen. Mehr Tiefe finden Sie in unserem{" "}
+              Das System ist bewusst einfach – deshalb durchsetzbar. Es ist in
+              Minuten erklärt; Ihr Facility Manager kann es in Begehungen
+              sofort prüfen. Mehr Tiefe finden Sie in unserem{" "}
               <Link
                 href="/wissen/farbcode-system-hygiene"
                 className="font-semibold text-secondary hover:underline"
@@ -202,39 +202,37 @@ export default function UnterhaltsreinigungPage() {
 
           <article className="mt-16 space-y-8">
             <h2 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
-              Deep Dive 2: Digitale Qualitätssicherung (DIN EN 13549)
+              Deep Dive 2: Qualitätssicherung in Anlehnung an DIN EN 13549
             </h2>
             <div className="space-y-5 text-base leading-[1.75] text-foreground/90">
               <p>
-                Papier-Checklisten sind tot – zumindest dort, wo Qualität
-                nachweisbar sein muss. Die europäische Norm{" "}
+                Qualität muss nachweisbar sein. Die europäische Norm{" "}
                 <strong className="text-foreground">DIN EN 13549</strong>{" "}
                 definiert Anforderungen an die Qualitätsmessung von
-                Reinigungsleistungen. Saubermatik übersetzt das in die Praxis:
-                Jedes Objekt erhält ein{" "}
+                Reinigungsleistungen. Saubermatik orientiert sich daran: Jedes
+                Objekt erhält ein{" "}
                 <strong className="text-foreground">
-                  digitales Leistungsverzeichnis (LV)
+                  objektbezogenes Leistungsverzeichnis (LV)
                 </strong>
-                , das unsere Teams in der Saubermatik-App Punkt für Punkt
-                abhaken – mit Zeitstempel, Mitarbeiter-ID und optionalen Fotos
-                bei Abweichungen.
+                , dessen Positionen wir bei Qualitätskontrollen in Anlehnung an
+                DIN EN 13549 prüfen und als Protokoll (PDF) dokumentieren – mit
+                Datum und Hinweisen bei Abweichungen.
               </p>
               <p>
                 Für Sie als Facility Manager bedeutet das{" "}
                 <strong className="text-foreground">
-                  dokumentierte Einsätze im Kundenportal
+                  Nachweise als Protokoll (PDF)
                 </strong>: Sie
-                sehen, welche Positionen erledigt wurden, wo Nacharbeit nötig
+                sehen, welche Positionen geprüft wurden, wo Nacharbeit nötig
                 war und ob das vereinbarte SLA eingehalten wurde – ohne
-                Telefonkette, ohne Excel-Export am Monatsende. Das ist
-                Transparenz auf C-Level-Niveau: messbar, auditierbar,
-                verhandlungsfest bei Vertragsverlängerungen.
+                Telefonkette, ohne Excel-Export am Monatsende. Mängel melden Sie
+                per Melde-QR im Kundenportal (im Aufbau).
               </p>
               <p>
-                Kombiniert mit unserer Vertretung bei Urlaub oder Ausfall
-                bleibt Ihr Objekt im Rhythmus: bewährtes Team oder die
-                Geschäftsführung persönlich. Ihr Betrieb merkt den Ausfall
-                nicht. Genau das unterscheidet dokumentierte Reinigung von
+                Vertretung und Kapazität bei Urlaub oder Ausfall regeln wir vor
+                Leistungsbeginn schriftlich, damit Ihr Objekt im Rhythmus
+                bleibt. Ihr fester Ansprechpartner ist der Inhaber persönlich.
+                Genau das unterscheidet dokumentierte Reinigung von
                 Subunternehmer-Chaos.
               </p>
             </div>
@@ -265,9 +263,8 @@ export default function UnterhaltsreinigungPage() {
                 wird – abends, früh morgens oder in definierten Fenstern
                 zwischen Schichten. Materialgerechte Bodenpflege, staubarmes
                 Wischen an Bildschirmzonen und leise Geräte in Kanzleietagen
-                sind Standard, keine Sonderwünsche. Das senkt interne
-                Beschwerden und hält die vereinbarte Flächenleistung im SLA ohne
-                Überstunden-Debatten.
+                sind Standard, keine Sonderwünsche. Das hält die vereinbarte
+                Flächenleistung im SLA ohne Überstunden-Debatten.
               </p>
               <p>
                 Ob{" "}
@@ -307,14 +304,15 @@ export default function UnterhaltsreinigungPage() {
                 alltagstauglich
               </li>
               <li>
-                Digitales LV + DIN EN 13549-orientierte, dokumentierte Qualität
-                in der App
+                Leistungsverzeichnis (LV) je Objekt + Qualitätskontrolle in
+                Anlehnung an DIN EN 13549, dokumentiert als Protokoll (PDF)
               </li>
               <li>
                 HACCP in Teeküchen und Pausenräumen, optimierte Flächenleistung
               </li>
               <li>
-                Vertretung bei Urlaub oder Ausfall und fester Ansprechpartner
+                Fester Ansprechpartner (Inhaber); Vertretung vor
+                Leistungsbeginn schriftlich geregelt
               </li>
             </ul>
           </div>

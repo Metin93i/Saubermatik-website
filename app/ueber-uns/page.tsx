@@ -5,7 +5,7 @@ import { buildTelHref } from "@/lib/phone";
 export const metadata: Metadata = {
   title: "Über uns",
   description:
-    "Saubermatik aus Meßstetten: regionale Wurzeln, digitale Objektsteuerung und B2B-Reinigung mit festen Ansprechpartnern für Zollernalbkreis, Sigmaringen, Rottweil, Hechingen und Tübingen – Projekte bis Stuttgart und an den Bodensee.",
+    "Saubermatik aus Meßstetten: regionale Wurzeln, inhabergeführte B2B-Reinigung und ein fester Ansprechpartner für Zollernalbkreis, Sigmaringen, Rottweil, Hechingen und Tübingen – Projekte bis Stuttgart und an den Bodensee.",
   alternates: { canonical: "/ueber-uns" },
 };
 
@@ -27,22 +27,27 @@ export default function UeberUnsPage() {
           <strong className="font-semibold text-foreground">
             Verlässlichkeit vor Marketing
           </strong>{" "}
-          braucht. Unser Team arbeitet von Meßstetten aus in der Zollernalb und
-          darüber hinaus – mit kurzen Wegen und klaren Verantwortlichkeiten.
+          braucht. Saubermatik ist inhabergeführt und arbeitet von Meßstetten
+          aus in der Zollernalb und darüber hinaus – mit kurzen Wegen und
+          klaren Verantwortlichkeiten.
         </p>
         <p>
           Digitale Innovation ist für uns kein Buzzword, sondern{" "}
           <strong className="font-semibold text-foreground">
             Alltagssicherheit
           </strong>
-          : Touren, Qualität und Kommunikation laufen über eine gemeinsame
-          Plattform. Wenn sich etwas ändert, sehen wir es früh – und handeln,
+          : Wir arbeiten mit Checklisten und Protokollen (PDF); Meldungen,
+          Anfragen und Dokumente bündeln wir in unserem Kundenportal SecureOps
+          (im Aufbau). Wenn sich etwas ändert, sehen
+          wir es früh – und handeln,
           bevor Ihr Objekt darunter leidet.
         </p>
         <p>
-          Zuverlässigkeit heißt auch: Sie erreichen Menschen, die Entscheidungen
-          treffen dürfen. Keine anonyme Hotline, kein endloses Weiterreichen –
-          sondern Partner, die Ihre Flächen und Rhythmen kennenlernen.
+          Zuverlässigkeit heißt auch: Sie erreichen den Inhaber persönlich –
+          und damit den, der entscheidet. Keine anonyme Hotline, kein endloses
+          Weiterreichen – sondern ein fester Ansprechpartner, der Ihre Flächen
+          und Rhythmen kennenlernt. Vertretung und Kapazität regeln wir vor
+          Leistungsbeginn schriftlich.
         </p>
         <p>
           Sicherheit: Schulung PSA gegen Absturz &amp; Rettung (DGUV
@@ -55,7 +60,7 @@ export default function UeberUnsPage() {
         <ul className="mt-4 list-inside list-disc space-y-2 text-sm leading-7 text-muted sm:text-base">
           <li>Langfristige Objektbetreuung statt Einmal-Show</li>
           <li>Transparente Abläufe für Eigentümer, Mieter und Verwaltung</li>
-          <li>Faire Zusammenarbeit mit unseren Teams vor Ort</li>
+          <li>Faire Zusammenarbeit mit allen Beteiligten vor Ort</li>
         </ul>
       </div>
 

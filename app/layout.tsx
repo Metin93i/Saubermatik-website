@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     template: "%s | Saubermatik Gebäudereinigung",
   },
   description:
-    "Gründliche Gebäudereinigung aus Meßstetten: Zollernalbkreis, Sigmaringen, Rottweil, Hechingen, Tübingen – Projekte bis Stuttgart und an den Bodensee. Digitale Objektsteuerung, feste Ansprechpartner.",
+    "Gründliche Gebäudereinigung aus Meßstetten: Zollernalbkreis, Sigmaringen, Rottweil, Hechingen, Tübingen – Projekte bis Stuttgart und an den Bodensee. Inhabergeführt, fester Ansprechpartner, Protokoll (PDF).",
   robots: {
     index: true,
     follow: true,

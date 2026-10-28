@@ -1,3 +1,4 @@
+2026-10-28 · inhalte · Versprechen wahrheitsgemäß: keine Teams/Vertretungsteam/Key Account, kein „haftungssicher“, Portal „im Aufbau“ ohne App-/Foto-/Zeitstempel-Nachweise, DIN EN 13549 nur Reinigung, Grünpflege/Winterdienst rechtssicher, keine unbelegten Referenzen
 2026-08-24 · lead · Formular postet relativ an /api/lead, API-URL-Altlast entfernt
 2026-08-23 · design · Kontrast-System repariert, Hero nach Flyer-Seite-2 mit SecureOps-Karte und QR
 2026-08-23 · design · Leitstand-System: Tokens, Space Grotesk, Hero C+A, Statuskarte, Navy-SecureOps

@@ -6,20 +6,20 @@ type Props = {
 
 const PORTAL_ITEMS = [
   "Übersicht über alle Objekte",
-  "Einsätze mit Nachweis",
+  "Anfragen mit Status und Dokumente",
   "Offene Meldungen im Blick",
 ] as const;
 
 const QR_ITEMS = [
   "Für Mieter und Verwaltung",
   "Ohne App, ohne Anmeldung",
-  "Alles wird dokumentiert",
+  "Jede Meldung nachvollziehbar",
 ] as const;
 
 const STEPS = [
   { n: "1", title: "Scannen", text: "QR-Code im Objekt erfassen" },
   { n: "2", title: "Melden", text: "Anliegen kurz beschreiben" },
-  { n: "3", title: "Erledigt", text: "dokumentiert im Portal" },
+  { n: "3", title: "Erledigt", text: "Status im Portal nachvollziehbar" },
 ] as const;
 
 export function SecureOpsFlyerCard({ className = "" }: Props) {
@@ -48,7 +48,7 @@ export function SecureOpsFlyerCard({ className = "" }: Props) {
           <p className="font-display text-sm font-bold text-glow">01</p>
           <h3 className="mt-1 text-lg font-bold text-white">Kundenportal</h3>
           <p className="mt-2 text-sm leading-6 text-text-dunkel">
-            Ihre gesamte Objektbetreuung an einem Ort – jederzeit einsehbar.
+            Meldungen, Anfragen und Dokumente an einem Ort – im Aufbau.
           </p>
           <ul className="mt-4 space-y-2">
             {PORTAL_ITEMS.map((item) => (
@@ -69,7 +69,7 @@ export function SecureOpsFlyerCard({ className = "" }: Props) {
           <p className="font-display text-sm font-bold text-glow">02</p>
           <h3 className="mt-1 text-lg font-bold text-white">QR-Meldesystem</h3>
           <p className="mt-2 text-sm leading-6 text-text-dunkel">
-            Scannen, melden – landet sofort bei unserem Team.
+            Scannen, melden – landet direkt bei uns.
           </p>
           <ul className="mt-4 space-y-2">
             {QR_ITEMS.map((item) => (

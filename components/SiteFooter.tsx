@@ -97,7 +97,7 @@ export function SiteFooter() {
                 href="/standorte/stuttgart"
                 className="text-sm font-semibold text-surface-inverse-foreground transition hover:text-[color:var(--link-on-inverse)] hover:underline"
               >
-                Stuttgart (Metropolregion, Spezial-Hub)
+                Stuttgart (Metropolregion)
               </PrefetchLink>
             </li>
           </ul>

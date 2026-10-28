@@ -6,19 +6,19 @@ export const LEISTUNG_ENTITY_FACTS: Partial<
 > = {
   unterhaltsreinigung: [
     "4-Farb-System gegen Kreuzkontamination: Rot (Sanitär), Gelb (Waschbecken), Blau (Inventar), Grün (Teeküchen) – physisch getrennte Textilien in jedem Objekt.",
-    "Digitales Leistungsverzeichnis (LV) in der Saubermatik-App, DIN EN 13549-orientiertes QM; Praxen: Desinfektion nach Hygieneplan, Mittel nach anerkannten Standards.",
+    "Leistungsverzeichnis (LV) je Objekt, Qualitätskontrolle in Anlehnung an DIN EN 13549; Praxen: Desinfektion nach Hygieneplan, Mittel nach anerkannten Standards.",
   ],
   "fenster-glasreinigung": [
     "Reinwasser-Osmose mit entmineralisiertem Wasser, Carbon-Teleskopstangen (bis ca. 20 m) und Hubsteiger-Verzicht an vielen Objekten – streifenfreies Ergebnis ohne aggressive Chemie. Streifenfreiheit merken wir selbst; eine Garantiezusage geben wir nicht.",
     "Innenbereich: Einwascher & Abzieher, Rahmen- und Falzreinigung gegen Glas-Korrosion; Außenbereich: Fassaden-Ergonomie und TRBS-2121-konforme Arbeitssicherheit (BG BAU).",
   ],
   treppenhausreinigung: [
-    "Verkehrssicherungspflicht und Trittsicherheit checklistenbasiert; umlagefähige Leistungsnachweise nach § 2 BetrKV für Hausverwaltungen.",
-    "Repräsentative Eingangsbereiche, digitale Touren und Vertretung bei Urlaub oder Ausfall – kombinierbar mit Winterdienst und Hausverwaltung.",
+    "Verkehrssicherungspflicht und Trittsicherheit checklistenbasiert; objektbezogene Leistungsnachweise für Hausverwaltungen – ob umlagefähig, richtet sich nach Mietvertrag und § 2 BetrKV.",
+    "Repräsentative Eingangsbereiche, dokumentierte Touren; Vertretung regeln wir vor Leistungsbeginn schriftlich – kombinierbar mit Winterdienst und Hausverwaltung.",
   ],
   winterdienst: [
-    "Räum- und Streupflicht wettergeführt mit dokumentierten Einsätzen; Verkehrssicherungspflicht dokumentiert für WEG und Gewerbe.",
-    "§ 2 BetrKV-transparente Abrechnung, BG-BAU-orientierte Einsatzsicherheit, Eskalation bei Extremwetter.",
+    "Räum- und Streupflicht mit schriftlichem Plan und dokumentierten Einsätzen; Einsatzauslösung nach vereinbarten Kriterien für WEG und Gewerbe.",
+    "Objektbezogene Abrechnung (ob umlagefähig, richtet sich nach Mietvertrag und § 2 BetrKV), BG-BAU-orientierte Einsatzsicherheit, Eskalation bei Extremwetter.",
   ],
   grundreinigung: [
     "Baufeinreinigung und Bauabnahme VOB/C-orientiert: Zementschleierentfernung, Bautrocknung-Nachläufe, besenreine Übergabe.",
@@ -26,7 +26,7 @@ export const LEISTUNG_ENTITY_FACTS: Partial<
   ],
   fassadenreinigung: [
     "Materialgerechte Fassadenreinigung (Naturstein, Glas, Metall) mit Werterhalt-Fokus; TRBS 2121 und BG-BAU bei Höhenarbeit.",
-    "Algen- und Moosreduktion, Kombination mit Reinwasser-Glasreinigung und digitalen Einsatzprotokollen.",
+    "Algen- und Moosreduktion, Kombination mit Reinwasser-Glasreinigung und Einsatzprotokollen (PDF).",
   ],
   entruempelung: [
     "Haushaltsauflösung und Gewerberäumung mit besenreiner Übergabe, fachgerechter Entsorgung und Endreinigung.",
@@ -34,7 +34,7 @@ export const LEISTUNG_ENTITY_FACTS: Partial<
   ],
   sonstiges: [
     "Teppich- und Polsterreinigung, Praxis-Sonderdesinfektion nach Hygieneplan, Event-Einsätze mit vereinbarten Reaktionszeiten.",
-    "Ausschreibungsfähige digitale LV-Texte, DIN EN 13549-orientierte, dokumentierte Qualität für Sonderprojekte.",
+    "Ausschreibungsfähige LV-Texte, Qualitätskontrolle in Anlehnung an DIN EN 13549, dokumentiert für Sonderprojekte.",
   ],
 };
 

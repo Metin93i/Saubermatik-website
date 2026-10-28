@@ -26,9 +26,9 @@ export const LEXIKON_BY_SLUG: Record<LexikonTermSlug, LexikonEntry> = {
       "Hygienepläne nach HACCP für Lebensmittelbetriebe, Gastronomie und sensible Gewerbeobjekte – dokumentiert und auditierbar.",
     paragraphs: [
       "HACCP (Hazard Analysis and Critical Control Points) verlangt, dass Reinigung und Desinfektion nachvollziehbar geplant, ausgeführt und kontrolliert werden. In der Praxis heißt das: definierte Reinigungszonen, freigegebene Mittel, Schulungsnachweise und Protokolle bei Abweichungen.",
-      "Saubermatik verknüpft HACCP-orientierte Checklisten mit der digitalen Objektsteuerung – Facility-Verantwortliche sehen Einsätze und Korrekturen ohne Excel-Chaos. Für Audits und Behördenkontakte liefern wir strukturierte Nachweise statt Bauchgefühl.",
-      "Für Einkäufer zählt die Trennung von Kontaminationspfaden: Roherzeugnis, Verarbeitung, Ausgabe und Lager müssen hygienisch entkoppelt sein. Wir definieren Farb- und Gerätezonen, dokumentieren Desinfektionsfenster und schulen Teams auf kritische Kontrollpunkte – nicht nur auf „sauber wirken“.",
-      "In der Due-Diligence-Phase fragen Konzerne nach wiederholbaren KPIs: Abweichungsquote, Reaktionszeit bei Befunden, Nachweis der Mittelchargen. Unsere Plattform liefert diese Daten exportierbar – ein Vorteil gegenüber rein manuellen Anbietern ohne Systemanbindung.",
+      "Saubermatik verknüpft HACCP-orientierte Checklisten mit dokumentierten Einsätzen – Facility-Verantwortliche erhalten Einsätze und Korrekturen als Protokoll (PDF) statt Excel-Chaos. Für Audits und Behördenkontakte liefern wir strukturierte Nachweise statt Bauchgefühl.",
+      "Für Einkäufer zählt die Trennung von Kontaminationspfaden: Roherzeugnis, Verarbeitung, Ausgabe und Lager müssen hygienisch entkoppelt sein. Wir definieren Farb- und Gerätezonen, dokumentieren Desinfektionsfenster und richten die Arbeit an den kritischen Kontrollpunkten aus – nicht nur auf „sauber wirken“.",
+      "In der Due-Diligence-Phase fragen Konzerne nach wiederholbaren KPIs: Abweichungsquote, Reaktionszeit bei Befunden, Nachweis der Mittelchargen. Welche dieser Angaben wir liefern, vereinbaren wir vor Leistungsbeginn; Nachweise erhalten Sie als Protokoll (PDF).",
     ],
   },
   "ph-werte-bodenreinigung": {
@@ -38,9 +38,9 @@ export const LEXIKON_BY_SLUG: Record<LexikonTermSlug, LexikonEntry> = {
       "Warum der pH-Wert über Materialschutz, Rutschsicherheit und Lebensdauer von Bodenbelägen entscheidet.",
     paragraphs: [
       "Jeder Bodenbelag reagiert unterschiedlich auf Säuren und Laugen: Naturstein, Linoleum, Designboden oder versiegeltes Parkett verlangen materialgerechte pH-Bereiche. Falsche Mittel führen zu Mattstellen, Klebrigkeit oder irreversiblen Schäden.",
-      "Unsere Teams arbeiten mit freigegebenen Tensid- und Pflegesystemen – dokumentiert pro Objekt. So bleibt die Oberfläche hygienisch sauber, ohne die Substanz zu opfern. Das senkt Folgekosten und Reklamationen messbar.",
-      "Facility Manager sollten pH-Werte nicht als Chemie-Detail abtun, sondern als Vertragsvariable: In SLAs können pH-Toleranzen, Probenahme und Korrekturmaßnahmen verbindlich festgelegt werden. Das schützt vor Haftungsrisiken bei Rutschfällen oder Beschichtungsschäden.",
-      "In Produktions- und Logistikflächen kollidieren oft Öl-/Fettbelastung mit alkalischer Grundreinigung. Wir planen Intervall- und Mittelwechsel so, dass Zwischenpflege und Grundreinigung sich nicht gegenseitig zerstören – inklusive dokumentierter Freigabe durch den Objektleiter.",
+      "Wir arbeiten mit freigegebenen Tensid- und Pflegesystemen – dokumentiert pro Objekt. So bleibt die Oberfläche hygienisch sauber, ohne die Substanz zu opfern.",
+      "Facility Manager sollten pH-Werte nicht als Chemie-Detail abtun, sondern als Vertragsvariable: In SLAs können pH-Toleranzen, Probenahme und Korrekturmaßnahmen verbindlich festgelegt werden. Das schafft Klarheit bei Rutschfällen oder Beschichtungsschäden.",
+      "In Produktions- und Logistikflächen kollidieren oft Öl-/Fettbelastung mit alkalischer Grundreinigung. Wir planen Intervall- und Mittelwechsel so, dass Zwischenpflege und Grundreinigung sich nicht gegenseitig zerstören – inklusive dokumentierter Freigabe durch den Auftraggeber.",
     ],
   },
   "din-13063-krankenhausreinigung": {
@@ -52,7 +52,7 @@ export const LEXIKON_BY_SLUG: Record<LexikonTermSlug, LexikonEntry> = {
       "Die DIN 13063 strukturiert Anforderungen an die Reinigung und Desinfektion in medizinischen Einrichtungen – von Risikogruppen über Flächenklassen bis zu Prüfintervallen. Auch außerhalb von Kliniken nutzen Praxen und Labore diese Logik als Qualitätsrahmen.",
       "Saubermatik übersetzt Normen in umsetzbare Tourenpläne: getrennte Einsatzketten, PSA, dokumentierte Desinfektionsfenster und Eskalation bei Abweichungen. So bleibt Compliance prüfbar – nicht nur auf dem Papier.",
       "Für nicht-klinische, aber sensible Gewerbeobjekte (Arztpraxen, Labore, Reha) lohnt sich die DIN-Logik als Benchmark in Ausschreibungen: Sie schafft eine gemeinsame Sprache zwischen Einkauf, Hygienebeauftragten und Dienstleister – unabhängig von Marketingversprechen.",
-      "Die digitale Objektsteuerung ergänzt die Norm um dokumentierte Nachweise: Welche Fläche wurde wann in welcher Risikoklasse bearbeitet? Wer war vor Ort? Welche Abweichung wurde binnen welcher Frist geschlossen? Das ist die Brücke zwischen Norm und Betrieb.",
+      "Dokumentierte Nachweise ergänzen die Norm: Welche Fläche wurde wann in welcher Risikoklasse bearbeitet? Wer war vor Ort? Welche Abweichung wurde binnen welcher Frist geschlossen? Das ist die Brücke zwischen Norm und Betrieb.",
     ],
   },
   "facility-management-software-cafm": {
@@ -62,9 +62,9 @@ export const LEXIKON_BY_SLUG: Record<LexikonTermSlug, LexikonEntry> = {
       "Computer Aided Facility Management (CAFM) als Steuerungszentrale – und wie Saubermatik Reinigungsdaten in Ihre Betriebslogik einspielt.",
     paragraphs: [
       "CAFM-Systeme bündeln Flächendaten, Wartungsintervalle, Störungen, Verträge und Kostenstellen in einer digitalen Gebäudewahrheit. Für Konzerne ist CAFM die Basis für Portfoliomanagement: Welches Objekt kostet wie viel, wo sind Risiken, wo drohen SLA-Verletzungen?",
-      "Reinigung ist im CAFM-Kontext selten isoliert – sie kollidiert mit Instandhaltung, Sicherheitsdienst, Catering und Energiemanagement. Ohne saubere Schnittstellen entstehen Medienbrüche: Excel-Listen, PDF-Protokolle, Messenger-Gruppen. Genau hier setzt Saubermatik an: unsere Plattform exportiert strukturierte Einsatz- und Qualitätsdaten, die in Ihr CAFM oder Reporting-Tool überführt werden können.",
-      "Für Einkäufer bedeutet CAFM-Reife: weniger Blindflug. Statt „Reinigung läuft irgendwie“ sehen Sie dokumentierte Touren, Ausfallersatz, Reklamationszyklen und KPI-Trends. Das erleichtert Benchmarks zwischen Standorten und die Verteidigung von Budgets gegenüber CFO und Revision.",
-      "Die Integration folgt keinem starren Vendor-Lock-in: Wir liefern definierte Datenfelder (Objekt-ID, Zone, Leistung, Zeitstempel, Mängelstatus) und abstimmbare Exportrhythmen. Ob SAP, Planon, Archibus oder ein eigenes Data Warehouse – entscheidend ist die Vertraglichkeit der Datenqualität, nicht das Logo auf der Folie.",
+      "Reinigung ist im CAFM-Kontext selten isoliert – sie kollidiert mit Instandhaltung, Sicherheitsdienst, Catering und Energiemanagement. Ohne saubere Schnittstellen entstehen Medienbrüche: Excel-Listen, PDF-Protokolle, Messenger-Gruppen. Genau hier setzt Saubermatik an: Einsatz- und Qualitätsnachweise erhalten Sie als Protokoll (PDF); welche Daten Sie darüber hinaus für Ihr CAFM oder Reporting-Tool brauchen, stimmen wir vor Leistungsbeginn ab.",
+      "Für Einkäufer bedeutet CAFM-Reife: weniger Blindflug. Statt „Reinigung läuft irgendwie“ erhalten Sie dokumentierte Einsätze als Protokoll (PDF) und vereinbarte Qualitätsbegehungen. Das erleichtert Benchmarks zwischen Standorten und die Verteidigung von Budgets gegenüber CFO und Revision.",
+      "Für die Übergabe in Ihr System zählen definierte Datenfelder (Objekt-ID, Zone, Leistung, Datum, Mängelstatus) und abgestimmte Rhythmen. Ob SAP, Planon, Archibus oder ein eigenes Data Warehouse – entscheidend ist die Vertraglichkeit der Datenqualität, nicht das Logo auf der Folie.",
     ],
   },
   "din-31051-instandhaltung-reinigung": {
@@ -75,8 +75,8 @@ export const LEXIKON_BY_SLUG: Record<LexikonTermSlug, LexikonEntry> = {
     paragraphs: [
       "Die DIN 31051 beschreibt Grundlagen der Instandhaltung: Zustandserfassung, Planung, Durchführung und Bewertung. Reinigung ist dabei keine Nebenkostenposition, sondern präventive Instandhaltung – sie schützt Oberflächen, verlängert Nutzungsdauern und verhindert Folgeschäden durch Verschmutzung oder falsche Pflege.",
       "Facility Manager nutzen die Norm, um Reinigung, Wartung und Sanierung in einem Gesamtbudget zu denken. Wer nur auf Reparaturen reagiert, zahlt später mehr. Wer Reinigungsintervalle materialgerecht plant, stabilisiert CAPEX und reduziert Stillstandsrisiken in sensiblen Bereichen.",
-      "In Ausschreibungen hilft die DIN-31051-Logik, Leistungstexte präziser zu formulieren: Nicht „Boden wischen“, sondern definierte Zustandsgrade, Prüfzyklen und Dokumentationspflichten. Saubermatik übersetzt diese Anforderungen in SLA-KPIs und digitale Nachweise – nicht in vage Versprechen.",
-      "Die Verzahnung mit digitaler Objektsteuerung ist entscheidend: Zustandsfotos, Mängellisten und Korrekturmaßnahmen werden historisiert. Bei Übergaben, Mietvertragsende oder Auditorenfragen liegt die Beweiskette vor – nicht im E-Mail-Archiv des Hausmeisters.",
+      "In Ausschreibungen hilft die DIN-31051-Logik, Leistungstexte präziser zu formulieren: Nicht „Boden wischen“, sondern definierte Zustandsgrade, Prüfzyklen und Dokumentationspflichten. Saubermatik übersetzt diese Anforderungen in vereinbarte Leistungskriterien und Nachweise als Protokoll (PDF) – nicht in vage Versprechen.",
+      "Die Dokumentation ist entscheidend: Mängellisten und Korrekturmaßnahmen werden protokolliert. Bei Übergaben, Mietvertragsende oder Auditorenfragen liegen die Nachweise vor – nicht im E-Mail-Archiv des Hausmeisters.",
       "Für Konzerne mit mehreren Standorten schafft DIN 31051 eine gemeinsame Sprache zwischen Technik, Einkauf und Betrieb. Reinigung wird messbar, vergleichbar und steuerbar – ein Kernargument gegen rein preisgetriebene Vergaben ohne Qualitätsarchitektur.",
     ],
   },
@@ -88,9 +88,9 @@ export const LEXIKON_BY_SLUG: Record<LexikonTermSlug, LexikonEntry> = {
     paragraphs: [
       "Ein SLA ist der vertragliche Kern zwischen Auftraggeber und Dienstleister – nicht das Anschreiben mit Marketingfloskeln. Es definiert messbare Leistungen: Reaktionszeiten bei Mängeln, Mindestqualität je Zone, Nachweispflichten, Eskalationsstufen und Review-Zyklen.",
       "Typische KPIs in der Reinigung: Erfüllungsquote geplanter Touren, Zeit bis zur Mängelbehebung, Wiederholungsquote bei Reklamationen, Ausfallquote ohne Ersatzlogik, Dokumentationsvollständigkeit. Ohne KPIs bleibt „sauber“ subjektiv – und streitanfällig.",
-      "Saubermatik strukturiert Vereinbarungen vor Vertragsstart: Zonenplan, Materialfreigaben, Sicherheitsvorgaben und Kommunikationswege werden fixiert. Die Plattform liefert die Datenbasis – nicht das Bauchgefühl des Vorarbeiters.",
+      "Saubermatik strukturiert Vereinbarungen vor Vertragsstart: Zonenplan, Materialfreigaben, Sicherheitsvorgaben und Kommunikationswege werden fixiert. Die Protokolle liefern die Datenbasis – nicht das Bauchgefühl.",
       "Für Einkauf und Revision zählen Sanktionen und Transparenz: Was passiert bei SLA-Verletzung? Wer ist erreichbar? Wie werden Abweichungen innerhalb der vereinbarten Reaktionsfenster geschlossen? Ein SLA ohne Eskalationsmatrix ist nur ein PDF ohne Zähne.",
-      "Großkonzerne koppeln SLAs an Bonus-Malus-Modelle. Das funktioniert nur mit digitaler Nachweisführung. Manuelle Zettelwirtschaft scheitert bei größeren Portfolios – hier gewinnt, wer Protokolle, Fotos und Zeitstempel revisionssicher liefert.",
+      "Großkonzerne koppeln SLAs an Bonus-Malus-Modelle. Das funktioniert nur mit belastbarer Nachweisführung. Manuelle Zettelwirtschaft scheitert bei größeren Portfolios – hier zählen vollständige, nachvollziehbare Protokolle.",
     ],
   },
   "farbcode-system-hygiene": {
@@ -100,10 +100,10 @@ export const LEXIKON_BY_SLUG: Record<LexikonTermSlug, LexikonEntry> = {
       "Farbcodierte Reinigungssysteme zur Vermeidung von Kreuzkontamination – Pflicht in Lebensmittel, Pharma und hochsensiblen Gewerbeobjekten.",
     paragraphs: [
       "Farbcode-Systeme trennen Reinigungsmittel, Eimer, Tücher und Geräte nach Zonen – typischerweise Sanitär (rot), Küche/Gastro (blau), Allgemeinbereiche (grün) und Hochrisiko (gelb/weiß je Standard). Ziel: keine Kreuzkontamination zwischen Bakterienlasten unterschiedlicher Bereiche.",
-      "In der Praxis scheitern Farbsysteme ohne Schulung und Kontrolle: Geräte wandern zwischen Zonen, Beschriftungen verblassen, Subunternehmer wechseln. Saubermatik verankert Farbzonen in digitalen Checklisten und Touren – Abweichungen werden sichtbar, nicht erst beim Audit.",
+      "In der Praxis scheitern Farbsysteme ohne Schulung und Kontrolle: Geräte wandern zwischen Zonen, Beschriftungen verblassen, Subunternehmer wechseln. Saubermatik verankert Farbzonen in Checklisten und Tourenplänen – Abweichungen werden sichtbar, nicht erst beim Audit.",
       "Für Einkauf ist das Farbcode-System ein Hygiene-Controlling-Instrument: Es reduziert Haftungsrisiken in Lebensmittelbetrieben, Laboren und Produktionsstätten. Vertraglich sollten Mittelklassen, Lagerung, Entsorgung und Ersatzbeschaffung definiert sein – nicht nur „wir arbeiten farbcodiert“.",
       "Die Kombination mit HACCP und DIN-Logik ist Standard in Premium-Ausschreibungen. Wer nur den Preis pro m² vergleicht, ignoriert das Risiko eines einzigen Kreuzkontaminationsvorfalls – ökonomisch oft teurer als die gesamte Jahresreinigung.",
-      "Digital dokumentierte Farbzonen ermöglichen Forensik nach Vorfällen: Welches Team war in welcher Zone mit welchem Equipment? Das ist Enterprise-Reife – nicht Handwerk mit Zettel und Hoffnung.",
+      "Dokumentierte Farbzonen machen nach Vorfällen nachvollziehbar, in welcher Zone mit welchem Equipment gearbeitet wurde.",
     ],
   },
   "unterhaltsreinigung-vs-grundreinigung": {
@@ -116,7 +116,7 @@ export const LEXIKON_BY_SLUG: Record<LexikonTermSlug, LexikonEntry> = {
       "Die Intervalle folgen der Nutzung, nicht dem Kalenderblatt: Büroflächen mit hoher Frequenz brauchen tägliche Unterhaltsanteile und quartalsweise Grundmodule; wenig frequentierte Flächen können wöchentlichen Unterhalt mit halbjährlicher Grundreinigung tragen. Falsche Intervalle erzeugen entweder Überkosten oder Hygieneschulden.",
       "Wirtschaftlich ist die Trennung entscheidend: Wer alles als „Unterhalt“ ausschreibt, unterinvestiert in Grundzyklen – Böden matt, Sanitär kalkig, Verträge enden in Reklamationswellen. Wer permanent Grundreinigung fährt, verbrennt Budget. Saubermatik modelliert beide Stränge im SLA mit klaren KPIs.",
       "Übergänge (Einzug, Mieterwechsel, Bauende, Messebau) erfordern oft eine Grundreinigung als Abnahmeleistung, gefolgt von Unterhalt im Betrieb. Die Vertragsarchitektur muss das abbilden – inklusive Zusatzaufträgen und dokumentierter Abnahme.",
-      "Für Facility und Einkauf gilt: Unterhalt ist Betriebssicherheit, Grund ist Werterhalt. Beides gehört in die CAFM- und SLA-Logik – getrennt budgetiert, getrennt gemessen, gemeinsam digital nachverfolgt über die Saubermatik-Plattform.",
+      "Für Facility und Einkauf gilt: Unterhalt ist Betriebssicherheit, Grund ist Werterhalt. Beides gehört in die CAFM- und SLA-Logik – getrennt budgetiert, getrennt gemessen, gemeinsam nachvollziehbar dokumentiert.",
     ],
   },
 };

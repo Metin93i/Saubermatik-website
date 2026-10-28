@@ -10,11 +10,11 @@ export const LEISTUNG_IMAGES: Partial<Record<LeistungSlug, LeistungImage>> = {
   },
   gruenanlagenpflege: {
     src: "/images/einsatz-gruenanlagenpflege.jpg",
-    alt: "Saubermatik-Mitarbeiter bei der Grünanlagenpflege mit Trimmer",
+    alt: "Grünanlagenpflege mit Trimmer im Einsatz",
   },
   fassadenreinigung: {
     src: "/images/einsatz-glasfassade-hoehe.jpg",
-    alt: "Saubermatik-Mitarbeiter reinigt hohe Glasfassade mit Teleskopstange im Reinwasser-Verfahren",
+    alt: "Reinigung einer hohen Glasfassade mit Teleskopstange im Reinwasser-Verfahren",
   },
 };
 

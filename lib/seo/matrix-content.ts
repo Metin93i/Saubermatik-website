@@ -49,9 +49,9 @@ function buildLocalBlockA(
     const zones = formatZones(profile.industrialZones);
     const infra = formatInfrastructure(profile.infrastructure);
     const leads = [
-      `${cityLabel} ist geprägt von ${profile.industryFocus} Für ${serviceLabel} bedeutet das: Reinigungs-SLAs, die zur lokalen Wirtschaft passen — nicht generische Textbausteine aus der Großstadt. Saubermatik verbindet Meßstetten als Firmensitz mit Branchenkompetenz vor Ort: digitale Leistungsverzeichnisse, dokumentierte Qualität und Key-Account-Betreuung für Facility Manager, Hausverwaltungen und Geschäftsführung.`,
-      `In ${cityLabel} planen wir ${serviceLabel} entlang realer Gewerbestrukturen — ${zones} und die Anbindung über ${infra} sind Planungsanker für Touren, Reaktionszeiten und Ausfallsicherheit. Objekte in diesen Zonen erhalten priorisierte Disposition und dokumentierte Einsätze in der Saubermatik-App.`,
-      `Der Wirtschaftsschwerpunkt (${profile.industryFocus}) verlangt mehr als Intervalle von der Stange: Hygienezonen, Werterhalt sensibler Substanz und Verkehrssicherungspflicht werden vor Vertragsstart schriftlich fixiert — nachvollziehbar für Einkauf und Eigentümerversammlungen.`,
+      `${cityLabel} ist geprägt von ${profile.industryFocus} Für ${serviceLabel} bedeutet das: SLAs, die zur lokalen Wirtschaft passen — nicht generische Textbausteine aus der Großstadt. Saubermatik verbindet Meßstetten als Firmensitz mit Branchenkompetenz vor Ort: digitale Leistungsverzeichnisse, dokumentierte Qualität und einen persönlichen Ansprechpartner für Facility Manager, Hausverwaltungen und Geschäftsführung.`,
+      `In ${cityLabel} planen wir ${serviceLabel} entlang realer Gewerbestrukturen — ${zones} und die Anbindung über ${infra} sind Planungsanker für Touren und Reaktionszeiten. Nachweise erhalten Sie als Protokoll (PDF); Meldungen laufen per Melde-QR über das Kundenportal (im Aufbau).`,
+      `Der Wirtschaftsschwerpunkt (${profile.industryFocus}) verlangt mehr als Intervalle von der Stange: Sonderbereiche, Werterhalt sensibler Substanz und Verkehrssicherungspflicht werden vor Vertragsstart schriftlich fixiert — nachvollziehbar für Einkauf und Eigentümerversammlungen.`,
     ];
     return {
       id: "local-b2b",
@@ -60,21 +60,21 @@ function buildLocalBlockA(
         leads[variant % 3]!,
         leads[(variant + 1) % 3]!,
         leads[(variant + 2) % 3]!,
-        `Saubermatik ist in ${cityLabel} kein Vermittler anonyme Subunternehmer, sondern Ihr verbindlicher Partner mit festen Teams, digitalen Protokollen und Key-Account-Betreuung aus Meßstetten. ${serviceLabel} wird so planbar — für Einkauf, Facility und Eigentümer.`,
+        `Saubermatik ist in ${cityLabel} kein Vermittler anonymer Subunternehmer, sondern Ihr verbindlicher, inhabergeführter Partner mit digitalen Protokollen und festem Ansprechpartner aus Meßstetten — dem Inhaber persönlich. ${serviceLabel} wird so planbar — für Einkauf, Facility und Eigentümer.`,
       ],
     };
   }
 
   const regionalLeads = isHq
     ? [
-        `Meßstetten ist unser Firmensitz — für ${serviceLabel} bedeutet das kürzeste Wege, fester Ansprechpartner statt Callcenter und maximale Reaktionsgeschwindigkeit. Disposition, Key Account und Saubermatik-Plattform starten hier; Objekte in Meßstetten sind Referenz für den gesamten Zollernalbkreis.`,
-        `Als regional verwurzelter Partner kennen wir WEG, Mittelstand, Praxen und Gewerbe nicht aus dem Navi, sondern aus täglicher Praxis. ${serviceLabel} wird mit festen Teams, digitalen Protokollen und messbarer Qualität (DIN EN 13549-orientiert) umgesetzt — nicht als anonyme Subunternehmer-Kette.`,
-        `Digitale Objektsteuerung und Ausfallsicherheit sind bei uns Betriebslogik: Wenn jemand ausfällt, reagiert das System — Sie merken, dass es weiterläuft. Transparente SLAs, keine versteckten Kosten.`,
+        `Meßstetten ist unser Firmensitz — für ${serviceLabel} bedeutet das kürzeste Wege, fester Ansprechpartner statt Callcenter und maximale Reaktionsgeschwindigkeit. Disposition, persönliche Betreuung durch den Inhaber und das Kundenportal (im Aufbau) sind hier zu Hause.`,
+        `Als regional verwurzelter Partner kennen wir WEG, Mittelstand, Praxen und Gewerbe nicht aus dem Navi, sondern aus täglicher Praxis. ${serviceLabel} wird mit festem Ansprechpartner (Inhaber), digitalen Protokollen und schriftlich vereinbarten Qualitätskriterien umgesetzt — nicht als anonyme Subunternehmer-Kette.`,
+        `Vertretung und Kapazität regeln wir vor Leistungsbeginn schriftlich — damit klar ist, was bei Urlaub oder Krankheit passiert. Transparente SLAs, keine versteckten Kosten.`,
       ]
     : [
-        `${cityLabel} liegt im Zollernalbkreis und Umkreis — ${serviceLabel} von Saubermatik kombiniert regionale Nähe aus Meßstetten mit überregionaler Prozessqualität. Kurze Anfahrten, feste Ansprechpartner, dieselben digitalen Standards wie in unseren Kernstädten.`,
+        `${cityLabel} liegt im Zollernalbkreis und Umkreis — ${serviceLabel} von Saubermatik kombiniert regionale Nähe aus Meßstetten mit überregionaler Prozessqualität. Kurze Anfahrten, ein fester Ansprechpartner, dieselben digitalen Standards wie in unseren Kernstädten.`,
         `Für ${cityLabel} setzen Unternehmen und Hausverwaltungen auf Verlässlichkeit statt Billig-Anbieter. Wir liefern dokumentierte Touren, Verkehrssicherungsnachweise und SLAs, die intern verteidigbar sind — bei Audits, Versicherern und Mieterversammlungen.`,
-        `Ob Unterhalt, Glas, Winterdienst oder Objektbetreuung: ${serviceLabel} wird über die Saubermatik-App gesteuert — dokumentierte Qualität, Ersatzlogistik, exportierbare Protokolle. Ein Partner statt vier Schnittstellen.`,
+        `Ob Unterhalt, Glas, Winterdienst oder Objektbetreuung: ${serviceLabel} wird schriftlich geplant und als Protokoll (PDF) nachgewiesen; Meldungen laufen per Melde-QR über das Kundenportal (im Aufbau). Ein Partner statt vier Schnittstellen.`,
       ];
 
   return {
@@ -82,7 +82,7 @@ function buildLocalBlockA(
     title: `${serviceLabel} in ${cityLabel}: regional verwurzelt`,
     paragraphs: [
       ...regionalLeads,
-      `Für ${cityLabel} gilt: ${serviceLabel} mit Saubermatik bedeutet ein Gesicht, ein SLA, eine Plattform — von der Erstbegehung bis zur Vertragsverlängerung. Wir dokumentieren jede Leistung so, dass Sie sie intern verteidigen können.`,
+      `Für ${cityLabel} gilt: ${serviceLabel} mit Saubermatik bedeutet einen festen Ansprechpartner und ein SLA — von der Erstbegehung bis zur Vertragsverlängerung. Wir dokumentieren jede Leistung so, dass Sie sie intern verteidigen können.`,
     ],
   };
 }
@@ -100,8 +100,8 @@ function buildSynergyBlockC(
   const synergyByService: Partial<Record<MatrixServiceSlug, readonly string[]>> = {
     unterhaltsreinigung: [
       `${serviceLabel} in ${cityLabel} ist die Basis für produktive Arbeitsplätze — ob Verwaltung entlang der B27, Produktionsbüro in ${profile?.industrialZones[0] ?? "lokalen Gewerbegebieten"} oder Praxisflächen mit RKI-Anforderung. Saubermatik übersetzt ${industry} in konkrete Reinigungs-SLAs mit 4-Farb-System und HACCP in Teeküchen.`,
-      `Facility Manager profitieren von einem digitalen LV, das Flächen, Intervalle und Abnahmekriterien nach DIN EN 13549 fixiert — nicht monatlich neu verhandelt wird. Ausfallsicherheit über die Plattform bedeutet: Ihr Objekt in ${cityLabel} bleibt im Rhythmus, auch wenn einzelne Kräfte ausfallen.`,
-      `Geschäftsführung und Einkauf erhalten messbare KPIs — Reklamationsquote, Reaktionszeit, Protokoll-Export. Das ist ${serviceLabel} als B2B-Dienstleistung, nicht als „Putzfrau-Modell“.`,
+      `Facility Manager profitieren von einem digitalen LV, das Flächen, Intervalle und Abnahmekriterien in Anlehnung an DIN EN 13549 fixiert — nicht monatlich neu verhandelt wird. Vertretung bei Urlaub oder Krankheit regeln wir vor Leistungsbeginn schriftlich — damit Ihr Objekt in ${cityLabel} im Rhythmus bleibt.`,
+      `Geschäftsführung und Einkauf erhalten nachvollziehbare Nachweise — Protokolle (PDF) und regelmäßige Qualitätsbegehungen. Das ist ${serviceLabel} als B2B-Dienstleistung, nicht als „Putzfrau-Modell“.`,
     ],
     "fenster-glasreinigung": [
       `Glasflächen prägen den ersten Eindruck von Unternehmen in ${cityLabel} — ${industry} Verunreinigte Fassaden und Fenster mindern Mietwert und Markenwirkung. Saubermatik liefert streifenfreie Ergebnisse mit Osmose, Teleskop und TRBS-2121-konformer Sicherheit.`,
@@ -109,23 +109,23 @@ function buildSynergyBlockC(
       `Verwalter und Facility sparen Koordination: ein Turnus, ein Protokoll, ein Ansprechpartner für ${cityLabel} und Umgebung.`,
     ],
     treppenhausreinigung: [
-      `Treppenhäuser in ${cityLabel} sind Haftungs- und Kostenblock zugleich — ${industry} Saubermatik dokumentiert Verkehrssicherungspflicht und § 2 BetrKV-umlagefähige Leistungen digital — für WEG, MFH und Gewerbe.`,
+      `Treppenhäuser in ${cityLabel} sind Haftungs- und Kostenblock zugleich — ${industry} Saubermatik dokumentiert Leistungen nachvollziehbar — für WEG, MFH und Gewerbe; ob die Kosten umlagefähig sind, richtet sich nach Mietvertrag und § 2 BetrKV.`,
       `Repräsentative Eingänge sichern Mieterzufriedenheit und Vermietbarkeit. Feste Intervalle, leise Geräte, Eskalation bei Mängeln — kein „wir waren irgendwann da“.`,
       `Kombination mit Winterdienst aus einem Portfolio: Gehweg, Treppe, Eingang — eine Verkehrssicherungslogik.`,
     ],
     hausmeisterservice: [
-      `Hausmeisterservice in ${cityLabel} entlastet Verwalter technisch: ${industry} Kontrollgänge, Kleinreparaturen, Schlüssel, Übergaben — dokumentiert statt zettelbasiert.`,
-      `Im MFH-Kontext skaliert ${serviceLabel} von 4 WE bis zum Verwalter-Portfolio — ein Key Account, ein SLA, WE-Richtwerte nach Objekt-Audit.`,
-      `Verkehrssicherungspflicht und NK-Abrechnung aus einer Hand — weniger Streit in Eigentümerversammlungen.`,
+      `Hausmeisterservice in ${cityLabel} entlastet Verwalter technisch: ${industry} Kontrollgänge, einfache Kleinreparaturen ohne Eingriff in Elektro-, Sanitär-, Brandschutz- und Sicherheitstechnik, Schlüssel, Übergaben — dokumentiert statt zettelbasiert. Fachgewerke koordinieren wir nach Freigabe.`,
+      `Im MFH-Kontext reicht ${serviceLabel} von 4 WE bis zum Verwalter-Portfolio — Umfang und Kapazität klären wir vor dem Angebot; ein fester Ansprechpartner (Inhaber), ein SLA, WE-Richtwerte nach Objekt-Audit.`,
+      `Verkehrssicherung und NK-Abrechnung aus einer Hand — nachvollziehbar dokumentiert für Eigentümerversammlungen.`,
     ],
     winterdienst: [
-      `Winterdienst in ${cityLabel} ist Haftung: ${industry} dokumentierte Einsätze, wettergeführt, § 2 BetrKV-transparent — Saubermatik liefert Nachweise, die vor Versicherer und Gericht bestehen (Umfang je nach Objekt und Vereinbarung).`,
-      `Gehwege, Zufahrten, Treppen — priorisiert nach Objektrisiko. Bereitschaftslogik statt Bürozeiten.`,
-      `Kombination mit Treppenhaus und Grünpflege — eine Verkehrssicherungsstrategie für die Liegenschaft.`,
+      `Winterdienst in ${cityLabel} ist Verkehrssicherung: ${industry} Räum- und Streupflicht mit schriftlichem Plan und Protokoll, Einsatzauslösung nach vereinbarten Kriterien, objektbezogen abgerechnet — Einsätze nachvollziehbar dokumentiert (Umfang je nach Objekt und Vereinbarung).`,
+      `Gehwege, Zufahrten, Treppen — priorisiert nach Objektrisiko. Einsatzauslösung nach vereinbarten Kriterien; Fertigstellungszeiten vereinbaren wir im Vertrag.`,
+      `Kombination mit Treppenhaus und Grünpflege — abgestimmte Abläufe für die vertraglich übernommenen Flächen.`,
     ],
     gruenanlagenpflege: [
-      `Grünanlagen in ${cityLabel} sichern Werterhalt und Verkehrssicherung — ${industry} Jahresprogramm statt Wildwuchs.`,
-      `Laub, Äste, Rasen — dokumentiert, saisonal, kombiniert mit Winterdienst an Zufahrten.`,
+      `Grünanlagen in ${cityLabel} unterstützen Werterhalt und Verkehrssicherheit — ${industry} Jahresprogramm statt Wildwuchs.`,
+      `Laub, Fallholz, Rasen — dokumentiert, saisonal, kombiniert mit Winterdienst an Zufahrten.`,
       `Repräsentative Außenwirkung für Gewerbe und WEG — ein Ansprechpartner.`,
     ],
     grundreinigung: [
@@ -145,8 +145,8 @@ function buildSynergyBlockC(
     ],
     sonstiges: [
       `Spezialanfragen in ${cityLabel} — ${industry} Teppich, Events, Sonderdesinfektion — messbares LV statt Schätzung.`,
-      `Ausschreibungsfähig, DIN EN 13549-QM, RKI/VAH wo nötig.`,
-      `Projektleitung und Skalierung über die Saubermatik-Plattform.`,
+      `Ausschreibungsfähig, QM in Anlehnung an DIN EN 13549, RKI/VAH wo nötig.`,
+      `Projektleitung durch den Inhaber — Umfang und Kapazität klären wir vor dem Angebot.`,
     ],
   };
 
@@ -196,7 +196,7 @@ function buildProcurementBlock(
   const cityLabel = STANDORT_LABELS[city];
   return {
     id: "procurement",
-    title: `B2B-Beschaffung: ${serviceLabel} in ${cityLabel} rechtsicher einkaufen`,
+    title: `B2B-Beschaffung: ${serviceLabel} in ${cityLabel} rechtssicher einkaufen`,
     paragraphs: buildProcurementParagraphs(city, serviceLabel, serviceSlug, variant),
   };
 }
@@ -225,9 +225,9 @@ function buildStandardsBlock(
     title: `Normen & Qualität: ${serviceLabel} in ${cityLabel}`,
     paragraphs: [
       `${serviceLabel} in ${cityLabel} orientiert sich bei Saubermatik an anerkannten Standards: ${norms}. Diese Normen sind nicht Dekoration im Angebot, sondern Grundlage für Leistungsverzeichnis, Unterweisung und Abnahme — auditierbar für ISO, Konzern-Einkauf, Versicherer und Behörden.`,
-      `DIN EN 13549 strukturiert messbare Qualität: Was wird wie oft mit welchen Mitteln gereinigt? Welche Abnahmekriterien gelten? Wo sind Sonderzonen (RKI, HACCP, TRBS 2121) definiert? Das wird vor Vertragsbeginn schriftlich fixiert — nicht nachträglich per Telefon.`,
-      `Verkehrssicherungspflicht und § 2 BetrKV spielen in ${cityLabel} in Treppenhaus, Winterdienst und Außenanlagen eine zentrale Rolle. Wir liefern Nachweise, die vor Gericht und in Eigentümerversammlungen bestehen — dokumentierte Einsätze und Eskalationslogs aus der Saubermatik-App (Umfang je nach Objekt und Vereinbarung).`,
-      `Qualitätsmanagement endet nicht bei der ersten Abnahme. Regelmäßige Begehungen, KPI-Auswertungen und Anpassungen im digitalen LV sichern, dass ${serviceLabel} über die Vertragslaufzeit auf dem vereinbarten Niveau bleibt — auch wenn sich Belegung, Flächen oder Anforderungen ändern.`,
+      `Das Leistungsverzeichnis strukturiert messbare Qualität: Was wird wie oft mit welchen Mitteln erledigt? Welche Abnahmekriterien gelten? Wo gelten Sonderregeln? Das wird vor Vertragsbeginn schriftlich fixiert — nicht nachträglich per Telefon.`,
+      `Verkehrssicherungspflicht und § 2 BetrKV spielen in ${cityLabel} in Treppenhaus, Winterdienst und Außenanlagen eine zentrale Rolle. Wir dokumentieren Einsätze nachvollziehbar und stellen Nachweise als Protokoll (PDF) bereit — auch für Eigentümerversammlungen (Umfang je nach Objekt und Vereinbarung).`,
+      `Qualitätsmanagement endet nicht bei der ersten Abnahme. Regelmäßige Qualitätsbegehungen mit Ihnen, Protokolle mit Maßnahmen und Anpassungen im digitalen LV sichern, dass ${serviceLabel} über die Vertragslaufzeit auf dem vereinbarten Niveau bleibt — auch wenn sich Belegung, Flächen oder Anforderungen ändern.`,
     ],
   };
 }
@@ -238,12 +238,12 @@ function buildDigitalBlock(
 ): MatrixContentSection {
   return {
     id: "digital-qm",
-    title: `Reinigung 4.0: ${serviceLabel} digital gesteuert in ${cityLabel}`,
+    title: `Kundenportal & Nachweise: ${serviceLabel} in ${cityLabel}`,
     paragraphs: [
-      `Die Saubermatik-Plattform ist kein Marketing-Buzzword: Reinigungskräfte haken digitale Leistungsverzeichnisse ab, Facility Manager sehen dokumentierte Qualität, Ausfälle werden durch Ersatzkräfte geschlossen — bevor Ihr Objekt in ${cityLabel} leidet. Protokolle stehen für Abrechnung, ISO-Audits, BetrKV und Eigentümer-Reports bereit.`,
-      `${serviceLabel} wird damit planbar und skalierbar — vom Einzelobjekt bis zum Multi-Standort-Portfolio. Key Account Manager begleiten Sie über Vertragslaufzeit, Anpassungen und Eskalationen — ein Gesicht, ein SLA, keine Hotline.`,
+      `Das Saubermatik-Kundenportal ist im Aufbau: Meldungen per Melde-QR, Anfragen mit Status und Dokumente an einem Ort. Nachweise erhalten Sie als Protokoll (PDF) — für Abrechnung, ISO-Audits, BetrKV und Eigentümer-Reports. Vertretung und Kapazität für Ihr Objekt in ${cityLabel} regeln wir vor Leistungsbeginn schriftlich.`,
+      `${serviceLabel} wird damit planbar — vom Einzelobjekt bis zum Multi-Standort-Portfolio. Ihr fester Ansprechpartner ist der Inhaber persönlich — über Vertragslaufzeit, Anpassungen und Eskalationen: ein Gesicht, ein SLA, keine Hotline.`,
       `Einstieg in vier Schritten: Bedarf klären, Begehung, unverbindliches Angebot, Start im Objekt. Das ist Facility-Service auf Augenhöhe — regional aus Meßstetten, digital dokumentiert.`,
-      `Exportierbare Reports, Versicherungsnachweise und Unterweisungsbelege sind jederzeit abrufbar — für ${cityLabel} und alle Standorte in Ihrem Portfolio. Sie sparen interne Koordination, weil Tourenplanung und Qualität in einem System laufen.`,
+      `Protokolle (PDF), Versicherungsnachweise und Unterweisungsbelege stellen wir auf Anfrage bereit — für ${cityLabel} und alle Standorte in Ihrem Portfolio. Im Kundenportal (im Aufbau) liegen Dokumente künftig gesammelt an einem Ort.`,
       `Wenn Sie ${serviceLabel} in ${cityLabel} neu vergeben oder wechseln wollen: Starten Sie mit einer unverbindlichen Begehung. Wir liefern ein schriftliches LV mit klaren SLAs — ohne versteckte Kosten, ohne Platzhalter, ohne Großstadt-Textbausteine.`,
     ],
   };
@@ -298,9 +298,9 @@ export function buildMatrixDeepContent(
   const blockD = buildDigitalBlock(cityLabel, tech.breadcrumbLabel);
 
   const heroVariants = [
-    `${tech.breadcrumbLabel} in ${cityLabel}: Saubermatik liefert messbare SLAs, digitale Protokolle und regionale Teams — für ${getLocalEntityProfile(city)?.industryFocus ?? "Unternehmen und Verwaltungen in der Zollernalb"}.`,
-    `Professionelle ${tech.breadcrumbLabel} für ${cityLabel} — von Meßstetten aus, mit DIN EN 13549-orientiertem QM, Ausfallsicherheit und festem Key Account. Kein Textbaustein, sondern Handwerk mit SaaS-Transparenz.`,
-    `${cityLabel} · ${tech.breadcrumbLabel}: Saubermatik verbindet Normen (${tech.normRefs.slice(0, 2).join(", ")}) mit lokaler Präsenz — transparente Preise, dokumentierte Touren, keine versteckten Kosten.`,
+    `${tech.breadcrumbLabel} in ${cityLabel}: Saubermatik liefert messbare SLAs, digitale Protokolle und einen festen Ansprechpartner — für ${getLocalEntityProfile(city)?.industryFocus ?? "Unternehmen und Verwaltungen in der Zollernalb"}.`,
+    `${tech.breadcrumbLabel} für ${cityLabel} — von Meßstetten aus, mit schriftlichem Leistungsverzeichnis, festem Ansprechpartner (Inhaber) und vor Leistungsbeginn geregelter Vertretung. Handwerk mit nachvollziehbarer Dokumentation.`,
+    `${cityLabel} · ${tech.breadcrumbLabel}: Saubermatik orientiert sich an anerkannten Vorgaben (${tech.normRefs.slice(0, 2).join(", ")}) und verbindet das mit lokaler Präsenz — transparente Preise, dokumentierte Touren, keine versteckten Kosten.`,
   ];
 
   return {
