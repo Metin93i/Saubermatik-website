@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Expertise, Nachweise & technische Standards",
   description:
-    "EEAT-Hub von Saubermatik: Arbeitssicherheit, Qualitätsstandards, dokumentierte Einsätze im Kundenportal und digitale Objektprotokolle – für messbare Gebäudereinigung in der Zollernalb und darüber hinaus.",
+    "Expertise von Saubermatik: Arbeitssicherheit, Qualitätsstandards und Einsätze, dokumentiert als Protokoll (PDF) – für nachvollziehbare Gebäudereinigung in der Zollernalb und darüber hinaus.",
   alternates: { canonical: "/expertise" },
 };
 
@@ -18,8 +18,8 @@ const pillars = [
     body: "Von Arbeiten in der Höhe bis zu sensiblen Bereichen (Praxis, Kanzlei) gelten klare Regeln: Einweisungen, PSA, materialgerechte Mittel und getrennte Einsatzketten wo nötig. Hygienepläne und Desinfektionsintervalle werden dort ergänzt, wo regulatorisch oder betrieblich erforderlich.",
   },
   {
-    title: "Dokumentierte Einsätze im Kundenportal",
-    body: "Die Saubermatik-Plattform bündelt Touren, Checklisten und Eskalationen. Abweichungen werden in dokumentierten Einsätzen sichtbar – mit Ersatzlogistik statt improvisiertem Telefonieren. Für Geschäftsführung und Eigentümer heißt das: nachvollziehbare Daten statt Bauchgefühl.",
+    title: "Protokolle & Kundenportal (im Aufbau)",
+    body: "Einsätze dokumentieren wir als Protokoll (PDF). Meldungen laufen per Melde-QR in unser Kundenportal (im Aufbau), dort finden Sie künftig Anfragen mit Status und Dokumente. Vertretung und Kapazität regeln wir vor Leistungsbeginn schriftlich. Für Geschäftsführung und Eigentümer heißt das: nachvollziehbare Unterlagen statt Bauchgefühl.",
   },
   {
     title: "Qualitätssicherung & Transparenz",
@@ -32,7 +32,7 @@ export default function ExpertisePage() {
     <article className="mx-auto w-full max-w-3xl flex-1 px-4 py-12 sm:px-6 lg:px-8">
       <p className="text-sm font-semibold text-secondary">Expertise</p>
       <h1 className="mt-3 text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-        Beweis-Zentrum: Standards, Sicherheit &amp; digitale Objektsteuerung
+        Beweis-Zentrum: Standards, Sicherheit &amp; nachvollziehbare Dokumentation
       </h1>
       <p className="mt-5 text-lg leading-8 text-muted">
         Diese Seite bündelt, warum Suchmaschinen und menschliche Entscheider

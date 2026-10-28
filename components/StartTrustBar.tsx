@@ -1,15 +1,15 @@
 const POINTS = [
   {
-    title: "Feste Ansprechpartner",
-    text: "Ein Team, das Ihre Objekte kennt – persönlich erreichbar.",
+    title: "Fester Ansprechpartner",
+    text: "Der Inhaber persönlich – kennt Ihre Objekte und ist direkt erreichbar.",
   },
   {
     title: "Digitales Kundenportal",
-    text: "Alle Objekte, Einsätze und Nachweise im Überblick.",
+    text: "Im Aufbau: Melde-QR für Mängelmeldungen, Anfragen mit Status und Dokumente.",
   },
   {
     title: "Dokumentierte Qualität",
-    text: "Einsätze digital protokolliert und nachvollziehbar – Umfang je Objekt.",
+    text: "Einsätze als Protokoll (PDF) nachvollziehbar dokumentiert – Umfang je Objekt.",
   },
 ] as const;
 

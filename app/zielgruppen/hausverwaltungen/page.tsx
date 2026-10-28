@@ -6,7 +6,7 @@ import { buildHausverwaltungenServiceJsonLd } from "@/lib/seo/hausverwaltungen-s
 export const metadata: Metadata = {
   title: "Hausverwaltungen & WEG",
   description:
-    "All-in-One für Hausverwaltungen: Treppenhaus, Hausmeister, Grünpflege, Winterdienst mit dokumentierten Einsätzen. Verkehrssicherungspflicht, § 2 BetrKV-Umlagefähigkeit, Mieterzufriedenheit.",
+    "All-in-One für Hausverwaltungen: Treppenhaus, Hausmeister, Grünpflege, Winterdienst mit dokumentierten Einsätzen. Verkehrssicherungspflicht, Betriebskosten nach § 2 BetrKV, Mieterzufriedenheit.",
   alternates: { canonical: "/zielgruppen/hausverwaltungen" },
 };
 
@@ -34,10 +34,10 @@ export default function HausverwaltungenPage() {
               Sie verwalten nicht nur Quadratmeter – Sie tragen Verantwortung
               für Haftung, Nebenkostenabrechnung und Mieterzufriedenheit.
               Saubermatik bündelt operative Leistungen in einem vertraglich
-              messbaren System: mit dokumentierten Touren und Einsätzen
-              (Umfang je nach Objekt und Vereinbarung) und einem Key Account,
-              der Ihre Liegenschaften
-              kennt.
+              messbaren System: mit dokumentierten Einsätzen (Protokoll
+              (PDF), Umfang je nach Objekt und Vereinbarung) und einem festen
+              Ansprechpartner – dem Inhaber persönlich –, der Ihre
+              Liegenschaften kennt.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link
@@ -60,7 +60,8 @@ export default function HausverwaltungenPage() {
           <div className="mx-auto w-full max-w-6xl px-4 py-10 sm:px-6 lg:px-8">
             <p className="max-w-3xl text-base leading-[1.75] text-foreground/90 sm:text-lg">
               Weniger Anrufe auf Ihrem Tisch: Mieter melden Reinigungsanliegen
-              per QR-Code direkt an uns – dokumentiert und nachvollziehbar.
+              per Melde-QR direkt an uns – dokumentiert und nachvollziehbar
+              (Kundenportal im Aufbau).
             </p>
           </div>
         </section>
@@ -74,8 +75,8 @@ export default function HausverwaltungenPage() {
               ohne Eskalationsweg, eine Treppenhausreinigung ohne Protokoll:
               Jeder Vorfall landet beim Verwalter, nicht beim Anbieter. Wir
               strukturieren das Gegenteil: ein integriertes Portfolio aus
-              Reinigung, Objektbetreuung, Grünpflege und Winterdienst – digital
-              gesteuert, revisionssicher dokumentiert. Den QR-Meldeweg für
+              Reinigung, Objektbetreuung, Grünpflege und Winterdienst –
+              nachvollziehbar dokumentiert. Den QR-Meldeweg für
               Mieter-Anliegen beschreiben wir oben; das Portal erklären wir
               unter{" "}
               <Link
@@ -94,8 +95,8 @@ export default function HausverwaltungenPage() {
                 id="hv-haftung"
                 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl"
               >
-                Rechtssicherheit &amp; Haftung: Verkehrssicherungspflicht
-                operationalisieren
+                Verkehrssicherungspflicht: schriftlich geregelt,
+                nachvollziehbar dokumentiert
               </h2>
               <div className="mt-6 space-y-5 text-base leading-[1.75] text-foreground/90">
                 <p>
@@ -111,30 +112,32 @@ export default function HausverwaltungenPage() {
                   hat die Kontrolle dokumentiert?
                 </p>
                 <p>
-                  Saubermatik übersetzt die Verkehrssicherungspflicht in
-                  belastbare Prozesse: Wetterführung, Einsatzfenster,
-                  Streumittelklassen und Kontrollgänge sind vertraglich
-                  fixiert. Unsere Saubermatik-App erzeugt dokumentierte
-                  Einsatznachweise – Zeitstempel, Objektzuordnung,
-                  Leistungsart (Umfang je nach Objekt und Vereinbarung). Das
-                  ist Ihr Schutzschild gegen Haftungsklagen
-                  und Regress von Versicherern: nicht die Behauptung „wir
-                  waren da“, sondern strukturierte Beweiskette.
+                  Saubermatik übersetzt die übertragenen Aufgaben in
+                  schriftliche Abläufe. Im Vertrag legen wir fest:
+                  Einsatzauslösung nach vereinbarten Kriterien, Einsatzfenster,
+                  Streumittel nach örtlicher Satzung und Vorgabe des
+                  Auftraggebers sowie Kontrollgänge. Einsätze dokumentieren wir als
+                  Protokoll (PDF) – mit Objektzuordnung und Leistungsart
+                  (Umfang je nach Objekt und Vereinbarung): nicht die
+                  Behauptung „wir waren da“, sondern nachvollziehbare
+                  Dokumentation. Die Verkehrssicherungspflicht übernehmen
+                  wir nur auf Grundlage einer klaren schriftlichen
+                  Vereinbarung; Ihre Kontroll- und Überwachungspflicht als
+                  Auftraggeber bleibt bestehen.
                 </p>
                 <p>
                   Für WEG und gewerbliche Bestände bedeutet das: Der Verwalter
-                  kann gegenüber Eigentümern und Mietern belegen, dass die
-                  Sorgfaltspflicht organisatorisch erfüllt wurde – unabhängig
-                  davon, ob ein einzelner Einsatz durch Subunternehmer oder
-                  Wetterlage komplex wurde. Wir koppeln Winterdienst an
+                  kann gegenüber Eigentümern und Mietern nachvollziehbar
+                  zeigen, was vereinbart und wann was ausgeführt wurde. Wir
+                  koppeln Winterdienst an
                   Treppenhaus- und Außenanlagenlogik, damit keine graue Zone
                   zwischen „Gebäude reinigen“ und „Wege sichern“ entsteht.
                 </p>
                 <p>
                   Strategisch gewinnen Sie Zeit: Statt E-Mails mit
                   Mieterbeschwerden und anwaltlichen Anfragen zu jonglieren,
-                  erhalten Sie monatliche Compliance-Reports – exportierbar
-                  für Eigentümerversammlungen und Versicherungsunterlagen.
+                  erhalten Sie die Protokolle (PDF) für Ihre Unterlagen – etwa
+                  für Eigentümerversammlungen.
                 </p>
               </div>
             </section>
@@ -144,45 +147,35 @@ export default function HausverwaltungenPage() {
                 id="hv-betrkv"
                 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl"
               >
-                Betriebskosten (§&nbsp;2 BetrKV): umlagefähig
-                dokumentieren
+                Betriebskosten (§&nbsp;2 BetrKV): objektbezogen
+                ausweisen
               </h2>
               <div className="mt-6 space-y-5 text-base leading-[1.75] text-foreground/90">
                 <p>
                   Die Nebenkostenabrechnung ist Ihr jährlicher Stresstest.
-                  §&nbsp;2 BetrKV definiert, welche Kosten auf Mieter umlegbar
-                  sind – vorausgesetzt, sie sind angemessen, zuordenbar und
-                  belegbar. Reinigung, Hausmeister, Grünpflege und
-                  Winterdienst gehören typischerweise zu den umlagefähigen
-                  Betriebskosten, wenn sie dem objektbezogenen Verbrauch und
-                  der objektbezogenen Nutzung dienen. In der Praxis scheitert
-                  es selten an der Rechtslage, sondern an der Qualität der
-                  Belege.
+                  Ob Kosten für Reinigung, Hausmeister, Grünpflege und
+                  Winterdienst umlagefähig sind, richtet sich nach Mietvertrag
+                  und §&nbsp;2 BetrKV. In der Praxis scheitert die Umlage oft
+                  an der Qualität der Belege.
                 </p>
                 <p>
-                  Saubermatik liefert transparente Rechnungen mit
-                  leistungsbezogenen Positionen: Objekt-ID, Leistungsart,
-                  Intervall, WE-Bezug wo relevant, Ausführungsnachweis. Die
-                  digitalen Leistungsprotokolle aus der App sind die Brücke
-                  zwischen Buchhaltung und Betrieb – Eigentümer und Mieter
-                  sehen, wofür sie zahlen. Das reduziert Rückfragen,
-                  Widersprüche und Nachforderungsdiskussionen im
-                  Abrechnungszeitraum.
+                  Saubermatik weist Kosten objektbezogen aus, mit
+                  leistungsbezogenen Positionen: Objekt, Leistungsart,
+                  Intervall, WE-Bezug wo relevant. Die Protokolle (PDF) sind
+                  die Brücke zwischen Buchhaltung und Betrieb – Eigentümer und
+                  Mieter sehen, wofür sie zahlen.
                 </p>
                 <p>
-                  Für Verwalter mit mehreren Liegenschaften standardisieren
-                  wir Kostenstellen und Reporting: gleiche KPI-Logik über alle
-                  Objekte, vergleichbare Monatswerte, keine Medienbrüche
-                  zwischen Excel, PDF und Handwerker-Zettel. Die
-                  Nebenkostenabrechnung wird wieder zum administrativen
-                  Prozess – nicht zum forensischen Projekt.
+                  Für Verwalter mit mehreren Liegenschaften weisen wir Kosten
+                  je Objekt einheitlich aus – damit die Nebenkostenabrechnung
+                  ein administrativer Prozess bleibt, kein forensisches
+                  Projekt.
                 </p>
                 <p>
-                  Kombinieren Sie umlagefähige Positionen mit der Abstimmung
-                  vor Vertragsstart: es wird definiert, welche
-                  Flächen in welcher BetrKV-Logik laufen – Treppenhaus,
-                  Gemeinschaftsanlagen, Außenflächen, Winterdienst separat
-                  ausgewiesen. Das schützt vor pauschalen „Pauschalen“, die
+                  Vor Vertragsstart legen wir gemeinsam fest, welche Flächen
+                  und Leistungen getrennt ausgewiesen werden – Treppenhaus,
+                  Gemeinschaftsanlagen, Außenflächen, Winterdienst. So
+                  vermeiden Sie Pauschalen, die
                   Abrechnungsbeauftragte im Zweifel streichen.
                 </p>
               </div>
@@ -193,8 +186,8 @@ export default function HausverwaltungenPage() {
                 id="hv-mieter"
                 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl"
               >
-                Mieterzufriedenheit: Beschwerdequote durch proaktives
-                Mängelmanagement senken
+                Mieterzufriedenheit: Mängel früh melden statt Beschwerden
+                abwarten
               </h2>
               <div className="mt-6 space-y-5 text-base leading-[1.75] text-foreground/90">
                 <p>
@@ -209,11 +202,14 @@ export default function HausverwaltungenPage() {
                 </p>
                 <p>
                   Saubermatik arbeitet mit festen Intervallen und proaktivem
-                  Mängelmanagement: Hausmeister und Reinigungsteams melden
-                  Abweichungen in der App – defekte Lampen, lose Geländer,
-                  Vandalismus, Sturmschäden – bevor der erste Mieter anruft.
-                  Der Key Account priorisiert, beauftragt und schließt den
-                  Vorgang dokumentiert ab. Ziel ist nicht „null Beschwerden“
+                  Mängelmanagement: Bei unseren Einsätzen melden wir
+                  Auffälligkeiten – defekte Lampen, lose Geländer,
+                  Vandalismus, Sturmschäden – möglichst bevor der erste Mieter
+                  anruft. Meldungen von Mietern laufen per Melde-QR ins
+                  Kundenportal (im Aufbau). Ihr fester Ansprechpartner – der
+                  Inhaber – stimmt das weitere Vorgehen mit Ihnen ab;
+                  Fachgewerke koordinieren wir nach Freigabe. Ziel ist nicht
+                  „null Beschwerden“
                   als Marketingphrase, sondern weniger Eskalationen, die bei
                   der Verwaltung landen.
                 </p>
@@ -229,8 +225,8 @@ export default function HausverwaltungenPage() {
                 </p>
                 <p>
                   Für Geschäftsführungen von Verwaltungen bedeutet das:
-                  skalierbare Qualität ohne linearen Personalaufbau intern.
-                  Sie kaufen ein System, nicht nur Stunden.
+                  weniger Koordinationsaufwand intern – mit klar vereinbarten
+                  Leistungen statt bloßer Stunden.
                 </p>
               </div>
             </section>

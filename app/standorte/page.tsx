@@ -36,7 +36,7 @@ export default function StandorteHubPage() {
               href="/standorte/stuttgart"
               className="block rounded-sm border border-zinc-300/40 bg-secondary/10 px-4 py-3 text-sm font-semibold text-foreground transition hover:border-secondary hover:bg-secondary/15"
             >
-              Stuttgart (Metropolregion, Spezial-Hub)
+              Stuttgart (Metropolregion)
             </Link>
           </li>
           {STANDORT_CITIES.map((city) => (

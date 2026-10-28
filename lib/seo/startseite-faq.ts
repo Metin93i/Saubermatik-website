@@ -20,7 +20,7 @@ export const STARTSEITE_FAQ_ITEMS: readonly FaqPair[] = [
   {
     question: "Was ist SecureOps?",
     answer:
-      "Unsere eigene Plattform, mit der wir Einsätze dokumentieren. Sie erhalten Zugang zu einem Kundenportal und sehen, was in Ihrem Objekt passiert ist. Keine Software, die Sie kaufen – SecureOps ist Teil unserer Reinigungsleistung. Den Umfang vereinbaren wir je Objekt.",
+      "Unser eigenes Kundenportal, derzeit im Aufbau: Melde-QR für Mängelmeldungen, Anfragen mit Status und Dokumente wie Protokolle (PDF). Keine Software, die Sie kaufen – SecureOps ist Teil unserer Reinigungsleistung. Den Umfang vereinbaren wir je Objekt.",
   },
 ] as const;
 

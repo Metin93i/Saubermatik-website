@@ -98,7 +98,7 @@ const TABLES: Record<Variant, TableConfig> = {
       {
         gebaeudeart: "Eingang & Briefkasten",
         intervall: "Täglich bis wöchentlich",
-        fokus: "Repräsentativität, Schmutzfangmatten, § 2 BetrKV-Nachweis",
+        fokus: "Repräsentativität, Schmutzfangmatten, objektbezogener Nachweis",
       },
       {
         gebaeudeart: "Keller & Nebenräume",
@@ -122,13 +122,13 @@ const TABLES: Record<Variant, TableConfig> = {
       },
       {
         gebaeudeart: "Gehwege & Zufahrten",
-        intervall: "Wettergeführt",
+        intervall: "Nach vereinbarten Kriterien",
         fokus: "Räum- und Streupflicht, Verkehrssicherungspflicht",
       },
       {
         gebaeudeart: "Parkflächen & Innenhöfe",
         intervall: "Nach Objektplan",
-        fokus: "Priorisierte Touren, § 2 BetrKV-Dokumentation",
+        fokus: "Priorisierte Touren, objektbezogene Dokumentation",
       },
       {
         gebaeudeart: "Nachfahrt / Extremwetter",
@@ -253,7 +253,7 @@ const TABLES: Record<Variant, TableConfig> = {
       {
         gebaeudeart: "Ausschreibung",
         intervall: "Rahmenvertrag",
-        fokus: "Digitales LV, DIN EN 13549, Referenzobjekte",
+        fokus: "LV, Qualitätskontrolle in Anlehnung an DIN EN 13549",
       },
     ],
   },

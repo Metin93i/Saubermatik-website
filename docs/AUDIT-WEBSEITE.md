@@ -2,7 +2,30 @@
 
 **Stand:** Repo-Analyse 2026-07-12 (READ-ONLY, kein Live-Build)  
 **Repo:** `saubermatik-website` (bestätigt via `package.json` → `"name": "saubermatik-website"`)  
-**Zweck:** Ground Truth für SEO-/GEO-/Lead-Gen-Planung ohne Code-Zugriff
+**Zweck:** Ground Truth für SEO-/GEO-/Lead-Gen-Planung ohne Code-Zugriff  
+**Nachgeführt:** 2026-10-28 (Branch `fix/website-wahrheitsgemaess`) – nur die von der Korrektur betroffenen Zeilen (Meta-Descriptions, H1, Vertrauensaussagen, JSON-LD-Beschreibungen, Komponenten); Wortzahlen, CTA-Spalten und nicht betroffene Abschnitte wurden **nicht** neu erhoben.
+
+## Korrektur 2026-10-28 – wahrheitsgemäße Inhalte
+
+- **Teams / Vertretungsteam / Key Account entfernt:** „bewährtes Vertretungsteam, sonst die Geschäftsführung", „feste Teams", „Key Account" → ersetzt durch „fester Ansprechpartner – der Inhaber persönlich" und „Vertretung und Kapazität regeln wir vor Leistungsbeginn schriftlich" (u. a. `app/page.tsx`, `components/StartTrustBar.tsx`, `lib/routes/standorte.ts`, `lib/seo/standort-deep-content.ts`, `lib/seo/llms-content.ts`).
+- **„haftungssicher" entfernt:** Winterdienst-Meta/H1/CTA („Haftungssicher durch den Winter", „haftungssicheren Winterdienstplan") → „Räum- und Streupflicht mit schriftlichem Plan und Protokoll" bzw. „schriftlichen Winterdienstplan" (`lib/seo/leistung-deep-content.ts`).
+- **App-/Foto-/Zeitstempel-Nachweise entfernt:** „in der Saubermatik-App", „Foto-Nachweis", „Zeitstempel, Mitarbeiter-ID, optionale Fotos", „digitale Objektsteuerung/Plattform" → „Protokoll (PDF)"; SnippetBaitTable auf Grünanlagenpflege und Hausmeisterservice entfernt.
+- **Kundenportal als „im Aufbau" gekennzeichnet:** SecureOps-Seite (Title/Meta/H1), Startseite, `SecureOpsFlyerCard`, `StartTrustBar`, Zielgruppen-, Leistungs- und Stadtseiten; Meldeweg heißt „Melde-QR".
+- **DIN EN 13549 nur für Reinigung und nur „in Anlehnung an":** „nach DIN EN 13549"/„DIN EN 13549-orientiert" → „in Anlehnung an DIN EN 13549" (Unterhaltsreinigung, Matrix-, Stadt-, Entity-Facts-Texte, `SnippetBaitTable`).
+- **Grünpflege/Winterdienst rechtlich korrekt formuliert:** Schnittzeiten § 39 BNatSchG, Wildkraut ohne Herbizide (§ 12 Abs. 2 PflSchG), Umlagefähigkeit „richtet sich nach Mietvertrag und § 2 BetrKV", Verkehrssicherungspflicht nur per schriftlicher Vereinbarung, Kontroll-/Überwachungspflicht des Auftraggebers bleibt; Hausmeister-Kleinreparaturen ohne Eingriff in Elektro/Sanitär/Brandschutz.
+- **Unbelegte Referenzen entfernt:** „Referenzobjekte", „Referenzmarkt", „Referenzen" (`SnippetBaitTable`, `lib/seo/matrix-city-extended.ts`, `lib/seo/matrix-content.ts`, `lib/seo/matrix-service-tech.ts`).
+- **„Spezial-Hub" Stuttgart entfernt** (Footer, Standorte-Hub, `SeoCrossLinks`, llms.txt) → „Stuttgart (Metropolregion)"; **Stadtseiten-H1** „Facility Management & Gebäudereinigung in {Stadt}" → „Facility Services & Gebäudereinigung in {Stadt}".
+
+### Offen (Entscheidung Metin)
+
+- **Öffnungszeiten Mo–Sa 08:00–22:00** im globalen JSON-LD (`openingHoursSpecification`, `lib/seo/global-jsonld.ts`) – stimmt das?
+- **LocalBusiness-Knoten je Stadt** (16 × `LocalBusiness + CleaningService` + Stuttgart) im globalen `@graph` (`lib/seo/standort-geo.ts`) – suggeriert Niederlassungen, die es nicht gibt.
+- **160 fast gleiche Stadt-×-Leistungs-Seiten** (`/standorte/{city}/{service}`, 3 Spin-Varianten) – Thin-/Doorway-Content-Risiko.
+- **FreshnessBadge mit dynamischem Datum** („Dokumentierte Qualitätsstandards – Stand: {aktueller Monat}", `components/FreshnessBadge.tsx`) – Datum ist nicht an eine echte Prüfung gebunden.
+- **„Facility-Management" … „mit digitaler Objektsteuerung"** in der globalen JSON-LD-Beschreibung (`portfolioDescription`, `lib/seo/global-jsonld.ts`) – unverändert.
+- **„Mieter"-Begriffe beim Melde-QR** (z. B. `SecureOpsFlyerCard`: „Für Mieter und Verwaltung"; Hausverwaltungen: „Mieter melden Reinigungsanliegen per Melde-QR", „QR-Meldeweg für Mieter-Anliegen").
+- **„Projekte bis Stuttgart und an den Bodensee"** (Layout-/Startseiten-Meta, Über uns, trustItems, llms.txt) – Reichweite bestätigen.
+- **Meta-Descriptions per `slice()` mitten im Wort gekürzt:** Stadtseiten `heroSubtitle.slice(0, 160)`, Matrix `heroVariants[variant].slice(0, 158)`.
 
 ---
 
@@ -82,19 +105,23 @@
 
 | Pfad | Zweck | `<title>` (wörtlich / abgeleitet) | Meta-Description (wörtlich oder „fehlt") | H1 (wörtlich) | Wortzahl (grob) | Haupt-CTAs | Keywords (auffällig) |
 |------|-------|-----------------------------------|------------------------------------------|---------------|-----------------|------------|----------------------|
-| `/` | Startseite, Lead-Funnel, Trust | **Default:** „Saubermatik Gebäudereinigung \| Meßstetten & Zollernalb" (kein page-title) | „Saubermatik aus Meßstetten: Facility & Reinigung für die Zollernalb und den Schwarzwald-Baar-Heuberg-Kreis – mit festem Ansprechpartner vor Ort und digitaler Objektsteuerung." | „Reinigung, die hält, was sie verspricht – mit Kopf, nicht nur mit dem Wischmob." | ~1.200+ | Leistungen ansehen, Direkt anfragen, Engagement-Rechner, Lead-Funnel | Zollernalb, Schwarzwald-Baar-Heuberg, digitale Objektsteuerung, SLA |
-| `/ueber-uns` | Unternehmensstory | „Über uns \| Saubermatik Gebäudereinigung" | „Saubermatik aus Meßstetten: regionale Wurzeln, digitale Objektsteuerung und B2B-Reinigung mit festen Ansprechpartnern für Zollernalb, Tübingen und den Schwarzwald-Baar-Heuberg." | „Regional verwurzelt. Digital vorbereitet." | ~450 | Kennenlernen vereinbaren, Qualitätsmanagement, Anrufen | Verlässlichkeit, Plattform, Meßstetten |
-| `/qualitaetsmanagement` | QM / Garantie | „Qualitätsmanagement \| …" | „Saubermatik-Garantie: digitale Objektüberwachung, Echtzeit-Checks, DIN-orientierte Standards und nachvollziehbare Protokolle für B2B-Reinigung in der Zollernalb." | „Qualität, die Sie messen können – nicht nur riechen." | ~550 | Links zu Kontakt/Leistungen (Seitenende) | SaaS-Überwachung, DIN, Echtzeit-Checks |
-| `/expertise` | EEAT-Hub | „Expertise, Zertifizierung & technische Standards \| …" | „EEAT-Hub von Saubermatik: Arbeitssicherheit, Qualitätsstandards, Echtzeit-Monitoring und digitale Objektprotokolle – für messbare Gebäudereinigung in der Zollernalb und darüber hinaus." | „Beweis-Zentrum: Standards, Sicherheit & digitale Objektsteuerung" | ~500 | Beratung/Kontakt-Links | E-E-A-T, Zertifizierung, TRBS |
-| `/karriere` | Recruiting | „Karriere \| …" | „Karriere bei Saubermatik Meßstetten: faire Bezahlung, moderne digitale Arbeitsmittel und Tablets im Objekt, Teamkultur in der Zollernalb – jetzt initiativ bewerben." | „Werden Sie Teil eines Teams, das digital denkt und handwerklich liefert." | ~600 | Bewerbung → `/kontakt?type=karriere`, Job-Listings (API) | Tablets, Zollernalb, Reinigungskraft |
+| `/` | Startseite, Lead-Funnel, Trust | **Default:** „Saubermatik Gebäudereinigung \| Meßstetten & Zollernalb" (kein page-title) | „Saubermatik aus Meßstetten: Gebäudereinigung für Zollernalbkreis, Sigmaringen, Rottweil, Hechingen und Tübingen – Projekte bis Stuttgart und an den Bodensee. Fester Ansprechpartner, dokumentierte Einsätze." | „Wir digitalisieren die Reinigung." | ~1.200+ | Leistungen ansehen, Direkt anfragen, Engagement-Rechner, Lead-Funnel | Zollernalbkreis, Sigmaringen, Rottweil, Hechingen, Tübingen, fester Ansprechpartner, dokumentierte Einsätze |
+| *(Layout-Default)* | Fallback-Description für Seiten ohne eigene | — | „Gründliche Gebäudereinigung aus Meßstetten: Zollernalbkreis, Sigmaringen, Rottweil, Hechingen, Tübingen – Projekte bis Stuttgart und an den Bodensee. Inhabergeführt, fester Ansprechpartner, Protokoll (PDF)." (`app/layout.tsx`) | — | — | — | Inhabergeführt, Protokoll (PDF) |
+| `/ueber-uns` | Unternehmensstory | „Über uns \| Saubermatik Gebäudereinigung" | „Saubermatik aus Meßstetten: regionale Wurzeln, inhabergeführte B2B-Reinigung und ein fester Ansprechpartner für Zollernalbkreis, Sigmaringen, Rottweil, Hechingen und Tübingen – Projekte bis Stuttgart und an den Bodensee." | „Regional verwurzelt. Digital vorbereitet." | ~450 | Kennenlernen vereinbaren, Qualitätsmanagement, Anrufen | Verlässlichkeit, inhabergeführt, Protokolle (PDF), Kundenportal (im Aufbau), Meßstetten |
+| `/qualitaetsmanagement` | QM | „Qualitätsmanagement \| …" | „Dokumentierte Einsätze, anerkannte Reinigungsstandards und nachvollziehbare Protokolle (PDF) für B2B-Reinigung in der Zollernalb." | „Qualität, die Sie messen können – nicht nur riechen." | ~550 | Links zu Kontakt/Leistungen (Seitenende) | Protokolle (PDF), Reinigungsstandards, keine Garantiezusage |
+| `/expertise` | Expertise-Hub | „Expertise, Nachweise & technische Standards \| …" | „Expertise von Saubermatik: Arbeitssicherheit, Qualitätsstandards und Einsätze, dokumentiert als Protokoll (PDF) – für nachvollziehbare Gebäudereinigung in der Zollernalb und darüber hinaus." | „Beweis-Zentrum: Standards, Sicherheit & nachvollziehbare Dokumentation" | ~500 | Beratung/Kontakt-Links | Nachweise, Protokoll (PDF), Kundenportal (im Aufbau), TRBS |
+| `/karriere` | Recruiting | „Karriere \| …" | „Karriere bei Saubermatik Meßstetten: faire Bezahlung, digitale Erfassung über mobile Endgeräte, Teamkultur in der Zollernalb – jetzt initiativ bewerben." | „Bauen Sie Saubermatik mit auf – digital gedacht, handwerklich geliefert." | ~600 | Bewerbung → `/kontakt?type=karriere`, Job-Listings (API) | mobile Endgeräte, Zollernalb, Reinigungskraft |
 | `/kontakt` | NAP, Karte, Lead/Karriere-Formular | „Kontakt \| …" | „Saubermatik Meßstetten: Adresse, Anfahrt, Kundenanfrage (Lead) und Bewerbungen – digital und persönlich für die Zollernalb und Region Tübingen." | Kunde: „Sprechen wir über Ihr Objekt." / Karriere (`?type=karriere`): „Bewerbung & erste Fragen zum Job." | ~350 (+ Formular-UI) | Tel-Link, LeadFunnel, CareerForm, Karte | Meßstetten, 72469, Schelmenwasenstraße 11 |
 | `/kontakt?type=karriere` | Bewerbungsformular | wie `/kontakt` | wie `/kontakt` | „Bewerbung & erste Fragen zum Job." | wie oben | CareerForm → `/api/career` | Karriere |
 | `/impressum` | Pflichtangaben § 5 DDG | „Impressum \| Saubermatik Gebäudereinigung" | „Impressum der Saubermatik Reinigungsservice, Inhaber Metin Altinsoy, mit Angaben gemäß § 5 DDG." | „Impressum" | ~200 | — | DDG, USt-IdNr., HWK Reutlingen |
 | `/datenschutz` | Datenschutzerklärung | „Datenschutzerklärung \| Saubermatik Gebäudereinigung" | „Datenschutzerklärung der Saubermatik Reinigungsservice: Informationen zur Verarbeitung personenbezogener Daten auf dieser Website." | „Datenschutzerklärung" | ~1.200 | — | DSGVO, Resend, OSM |
-| `/zielgruppen/hausverwaltungen` | HV/WEG-Landing (nicht in Header-Nav) | „Hausverwaltungen & WEG \| …" | „All-in-One für Hausverwaltungen: Treppenhaus, Hausmeister, Grünpflege, Winterdienst mit GPS-Nachweisen. Verkehrssicherungspflicht, § 2 BetrKV-Umlagefähigkeit, Mieterzufriedenheit." | „Die All-in-One Lösung für Hausverwaltungen: Treppenhaus, Hausmeister & Grünpflege mit digitalem Echtzeit-Nachweis." | ~900+ | Liegenschaft anfragen, Lead-Funnel | BetrKV, GPS, Verkehrssicherungspflicht |
+| `/zielgruppen/hausverwaltungen` | HV/WEG-Landing (nicht in Header-Nav) | „Hausverwaltungen & WEG \| …" | „All-in-One für Hausverwaltungen: Treppenhaus, Hausmeister, Grünpflege, Winterdienst mit dokumentierten Einsätzen. Verkehrssicherungspflicht, Betriebskosten nach § 2 BetrKV, Mieterzufriedenheit." | „Die All-in-One Lösung für Hausverwaltungen: Treppenhaus, Hausmeister & Grünpflege mit dokumentierten Nachweisen." | ~900+ | Liegenschaft anfragen, Lead-Funnel | BetrKV (objektbezogen), Melde-QR, Verkehrssicherungspflicht (schriftlich geregelt), Inhaber als Ansprechpartner |
+| `/zielgruppen/buero-gewerbe` | Zielgruppe Büro/Gewerbe | „Büroreinigung und Gewerbereinigung \| …" | „Ihre Räume sind Ihr Aushängeschild – für Kunden und für Ihr Team. Wir halten Büros und Gewerbeflächen zuverlässig sauber, zu Zeiten, die Ihren Betrieb nicht stören." | „Büroreinigung und Gewerbereinigung" | nicht erhoben | nicht erhoben | Inhaber als Ansprechpartner, Protokoll (PDF), SecureOps (im Aufbau) |
+| `/zielgruppen/praxen-gesundheitswesen` | Zielgruppe Praxen | „Reinigung für Praxen und Gesundheitswesen \| …" | „In einer Praxis ist Sauberkeit kein Nebenthema. Patienten schließen vom Wartezimmer auf die Behandlung. Wir reinigen hygienesensible Bereiche nach einem Plan, der mit Ihnen abgestimmt ist – zuverlässig und außerhalb Ihrer Sprechzeiten." | „Reinigung für Praxen und Gesundheitswesen" | nicht erhoben | nicht erhoben | Inhaber als Ansprechpartner, Protokoll (PDF), SecureOps (im Aufbau) |
+| `/secureops` | Kundenportal-Seite | „SecureOps – Kundenportal von Saubermatik (im Aufbau) \| …" | „SecureOps ist das Kundenportal von Saubermatik (im Aufbau): Melde-QR für Mängelmeldungen, Anfragen mit Status und Dokumente wie Protokolle (PDF). Umfang je nach Objekt." | „SecureOps – unser Kundenportal (im Aufbau)" | nicht erhoben | nicht erhoben | Kundenportal (im Aufbau), Melde-QR, Protokoll (PDF) |
 | `/leistungen` | Leistungs-Hub | „Leistungen \| …" | „Facility & Reinigung in der Zollernalb: Unterhalts- & Büroreinigung, Glas, Treppenhaus, Hausmeister, Grünanlagen, Winterdienst, Grund-/Bau- und Fassadenreinigung." | „Reinigung, die zu Ihrem Objekt passt" | ~350 | 10 Leistungs-Karten | Facility, Intervalle |
-| `/standorte` | Standort-Hub | „Standorte & Region \| …" | „Gebäudereinigung in der Zollernalb und angrenzenden Städten — Übersicht aller lokalen Saubermatik-Standortseiten inklusive Stuttgart-Metropolregion." | „Standorte & Einsatzgebiete" | ~200 | Stadt-Links, Objekt anfragen | Zollernalb, Stuttgart |
-| `/standorte/stuttgart` | Spezial-Hub Metropolregion | „Fensterreinigung & Gebäudereinigung Stuttgart \| …" | „Professionelle Fenster- und Glasreinigung sowie Gebäudereinigung für Stuttgart – mit Logistik über B14/B27, Stadtteile wie Degerloch, Vaihingen und Bad Cannstatt, digitaler Objektsteuerung aus der Zollernalb." | „Fensterreinigung Stuttgart & Gebäudereinigung mit Zollernalb-Logistik" | ~800 | Leistungslinks, Kontakt | B14, B27, Degerloch, Vaihingen |
+| `/standorte` | Einsatzgebiete-Hub | „Einsatzgebiete & Region \| …" | „Gebäudereinigung in der Zollernalb und angrenzenden Städten — Übersicht der Einsatzgebiete von Saubermatik inklusive Stuttgart-Metropolregion. Wir kommen zu Ihnen; Anfahrt aus Meßstetten." | „Einsatzgebiete" | ~200 | Stadt-Links (Stuttgart als „Stuttgart (Metropolregion)"), Objekt anfragen | Zollernalb, Stuttgart |
+| `/standorte/stuttgart` | Landingpage Metropolregion (Projektaufträge) | „Fensterreinigung & Gebäudereinigung Stuttgart \| …" | „Professionelle Fenster- und Glasreinigung sowie Gebäudereinigung für Stuttgart – mit Logistik über B14/B27, Stadtteile wie Degerloch, Vaihingen und Bad Cannstatt – Projektaufträge aus Meßstetten, dokumentiert als Protokoll (PDF)." | „Fensterreinigung Stuttgart & Gebäudereinigung mit Zollernalb-Logistik" | ~800 | Leistungslinks, Kontakt | B14, B27, Degerloch, Vaihingen, Projektaufträge |
 | `/wissen` | Lexikon-Hub | „Wissen & Lexikon \| …" | „Fachwissen zu Reinigung, Hygiene und Normen – HACCP, CAFM, DIN 31051, SLA, Farbcode-System und mehr von Saubermatik." | „Wissen für Facility, Verwaltung & Geschäftsführung" | ~250 | 8 Lexikon-Artikel | HACCP, CAFM, DIN |
 | **404** | Fehlerseite | **unklar** (Next-Default) | **fehlt** (keine `not-found.tsx`) | **unklar** | — | — | — |
 
@@ -104,12 +131,12 @@ Alle 10 Slugs aus `lib/config/services.ts` haben **dedizierte** `page.tsx`-Route
 
 | Pfad | `<title>` (meta) | Meta-Description (wörtlich) | H1 (wörtlich) | Wortzahl (grob) | Haupt-CTAs |
 |------|------------------|----------------------------|---------------|-----------------|------------|
-| `/leistungen/unterhaltsreinigung` | „Unterhaltsreinigung & Büroreinigung Gewerbe \| …" | „Zertifizierte Unterhaltsreinigung für Gewerbe und Büros: 4-Farb-System, DIN EN 13549, digitales LV, HACCP, Echtzeit-QM und 100% Ausfallsicherheit in der Zollernalb." | „Zertifizierte Unterhaltsreinigung für Gewerbe und Büros. Maximale Hygiene, messbare Qualität und 100 % Ausfallsicherheit." | ~2.000+ | Analyse anfordern, Rechner, Lead-Funnel |
+| `/leistungen/unterhaltsreinigung` | „Unterhaltsreinigung & Büroreinigung Gewerbe \| …" | „Unterhaltsreinigung für Gewerbe und Büros: 4-Farb-System, digitales Leistungsverzeichnis und dokumentierte Einsätze in der Zollernalb. Angebot auf Anfrage." | „Unterhaltsreinigung für Gewerbe und Büros. 4-Farb-System, dokumentierte Einsätze und ein fester Ansprechpartner." | ~2.000+ | Analyse anfordern, Rechner, Lead-Funnel |
 | `/leistungen/fenster-glasreinigung` | „Glas- & Fensterreinigung Gewerbe \| …" | „Streifenfreie Glas- und Fassadenreinigung für Gewerbe und Industrie: Reinwasser-Osmose, Carbon-Teleskopstangen, TRBS 2121, klassisches Handwerk – Zollernalb & Region." | „Streifenfreie Sicht, maximale Werterhaltung. Professionelle Glas- und Fassadenreinigung für Gewerbe und Industrie." | ~2.000+ | wie oben |
-| `/leistungen/treppenhausreinigung` | „Treppenhausreinigung WEG & Gewerbe \| …" | „Treppenhausreinigung mit Verkehrssicherungspflicht, Trittsicherheit, § 2 BetrKV-Umlagefähigkeit und digitalem Nachweis – Saubermatik Zollernalb." | „Repräsentative Treppenhäuser, sichere Wege. Professionelle Treppenhausreinigung für WEG, Hausverwaltungen und Gewerbe." | ~1.800+ | Lead-Funnel, Hausverwaltungen-Link |
-| `/leistungen/hausmeisterservice` | „Hausmeisterservice & Objektbetreuung \| …" | „Hausmeisterservice für Hausverwaltungen und Gewerbe: SOPs für Kleinreparaturen, Kontrollgänge, Leuchtmittel, Mülllogistik, Zählerstände – digital dokumentiert in der Zollernalb." | „Hausmeisterservice & Objektbetreuung – SOPs statt Improvisation." | ~1.500+ | Lead-Funnel |
-| `/leistungen/gruenanlagenpflege` | „Grünanlagenpflege \| …" | „Grünanlagenpflege für Wohnanlagen und Gewerbe: Frühjahr, Sommer, Herbst – Rasen, Hecken, Laub, Unkraut. Repräsentative Außenanlagen in der Zollernalb." | „Grünanlagenpflege – repräsentative Außenanlagen für Wohnkomplexe & Gewerbe." | ~1.200+ | Lead-Funnel |
-| `/leistungen/winterdienst` | „Winterdienst & Räum- und Streupflicht \| …" | „Professioneller Winterdienst: Räum- und Streupflicht, Verkehrssicherungspflicht, Wetterführung, GPS-Nachweise – haftungssicher für WEG und Gewerbe." | „Haftungssicher durch den Winter. Professioneller Winterdienst mit Wetterführung und Echtzeit-Nachweis." | ~1.800+ | Lead-Funnel |
+| `/leistungen/treppenhausreinigung` | „Treppenhausreinigung WEG & Gewerbe \| …" | „Treppenhausreinigung mit Verkehrssicherungspflicht, Trittsicherheit, objektbezogener Abrechnung (§ 2 BetrKV) und Nachweis als Protokoll – Saubermatik Zollernalb." | „Repräsentative Treppenhäuser, sichere Wege. Professionelle Treppenhausreinigung für WEG, Hausverwaltungen und Gewerbe." | ~1.800+ | Lead-Funnel, Hausverwaltungen-Link |
+| `/leistungen/hausmeisterservice` | „Hausmeisterservice & Objektbetreuung \| …" | „Hausmeisterservice für Hausverwaltungen und Gewerbe: SOPs für einfache Kleinreparaturen, Kontrollgänge, Mängelmeldung, Mülllogistik, Zählerstände – nachvollziehbar dokumentiert in der Zollernalb." | „Hausmeisterservice & Objektbetreuung – SOPs statt Improvisation." | ~1.500+ | Lead-Funnel |
+| `/leistungen/gruenanlagenpflege` | „Grünanlagenpflege \| …" | „Grünanlagenpflege für Wohnanlagen und Gewerbe: Frühjahr, Sommer, Herbst – Rasen, Hecken, Laub, Wildkraut. Repräsentative Außenanlagen in der Zollernalb." | „Grünanlagenpflege – repräsentative Außenanlagen für Wohnkomplexe & Gewerbe." | ~1.200+ | Lead-Funnel |
+| `/leistungen/winterdienst` | „Winterdienst & Räum- und Streupflicht \| …" | „Professioneller Winterdienst: Räum- und Streupflicht mit schriftlichem Plan und Protokoll, Verkehrssicherungspflicht, dokumentierte Einsätze – für WEG und Gewerbe." | „Räum- und Streupflicht mit schriftlichem Plan und Protokoll. Professioneller Winterdienst mit dokumentierten Nachweisen." | ~1.800+ | Lead-Funnel |
 | `/leistungen/grundreinigung` | „Grundreinigung & Bauendreinigung \| …" | „Grundreinigung und Bauendreinigung: VOB/C, Bauabnahme, DIN 18365, Polymerbeschichtung, Zementschleierentfernung – besenreine Übergabe in der Zollernalb." | „Werterhalt durch Tiefe. Grundreinigung, Bauendreinigung und Sonderreinigung für Gewerbe und Neubau." | ~1.800+ | Lead-Funnel |
 | `/leistungen/fassadenreinigung` | „Fassadenreinigung Gewerbe & Industrie \| …" | „Fassadenreinigung materialschonend: Naturstein, Metall, Glas, Algen/Moos, TRBS 2121, Werterhalt – Saubermatik Zollernalb." | „Substanz schützen, Image stärken. Professionelle Fassadenreinigung für Gewerbe, Industrie und Wohnanlagen." | ~1.800+ | Lead-Funnel |
 | `/leistungen/entruempelung` | „Entrümpelung & Haushaltsauflösung \| …" | „Entrümpelung und Haushaltsauflösung: besenreine Übergabe, fachgerechte Entsorgung, Endreinigung – für Erben, Verwalter und Gewerbe in der Zollernalb." | „Besenreine Übergabe, stressfreier Abschluss. Entrümpelung & Haushaltsauflösung mit Endreinigung." | ~1.500+ | Lead-Funnel |
@@ -125,7 +152,7 @@ Alle 10 Slugs aus `lib/config/services.ts` haben **dedizierte** `page.tsx`-Route
 
 | Pfad | `<title>`-Muster | Meta-Description | H1-Muster | Wortzahl (grob) | CTAs |
 |------|------------------|------------------|-----------|-----------------|------|
-| `/standorte/messstetten` … `/standorte/ueberlingen` | „{Stadt}: Facility & Gebäudereinigung \| …" | Erste 160 Zeichen von `heroSubtitle` (`buildStandortDeepContent`) | „Facility Management & Gebäudereinigung in {Stadt}. Ihr Partner …" (variantenabhängig, `lib/seo/standort-deep-content.ts`) | ~900–1.400 pro Stadt (QA-Hilfsfunktion `countStandortWords`) | Objekt anfragen, Leistungen, FAQ, Cross-Links |
+| `/standorte/messstetten` … `/standorte/ueberlingen` | „{Stadt}: Facility & Gebäudereinigung \| …" | Erste 160 Zeichen von `heroSubtitle` (`buildStandortDeepContent`, per `slice(0, 160)` – kann mitten im Wort enden). Muster: Städte mit Profil „{industryFocus} – mit Protokollen (PDF), dokumentierter Verkehrssicherung und festem Ansprechpartner aus Meßstetten."; übrige „Zollernalbkreis und Umkreis (Sigmaringen, Rottweil, Hechingen, Tübingen): regionale Nähe, schnelle Reaktionszeiten und SLAs …" | „Facility Services & Gebäudereinigung in {Stadt}. Ihr Partner an der {Infrastruktur}." bzw. „… Ihr Partner in der Zollernalb." / Meßstetten: „… Ihr Partner im Zollernalbkreis." (`lib/seo/standort-deep-content.ts`) | ~900–1.400 pro Stadt (QA-Hilfsfunktion `countStandortWords`) | Objekt anfragen, Leistungen, FAQ, Cross-Links |
 
 Städte: Meßstetten, Albstadt, Balingen, Hechingen, Sigmaringen, Mössingen, Tübingen, Schömberg, Tuttlingen, Rottweil, Villingen-Schwenningen, Spaichingen, Burladingen, Rottenburg, Reutlingen, Überlingen.
 
@@ -135,7 +162,7 @@ Städte: Meßstetten, Albstadt, Balingen, Hechingen, Sigmaringen, Mössingen, T�
 
 | Pfad-Muster | `<title>`-Muster | Meta-Description | H1-Muster | Wortzahl (grob) | CTAs |
 |-------------|------------------|------------------|-----------|-----------------|------|
-| `/standorte/{city}/{service}` | `{LeistungLabel} {Stadt} \| Saubermatik` | Aus `matrix-service-tech.ts` / Spin-Varianten | `{LeistungLabel} in {Stadt} — regional, digital, verbindlich.` | ~700–1.100 | Analyse anfordern, Leistungsdetails, Lead-Funnel, B2B-Onboarding |
+| `/standorte/{city}/{service}` | `{LeistungLabel} {Stadt} \| Saubermatik` | Erste 158 Zeichen einer von 3 `heroVariants` (`lib/seo/matrix-content.ts`, `slice(0, 158)` – kann mitten im Wort enden); Muster z. B. „{Leistung} für {Stadt} — von Meßstetten aus, mit schriftlichem Leistungsverzeichnis, festem Ansprechpartner (Inhaber) und vor Leistungsbeginn geregelter Vertretung. …" | `{LeistungLabel} in {Stadt} — regional, digital, verbindlich.` | ~700–1.100 | Analyse anfordern, Leistungsdetails, Lead-Funnel, B2B-Onboarding |
 
 Beispiel Pfad: `/standorte/balingen/unterhaltsreinigung` — Beleg: `lib/seo/matrix-content.ts` Zeilen 313–315.
 
@@ -183,7 +210,7 @@ Beispiel Pfad: `/standorte/balingen/unterhaltsreinigung` — Beleg: `lib/seo/mat
 
 | Schema-Typ | Felder (zusammengefasst) | Einbindungsort |
 |------------|--------------------------|----------------|
-| **LocalBusiness + CleaningService** (Organisation) | name, url, address (Schelmenwasenstraße 11, Meßstetten 72469), geo, areaServed (16 Städte + 3 GeoCircle-Hubs), openingHours 08:00–22:00 täglich, hasOfferCatalog (10 Services) — *aggregateRating entfernt am 2026-07-12* | `lib/seo/global-jsonld.ts` → `components/StructuredData.tsx` in `app/layout.tsx` (global) |
+| **LocalBusiness + CleaningService** (Organisation) | name, url, description (`portfolioDescription`: „Facility-Management und Reinigung aus einer Quelle: … – mit digitaler Objektsteuerung aus Meßstetten und der Region Zollernalb." – **unverändert, offen**), address (Schelmenwasenstraße 11, Meßstetten 72469), geo, areaServed (16 Städte + GeoCircle-Hubs), openingHoursSpecification **Mo–Sa 08:00–22:00** (offen), hasOfferCatalog (Services, `description` = `summary` aus `lib/config/services.ts`) — *aggregateRating entfernt am 2026-07-12* | `lib/seo/global-jsonld.ts` → `components/StructuredData.tsx` in `app/layout.tsx` (global) |
 | **LocalBusiness + CleaningService** (pro Stadt) | name, url, geo, GeoCircle areaServed, parentOrganization | `lib/seo/standort-geo.ts` → global `@graph` |
 | **LocalBusiness** (Stuttgart) | wie oben, Radius 28 km | `buildStuttgartCleaningServiceNode` |
 | **OfferCatalog + Service** | 10 Leistungen mit URL, CleaningService category | global JSON-LD |
@@ -191,9 +218,9 @@ Beispiel Pfad: `/standorte/balingen/unterhaltsreinigung` — Beleg: `lib/seo/mat
 | **FAQPage** | Question/Answer-Paare pro Leistung | `components/LeistungFaqJsonLd.tsx` + `lib/seo/leistung-faq.ts` |
 | **FAQPage** | Standort-FAQ | `components/LocalCityFaq.tsx` + `lib/seo/standort-faq.ts` |
 | **HowTo** (B2B-Onboarding, 4 Schritte) | name, totalTime P14D, HowToStep mit URL-Anker | `components/B2BOnboardingProcess.tsx` auf `/`, Leistungsseiten, Matrix, HV-Seite |
-| **Person + OrganizationRole** (KAM Metin Altinsoy) | name, jobTitle, worksFor, knowsAbout | `lib/seo/kam-profile.ts` → `components/KamProfileCard.tsx` |
-| **OrganizationRole + Organization** (Key Account) | roleName, employee Person | `lib/seo/key-account.ts` → `components/KeyAccountManager.tsx` |
-| **Service** (Hausverwaltungen) | serviceType, audience BusinessAudience, offers | `lib/seo/hausverwaltungen-schema.ts` → `app/zielgruppen/hausverwaltungen/page.tsx` |
+| ~~**Person + OrganizationRole** (KAM Metin Altinsoy)~~ | **Nicht mehr im Repo:** `lib/seo/kam-profile.ts` und `components/KamProfileCard.tsx` existieren im aktuellen Stand nicht | — |
+| ~~**OrganizationRole + Organization** (Key Account)~~ | **Nicht mehr im Repo:** `lib/seo/key-account.ts` und `components/KeyAccountManager.tsx` existieren im aktuellen Stand nicht | — |
+| **Service** (Hausverwaltungen) | serviceType, audience BusinessAudience, offers; description: „All-in-One Objektbetreuung für Hausverwaltungen: Treppenhausreinigung, Hausmeister, Grünpflege und Winterdienst mit dokumentierten Einsätzen (Protokolle (PDF); Umfang je nach Objekt und Vereinbarung)." | `lib/seo/hausverwaltungen-schema.ts` → `app/zielgruppen/hausverwaltungen/page.tsx` |
 | **ImageObject + Place** | contentUrl, contentLocation, author | `components/GeoImage.tsx` (Startseite „Warum wir"-Bild) |
 
 **Auffälligkeit (historisch):** `aggregateRating` (4.9, 124 Reviews) war im globalen Schema — **entfernt am 2026-07-12** (`lib/seo/global-jsonld.ts`).
@@ -220,10 +247,10 @@ Beispiel Pfad: `/standorte/balingen/unterhaltsreinigung` — Beleg: `lib/seo/mat
 **Footer** (`components/SiteFooter.tsx`):
 - Alle 10 Leistungen
 - Unternehmen: QM, Expertise, Über uns, Karriere, Kontakt
-- 16 Standort-Städte + Stuttgart-Spezial
+- 16 Standort-Städte + „Stuttgart (Metropolregion)" (vormals „Spezial-Hub", geändert 2026-10-28)
 - Leistungsübersicht, Kontakt, Wissen
 
-**Cross-Links:** `components/SeoCrossLinks.tsx` auf Standort-/Leistungsseiten (Top-3-Leistungen bzw. Stuttgart/Balingen/Tuttlingen).
+**Cross-Links:** `components/SeoCrossLinks.tsx` auf Standort-/Leistungsseiten (Top-3-Leistungen bzw. Stuttgart/Balingen/Tuttlingen); Einleitung: „Gebäudereinigung dort, wo Ihre Objekte stehen — von Meßstetten aus, für Projekte auch in der Region Stuttgart."
 
 **Potenziell schwach verlinkt:** 160 Matrix-Seiten (nur über Stadtseiten/SEO, nicht Nav); `/zielgruppen/hausverwaltungen` (nur Sitemap + interne Links von Treppenhaus-Seite).
 
@@ -266,26 +293,29 @@ Beispiel Pfad: `/standorte/balingen/unterhaltsreinigung` — Beleg: `lib/seo/mat
 
 | Cluster | Abdeckung | Tiefe | Beleg |
 |---------|-----------|-------|-------|
-| Unterhalts-/Büroreinigung | Eigene Long-Form-Seite + Matrix | Sehr hoch (4-Farb-System, DIN, HACCP, Tabellen) | `app/leistungen/unterhaltsreinigung/page.tsx` |
+| Unterhalts-/Büroreinigung | Eigene Long-Form-Seite + Matrix | Sehr hoch (4-Farb-System, Qualitätskontrolle in Anlehnung an DIN EN 13549, HACCP, Tabellen) | `app/leistungen/unterhaltsreinigung/page.tsx` |
 | Glas/Fenster | Long-Form + Stuttgart-Fokus | Hoch (TRBS, Osmose) | `app/leistungen/fenster-glasreinigung/page.tsx` |
 | Treppenhaus / HV | Long-Form + HV-Landing | Hoch (BetrKV, Verkehrssicherung) | `leistung-deep-content.ts`, `hausverwaltungen/page.tsx` |
-| Hausmeister | Long-Form + SOP-Module | Hoch | `app/leistungen/hausmeisterservice/page.tsx` |
+| Hausmeister | Long-Form + SOP-Module (einfache Kleinreparaturen ohne Eingriff in Elektro/Sanitär/Brandschutz; Beleuchtung nur Ausfälle melden) | Hoch | `app/leistungen/hausmeisterservice/page.tsx` |
 | Grün / Winter / Grund / Fassade / Entrümpelung / Sonstiges | Je Long-Form (DeepPage oder custom) | Hoch (3 Deep-Dives je Leistung) | `lib/seo/leistung-deep-content.ts` |
-| Lokale SEO | 16 Städte + Stuttgart + 160 Matrix | Mittel–hoch (programmatisch angereichert) | `lib/seo/standort-deep-content.ts`, `local-entities.ts` |
+| Lokale SEO | 16 Städte + Stuttgart + 160 Matrix | Mittel–hoch (programmatisch angereichert; 160 Matrix-Seiten fast gleich – offen) | `lib/seo/standort-deep-content.ts`, `local-entities.ts` |
 | Fach-Lexikon | 8 B2B-Artikel | Mittel (~400–550 Wörter) | `lib/config/lexikon.ts` |
 
 ### USPs & Kernbotschaften (wörtlich + Fundort)
 
 | Botschaft | Fundort |
 |-----------|---------|
-| „Reinigung, die hält, was sie verspricht – mit Kopf, nicht nur mit dem Wischmob." | `app/page.tsx` H1 |
-| „Fester Ansprechpartner vor Ort – kein anonymes Weiterreichen" | `app/page.tsx` trustItems |
-| „Digitale Objektsteuerung: Ausfälle werden abgefangen, bevor Sie es merken" | `app/page.tsx` trustItems |
-| „Regional verwurzelt: Zollernalb & Schwarzwald-Baar-Heuberg, kurze Wege" | `app/page.tsx` trustItems |
-| „Software-Vorteil statt Zufall: Protokolle, die jede Tour dokumentieren." | `app/page.tsx` H2 |
-| „Kein Callcenter. Ihr direkter Draht in die Geschäftsführung." | `lib/seo/kam-profile.ts` KAM_PROFILE.usp |
-| „Saubermatik ist das führende, technologiegestützte Reinigungsunternehmen im Zollernalbkreis" | `lib/seo/llms-content.ts` |
-| „100% Zuverlässigkeit durch feste Ansprechpartner und Ersatzlogistik" | `lib/seo/llms-content.ts` |
+| „Wir digitalisieren die Reinigung." | `app/page.tsx` H1 |
+| „Fester Ansprechpartner statt Callcenter" | `app/page.tsx` trustItems |
+| „Inhabergeführt: Vertretung und Kapazität regeln wir vor Leistungsbeginn schriftlich" | `app/page.tsx` trustItems |
+| „Regional verwurzelt: Zollernalbkreis, Sigmaringen, Rottweil, Hechingen, Tübingen – Projekte bis Stuttgart und an den Bodensee" | `app/page.tsx` trustItems |
+| „Software-Vorteil statt Zufall: Protokolle, die jeden Einsatz dokumentieren." | `app/page.tsx` H2 |
+| „Fester Ansprechpartner" – „Der Inhaber persönlich – kennt Ihre Objekte und ist direkt erreichbar." | `components/StartTrustBar.tsx` |
+| „Digitales Kundenportal" – „Im Aufbau: Melde-QR für Mängelmeldungen, Anfragen mit Status und Dokumente." | `components/StartTrustBar.tsx` |
+| „Dokumentierte Qualität" – „Einsätze als Protokoll (PDF) nachvollziehbar dokumentiert – Umfang je Objekt." | `components/StartTrustBar.tsx` |
+| ~~„Kein Callcenter. Ihr direkter Draht in die Geschäftsführung."~~ | `lib/seo/kam-profile.ts` – Datei im aktuellen Stand nicht vorhanden |
+| „Saubermatik ist ein technologiegestütztes Reinigungsunternehmen im Zollernalbkreis (Baden-Württemberg, Deutschland). Slogan: Wir digitalisieren die Reinigung." | `lib/seo/llms-content.ts` |
+| „Inhabergeführt: fester Ansprechpartner ist der Inhaber persönlich, kein Callcenter; Vertretung und Kapazität werden vor Leistungsbeginn schriftlich geregelt" | `lib/seo/llms-content.ts` |
 
 ### Blog / Ratgeber / FAQ / Glossar
 
@@ -353,10 +383,12 @@ Beispiel Pfad: `/standorte/balingen/unterhaltsreinigung` — Beleg: `lib/seo/mat
 |---------|-----|-------|
 | Testimonials | **Entfernt am 2026-07-12** — zuvor 3 Beispielzitate auf Startseite (`app/page.tsx`) | `app/page.tsx` (historisch) |
 | AggregateRating JSON-LD | **Entfernt am 2026-07-12** — zuvor 4.9 / 124 im globalen Schema | `lib/seo/global-jsonld.ts` (historisch) |
-| KAM-Profil Metin Altinsoy | Hero, Kontakt, JSON-LD Person | `lib/seo/kam-profile.ts` |
+| KAM-Profil Metin Altinsoy | **Nicht mehr im Repo** (`lib/seo/kam-profile.ts`, `components/KamProfileCard.tsx` fehlen); Ansprechpartner-Aussage jetzt als Text „der Inhaber persönlich" | `components/StartTrustBar.tsx`, `app/page.tsx` |
 | ESG-Statement | Startseite | `components/EsgComplianceStatement.tsx` |
-| FreshnessBadge | Startseite, Standort, Matrix, Stuttgart | `components/FreshnessBadge.tsx` |
-| App-Mockup / QM-App | Startseite | `components/AppMockup.tsx` |
+| FreshnessBadge | Startseite, Standort, Matrix, Stuttgart; Text „Dokumentierte Qualitätsstandards – Stand: {aktueller Monat/Jahr}" (dynamisch, offen) | `components/FreshnessBadge.tsx` |
+| ~~App-Mockup / QM-App~~ | **Nicht mehr im Repo** (`components/AppMockup.tsx` fehlt) | — |
+| SecureOps-Flyer-Karte | Startseite: „Kundenportal" – „Meldungen, Anfragen und Dokumente an einem Ort – im Aufbau."; „QR-Meldesystem" – „Scannen, melden – landet direkt bei uns."; Schritt 3 „Erledigt – Status im Portal nachvollziehbar" | `components/SecureOpsFlyerCard.tsx` |
+| StartTrustBar | Startseite: Fester Ansprechpartner (Inhaber) · Digitales Kundenportal (im Aufbau) · Dokumentierte Qualität (Protokoll PDF) | `components/StartTrustBar.tsx` |
 | Zertifikate/Siegel-Bilder | **Keine** echten Badge-Assets | — |
 | Job-Listings | Leerzustand „Aktuell keine offenen Stellen.“ (keine Jobs-API in diesem Repo) | `components/JobListings.tsx` |
 
@@ -394,7 +426,7 @@ Karriere: `/karriere` → `/kontakt?type=karriere` → CareerForm → `/api/care
 |-----------|-----|-------|
 | Heading-Hierarchie | H1 pro Seite, H2/H3 für Sektionen, FAQ mit h2+h3 | Seitenstruktur |
 | Listen | `<ul>`/`<li>` für Trust, Benefits, Footer, Lexikon | diverse |
-| Tabellen | SnippetBaitTable auf Unterhaltsreinigung (4-Farb-System) | `components/SnippetBaitTable.tsx` |
+| Tabellen | SnippetBaitTable auf Unterhaltsreinigung (4-Farb-System) und Fenster-/Glasreinigung; auf Grünanlagenpflege und Hausmeisterservice am 2026-10-28 entfernt | `components/SnippetBaitTable.tsx` |
 | FAQ-Markup | Sichtbare FAQ auf Standortseiten (`<h3>` + `<p>`) | `LocalCityFaq.tsx` |
 | address-Element | Kontaktseite | `app/kontakt/page.tsx` |
 
@@ -404,7 +436,7 @@ Karriere: `/karriere` → `/kontakt?type=karriere` → CareerForm → `/api/care
 |--------|-----|
 | Vorhanden | **Ja** — Route `/llms.txt` |
 | Generator | `lib/seo/llms-content.ts`, `app/llms.txt/route.ts` |
-| Inhalt | Firmenbeschreibung, USPs, Links zu Leistungen, Standorten, QM, Expertise, Wissen, Kontakt |
+| Inhalt | Firmenbeschreibung, USPs, Links zu Leistungen, Standorten, QM, Expertise, Wissen, Kontakt; Stuttgart als „Stuttgart Metropolregion" (ohne „Spezial-Hub"); SecureOps als „Kundenportal von Saubermatik (im Aufbau)" |
 
 **Widerspruch:** `robots.ts` blockiert `GPTBot`/`Claude-Web` etc. mit `Disallow: /`, während `llms.txt` explizit „Hinweis für KI-Systeme" enthält.
 

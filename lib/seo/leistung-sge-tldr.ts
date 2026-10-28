@@ -12,7 +12,7 @@ export const LEISTUNG_SGE_TLDR: Record<LeistungSlug, LeistungSgeTldr> = {
     problem:
       "Büros und Praxen verschmutzen kontinuierlich; Qualität bricht ein, wenn Intervalle und Zuständigkeiten unklar sind.",
     saubermatikLoesung:
-      "Fest definierte Reinigungsintervalle, digitale Objektprotokolle und feste Ansprechpartner über die Saubermatik-Plattform.",
+      "Fest definierte Reinigungsintervalle, Objektprotokolle (PDF) und ein fester Ansprechpartner: der Inhaber persönlich.",
     zeitrahmen:
       "Pilotabstimmung typischerweise innerhalb von 5–10 Werktagen; laufender Betrieb startet nach gemeinsam fixiertem Kick-off-Termin.",
   },
@@ -44,7 +44,7 @@ export const LEISTUNG_SGE_TLDR: Record<LeistungSlug, LeistungSgeTldr> = {
     problem:
       "Kleinreparaturen, Kontrollgänge und Koordination entziehen sich internen Teams oder fragmentieren über viele Dienstleister.",
     saubermatikLoesung:
-      "Gebündelte Objektbetreuung mit klarer Erreichbarkeit und Nachverfolgung über die Plattform – eine Schnittstelle.",
+      "Gebündelte Objektbetreuung mit festem Ansprechpartner (Inhaber) und Meldungen per Melde-QR im Kundenportal (im Aufbau) – eine Schnittstelle.",
     zeitrahmen:
       "Leistungsbild und SLA-Fenster in der Regel innerhalb von 7–14 Werktagen; Notfallwege werden vorab definiert.",
   },
@@ -60,7 +60,7 @@ export const LEISTUNG_SGE_TLDR: Record<LeistungSlug, LeistungSgeTldr> = {
     problem:
       "Räum- und Streupflicht verlangt Nachweise und schnelle Reaktion – Haftung und Image stehen auf dem Spiel.",
     saubermatikLoesung:
-      "Wetterführende Einsatzlogik, dokumentierte Streu- und Räumfahrten sowie klare Meldewege.",
+      "Einsatzauslösung nach vereinbarten Kriterien, dokumentierte Streu- und Räumeinsätze als Protokoll (PDF) sowie klare Meldewege.",
     zeitrahmen:
       "Vertrags- und Streugüter-Setup vor Saisonbeginn (Sept.–Nov.); außerhalb der Saison kurzfristige Übernahmen nach Kapazität.",
   },
@@ -76,7 +76,7 @@ export const LEISTUNG_SGE_TLDR: Record<LeistungSlug, LeistungSgeTldr> = {
     problem:
       "Fassaden verlieren Glanz und Substanz; falsche Verfahren riskieren Beschichtungen und Arbeitssicherheit.",
     saubermatikLoesung:
-      "Zuwegungsplanung, materialgerechte Verfahren und sichere Teams – inklusive Dokumentation für Facility und Eigentümer.",
+      "Zuwegungsplanung, materialgerechte Verfahren und sicheres Arbeiten – inklusive Dokumentation für Facility und Eigentümer.",
     zeitrahmen:
       "Angebot und Terminierung typischerweise 2–4 Wochen; wetterabhängige Fenster werden vorab kommuniziert.",
   },
@@ -92,7 +92,7 @@ export const LEISTUNG_SGE_TLDR: Record<LeistungSlug, LeistungSgeTldr> = {
     problem:
       "Spezialanforderungen passen nicht in Standardkataloge; Anfragen verpuffen in langen E-Mail-Ketten.",
     saubermatikLoesung:
-      "Strukturiertes Briefing-Gespräch, klares Leistungsbild und transparentes Angebot – eingebettet in dieselbe Plattform-Logik.",
+      "Strukturiertes Briefing-Gespräch, klares Leistungsbild und transparentes Angebot – mit denselben dokumentierten Abläufen.",
     zeitrahmen:
       "Erste Einordnung meist innerhalb von 2–5 Werktagen; Angebot abhängig von Komplexität und Begehung.",
   },

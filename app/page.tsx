@@ -23,7 +23,7 @@ export const metadata: Metadata = {
 
 const trustItems = [
   "Fester Ansprechpartner statt Callcenter",
-  "Bei Urlaub oder Ausfall: bewährtes Vertretungsteam, sonst die Geschäftsführung",
+  "Inhabergeführt: Vertretung und Kapazität regeln wir vor Leistungsbeginn schriftlich",
   "Regional verwurzelt: Zollernalbkreis, Sigmaringen, Rottweil, Hechingen, Tübingen – Projekte bis Stuttgart und an den Bodensee",
 ] as const;
 
@@ -35,12 +35,12 @@ const galleryImages = [
   },
   {
     src: "/images/einsatz-gruenanlagenpflege.jpg",
-    alt: "Saubermatik-Mitarbeiter bei der Grünanlagenpflege mit Trimmer",
+    alt: "Grünanlagenpflege mit Trimmer",
     sizes: "(max-width: 1024px) 50vw, 33vw",
   },
   {
     src: "/images/einsatz-glasfassade-hoehe.jpg",
-    alt: "Saubermatik-Mitarbeiter reinigt hohe Glasfassade mit Teleskopstange im Reinwasser-Verfahren",
+    alt: "Reinigung einer hohen Glasfassade mit Teleskopstange im Reinwasser-Verfahren",
     sizes: "(max-width: 1024px) 100vw, 33vw",
     className: "sm:col-span-2 lg:col-span-1",
   },
@@ -53,7 +53,7 @@ const secureOpsPoints = [
   },
   {
     icon: ShieldCheckIcon,
-    text: "Einsätze mit Nachweis im Portal",
+    text: "Anfragen mit Status und Dokumente im Kundenportal (im Aufbau)",
   },
   {
     icon: UserCheckIcon,
@@ -104,7 +104,7 @@ export default function Home() {
             <div className="relative order-1 h-[38vh] overflow-hidden rounded-[18px] shadow-[0_24px_48px_rgba(0,0,0,0.35)] lg:order-2 lg:h-auto lg:min-h-[28rem]">
               <Image
                 src="/images/einsatz-fensterreinigung-hero.jpg"
-                alt="Saubermatik-Mitarbeiter reinigt Fenster mit Teleskopstange und Bürste an einer Glasfassade"
+                alt="Fensterreinigung mit Teleskopstange und Bürste an einer Glasfassade"
                 fill
                 className="object-cover object-top"
                 sizes="(max-width: 1024px) 100vw, 45vw"
@@ -129,8 +129,7 @@ export default function Home() {
           <p className="max-w-4xl text-sm leading-6 text-muted sm:text-base sm:leading-7">
             Saubermatik ist ein Reinigungsservice aus Meßstetten. Bei uns
             bekommen Sie keinen Textbaustein aus der Großstadt, sondern einen
-            festen Ansprechpartner. Bei Urlaub oder Ausfall übernimmt ein
-            bewährtes Vertretungsteam – sonst die Geschäftsführung persönlich.
+            festen Ansprechpartner: den Inhaber persönlich.
             Ob Verkehrssicherung für Hausverwaltungen, Praxisreinigung nach
             abgestimmtem Plan oder die Unterhaltsreinigung Ihres Büros: Wir
             halten Ihre Immobilien im Zollernalbkreis, in Sigmaringen, Rottweil,
@@ -148,17 +147,17 @@ export default function Home() {
           </h2>
           <p className="mt-4 max-w-4xl text-base leading-7 text-muted sm:text-lg">
             Wir übernehmen Verantwortung für Ihre Liegenschaft: klare
-            Intervalle, nachvollziehbare Qualität und ein Team, das weiß, was
-            in Kanzleien, Praxen und Gewerbeobjekten zählt. Digital gestützt
-            heißt bei uns: weniger Ausfälle, weniger Telefonate – mehr Ruhe im
-            Alltag.
+            Intervalle, nachvollziehbare Qualität und einen festen
+            Ansprechpartner, der weiß, was in Kanzleien, Praxen und
+            Gewerbeobjekten zählt. Digital gestützt heißt bei uns: weniger
+            Telefonate – mehr Ruhe im Alltag.
           </p>
           <p className="mt-4 max-w-4xl text-base leading-7 text-muted">
             Regional verwurzelt zwischen Zollernalbkreis, Sigmaringen, Rottweil,
             Hechingen und Tübingen bleiben Entscheidungswege kurz – Projektaufträge
             übernehmen wir bis Stuttgart und an den Bodensee. Wer bei uns
-            anruft, landet nicht in einer Hotline, sondern bei Menschen, die
-            Ihr Objekt kennen oder es sich aneignen.
+            anruft, landet nicht in einer Hotline, sondern beim Inhaber
+            persönlich.
           </p>
         </div>
       </section>
@@ -196,9 +195,10 @@ export default function Home() {
             Ein Scan im Objekt – das Anliegen landet direkt bei uns.
           </h2>
           <p className="mt-4 max-w-3xl text-base leading-7 text-text-dunkel sm:text-lg">
-            Dokumentierte Einsätze im Kundenportal, nachvollziehbar statt
-            versprochen. Den Umfang vereinbaren wir je Objekt. Für
-            Hausverwaltungen, Gewerbe und Kommunen.
+            Kundenportal im Aufbau: Meldungen per Melde-QR, Anfragen mit
+            Status und Dokumente – Nachweise als Protokoll (PDF). Den Umfang
+            vereinbaren wir je Objekt. Für Hausverwaltungen, Gewerbe und
+            Kommunen.
           </p>
           <p className="mt-3 max-w-3xl text-base leading-7 text-text-dunkel sm:text-lg">
             Keine Software, die Sie kaufen – SecureOps ist Teil unserer
@@ -267,36 +267,37 @@ export default function Home() {
               id="reinigung-4-heading"
               className="mt-2 text-2xl font-extrabold tracking-tight text-foreground sm:text-3xl"
             >
-              Software-Vorteil statt Zufall: Protokolle, die jede Tour
+              Software-Vorteil statt Zufall: Protokolle, die jeden Einsatz
               dokumentieren.
             </h2>
             <p className="mt-3 text-base leading-7 text-muted sm:text-lg">
-              Statt Excel-Chaos steuern wir Ihr Objekt über die
-              Saubermatik-Plattform: digitale Protokolle, klare Checklisten und
-              ein Team, das Ausfälle persönlich oder mit bewährter Vertretung
-              auffängt – damit Reinigung bei Ihnen nicht vom Zufall abhängt.
+              Statt Excel-Chaos arbeiten wir mit klaren Checklisten und
+              Protokollen (PDF); Meldungen laufen über unser Kundenportal (im
+              Aufbau) – damit Reinigung bei Ihnen nicht vom Zufall abhängt.
             </p>
           </div>
           <ul className="mt-8 grid gap-5 sm:grid-cols-2">
             <li className="flex flex-col rounded-[14px] border border-[#e1e4e9] bg-white p-5 sm:p-6">
               <h3 className="text-lg font-bold text-foreground sm:text-xl">
-                Digitale Protokolle
+                Protokolle (PDF)
               </h3>
               <p className="mt-3 flex-1 text-sm leading-6 text-muted sm:text-base sm:leading-7">
                 Dokumentierte Einsätze hinterlassen eine Spur: Was wurde wann
-                erledigt – nachvollziehbar für Geschäftsführung, Hausverwaltung
+                erledigt – als Protokoll (PDF), nachvollziehbar für
+                Geschäftsführung, Hausverwaltung
                 und Qualitätssicherung. Weniger Streit, weniger Rückfragen, mehr
                 Kontrolle im Alltag.
               </p>
             </li>
             <li className="flex flex-col rounded-[14px] border border-[#e1e4e9] bg-white p-5 sm:p-6">
               <h3 className="text-lg font-bold text-foreground sm:text-xl">
-                Vertretung, die Sie kennen
+                Vertretung, schriftlich geregelt
               </h3>
               <p className="mt-3 flex-1 text-sm leading-6 text-muted sm:text-base sm:leading-7">
-                Wenn jemand ausfällt, springt ein bewährtes Vertretungsteam ein
-                – oder die Geschäftsführung selbst. So bleibt Ihr Objekt im
-                Rhythmus, ohne dass Sie jedes Mal selbst koordinieren müssen.
+                Ihr fester Ansprechpartner ist der Inhaber persönlich.
+                Vertretung und Kapazität regeln wir vor Leistungsbeginn
+                schriftlich – so bleibt Ihr Objekt im Rhythmus, ohne dass Sie
+                jedes Mal selbst koordinieren müssen.
               </p>
             </li>
           </ul>
@@ -332,9 +333,9 @@ export default function Home() {
               Kurz vor Ort – für Sie in der Nachbarschaft
             </h2>
             <p className="mt-2 text-base leading-7 text-muted">
-              Von Meßstetten aus sind wir u. a. in Tübingen, Reutlingen,
-              Villingen-Schwenningen und am Bodensee (Überlingen) im Einsatz –
-              und in der gesamten Zollernalb. Ein Klick führt zur lokalen
+              Von Meßstetten aus kommen wir u. a. nach Tübingen, Reutlingen,
+              Villingen-Schwenningen und an den Bodensee (Überlingen) – und in
+              die gesamte Zollernalb. Ein Klick führt zur lokalen
               Einordnung; Ihre Anfrage landet zentral bei uns.
             </p>
           </div>

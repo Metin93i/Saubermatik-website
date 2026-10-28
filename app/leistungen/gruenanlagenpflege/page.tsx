@@ -6,12 +6,11 @@ import { LeistungHeroImage } from "@/components/LeistungHeroImage";
 import { LeistungSgeTldr } from "@/components/LeistungSgeTldr";
 import { AnfrageCta } from "@/components/AnfrageCta";
 import { SeoCrossLinks } from "@/components/SeoCrossLinks";
-import { SnippetBaitTable } from "@/components/SnippetBaitTable";
 
 export const metadata: Metadata = {
   title: "Grünanlagenpflege",
   description:
-    "Grünanlagenpflege für Wohnanlagen und Gewerbe: Frühjahr, Sommer, Herbst – Rasen, Hecken, Laub, Unkraut. Repräsentative Außenanlagen in der Zollernalb.",
+    "Grünanlagenpflege für Wohnanlagen und Gewerbe: Frühjahr, Sommer, Herbst – Rasen, Hecken, Laub, Wildkraut. Repräsentative Außenanlagen in der Zollernalb.",
   alternates: { canonical: "/leistungen/gruenanlagenpflege" },
 };
 
@@ -20,14 +19,14 @@ const seasons = [
     title: "Frühjahr – Start in die Saison",
     items: [
       "Rasenpflege nach Winterruhe: Vertikutieren, erste Schnitte, Kante zu Wegen",
-      "Beetpflege, Schnitt von Hecken und Sträuchern nach Pflanzenschutzfenstern",
-      "Entfernung von Winterlaub und Sturmholz, Kontrolle der Bewässerung",
+      "Beetpflege, Schnitt von Hecken und Sträuchern unter Beachtung der Schnittzeiten (§ 39 BNatSchG: 1.3.–30.9. nur schonende Form- und Pflegeschnitte)",
+      "Entfernung von Winterlaub, Aufnahme von Fallholz, Kontrolle der Bewässerung",
     ],
   },
   {
     title: "Sommer – repräsentativer Standard",
     items: [
-      "Intervall-Rasenmähen, Kantenpflege, Unkrautmanagement in Beeten und Pflasterfugen",
+      "Intervall-Rasenmähen, Kantenpflege, Wildkrautentfernung in Beeten und Pflasterfugen",
       "Heckenschnitt und Formschnitt für Sichtachsen und Eingangsbereiche",
       "Pflege von Zufahrten und Müllstellplätzen – optische Verbindung zum Gebäude",
     ],
@@ -36,16 +35,16 @@ const seasons = [
     title: "Herbst – Laub & Vorbereitung Winter",
     items: [
       "Laubentsorgung auf Gehwegen, Höfen und Grünflächen – Verkehrssicherheit",
-      "Letzte Rasenschnitte, Düngung nach Plan, Schnitt vorbereitender Sträucher",
+      "Letzte Rasenschnitte, Düngung nach Plan, Rückschnitt von Sträuchern ab Oktober",
       "Abstimmung mit Winterdienst: keine Konflikte zwischen Laubdienst und Räumfenstern",
     ],
   },
   {
-    title: "Unkraut & Sonderflächen",
+    title: "Wildkraut & Sonderflächen",
     items: [
-      "Unkrautvernichtung materialschonend in Pflaster- und Randbereichen",
-      "Pflege von Innenhöfen, Spiel- und Ruhebereichen in Wohnanlagen",
-      "Dokumentierte Einsätze für umlagefähige Betriebskosten (§ 2 BetrKV)",
+      "Wildkrautentfernung mechanisch oder thermisch – ohne Herbizide (auf befestigten Flächen ohnehin verboten, § 12 Abs. 2 PflSchG)",
+      "Pflege von Innenhöfen, Spiel- und Ruhebereichen in Wohnanlagen (Grünpflege, keine Spielplatzinspektion)",
+      "Dokumentierte Einsätze, objektbezogen ausgewiesen – ob umlagefähig, richtet sich nach Mietvertrag und § 2 BetrKV",
     ],
   },
 ] as const;
@@ -109,18 +108,18 @@ export default function GruenanlagenpflegePage() {
             <p>
               Grünanlagen sind für Hausverwaltungen mehr als „Rasen mähen“. Sie
               sind Werterhalt der Liegenschaft, Mieterzufriedenheit und
-              Verkehrssicherheit zugleich: ungemähte Wege, Laub auf Gehsteinen
+              Verkehrssicherheit zugleich: ungemähte Wege, Laub auf Gehwegen
               und zugewucherte Eingänge erzeugen Beschwerden und
               Haftungsrisiken. Saubermatik plant Grünpflege als Jahresprogramm –
               nicht als Einzelauftrag nach Beschwerde.
             </p>
             <p>
-              Wir betreuen Wohnkomplexe, Gewerbehöfe und gemischte Bestände in
-              der Zollernalb und angrenzenden Regionen. Jedes Objekt erhält
+              Für Wohnanlagen, Gewerbehöfe und gemischte Bestände in der
+              Zollernalb und angrenzenden Regionen gilt: Jedes Objekt erhält
               einen saisonalen Pflegeplan mit definierten Intervallen,
-              Leistungsumfang und Nachweispflicht. Die Saubermatik-App
-              dokumentiert Einsätze – für Abrechnung, Eigentümerversammlungen
-              und interne Qualitätskontrolle.
+              Leistungsumfang und Nachweispflicht. Einsätze dokumentieren wir
+              als Protokoll (PDF) – für Abrechnung, Eigentümerversammlungen und
+              interne Qualitätskontrolle.
             </p>
             <p>
               Die Koordination mit Hausmeisterservice und Winterdienst ist
@@ -161,30 +160,23 @@ export default function GruenanlagenpflegePage() {
           <div className="mt-16 space-y-5 text-base leading-[1.75] text-foreground/90">
             <p>
               Repräsentative Außenanlagen signalisieren Mietern und Eigentümern:
-              „Hier wird verwaltet, nicht nur verwaltet auf dem Papier.“ In
-              Vermarktungsphasen und bei Neuvermietungen ist der gepflegte
-              Innenhof oft der entscheidende Faktor – noch vor der
-              Wohnungsgröße.
+              „Hier wird das Objekt gepflegt – nicht nur auf dem Papier.“ In
+              Vermarktungsphasen und bei Neuvermietungen prägt der gepflegte
+              Innenhof den ersten Eindruck.
             </p>
             <p>
               Für Einkauf und Geschäftsführung von Verwaltungen liefern wir
-              transparente Kostenpositionen und digitale Protokolle –
-              umlagefähig nach §&nbsp;2 BetrKV, sofern objektbezogen
-              ausgewiesen. Kombinieren Sie Grünpflege mit unserem{" "}
+              transparente, objektbezogene Kostenpositionen und Protokolle (PDF)
+              – ob umlagefähig, richtet sich nach Mietvertrag und §&nbsp;2
+              BetrKV. Kombinieren Sie Grünpflege mit unserem{" "}
               <Link
                 href="/zielgruppen/hausverwaltungen"
                 className="font-semibold text-secondary hover:underline"
               >
-                Hausverwaltungs-Silo
+                Angebot für Hausverwaltungen
               </Link>{" "}
               für ein integriertes Liegenschaftsbild.
             </p>
-          </div>
-        </section>
-
-        <section className="border-t border-slate-200 bg-white py-12">
-          <div className="mx-auto w-full max-w-3xl px-4 sm:px-6 lg:px-8">
-            <SnippetBaitTable slug="gruenanlagenpflege" />
           </div>
         </section>
 

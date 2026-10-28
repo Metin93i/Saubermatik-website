@@ -5,7 +5,7 @@ export type FaqPair = { question: string; answer: string };
 /** PAA-orientierte FAQs pro Leistungssslug (FAQPage JSON-LD). */
 export function getLeistungFaqItems(slug: LeistungSlug): readonly FaqPair[] {
   const commonClosing =
-    "Wir koordinieren Einsätze digital und halten feste Ansprechpartner – von Meßstetten aus mit kurzer Anbindung an Ihre Region.";
+    "Ihr fester Ansprechpartner ist der Inhaber persönlich – von Meßstetten aus mit kurzer Anbindung an Ihre Region.";
 
   const bySlug: Partial<Record<LeistungSlug, readonly FaqPair[]>> = {
     "fenster-glasreinigung": [
@@ -66,7 +66,7 @@ export function getLeistungFaqItems(slug: LeistungSlug): readonly FaqPair[] {
       {
         question: "Wie gehen Sie mit sensiblen Bereichen (z. B. Praxis, Kanzlei) um?",
         answer:
-          "Wir arbeiten mit klaren Zonenregeln, Desinfektionsplänen wo nötig und geschulten Teams. Zugriffe und Schlüsselprozesse sind dokumentiert; Ausfälle werden über die Saubermatik-Plattform abgefangen.",
+          "Wir arbeiten mit klaren Zonenregeln und Desinfektionsplänen, wo nötig. Zugriffe und Schlüsselprozesse sind dokumentiert; Vertretung und Kapazität regeln wir vor Leistungsbeginn schriftlich.",
       },
     ],
     "treppenhausreinigung": [
@@ -78,7 +78,7 @@ export function getLeistungFaqItems(slug: LeistungSlug): readonly FaqPair[] {
       {
         question: "Wer haftet bei Beschädigungen in der Gemeinschaftsfläche?",
         answer:
-          "Wir arbeiten versichert und materialgerecht. Reklamationen laufen über feste Ansprechpartner und – wo sinnvoll – Fotodokumentation vor/nach der Reinigung.",
+          "Wir arbeiten versichert und materialgerecht. Reklamationen laufen über Ihren festen Ansprechpartner (Inhaber) und werden protokolliert.",
       },
     ],
     hausmeisterservice: [
@@ -90,21 +90,21 @@ export function getLeistungFaqItems(slug: LeistungSlug): readonly FaqPair[] {
       {
         question: "Wie schnell reagieren Sie bei Störungen (z. B. defekte Tür)?",
         answer:
-          "Über vereinbarte Meldewege und Eskalationsketten priorisieren wir Einsätze. Digitale Tickets reduzieren Informationsverlust zwischen Mieter, Verwaltung und Dienstleister.",
+          "Reaktionszeiten, Meldewege und Eskalationsketten vereinbaren wir je Objekt schriftlich und priorisieren Einsätze danach. Meldungen gehen per Melde-QR mit Status im Kundenportal (im Aufbau) ein – statt über Zuruf zwischen Mieter, Verwaltung und Dienstleister.",
       },
     ],
     gruenanlagenpflege: [
       {
         question: "Ist Grünanlagenpflege mit Winterdienst kombinierbar?",
         answer:
-          "Ja – viele Objekte bündeln Außenanlagen und Streupflicht. Wir koordinieren Jahreszeiten, Maschineneinsatz und Personal so, dass rechtliche und versicherungstechnische Anforderungen erfüllt bleiben.",
+          "Ja – Außenanlagen und Winterdienst lassen sich in einer Vereinbarung bündeln. Wir stimmen Jahreszeiten und Einsatzfenster so ab, dass sich Laubdienst und Räumeinsätze nicht überschneiden; die Übernahme der Räum- und Streupflicht regeln wir schriftlich.",
       },
     ],
     winterdienst: [
       {
         question: "Welche Dokumentation braucht der Winterdienst für Haftungsfragen?",
         answer:
-          "Einsatzzeiten, Streumittel, Wegezustände und Wetterereignisse sollten nachvollziehbar sein. Wir liefern Touren- und Einsatznachweise im vereinbarten Format – digital oder exportierbar.",
+          "Einsatzzeiten, Streumittel, Wegezustände und Wetterereignisse sollten nachvollziehbar sein. Wir liefern Einsatznachweise als Protokoll (PDF) im vereinbarten Umfang. Ihre Kontrollpflicht als Auftraggeber bleibt bestehen.",
       },
     ],
     grundreinigung: [
@@ -152,7 +152,7 @@ export function getLeistungFaqItems(slug: LeistungSlug): readonly FaqPair[] {
   return [
     {
       question: `Was beinhaltet ${slug.replace(/-/g, " ")} konkret bei Saubermatik?`,
-      answer: `Umfang und Rhythmus stimmen wir individuell ab – inklusive digitaler Objektdokumentation. ${commonClosing}`,
+      answer: `Umfang und Rhythmus stimmen wir individuell ab – inklusive Objektdokumentation als Protokoll (PDF). ${commonClosing}`,
     },
   ];
 }

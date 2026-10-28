@@ -15,9 +15,9 @@ export const MATRIX_CITY_EXTENDED: Record<
 > = {
   messstetten: {
     economicContext: [
-      "Meßstetten ist Firmensitz von Saubermatik und Drehscheibe für den gesamten Zollernalbkreis. Als Verwaltungs- und Dienstleistungsstandort mit Nähe zu Alb-Werkstätten und regionalen Mittelständlern verbindet die Stadt ländliche Strukturen mit modernen Gewerbe- und Verwaltungsflächen. Für Facility Manager bedeutet das: kürzeste Reaktionswege, direkter Zugang zur Geschäftsführung und Referenzobjekte, an denen Prozesse erprobt werden, bevor sie auf andere Standorte skaliert werden.",
-      "Typische Objekte in Meßstetten umfassen Verwaltungsgebäude, Arztpraxen, WEG-Portfolios und kleinere Produktionsbetriebe entlang der B463. Die Mischung aus Wohn- und Gewerbestruktur erfordert flexible Reinigungs-SLAs: leise Geräte in Mehrfamilienhäusern, HACCP in Teeküchen, RKI-orientierte Prozesse in Praxen — alles aus einem digitalen Leistungsverzeichnis.",
-      "Als HQ-Standort profitieren Meßstettener Auftraggeber von maximaler Dispositionspriorität. Touren starten hier, Ersatzkräfte werden zuerst lokal eingesetzt, Eskalationen laufen über den Key Account ohne Umwege über Callcenter. Das ist kein Marketing-Versprechen, sondern operative Realität: Meßstetten ist unser Referenzmarkt für Ausfallsicherheit und dokumentierte Qualität.",
+      "Meßstetten ist Firmensitz von Saubermatik und Drehscheibe für den gesamten Zollernalbkreis. Als Verwaltungs- und Dienstleistungsstandort mit Nähe zu Alb-Werkstätten und regionalen Mittelständlern verbindet die Stadt ländliche Strukturen mit modernen Gewerbe- und Verwaltungsflächen. Für Facility Manager bedeutet das: kürzeste Reaktionswege und direkter Zugang zum Inhaber als festem Ansprechpartner.",
+      "Typische Objekte in Meßstetten umfassen Verwaltungsgebäude, Arztpraxen, WEG-Portfolios und kleinere Produktionsbetriebe entlang der B463. Die Mischung aus Wohn- und Gewerbestruktur erfordert flexible SLAs: leise Geräte in Mehrfamilienhäusern, HACCP in Teeküchen, RKI-orientierte Prozesse in Praxen — alles aus einem digitalen Leistungsverzeichnis.",
+      "Als Firmensitz hat Meßstetten die kürzesten Wege: Touren starten hier, Eskalationen laufen direkt über den Inhaber als festen Ansprechpartner — ohne Umwege über Callcenter. Vertretung und Kapazität regeln wir vor Leistungsbeginn schriftlich.",
     ],
     objectTypes: [
       "Verwaltungs- und Bürogebäude",
@@ -26,13 +26,13 @@ export const MATRIX_CITY_EXTENDED: Record<
       "Gewerbehallen und Werkstätten",
     ],
     regionalNote:
-      "Kern des Zollernalbkreises — kürzeste Wege, HQ-Dispositionspriorität.",
+      "Kern des Zollernalbkreises — kürzeste Wege vom Firmensitz.",
   },
   balingen: {
     economicContext: [
-      "Balingen ist wirtschaftliches Zentrum des Zollernalbkreises: Mittelstand, Einzelhandel und Verwaltung entlang der B27 prägen die Flächenstruktur. Gewerbegebiete wie Gehrn und Auf dem Kies bündeln Produktion, Logistik und Büroflächen — ideal für skalierbare Unterhaltsreinigung mit klaren Touren und messbaren SLAs nach DIN EN 13549.",
+      "Balingen ist wirtschaftliches Zentrum des Zollernalbkreises: Mittelstand, Einzelhandel und Verwaltung entlang der B27 prägen die Flächenstruktur. Gewerbegebiete wie Gehrn und Auf dem Kies bündeln Produktion, Logistik und Büroflächen — ideal für Unterhaltsreinigung mit klaren Touren und messbaren SLAs.",
       "Hausverwaltungen in Balingen verwalten oft gemischte Bestände: historische Innenstadtlagen neben modernen Neubauten in den Gewerbezonen. Das erfordert materialspezifische Bodenpflege, dokumentierte Verkehrssicherung in Treppenhäusern und transparente §-2-BetrKV-Abrechnung — nicht vier verschiedene Dienstleister für Glas, Treppe, Winter und Unterhalt.",
-      "Einkauf und Geschäftsführung in Balingen erwarten B2B-Niveau: verbindliche Angebote, digitale Protokolle, Key-Account-Betreuung. Saubermatik liefert genau das — regional aus Meßstetten, digital auf Enterprise-Standard, ohne versteckte Zusatzpositionen.",
+      "Einkauf und Geschäftsführung in Balingen erwarten B2B-Niveau: verbindliche Angebote, digitale Protokolle, einen persönlichen Ansprechpartner. Saubermatik liefert genau das — regional aus Meßstetten, inhabergeführt, ohne versteckte Zusatzpositionen.",
     ],
     objectTypes: [
       "Büro- und Verwaltungskomplexe B27",
@@ -47,7 +47,7 @@ export const MATRIX_CITY_EXTENDED: Record<
     economicContext: [
       "Tuttlingen ist Weltmarktführer in der Medizintechnik — Medical Mountains, Gänsäcker, Industriepark. Unternehmen wie Aesculap und hunderte Zulieferer setzen höchste Hygienestandards: Reinraum-nähe, dokumentierte Desinfektion, VAH- und RKI-konforme Prozesse in Produktions- und Sozialräumen. Generische Reinigung aus der Großstadt scheitert hier an Audit-Anforderungen.",
       "Facility Manager in Tuttlingen koordinieren Büroflächen, Produktionsbereiche, Labore und repräsentative Empfangszonen gleichzeitig. Ein Partner muss HACCP in Kantinen, 4-Farb-System in Sanitärbereichen und streifenfreie Glasflächen an Fassaden beherrschen — mit exportierbaren Protokollen für ISO, Konzern-Einkauf und Behörden.",
-      "Die Anbindung über B14 und B311 macht Tuttlingen dispositionstechnisch planbar: feste Touren, Puffer für Ersatzkräfte, wettergeführter Winterdienst an Zufahrten. Saubermatik verbindet Medizintechnik-Kompetenz mit regionaler Präsenz — kein anonymes Subunternehmer-Netzwerk.",
+      "Die Anbindung über B14 und B311 macht Tuttlingen dispositionstechnisch planbar: feste Touren, Winterdienst an Zufahrten nach vereinbarten Kriterien; Vertretung regeln wir vor Leistungsbeginn schriftlich. Saubermatik verbindet Erfahrung mit hygienesensiblen Flächen mit regionaler Präsenz — kein anonymes Subunternehmer-Netzwerk.",
     ],
     objectTypes: [
       "Medizintechnik-Produktion und Zulieferer",
@@ -61,8 +61,8 @@ export const MATRIX_CITY_EXTENDED: Record<
   albstadt: {
     economicContext: [
       "Albstadt vereint Maschinenbau, Textilindustrie und Produktionshallen in Ebingen und Tailfingen. Hallenböden, Sozialräume, Umkleiden und Verwaltungsflächen haben unterschiedliche Reinigungsprofile — alkalische Grundreiniger nur wo vorgesehen, neutrale Unterhaltsreiniger im Tagesbetrieb, TRBS-orientierte Sicherheit an Glas und Fassaden.",
-      "Produktionsbetriebe in Albstadt brauchen Reinigung, die den Schichtbetrieb respektiert: feste Zeitfenster, leise Geräte, dokumentierte Freigabe von Produktionsflächen. Facility und Werksleitung erwarten KPIs — Reklamationsquote, Ausfallquote, Reaktionszeit — nicht monatliche Diskussionen ohne Daten.",
-      "Die B463-Anbindung und die Nähe zu Meßstetten ermöglichen kurze Reaktionszeiten. Saubermatik plant Albstadt-Objekte entlang realer Touren, nicht theoretischer Landkarten — mit Ausfallsicherheit über die Plattform.",
+      "Produktionsbetriebe in Albstadt brauchen Reinigung, die den Schichtbetrieb respektiert: feste Zeitfenster, leise Geräte, dokumentierte Freigabe von Produktionsflächen. Facility und Werksleitung erwarten nachvollziehbare Nachweise — Protokolle und gemeinsame Qualitätsbegehungen — nicht monatliche Diskussionen ohne Daten.",
+      "Die B463-Anbindung und die Nähe zu Meßstetten ermöglichen kurze Reaktionszeiten. Saubermatik plant Albstadt-Objekte entlang realer Touren, nicht theoretischer Landkarten; Vertretung regeln wir vor Leistungsbeginn schriftlich.",
     ],
     objectTypes: [
       "Produktionshallen Ebingen / Tailfingen",
@@ -75,9 +75,9 @@ export const MATRIX_CITY_EXTENDED: Record<
   },
   rottweil: {
     economicContext: [
-      "Rottweil verbindet historische Bausubstanz mit modernen Gewerbeparks wie Berner Feld und IN⊙VATOR. Werterhalt sensibler Substanz — Naturstein, historische Treppen, denkmalgeschützte Fassaden — erfordert materialschonende Verfahren und erfahrene Teams, nicht aggressive Hochdruckreiniger und Billig-Chemie.",
+      "Rottweil verbindet historische Bausubstanz mit modernen Gewerbeparks wie Berner Feld und IN⊙VATOR. Werterhalt sensibler Substanz — Naturstein, historische Treppen, denkmalgeschützte Fassaden — erfordert materialschonende Verfahren und Sorgfalt, nicht aggressive Hochdruckreiniger und Billig-Chemie.",
       "Die A81- und B27-Anbindung macht Rottweil zum Knotenpunkt zwischen Schwarzwald und Neckar. Verwalter und Facility Manager betreuen oft Multi-Objekt-Portfolios: Büro in Neubauten, WEG in Altbestand, Gewerbe in Industriezonen — ein SLA, ein Ansprechpartner, digitale Protokolle für Eigentümerversammlungen.",
-      "Verkehrssicherungspflicht ist in Rottweil kein Nebenthema: Treppenhaus, Gehweg, Zufahrt — dokumentiert, wettergeführt, §-2-BetrKV-transparent. Saubermatik bündelt Winterdienst, Treppenhaus und Unterhalt in einer Verkehrssicherungslogik.",
+      "Verkehrssicherungspflicht ist in Rottweil kein Nebenthema: Treppenhaus, Gehweg, Zufahrt — dokumentiert, nach vereinbarten Kriterien, objektbezogen abgerechnet. Saubermatik bündelt Winterdienst, Treppenhaus und Unterhalt in einer Verkehrssicherungslogik.",
     ],
     objectTypes: [
       "Historische WEG und MFH Altstadt",
@@ -90,9 +90,9 @@ export const MATRIX_CITY_EXTENDED: Record<
   },
   hechingen: {
     economicContext: [
-      "Hechingen ist High-Tech- und Medizintechnik-Standort mit Zonen Lotzenäcker und Nasswasen entlang der B27. Praxisnahe Hygiene, Labor- und Büroflächen mit SLA-Anforderungen prägen den Markt — Facility Manager brauchen Partner, die RKI, VAH und DIN EN 13549 nicht als Buzzwords, sondern als operative Checklisten verstehen.",
+      "Hechingen ist High-Tech- und Medizintechnik-Standort mit Zonen Lotzenäcker und Nasswasen entlang der B27. Praxisnahe Hygiene, Labor- und Büroflächen mit SLA-Anforderungen prägen den Markt — Facility Manager brauchen Partner, die RKI- und VAH-Vorgaben nicht als Buzzwords, sondern als operative Checklisten verstehen.",
       "Zulieferer und Mittelständler in Hechingen erwarten streifenfreie Glasflächen, desinfizierte Sozialräume und dokumentierte Grundreinigung nach Mieterwechsel. Die Nähe zu Tuttlingen und der Medical-Mountains-Cluster schärft Qualitätsanforderungen — Audits sind Alltag, nicht Ausnahme.",
-      "Saubermatik bedient Hechingen von Meßstetten aus mit kurzen Anfahrten und festen Teams. Digitale Leistungsverzeichnisse, dokumentierte Qualität und Key-Account-Betreuung machen den Unterschied gegenüber Billig-Anbietern ohne Nachweiskette.",
+      "Saubermatik bedient Hechingen von Meßstetten aus mit kurzen Anfahrten und festem Ansprechpartner — dem Inhaber persönlich. Digitale Leistungsverzeichnisse, dokumentierte Qualität und persönliche Betreuung machen den Unterschied gegenüber Billig-Anbietern ohne Nachweiskette.",
     ],
     objectTypes: [
       "Medizintechnik und Zulieferer Lotzenäcker",
@@ -106,8 +106,8 @@ export const MATRIX_CITY_EXTENDED: Record<
   sigmaringen: {
     economicContext: [
       "Sigmaringen ist Verwaltungs- und Tourismusstandort am oberen Donautal: Landratsamt, Kliniken, Hotels, gastronomische Betriebe und historische Liegenschaften prägen den Objektmarkt. Öffentliche Auftraggeber und private Verwalter erwarten rechtskonforme Vergabe, dokumentierte Qualität und Verkehrssicherungsnachweise — besonders in winterlichen Monaten an Zufahrten und Treppen.",
-      "Die Mischung aus repräsentativen Gebäuden, Pflegeeinrichtungen und WEG-Bestand erfordert flexible Reinigungs-SLAs: RKI in Gesundheitsnähe, HACCP in Küchen, leise Geräte in Wohnlagen. Saubermatik strukturiert das in einem digitalen LV statt in monatlich neu verhandelten Zusatzrechnungen.",
-      "Von Meßstetten aus ist Sigmaringen gut erreichbar — Touren werden entlang der B32/B313-Logik geplant, mit Puffer für Ersatzkräfte und wettergeführter Winterdienst-Priorisierung an sensiblen Zugängen.",
+      "Die Mischung aus repräsentativen Gebäuden, Pflegeeinrichtungen und WEG-Bestand erfordert flexible SLAs: RKI in Gesundheitsnähe, HACCP in Küchen, leise Geräte in Wohnlagen. Saubermatik strukturiert das in einem digitalen LV statt in monatlich neu verhandelten Zusatzrechnungen.",
+      "Von Meßstetten aus ist Sigmaringen gut erreichbar — Touren werden entlang der B32/B313-Logik geplant, mit Winterdienst-Priorisierung an sensiblen Zugängen; Vertretung regeln wir vor Leistungsbeginn schriftlich.",
     ],
     objectTypes: [
       "Verwaltung und öffentliche Gebäude",
@@ -121,8 +121,8 @@ export const MATRIX_CITY_EXTENDED: Record<
   moessingen: {
     economicContext: [
       "Mössingen ist Pendler- und Gewerbestadt zwischen Reutlingen und Tübingen mit wachsendem Büro- und Dienstleistungssektor. Liegenschaften reichen von MFH-Portfolios für Verwalter bis zu Gewerbehallen und Praxen — alle mit Anspruch auf Verlässlichkeit statt wechselnder Subunternehmer.",
-      "Facility Manager in Mössingen schätzen kurze Wege aus der Zollernalb und digitale Protokolle für Nebenkosten und Eigentümerversammlungen. Unterhaltsreinigung, Treppenhaus, Glas und Winterdienst aus einer Hand reduzieren Koordinationsaufwand und Haftungsrisiken an Schnittstellen.",
-      "Die Anbindung an Reutlingen und Tübingen macht Mössingen zu einem strategischen Portfolio-Standort: Multi-Objekt-Betreuung mit einem Key Account und skalierbarer Saubermatik-Plattform.",
+      "Facility Manager in Mössingen schätzen kurze Wege aus der Zollernalb und Protokolle (PDF) für Nebenkosten und Eigentümerversammlungen. Unterhaltsreinigung, Treppenhaus, Glas und Winterdienst aus einer Hand reduzieren Koordinationsaufwand und vermeiden Lücken an Schnittstellen.",
+      "Die Anbindung an Reutlingen und Tübingen macht Mössingen zu einem strategischen Portfolio-Standort: Multi-Objekt-Betreuung mit einem persönlichen Ansprechpartner — dem Inhaber.",
     ],
     objectTypes: [
       "MFH- und WEG-Portfolios",
@@ -136,8 +136,8 @@ export const MATRIX_CITY_EXTENDED: Record<
   tuebingen: {
     economicContext: [
       "Tübingen ist Universitäts- und Forschungsstandort mit hoher Dichte an Büros, Instituten, Start-ups und Arztpraxen. Objekte wechseln häufig Mieter — Grundreinigung nach Übergabe, Unterhalt im laufenden Betrieb und Glas an repräsentativen Fassaden sind Standardanforderungen, nicht Sonderwünsche.",
-      "Verwalter und Facility in Tübingen erwarten B2B-Prozesse: schriftliches LV, DIN EN 13549-orientierte Abnahme, exportierbare Protokolle für Eigentümer und Behörden. Die Nähe zu Meßstetten erlaubt regionale Betreuung ohne Großstadt-Overhead.",
-      "Forschungseinrichtungen und Praxen verlangen hygiene-sensitive Prozesse — 4-Farb-System, VAH wo nötig, dokumentierte Desinfektion. Saubermatik verbindet Tübingen-Kompetenz mit Zollernalb-Nähe und digitaler Objektsteuerung.",
+      "Verwalter und Facility in Tübingen erwarten B2B-Prozesse: schriftliches LV, schriftliche Abnahmekriterien, exportierbare Protokolle für Eigentümer und Behörden. Die Nähe zu Meßstetten erlaubt regionale Betreuung ohne Großstadt-Overhead.",
+      "Forschungseinrichtungen und Praxen verlangen hygiene-sensitive Prozesse — 4-Farb-System, VAH wo nötig, dokumentierte Desinfektion. Saubermatik verbindet Tübingen-Kompetenz mit Zollernalb-Nähe und nachvollziehbarer Dokumentation.",
     ],
     objectTypes: [
       "Universität und Forschungsinstitute",
@@ -167,7 +167,7 @@ export const MATRIX_CITY_EXTENDED: Record<
     economicContext: [
       "Villingen-Schwenningen ist Doppelstadt mit Uhrenindustrie, Technologie, großer Verwaltung und Einzelhandel. Facility Manager betreuen oft größere Flächen mit mehreren Zugängen — digitale Tourenplanung und dokumentierte Qualität sind hier Pflicht, nicht Kür.",
       "Die Region verlangt winterfesten Betrieb: dokumentierte Einsätze beim Winterdienst, priorisierte Räumung an Klinik- und Verwaltungszufahrten, Kombination mit Treppenhaus und Gehwegsicherung aus einem Portfolio.",
-      "Saubermatik bedient VS von Meßstetten aus mit überregionaler Prozessqualität: ein Key Account, messbare SLAs, skalierbare Plattform für Multi-Objekt-Bestände — ohne Qualitätsverlust bei wachsender Objektzahl.",
+      "Saubermatik bedient VS von Meßstetten aus mit überregionaler Prozessqualität: ein fester Ansprechpartner (Inhaber), messbare SLAs, schriftliche Protokolle für Multi-Objekt-Bestände — Umfang und Kapazität klären wir vor dem Angebot.",
     ],
     objectTypes: [
       "Verwaltung und Behörden",
@@ -181,8 +181,8 @@ export const MATRIX_CITY_EXTENDED: Record<
   spaichingen: {
     economicContext: [
       "Spaichingen verbindet Textiltradition mit modernem Mittelstand und Gewerbe zwischen Tuttlingen und der Baar. Produktions- und Büroflächen, WEG-Bestand und Praxen erwarten zuverlässige Intervalle und materialschonende Pflege — besonders bei historischen Bodenbelägen in Innenstadtlagen.",
-      "Verwalter schätzen die Nähe zu Meßstetten und Tuttlingen: kurze Wege, feste Teams, digitale NK-Abrechnungsunterlagen. Winterdienst und Treppenhaus aus einer Hand reduzieren Haftungsrisiken an Übergängen zwischen Gewerbe- und Wohnzonen.",
-      "Saubermatik strukturiert Spaichingen-Objekte in einem LV mit klaren Abnahmekriterien nach DIN EN 13549 — auditierbar für Einkauf und Eigentümerversammlungen.",
+      "Verwalter schätzen die Nähe zu Meßstetten und Tuttlingen: kurze Wege, ein fester Ansprechpartner, objektbezogene Unterlagen für die Nebenkostenabrechnung. Winterdienst und Treppenhaus aus einer Hand vermeiden Lücken an Übergängen zwischen Gewerbe- und Wohnzonen.",
+      "Saubermatik strukturiert Spaichingen-Objekte in einem LV mit klaren Abnahmekriterien — auditierbar für Einkauf und Eigentümerversammlungen.",
     ],
     objectTypes: [
       "Textil und Produktion",
@@ -196,7 +196,7 @@ export const MATRIX_CITY_EXTENDED: Record<
   burladingen: {
     economicContext: [
       "Burladingen liegt in unmittelbarer Nähe zu Alb-Werkstätten und dem Zollernalbkreis-Kern. Handwerk, Gewerbe und WEG-dominierte Wohnstruktur prägen den Markt — Verwalter erwarten faire, dokumentierte Leistung ohne versteckte Nachforderungen.",
-      "Typische Anforderungen: Treppenhaus mit Verkehrssicherungsnachweis, Unterhalt in Praxen und Büros, saisonale Grünpflege an Zufahrten, Winterdienst an steilen Lagen. Saubermatik bündelt das in einem SLA mit digitaler Objektsteuerung.",
+      "Typische Anforderungen: Treppenhaus mit Verkehrssicherungsnachweis, Unterhalt in Praxen und Büros, saisonale Grünpflege an Zufahrten, Winterdienst an steilen Lagen. Saubermatik bündelt das in einem SLA mit Protokollen (PDF).",
       "Als Nachbarstadt zu Meßstetten profitiert Burladingen von maximal kurzen Reaktionszeiten und HQ-naher Disposition — ideal für Verwalter mit mehreren kleineren Objekten im Portfolio.",
     ],
     objectTypes: [
@@ -211,8 +211,8 @@ export const MATRIX_CITY_EXTENDED: Record<
   rottenburg: {
     economicContext: [
       "Rottenburg am Neckar ist Universitätsstadt mit Verwaltung, Forschung, WEG-Bestand und Gewerbe am Neckar. Die Mischung aus historischen Gebäuden und Neubauten erfordert werterhaltende Reinigung — Naturstein, historische Treppen, moderne Glasfassaden in einem Portfolio.",
-      "Facility und Verwalter in Rottenburg koordinieren oft Objekte über mehrere Standorte — ein digitaler Partner mit Key Account und exportierbaren Protokollen spart Einkaufs- und Abrechnungsaufwand. Grundreinigung nach Mieterwechsel und laufender Unterhalt aus einer Hand vermeiden Schnittstellenprobleme.",
-      "Von Meßstetten aus planen wir Rottenburg-Touren effizient entlang der Neckar-Achse — mit Ausfallsicherheit, Ersatzlogistik und wettergeführter Verkehrssicherung.",
+      "Facility und Verwalter in Rottenburg koordinieren oft Objekte über mehrere Standorte — ein digitaler Partner mit persönlichem Ansprechpartner und exportierbaren Protokollen spart Einkaufs- und Abrechnungsaufwand. Grundreinigung nach Mieterwechsel und laufender Unterhalt aus einer Hand vermeiden Schnittstellenprobleme.",
+      "Von Meßstetten aus planen wir Rottenburg-Touren effizient entlang der Neckar-Achse — mit Winterdienst nach vereinbarten Kriterien; Vertretung regeln wir vor Leistungsbeginn schriftlich.",
     ],
     objectTypes: [
       "Universität und Verwaltung",
@@ -225,9 +225,9 @@ export const MATRIX_CITY_EXTENDED: Record<
   },
   reutlingen: {
     economicContext: [
-      "Reutlingen ist einer der größten Standorte in unserem Einzugsgebiet: Textil, Technologie, Einzelhandel und große Verwaltungsflächen. Einkauf und Facility erwarten skalierbare SLAs, KPI-Reports und digitale Protokolle — Saubermatik liefert Plattform-Denken statt Einzelkämpfer-Logik.",
-      "Produktions- und Büroflächen, Einkaufszentren und WEG-Portfolios erfordern unterschiedliche Intervalle und Geräte. Das 4-Farb-System, materialspezifische Bodenpflege und TRBS-konforme Glasreinigung sind Standard in unseren Reutlingen-Objekten.",
-      "Die Nähe zu Meßstetten und Mössingen ermöglicht effiziente Tourenplanung. Multi-Standort-Verträge mit einem Key Account sind für Reutlingen-Portfolios realistisch — nicht theoretisch.",
+      "Reutlingen ist einer der größten Standorte in unserem Einzugsgebiet: Textil, Technologie, Einzelhandel und große Verwaltungsflächen. Einkauf und Facility erwarten klare SLAs und digitale Protokolle — Saubermatik liefert beides schriftlich.",
+      "Produktions- und Büroflächen, Einkaufszentren und WEG-Portfolios erfordern unterschiedliche Intervalle und Geräte. Das 4-Farb-System, materialspezifische Bodenpflege und TRBS-konforme Glasreinigung sind Standard in unseren Leistungsverzeichnissen.",
+      "Die Nähe zu Meßstetten und Mössingen ermöglicht effiziente Tourenplanung. Multi-Standort-Verträge mit einem festen Ansprechpartner sind möglich — Umfang und Kapazität klären wir vor dem Angebot.",
     ],
     objectTypes: [
       "Technologie und Produktion",
@@ -236,13 +236,13 @@ export const MATRIX_CITY_EXTENDED: Record<
       "Praxen und Gesundheitswesen",
     ],
     regionalNote:
-      "Großstadtregion — skalierbare SLAs, Textil/Technologie, Multi-Objekt-Einkauf.",
+      "Großstadtregion — klare SLAs, Textil/Technologie, Multi-Objekt-Einkauf.",
   },
   ueberlingen: {
     economicContext: [
-      "Überlingen am Bodensee verbindet Tourismus, Hotellerie, Kliniken und gehobenen Wohnbestand. Saisonale Schwankungen — Hauptsaison Hotel, Winter Nebenkosten — erfordern flexible, aber verbindliche Reinigungs-SLAs mit dokumentierter Qualität für Gäste, Behörden und Eigentümer.",
+      "Überlingen am Bodensee verbindet Tourismus, Hotellerie, Kliniken und gehobenen Wohnbestand. Saisonale Schwankungen — Hauptsaison Hotel, Winter Nebenkosten — erfordern flexible, aber verbindliche SLAs mit dokumentierter Qualität für Gäste, Behörden und Eigentümer.",
       "Hotellerie und Gastronomie unterliegen praktischen HACCP-Anforderungen; Kliniknähe RKI-orientierten Prozessen. Fassaden und Glas prägen die Außenwirkung am See — streifenfreie Ergebnisse mit Osmose und materialschonender Fassadenpflege sind werterhaltend.",
-      "Überlingen liegt am Rand unseres Kerngebiets — wir planen Umfang und Rhythmus transparent im LV, mit realistischen Anfahrtszeiten und Ersatzlogistik über die Saubermatik-Plattform.",
+      "Überlingen liegt am Rand unseres Kerngebiets — wir planen Umfang und Rhythmus transparent im LV, mit realistischen Anfahrtszeiten; Vertretung regeln wir vor Leistungsbeginn schriftlich.",
     ],
     objectTypes: [
       "Hotellerie und Gastronomie",
@@ -268,9 +268,9 @@ export function buildProcurementParagraphs(
 ): readonly string[] {
   const cityLabel = STANDORT_LABELS[city];
   const base = [
-    `Beschaffung und Vergabe für ${serviceLabel} in ${cityLabel} sollten auf messbaren Kriterien basieren — nicht auf dem niedrigsten Stundenpreis. Saubermatik liefert schriftliche Leistungsverzeichnisse nach DIN EN 13549 mit definierten Intervallen, Abnahmekriterien und Eskalationswegen. Das reduziert Nachverhandlungen, Reklamationen und das Risiko von Doorway-Anbietern ohne regionale Substanz.`,
-    `Facility Manager und Hausverwaltungen profitieren von einem digitalen Angebot: Flächen, Sonderzonen, Verkehrssicherung, Winterdienst-Optionen und Glas-Turnus in einer Quelle. Vertragsverlängerung erfolgt datenbasiert — Ausfallquote, Reaktionszeit, Reklamationsquote aus der Saubermatik-Plattform, nicht aus Bauchgefühl.`,
-    `Für Eigentümerversammlungen und Konzern-Einkauf stellen wir exportierbare Protokolle, Versicherungsnachweise und TRBS-/RKI-/HACCP-relevante Unterweisungsbelege bereit. ${serviceLabel} wird so intern verteidigbar — in ${cityLabel} wie überall in unserem Einzugsgebiet.`,
+    `Beschaffung und Vergabe für ${serviceLabel} in ${cityLabel} sollten auf messbaren Kriterien basieren — nicht auf dem niedrigsten Stundenpreis. Saubermatik liefert schriftliche Leistungsverzeichnisse mit definierten Intervallen, Abnahmekriterien und Eskalationswegen. Das reduziert Nachverhandlungen, Reklamationen und das Risiko von Anbietern ohne regionale Substanz.`,
+    `Facility Manager und Hausverwaltungen profitieren von einem digitalen Angebot: Flächen, Sonderzonen, Verkehrssicherung, Winterdienst-Optionen und Glas-Turnus in einer Quelle. Über die Vertragsverlängerung entscheiden Sie auf Grundlage der Protokolle und gemeinsamer Qualitätsbegehungen — nicht aus Bauchgefühl.`,
+    `Für Eigentümerversammlungen und Konzern-Einkauf stellen wir exportierbare Protokolle (PDF), Versicherungsnachweise und Unterweisungsbelege bereit. ${serviceLabel} wird so intern verteidigbar — in ${cityLabel} wie überall in unserem Einzugsgebiet.`,
   ];
 
   const serviceExtra: Partial<Record<ServiceSlug, string>> = {
@@ -306,8 +306,8 @@ export function buildObjectTypesParagraphs(
   const types = profile.objectTypes.join(", ");
 
   return [
-    `In ${cityLabel} betreuen wir ${serviceLabel} vor allem in folgenden Objekttypen: ${types}. Jeder Typ erhält ein angepasstes Leistungsverzeichnis — Intervalle, Geräte, Normen und Abnahmekriterien werden vor Start schriftlich freigegeben.`,
-    `${profile.regionalNote} Das prägt unsere Disposition: Touren, Reaktionszeiten und Ersatzlogistik sind auf die lokale Realität in ${cityLabel} ausgelegt, nicht auf eine generische Bundesland-Karte.`,
-    `Ob Einzelobjekt oder Verwalter-Portfolio — Saubermatik skaliert ${serviceLabel} über die Plattform, ohne dass Qualität oder Dokumentationstiefe leiden. Key Account Manager begleiten Sie von der Erstbegehung bis zur Vertragsverlängerung.`,
+    `Für ${serviceLabel} in ${cityLabel} kommen vor allem folgende Objekttypen in Frage: ${types}. Jeder Typ erhält ein angepasstes Leistungsverzeichnis — Intervalle, Geräte, Normen und Abnahmekriterien werden vor Start schriftlich freigegeben.`,
+    `${profile.regionalNote} Das prägt unsere Planung: Anfahrt und Reaktionszeiten richten sich nach der lokalen Realität in ${cityLabel}, nicht nach einer generischen Bundesland-Karte; Vertretung und Kapazität regeln wir vor Leistungsbeginn schriftlich.`,
+    `Ob Einzelobjekt oder Verwalter-Portfolio — Umfang und Kapazität für ${serviceLabel} klären wir vor dem Angebot. Ihr fester Ansprechpartner ist der Inhaber persönlich — von der Erstbegehung bis zur Vertragsverlängerung.`,
   ];
 }

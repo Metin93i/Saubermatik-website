@@ -9,9 +9,9 @@ import { buildTelHref } from "@/lib/phone";
 import { getSecureOpsFaqItems } from "@/lib/seo/secureops-faq";
 
 export const metadata: Metadata = {
-  title: "SecureOps – digitale Einsatz-Dokumentation von Saubermatik",
+  title: "SecureOps – Kundenportal von Saubermatik (im Aufbau)",
   description:
-    "Mit SecureOps dokumentieren wir Reinigungseinsätze digital. Kundenportal mit eigenem Zugang, nachvollziehbare Nachweise und ein direkter Meldeweg für Mieter. Umfang je nach Objekt.",
+    "SecureOps ist das Kundenportal von Saubermatik (im Aufbau): Melde-QR für Mängelmeldungen, Anfragen mit Status und Dokumente wie Protokolle (PDF). Umfang je nach Objekt.",
   alternates: { canonical: "/secureops" },
   openGraph: {
     images: [
@@ -64,12 +64,13 @@ export default function SecureOpsPage() {
               </div>
             </div>
             <h1 className="mt-6 max-w-4xl text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-[2.5rem] lg:leading-tight">
-              SecureOps – wir digitalisieren die Reinigung
+              SecureOps – unser Kundenportal (im Aufbau)
             </h1>
             <p className="mt-6 max-w-3xl text-lg leading-8 text-text-dunkel">
               Die meisten Reinigungsfirmen liefern eine Rechnung. Wir liefern
-              zusätzlich den Nachweis. SecureOps ist unsere eigene Software, mit
-              der wir Einsätze dokumentieren und unseren Kunden Einblick geben.
+              zusätzlich ein Protokoll (PDF). SecureOps ist unser eigenes
+              Kundenportal, derzeit im Aufbau: Meldungen per Melde-QR, Anfragen
+              mit Status und Dokumente an einem Ort.
             </p>
             <div className="mt-10 flex flex-wrap gap-4">
               <LeitstandButton
@@ -126,10 +127,9 @@ export default function SecureOpsPage() {
             </h2>
             <div className="space-y-5 text-base leading-[1.75] text-foreground/90">
               <p>
-                Als Kunde erhalten Sie einen persönlichen Zugang zu Ihrem
-                Kundenportal. Dort sehen Sie, was in Ihrem Objekt passiert ist –
-                ohne anrufen zu müssen und ohne auf einen Monatsbericht zu
-                warten.
+                Mit dem Start des Kundenportals erhalten Sie einen persönlichen
+                Zugang. Dort finden Sie Ihre Anfragen mit Status und Ihre
+                Dokumente – ohne anrufen zu müssen.
               </p>
               <p>
                 Der Umfang der Dokumentation wird pro Objekt vereinbart. Ein
@@ -142,13 +142,9 @@ export default function SecureOpsPage() {
 
           <article className="mt-16 space-y-8">
             <h2 className="text-2xl font-bold tracking-tight text-navy sm:text-3xl">
-              Der Meldeweg für Mieter
+              Der Meldeweg per Melde-QR
             </h2>
             <div className="space-y-5 text-base leading-[1.75] text-foreground/90">
-              <p>
-                Das ist der Teil, für den uns Hausverwaltungen am meisten
-                danken.
-              </p>
               <p>
                 Im Objekt hängt ein QR-Code. Wer etwas zu melden hat – ein
                 übersehener Bereich, ein voller Container, ein Schaden – scannt
@@ -163,8 +159,8 @@ export default function SecureOpsPage() {
                 </li>
                 <li>
                   <span className="text-foreground/90">
-                    Schnellere Klärung: Wir sehen die Meldung sofort und kümmern
-                    uns.
+                    Schnellere Klärung: Die Meldung kommt direkt bei uns an, wir
+                    kümmern uns.
                   </span>
                 </li>
                 <li>
@@ -195,8 +191,8 @@ export default function SecureOpsPage() {
             </h2>
             <div className="space-y-5 text-base leading-[1.75] text-foreground/90">
               <p>
-                Aus der laufenden Dokumentation erstellen wir
-                Nachweis-Dokumente – zum Beispiel für eine
+                Aus unseren Einsatzprotokollen stellen wir Ihnen bei Bedarf
+                Unterlagen als PDF zusammen – zum Beispiel für eine
                 Eigentümerversammlung, eine interne Prüfung oder wenn ein
                 Bereich strittig ist. Statt Diskussion aus dem Gedächtnis liegt
                 etwas Schriftliches auf dem Tisch.
@@ -236,8 +232,8 @@ export default function SecureOpsPage() {
                 Dokumentation über SecureOps ist Teil unserer Leistung.
               </li>
               <li>
-                Zugang: Zum Start richten wir Ihren Portal-Zugang ein und
-                bringen bei Bedarf den QR-Code im Objekt an.
+                Zugang: Sobald das Kundenportal verfügbar ist, richten wir Ihren
+                Zugang ein und bringen bei Bedarf den Melde-QR im Objekt an.
               </li>
             </ol>
             <p className="text-base leading-[1.75] text-foreground/90">

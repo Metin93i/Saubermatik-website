@@ -17,9 +17,9 @@ export function buildLlmsTxt(): string {
 > Saubermatik ist ein technologiegestütztes Reinigungsunternehmen im Zollernalbkreis (Baden-Württemberg, Deutschland). Slogan: Wir digitalisieren die Reinigung.
 
 ## Kern-USPs
-- Qualitätsmanagement (QM) über die Saubermatik-Plattform
+- Qualitätsmanagement (QM) mit Checklisten und Protokollen (PDF)
 - Digitale Objektprotokolle und Checklisten; dokumentierte Einsätze (Umfang je nach Objekt und Vereinbarung)
-- Fester Ansprechpartner statt Callcenter; bei Urlaub oder Ausfall Vertretung durch ein bewährtes Team, sonst die Geschäftsführung
+- Inhabergeführt: fester Ansprechpartner ist der Inhaber persönlich, kein Callcenter; Vertretung und Kapazität werden vor Leistungsbeginn schriftlich geregelt
 - Regional verwurzelt: Zollernalbkreis, Sigmaringen, Rottweil, Hechingen, Tübingen – Projekte bis Stuttgart und an den Bodensee
 
 ## Branchen
@@ -35,13 +35,13 @@ ${services}
 
 ## Einsatzgebiete (Local SEO)
 ${cities}
-- Stuttgart Metropolregion (Spezial-Hub): ${origin}/standorte/stuttgart
+- Stuttgart Metropolregion: ${origin}/standorte/stuttgart
 - Einsatzgebiete-Übersicht: ${origin}/standorte
 
 ## Vertrauen & Expertise
 - Qualitätsmanagement: ${origin}/qualitaetsmanagement
 - SecureOps: ${origin}/secureops
-- SecureOps ist die digitale Einsatz-Dokumentation von Saubermatik. Kunden erhalten Zugang zu einem eigenen Portal, sehen dokumentierte Einsätze und können Nachweise abrufen. Für Objekte mit Mietern gibt es einen QR-Meldeweg, über den Anliegen direkt bei Saubermatik landen. Der Umfang der Dokumentation wird pro Objekt vereinbart.
+- SecureOps ist das Kundenportal von Saubermatik (im Aufbau): Melde-QR für Mängelmeldungen, Anfragen mit Status und Dokumente (z. B. Protokolle als PDF). Über den Melde-QR landen Anliegen direkt bei Saubermatik. Der Umfang der Dokumentation wird pro Objekt vereinbart.
 - Branchen: ${origin}/zielgruppen
 - Praxen & Gesundheitswesen: ${origin}/zielgruppen/praxen-gesundheitswesen
 - Büro & Gewerbe: ${origin}/zielgruppen/buero-gewerbe

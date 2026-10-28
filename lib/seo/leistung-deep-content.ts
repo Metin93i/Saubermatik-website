@@ -25,37 +25,37 @@ const treppenhausreinigung: LeistungDeepContent = {
   breadcrumbLabel: "Treppenhausreinigung",
   metaTitle: "Treppenhausreinigung WEG & Gewerbe",
   metaDescription:
-    "Treppenhausreinigung mit Verkehrssicherungspflicht, Trittsicherheit, § 2 BetrKV-Umlagefähigkeit und digitalem Nachweis – Saubermatik Zollernalb.",
+    "Treppenhausreinigung mit Verkehrssicherungspflicht, Trittsicherheit, objektbezogener Abrechnung (§ 2 BetrKV) und Nachweis als Protokoll – Saubermatik Zollernalb.",
   heroTitle:
     "Repräsentative Treppenhäuser, sichere Wege. Professionelle Treppenhausreinigung für WEG, Hausverwaltungen und Gewerbe.",
   heroSubtitle:
-    "Verkehrssicherungspflicht, Trittsicherheit und Mieterzufriedenheit – dokumentiert, intervalbasiert und umlagefähig nach § 2 BetrKV.",
+    "Verkehrssicherungspflicht, Trittsicherheit und Mieterzufriedenheit – dokumentiert, intervalbasiert und objektbezogen abgerechnet; ob umlagefähig, richtet sich nach Mietvertrag und § 2 BetrKV.",
   introParagraphs: [
     "Das Treppenhaus ist die Visitenkarte jeder Liegenschaft – und ein klassischer Haftungs- und Kostenblock für Hausverwaltungen. Schmutzige Stufen, unsichere Beläge und undokumentierte Reinigung erzeugen Beschwerden, Versicherungsfragen und Streit in Eigentümerversammlungen. Saubermatik behandelt Treppenhausreinigung deshalb nicht als Nebenleistung, sondern als Kernprozess der Verkehrssicherungspflicht.",
-    "Wir kombinieren feste Intervalle, materialschonende Verfahren und dokumentierte Einsätze in der Saubermatik-App (Umfang je nach Objekt und Vereinbarung). Für Verwalter bedeutet das: weniger Reklamationen, belastbare Positionen in der Nebenkostenabrechnung und ein repräsentativer Standard, den Mieter sofort wahrnehmen.",
+    "Wir kombinieren feste Intervalle, materialschonende Verfahren und dokumentierte Einsätze als Protokoll (PDF), Umfang je nach Objekt und Vereinbarung. Für Verwalter bedeutet das: belastbare Positionen in der Nebenkostenabrechnung und ein repräsentativer Standard, den Mieter sofort wahrnehmen.",
   ],
   deepDives: [
     {
       title: "Deep Dive 1: Verkehrssicherungspflicht & Trittsicherheit",
       paragraphs: [
         "Treppen, Podeste und Eingangsbereiche unterliegen der Verkehrssicherungspflicht des Eigentümers bzw. Verwalters. Nasse Stufen, Sand, Streusalzreste oder lose Verschmutzungen erhöhen Sturzrisiken – mit potenzieller Haftung bei Personenschäden. Saubermatik definiert deshalb pro Objekt klare Reinigungs- und Kontrollintervalle: Stufen, Handläufe, Schmutzfangmatten und Beleuchtungsnähe werden checklistenbasiert bearbeitet, nicht nach Gefühl.",
-        "Trittsicherheit ist messbar: rutschhemmende Beläge werden materialspezifisch gepflegt, Feuchtigkeit zeitnah entfernt, Warnhinweise bei Glätteereignissen koordiniert mit unserem Winterdienst. Einsätze werden digital dokumentiert – für Sie ein Nachweis, dass Sorgfaltspflichten aktiv wahrgenommen werden, nicht erst im Schadensfall.",
-        "Besonders in Mehrfamilienhäusern mit hoher Frequenz (Kinderwagen, Lieferverkehr, ältere Bewohner) ist die Kombination aus Unterhaltsreinigung und proaktiver Mängelmeldung entscheidend. Ausgefallene Leuchtmittel, lose Geländer oder rissige Stufen werden im Kontrollgang eskaliert – bevor der Mieter stolpert.",
+        "Trittsicherheit ist messbar: rutschhemmende Beläge werden materialspezifisch gepflegt, Feuchtigkeit zeitnah entfernt, Warnhinweise bei Glätteereignissen koordiniert mit unserem Winterdienst. Einsätze werden als Protokoll (PDF) dokumentiert – für Sie ein Nachweis, dass Sorgfaltspflichten aktiv wahrgenommen werden, nicht erst im Schadensfall.",
+        "Besonders in Mehrfamilienhäusern mit hoher Frequenz (Kinderwagen, Lieferverkehr, ältere Bewohner) ist die Kombination aus Unterhaltsreinigung und proaktiver Mängelmeldung entscheidend. Ausgefallene Leuchtmittel, lose Geländer oder rissige Stufen werden im Kontrollgang erkannt und an Sie gemeldet.",
       ],
     },
     {
       title: "Deep Dive 2: Repräsentativität & § 2 BetrKV",
       paragraphs: [
         "Repräsentativität beginnt im Treppenhaus: Eingang, Spiegel, Glas, Briefkastenzonen und Fahrstuhl-Vorhallen prägen den ersten Eindruck bei Vermietung, Verkauf und Mieterwechsel. Saubermatik plant Touren so, dass Störungen minimal bleiben – abgestimmte Zeitfenster, leise Geräte, klare Zuständigkeiten zwischen Reinigung, Hausmeister und Winterdienst.",
-        "Für Hausverwaltungen ist die umlagefähige Abrechnung zentral: Betriebskosten nach § 2 BetrKV müssen objektbezogen, nachvollziehbar und verhältnismäßig sein. Unsere transparenten Rechnungen und digitalen Leistungsprotokolle liefern genau die Granularität, die Eigentümerversammlungen und Prüfer erwarten – keine Pauschale ohne Nachweis, sondern dokumentierte Intervalle pro Liegenschaft.",
-        "Kombinieren Sie Treppenhausreinigung mit unserem Hausverwaltungs-Portfolio: ein Ansprechpartner, ein SLA, eine App. Das reduziert Schnittstellenchaos zwischen Grünpflege, Winterdienst und Objektbetreuung.",
+        "Für Hausverwaltungen ist die Betriebskostenabrechnung zentral: Ob Kosten umlagefähig sind, richtet sich nach Mietvertrag und § 2 BetrKV; ausgewiesen werden müssen sie objektbezogen, nachvollziehbar und verhältnismäßig. Unsere transparenten Rechnungen und Leistungsprotokolle (PDF) liefern genau die Granularität, die Eigentümerversammlungen und Prüfer erwarten – keine Pauschale ohne Nachweis, sondern dokumentierte Intervalle pro Liegenschaft.",
+        "Kombinieren Sie Treppenhausreinigung mit unserem Hausverwaltungs-Portfolio: ein Ansprechpartner, ein SLA, ein Kundenportal (im Aufbau). Das reduziert Schnittstellenchaos zwischen Grünpflege, Winterdienst und Objektbetreuung.",
       ],
     },
     {
-      title: "Deep Dive 3: Digitale Touren & Mieterzufriedenheit",
+      title: "Deep Dive 3: Dokumentierte Touren & Mieterzufriedenheit",
       paragraphs: [
-        "Mieterbeschwerden entstehen selten wegen „zu wenig Politik“ – sie entstehen wegen Unzuverlässigkeit und fehlender Transparenz. Die Saubermatik-Plattform macht Touren sichtbar: Wann wurde welches Treppenhaus gereinigt? Gab es Sonderereignisse (Umzug, Bau, Wasserschaden)? Der Key Account kann Abweichungen anhand dokumentierter Einsätze adressieren.",
-        "Feste Ansprechpersonen und dokumentierte Touren sichern Wiedererkennung und Qualität. Verwalter sparen Koordinationszeit; Mieter erleben Konstanz. Bei Urlaub oder Ausfall übernimmt ein bewährtes Vertretungsteam – sonst die Geschäftsführung persönlich.",
+        "Mieterbeschwerden entstehen selten wegen „zu wenig Politik“ – sie entstehen wegen Unzuverlässigkeit und fehlender Transparenz. Unsere Einsatzprotokolle (PDF) machen Touren nachvollziehbar: Wann wurde welches Treppenhaus gereinigt? Gab es Sonderereignisse (Umzug, Bau, Wasserschaden)? Ihr persönlicher Ansprechpartner kann Abweichungen anhand dokumentierter Einsätze adressieren.",
+        "Ein fester Ansprechpartner – der Inhaber persönlich – und dokumentierte Touren sichern Wiedererkennung und Qualität. Verwalter sparen Koordinationszeit; Mieter erleben Konstanz. Vertretung und Kapazität bei Urlaub oder Ausfall regeln wir vor Leistungsbeginn schriftlich.",
         "Ob WEG, Mietshaus oder Gewerbeobjekt: Treppenhausreinigung wird zum planbaren Qualitätsmerkmal statt zum Reklamationsmagneten.",
       ],
     },
@@ -64,9 +64,9 @@ const treppenhausreinigung: LeistungDeepContent = {
     title: "Treppenhaus – Ihr Vorteil",
     bullets: [
       "Verkehrssicherungspflicht & Trittsicherheit checklistenbasiert",
-      "§ 2 BetrKV: transparente, umlagefähige Leistungsnachweise",
+      "§ 2 BetrKV: transparente, objektbezogene Leistungsnachweise",
       "Repräsentative Eingangsbereiche, feste Intervalle",
-      "Dokumentierte Touren; Vertretung bei Urlaub oder Ausfall",
+      "Dokumentierte Touren; Vertretung vor Leistungsbeginn schriftlich geregelt",
     ],
   },
   secondaryCta: {
@@ -83,38 +83,38 @@ const winterdienst: LeistungDeepContent = {
   breadcrumbLabel: "Winterdienst",
   metaTitle: "Winterdienst & Räum- und Streupflicht",
   metaDescription:
-    "Professioneller Winterdienst: Räum- und Streupflicht, Verkehrssicherungspflicht, Wetterführung, dokumentierte Einsätze – haftungssicher für WEG und Gewerbe.",
+    "Professioneller Winterdienst: Räum- und Streupflicht mit schriftlichem Plan und Protokoll, Verkehrssicherungspflicht, dokumentierte Einsätze – für WEG und Gewerbe.",
   heroTitle:
-    "Haftungssicher durch den Winter. Professioneller Winterdienst mit Wetterführung und dokumentierten Nachweisen.",
+    "Räum- und Streupflicht mit schriftlichem Plan und Protokoll. Professioneller Winterdienst mit dokumentierten Nachweisen.",
   heroSubtitle:
-    "Räum- und Streupflicht erfüllen, Verkehrssicherungspflicht dokumentieren – für Hausverwaltungen, Gewerbe und öffentliche Zugänge in der Zollernalb.",
+    "Räum- und Streupflicht nach schriftlicher Vereinbarung übernehmen, Einsätze nachvollziehbar dokumentieren – für Hausverwaltungen, Gewerbe und öffentliche Zugänge in der Zollernalb.",
   introParagraphs: [
-    "Der Winterdienst ist keine Saisonalität nebenbei – er ist Haftungsmanagement. Jede Glätteperiode kann zu Personenschäden, Versicherungsfällen und Eigentümerstreit führen, wenn Räumen und Streuen nicht nachweisbar erfolgen. Saubermatik betreibt Winterdienst als wettergeführtes System mit Einsatzplänen, Meldewegen und dokumentierten Einsätzen (Umfang je nach Objekt und Vereinbarung).",
-    "Für Verwalter und Facility Manager bedeutet das: Sie erfüllen Ihre Sorgfaltspflicht gegenüber Mietern, Besuchern und Versicherern – ohne nächtliche Koordinationsmarathons. Kombinierbar mit Treppenhausreinigung, Grünpflege und Hausmeisterservice aus einem Portfolio.",
+    "Der Winterdienst ist keine Saisonalität nebenbei – er ist Verkehrssicherung. Jede Glätteperiode kann zu Personenschäden, Versicherungsfällen und Eigentümerstreit führen, wenn Räumen und Streuen nicht nachweisbar erfolgen. Saubermatik betreibt Winterdienst mit schriftlichem Einsatzplan, Einsatzauslösung nach vereinbarten Kriterien, Meldewegen und dokumentierten Einsätzen (Umfang je nach Objekt und Vereinbarung).",
+    "Für Verwalter und Facility Manager bedeutet das: Räumen und Streuen sind schriftlich geregelt und nachvollziehbar dokumentiert – ohne nächtliche Koordinationsmarathons. Die Verkehrssicherungspflicht übernehmen wir nur auf Grundlage einer klaren schriftlichen Vereinbarung; Ihre Kontroll- und Überwachungspflicht als Auftraggeber bleibt bestehen. Kombinierbar mit Treppenhausreinigung, Grünpflege und Hausmeisterservice aus einem Portfolio.",
   ],
   deepDives: [
     {
       title: "Deep Dive 1: Räum- und Streupflicht & Verkehrssicherungspflicht",
       paragraphs: [
-        "Eigentümer und Verwalter tragen die Verkehrssicherungspflicht für Gehwege, Zufahrten, Parkflächen und Objektzugänge. Saubermatik definiert pro Liegenschaft Räum- und Streupflicht-Zonen, Prioritäten (Haupteingang, Feuerwehrzufahrt, Müllstellplätze) und Reaktionszeiten ab Wetterauslösung – schriftlich im Winterdienstplan, nicht mündlich „irgendwann“.",
-        "Streumittel werden materialschonend und umweltbewusst eingesetzt; Mengen und Touren werden protokolliert. Bei Glätteereignissen außerhalb der Standardfenster greifen Eskalationsstufen: Nachfahrt, Zusatzstreue, Information an den Verwalter – alles mit Zeitstempel in der App.",
-        "Das schützt vor dem klassischen Haftungsfall: „Niemand war da.“ Dokumentierte Einsätze und Checklisten sind Ihr Beweis gegenüber Versicherung und Gericht – nicht Marketing, sondern Risikoreduktion.",
+        "Eigentümer und Verwalter tragen die Verkehrssicherungspflicht für Gehwege, Zufahrten, Parkflächen und Objektzugänge. Saubermatik definiert pro Liegenschaft Räum- und Streupflicht-Zonen, Prioritäten (Haupteingang, Feuerwehrzufahrt, Müllstellplätze) und Einsatzfenster nach vereinbarten Kriterien – schriftlich im Winterdienstplan, nicht mündlich „irgendwann“.",
+        "Streumittel setzen wir nach örtlicher Satzung und Vorgabe des Auftraggebers ein; Einsätze und Streumittel werden protokolliert. Bei Glätteereignissen außerhalb der Standardfenster greifen die vereinbarten Eskalationsstufen: Nachfahrt, Zusatzstreue, Information an den Verwalter – festgehalten im Einsatzprotokoll (PDF).",
+        "Dem klassischen Vorwurf „Niemand war da.“ begegnen wir mit dokumentierten Einsätzen und Checklisten: Sie machen nachvollziehbar, wann geräumt und gestreut wurde.",
       ],
     },
     {
-      title: "Deep Dive 2: Wetterführung & Einsatzlogistik",
+      title: "Deep Dive 2: Einsatzauslösung & Einsatzlogistik",
       paragraphs: [
-        "Winterdienst ohne Wetterführung ist Glücksspiel. Saubermatik nutzt Wetterdienst-Trigger, Objekt-Prioritäten und vertraglich vereinbarte Reaktionszeiten in der Saison. Touren werden angepasst – ohne dass der Verwalter jede Nacht selbst koordinieren muss. Keine Rund-um-die-Uhr-Bereitschaft.",
-        "BG-BAU-orientierte Arbeitssicherheit gilt auch im Winter: Beleuchtung, PSA, Schulung im Umgang mit Streugut und Räumgerät. Mitarbeiter sind unterwiesen, nicht improvisiert. Für Gewerbeobjekte mit Produktionsstart früh morgens sind definierte Fertigstellungszeiten vertraglich fixiert.",
+        "Winterdienst braucht klare Regeln, wann ausgerückt wird. Saubermatik arbeitet mit Einsatzauslösung nach vereinbarten Kriterien und Objekt-Prioritäten; Einsatzfenster und Fertigstellungszeiten vereinbaren wir je Objekt im Vertrag. Touren werden angepasst – ohne dass der Verwalter jede Nacht selbst koordinieren muss. Keine Rund-um-die-Uhr-Bereitschaft.",
+        "BG-BAU-orientierte Arbeitssicherheit gilt auch im Winter: Beleuchtung, PSA, sicherer Umgang mit Streugut und Räumgerät. Für Gewerbeobjekte mit Produktionsstart früh morgens vereinbaren wir die Fertigstellungszeiten im Vertrag.",
         "Die Kombination mit Laubentsorgung im Herbst (Grünpflege) vermeidet Konflikte: Kein Laub auf Streuflächen, keine doppelten Einsätze ohne Plan.",
       ],
     },
     {
       title: "Deep Dive 3: Abrechnung, § 2 BetrKV & Mieterkommunikation",
       paragraphs: [
-        "Winterdienstkosten sind umlagefähig, wenn sie objektbezogen, verursachungsgerecht und nachvollziehbar ausgewiesen werden. Unsere Rechnungen und digitalen Protokolle liefern die nötige Transparenz für Nebenkostenabrechnungen nach § 2 BetrKV – inklusive Einsatzhäufigkeit und Sonderfahrten bei Extremwetter.",
-        "Mieterkommunikation profitiert von Verlässlichkeit: Wenn Eingänge morgens frei sind, sinkt die Beschwerdequote – unabhängig von Schneemenge. Verwalter gewinnen Zeit, weil Reklamationen mit Protokoll beantwortet werden können, statt mit Vermutungen.",
-        "Integrieren Sie Winterdienst in unser Hausverwaltungs-Silo für ein durchgängiges Liegenschaftsbild – ein Key Account, ein SLA, eine App.",
+        "Ob Winterdienstkosten umlagefähig sind, richtet sich nach Mietvertrag und § 2 BetrKV; ausgewiesen werden müssen sie objektbezogen und nachvollziehbar. Unsere Rechnungen und Protokolle (PDF) weisen die Kosten objektbezogen aus – inklusive Einsatzhäufigkeit und Sonderfahrten bei Extremwetter.",
+        "Mieterkommunikation profitiert von Verlässlichkeit: Reklamationen können mit Protokoll beantwortet werden, statt mit Vermutungen.",
+        "Kombinieren Sie Winterdienst mit unseren Leistungen für Hausverwaltungen für ein durchgängiges Liegenschaftsbild – ein persönlicher Ansprechpartner, ein SLA, ein Kundenportal (im Aufbau).",
       ],
     },
   ],
@@ -122,8 +122,8 @@ const winterdienst: LeistungDeepContent = {
     title: "Winterdienst – Ihr Vorteil",
     bullets: [
       "Räum- und Streupflicht dokumentiert (Umfang je nach Objekt und Vereinbarung)",
-      "Wettergeführt mit Eskalationsstufen & festen Reaktionszeiten",
-      "§ 2 BetrKV-transparente Abrechnung für Verwaltungen",
+      "Einsatzauslösung nach vereinbarten Kriterien, Einsatzfenster schriftlich vereinbart",
+      "Objektbezogene Abrechnung – Umlage nach Mietvertrag und § 2 BetrKV",
       "BG-BAU-orientierte Arbeitssicherheit im Einsatz",
     ],
   },
@@ -133,7 +133,7 @@ const winterdienst: LeistungDeepContent = {
   },
   funnelTitle: "Winterdienst anfragen",
   funnelSubtitle:
-    "Flächen, Prioritäten, Streugut – wir erstellen Ihren haftungssicheren Winterdienstplan.",
+    "Flächen, Prioritäten, Streugut – wir erstellen Ihren schriftlichen Winterdienstplan.",
 };
 
 const grundreinigung: LeistungDeepContent = {
@@ -206,7 +206,7 @@ const fassadenreinigung: LeistungDeepContent = {
     "Materialgerechte Verfahren, Arbeitssicherheit in der Höhe und dokumentierte Einsätze – für Werterhalt und repräsentative Außenwirkung.",
   introParagraphs: [
     "Fassaden sind Witterungsschild und Markenfläche zugleich. Algen, Moos, Industrieablagerungen und Biokorrosion mindern nicht nur die Optik – sie beschleunigen Materialschäden und treiben Instandhaltungskosten. Saubermatik reinigt Fassaden materialspezifisch: von Naturstein über Klinker und Metall bis zu großflächiger Glasarchitektur.",
-    "Einsätze werden unter Berücksichtigung von TRBS 2121, BG-BAU-Vorgaben und Zuwegungsplanung durchgeführt – Hubsteiger, Seiltechnik oder Reinwasser-Osmose je nach Objekt. Digital protokolliert für Facility und Eigentümer.",
+    "Einsätze werden unter Berücksichtigung von TRBS 2121, BG-BAU-Vorgaben und Zuwegungsplanung durchgeführt – Hubsteiger, Seiltechnik oder Reinwasser-Osmose je nach Objekt. Mit Einsatzprotokoll (PDF) für Facility und Eigentümer.",
   ],
   deepDives: [
     {
@@ -222,7 +222,7 @@ const fassadenreinigung: LeistungDeepContent = {
       paragraphs: [
         "Fassadenreinigung in der Höhe unterliegt TRBS 2121 und BG-BAU-Regeln. Saubermatik führt Gefährdungsbeurteilungen durch, setzt geprüfte PSA und Hubsteiger-Logistik ein und sichert öffentliche Gehwege bei Bedarf ab. Für Ausschreibungen liefern wir Nachweise – Versicherung, Unterweisung, Geräteprüfung.",
         "Arbeiten in der Höhe führen wir mit persönlicher Schutzausrüstung gegen Absturz aus – geschult nach DGUV 112-198 und DGUV 112-199.",
-        "Zuwegung, Halteverbote und Anliegerinformation werden vorab mit Verwaltung oder Facility abgestimmt – besonders in Innenstädten und WEG-Ensembles. So bleibt der Betrieb störungsarm und haftungsarm.",
+        "Zuwegung, Halteverbote und Anliegerinformation werden vorab mit Verwaltung oder Facility abgestimmt – besonders in Innenstädten und WEG-Ensembles. So bleibt der Betrieb störungsarm.",
         "Dokumentierte Einsätze geben Eigentümern Transparenz über Zustand vor/nach – wertvoll bei Sanierungsplanung und Versicherungsfällen (Umfang je nach Objekt und Vereinbarung).",
       ],
     },
@@ -241,7 +241,7 @@ const fassadenreinigung: LeistungDeepContent = {
       "Materialgerecht: Naturstein, Metall, Glas, Klinker",
       "TRBS 2121 & BG-BAU-konforme Höhenarbeit",
       "Algen/Moos-Reduktion, Werterhalt statt Substanzschaden",
-      "Digitale Protokolle & Kombination mit Glasreinigung",
+      "Einsatzprotokolle (PDF) & Kombination mit Glasreinigung",
     ],
   },
   secondaryCta: {
@@ -273,7 +273,7 @@ const entruempelung: LeistungDeepContent = {
       paragraphs: [
         "Haushaltsauflösungen verlangen Sensibilität: Erbengemeinschaften, Betreuer, Verwalter – alle erwarten zuverlässige Abläufe ohne Datenlecks oder wertlose Zerstörung brauchbarer Gegenstände. Saubermatik arbeitet nach abgestimmtem Sortierplan (Behalten, Spenden, Entsorgen, Verwertung) und dokumentiert den Fortschritt.",
         "Wertgegenstände und Dokumente werden separiert; Entsorgung erfolgt nach KrWG und lokalen Vorgaben. Diskretion und termingerechte Räumung reduzieren Leerstandskosten und vereinfachen Verkauf oder Neuvermietung.",
-        "Für Hausverwaltungen ist die besenreine Übergabe nach Mieterauszug der Standard – kombinierbar mit Grundreinigung und kleinen Instandsetzungen über Hausmeisterservice.",
+        "Für Hausverwaltungen ist die besenreine Übergabe nach Mieterauszug der Standard – kombinierbar mit Grundreinigung und einfachen Kleinreparaturen über Hausmeisterservice.",
       ],
     },
     {
@@ -288,7 +288,7 @@ const entruempelung: LeistungDeepContent = {
       title: "Deep Dive 3: Endreinigung & Dokumentation",
       paragraphs: [
         "Entrümpelung ohne Endreinigung ist halbe Arbeit. Staub, Klebereste, Bodenbelagsrückstände und Geruchsbelastungen verhindern Übergabe. Saubermatik schließt mit materialspezifischer Reinigung ab – von Grundreinigung bis Unterhaltsstart.",
-        "Digitale Übergabeprotokolle (Fotos, Flächenliste, Entsorgungsnachweise) geben Verwaltern und Erben Sicherheit gegenüber Behörden und Käufern. Bei Bedarf koordinieren wir Schlüsselrückgabe und Zutritt mit Hausverwaltung.",
+        "Übergabeprotokolle als PDF (Flächenliste, Entsorgungsnachweise) geben Verwaltern und Erben Sicherheit gegenüber Behörden und Käufern. Bei Bedarf koordinieren wir Schlüsselrückgabe und Zutritt mit Hausverwaltung.",
         "Ein Ansprechpartner, ein Termin, ein sauberer Abschluss – das ist der Saubermatik-Standard.",
       ],
     },
@@ -341,7 +341,7 @@ const sonstiges: LeistungDeepContent = {
     {
       title: "Deep Dive 3: Events, Industrie & Ausschreibungen (SLA)",
       paragraphs: [
-        "Messen, Stadtfeste, Produktionswechsel oder Logistik-Hochphasen brauchen temporäre Reinigungsvereinbarungen mit klaren Reaktionszeiten. Saubermatik steuert Einsätze über die Plattform – Umfang nach Vereinbarung, ohne Skalierungsversprechen über große Flächen.",
+        "Messen, Stadtfeste, Produktionswechsel oder Logistik-Hochphasen brauchen temporäre Reinigungsvereinbarungen mit klaren Reaktionszeiten. Saubermatik plant Einsätze nach Vereinbarung – ohne Skalierungsversprechen über große Flächen.",
         "Bei öffentlichen oder konzernweiten Ausschreibungen liefern wir strukturierte LV-Texte und Nachweise zu Arbeitssicherheit. Sonderprojekte werden nicht „geschätzt“, sondern in Schritte (Begehung → LV → Start) überführt.",
         "Ihr Briefing ist der Start – unser Output ist ein messbares, digitales Leistungsverzeichnis.",
       ],
@@ -353,7 +353,7 @@ const sonstiges: LeistungDeepContent = {
       "Teppich- & Polsterreinigung mit Werterhalt-Fokus",
       "Desinfektion nach Hygieneplan & anerkannten Standards",
       "Event-/Industrie-Einsätze mit vereinbarten Reaktionszeiten",
-      "Ausschreibungsfähige LV-Texte & digitales QM",
+      "Ausschreibungsfähige LV-Texte & dokumentiertes QM",
     ],
   },
   funnelTitle: "Spezialanfrage stellen",

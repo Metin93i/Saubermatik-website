@@ -81,7 +81,8 @@ export default function PraxenGesundheitswesenPage() {
             <p>
               Wir reinigen außerhalb der Sprechzeiten – früh, abends oder am
               Wochenende, wie es in Ihren Praxisablauf passt. Sie haben einen
-              festen Ansprechpartner, der Ihre Praxis und Ihren Plan kennt.
+              festen Ansprechpartner – den Inhaber persönlich –, der Ihre
+              Praxis und Ihren Plan kennt.
               Kein Callcenter, keine wechselnden Zuständigkeiten.
             </p>
           </article>
@@ -92,17 +93,18 @@ export default function PraxenGesundheitswesenPage() {
             </h2>
             <p>
               Praxen müssen intern nachweisen können, dass Abläufe eingehalten
-              werden. Auf Wunsch dokumentieren wir unsere Einsätze über unsere
-              eigene Plattform{" "}
+              werden. Auf Wunsch dokumentieren wir unsere Einsätze als
+              Protokoll (PDF) und stellen Ihnen Nachweise zur Verfügung – zum
+              Beispiel für Ihr Qualitätsmanagement oder eine Begehung. Künftig
+              finden Sie Dokumente auch in unserem Kundenportal{" "}
               <Link
                 href="/secureops"
                 className="font-semibold text-secondary hover:underline"
               >
                 SecureOps
               </Link>{" "}
-              und stellen Ihnen Nachweise zur Verfügung – zum Beispiel für Ihr
-              Qualitätsmanagement oder eine Begehung. Den Umfang der
-              Dokumentation vereinbaren wir pro Objekt.
+              (im Aufbau). Den Umfang der Dokumentation vereinbaren wir pro
+              Objekt.
             </p>
           </article>
 
@@ -111,7 +113,7 @@ export default function PraxenGesundheitswesenPage() {
               Diskretion ist selbstverständlich
             </h2>
             <p>
-              Unsere Kräfte arbeiten in sensiblen Räumen. Zurückhaltung,
+              Wir arbeiten in sensiblen Räumen. Zurückhaltung,
               Sorgfalt im Umgang mit Einrichtung und Unterlagen und klare
               Absprachen zu Schlüsseln und Zugängen gehören für uns zum Auftrag.
             </p>

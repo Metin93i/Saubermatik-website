@@ -36,8 +36,8 @@ export function SeoCrossLinks({ type }: Props) {
           Beliebte Einsatzorte
         </h2>
         <p className="mt-1 text-sm text-muted">
-          Gebäudereinigung dort, wo Ihre Objekte stehen — inklusive Spezial-Hub
-          Stuttgart.
+          Gebäudereinigung dort, wo Ihre Objekte stehen — von Meßstetten aus,
+          für Projekte auch in der Region Stuttgart.
         </p>
         <ul className="mt-4 flex flex-col gap-2 sm:flex-row sm:flex-wrap">
           {TOP_LOCATION_LINKS.map((item) => (
