@@ -1,3 +1,4 @@
+2026-11-25 · mobil · Fester Knopf „Anfrage stellen“ gleitet weg, sobald die Fußzeile sichtbar ist; Fußzeile hat mobil unten Abstand in Knopfhöhe, Impressum/Datenschutz wieder antippbar
 2026-10-28 · inhalte · Versprechen wahrheitsgemäß: keine Teams/Vertretungsteam/Key Account, kein „haftungssicher“, Portal „im Aufbau“ ohne App-/Foto-/Zeitstempel-Nachweise, DIN EN 13549 nur Reinigung, Grünpflege/Winterdienst rechtssicher, keine unbelegten Referenzen
 2026-08-24 · lead · Formular postet relativ an /api/lead, API-URL-Altlast entfernt
 2026-08-23 · design · Kontrast-System repariert, Hero nach Flyer-Seite-2 mit SecureOps-Karte und QR
