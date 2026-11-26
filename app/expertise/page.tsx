@@ -18,8 +18,8 @@ const pillars = [
     body: "Von Arbeiten in der Höhe bis zu sensiblen Bereichen (Praxis, Kanzlei) gelten klare Regeln: Einweisungen, PSA, materialgerechte Mittel und getrennte Einsatzketten wo nötig. Hygienepläne und Desinfektionsintervalle werden dort ergänzt, wo regulatorisch oder betrieblich erforderlich.",
   },
   {
-    title: "Protokolle & Kundenportal (im Aufbau)",
-    body: "Einsätze dokumentieren wir als Protokoll (PDF). Meldungen laufen per Melde-QR in unser Kundenportal (im Aufbau), dort finden Sie künftig Anfragen mit Status und Dokumente. Vertretung und Kapazität regeln wir vor Leistungsbeginn schriftlich. Für Geschäftsführung und Eigentümer heißt das: nachvollziehbare Unterlagen statt Bauchgefühl.",
+    title: "Protokolle & Kundenportal",
+    body: "Einsätze dokumentieren wir als Protokoll (PDF). Meldungen laufen per Melde-QR in unser Kundenportal, dort finden Sie Anfragen mit Status und Dokumente. Vertretung und Kapazität regeln wir vor Leistungsbeginn schriftlich. Für Geschäftsführung und Eigentümer heißt das: nachvollziehbare Unterlagen statt Bauchgefühl.",
   },
   {
     title: "Qualitätssicherung & Transparenz",

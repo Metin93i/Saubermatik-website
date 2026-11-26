@@ -1,3 +1,4 @@
+2026-11-26 · inhalte · Texte zum Kundenportal aktualisiert: Zusatz „im Aufbau“ und „künftig“ entfallen, Umfang unverändert (Melde-QR, Anfragen mit Status, Dokumente); Zugang wird zum Start der Zusammenarbeit eingerichtet
 2026-10-28 · inhalte · Versprechen wahrheitsgemäß: keine Teams/Vertretungsteam/Key Account, kein „haftungssicher“, Portal „im Aufbau“ ohne App-/Foto-/Zeitstempel-Nachweise, DIN EN 13549 nur Reinigung, Grünpflege/Winterdienst rechtssicher, keine unbelegten Referenzen
 2026-08-24 · lead · Formular postet relativ an /api/lead, API-URL-Altlast entfernt
 2026-08-23 · design · Kontrast-System repariert, Hero nach Flyer-Seite-2 mit SecureOps-Karte und QR

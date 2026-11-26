@@ -30,7 +30,7 @@ export const SECUREOPS_FAQ_ITEMS: readonly FaqPair[] = [
   {
     question: "Haben Sie SecureOps wirklich selbst entwickelt?",
     answer:
-      "Ja. SecureOps ist unsere eigene Plattform. Das Kundenportal ist im Aufbau und wird aus der Praxis heraus weiterentwickelt.",
+      "Ja. SecureOps ist unsere eigene Plattform. Wir entwickeln das Kundenportal aus der Praxis heraus laufend weiter.",
   },
 ] as const;
 

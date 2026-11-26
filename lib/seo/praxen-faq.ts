@@ -15,7 +15,7 @@ export const PRAXEN_FAQ_ITEMS: readonly FaqPair[] = [
   {
     question: "Bekommen wir Nachweise für unser Qualitätsmanagement?",
     answer:
-      "Ja, auf Wunsch. Wir dokumentieren Einsätze als Protokoll (PDF) und stellen Ihnen die Nachweise bereit – künftig auch im Kundenportal SecureOps (im Aufbau). Den Umfang stimmen wir auf Ihre Anforderungen ab.",
+      "Ja, auf Wunsch. Wir dokumentieren Einsätze als Protokoll (PDF) und stellen Ihnen die Nachweise bereit – auch im Kundenportal SecureOps. Den Umfang stimmen wir auf Ihre Anforderungen ab.",
   },
   {
     question: "Wer ist unser Ansprechpartner?",

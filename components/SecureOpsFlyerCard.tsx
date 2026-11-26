@@ -48,7 +48,7 @@ export function SecureOpsFlyerCard({ className = "" }: Props) {
           <p className="font-display text-sm font-bold text-glow">01</p>
           <h3 className="mt-1 text-lg font-bold text-white">Kundenportal</h3>
           <p className="mt-2 text-sm leading-6 text-text-dunkel">
-            Meldungen, Anfragen und Dokumente an einem Ort – im Aufbau.
+            Meldungen, Anfragen und Dokumente an einem Ort.
           </p>
           <ul className="mt-4 space-y-2">
             {PORTAL_ITEMS.map((item) => (

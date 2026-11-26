@@ -16,7 +16,7 @@ const pillars = [
   },
   {
     title: "Protokolle statt Zettelwirtschaft",
-    body: "Checklisten und Protokolle (PDF) statt Excel und Messenger-Ketten. Meldungen und Dokumente bündeln wir künftig in unserem Kundenportal (im Aufbau).",
+    body: "Checklisten und Protokolle (PDF) statt Excel und Messenger-Ketten. Meldungen und Dokumente bündeln wir in unserem Kundenportal.",
   },
   {
     title: "Dokumentierte Checks & Eskalation",

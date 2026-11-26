@@ -53,7 +53,7 @@ const secureOpsPoints = [
   },
   {
     icon: ShieldCheckIcon,
-    text: "Anfragen mit Status und Dokumente im Kundenportal (im Aufbau)",
+    text: "Anfragen mit Status und Dokumente im Kundenportal",
   },
   {
     icon: UserCheckIcon,
@@ -195,7 +195,7 @@ export default function Home() {
             Ein Scan im Objekt – das Anliegen landet direkt bei uns.
           </h2>
           <p className="mt-4 max-w-3xl text-base leading-7 text-text-dunkel sm:text-lg">
-            Kundenportal im Aufbau: Meldungen per Melde-QR, Anfragen mit
+            Unser Kundenportal: Meldungen per Melde-QR, Anfragen mit
             Status und Dokumente – Nachweise als Protokoll (PDF). Den Umfang
             vereinbaren wir je Objekt. Für Hausverwaltungen, Gewerbe und
             Kommunen.
@@ -272,8 +272,7 @@ export default function Home() {
             </h2>
             <p className="mt-3 text-base leading-7 text-muted sm:text-lg">
               Statt Excel-Chaos arbeiten wir mit klaren Checklisten und
-              Protokollen (PDF); Meldungen laufen über unser Kundenportal (im
-              Aufbau) – damit Reinigung bei Ihnen nicht vom Zufall abhängt.
+              Protokollen (PDF); Meldungen laufen über unser Kundenportal – damit Reinigung bei Ihnen nicht vom Zufall abhängt.
             </p>
           </div>
           <ul className="mt-8 grid gap-5 sm:grid-cols-2">

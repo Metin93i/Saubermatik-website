@@ -92,8 +92,7 @@ export default function BueroGewerbePage() {
                 className="font-semibold text-secondary hover:underline"
               >
                 SecureOps
-              </Link>{" "}
-              (im Aufbau) bündelt Meldungen per Melde-QR, Anfragen mit Status
+              </Link>{" "} bündelt Meldungen per Melde-QR, Anfragen mit Status
               und Dokumente. Ob und in welchem Umfang, entscheiden Sie – wir beraten
               Sie ehrlich, was für Ihre Fläche sinnvoll ist.
             </p>

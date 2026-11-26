@@ -61,7 +61,7 @@ export default function HausverwaltungenPage() {
             <p className="max-w-3xl text-base leading-[1.75] text-foreground/90 sm:text-lg">
               Weniger Anrufe auf Ihrem Tisch: Mieter melden Reinigungsanliegen
               per Melde-QR direkt an uns – dokumentiert und nachvollziehbar
-              (Kundenportal im Aufbau).
+              im Kundenportal.
             </p>
           </div>
         </section>
@@ -206,7 +206,7 @@ export default function HausverwaltungenPage() {
                   Auffälligkeiten – defekte Lampen, lose Geländer,
                   Vandalismus, Sturmschäden – möglichst bevor der erste Mieter
                   anruft. Meldungen von Mietern laufen per Melde-QR ins
-                  Kundenportal (im Aufbau). Ihr fester Ansprechpartner – der
+                  Kundenportal. Ihr fester Ansprechpartner – der
                   Inhaber – stimmt das weitere Vorgehen mit Ihnen ab;
                   Fachgewerke koordinieren wir nach Freigabe. Ziel ist nicht
                   „null Beschwerden“

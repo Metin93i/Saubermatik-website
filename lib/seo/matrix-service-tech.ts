@@ -76,7 +76,7 @@ export const MATRIX_SERVICE_TECH: Record<
     operationalTitle: "WEG-Touren & Vertretung",
     operationalParagraphs: [
       "Ein fester Ansprechpartner — der Inhaber persönlich — sichert Wiedererkennung und Qualität. Verwalter sparen Koordinationszeit; Mieter erleben Konstanz. Vertretung bei Urlaub oder Ausfall regeln wir vor Leistungsbeginn schriftlich.",
-      "Kombination mit Winterdienst, Grünpflege und Hausmeisterservice aus einem Portfolio: ein Ansprechpartner, ein SLA, ein Kundenportal (im Aufbau).",
+      "Kombination mit Winterdienst, Grünpflege und Hausmeisterservice aus einem Portfolio: ein Ansprechpartner, ein SLA, ein Kundenportal.",
       "Vom Einzel-MFH bis zum Verwalter-Portfolio — Umfang und Kapazität klären wir vor dem Angebot.",
     ],
   },
