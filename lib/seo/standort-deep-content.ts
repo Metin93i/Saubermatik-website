@@ -84,10 +84,10 @@ function buildCoreCitySections(
     },
     {
       id: "digital",
-      title: `Kundenportal (im Aufbau) & Vertretung`,
+      title: `Kundenportal & Vertretung`,
       paragraphs: [
-        `Das Saubermatik-Kundenportal ist im Aufbau: Meldungen per Melde-QR, Anfragen mit Status und Dokumente an einem Ort. Vertretung bei Urlaub oder Ausfall regeln wir vor Leistungsbeginn schriftlich. Nachweise erhalten Sie als Protokoll (PDF) – für Abrechnung, Audits und Eigentümer-Reports.`,
-        `Das ist Reinigung 4.0 für die Region: nicht mehr Excel und Telefonkette, sondern schriftliche Protokolle und ein Kundenportal (im Aufbau) für Meldungen und Dokumente – vom Einzelbüro bis zum Multi-Objekt-Portfolio entlang ${infra}.`,
+        `Im Saubermatik-Kundenportal läuft alles zusammen: Meldungen per Melde-QR, Anfragen mit Status und Dokumente an einem Ort. Vertretung bei Urlaub oder Ausfall regeln wir vor Leistungsbeginn schriftlich. Nachweise erhalten Sie als Protokoll (PDF) – für Abrechnung, Audits und Eigentümer-Reports.`,
+        `Das ist Reinigung 4.0 für die Region: nicht mehr Excel und Telefonkette, sondern schriftliche Protokolle und ein Kundenportal für Meldungen und Dokumente – vom Einzelbüro bis zum Multi-Objekt-Portfolio entlang ${infra}.`,
       ],
     },
   ];
@@ -112,13 +112,13 @@ function buildRegionalSections(
 
   const regionalIntro = isHq
     ? [
-        `Meßstetten ist unser Firmensitz – hier starten Tourenplanung, Ansprechpartner-Betreuung und das Saubermatik-Kundenportal (im Aufbau). Für Objekte in Meßstetten bedeutet das: kürzeste Wege und fester Ansprechpartner statt Callcenter.`,
+        `Meßstetten ist unser Firmensitz – hier starten Tourenplanung, Ansprechpartner-Betreuung und das Saubermatik-Kundenportal. Für Objekte in Meßstetten bedeutet das: kürzeste Wege und fester Ansprechpartner statt Callcenter.`,
         `Als regional verwurzelter Partner kennen wir Zollernalbkreis und angrenzende Räume nicht aus dem Navi, sondern aus täglicher Praxis: WEG, Mittelstand, Praxen und Gewerbe mit unterschiedlichsten Anforderungen.`,
         `Vertretung bei Urlaub oder Ausfall regeln wir vor Leistungsbeginn schriftlich; digitale Protokolle und dokumentierte Qualität sind bei uns kein Upsell – sie sind die Betriebslogik, mit der Meßstetten und die gesamte Region bedient werden.`,
       ]
     : [
         focusFn(label),
-        `${label} profitiert von der Nähe zu unserem Sitz in Meßstetten: gebündelte Touren und ein Qualitätsstandard, der auch in kleineren Städten nicht abgeschwächt wird. Protokolle (PDF) und Kundenportal (im Aufbau) sind überall dieselben.`,
+        `${label} profitiert von der Nähe zu unserem Sitz in Meßstetten: gebündelte Touren und ein Qualitätsstandard, der auch in kleineren Städten nicht abgeschwächt wird. Protokolle (PDF) und Kundenportal sind überall dieselben.`,
         `Facility Manager in ${label} brauchen Planbarkeit: feste Intervalle für Unterhalt, Glas und Treppenhaus, Winterdienst mit Verkehrssicherungspflicht und – wo nötig – Hausmeisterservice aus einem Guss. Saubermatik liefert das als SLA, nicht als Stundenkontingent ohne Nachweis.`,
       ];
 
@@ -144,7 +144,7 @@ function buildRegionalSections(
       title: `Verkehrssicherung, Winterdienst & Hausverwaltung`,
       paragraphs: [
         `Verkehrssicherungspflicht ist in ${label} kein Nebenthema: Winterdienst, Treppenhaus, Glätte auf Zufahrten und Räum- und Streupflicht mit schriftlichem Plan und Protokoll. Saubermatik liefert dokumentierte Einsätze und eine objektbezogene Abrechnung; ob die Kosten umlagefähig sind, richtet sich nach Mietvertrag und § 2 BetrKV (Umfang je nach Objekt und Vereinbarung).`,
-        `Hausverwaltungen und WEG in ${label} können bei uns Treppenhaus, Grünpflege, Winterdienst und Hausmeisterservice bündeln – ein fester Ansprechpartner, ein SLA, Meldungen per Melde-QR im Kundenportal (im Aufbau). Mieterzufriedenheit steigt, wenn Intervalle stimmen und Mängel proaktiv gemeldet werden.`,
+        `Hausverwaltungen und WEG in ${label} können bei uns Treppenhaus, Grünpflege, Winterdienst und Hausmeisterservice bündeln – ein fester Ansprechpartner, ein SLA, Meldungen per Melde-QR im Kundenportal. Mieterzufriedenheit steigt, wenn Intervalle stimmen und Mängel proaktiv gemeldet werden.`,
         `Notfall-Reaktionszeiten sind vertraglich steuerbar: Glasbruch, Wasserschaden oder kurzfristige Sonderreinigung werden nach denselben vereinbarten Abläufen disponiert wie der tägliche Unterhalt – transparent für Sie, steuerbar für uns.`,
       ],
     },
@@ -160,7 +160,7 @@ function buildRegionalSections(
       id: "digital",
       title: `Digitale Qualitätssicherung für ${label}`,
       paragraphs: [
-        `Einsätze in ${label} protokollieren wir nachvollziehbar – Nachweise erhalten Sie als Protokoll (PDF), Meldungen laufen per Melde-QR über das Kundenportal (im Aufbau) – keine monatliche Überraschung, keine undokumentierte „war schon jemand da?“-Diskussion.`,
+        `Einsätze in ${label} protokollieren wir nachvollziehbar – Nachweise erhalten Sie als Protokoll (PDF), Meldungen laufen per Melde-QR über das Kundenportal – keine monatliche Überraschung, keine undokumentierte „war schon jemand da?“-Diskussion.`,
         `Vertretung bei Urlaub oder Ausfall regeln wir vor Leistungsbeginn schriftlich – Ihr fester Ansprechpartner ist der Inhaber persönlich. Das ist der Unterschied zwischen Reinigung als Einkaufsposition und Facility mit klarem Ansprechpartner in ${label} und der gesamten Region.`,
       ],
     },

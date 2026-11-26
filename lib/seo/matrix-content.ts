@@ -50,7 +50,7 @@ function buildLocalBlockA(
     const infra = formatInfrastructure(profile.infrastructure);
     const leads = [
       `${cityLabel} ist geprägt von ${profile.industryFocus} Für ${serviceLabel} bedeutet das: SLAs, die zur lokalen Wirtschaft passen — nicht generische Textbausteine aus der Großstadt. Saubermatik verbindet Meßstetten als Firmensitz mit Branchenkompetenz vor Ort: digitale Leistungsverzeichnisse, dokumentierte Qualität und einen persönlichen Ansprechpartner für Facility Manager, Hausverwaltungen und Geschäftsführung.`,
-      `In ${cityLabel} planen wir ${serviceLabel} entlang realer Gewerbestrukturen — ${zones} und die Anbindung über ${infra} sind Planungsanker für Touren und Reaktionszeiten. Nachweise erhalten Sie als Protokoll (PDF); Meldungen laufen per Melde-QR über das Kundenportal (im Aufbau).`,
+      `In ${cityLabel} planen wir ${serviceLabel} entlang realer Gewerbestrukturen — ${zones} und die Anbindung über ${infra} sind Planungsanker für Touren und Reaktionszeiten. Nachweise erhalten Sie als Protokoll (PDF); Meldungen laufen per Melde-QR über das Kundenportal.`,
       `Der Wirtschaftsschwerpunkt (${profile.industryFocus}) verlangt mehr als Intervalle von der Stange: Sonderbereiche, Werterhalt sensibler Substanz und Verkehrssicherungspflicht werden vor Vertragsstart schriftlich fixiert — nachvollziehbar für Einkauf und Eigentümerversammlungen.`,
     ];
     return {
@@ -67,14 +67,14 @@ function buildLocalBlockA(
 
   const regionalLeads = isHq
     ? [
-        `Meßstetten ist unser Firmensitz — für ${serviceLabel} bedeutet das kürzeste Wege, fester Ansprechpartner statt Callcenter und maximale Reaktionsgeschwindigkeit. Disposition, persönliche Betreuung durch den Inhaber und das Kundenportal (im Aufbau) sind hier zu Hause.`,
+        `Meßstetten ist unser Firmensitz — für ${serviceLabel} bedeutet das kürzeste Wege, fester Ansprechpartner statt Callcenter und maximale Reaktionsgeschwindigkeit. Disposition, persönliche Betreuung durch den Inhaber und das Kundenportal sind hier zu Hause.`,
         `Als regional verwurzelter Partner kennen wir WEG, Mittelstand, Praxen und Gewerbe nicht aus dem Navi, sondern aus täglicher Praxis. ${serviceLabel} wird mit festem Ansprechpartner (Inhaber), digitalen Protokollen und schriftlich vereinbarten Qualitätskriterien umgesetzt — nicht als anonyme Subunternehmer-Kette.`,
         `Vertretung und Kapazität regeln wir vor Leistungsbeginn schriftlich — damit klar ist, was bei Urlaub oder Krankheit passiert. Transparente SLAs, keine versteckten Kosten.`,
       ]
     : [
         `${cityLabel} liegt im Zollernalbkreis und Umkreis — ${serviceLabel} von Saubermatik kombiniert regionale Nähe aus Meßstetten mit überregionaler Prozessqualität. Kurze Anfahrten, ein fester Ansprechpartner, dieselben digitalen Standards wie in unseren Kernstädten.`,
         `Für ${cityLabel} setzen Unternehmen und Hausverwaltungen auf Verlässlichkeit statt Billig-Anbieter. Wir liefern dokumentierte Touren, Verkehrssicherungsnachweise und SLAs, die intern verteidigbar sind — bei Audits, Versicherern und Mieterversammlungen.`,
-        `Ob Unterhalt, Glas, Winterdienst oder Objektbetreuung: ${serviceLabel} wird schriftlich geplant und als Protokoll (PDF) nachgewiesen; Meldungen laufen per Melde-QR über das Kundenportal (im Aufbau). Ein Partner statt vier Schnittstellen.`,
+        `Ob Unterhalt, Glas, Winterdienst oder Objektbetreuung: ${serviceLabel} wird schriftlich geplant und als Protokoll (PDF) nachgewiesen; Meldungen laufen per Melde-QR über das Kundenportal. Ein Partner statt vier Schnittstellen.`,
       ];
 
   return {
@@ -240,10 +240,10 @@ function buildDigitalBlock(
     id: "digital-qm",
     title: `Kundenportal & Nachweise: ${serviceLabel} in ${cityLabel}`,
     paragraphs: [
-      `Das Saubermatik-Kundenportal ist im Aufbau: Meldungen per Melde-QR, Anfragen mit Status und Dokumente an einem Ort. Nachweise erhalten Sie als Protokoll (PDF) — für Abrechnung, ISO-Audits, BetrKV und Eigentümer-Reports. Vertretung und Kapazität für Ihr Objekt in ${cityLabel} regeln wir vor Leistungsbeginn schriftlich.`,
+      `Im Saubermatik-Kundenportal läuft alles zusammen: Meldungen per Melde-QR, Anfragen mit Status und Dokumente an einem Ort. Nachweise erhalten Sie als Protokoll (PDF) — für Abrechnung, ISO-Audits, BetrKV und Eigentümer-Reports. Vertretung und Kapazität für Ihr Objekt in ${cityLabel} regeln wir vor Leistungsbeginn schriftlich.`,
       `${serviceLabel} wird damit planbar — vom Einzelobjekt bis zum Multi-Standort-Portfolio. Ihr fester Ansprechpartner ist der Inhaber persönlich — über Vertragslaufzeit, Anpassungen und Eskalationen: ein Gesicht, ein SLA, keine Hotline.`,
       `Einstieg in vier Schritten: Bedarf klären, Begehung, unverbindliches Angebot, Start im Objekt. Das ist Facility-Service auf Augenhöhe — regional aus Meßstetten, digital dokumentiert.`,
-      `Protokolle (PDF), Versicherungsnachweise und Unterweisungsbelege stellen wir auf Anfrage bereit — für ${cityLabel} und alle Standorte in Ihrem Portfolio. Im Kundenportal (im Aufbau) liegen Dokumente künftig gesammelt an einem Ort.`,
+      `Protokolle (PDF), Versicherungsnachweise und Unterweisungsbelege stellen wir auf Anfrage bereit — für ${cityLabel} und alle Standorte in Ihrem Portfolio. Im Kundenportal liegen Dokumente gesammelt an einem Ort.`,
       `Wenn Sie ${serviceLabel} in ${cityLabel} neu vergeben oder wechseln wollen: Starten Sie mit einer unverbindlichen Begehung. Wir liefern ein schriftliches LV mit klaren SLAs — ohne versteckte Kosten, ohne Platzhalter, ohne Großstadt-Textbausteine.`,
     ],
   };

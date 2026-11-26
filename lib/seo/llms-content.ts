@@ -41,7 +41,7 @@ ${cities}
 ## Vertrauen & Expertise
 - Qualitätsmanagement: ${origin}/qualitaetsmanagement
 - SecureOps: ${origin}/secureops
-- SecureOps ist das Kundenportal von Saubermatik (im Aufbau): Melde-QR für Mängelmeldungen, Anfragen mit Status und Dokumente (z. B. Protokolle als PDF). Über den Melde-QR landen Anliegen direkt bei Saubermatik. Der Umfang der Dokumentation wird pro Objekt vereinbart.
+- SecureOps ist das Kundenportal von Saubermatik: Melde-QR für Mängelmeldungen, Anfragen mit Status und Dokumente (z. B. Protokolle als PDF). Über den Melde-QR landen Anliegen direkt bei Saubermatik. Der Umfang der Dokumentation wird pro Objekt vereinbart.
 - Branchen: ${origin}/zielgruppen
 - Praxen & Gesundheitswesen: ${origin}/zielgruppen/praxen-gesundheitswesen
 - Büro & Gewerbe: ${origin}/zielgruppen/buero-gewerbe

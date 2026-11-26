@@ -73,8 +73,7 @@ export default function HausmeisterservicePage() {
               Für Hausverwaltungen, WEG und Gewerbeimmobilien: Wir übernehmen
               die operative Objektbetreuung zwischen den großen Gewerken – im
               vereinbarten Umfang, mit dokumentierten Standard Operating
-              Procedures und Meldungen per Melde-QR im Kundenportal (im
-              Aufbau).
+              Procedures und Meldungen per Melde-QR im Kundenportal.
             </p>
             <LeistungHeroImage
               slug="hausmeisterservice"
@@ -114,8 +113,7 @@ export default function HausmeisterservicePage() {
               Facility-Teams bei genau den Aufgaben, die den Alltag sprengen:
               Kleinreparaturen, Kontrollgänge, Koordination mit Handwerkern,
               Schlüssel und Lieferanten. Einsätze werden als Protokoll (PDF)
-              dokumentiert, Meldungen laufen per Melde-QR im Kundenportal (im
-              Aufbau) – Ihr fester Ansprechpartner ist der Inhaber persönlich,
+              dokumentiert, Meldungen laufen per Melde-QR im Kundenportal – Ihr fester Ansprechpartner ist der Inhaber persönlich,
               ohne WhatsApp-Ketten oder Zettelwirtschaft.
             </p>
             <p>
@@ -160,7 +158,7 @@ export default function HausmeisterservicePage() {
             <p className="mt-4 text-base leading-7 text-muted">
               Hausmeister, Treppenhausreinigung, Grünpflege und Winterdienst aus
               einem Portfolio vermeiden Schnittstellenchaos – ein
-              Ansprechpartner, ein SLA, ein Kundenportal (im Aufbau). Besonders
+              Ansprechpartner, ein SLA, ein Kundenportal. Besonders
               für{" "}
               <Link
                 href="/zielgruppen/hausverwaltungen"

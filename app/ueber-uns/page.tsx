@@ -37,8 +37,7 @@ export default function UeberUnsPage() {
             Alltagssicherheit
           </strong>
           : Wir arbeiten mit Checklisten und Protokollen (PDF); Meldungen,
-          Anfragen und Dokumente bündeln wir in unserem Kundenportal SecureOps
-          (im Aufbau). Wenn sich etwas ändert, sehen
+          Anfragen und Dokumente bündeln wir in unserem Kundenportal SecureOps. Wenn sich etwas ändert, sehen
           wir es früh – und handeln,
           bevor Ihr Objekt darunter leidet.
         </p>

@@ -90,7 +90,7 @@ export function getLeistungFaqItems(slug: LeistungSlug): readonly FaqPair[] {
       {
         question: "Wie schnell reagieren Sie bei Störungen (z. B. defekte Tür)?",
         answer:
-          "Reaktionszeiten, Meldewege und Eskalationsketten vereinbaren wir je Objekt schriftlich und priorisieren Einsätze danach. Meldungen gehen per Melde-QR mit Status im Kundenportal (im Aufbau) ein – statt über Zuruf zwischen Mieter, Verwaltung und Dienstleister.",
+          "Reaktionszeiten, Meldewege und Eskalationsketten vereinbaren wir je Objekt schriftlich und priorisieren Einsätze danach. Meldungen gehen per Melde-QR mit Status im Kundenportal ein – statt über Zuruf zwischen Mieter, Verwaltung und Dienstleister.",
       },
     ],
     gruenanlagenpflege: [

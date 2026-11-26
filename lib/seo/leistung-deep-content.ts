@@ -48,7 +48,7 @@ const treppenhausreinigung: LeistungDeepContent = {
       paragraphs: [
         "Repräsentativität beginnt im Treppenhaus: Eingang, Spiegel, Glas, Briefkastenzonen und Fahrstuhl-Vorhallen prägen den ersten Eindruck bei Vermietung, Verkauf und Mieterwechsel. Saubermatik plant Touren so, dass Störungen minimal bleiben – abgestimmte Zeitfenster, leise Geräte, klare Zuständigkeiten zwischen Reinigung, Hausmeister und Winterdienst.",
         "Für Hausverwaltungen ist die Betriebskostenabrechnung zentral: Ob Kosten umlagefähig sind, richtet sich nach Mietvertrag und § 2 BetrKV; ausgewiesen werden müssen sie objektbezogen, nachvollziehbar und verhältnismäßig. Unsere transparenten Rechnungen und Leistungsprotokolle (PDF) liefern genau die Granularität, die Eigentümerversammlungen und Prüfer erwarten – keine Pauschale ohne Nachweis, sondern dokumentierte Intervalle pro Liegenschaft.",
-        "Kombinieren Sie Treppenhausreinigung mit unserem Hausverwaltungs-Portfolio: ein Ansprechpartner, ein SLA, ein Kundenportal (im Aufbau). Das reduziert Schnittstellenchaos zwischen Grünpflege, Winterdienst und Objektbetreuung.",
+        "Kombinieren Sie Treppenhausreinigung mit unserem Hausverwaltungs-Portfolio: ein Ansprechpartner, ein SLA, ein Kundenportal. Das reduziert Schnittstellenchaos zwischen Grünpflege, Winterdienst und Objektbetreuung.",
       ],
     },
     {
@@ -114,7 +114,7 @@ const winterdienst: LeistungDeepContent = {
       paragraphs: [
         "Ob Winterdienstkosten umlagefähig sind, richtet sich nach Mietvertrag und § 2 BetrKV; ausgewiesen werden müssen sie objektbezogen und nachvollziehbar. Unsere Rechnungen und Protokolle (PDF) weisen die Kosten objektbezogen aus – inklusive Einsatzhäufigkeit und Sonderfahrten bei Extremwetter.",
         "Mieterkommunikation profitiert von Verlässlichkeit: Reklamationen können mit Protokoll beantwortet werden, statt mit Vermutungen.",
-        "Kombinieren Sie Winterdienst mit unseren Leistungen für Hausverwaltungen für ein durchgängiges Liegenschaftsbild – ein persönlicher Ansprechpartner, ein SLA, ein Kundenportal (im Aufbau).",
+        "Kombinieren Sie Winterdienst mit unseren Leistungen für Hausverwaltungen für ein durchgängiges Liegenschaftsbild – ein persönlicher Ansprechpartner, ein SLA, ein Kundenportal.",
       ],
     },
   ],

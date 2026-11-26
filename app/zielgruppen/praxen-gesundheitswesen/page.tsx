@@ -95,15 +95,14 @@ export default function PraxenGesundheitswesenPage() {
               Praxen müssen intern nachweisen können, dass Abläufe eingehalten
               werden. Auf Wunsch dokumentieren wir unsere Einsätze als
               Protokoll (PDF) und stellen Ihnen Nachweise zur Verfügung – zum
-              Beispiel für Ihr Qualitätsmanagement oder eine Begehung. Künftig
-              finden Sie Dokumente auch in unserem Kundenportal{" "}
+              Beispiel für Ihr Qualitätsmanagement oder eine Begehung. Ihre
+              Dokumente finden Sie auch in unserem Kundenportal{" "}
               <Link
                 href="/secureops"
                 className="font-semibold text-secondary hover:underline"
               >
                 SecureOps
-              </Link>{" "}
-              (im Aufbau). Den Umfang der Dokumentation vereinbaren wir pro
+              </Link>. Den Umfang der Dokumentation vereinbaren wir pro
               Objekt.
             </p>
           </article>

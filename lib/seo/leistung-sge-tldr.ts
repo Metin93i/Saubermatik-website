@@ -44,7 +44,7 @@ export const LEISTUNG_SGE_TLDR: Record<LeistungSlug, LeistungSgeTldr> = {
     problem:
       "Kleinreparaturen, Kontrollgänge und Koordination entziehen sich internen Teams oder fragmentieren über viele Dienstleister.",
     saubermatikLoesung:
-      "Gebündelte Objektbetreuung mit festem Ansprechpartner (Inhaber) und Meldungen per Melde-QR im Kundenportal (im Aufbau) – eine Schnittstelle.",
+      "Gebündelte Objektbetreuung mit festem Ansprechpartner (Inhaber) und Meldungen per Melde-QR im Kundenportal – eine Schnittstelle.",
     zeitrahmen:
       "Leistungsbild und SLA-Fenster in der Regel innerhalb von 7–14 Werktagen; Notfallwege werden vorab definiert.",
   },

@@ -5,7 +5,7 @@ const POINTS = [
   },
   {
     title: "Digitales Kundenportal",
-    text: "Im Aufbau: Melde-QR für Mängelmeldungen, Anfragen mit Status und Dokumente.",
+    text: "Melde-QR für Mängelmeldungen, Anfragen mit Status und Dokumente an einem Ort.",
   },
   {
     title: "Dokumentierte Qualität",

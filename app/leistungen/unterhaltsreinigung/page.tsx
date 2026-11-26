@@ -226,7 +226,7 @@ export default function UnterhaltsreinigungPage() {
                 sehen, welche Positionen geprüft wurden, wo Nacharbeit nötig
                 war und ob das vereinbarte SLA eingehalten wurde – ohne
                 Telefonkette, ohne Excel-Export am Monatsende. Mängel melden Sie
-                per Melde-QR im Kundenportal (im Aufbau).
+                per Melde-QR im Kundenportal.
               </p>
               <p>
                 Vertretung und Kapazität bei Urlaub oder Ausfall regeln wir vor

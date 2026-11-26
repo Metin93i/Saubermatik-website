@@ -9,9 +9,9 @@ import { buildTelHref } from "@/lib/phone";
 import { getSecureOpsFaqItems } from "@/lib/seo/secureops-faq";
 
 export const metadata: Metadata = {
-  title: "SecureOps – Kundenportal von Saubermatik (im Aufbau)",
+  title: "SecureOps – Kundenportal von Saubermatik",
   description:
-    "SecureOps ist das Kundenportal von Saubermatik (im Aufbau): Melde-QR für Mängelmeldungen, Anfragen mit Status und Dokumente wie Protokolle (PDF). Umfang je nach Objekt.",
+    "SecureOps ist das Kundenportal von Saubermatik: Melde-QR für Mängelmeldungen, Anfragen mit Status und Dokumente wie Protokolle (PDF). Umfang je nach Objekt.",
   alternates: { canonical: "/secureops" },
   openGraph: {
     images: [
@@ -64,12 +64,12 @@ export default function SecureOpsPage() {
               </div>
             </div>
             <h1 className="mt-6 max-w-4xl text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-[2.5rem] lg:leading-tight">
-              SecureOps – unser Kundenportal (im Aufbau)
+              SecureOps – unser Kundenportal
             </h1>
             <p className="mt-6 max-w-3xl text-lg leading-8 text-text-dunkel">
               Die meisten Reinigungsfirmen liefern eine Rechnung. Wir liefern
               zusätzlich ein Protokoll (PDF). SecureOps ist unser eigenes
-              Kundenportal, derzeit im Aufbau: Meldungen per Melde-QR, Anfragen
+              Kundenportal: Meldungen per Melde-QR, Anfragen
               mit Status und Dokumente an einem Ort.
             </p>
             <div className="mt-10 flex flex-wrap gap-4">
@@ -127,7 +127,7 @@ export default function SecureOpsPage() {
             </h2>
             <div className="space-y-5 text-base leading-[1.75] text-foreground/90">
               <p>
-                Mit dem Start des Kundenportals erhalten Sie einen persönlichen
+                Als Kunde erhalten Sie einen persönlichen
                 Zugang. Dort finden Sie Ihre Anfragen mit Status und Ihre
                 Dokumente – ohne anrufen zu müssen.
               </p>
@@ -232,7 +232,7 @@ export default function SecureOpsPage() {
                 Dokumentation über SecureOps ist Teil unserer Leistung.
               </li>
               <li>
-                Zugang: Sobald das Kundenportal verfügbar ist, richten wir Ihren
+                Zugang: Zum Start der Zusammenarbeit richten wir Ihren
                 Zugang ein und bringen bei Bedarf den Melde-QR im Objekt an.
               </li>
             </ol>
