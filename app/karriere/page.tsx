@@ -33,7 +33,7 @@ export default function KarrierePage() {
     <article className="mx-auto w-full max-w-5xl flex-1 px-4 py-12 sm:px-6 lg:px-8">
       <p className="text-sm font-semibold text-secondary">Karriere</p>
       <h1 className="mt-3 text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-        Werden Sie Teil eines Teams, das digital denkt und handwerklich liefert.
+        Bauen Sie Saubermatik mit auf – digital gedacht, handwerklich geliefert.
       </h1>
       <p className="mt-5 text-lg leading-8 text-muted">
         Wir suchen Menschen mit Sinn für Ordnung, Respekt vor Kundenobjekten und

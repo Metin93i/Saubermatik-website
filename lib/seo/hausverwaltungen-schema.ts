@@ -12,7 +12,7 @@ export function buildHausverwaltungenServiceJsonLd() {
     serviceType:
       "Gebäudereinigung, Hausmeisterservice, Grünanlagenpflege und Winterdienst für Hausverwaltungen",
     description:
-      "All-in-One Objektbetreuung für Hausverwaltungen: Treppenhausreinigung, Hausmeister, Grünpflege und dokumentierter Winterdienst mit dokumentierten Einsätzen über die Saubermatik-Plattform (Umfang je nach Objekt und Vereinbarung).",
+      "All-in-One Objektbetreuung für Hausverwaltungen: Treppenhausreinigung, Hausmeister, Grünpflege und Winterdienst mit dokumentierten Einsätzen (Protokolle (PDF); Umfang je nach Objekt und Vereinbarung).",
     url,
     inLanguage: "de-DE",
     provider: {

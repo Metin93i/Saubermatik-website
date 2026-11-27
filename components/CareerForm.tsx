@@ -125,7 +125,7 @@ export function CareerForm({ className }: CareerFormProps) {
           Bewerbung gesendet
         </p>
         <h2 className="mt-2 text-xl font-bold tracking-tight text-foreground sm:text-2xl">
-          Vielen Dank! Unser Team prüft Ihre Angaben und meldet sich bei Ihnen.
+          Vielen Dank! Wir prüfen Ihre Angaben und melden uns bei Ihnen.
         </h2>
         <p className="mt-3 text-sm leading-6 text-muted">
           Sie erhalten in der Regel innerhalb weniger Werktage Rückmeldung.

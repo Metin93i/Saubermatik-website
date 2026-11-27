@@ -112,7 +112,7 @@ export default function FensterGlasreinigungPage() {
               für Außenfassaden und Höhenarbeiten – und klassisches
               Präzisions-Handwerk mit Einwascher und Abzieher für Innenräume,
               Showrooms und feingliedrige Glasbauten. Beide Welten teilen sich
-              eine digitale Protokollkette: Sie sehen, wann welche Fläche
+              ein Einsatzprotokoll (PDF): Sie sehen, wann welche Fläche
               bearbeitet wurde – ohne Reklamations-Pingpong. Für Büros und
               Gewerbeflächen siehe{" "}
               <Link
@@ -151,7 +151,7 @@ export default function FensterGlasreinigungPage() {
                 <strong className="text-foreground">
                   Carbon-Teleskopstangen
                 </strong>{" "}
-                erreichen geschulte Teams Verglasungen bis zu rund 20 Metern
+                erreichen wir Verglasungen bis zu rund 20 Metern
                 Höhe vom Boden aus. Das bedeutet konsequent{" "}
                 <strong className="text-foreground">Hubsteiger-Verzicht</strong>{" "}
                 an vielen Objekten – keine Kosten für Hubsteiger, Kräne oder
@@ -162,7 +162,7 @@ export default function FensterGlasreinigungPage() {
                 oft deutlich günstiger als klassische Höhenkonzepte.
               </p>
               <p>
-                Unsere Teams arbeiten nach dokumentierten SOPs: Wasserqualität,
+                Wir arbeiten nach dokumentierten SOPs: Wasserqualität,
                 Stangenlänge, Reinigungsrichtung und Wetterfenster werden im
                 Objektplan festgehalten. So wird die{" "}
                 <strong className="text-foreground">
@@ -241,9 +241,9 @@ export default function FensterGlasreinigungPage() {
                 Für Ausschreibungen und Rahmenverträge liefern wir
                 nachvollziehbare Unterlagen: Einsatzprotokolle, Versicherungs-
                 und Unterweisungsnachweise, Abstimmung mit Ihrem Objektleiter.
-                So reduzieren Sie nicht nur optische Risiken, sondern auch
-                Betreiberhaftung – ein Punkt, den interne „Billig-Lösungen“
-                selten sauber abbilden.
+                So sind Ausführung und Arbeitssicherheit nachvollziehbar
+                belegt – ein Punkt, den interne „Billig-Lösungen“ selten sauber
+                abbilden.
               </p>
               <p>
                 Kombinieren Sie Glasprogramme mit unserer{" "}
@@ -290,7 +290,7 @@ export default function FensterGlasreinigungPage() {
                 TRBS 2121 &amp; BG-BAU-orientierte Arbeitssicherheit in der Höhe
               </li>
               <li>
-                Digitale Protokolle für Facility, Eigentümer und Abrechnung
+                Einsatzprotokolle (PDF) für Facility, Eigentümer und Abrechnung
               </li>
             </ul>
           </div>

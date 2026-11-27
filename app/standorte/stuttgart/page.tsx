@@ -7,7 +7,7 @@ import { SeoCrossLinks } from "@/components/SeoCrossLinks";
 export const metadata: Metadata = {
   title: "Fensterreinigung & Gebäudereinigung Stuttgart",
   description:
-    "Professionelle Fenster- und Glasreinigung sowie Gebäudereinigung für Stuttgart – mit Logistik über B14/B27, Stadtteile wie Degerloch, Vaihingen und Bad Cannstatt, digitaler Objektsteuerung aus der Zollernalb.",
+    "Professionelle Fenster- und Glasreinigung sowie Gebäudereinigung für Stuttgart – mit Logistik über B14/B27, Stadtteile wie Degerloch, Vaihingen und Bad Cannstatt – Projektaufträge aus Meßstetten, dokumentiert als Protokoll (PDF).",
   alternates: { canonical: "/standorte/stuttgart" },
 };
 
@@ -15,7 +15,7 @@ const chunks = [
   {
     id: "einleitung",
     title: "Warum Saubermatik für Stuttgart?",
-    body: `Stuttgart ist kein „Nebenbei“-Markt für uns: Die Region ist über die B14 und B27 eng mit dem Zollernalbkreis und unserem Stützpunkt Meßstetten verbunden. Genau diese Logistik nutzen wir, um Gewerbeimmobilien, Praxen, Kanzleien und repräsentative Eingänge in Stadtteilen wie Degerloch, Vaihingen oder Bad Cannstatt termintreu zu betreuen. Anders als anonyme Großanbieter arbeiten wir mit festen Ansprechpartnern und digital dokumentierten Touren – Sie sehen, was wann erledigt wurde, statt nur zu hören, dass „jemand da war“.`,
+    body: `Stuttgart ist kein „Nebenbei“-Markt für uns: Die Region ist über die B14 und B27 eng mit dem Zollernalbkreis und unserem Stützpunkt Meßstetten verbunden. Über diese Anbindung übernehmen wir Projektaufträge für Gewerbeimmobilien, Praxen, Kanzleien und repräsentative Eingänge in Stadtteilen wie Degerloch, Vaihingen oder Bad Cannstatt – termintreu und nach Absprache. Anders als anonyme Großanbieter arbeiten wir mit einem festen Ansprechpartner – dem Inhaber persönlich – und dokumentierten Touren: Sie erhalten Protokolle darüber, was wann erledigt wurde, statt nur zu hören, dass „jemand da war“.`,
   },
   {
     id: "glas-mitte",
@@ -25,17 +25,17 @@ const chunks = [
   {
     id: "industrie",
     title: "Industriegebiete, Gewerbe und Glasfassaden",
-    body: `Rund um Feuerbach, Möhringen oder die Gewerbeachsen an der B27 fallen andere Anforderungen an: größere Flächen, mehr Verkehrsfilm, teils Außenaufzüge oder Sonderzugänge. Hier kombinieren wir Unterhalts- und Glasprogramme mit klaren Checklisten und Arbeitssicherheit. Wo Außenfassaden betroffen sind, stimmen wir Verfahren materialgerecht ab – von der Schonung sensibler Beschichtungen bis zu dokumentierten Einsätzen für Ihre Facility-Dokumentation. So bleibt die „Entity-Density“ Ihres Objekts hoch: Reinigung, Sicherheit und Nachweis aus einer Hand.`,
+    body: `Rund um Feuerbach, Möhringen oder die Gewerbeachsen an der B27 fallen andere Anforderungen an: größere Flächen, mehr Verkehrsfilm, teils Außenaufzüge oder Sonderzugänge. Hier kombinieren wir Unterhalts- und Glasprogramme mit klaren Checklisten und Arbeitssicherheit. Wo Außenfassaden betroffen sind, stimmen wir Verfahren materialgerecht ab – von der Schonung sensibler Beschichtungen bis zu dokumentierten Einsätzen für Ihre Facility-Dokumentation. So erhalten Sie Reinigung, Sicherheit und Nachweis aus einer Hand.`,
   },
   {
     id: "logistik",
-    title: "Anbindung B14 / B27 und regionale Teams",
-    body: `Die Bundesstraßen B14 und B27 sind für uns keine Marketing-Floskeln, sondern reale Einsatzkorridore: Sie verbinden Heidenheim, Schwäbisch Hall und den Zollernalbkreis mit dem Ballungsraum Stuttgart. Das erlaubt stabile Tourenplanung und Ersatzlogistik, wenn einmal ein Team ausfällt – die Saubermatik-Plattform verteilt Aufgaben neu, bevor Qualität leidet. Für Sie heißt das: weniger Koordinationsstress, kürzere Reaktionswege und eine Reinigung, die auch unter Druck nicht zur Lotterie wird.`,
+    title: "Anbindung B14 / B27",
+    body: `Die Bundesstraßen B14 und B27 sind für uns keine Marketing-Floskeln, sondern reale Einsatzkorridore: Sie verbinden den Zollernalbkreis mit dem Ballungsraum Stuttgart. Das erlaubt stabile Tourenplanung; Vertretung und Kapazität regeln wir vor Leistungsbeginn schriftlich. Für Sie heißt das: weniger Koordinationsstress, kürzere Reaktionswege und eine Reinigung, die auch unter Druck nicht zur Lotterie wird.`,
   },
   {
     id: "cta",
     title: "Nächster Schritt",
-    body: `Ob Fensterreinigung Stuttgart, Gebäudereinigung für Ihre Liegenschaft oder ein kombiniertes Objektprogramm: Wir übersetzen Ihr Gebäude in ein klares Leistungsbild mit messbaren Intervallen. Nutzen Sie die Fenster- und Glasreinigung als Einstieg oder wählen Sie direkt die passende Leistung – wir verknüpfen alles mit derselben digitalen Steuerung wie in der Region Zollernalb.`,
+    body: `Ob Fensterreinigung Stuttgart, Gebäudereinigung für Ihre Liegenschaft oder ein kombiniertes Objektprogramm: Wir übersetzen Ihr Gebäude in ein klares Leistungsbild mit messbaren Intervallen. Nutzen Sie die Fenster- und Glasreinigung als Einstieg oder wählen Sie direkt die passende Leistung – wir arbeiten mit denselben dokumentierten Abläufen wie in der Region Zollernalb.`,
   },
 ] as const;
 
@@ -57,7 +57,7 @@ export default function StandortStuttgartPage() {
       </h1>
       <FreshnessBadge className="mt-4" />
       <p className="mt-4 text-lg leading-8 text-muted">
-        Hyper-lokale Präsenz: Degerloch, Vaihingen, Bad Cannstatt,
+        Degerloch, Vaihingen, Bad Cannstatt,
         Industriezonen und die Achsen{" "}
         <strong className="text-foreground">B14 / B27</strong> fließen in unsere
         Einsatzplanung ein – für Glas, Büro und Objekt.

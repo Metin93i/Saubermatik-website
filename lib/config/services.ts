@@ -10,7 +10,7 @@ export const SERVICES = [
     funnelLabel: "Unterhalt & Büro",
     emoji: "🏢",
     summary:
-      "Intervallbasierte Sauberkeit für Büros, Praxen und Gewerbeflächen – mit digitaler Objektsteuerung und festen Ansprechpartnern.",
+      "Intervallbasierte Sauberkeit für Büros, Praxen und Gewerbeflächen – mit dokumentierten Einsätzen und festem Ansprechpartner.",
     body: [
       "Staubwischen, Sanitär, Bodenpflege und Verbrauchsmaterial nach Plan: Sie behalten die Kontrolle über Qualität und Budget.",
       "Ideal, wenn Sie keine Überraschungen wollen – sondern einen Partner, der mitdenkt.",
@@ -47,7 +47,7 @@ export const SERVICES = [
     funnelLabel: "Grund & Bau",
     emoji: "🧱",
     summary:
-      "Tiefenreinigung, Übergabenach Bau oder Sanierung – termingetrieben und abnahmefertig.",
+      "Tiefenreinigung, Übergabe nach Bau oder Sanierung – termingetrieben und abnahmefertig.",
     body: [
       "Wir entfernen Baustaub, Schutzfolien und Verschmutzungen materialspezifisch – ohne Ihre Oberflächen zu riskieren.",
       "Klare Meilensteine und Abstimmung mit Ihrem Projektleiter halten den Zeitplan stabil.",
@@ -62,7 +62,7 @@ export const SERVICES = [
       "Repräsentative Eingangsbereiche und Treppenhäuser für WEG, Miethäuser und Gewerbeimmobilien.",
     body: [
       "Geländer, Bodenbeläge, Spiegel und Zugänge werden intervalbasiert gepflegt – ohne Störung der Mieterströme.",
-      "Dokumentierte Touren und feste Ansprechpartner reduzieren Reklamationen und Verwaltungsaufwand.",
+      "Dokumentierte Touren und ein fester Ansprechpartner reduzieren Verwaltungsaufwand.",
     ],
   },
   {
@@ -71,7 +71,7 @@ export const SERVICES = [
     funnelLabel: "Hausmeister",
     emoji: "🔧",
     summary:
-      "Kleine Reparaturen, Kontrollgänge, Schlüssel- und Lieferantenlogistik – alles aus einer Hand.",
+      "Einfache Kleinreparaturen, Kontrollgänge, Schlüssel- und Lieferantenlogistik – Fachgewerke koordinieren wir nach Freigabe.",
     body: [
       "Wir entlasten Eigentümer und Facility-Teams bei den Aufgaben zwischen den großen Gewerken.",
       "Abgestimmte Eskalationswege: Wenn etwas auffällig wird, wissen Sie es frühzeitig – nicht erst beim Mieter.",
@@ -95,9 +95,9 @@ export const SERVICES = [
     funnelLabel: "Winterdienst",
     emoji: "❄️",
     summary:
-      "Räum- und Streupflicht professionell erfüllt – dokumentiert, wettergeführt und in der Saison nach vereinbarten Reaktionszeiten.",
+      "Räum- und Streupflicht nach schriftlicher Vereinbarung – dokumentiert, mit Einsatzauslösung nach vereinbarten Kriterien und schriftlich vereinbarten Einsatzfenstern.",
     body: [
-      "Einsatzpläne, Meldewege und Nachweise: Sie erfüllen Ihre Sorgfaltspflicht gegenüber Nutzern und Versicherern.",
+      "Einsatzpläne, Meldewege und Nachweise als Protokoll (PDF): Räumen und Streuen bleiben nachvollziehbar dokumentiert.",
       "Kombinierbar mit Außenanlagen- und Gebäudeservice für eine durchgängige Objektstrategie.",
     ],
   },

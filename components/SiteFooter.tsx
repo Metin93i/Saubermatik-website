@@ -17,7 +17,7 @@ export function SiteFooter() {
   const { display, telHref } = getBusinessPhone();
 
   return (
-    <footer className="surface-nacht mt-auto text-text-dunkel">
+    <footer className="surface-nacht mt-auto text-text-dunkel max-md:pb-[calc(4.75rem+env(safe-area-inset-bottom))]">
       <div className="mx-auto grid w-full max-w-6xl gap-8 px-4 py-10 sm:grid-cols-2 sm:px-6 lg:grid-cols-4 lg:px-8">
         <div className="sm:col-span-2 lg:col-span-1">
           <SaubermatikLogo variant="onDark" />
@@ -97,7 +97,7 @@ export function SiteFooter() {
                 href="/standorte/stuttgart"
                 className="text-sm font-semibold text-surface-inverse-foreground transition hover:text-[color:var(--link-on-inverse)] hover:underline"
               >
-                Stuttgart (Metropolregion, Spezial-Hub)
+                Stuttgart (Metropolregion)
               </PrefetchLink>
             </li>
           </ul>
